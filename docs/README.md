@@ -5,11 +5,11 @@
 The teams consists of students identified in the following table. 
 
 | Student Number	| Name |
-|--------------|----------------------------|
-| **1190001**  | Name of student 1          |
-| **1190002**  | Name of student 2          |
-| **1190003**  | Name of student 3          |
-| **1190004**  | Name of student 4          |
+|--------------|--------------------------|
+| **1200920**  | Eduardo Sousa            |
+| **1200737**  | Eduardo Novo             |
+| **1201600**  | Joana Lima               |
+| **1201614**  | Júlia Conceição          |
 
 
 
