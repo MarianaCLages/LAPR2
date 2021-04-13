@@ -23,7 +23,7 @@
 | **Administrator** | **Administrador** | The person who manage the buisiness. |
 | **Clinical Chemistry Technologist** | **Técnico de Analise química ** | Clinical chemistry technologists prepare specimens and analyze the chemical and hormonal contents of body fluids. |
 | **Laboratory Coordinator** | **Coordenador de laboratório** | Plans and implements the overall laboratory policies, procedures, and manages services for a unit and/or shift. |
-| **Chemical Analysis** | **NIF** | TIN is the Tax Identification Number. |
+| **Chemical Analysis** | **Química analítica** | Chemical analysis is the study of the chemical composition and structure of substances. |
 | **TIN** | **NIF** | TIN is the Tax Identification Number. |
 | **Test** | **Teste** | The tests are samples that have parameters that are going to be measured and analised by the clinical chemistry technologist.  |
 | **Validation** | **Validação** | Validation is the action of checking or proving the validity or accuracy of something. Tests need to pass through this validation and the results can be positive or negative(true or false). |
