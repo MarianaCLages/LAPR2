@@ -1,25 +1,29 @@
 @startuml
-'https://plantuml.com/class-diagram
 
 class ChemicalAnalysis{
 }
+
 class Test{
 Client;
 Test ID;
 Type of Test;
 }
+
 class Sample{
 Test ID;
 Type of Sample;
 }
+
 class Covid19Tests{
 Covid19 Value;
 }
+
 class AnalysisOfBlood{
 Number Red Blood Cells;
 Number White Blood Cells;
 Number Platelets;
 }
+
 class Client{
 Name;
 Citizen card Number;
@@ -30,6 +34,7 @@ Tax Identification Number;
 Phone;
 E-mail;
 }
+
 class Receptionist{
 Employee ID;
 Organization Role;
@@ -39,6 +44,7 @@ Phone Number;
 E-Mail;
 Standard Occupational Classification "SOC";
 }
+
 class MedicalLabTechnician{
 Employee ID;
 Organization Role;
@@ -48,6 +54,7 @@ Phone Number;
 E-Mail;
 Standard Occupational Classification "SOC";
 }
+
 class SpecialistDoctor{
 Employee ID;
 Organization Role;
@@ -58,6 +65,7 @@ E-Mail;
 Standard Occupational Classification "SOC";
 Doctor Index Number;
 }
+
 class Administrator{
 Employee ID;
 Organization Role;
@@ -67,6 +75,7 @@ Phone Number;
 E-Mail;
 Standard Occupational Classification "SOC";
 }
+
 class ClinicalChemistryTechnologist{
 Employee ID;
 Organization Role;
@@ -76,6 +85,7 @@ Phone Number;
 E-Mail;
 Standard Occupational Classification "SOC";
 }
+
 class LaboratoryCoordinator{
 Employee ID;
 Organization Role;
@@ -85,6 +95,7 @@ Phone Number;
 E-Mail;
 Standard Occupational Classification "SOC";
 }
+
 class ClinicalAnalysisLaboratory{
 Laboratory ID;
 Name;
@@ -92,41 +103,58 @@ Address;
 Phone Number;
 TIN number;
 }
+
 class ChemicalLaboratory{
 Name;
 Address;
 Phone Number;
 TIN number;
 }
+
 class CompanyHeadquarters{
-Employee ID;
-Organization Role;
-Name;
 Address;
 Phone Number;
 E-Mail;
-Standard Occupational Classification "SOC";
 }
+
 class ChemicalAnalysis{
+Client
 }
+
 class BloodSample{
+Sample ID
 }
+
 class SwabSample{
+Sample ID
 }
+
 class ManyLabs{
 }
+
 class BarcodeExternalAPI{
 Barcode Number;
 }
+
 class LabOrder{
+Client;
+Doctor
+Type of Test
 }
+
 class Results{
-
+TestID;
+Client;
 }
+
 class Report{
+TestID;
+Client;
+Doctor's text;
 }
 
-
+LaboratoryCoordinator "1" -- "*" Report: verifies >
+LaboratoryCoordinator "1" -- "*" Results: verifies >
 ManyLabs "1" -- "*" ClinicalAnalysisLaboratory: owns >
 ManyLabs "1" -- "1" ChemicalLaboratory: owns >
 ManyLabs "1" -- "1" CompanyHeadquarters: owns >
