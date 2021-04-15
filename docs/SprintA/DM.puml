@@ -1,5 +1,6 @@
 @startuml
 
+
 class ChemicalAnalysis{
 }
 
@@ -118,18 +119,19 @@ E-Mail;
 }
 
 class ChemicalAnalysis{
-Client
+Client;
 }
 
 class BloodSample{
-Sample ID
+Sample ID;
 }
 
 class SwabSample{
-Sample ID
+Sample ID;
 }
 
 class ManyLabs{
+Chemical Lab;
 }
 
 class BarcodeExternalAPI{
