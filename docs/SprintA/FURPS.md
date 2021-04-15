@@ -16,31 +16,31 @@
 
 ## Usability 
 
-- #####Accessibility
+#####Accessibility
 - _"Once the laboratory coordinator
  confirms that everything was done correctly, the client receives a notification alerting that the
  results are already available in the central application and informing that he/she must access the
  application to view those results."_
  
-- _"The client receives the notification by SMS and e-mail."_
+_"The client receives the notification by SMS and e-mail."_
  
-- _"... the results are also available in the central application where the medical lab technicians
+_"... the results are also available in the central application where the medical lab technicians
      who collect the samples, the clinical chemistry technologist, the specialist doctor, and the laboratory
      coordinator can check them."_
 
-- _"... the application must allow ordering the clients by TIF and by
+_"... the application must allow ordering the clients by TIF and by
   name."_    
   
--  _"... at least two sorting algorithms should be evaluated and
+_"... at least two sorting algorithms should be evaluated and
    documented in the application user manual"_
    
  
-- #####Aesthetics
+#####Aesthetics
 _"All the images/figures produced during the software development process should be recorded in
  SVG format. "_
  
 
-- #####Consistency
+#####Consistency
 
 _"The samples are sent daily to the chemical laboratory... the medical lab technician records the samples in the system ..."_
 
@@ -86,7 +86,7 @@ test type (whether it is blood test or Covid test)."_
  
 
 
-- ####Testability
+####Testability
 - _"The unit tests should be implemented using the JUnit 4 framework."_
 
 
