@@ -14,15 +14,10 @@ Test ID;
 Type of Sample;
 }
 
-class Covid19Tests{
-Covid19 Value;
+class TypeTest{
+Test ID;
 }
 
-class AnalysisOfBlood{
-Number Red Blood Cells;
-Number White Blood Cells;
-Number Platelets;
-}
 
 class Client{
 Name;
@@ -118,18 +113,15 @@ E-Mail;
 }
 
 class ChemicalAnalysis{
-Client
+Client;
 }
 
-class BloodSample{
-Sample ID
+
+class TypeSample{
+Sample ID;
 }
 
-class SwabSample{
-Sample ID
-}
-
-class ManyLabs{
+class Company{
 }
 
 class BarcodeExternalAPI{
@@ -138,13 +130,18 @@ Barcode Number;
 
 class LabOrder{
 Client;
-Doctor
-Type of Test
+Doctor;
+Type of Test;
+Parameters;
 }
 
 class Results{
 TestID;
 Client;
+}
+class Notification{
+SMS;
+E-mail;
 }
 
 class Report{
@@ -153,20 +150,27 @@ Client;
 Doctor's text;
 }
 
+class AutomaticValidationModule{
+Logical Value;
+}
+
+class Parameters{
+Value;
+}
+
+
 LaboratoryCoordinator "1" -- "*" Report: verifies >
-LaboratoryCoordinator "1" -- "*" Results: verifies >
-ManyLabs "1" -- "*" ClinicalAnalysisLaboratory: owns >
-ManyLabs "1" -- "1" ChemicalLaboratory: owns >
-ManyLabs "1" -- "1" CompanyHeadquarters: owns >
-ManyLabs "1" -- "*" Receptionist: employs  >
-ManyLabs "1" -- "*" MedicalLabTechnician: employs >
-ManyLabs "1" -- "*" SpecialistDoctor: employs >
-ManyLabs "1" -- "*" Administrator: employs >
-ManyLabs "1" -- "*" ClinicalChemistryTechnologist: employs >
-ManyLabs "1" -- "*" LaboratoryCoordinator: employs >
+Company "1" -- "*" ClinicalAnalysisLaboratory: owns >
+Company "1" -- "1" ChemicalLaboratory: owns >
+Company "1" -- "1" CompanyHeadquarters: owns >
+Company "1" -- "*" Receptionist: employs  >
+Company "1" -- "*" MedicalLabTechnician: employs >
+Company "1" -- "*" SpecialistDoctor: employs >
+Company "1" -- "*" Administrator: employs >
+Company "1" -- "*" ClinicalChemistryTechnologist: employs >
+Company "1" -- "*" LaboratoryCoordinator: employs >
 Client "1" -- "1" LabOrder: to execute the test needs a  >
-BloodSample "1" -- "1" Sample: is a type of >
-SwabSample "1" -- "1" Sample: is a type of >
+TypeSample "1" -- "1" Sample: as a <
 ChemicalLaboratory "1" -- "1" CompanyHeadquarters: is located in >
 Receptionist "*" -- "1" ClinicalAnalysisLaboratory: works on >
 Receptionist "1" -- "*" Test: register in application >
@@ -178,11 +182,18 @@ Sample "*" -- "1" ChemicalLaboratory: are sent >
 ClinicalChemistryTechnologist "1" -- "1" Sample : analyse >
 ClinicalChemistryTechnologist "1" -- "1" Results : records >
 ClinicalChemistryTechnologist "*" -- "1" ChemicalLaboratory : works on >
-AnalysisOfBlood "*" -- "*" Test : is a type of >
-Covid19Tests "*" -- "*" Test : is a type of >
+TypeTest "*" -- "*" Test : as a <
 Sample "1" -- "1" Test : is used in >
-Report "1" -- "1" Client : is delivered to >
 ChemicalAnalysis "*" -- "1" ChemicalLaboratory : take place in >
 Sample "1" -- BarcodeExternalAPI : is identified using >
+Report "1" -- Notification : is sent by >
+Results "1" -- Notification : is sent by >
+Notification "1" -- Client : delivered to >
+LaboratoryCoordinator "1" -- AutomaticValidationModule : uses >
+AutomaticValidationModule "1" -- Results : Validate >
+Test "1" -- Parameters : has >
+MedicalLabTechnician "1" -- ClinicalAnalysisLaboratory : works on >
+
+
 
 @enduml
