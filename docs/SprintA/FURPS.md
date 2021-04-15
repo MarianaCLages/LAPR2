@@ -10,9 +10,7 @@ _Specifies functionalities that:_
 ### Auditing
 - _"For any interval of time, for example one week (6 working days with 12 working hours per day), the difference between the number of new tests and the number of results available to the client during each half an hour period is computed. In that case, a list with 144 integers is obtained, where a positive integer means that in such half an hour more tests were processed than results were obtained, and a negative integer means the opposite. Now, the problem consists in determining what the contiguous subsequence of the initial sequence is, whose sum of their entries is maximum. This will show the time interval, in such week, when the company was less effective in responding. So, the application should implement a brute-force algorithm (an algorithm which examines each subsequence) to determine the contiguous subsequence with maximum sum, for any interval of time registered."_
 
-### Localization
-- _"The application must support the English language only"_
-
+feito por configuração
 
 ### Help
 - _There should exist a user-manual_
@@ -27,7 +25,7 @@ _Specifies functionalities that:_
 _Evaluates the user interface. It has several subcategories,
 among them: error prevention; interface aesthetics and design; help and
 documentation; consistency and standards._
-- #####Accessibility
+#####Accessibility
 - _"Once the laboratory coordinator
  confirms that everything was done correctly, the client receives a notification alerting that the
  results are already available in the central application and informing that he/she must access the
@@ -116,6 +114,7 @@ test type (whether it is blood test or Covid test)."_
 
 ### Implementation languages
 - _Java language_
+adicionar covertura de codigo e assim
 
 
 
