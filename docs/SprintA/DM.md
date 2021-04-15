@@ -157,28 +157,33 @@ An association is a relationship between instances of objects that indicates a r
 
 | Concept (A) 		|  Association   	|  Concept (B) |
 |----------	   		|:-------------:		|------:       |
-| Many Labs      	| owns     		 	    | Clinical Analysis Laboratory <br> Chemical Laboratory <br> Company's Headquarters|
-| Many Labs      	| employees   	 	    | Receptionist <br> Medical Lab Technician <br> Specialist Doctor <br>Administrator<br>Clinical Chemistry Technologist<br>Laboratory Coordinator|
-| Client            | to execute the test needs a     | Lab Order
+| Analysis Of Blood <br> Covid19 Tests|  is a type of  |  Test
 | Blood Sample<br>Swab Sample    |    is a type of    | Sample
+| Chemical Analysis       |  take place in    | Chemical Laboratory
 | Chemical Laboratory|  is located in                 | Company Headquarters
+| Client            | to execute the test needs a     | Lab Order
+| Clinical Chemistry Technologist|  analyse | Sample
+| Clinical Chemistry Technologist|  works on| Chemical Laboratory
+| Clinical Chemistry Technologist|  records | Results
+| Many Labs      	| employees   	 	    | Receptionist <br> Medical Lab Technician <br> Specialist Doctor <br>Administrator<br>Clinical Chemistry Technologist<br>Laboratory Coordinator|
+| Many Labs      	| owns     		 	    | Clinical Analysis Laboratory <br> Chemical Laboratory <br> Company's Headquarters|
+| Medical Lab Technician |   collects        | Sample
+| Medical Lab Technician | records          | Sample
 | Receptionist     	| works on              | Clinical Analysis Laboratory
 | Receptionist   	| register in application| Test
 | Receptionist   	| register in application| Client
-| Medical Lab Technician |   collects        | Sample
-| Specialist Doctor      |   writes          | Report
-| Specialist Doctor      |   analyse         | Results
-| Samples          	|  are sent          | Chemical Laboratory
-| Clinical Chemistry Technologist|  analyse | Sample
-| Clinical Chemistry Technologist|  records | Results
-| Clinical Chemistry Technologist|  works on| Chemical Laboratory
-| Analysis Of Blood <br> Covid19 Tests|  is a type of  |  Test
-| Test   |  is registered locally by   | Medical Lab Technician
-| Sample |  is  used in  | Test
 | Report |  is delivered to  | Client
-| Chemical Analysis       |  take place in    | Chemical Laboratory
+| Samples          	|  are sent          | Chemical Laboratory
+| Specialist Doctor      |   analyse         | Results
+| Specialist Doctor      |   writes          | Report
 | Sample                  |  is identified using | Barcode External API
-| Medical Lab Technician | records          | Sample
+| Sample |  is  used in  | Test
+| Test   |  is registered locally by   | Medical Lab Technician
+
+
+
+
+
 
 
 
