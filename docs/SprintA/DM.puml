@@ -1,6 +1,12 @@
 @startuml
 
-class ChemicalAnalysis{
+class Covid19Report{
+Covid-19 tests performed;
+Positive Results to Covid-19 Tests
+Number of Covid-19 Cases Per Day
+Number of Covid-19 Cases Per Week
+Number of Covid-19 Cases Per Month
+Number of Covid-19 Cases Per Year
 }
 
 class Test{
@@ -122,6 +128,7 @@ Sample ID;
 }
 
 class Company{
+Name
 }
 
 class BarcodeExternalAPI{
@@ -139,6 +146,7 @@ class Results{
 TestID;
 Client;
 }
+
 class Notification{
 SMS;
 E-mail;
@@ -151,48 +159,48 @@ Doctor's text;
 }
 
 class AutomaticValidationModule{
-Logical Value;
+Validation;
 }
 
 class Parameters{
 Value;
 }
 
-
-LaboratoryCoordinator "1" -- "*" Report: verifies >
-Company "1" -- "*" ClinicalAnalysisLaboratory: owns >
-Company "1" -- "1" ChemicalLaboratory: owns >
-Company "1" -- "1" CompanyHeadquarters: owns >
-Company "1" -- "*" Receptionist: employs  >
-Company "1" -- "*" MedicalLabTechnician: employs >
-Company "1" -- "*" SpecialistDoctor: employs >
+AutomaticValidationModule "1" -- "1" Results : Validate >
+ChemicalAnalysis "*" -- "1" ChemicalLaboratory : take place in >
+ChemicalLaboratory "1" -- "1" CompanyHeadquarters: is located in >
+Client "1" -- "1" LabOrder: to execute the test needs a  >
+ClinicalChemistryTechnologist "*" -- "1" ChemicalLaboratory : works on >
+ClinicalChemistryTechnologist "1" -- "1" Results : records >
+ClinicalChemistryTechnologist "1" -- "1" Sample : analyse >
+Company "1" - "1" Covid19Report: sends to NHS >
 Company "1" -- "*" Administrator: employs >
+Company "1" -- "*" ClinicalAnalysisLaboratory: owns >
 Company "1" -- "*" ClinicalChemistryTechnologist: employs >
 Company "1" -- "*" LaboratoryCoordinator: employs >
-Client "1" -- "1" LabOrder: to execute the test needs a  >
-TypeSample "1" -- "1" Sample: as a <
-ChemicalLaboratory "1" -- "1" CompanyHeadquarters: is located in >
-Receptionist "*" -- "1" ClinicalAnalysisLaboratory: works on >
-Receptionist "1" -- "*" Test: register in application >
-Receptionist "1" -- "*" Client: register in application >
+Company "1" -- "*" MedicalLabTechnician: employs >
+Company "1" -- "*" Receptionist: employs  >
+Company "1" -- "*" SpecialistDoctor: employs >
+Company "1" -- "1" ChemicalLaboratory: owns >
+Company "1" -- "1" CompanyHeadquarters: owns >
+LaboratoryCoordinator "1" -- "*" Report: verifies >
+LaboratoryCoordinator "1" -- "1" AutomaticValidationModule : uses >
 MedicalLabTechnician "1" -- "*" Sample: collects and records >
+MedicalLabTechnician "1" -- "1" ClinicalAnalysisLaboratory : works on >
+Notification "1" -- Client : delivered to >
+Receptionist "*" -- "1" ClinicalAnalysisLaboratory: works on >
+Receptionist "1" -- "*" Client: register in application >
+Receptionist "1" -- "*" Test: register in application >
+Report "1" -- "1" Notification : is sent by >
+Results "1" -- "1" Notification : is sent by >
+Sample "*" -- "1" ChemicalLaboratory: are sent >
+Sample "1" -- "1" BarcodeExternalAPI : is identified using >
+Sample "1" -- "1" Test : is used in >
 SpecialistDoctor "1" -- "1" Report: writes >
 SpecialistDoctor "1" -- "1" Results: analyse >
-Sample "*" -- "1" ChemicalLaboratory: are sent >
-ClinicalChemistryTechnologist "1" -- "1" Sample : analyse >
-ClinicalChemistryTechnologist "1" -- "1" Results : records >
-ClinicalChemistryTechnologist "*" -- "1" ChemicalLaboratory : works on >
+Test "1" -- "*" Parameters : has >
+TypeSample "1" -- "1" Sample: has a <
 TypeTest "*" -- "*" Test : as a <
-Sample "1" -- "1" Test : is used in >
-ChemicalAnalysis "*" -- "1" ChemicalLaboratory : take place in >
-Sample "1" -- BarcodeExternalAPI : is identified using >
-Report "1" -- Notification : is sent by >
-Results "1" -- Notification : is sent by >
-Notification "1" -- Client : delivered to >
-LaboratoryCoordinator "1" -- AutomaticValidationModule : uses >
-AutomaticValidationModule "1" -- Results : Validate >
-Test "1" -- Parameters : has >
-MedicalLabTechnician "1" -- ClinicalAnalysisLaboratory : works on >
 
 
 

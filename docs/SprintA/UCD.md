@@ -10,14 +10,3 @@
 # Use Cases / User Stories
 | UC/US  | Description                                                               |                   
 |:----|:------------------------------------------------------------------------|
-| US1 | [Client takes on a Lab order](US1.md)  |
-| US2 | [Client executes the test](US2.md)|
-| US3 | [Receptionist works on Clinical Analysis Laboratory](US3.md)|
-| US4 | [Receptionist registers the client in the application](US4.md)|
-| US5 | [Receptionist registers the test in the application](US5.md)|
-| US6 | [Medical Lab Technician collects sample](US6.md)
-| US7 | [Specialist Doctor writes report](US7.md)
-| US8 | [Specialist Doctor analyses results](US8.md)
-| US9 | [Clinical Chemistry Technologist analyses sample](US9.md)
-| US10 | [Clinical Chemistry Technologist records result](US10.md)
-| US11 | [Clinical Chemistry Technologist works on Chemical Laboratory ](US11.md)
