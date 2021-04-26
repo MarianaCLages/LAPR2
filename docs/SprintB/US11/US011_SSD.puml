@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Administrator" as OE
+activate OE
+
+OE -> ":System": Starts new parameter category
+activate ":System"
+":System" --> OE: Request data
+deactivate ":System"
+OE -> ":System": Types requested data
+activate ":System"
+":System" --> OE: Shows data and requests confirmation
+deactivate ":System"
+OE -> ":System": Confirms data
+activate ":System"
+":System" --> OE: informs operation success
+deactivate ":System"
+
+deactivate OE
+
+@enduml
