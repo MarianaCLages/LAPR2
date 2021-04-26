@@ -1,0 +1,34 @@
+@startuml
+class Receptionist{
+Employee ID;
+Organization Role;
+Name;
+Address;
+Phone Number;
+E-Mail;
+Standard Occupational Classification "SOC";
+}
+
+class Client{
+Name;
+Citizen card Number;
+National Healthcare Service Number
+Birth date;
+Sex;
+Tax Identification Number;
+Phone;
+E-mail;
+}
+
+Receptionist "1" -- "*" Client: register in application >
+
+
+
+
+
+
+
+
+
+
+@enduml
