@@ -78,17 +78,17 @@ n/a
 
 | Interaction ID                                      | Question: Which class is responsible for...                              | Answer                    | Justification (with patterns)                                                                                 |
 | :-------------------------------------------------- | :----------------------------------------------------------------------- | :-----------------        | :----------------------------------------------------------                                                   |
-| Msg 1: starts new parameter category                | ... instantiating a new Parameter Category?                              | Company                   | Creator: R1/2                                                                                                 |
+| Msg 1: starts new parameter category                | ... instantiating a new Parameter Category?                              | ParameterCategoryStore    | Creator: R1/2 </br> LC & HC: we look to decrease the responsibilities assign to the the Company class in order to go accordingly to GRASP                                                                                                 |
 |                                                     | ... interacting with the actor?                                          | CreateParameterCategoryUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model. |
 |                                                     | ... coordinating the US?                                                 | CreateParameterController | Controller                                                                                                    |
 | Msg 1.1: request data (code, name)                  | n/a                                                                      |                           |                                                                                                               |
 | Msg 2: types requested data                         | ... saving the input data?                                               | Parameter Category        | IE: The object created in step 1 has its own data.                                                            |
 | Msg 2.2: shows the data and requests a confirmation | ... validating the data locally (e.g.: mandatory vs.non-mandatory data)? | Parameter Category        | IE: knows its own data.                                                                                       |
-|                                                     | ... validating the data globally (e.g.: duplicated)?                     | Company                   | IE: knows/has its own Employees                                                                               |
+|                                                     | ... validating the data globally (e.g.: duplicated)?                     | ParameterCategoryStore    | IE: knows/has all the ParameterCategory objects                                                                               |
 | Msg 3: confirms the data                            | ... saving the created parameter category?                               | Company                   | IE: knows its own data (e.g. email)                                                                           |
 | Msg 3.2: informs operation success                  | ... informing operation success?                                         | UI                        | IE: responsible for user interaction                                                                          |
 
-### Systematization
+#### Systematization
 
 According to the taken rationale, the conceptual classes promoted to software classes are:
 
@@ -97,22 +97,24 @@ According to the taken rationale, the conceptual classes promoted to software cl
 
 Other software classes (i.e. Pure Fabrication) identified:
 
+- ParameterCategoryStore
 - CreateParameterCategoryUI
 - CreateParameterController
 
-## 3.2. Sequence Diagram (SD)
+### 3.2. Sequence Diagram (SD)
  
 **Alternative 1**
  
-![US011_SD](US011_SD.svg) 
+![US011_SD](US011_SD.svg)
 
-## 3.3. Class Diagram (CD)
+ 
+### 3.3. Class Diagram (CD)
 
 **From alternative 1**
  
 ![US011_CD](US011_CD.svg) 
 
-# 4. Tests
+## 4. Tests
 
 **Test 1:** Check that it is not possible to create an instance of the Task class with null values.
 
@@ -133,9 +135,9 @@ five chars - AC2.
 
 _It is also recommended organizing this content by subsections._
 
-# 5. Construction (Implementation)
+## 5. Construction (Implementation)
 
-## Class CreateTaskController
+### Class CreateTaskController
 
     	public boolean createTask(String ref, String designation, String informalDesc,
     		String technicalDesc, Integer duration, Double cost, Integer catId)() {
@@ -150,7 +152,7 @@ _It is also recommended organizing this content by subsections._
     		return (this.task != null);
     	}
 
-## Class Organization
+### Class Organization
 
     	public Task createTask(String ref, String designation, String informalDesc,
     		String technicalDesc, Integer duration, Double cost, Category cat)() {
@@ -162,13 +164,13 @@ _It is also recommended organizing this content by subsections._
     		return null;
     	}
 
-# 6. Integration and Demo
+## 6. Integration and Demo
 
 - A new option on the Employee menu options was added.
 
 - Some demo purposes some tasks are bootstrapped while system starts.
 
-# 7. Observations
+## 7. Observations
 
 Platform and Organization classes are getting too many responsibilities due to IE pattern and, therefore, they are
 becoming huge and harder to maintain.
