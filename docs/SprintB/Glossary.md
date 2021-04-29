@@ -8,18 +8,19 @@
 | :------------- | :------------- | :--------------------- |
 | **Administrator** | **Administrador** | The person who manage the business. |
 | **Algorithm** | **Algoritmo** | An algorithm is a list of rules to follow in order to solve a problem. |
-| **Alphanumeric Characters** | **Caracteres Alfanuméricos** | It's a system that consists of letters, numbers and some other conventional symbols. |
+| **Alphanumeric Character** | **Carácter Alfanumérico** | It's a system that consists of letters, numbers and some other conventional symbols. |
 | **API** | **Interface de Programação de Aplicações** | Application programming interface is an interface that defines interactions between multiple software applications or mixed hardware-software intermediaries.|
 | **Application User Manual** | **Manual de instruções do utilizador** | The Application User manual aims to facilitate the user's access to the results. |
 | **Asymptotic Behavior** | **Comportamento assintótico** | It's a formula that is near the given value and its expression contains a variable that approaches a limit, usually infinity. |
 | **Barcode** | **Código de Barras** | A code that is made of diverse parallel lines in different sizes with numbers under them, used for stock control and readable by machines. |
+| **Blood Test** | **Teste de Sangue** | It's a type of test that examines a sample of blood, typically for the diagnosis of illness or for the detection and measurement of drugs or other substances.|
 | **Citizen Card Number** | **Número do Cartão de Cidadão** | The Citizen card number is used by the governments of many countries as a way to track their citizens, permanent residents and temporary residents. |
 | **Chemical Analysis** | **Química Analítica** | Chemical analysis is the study of the chemical composition and structure of substances. |
 | **Clinical Chemistry Technologist** | **Técnico de Análise Química** | Clinical chemistry technologists prepare specimens and analyze the chemical and hormonal contents of body fluids. |
 | **Covid-19** | **Covid-19** | A recent virus that is affecting the whole world.|
 | **Diagnosis** | **Diagnose** | The detection of the origin of problems such as diseases by examining the symptoms. |
 | **E-mail** | **E-mail** | Email, short for "electronic mail," is one of the most widely used features of the Internet, along with the web. It allows you to send and receive messages to and from anyone with an email address, anywhere in the world. The client receives the notification that alerts them that the results are already available in the central application by Email. |
-| **Headquarters** | **Sede** | Headquarter is the administrative center of an organisation/company. |
+| **Headquarters** | **Sede** | Headquarters is the administrative center of an organisation/company. |
 | **Input/Output** | **Entrada/saída** | Input/Output is the communication between an information processing system, such as a computer and the outside world, possibly a human or another information processing system. |
 | **Integer** | **Número inteiro** | An integer is a number that isn't a fraction, it can be positive, negative or zero. |
 | **IntelliJ IDE** | **IntelliJ IDE** | IntelliJ is a special programming environment or integrated development environment (IDE) largely meant for Java. |
@@ -40,14 +41,15 @@
 | **Plugin** | **Plugin** | A plugin is a software component that adds a specific feature to an existing computer program. |
 | **PLT** | **Plaqueta** | It's a component that exists in the blood, being cell fragments that form clots and stop or prevent bleeding.|
 | **Prescribed** | **Prescrito** | Usually remedies or treatments recommended by a medical practitioner in a written way to their patient. |
-| **RBC** | **Hemácia** | It's a component that exists in the blood which mainly carries oxygen and removes carbon dioxide.|
+| **Red Blood Cell (RBC)** | **Hemácia** | It's a component that exists in the blood which mainly carries oxygen and removes carbon dioxide.|
 | **Receptionist** | **Rececionista** | A person who greets and deals with clients and visitors to the clinic. |
-| **Results** | **Resultados** | Results are the values extracted by the test.|
+| **Result** | **Resultado** | Result is the value extracted by the test.|
 | **Sample** | **Amostra** | It represents a portion of blood that is going to be analysed. |
 | **SMS** | **SMS** | SMS stands for Short Message Service. The client receives the notification that alerts them that the results are already available in the central application by SMS. |
 | **Specialist Doctor** | **Doutor Especializado** | It's a doctor who has completed advanced education and training in a specific field of medicine. |
 | **SVG** | **SVG** | Scalable Vector Graphics (SVG) are an XML-based markup language for describing two-dimensional based vector graphics. |
+| **Swab Test** | **Teste de Cotonete** | In this case, it's a nasal swab test which means that its purpose is to check for viruses and bacteria that cause respiratory infections by taking a sample of cells from your nostrils or from the nasopharynx. |
 | **Test** | **Teste** | The tests are samples that have parameters that are going to be measured and analysed by the clinical chemistry technologist. |
 | **TIN** | **NIF** | TIN is the Tax Identification Number. |
 | **Validation** | **Validação** | Validation is the action of checking or proving the validity or accuracy of something. Tests need to pass through this validation and the results can be positive or negative (true or false). |
-| **WBC** | **Leucócito** | Its a component that exists in the blood, defending the body against infections and diseases. |
+| **White Blood Cell (WBC)** | **Leucócito** | Its a component that exists in the blood, defending the body against infections and diseases. |

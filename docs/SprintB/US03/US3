@@ -25,15 +25,43 @@ As a receptionist of the laboratory, I want to register a client.
 
 **From the client clarifications:**
 
-> **Question:** 
+> **Question:** To register a Client which is the format of each attribute?
 >  
 > **Answer:** 
+> 
+> Citizen Card: 16 digit number
+>
+> NHS: 10 digit number
+>
+> TIN: 10 digit number
+>
+> Date of Birth: DD/MM/YY
+>
+> Sex: Male/Female
+>
+> Phone number: 11 digit number
 
 -
 
-> **Question:** 
+> **Question:** The receptionist needs mandatorily of all client data described on the project description?
 >  
-> **Answer:** 
+> **Answer:** No, the receptionist doesn't need the sex, it is optional while all the other fields are required.
+
+-
+
+> **Question:** After being registered by the receptionist, should the client receive some kind of confirmation e-mail in order to finish their registration?
+>  
+> **Answer:** The client only receives an e-mail informing that the registration was successful and that they can start to use the system. The e-mail includes the client's password.
+
+-
+
+> **Question:** During the registration of a customer, if they give a phone number already used by another customer, should the registration continue normally or should it be cancelled?
+>  
+> **Answer:** The e-mail address and phone number should be unique for each user. The system should present a message informing about the error and asking for a different phone number.
+
+
+
+
 
 ### 1.3. Acceptance Criteria
 * **AC1:** The client must become a system user. The "auth" component
@@ -50,16 +78,16 @@ As a receptionist of the laboratory, I want to register a client.
 
 **Input Data:**
 * Typed data:
-	* a name
-	* a citizen card number
-	* a national healthcare service number
-	* a birth date
-	* a sex
-	* a tax identification number
-	* a phone number
-	* an e-mail
+	* name
+	* citizen card number
+	* national healthcare service number
+	* tax identification number
+	* phone number
+	* e-mail
 	
-	
+* Selected data:	
+	* birth date
+	* sex
 
 ### 1.6. System Sequence Diagram (SSD)
 
