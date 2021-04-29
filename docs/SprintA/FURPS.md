@@ -60,6 +60,8 @@
 
 - _"... the application uses an external module that is responsible for doing an automatic validation using test reference
   values"_
+  - _"The user interface must be ... consistent"_
+
 
 ## Reliability
 
@@ -75,11 +77,10 @@
   by the specialist doctor, the date and time when the laboratory coordinator validated the test, and the
   test type (whether it is blood test or Covid test)."_
 
-#### Availability
-
-- _"The system should not fail more than 5 days in one year"_
 
 ## Performance
+#### Recovery time
+- _"- _"The system should not fail more than 5 days in one year"_
 
 #### Response time
 
