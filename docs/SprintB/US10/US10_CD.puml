@@ -1,0 +1,54 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+
+class ParameterCategory {
+  -String CategoryName
+  -String Description
+}
+
+
+class Company{
++validates()
++getParameterStore()
+}
+
+class CreateParameterController {
++createParameter(code, description, NHSid, Category)
+}
+
+class CreateParameterUI{
+}
+
+class ParameterCategoryStore{
++showParameterCategory()
++saveParameterCategory()
+}
+
+class ParameterStore{
++saveParameter()
+}
+class Parameter{
+-String code
+-String description
+-String NHSid
+-CategoryName
+}
+
+CreateParameterController ..>  Company: sends
+ParameterCategoryStore ..> ParameterCategory: has
+ParameterCategoryStore ..> CreateParameterController: shows
+Company ..> ParameterCategoryStore: has
+
+Company ..> ParameterStore: has
+ParameterStore ..> Parameter: has
+
+
+CreateParameterUI ..> CreateParameterController
+
+
+
+
+
+
+@enduml

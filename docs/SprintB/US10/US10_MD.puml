@@ -1,0 +1,42 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+class Company{
+name
+}
+
+class Administrator {
+Employee ID;
+Organization Role;
+Name;
+Address;
+Phone Number;
+E-Mail;
+Standard Occupational Classification "SOC";
+}
+
+class Parameter{
+name
+code
+description
+NHS identified
+}
+
+class Category{
+name
+description
+}
+
+
+
+Company "1" -- "*" Administrator : employs
+Administrator "1" -- "*" Parameter : create >
+Parameter "1" -- "*" Category : has >
+Administrator "1" -- "*" Category : choose for Parameter >
+
+
+
+
+@enduml
