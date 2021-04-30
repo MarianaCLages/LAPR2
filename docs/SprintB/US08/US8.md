@@ -1,30 +1,126 @@
-# US XXX - XXXX XXXX
+# US 08 - To register a new clinical analysis laboratory
 
 ## 1. Requirements Engineering
 
-*In this section, it is suggested to capture the requirement description and specifications as provided by the client as well as any further clarification on it. It is also suggested to capture the requirements acceptance criteria and existing dependencies to other requirements. At last, identfy the involved input and output data and depicted an Actor-System interaction in order to fulfill the requirement.*
-
-
 ### 1.1. User Story Description
 
-*Insert here the User Story as described by the client.*
+As an administrator, I want to register a new clinical analysis laboratory stating which kind of test(s) it operates.
 
 ### 1.2. Customer Specifications and Clarifications 
 
-*Insert here any related specification and/or clarification provided by the client together with **your interpretation**. When possible, provide a link to such specifications/clarifications.*
+**From the specifications document:**
+
+> Many Labs is a company that operates in the English market, it has headquarters in London and has
+  a network of clinical analysis laboratories in England where analysis of blood (samples are 
+  collected) are performed, as well as Covid-19 tests. In England, Many Labs has exclusivity for 
+  Covid-19 tests throughout the territory, which means that no other company can perform this type 
+  of testing. All Many Labs clinical analysis laboratories perform clinical blood tests, and a subset of 
+  these laboratories also performs Covid-19 tests.
+  The set of Many Labs clinical analysis laboratories form a network that covers all England, and it is 
+  responsible for collecting samples and interacting with clients. 
+
+**From the client clarifications:**
+
+> **Question:** Is there a maximum limit of types of tests a clinical analysis laboratory can operate?
+>
+> **Answer:** No.
+>
+> **Link:** https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7553#p9817
+>
+
+-
+
+> **Question:** We know through the specifications document that "All Many Labs clinical analysis laboratories perform clinical blood tests". but when creating a new Clinical Analysis Laboratory, should the system automatically record that it operates that type of test or should the person who is creating it select it manually while selecting other types of tests? Or other option?
+>  
+> **Answer:** The administrator should select, manually, all the types of tests to be performed by the Clinical Analysis Laboratory.
+>
+> **Link:** https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7553#p9817
+>
+
+-
+
+> **Question:** Should the employees be allocated to the clinical lab in which they work? Or, for example, can one medical lab technician work in more than one clinical analysis lab?
+>  
+> **Answer:** Each Receptionist and each Medical Lab Technician can work in any Clinical Analysis Laboratory of the Many Labs network.
+>
+> **Link:** https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7603#p9891
+>
+
+-
+
+> **Question:** Which type/format has LaboratoryID, address, name, phone number, and TIN number on Clinical Analysis Laboratory?
+>
+> **Answer:** Each Clinical Analysis Laboratory is characterized by the following attributes:
+>
+>Laboratory ID: five alphanumeric characters;
+>
+>Name: A string with no more than 20 characters;
+>
+>Address: A string with no more than 30 characters;
+>
+>Phone Number: 11 digit number;
+>
+>TIN number: 10 digit number;
+>
+>Type of tests performed by the lab.
+>
+> All information is required.
+>
+> **Link:** https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7636#p9940
+>
+
+-
+
+> **Question:** Are the test types in US8 typed in or selected from those that the program has?
+>
+> **Answer:** The test types are selected from a list.
+>
+> **Link:** https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7707#p10047
+>
+
+-
+
+> **Question:** When registering a new laboratory does the administrator selects or write the type of tests performed by a clinical Analysis laboratory?
+>
+> **Answer:** Yes. In Sprint B requirements we get: "US8: As an administrator, I want to register a new clinical analysis laboratory stating which kind of test(s) it operates".
+>
+> **Link:** https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7749#p10099
+>
+
+-
+
+> **Question:** Can a parameter be classified in more than one parameter category?
+>
+> **Answer:** No. Each parameter has only one category. There are no subcategories.
+>
+> **Link:** https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7749#p10099
+>
 
 ### 1.3. Acceptance Criteria
 
-*Insert here the client acceptance criteria.*
+* **AC1:** "..."
+
+* **AC2:** "..."
+
+* **AC3:** "..."
 
 ### 1.4. Found out Dependencies
 
-*Identify here any found out dependency to other US and/or requirements.*
+Dependency:
 
 ### 1.5 Input and Output Data
 
-*Identity here the data to be inputted by the system actor as well as the output data that the system have/needs to present in order to properly support the actor actions. Regarding the inputted data, it is suggested to distinguish between typed data and selected data (e.g. from a list)*
+**Input Data:**
+* Typed data:
+    * 1
+    * 2
+    
+* Selected data: 
+    * 1
+    * 2
 
+**Output Data:**
+* 1
 
 ### 1.6. System Sequence Diagram (SSD)
 
