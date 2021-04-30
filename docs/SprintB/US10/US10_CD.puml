@@ -4,28 +4,31 @@ skinparam classAttributeIconSize 0
 
 class ParameterCategory {
   -String CategoryName
-  -String Description
+  -String Code
 }
 
 
 class Company{
-+validates()
++getCategoryList()
 +getParameterStore()
 }
 
 class CreateParameterController {
 +createParameter(code, description, NHSid, Category)
++getCategoryList()
++saveParameter()
 }
 
 class CreateParameterUI{
 }
 
 class ParameterCategoryStore{
-+showParameterCategory()
-+saveParameterCategory()
++getCategoryList()
 }
 
 class ParameterStore{
++createParameter()
++validateParameter()
 +saveParameter()
 }
 class Parameter{
@@ -33,19 +36,20 @@ class Parameter{
 -String description
 -String NHSid
 -CategoryName
++Parameter()
 }
-
-CreateParameterController ..>  Company: sends
-ParameterCategoryStore ..> ParameterCategory: has
-ParameterCategoryStore ..> CreateParameterController: shows
-Company ..> ParameterCategoryStore: has
-
-Company ..> ParameterStore: has
-ParameterStore ..> Parameter: has
-
 
 CreateParameterUI ..> CreateParameterController
 
+CreateParameterController ..> Company
+CreateParameterController ..> ParameterStore
+
+Company -- ParameterCategoryStore
+Company -- ParameterStore
+
+ParameterStore -- Parameter
+
+ParameterCategoryStore -- ParameterCategory
 
 
 
