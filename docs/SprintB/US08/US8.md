@@ -112,7 +112,7 @@ There is a dependency to "US9: As an administrator, I want to specify a new type
     * Name
     * Address
     * Phone number
-    * TIN
+    * TIN number
     
 * Selected data: 
     * Type of Tests
@@ -150,24 +150,28 @@ There is a dependency to "US9: As an administrator, I want to specify a new type
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1  		 |							 |             |                              |
-| Step 2  		 |							 |             |                              |
-| Step 3  		 |							 |             |                              |
-| Step 4  		 |							 |             |                              |
-| Step 5  		 |							 |             |                              |
-| Step 6  		 |							 |             |                              |              
+| Step 1: wants to register a new clinical analysis laboratory | ... registering a new clinical analysis laboratory?  | Administrator | IE: they focuses on the task of knowing the data necessary to create a new laboratory analysis.  |
+|                                                              | ... requesting and saving the typed the data (lab ID, name, address, phone number, TIN number)? | CreateClinicalAnalysisLabUI | IE: it focuses on knowing and recording the input data.  |
+|                                                              | ... creating and analyzing the data of the new clinical analysis laboratory? | CreateClinicalAnalysisLabController | IE: it knows and controls the information needed for the clinical analysis laboratory. |
+|                                                              | ... creating and validating the new clinical analysis laboratory? | Company | Creator: it's the owner of the new clinical analysis laboratory and has the power to authenticate it.  |
+| Step 2: shows types of test list and asks to select types | ... interacting with the actor?    | CreateClinicalAnalysisLabUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model. |
+| Step 3: presents the types of tests | ... selecting types of tests?  | Administrator | IE: the administrator knows the types of tests they're looking forward. |
+|                                     | ... setting the data and the tests, proceeding to validate them?  | Clinical Analysis Laboratory | IE: after passing through the interfaces and being confirmed by the company, it's the new clinical analysis laboratory that needs to store the data and validate the tests available.|
+| Step 4: shows all data and requests confirmation | ... showing and requesting the confirmation of the data? | CreateClinicalAnalysisLabUI | IE: the interface interacts with the actor. |                              |              
+| Step 5: confirms the data | ... confirming the data input?  | Administrator | IE: they are the ones interested in the data and its purposes. |
+|                           | ... saving and validating the data input?  | Company | Creator: ultimately the company has to store the inserted information and to authenticate it before any more procedures.| 
+| Step 6: informs operation success | ... informing operation success?   | UI | IE: responsible for user interaction. |           
 
 ### Systematization ##
 
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
- * Class1
- * Class2
- * Class3
+ * Company
+ * Administrator
 
 Other software classes (i.e. Pure Fabrication) identified: 
- * xxxxUI  
- * xxxxController
+ * CreateClinicalAnalysisLabUI  
+ * CreateClinicalAnalysisLabController
 
 ## 3.2. Sequence Diagram (SD)
 

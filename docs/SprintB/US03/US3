@@ -10,8 +10,8 @@ As a receptionist of the laboratory, I want to register a client.
 
 **From the specifications document:**
 
->	The receptionist needs the client’s citizen card number, National Healthcare Service (NHS) number, 
-    birth date, sex, Tax Identification number (TIF), phone number, e-mail and name, to register a client.
+>	"The receptionist needs the client’s citizen card number, National Healthcare Service (NHS) number, 
+    birth date, sex, Tax Identification number (TIF), phone number, e-mail and name, to register a client."
 
 **From the client clarifications:**
 
@@ -90,16 +90,16 @@ As a receptionist of the laboratory, I want to register a client.
 
 **Input Data:**
 * Typed data:
-	* name
-	* citizen card number
-	* national healthcare service number
-	* tax identification number
-	* phone number
-	* e-mail
+	* Name
+	* Citizen Card number
+	* National Healthcare Service number
+	* Tax Identification Number
+	* Phone number
+	* E-mail
 	
 * Selected data:	
-	* birth date
-	* sex
+	* Birth date
+	* Sex
 
 ### 1.6. System Sequence Diagram (SSD)
 
