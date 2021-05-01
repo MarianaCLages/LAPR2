@@ -1,0 +1,18 @@
+@startuml
+class Company
+{
+  -Designation
+  +static getInstance()
+  +getCurrentSession()
+}
+
+class createClinicalAnalysisLabUI {
+}
+
+class createClinicalAnalysisLabController {
+}
+
+
+
+
+@enduml
