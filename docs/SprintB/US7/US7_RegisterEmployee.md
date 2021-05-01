@@ -9,7 +9,7 @@
 
 "As an administrator, I want to register a new employee"
 
-### 1.2. Customer Specifications and Clarifications 
+### 1.2. Customer Specifications and Clarifications
 #### From the specifications document:
 
 
@@ -53,7 +53,7 @@
 ##### Question 6
 > **Question:**
 > How are the passwords delivered to the users (client/employee)?
- 
+
 >**Answer:**
 > Each users receives an e-mail informing that the registration was successful and that he can start to use the system. The e-mail includes the user password.
 
@@ -91,7 +91,7 @@
 
 ### 1.4. Found out Dependencies
 
-* This US needs to use the "auth" component in order to register a new user that, in this case, is an employee and to authenticate the administrator.  
+* This US needs to use the "auth" component in order to register a new user that, in this case, is an employee and to authenticate the administrator.
 
 ### 1.5 Input and Output Data
 
@@ -106,70 +106,73 @@
   * Doctor Index Number
 
 - Selected data:
-    - Organization Role; ????
+  - Organization Role;
 
 ### 1.6. System Sequence Diagram (SSD)
 
-In the System Sequence Diagram we choose to develop 2 alternatives, in the first one the administrator register an employee that is not a specialist doctor and in the second the administrator register a new specialist doctor.
-We choose this because the specialist doctor need a different parameter that is the "Doctor Index Number"
-
-**Alt 1**
-
-![US07_SSD](US07_SSD1.svg)
-
-**Alt 2**
-
-![US07_SSD2](US07_SSD2.svg)
+![US07_SSD](US07_SSD.svg)
 
 
 ### 1.7 Other Relevant Remarks
 
-*Use this section to capture other relevant information that is related with this US such as (i) special requirements ; (ii) data and/or technology variations; (iii) how often this US is held.* 
+*Use this section to capture other relevant information that is related with this US such as (i) special requirements ; (ii) data and/or technology variations; (iii) how often this US is held.*
 
 
 ## 2. OO Analysis
 
-### 2.1. Relevant Domain Model Excerpt 
-*In this section, it is suggested to present an excerpt of the domain model that is seen as relevant to fulfill this requirement.* 
+### 2.1. Relevant Domain Model Excerpt
+*In this section, it is suggested to present an excerpt of the domain model that is seen as relevant to fulfill this requirement.*
 
-![USXX-MD](USXX-MD.svg)
+![US07-MD](US07_MD.svg)
 
 ### 2.2. Other Remarks
 
-*Use this section to capture some aditional notes/remarks that must be taken into consideration into the design activity. In some case, it might be usefull to add other analysis artifacts (e.g. activity or state diagrams).* 
+*Use this section to capture some aditional notes/remarks that must be taken into consideration into the design activity. In some case, it might be usefull to add other analysis artifacts (e.g. activity or state diagrams).*
 
 
 
-## 3. Design - User Story Realization 
+## 3. Design - User Story Realization
 
 ### 3.1. Rationale
 
 **The rationale grounds on the SSD interactions and the identified input/output data.**
 
-| Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
-|:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1  		 |							 |             |                              |
-| Step 2  		 |							 |             |                              |
-| Step 3  		 |							 |             |                              |
-| Step 4  		 |							 |             |                              |
-| Step 5  		 |							 |             |                              |
-| Step 6  		 |							 |             |                              |              
+| Interaction ID                                                              | Question: Which class is responsible for...                           | Answer                     | Justification (with patterns)                                                                                 |
+| :-------------                                                              | :---------------------                                                | :------------              | :----------------------------                                                                                 |
+| Step 1: ask to create a new employee                                        | ... coordinating the US?                                              | RegisterEmployeeController | Controller                                                                                                    |
+|                                                                             | ... interacting with the actor?                                       | RegisterEmployeeUI         | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model. |
+|                                                                             | ... authenticate the actor?                                           | UserSession                | IE: cf. A&A component documentation                                                                           |
+|                                                                             | ... instantiating a employee?                                         | EmployeeStore              | Creator <br> LC & HC: we look to decrease the responsibilities assign to the the Company class                |
+| Step 2: show role list                                                      | ... knowing the roles to show?                                        | RoleStore                  | IE: the roles are defined by the RoleStore.                                                                   |
+| Step 3: select a role                                                       | ...saving the selected role?                                          | Employee                   | IE: employee registered in step 1 is classified in one role.                                                  |
+| Step 4: asks for employee data(Name,Address,  Phone Number, E-Mail,  "SOC") | ...requesting employee data?                                          |                            |                                                                                                               |
+| Step 5: type employee data                                                  | ...saving the inputted data?                                          | Employee                   | IE: object created has its own data.                                                                          |
+|                                                                             | ...local validation?                                                  | Employee                   | IE: knows its own data.                                                                                       |
+| Step 6: Shows data and requests confirmation                                | ...informing operation that shows all data and requests confirmation? | RegisterEmployeeUI         | IE: is responsible for user interactions.                                                                     |
+|                                                                             | ...showing all data?                                                  | Employee                   | IE: knows all the employee's data.                                                                            |
+| Step 7: confirms data                                                       | ...informing operation confirmation?                                  | RegisterEmployeeUI         | IE: is responsible for user interactions.                                                                     |
+|                                                                             | ...global validation?                                                 | EmployeeStore              | IE: knows all employees.                                                                                      |
+|                                                                             | ...saving the created Employee?                                       | EmployeeStore              | IE: owns all its employees.                                                                                   |
+| Step 8: shows operation success                                             | ...informing operation success?                                       | RegisterEmployeeUI         | IE: is responsible for user interactions.                                                                     |
+
+
+
 
 ### Systematization ##
 
-According to the taken rationale, the conceptual classes promoted to software classes are: 
+According to the taken rationale, the conceptual classes promoted to software classes are:
 
- * Class1
- * Class2
- * Class3
+* Class1
+* Class2
+* Class3
 
-Other software classes (i.e. Pure Fabrication) identified: 
- * xxxxUI  
- * xxxxController
+Other software classes (i.e. Pure Fabrication) identified:
+* xxxxUI
+* xxxxController
 
 ## 3.2. Sequence Diagram (SD)
 
-*In this section, it is suggested to present an UML dynamic view stating the sequence of domain related software objects' interactions that allows to fulfill the requirement.* 
+*In this section, it is suggested to present an UML dynamic view stating the sequence of domain related software objects' interactions that allows to fulfill the requirement.*
 
 ![USXX-SD](USXX-SD.svg)
 
@@ -179,27 +182,27 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ![USXX-CD](USXX-CD.svg)
 
-# 4. Tests 
-*In this section, it is suggested to systematize how the tests were designed to allow a correct measurement of requirements fulfilling.* 
+# 4. Tests
+*In this section, it is suggested to systematize how the tests were designed to allow a correct measurement of requirements fulfilling.*
 
 **_DO NOT COPY ALL DEVELOPED TESTS HERE_**
 
-**Test 1:** Check that it is not possible to create an instance of the Example class with null values. 
+**Test 1:** Check that it is not possible to create an instance of the Example class with null values.
 
 	@Test(expected = IllegalArgumentException.class)
 		public void ensureNullIsNotAllowed() {
 		Exemplo instance = new Exemplo(null, null);
 	}
 
-*It is also recommended to organize this content by subsections.* 
+*It is also recommended to organize this content by subsections.*
 
 # 5. Construction (Implementation)
 
 *In this section, it is suggested to provide, if necessary, some evidence that the construction/implementation is in accordance with the previously carried out design. Furthermore, it is recommeded to mention/describe the existence of other relevant (e.g. configuration) files and highlight relevant commits.*
 
-*It is also recommended to organize this content by subsections.* 
+*It is also recommended to organize this content by subsections.*
 
-# 6. Integration and Demo 
+# 6. Integration and Demo
 
 *In this section, it is suggested to describe the efforts made to integrate this functionality with the other features of the system.*
 
