@@ -1,22 +1,23 @@
 @startuml
-'https://plantuml.com/use-case-diagram
-
-:Main Admin: as Admin
-(Use the application) as (Use)
-
-User -> (Start)
-User --> (Use)
-
-Admin ---> (Use)
-
-note right of Admin : This is an example.
-
-note right of (Use)
-A note can also
-be on several lines
-end note
-
-note "This note is connected\nto several objects." as N2
-(Start) .. N2
-N2 .. (Use)
+autonumber
+actor Administrator as A
+participant "System" as S
+activate A
+activate S
+A -> S: wants to register a new clinical analysis laboratory
+S --> A: shows types of test list and asks to select types
+deactivate S
+A -> S: selects types of tests
+activate S
+S --> A: requests data (laboratory ID, name, address,\n phone number, TIN number)
+deactivate S
+A -> S: types requested data
+activate S
+S --> A: shows all data and requests confirmation
+deactivate S
+A -> S: confirms the data
+activate S
+S --> A: informs operation success
+deactivate S
+deactivate A
 @enduml
