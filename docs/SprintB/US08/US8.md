@@ -10,14 +10,8 @@ As an administrator, I want to register a new clinical analysis laboratory stati
 
 **From the specifications document:**
 
-> Many Labs is a company that operates in the English market, it has headquarters in London and has
-  a network of clinical analysis laboratories in England where analysis of blood (samples are 
-  collected) are performed, as well as Covid-19 tests. In England, Many Labs has exclusivity for 
-  Covid-19 tests throughout the territory, which means that no other company can perform this type 
-  of testing. All Many Labs clinical analysis laboratories perform clinical blood tests, and a subset of 
-  these laboratories also performs Covid-19 tests.
-  The set of Many Labs clinical analysis laboratories form a network that covers all England, and it is 
-  responsible for collecting samples and interacting with clients. 
+> "Many Labs is a company that [...] has a network of clinical analysis laboratories in England where analysis of blood (samples are collected) are performed, as well as Covid-19 tests. Many Labs performs two types of tests [...] Despite being out of scope, the system should be developed having in mind the need to
+easily support other kinds of tests (e.g., urine)." 
 
 **From the client clarifications:**
 
@@ -98,29 +92,33 @@ As an administrator, I want to register a new clinical analysis laboratory stati
 
 ### 1.3. Acceptance Criteria
 
-* **AC1:** "..."
+* **AC1:** "Name cannot be empty and has, at maximum, 15 chars."
 
-* **AC2:** "..."
+* **AC2:** "Address cannot be empty and has, at maximum, 30 chars."
 
-* **AC3:** "..."
+* **AC3:** "Phone number is an 11 digit number."
+
+* **AC4:** "TIN is a 10 digit number."
 
 ### 1.4. Found out Dependencies
 
-Dependency:
+There is a dependency to "US9: As an administrator, I want to specify a new type of test and its collecting methods." since at least a type of test must exist to specify which type of test the clinical analysis laboratory operates.
 
 ### 1.5 Input and Output Data
 
 **Input Data:**
 * Typed data:
-    * 1
-    * 2
+    * Laboratory ID
+    * Name
+    * Address
+    * Phone number
+    * TIN
     
 * Selected data: 
-    * 1
-    * 2
+    * Type of Tests
 
 **Output Data:**
-* 1
+* (In)Success of the operation
 
 ### 1.6. System Sequence Diagram (SSD)
 
