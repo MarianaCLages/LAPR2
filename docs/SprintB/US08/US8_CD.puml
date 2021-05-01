@@ -1,18 +1,36 @@
 @startuml
+
 class Company
 {
-  -Designation
-  +static getInstance()
-  +getCurrentSession()
+  -designation
+  +CreateClinicalAnalysisLab(labID, name, address, phoneNumber, tinNumber)
+  +validateClinicalAnalysisLab(cal)
+  +saveClinicalAnalysisLab(cal)
 }
 
-class createClinicalAnalysisLabUI {
+class CreateClinicalAnalysisLabUI {
 }
 
-class createClinicalAnalysisLabController {
+class CreateClinicalAnalysisLabController {
+    +CreateClinicalAnalysisLab(labID, name, address, phoneNumber, tinNumber)
+    +setData(TypesTest)
+    +saveClinicalAnalysisLab()
 }
 
+class ClinicalAnalysisLaboratory{
+    -labID
+    -name
+    -address
+    -phoneNumber
+    -tinNumber
+    +create(labID, name, address, phoneNumber, tinNumber)
+    +setTypeTest(cal)
+    +validate()
+}
 
-
+CreateClinicalAnalysisLabUI ..> CreateClinicalAnalysisLabController
+CreateClinicalAnalysisLabController ..> Company
+CreateClinicalAnalysisLabController ..> ClinicalAnalysisLaboratory
+Company ..> ClinicalAnalysisLaboratory: creates
 
 @enduml

@@ -10,15 +10,15 @@ activate A
 
 A -> UI: wants to register a new clinical analysis laboratory
 activate UI
-UI --> A: requests data (labID, name, address,\n phoneNumber, TINnumber)
+UI --> A: requests data (labID, name, address,\n phoneNumber, tinNumber)
 deactivate UI
 A -> UI: types requested data
 activate UI
 activate CTRL
-UI -> CTRL : CreateClinicalAnalysisLab(labID, name, address, phoneNumber, TINnumber)
-CTRL -> C: cal = CreateClinicalAnalysisLab(labID, name, address, phoneNumber, TINnumber)
+UI -> CTRL : CreateClinicalAnalysisLab(labID, name, address, phoneNumber, tinNumber)
+CTRL -> C: cal = CreateClinicalAnalysisLab(labID, name, address, phoneNumber, tinNumber)
 activate C
-C --> CAL : create(labID, name, address, phoneNumber, TINnumber)
+C --> CAL : create(labID, name, address, phoneNumber, tinNumber)
 activate CAL
 deactivate CAL
 deactivate C
