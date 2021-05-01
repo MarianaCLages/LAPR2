@@ -22,6 +22,7 @@ Type of Sample;
 
 class TypeTest{
 Test ID;
+Collecting Method;
 }
 
 
@@ -37,64 +38,23 @@ E-mail;
 }
 
 class Receptionist{
-Employee ID;
-Organization Role;
-Name;
-Address;
-Phone Number;
-E-Mail;
-Standard Occupational Classification "SOC";
 }
 
 class MedicalLabTechnician{
-Employee ID;
-Organization Role;
-Name;
-Address;
-Phone Number;
-E-Mail;
-Standard Occupational Classification "SOC";
 }
 
 class SpecialistDoctor{
-Employee ID;
-Organization Role;
-Name;
-Address;
-Phone Number;
-E-Mail;
-Standard Occupational Classification "SOC";
+
 Doctor Index Number;
 }
 
 class Administrator{
-Employee ID;
-Organization Role;
-Name;
-Address;
-Phone Number;
-E-Mail;
-Standard Occupational Classification "SOC";
 }
 
 class ClinicalChemistryTechnologist{
-Employee ID;
-Organization Role;
-Name;
-Address;
-Phone Number;
-E-Mail;
-Standard Occupational Classification "SOC";
 }
 
 class LaboratoryCoordinator{
-Employee ID;
-Organization Role;
-Name;
-Address;
-Phone Number;
-E-Mail;
-Standard Occupational Classification "SOC";
 }
 
 class ClinicalAnalysisLaboratory{
@@ -103,6 +63,7 @@ Name;
 Address;
 Phone Number;
 TIN number;
+Type of Tests;
 }
 
 class ChemicalLaboratory{
@@ -162,10 +123,41 @@ class AutomaticValidationModule{
 Validation;
 }
 
-class Parameters{
-Value;
+class Parameter{
+Short Name;
+Code;
+Description;
 }
 
+class ParameterCategory{
+Designation;
+Code;
+}
+class Employee{
+Employee ID;
+Organization Role;
+Name;
+Address;
+Phone Number;
+E-Mail;
+Standard Occupational Classification "SOC";
+}
+
+
+Administrator "1" -- "1" ClinicalAnalysisLaboratory : register a new >
+ClinicalAnalysisLaboratory "1" -- "*" TypeTest : operates >
+Company "1" -- "*" Employee: employs >
+Employee "1" -- "1" Administrator: can be a >
+Employee "1" -- "1" ClinicalChemistryTechnologist: can be a >
+Employee "1" -- "1" LaboratoryCoordinator: can be a >
+Employee "1" -- "1" MedicalLabTechnician: can be a >
+Employee "1" -- "1" Receptionist: can be a >
+Employee "1" -- "1" SpecialistDoctor: can be a >
+Administrator "1" -- "1" Employee: register >
+Company "1" -- "*" ParameterCategory : adopts >
+Parameter "1" -- "1" ParameterCategory : has a >
+Administrator "1" -- "1" ParameterCategory : creates >
+Administrator "1" -- "1" ParameterCategory : creates >
 AutomaticValidationModule "1" -- "1" Results : Validate >
 ChemicalAnalysis "*" -- "1" ChemicalLaboratory : take place in >
 ChemicalLaboratory "1" -- "1" CompanyHeadquarters: is located in >
@@ -174,13 +166,7 @@ ClinicalChemistryTechnologist "*" -- "1" ChemicalLaboratory : works on >
 ClinicalChemistryTechnologist "1" -- "1" Results : records >
 ClinicalChemistryTechnologist "1" -- "1" Sample : analyse >
 Company "1" - "1" Covid19Report: sends to NHS >
-Company "1" -- "*" Administrator: employs >
 Company "1" -- "*" ClinicalAnalysisLaboratory: owns >
-Company "1" -- "*" ClinicalChemistryTechnologist: employs >
-Company "1" -- "*" LaboratoryCoordinator: employs >
-Company "1" -- "*" MedicalLabTechnician: employs >
-Company "1" -- "*" Receptionist: employs  >
-Company "1" -- "*" SpecialistDoctor: employs >
 Company "1" -- "1" ChemicalLaboratory: owns >
 Company "1" -- "1" CompanyHeadquarters: owns >
 LaboratoryCoordinator "1" -- "*" Report: verifies >
@@ -198,9 +184,9 @@ Sample "1" -- "1" BarcodeExternalAPI : is identified using >
 Sample "1" -- "1" Test : is used in >
 SpecialistDoctor "1" -- "1" Report: writes >
 SpecialistDoctor "1" -- "1" Results: analyse >
-Test "1" -- "*" Parameters : has >
+Test "1" -- "*" Parameter : has >
 TypeSample "1" -- "1" Sample: has a <
-TypeTest "*" -- "*" Test : as a <
+TypeTest "1" -- "*" Test : as a <
 
 
 

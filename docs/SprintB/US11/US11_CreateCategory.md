@@ -1,4 +1,4 @@
-# US 011 - To create a Task
+# US 011 - Create a Category
 
 ## 1. Requirements Engineering
 
@@ -22,16 +22,13 @@ As an administrator, I want to specify a new parameter category.
 > **Answer:**
 > Each category has a name and a unique code. There are no subcategories
 
-> **Question:**
->
-> **Answer:**
+
+
 
 ### 1.3. Acceptance Criteria
 
-- **AC1:** Code must be unique having 4 to 8 chars. ?????
-- **AC2:** Description cannot be empty and has, at maximum, 40 chars. ?????
-- **AC3:** The Code must be unique.
-
+- **AC1:** The Code must be unique.
+- **AC2:** 
 ### 1.4. Found out Dependencies
 
 - No dependencies were found.
@@ -41,7 +38,6 @@ As an administrator, I want to specify a new parameter category.
 **Input Data:**
 
 - Typed data:
-
   - a code,
   - a name,
 
@@ -60,7 +56,7 @@ As an administrator, I want to specify a new parameter category.
  
 ### 1.7 Other Relevant Remarks
 
-- The created task stays in a "not published" state in order to distinguish from "published" tasks.
+- 
 
 ## 2. OO Analysis
 
@@ -76,17 +72,17 @@ n/a
  
 ### 3.1. Rationale
 
-| Interaction ID                                      | Question: Which class is responsible for...                              | Answer                    | Justification (with patterns)                                                                                 |
-| :-------------------------------------------------- | :----------------------------------------------------------------------- | :-----------------        | :----------------------------------------------------------                                                   |
-| Msg 1: starts new parameter category                | ... instantiating a new Parameter Category?                              | ParameterCategoryStore    | Creator: R1/2 </br> LC & HC: we look to decrease the responsibilities assign to the the Company class in order to go accordingly to GRASP                                                                                                 |
-|                                                     | ... interacting with the actor?                                          | CreateParameterCategoryUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model. |
-|                                                     | ... coordinating the US?                                                 | CreateParameterController | Controller                                                                                                    |
-| Msg 1.1: request data (code, name)                  | n/a                                                                      |                           |                                                                                                               |
-| Msg 2: types requested data                         | ... saving the input data?                                               | Parameter Category        | IE: The object created in step 1 has its own data.                                                            |
-| Msg 2.2: shows the data and requests a confirmation | ... validating the data locally (e.g.: mandatory vs.non-mandatory data)? | Parameter Category        | IE: knows its own data.                                                                                       |
-|                                                     | ... validating the data globally (e.g.: duplicated)?                     | ParameterCategoryStore    | IE: knows/has all the ParameterCategory objects                                                                               |
-| Msg 3: confirms the data                            | ... saving the created parameter category?                               | Company                   | IE: knows its own data (e.g. email)                                                                           |
-| Msg 3.2: informs operation success                  | ... informing operation success?                                         | UI                        | IE: responsible for user interaction                                                                          |
+| Interaction ID                                      | Question: Which class is responsible for...                              | Answer                    | Justification (with patterns)                                                                                                             |
+| :-------------------------------------------------- | :----------------------------------------------------------------------- | :-----------------        | :----------------------------------------------------------                                                                               |
+| Msg 1: starts new parameter category                | ... instantiating a new Parameter Category?                              | ParameterCategoryStore    | Creator: R1/2 </br> LC & HC: we look to decrease the responsibilities assign to the the Company class in order to go accordingly to GRASP |
+|                                                     | ... interacting with the actor?                                          | CreateParameterCategoryUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.                             |
+|                                                     | ... coordinating the US?                                                 | CreateParameterController | Controller                                                                                                                                |
+| Msg 1.1: request data (code, name)                  | n/a                                                                      |                           |                                                                                                                                           |
+| Msg 2: types requested data                         | ... saving the input data?                                               | Parameter Category        | IE: The object created in step 1 has its own data.                                                                                        |
+| Msg 2.2: shows the data and requests a confirmation | ... validating the data locally (e.g.: mandatory vs.non-mandatory data)? | Parameter Category        | IE: knows its own data.                                                                                                                   |
+|                                                     | ... validating the data globally (e.g.: duplicated)?                     | ParameterCategoryStore    | IE: knows/has all the ParameterCategory objects                                                                                           |
+| Msg 3: confirms the data                            | ... saving the created parameter category?                               | ParameterCategoryStore    | IE: records all the ParameterCategory objects                                                                                             |
+| Msg 3.2: informs operation success                  | ... informing operation success?                                         | UI                        | IE: responsible for user interaction                                                                                                      |
 
 #### Systematization
 

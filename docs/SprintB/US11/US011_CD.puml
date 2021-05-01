@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class CreateParameterCategoryUI{
+}
+class CreateParameterCategoryController{
++saveParameterCategory()
++createParameterCategory(code, name)
+}
+class Company{
+-designation
++getParameterCategoryStore()
+}
+class ParameterCategoryStore{
++createParameterCategory(code, name)
++saveParameterCategory(pc)
++validateParameterCategory(pc)
++addParameterCategory(pc)
+}
+
+class ParameterCategory{
+-code
+-name
++ParameterCategory(code,name)
+}
+CreateParameterCategoryUI ..> CreateParameterCategoryController
+CreateParameterCategoryController ..> Company
+CreateParameterCategoryController ..> ParameterCategoryStore
+Company "1" --> "1" ParameterCategoryStore : uses
+ParameterCategoryStore "1" --> "*" ParameterCategory : adopts
+
+@enduml
