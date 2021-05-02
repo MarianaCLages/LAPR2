@@ -80,7 +80,11 @@ As a receptionist of the laboratory, I want to register a client.
 
 * **AC2:** To input the client's sex is optional while all the other fields are mandatory.
 
-* **AC3:** A subset of the attributes of any client are unique.
+* **AC3:** The e-mail address and phone number should be unique for each user
+* **AC4:** Citizen Card number is a 16 digit number.
+* **AC5:** NHS number is a 10 digit number.
+* **AC6:** Date of birth has DD/MM/YY as format.
+* **AC7:** Phone number is a 11 digit number.
 
 ### 1.4. Found out Dependencies
 

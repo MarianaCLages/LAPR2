@@ -1,4 +1,77 @@
 @startuml
+autonumber
+
+actor Receptionist as R
+participant ":RegisterClientUI" as UI
+participant ":RegisterClientController" as CTRL
+participant ":AuthFacade" as Auth
+participant ":UserSession" as User
+participant ":Company" as COMPANY
+participant "c: Client" as C
+
+
+activate R
+R -> UI: asks to register a new client
+activate UI
+
+R <- UI: requests new user's registering data (name, email, password)
+deactivate UI
+R -> UI: types requested data
+activate UI
+UI -> CTRL : addUser(name,email,pwd)
+activate CTRL
+CTRL -> Auth: addUser(name,email,pwd)
+deactivate CTRL
+
+UI --> R: asks Client's login information (email, pwd)
+deactivate UI
+R -> UI: types information
+activate UI
+
+UI -> CTRL : doLogin(email,pwd)
+activate CTRL
+CTRL -> Auth: doLogin(email,pwd)
+activate Auth
+CTRL -> Auth: getCurrentSession()
+deactivate Auth
+CTRL -> User: UserSession(User user)
+activate User
+deactivate User
+deactivate CTRL
+
+deactivate CTRL
+
+
+UI -> CTRL : CreateClient(citizen card number, NHS number, birth date, sex,\n TIF number, phone number, e-mail, name)
+activate CTRL
+CTRL -> COMPANY: CreateClient(citizen card number, NHS number, birth date, sex,\n TIF number, phone number, e-mail, name)
+activate COMPANY
+
+COMPANY -> C: c = Create(citizen card number, NHS number, birth date, sex,\n TIF number, phone number, e-mail, name)
+deactivate COMPANY
+deactivate CTRL
+R <-- UI: Shows data and requests confirmation
+deactivate UI
+R -> UI: confirms data
+activate UI
+UI-> CTRL : saveClient()
+activate CTRL
+CTRL -> COMPANY: saveClient(c)
+activate COMPANY
+COMPANY -> COMPANY : validateClient(c)
+
+COMPANY -> COMPANY : saveClient(c)
+deactivate COMPANY
+deactivate CTRL
+UI -> CTRL : Client create(name, email, password)
+activate CTRL
+CTRL -> COMPANY: Client create(name, email, password)
+deactivate CTRL
+
+UI --> R : Informs operation success
+deactivate CTRL
+deactivate UI
+deactivate R
 
 
 
