@@ -3,16 +3,16 @@
 class Company
 {
   -designation
-  +CreateClinicalAnalysisLab(labID, name, address, phoneNumber, tinNumber)
-  +validateClinicalAnalysisLab(cal)
-  +saveClinicalAnalysisLab(cal)
+  +CreateClinicalAnalysisLab(int labID, string name, string address, int phoneNumber, int tinNumber)
+  +validateClinicalAnalysisLab()
+  +saveClinicalAnalysisLab()
 }
 
 class CreateClinicalAnalysisLabUI {
 }
 
 class CreateClinicalAnalysisLabController {
-    +CreateClinicalAnalysisLab(labID, name, address, phoneNumber, tinNumber)
+    +CreateClinicalAnalysisLab(int labID, string name, string address, int phoneNumber, int tinNumber)
     +setData(TypesTest)
     +saveClinicalAnalysisLab()
 }
@@ -23,8 +23,8 @@ class ClinicalAnalysisLaboratory{
     -address
     -phoneNumber
     -tinNumber
-    +create(labID, name, address, phoneNumber, tinNumber)
-    +setTypeTest(cal)
+    +create(int labID, string name, string address, int phoneNumber, int tinNumber)
+    +setTypeTest()
     +validate()
 }
 

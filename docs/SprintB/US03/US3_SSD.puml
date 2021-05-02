@@ -1,14 +1,30 @@
 @startuml
 'https://plantuml.com/sequence-diagram
+
 autonumber
-actor Receptionist as R
-participant "System" as S
+
+actor "Receptionist" as R
+participant ":System" as S
 activate R
+R -> S: asks to register a new client
 activate S
-R -> S: wants to register a client in the system
-S --> R: requests data (name, citizen card number, \nnational healthcare service number, birth date, sex,\n tax identification number, phone, e-mail)
-R -> S: types requested data
-
+R <- S: requests new user's registering data (name, e-mail, password)
 deactivate S
-
+R -> S: types requested data
+activate S
+S --> R: asks client's login information (e-mail, password)
+deactivate S
+R -> S: types information
+activate S
+R -> S: requests client's registration data (citizen card number, NHS number,\n birth date, sex, TIN number, phone number, e-mail, name)
+deactivate S
+R -> S: types data
+activate S
+S -> R: shows data and requests confirmation
+deactivate S
+R -> S: confirms data
+activate S
+S --> R : informs operation success
+deactivate S
+deactivate R
 @enduml

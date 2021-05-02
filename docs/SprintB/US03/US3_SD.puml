@@ -14,23 +14,23 @@ activate R
 R -> UI: asks to register a new client
 activate UI
 
-R <- UI: requests new user's registering data (name, email, password)
+R <- UI: requests new user's registering data (name, e-mail, password)
 deactivate UI
 R -> UI: types requested data
 activate UI
-UI -> CTRL : addUser(name,email,pwd)
+UI -> CTRL : addUser(name, e-mail, password)
 activate CTRL
-CTRL -> Auth: addUser(name,email,pwd)
+CTRL -> Auth: addUser(name, e-mail, password)
 deactivate CTRL
 
-UI --> R: asks Client's login information (email, pwd)
+UI --> R: asks client's login information (e-mail, password)
 deactivate UI
 R -> UI: types information
 activate UI
 
-UI -> CTRL : doLogin(email,pwd)
+UI -> CTRL : doLogin(e-mail, password)
 activate CTRL
-CTRL -> Auth: doLogin(email,pwd)
+CTRL -> Auth: doLogin(e-mail, password)
 activate Auth
 CTRL -> Auth: getCurrentSession()
 deactivate Auth
@@ -40,19 +40,19 @@ deactivate User
 deactivate CTRL
 
 deactivate CTRL
-UI -> R: requests Client's registration data (citizen card number, NHS number,\n birth date, sex, TIF number, phone number, e-mail, name)
+UI -> R: requests client's registration data (citizen card number, NHS number,\n birth date, sex, TIN number, phone number, e-mail, name)
 deactivate UI
 R -> UI: types data
 activate UI
-UI -> CTRL : CreateClient(citizen card number, NHS number, birth date, sex,\n TIF number, phone number, e-mail, name)
+UI -> CTRL : CreateClient(citizen card number, NHS number, birth date, sex,\n TIN number, phone number, e-mail, name)
 activate CTRL
-CTRL -> COMPANY: CreateClient(citizen card number, NHS number, birth date, sex,\n TIF number, phone number, e-mail, name)
+CTRL -> COMPANY: CreateClient(citizen card number, NHS number, birth date, sex,\n TIN number, phone number, e-mail, name)
 activate COMPANY
 
-COMPANY -> C: c = Create(citizen card number, NHS number, birth date, sex,\n TIF number, phone number, e-mail, name)
+COMPANY -> C: c = Create(citizen card number, NHS number, birth date, sex,\n TIN number, phone number, e-mail, name)
 deactivate COMPANY
 deactivate CTRL
-R <-- UI: Shows data and requests confirmation
+R <-- UI: shows data and requests confirmation
 deactivate UI
 R -> UI: confirms data
 activate UI

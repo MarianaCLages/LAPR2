@@ -1,6 +1,40 @@
 @startuml
 
+class RegisterClientUI{
+}
 
+class RegisterClientController{
+    +addUser(string name, string email, string password)
+    +doLogin(string email, string password)
+    +saveClient()
+    +doLogout()
+}
 
+class AuthFacade{
+    +addUser(string name, string email, string password)
+    +doLogin(string email, string password)
+    +getCurrentSession()
+    +doLogout()
+}
+
+class UserSession{
+    +UserSession(string user)
+}
+
+class Company{
+    +createClient(int cc, int nhs, string birthDate, string sex, int tinNumber, int phoneNumber, string email, string name)
+    +saveClient()
+    +validateClient()
+}
+
+class Client{
+    +createClient(int cc, int nhs, string birthDate, string sex, int tinNumber, int phoneNumber, string email, string name)
+}
+
+RegisterClientUI ..> RegisterClientController
+RegisterClientController ..> AuthFacade
+RegisterClientController ..> UserSession
+RegisterClientController ..> Company
+Company ..> Client
 
 @enduml
