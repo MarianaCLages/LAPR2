@@ -10,13 +10,13 @@ import java.util.List;
  */
 public class ParameterCategoryStore {
     List<ParameterCategory> array;
-    ParameterCategory pc;
+    private ParameterCategory pc;
 
     /**
      * Constructor of the class it creates an empty list to be filled with objects of ParameterCategory
      */
     public ParameterCategoryStore() {
-        this.array = new ArrayList<ParameterCategory>();
+        this.array = new ArrayList<>();
     }
 
     /**
@@ -27,6 +27,7 @@ public class ParameterCategoryStore {
      * @return boolean value that indicates if the object created is valid or not
      */
     public boolean CreateParameterCategory(String code, String name) {
+
         this.pc = new ParameterCategory(code, name);
         if (ValidateParameterCategory(pc)) {
             return true;
@@ -43,10 +44,20 @@ public class ParameterCategoryStore {
      */
 
     public boolean ValidateParameterCategory(ParameterCategory pc) {
-        if (pc == null && !contains(pc)) {
+        if (pc == null || contains(pc) || !uniqueCode(pc)) {
             return false;
         }
         return true;
+    }
+
+    public boolean uniqueCode(ParameterCategory pc){
+        boolean find = true;
+        for (ParameterCategory pc1:array) {
+            if (pc.getCode().equals(pc1.getCode())){
+                find = false;
+            }
+        }
+        return find;
     }
 
     /**
@@ -65,13 +76,12 @@ public class ParameterCategoryStore {
     }
 
     /**
-     * this method is used to save the ParameterCategory object in the arrayList already created, before adding the object teh method validates it
+     * this method is used to save the ParameterCategory object in the arrayList already created, before adding the object the method validates it
      *
-     * @param pc ParameterCategory object
      * @return a boolean value that indicates the success of the operation
      */
-    public boolean saveParameterCategory(ParameterCategory pc) {
-        if (ValidateParameterCategory(pc)) {
+    public boolean saveParameterCategory() {
+        if (ValidateParameterCategory(this.pc)) {
             add(pc);
             return true;
         } else {
@@ -87,15 +97,24 @@ public class ParameterCategoryStore {
      */
 
     public boolean add(ParameterCategory pc) {
-        array.add(pc);
-        return true;
+        return array.add(pc);
     }
 
+    /**
+     * This method search for an Parameter Category object by the index of that object in the ArrayList
+     * @param index index of the array list where we want to get the object
+     * @return the Parameter Category object that was in the index of the array list
+     */
 
     public ParameterCategory get(int index) {
         return array.get(index);
     }
 
+    /**
+     * This method search for an Parameter Category object by the code of that object in the ArrayList
+     * @param code code that characterize the Parameter Category object
+     * @return if the object is found it returns the object, if not it returns null
+     */
 
     public ParameterCategory getByCode(String code) {
         for (ParameterCategory pc : array) {
@@ -106,14 +125,7 @@ public class ParameterCategoryStore {
         return null;
     }
 
-    public ParameterCategory getByName(String name) {
-        for (ParameterCategory pc : array) {
-            if (pc.getName().equals(name)) {
-                return pc;
-            }
-        }
-        return null;
-    }
+
 
     public String toString() {
         StringBuilder listString = new StringBuilder();

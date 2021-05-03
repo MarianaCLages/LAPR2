@@ -68,10 +68,9 @@ CTRL -> PARAMETERSTORE : pa = createParameter(code,shortName,description,Categor
 
 activate PARAMETERSTORE
 
-PARAMETERSTORE -> PARAMETER : pa = Parameter(code,shortName,description,Category)
+PARAMETERSTORE -> PARAMETER ** : pa = Parameter(code,shortName,description,Category)
 
-activate PARAMETER
-deactivate PARAMETER
+
 deactivate PARAMETERSTORE
 CTRL -> PARAMETERSTORE : validateParameter(pa)
 activate PARAMETERSTORE

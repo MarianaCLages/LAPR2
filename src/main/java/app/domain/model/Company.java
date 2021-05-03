@@ -40,22 +40,4 @@ public class Company {
         return this.parameterCategoryList = new ParameterCategoryStore();
     }
 
-/*    public static ParameterCategory createParameterCategory(String code, String name) {
-        ParameterCategoryStore list = new ParameterCategoryStore();
-        return ParameterCategoryStore.CreateParameterCategory(code, name);
-    }
-
-    public boolean validateParameterCategory(ParameterCategory pc) {
-        if (pc == null)
-            return false;
-        return (!this.parameterCategoryList.contains(pc));
-    }
-
-    public boolean saveParameterCategory(ParameterCategory pc) {
-        if (!validateParameterCategory(pc))
-            return false;
-        return this.parameterCategoryList.add(pc);
-    }
-
- */
 }

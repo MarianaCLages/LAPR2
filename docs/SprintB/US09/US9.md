@@ -95,14 +95,14 @@ No dependencies found.
 
 **The rationale grounds on the SSD interactions and the identified input/output data.**
 
-| Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
-|:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1  		 |							 |             |                              |
-| Step 2  		 |							 |             |                              |
-| Step 3  		 |							 |             |                              |
-| Step 4  		 |							 |             |                              |
-| Step 5  		 |							 |             |                              |
-| Step 6  		 |							 |             |                              |              
+| Interaction ID | Question: Which class is responsible for... | Answer        | Justification (with patterns) |
+| :------------- | :---------------------                      | :------------ | :---------------------------- |
+| Step 1         |                                             |               |                               |
+| Step 2         |                                             |               |                               |
+| Step 3         |                                             |               |                               |
+| Step 4         |                                             |               |                               |
+| Step 5         |                                             |               |                               |
+| Step 6         |                                             |               |                               |
 
 ### Systematization ##
 
