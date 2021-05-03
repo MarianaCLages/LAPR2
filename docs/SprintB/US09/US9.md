@@ -50,7 +50,13 @@ As an administrator, I want to specify a new type of test and its collecting met
 - **AC3:** Category has a name and a unique code.
 
 ### 1.4. Found out Dependencies
-No dependencies found.
+
+There is a dependecy to "US10: As an administrator, I want to specify a new parameter and categorize it." 
+since each test type should have a set of categories.
+
+
+
+
 ### 1.5 Input and Output Data
 **Input Data:**
 

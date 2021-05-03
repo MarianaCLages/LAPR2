@@ -1,5 +1,85 @@
 @startuml
+autonumber
+actor Administrator as A
+participant ":CreateTestTypeUI" as UI
+participant ":CreateTestTypeController" as CTRL
+participant ":Company" as C
 
+participant "tType:TestTypeStore" as STO
+participant "t:Test Type" as T
+participant "store: ParameterCategoryStore" as CAT
+
+activate A
+A -> UI: wants to specify a new type of test
+activate UI
+UI --> A: requests data (testID, collectingMethod, description)
+deactivate UI
+A -> UI: types requested data
+activate UI
+UI -> CTRL: CreateTestType(testID, collectingMethod, description)
+activate CTRL
+CTRL -> C: CreateTestType(testID, collectingMethod, description)
+activate C
+C -> STO: t = Create(testID, collectingMethod, description)
+activate STO
+STO-> T: t = Create(testID, collectingMethod, description)
+activate T
+deactivate T
+deactivate STO
+deactivate C
+deactivate CTRL
+
+loop
+UI -> CTRL: getCategoryList()
+activate CTRL
+CTRL -> C : pcList = getCategoryList()
+activate C
+C->CAT: pcList = getCategoryList()
+activate CAT
+deactivate CAT
+deactivate C
+deactivate CTRL
+UI --> A: shows parameter category list and asks to select
+deactivate UI
+A -> UI: selects
+activate UI
+end
+UI -> CTRL: setCategory()
+activate CTRL
+CTRL -> STO: c = setCategory()
+activate STO
+STO -> T: c = setCategory()
+activate T
+deactivate T
+deactivate STO
+deactivate C
+CTRL -> STO: validateClinicalAnalysisLab(cal)
+activate STO
+STO -> T : validate()
+activate T
+deactivate T
+deactivate STO
+deactivate CTRL
+
+UI --> A: shows all data and requestes confirmation
+deactivate UI
+
+A -> UI: confirms the data
+activate UI
+UI-> CTRL : saveTestType()
+activate CTRL
+CTRL -> STO: saveTestType(t)
+activate STO
+STO -> STO : saveTestType(t)
+activate STO
+deactivate STO
+STO -> STO : saveTestType(t)
+activate STO
+deactivate STO
+deactivate STO
+UI --> A: informs operation success
+deactivate UI
+deactivate A
 
 
 @enduml

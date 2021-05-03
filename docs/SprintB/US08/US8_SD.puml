@@ -7,7 +7,7 @@ participant ":CreateClinicalAnalysisLabController" as CTRL
 participant ":Company" as C
 participant "store: ClinicalAnalysisLabStore" as STO
 participant "cal: ClinicalAnalysisLaboratory" as CAL
-participant "tType:TestType" as TT
+participant "tType:TestTypeStore" as TT
 
 activate A
 A -> UI: wants to register a new clinical analysis laboratory
