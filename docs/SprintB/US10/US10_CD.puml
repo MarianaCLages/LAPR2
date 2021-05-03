@@ -31,7 +31,7 @@ class ParameterStore{
 
 class Parameter{
 -code: String
--shortName: String
+-name: String
 -description: String
 -Cat: Category
 +Parameter()

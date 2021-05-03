@@ -18,7 +18,7 @@ activate UI
 
 
 
-UI --> Administrator :requests ParameterData (code, description, NHSid)
+UI --> Administrator :requests ParameterData (code, name, description)
 deactivate UI
 
 
@@ -64,11 +64,11 @@ activate CTRL
 CTRL -> COMPANY : pStore = getParameterStore
 activate COMPANY
 deactivate COMPANY
-CTRL -> PARAMETERSTORE : pa = createParameter(code,shortName,description,Category)
+CTRL -> PARAMETERSTORE : pa = createParameter(code, name,description,category)
 
 activate PARAMETERSTORE
 
-PARAMETERSTORE -> PARAMETER ** : pa = Parameter(code,shortName,description,Category)
+PARAMETERSTORE --> PARAMETER **: pa = Parameter(code,name,description,category)
 
 
 deactivate PARAMETERSTORE
@@ -88,8 +88,11 @@ CTRL -> PARAMETERSTORE : saveParameter(pa)
 deactivate CTRL
 activate PARAMETERSTORE
 PARAMETERSTORE -> PARAMETERSTORE : validateParameter(pa)
+activate PARAMETERSTORE
+deactivate PARAMETERSTORE
 PARAMETERSTORE -> PARAMETERSTORE : saveParameter(pa)
-
+activate PARAMETERSTORE
+deactivate PARAMETERSTORE
 
 UI --> Administrator : Informs operation success
 deactivate UI

@@ -14,6 +14,7 @@ public class Company {
     private AuthFacade authFacade;
 
     private ParameterCategoryStore parameterCategoryList;
+    private ParameterStore parameterList;
 
     public Company(String designation) {
         if (StringUtils.isBlank(designation))
@@ -38,6 +39,10 @@ public class Company {
 
     public ParameterCategoryStore getParameterCategoryList() {
         return this.parameterCategoryList = new ParameterCategoryStore();
+    }
+
+    public ParameterStore getParameterList() {
+        return this.parameterList = new ParameterStore();
     }
 
 }
