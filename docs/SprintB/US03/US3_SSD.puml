@@ -15,11 +15,11 @@ S --> R: requests Client's registration data (citizen card number, NHS number,\n
 deactivate S
 R -> S: types data
 activate S
-R <-- S: Shows data and requests confirmation
+R <-- S: shows data and requests confirmation
 deactivate S
 R -> S: confirms data
 activate S
-S --> R : Informs operation success
+S --> R : informs operation success
 deactivate S
 deactivate R
 

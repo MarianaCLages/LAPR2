@@ -2,35 +2,49 @@
 
 class Company
 {
-  -designation
-  +CreateClinicalAnalysisLab(int labID, string name, string address, int phoneNumber, int tinNumber)
-  +validateClinicalAnalysisLab()
-  +saveClinicalAnalysisLab()
+  - designation
+  + getStore()
 }
 
 class CreateClinicalAnalysisLabUI {
 }
 
 class CreateClinicalAnalysisLabController {
-    +CreateClinicalAnalysisLab(int labID, string name, string address, int phoneNumber, int tinNumber)
-    +setData(TypesTest)
-    +saveClinicalAnalysisLab()
+    + getStore()
+    + CreateClinicalAnalysisLab(int labID, string name, string address, int phoneNumber, int tinNumber)
+    + getTestTypeList()
+    + setData()
+    + saveClinicalAnalysisLab()
 }
 
 class ClinicalAnalysisLaboratory{
-    -labID
-    -name
-    -address
-    -phoneNumber
-    -tinNumber
-    +create(int labID, string name, string address, int phoneNumber, int tinNumber)
-    +setTypeTest()
-    +validate()
+    - labID
+    - name
+    - address
+    - phoneNumber
+    - tinNumber
+    + setTypeTest()
+    + validate()
+}
+
+class ClinicalAnalysisLaboratoryStore{
+    + CreateClinicalAnalysisLab(int labID, string name, string address, int phoneNumber, int tinNumber)
+    + validateClinicalAnalysisLab()
+    + getTestTypeList()
+    + setTypeTest()
+    + validateClinicalAnalysisLab()
+    + saveClinicalAnalysisLac()
+}
+
+class TestTypeStore{
+    + getTestTypeList()
 }
 
 CreateClinicalAnalysisLabUI ..> CreateClinicalAnalysisLabController
 CreateClinicalAnalysisLabController ..> Company
-CreateClinicalAnalysisLabController ..> ClinicalAnalysisLaboratory
-Company ..> ClinicalAnalysisLaboratory: creates
+CreateClinicalAnalysisLabController ..> ClinicalAnalysisLaboratoryStore
+Company ..> ClinicalAnalysisLaboratoryStore: creates
+ClinicalAnalysisLaboratoryStore ..> ClinicalAnalysisLaboratory: creates
+ClinicalAnalysisLaboratoryStore ..> TestTypeStore
 
 @enduml

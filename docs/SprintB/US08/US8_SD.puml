@@ -80,7 +80,7 @@ activate STO
 STO -> STO : validateClinicalAnalysisLab(cal)
 activate STO
 deactivate STO
-STO -> STO : saveClinicalAnalysisLac(cal)
+STO -> STO : saveClinicalAnalysisLab(cal)
 activate STO
 deactivate STO
 deactivate STO

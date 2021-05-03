@@ -15,7 +15,7 @@ deactivate S
 A -> S: selects
 end
 activate S
-S --> A: shows all data and requestes confirmation
+S --> A: shows all data and requests confirmation
 deactivate S
 A -> S: confirms the data
 activate S
