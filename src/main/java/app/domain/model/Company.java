@@ -3,6 +3,8 @@ package app.domain.model;
 import auth.AuthFacade;
 import org.apache.commons.lang3.StringUtils;
 
+import javax.management.relation.Role;
+import javax.management.relation.RoleList;
 import java.util.List;
 
 /**
@@ -44,5 +46,6 @@ public class Company {
     public ParameterStore getParameterList() {
         return this.parameterList = new ParameterStore();
     }
+
 
 }

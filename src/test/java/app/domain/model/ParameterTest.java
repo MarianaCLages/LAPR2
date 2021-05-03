@@ -27,6 +27,12 @@ public class ParameterTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
+    public void CreateInvalidNameParameterTestWithnum() {
+        //Arrange + Act
+        Parameter parameter = new Parameter("A1234", "Lol1", "another one", cat);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
     public void CreateInvalidDescriptionParameterTestOver20char() {
         //Arrange + Act
         Parameter parameter = new Parameter("A1234", "SUP", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", cat);

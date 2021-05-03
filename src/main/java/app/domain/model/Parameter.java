@@ -48,7 +48,18 @@ public class Parameter {
             throw new IllegalArgumentException("Name cannot be blank.");
         if (name.length() > 8)
             throw new IllegalArgumentException("Name must have 8 chars.");
+
+
+        name = name.toLowerCase();
+        char[] charArray = name.toCharArray();
+        for (int i = 0; i < charArray.length; i++) {
+            char c = charArray[i];
+            if (!(c >= 'a' && c <= 'z')) {
+                throw new IllegalArgumentException("Name only accepts letters");
+            }
+        }
     }
+
 
     private void checkDescriptionRules(String description) {
         if (StringUtils.isBlank(description))
