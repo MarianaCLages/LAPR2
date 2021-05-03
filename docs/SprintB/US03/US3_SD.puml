@@ -7,52 +7,65 @@ participant ":RegisterClientController" as CTRL
 participant ":AuthFacade" as Auth
 participant ":UserSession" as User
 participant ":Company" as COMPANY
-participant "c: Client" as C
-
+participant "store:ClientStore" as S
+participant ": Client" as C
+participant ":RoleStore" as RoleStore
 
 activate R
 R -> UI: asks to register a new client
 activate UI
 
-R <- UI: requests new user's registering data (name, e-mail, password)
-deactivate UI
-R -> UI: types requested data
-activate UI
-UI -> CTRL : addUser(name, e-mail, password)
+
+
+
+
+UI -> CTRL : getRoleList()
+
 activate CTRL
-CTRL -> Auth: addUser(name, e-mail, password)
-deactivate CTRL
+CTRL -> COMPANY : catList = getRoleList()
 
-UI --> R: asks client's login information (e-mail, password)
+activate COMPANY
+
+COMPANY -> RoleStore : catList = getRoleList()
+activate RoleStore
+deactivate RoleStore
+deactivate COMPANY
+deactivate CTRL
+UI --> R: asks to select role
 deactivate UI
-R -> UI: types information
+R -> UI: selects role
+
 activate UI
 
-UI -> CTRL : doLogin(e-mail, password)
-activate CTRL
-CTRL -> Auth: doLogin(e-mail, password)
-activate Auth
-CTRL -> Auth: getCurrentSession()
-deactivate Auth
-CTRL -> User: UserSession(User user)
-activate User
-deactivate User
-deactivate CTRL
 
-deactivate CTRL
-UI -> R: requests client's registration data (citizen card number, NHS number,\n birth date, sex, TIN number, phone number, e-mail, name)
+
+
+UI --> R: requests Client's registration data (citizen card number, NHS number,\n birth date, sex, TIF number, phone number, e-mail, name)
+
 deactivate UI
 R -> UI: types data
 activate UI
-UI -> CTRL : CreateClient(citizen card number, NHS number, birth date, sex,\n TIN number, phone number, e-mail, name)
+UI -> CTRL : getStore()
 activate CTRL
-CTRL -> COMPANY: CreateClient(citizen card number, NHS number, birth date, sex,\n TIN number, phone number, e-mail, name)
+CTRL -> COMPANY: store = getStore()
 activate COMPANY
+COMPANY --> S: create
+activate S
+deactivate S
 
-COMPANY -> C: c = Create(citizen card number, NHS number, birth date, sex,\n TIN number, phone number, e-mail, name)
 deactivate COMPANY
+CTRL <- UI: CreateClient(citizen card number, NHS number, birth date, sex,\n TIF number, phone number, e-mail, name)
+CTRL -> S:CreateClient(citizen card number, NHS number, birth date, sex,\n TIF number, phone number, e-mail, name)
+activate S
+S -> C: c =Client(citizen card number, NHS number, birth date, sex,\n TIF number, phone number, e-mail, name)
+activate C
+deactivate C
+deactivate S
+
+
 deactivate CTRL
-R <-- UI: shows data and requests confirmation
+
+R <-- UI: Shows data and requests confirmation
 deactivate UI
 R -> UI: confirms data
 activate UI
@@ -69,11 +82,7 @@ deactivate COMPANY
 deactivate COMPANY
 deactivate CTRL
 
-deactivate CTRL
-UI -> CTRL: doLogout()
-activate CTRL
-CTRL -> Auth: doLogout()
-deactivate CTRL
+
 UI --> R : Informs operation success
 deactivate CTRL
 deactivate UI
