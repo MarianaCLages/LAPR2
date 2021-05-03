@@ -2,10 +2,10 @@
 
 autonumber
 actor Administrator as A
-participant "System" as S
+participant ":System" as S
 activate A
-activate S
 A -> S: wants to register a new clinical analysis laboratory
+activate S
 S --> A: requests data (laboratory ID, name, address,\n phone number, TIN number)
 deactivate S
 A -> S: types requested data

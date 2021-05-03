@@ -30,9 +30,8 @@ UI -> CTRL : CreateClinicalAnalysisLab(labID, name, address, phoneNumber, tinNum
 activate CTRL
 CTRL -> STO: cal = CreateClinicalAnalysisLab(labID, name, address, phoneNumber, tinNumber)
 activate STO
-STO -> CAL : create(labID, name, address, phoneNumber, tinNumber)
-activate CAL
-deactivate CAL
+STO --> CAL** : create(labID, name, address, phoneNumber, tinNumber)
+
 deactivate STO
 CTRL -> STO: validateClinicalAnalysisLab(cal)
 activate STO
@@ -76,15 +75,15 @@ A -> UI: confirms the data
 activate UI
 UI-> CTRL : saveClinicalAnalysisLab()
 activate CTRL
-CTRL -> C: saveClinicalAnalysisLab(cal)
-activate C
-C -> C : validateClinicalAnalysisLab(cal)
-activate C
-deactivate C
-C -> C : saveClinicalAnalysisLac(cal)
-activate C
-deactivate C
-deactivate C
+CTRL -> STO: saveClinicalAnalysisLab(cal)
+activate STO
+STO -> STO : validateClinicalAnalysisLab(cal)
+activate STO
+deactivate STO
+STO -> STO : saveClinicalAnalysisLac(cal)
+activate STO
+deactivate STO
+deactivate STO
 UI --> A : Informs operation success
 deactivate CTRL
 deactivate UI

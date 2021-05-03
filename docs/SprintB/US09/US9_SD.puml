@@ -32,12 +32,9 @@ deactivate CTRL
 loop
 UI -> CTRL: getCategoryList()
 activate CTRL
-CTRL -> C : pcList = getCategoryList()
-activate C
-C->CAT: pcList = getCategoryList()
+CTRL -> CAT : pcList = getCategoryList()
 activate CAT
 deactivate CAT
-deactivate C
 deactivate CTRL
 UI --> A: shows parameter category list and asks to select
 deactivate UI
@@ -70,7 +67,7 @@ UI-> CTRL : saveTestType()
 activate CTRL
 CTRL -> STO: saveTestType(t)
 activate STO
-STO -> STO : saveTestType(t)
+STO -> STO : validateTestType(t)
 activate STO
 deactivate STO
 STO -> STO : saveTestType(t)

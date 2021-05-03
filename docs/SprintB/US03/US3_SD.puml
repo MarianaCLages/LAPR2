@@ -49,17 +49,13 @@ UI -> CTRL : getStore()
 activate CTRL
 CTRL -> COMPANY: store = getStore()
 activate COMPANY
-COMPANY --> S: create
-activate S
-deactivate S
-
+COMPANY --> S**: create
 deactivate COMPANY
 CTRL <- UI: CreateClient(citizen card number, NHS number, birth date, sex,\n TIF number, phone number, e-mail, name)
 CTRL -> S:CreateClient(citizen card number, NHS number, birth date, sex,\n TIF number, phone number, e-mail, name)
 activate S
-S -> C: c =Client(citizen card number, NHS number, birth date, sex,\n TIF number, phone number, e-mail, name)
-activate C
-deactivate C
+S --> C**: c =Client(citizen card number, NHS number, birth date, sex,\n TIF number, phone number, e-mail, name)
+
 deactivate S
 
 
@@ -71,17 +67,24 @@ R -> UI: confirms data
 activate UI
 UI-> CTRL : saveClient()
 activate CTRL
-CTRL -> COMPANY: saveClient(c)
-activate COMPANY
-COMPANY -> COMPANY : validateClient(c)
-activate COMPANY
-deactivate COMPANY
-COMPANY -> COMPANY : saveClient(c)
-activate COMPANY
-deactivate COMPANY
-deactivate COMPANY
+CTRL -> S: saveClient(c)
+activate S
+S -> S : validateClient(c)
+activate S
+deactivate S
+S -> S : saveClient(c)
+activate S
+deactivate S
+deactivate S
 deactivate CTRL
 
+UI -> CTRL : addUserWithRole(name, email, password)
+activate CTRL
+
+CTRL -> S: existsUser(email)
+activate S
+CTRL -> S: addUserWithRole(name, email, password)
+deactivate S
 
 UI --> R : Informs operation success
 deactivate CTRL
