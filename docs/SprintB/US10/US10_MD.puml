@@ -21,12 +21,11 @@ class Parameter{
 name
 code
 description
-NHS identified
 }
 
 class Category{
 name
-Code
+code
 }
 
 

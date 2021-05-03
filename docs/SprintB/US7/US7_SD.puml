@@ -112,12 +112,18 @@ EmployeeStore -> EmployeeStore : saveEmployee(em)
 
 ' -------- Register --------
 
-UI -> CTRL : User create(name, email, password)
+UI -> CTRL : addUserWithRole(name, email, password)
 
-CTRL -> UserStore: createUser(name,email,password)
 
+
+CTRL -> UserStore: existsUser(email)
 activate UserStore
-deactivate UserStore
+CTRL -> UserStore: addUserWithRole(name, email, password)
+
+
+
+
+
 
 
 
@@ -134,6 +140,7 @@ UI --> A : Informs operation success
 
 
 
+deactivate UserStore
 
 
 

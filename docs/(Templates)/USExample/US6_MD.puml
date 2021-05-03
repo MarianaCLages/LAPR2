@@ -43,7 +43,7 @@ class User {
   -password
 }
 
-Platform "1" -- "*" Organization : has registered >
+Platform "1" --  "*" Organization : has registered >
 Platform "1" -- "*" Category : defines >
 Organization "1" -- "1..*" Employee : has >
 Organization "1" -- "*" Task: owns >
