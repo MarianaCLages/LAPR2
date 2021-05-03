@@ -4,8 +4,8 @@ autonumber
 actor Administrator as A
 participant ":RegisterEmployeeUI" as UI
 participant ":RegisterEmployeeController" as CTRL
-participant ":AuthFacade" as Auth
-participant ":UserSession" as User
+'participant ":AuthFacade" as Auth
+'participant ":UserSession" as User
 participant ":UserStore" as UserStore
 participant ":Company" as COMPANY
 participant ":EmployeeStore" as EmployeeStore
@@ -19,7 +19,7 @@ activate A
 A -> UI: ask to register a new employee
 activate UI
 
-' -------- Login --------
+/' -------- Login --------
 
 UI -> CTRL : doLogin(email,password)
 activate CTRL
@@ -31,9 +31,10 @@ CTRL -> User: UserSession(User user)
 activate User
 deactivate User
 deactivate CTRL
+'/
 
 
-' -------- Login --------
+
 deactivate CTRL
 
 UI -> CTRL : getRoleList()
@@ -76,7 +77,7 @@ CTRL -> EmployeeStore: CreateEmployee(Name, Address, Phone Number, E-Mail,  "SOC
 
 activate EmployeeStore
 
-EmployeeStore -> Employee : CreateEmployee(Name, Address, Phone Number, E-Mail,  "SOC", Role)
+EmployeeStore -> Employee : emp = Employee(Name, Address, Phone Number, E-Mail,  "SOC", Role)
 
 activate Employee
 deactivate Employee
@@ -96,7 +97,7 @@ UI --> A : shows all data and requests confirmation
 
 A -> UI : confirms the data
 
-UI-> CTRL : saveParameter()
+UI-> CTRL : saveEmployee(em)
 
 CTRL -> EmployeeStore : saveEmployee(em)
 activate EmployeeStore
@@ -113,7 +114,7 @@ EmployeeStore -> EmployeeStore : saveEmployee(em)
 
 UI -> CTRL : User create(name, email, password)
 
-CTRL -> UserStore: User create(name, email, password)
+CTRL -> UserStore: createUser(name,email,password)
 
 activate UserStore
 deactivate UserStore

@@ -141,7 +141,6 @@
 | :-------------                                                              | :---------------------                                                | :------------              | :----------------------------                                                                                 |
 | Step 1: ask to create a new employee                                        | ... coordinating the US?                                              | RegisterEmployeeController | Controller                                                                                                    |
 |                                                                             | ... interacting with the actor?                                       | RegisterEmployeeUI         | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model. |
-|                                                                             | ... authenticate the actor?                                           | UserSession                | IE: cf. A&A component documentation                                                                           |
 |                                                                             | ... instantiating a employee?                                         | EmployeeStore              | Creator <br> LC & HC: we look to decrease the responsibilities assign to the the Company class                |
 | Step 2: show role list                                                      | ... knowing the roles to show?                                        | RoleStore                  | IE: the roles are defined by the RoleStore.                                                                   |
 | Step 3: select a role                                                       | ...saving the selected role?                                          | Employee                   | IE: employee registered in step 1 is classified in one role.                                                  |
@@ -162,19 +161,20 @@
 
 According to the taken rationale, the conceptual classes promoted to software classes are:
 
-* Class1
-* Class2
-* Class3
+* Employee
+* Subclasses to Employee (ClinicalChemistryTechnologist; MedicalLabTechnician; LaboratoryCoordinator; Receptionist; SpecialistDoctor)
 
 Other software classes (i.e. Pure Fabrication) identified:
-* xxxxUI
-* xxxxController
+* RegisterEmployeeUI
+* RegisterEmployeeController
+* EmployeeStore
+* RoleStore
 
 ## 3.2. Sequence Diagram (SD)
 
 *In this section, it is suggested to present an UML dynamic view stating the sequence of domain related software objects' interactions that allows to fulfill the requirement.*
 
-![USXX-SD](USXX-SD.svg)
+![US07_SD](US7_SD.svg)
 
 ## 3.3. Class Diagram (CD)
 
@@ -209,8 +209,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 # 7. Observations
 
-*In this section, it is suggested to present a critical perspective on the developed work, pointing, for example, to other alternatives and or future related work.*
-
+After analysing the code made available by the teacher in the base repository we realized that in order to access the UI that makes possible to the administrator select the operation he wants to use he already needs to be authenticated in the system therefore there is no need to referer to it in our artifacts. 
 
 
 

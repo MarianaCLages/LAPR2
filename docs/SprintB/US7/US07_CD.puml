@@ -1,0 +1,74 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class RegisterEmployeeUI{
+}
+class RegisterEmployeeController{
++getRoleList()
++CreateEmployee(name,addresses,phoneNumber,email,soc,role)
++CreateEmployee(name,addresses,phoneNumber,email,soc,role,docInNum)
++saveEmployee(em)
++createUser(name,email,password)
+}
+
+class UserStore{
++createUser(name,email,password)
+}
+
+class Company{
++getRoleList()
++getEmployeeStore()
+}
+
+class EmployeeStore{
++CreateEmployee(name,addresses,phoneNumber,email,soc,role)
++CreateEmployee(name,addresses,phoneNumber,email,soc,role,docInNum)
++validateEmployee(em)
++saveEmployee(em)
+-validateEmployee(em)
+}
+
+class Employee{
+-name: String
+-address: String
+-phoneNumber: int
+-email: String
+-soc: int
++Employee(name,addresses,phoneNumber,email,soc,role)
++Employee(name,addresses,phoneNumber,email,soc,role,docInNum)
+}
+class RoleStore{
++getRoleList()
+}
+
+class ClinicalChemistryTechnologist{
+}
+class MedicalLabTechnician{
+}
+class LaboratoryCoordinator{
+}
+class Receptionist{
+}
+class SpecialistDoctor{
+-docInNum: int
+}
+class Administrator{
+}
+RegisterEmployeeController ..> EmployeeStore
+RegisterEmployeeUI ..> RegisterEmployeeController
+RegisterEmployeeController ..> Company
+Company ..> RoleStore
+Company --> Employee
+Company ..> UserStore
+Company ..> EmployeeStore
+EmployeeStore ..> Employee
+SpecialistDoctor --|> Employee
+ClinicalChemistryTechnologist --|> Employee
+MedicalLabTechnician --|> Employee
+LaboratoryCoordinator --|> Employee
+Receptionist --|> Employee
+Administrator --|> Employee
+
+
+
+@enduml

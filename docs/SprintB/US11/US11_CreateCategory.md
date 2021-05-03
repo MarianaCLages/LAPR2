@@ -28,7 +28,7 @@ As an administrator, I want to specify a new parameter category.
 ### 1.3. Acceptance Criteria
 
 - **AC1:** The Code must be unique.
-- **AC2:** 
+- **AC2:** Code must be between 5 and 8 characters
 ### 1.4. Found out Dependencies
 
 - No dependencies were found.
@@ -77,12 +77,12 @@ n/a
 | Msg 1: starts new parameter category                | ... instantiating a new Parameter Category?                              | ParameterCategoryStore    | Creator: R1/2 </br> LC & HC: we look to decrease the responsibilities assign to the the Company class in order to go accordingly to GRASP |
 |                                                     | ... interacting with the actor?                                          | CreateParameterCategoryUI | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model.                             |
 |                                                     | ... coordinating the US?                                                 | CreateParameterController | Controller                                                                                                                                |
-| Msg 1.1: request data (code, name)                  | n/a                                                                      |                           |                                                                                                                                           |
-| Msg 2: types requested data                         | ... saving the input data?                                               | Parameter Category        | IE: The object created in step 1 has its own data.                                                                                        |
-| Msg 2.2: shows the data and requests a confirmation | ... validating the data locally (e.g.: mandatory vs.non-mandatory data)? | Parameter Category        | IE: knows its own data.                                                                                                                   |
+| Msg 2: request data (code, name)                  | n/a                                                                      |                           |                                                                                                                                           |
+| Msg 3: types requested data                         | ... saving the input data?                                               | Parameter Category        | IE: The object created in step 1 has its own data.                                                                                        |
+| Msg 4: shows the data and requests a confirmation | ... validating the data locally (e.g.: mandatory vs.non-mandatory data)? | Parameter Category        | IE: knows its own data.                                                                                                                   |
 |                                                     | ... validating the data globally (e.g.: duplicated)?                     | ParameterCategoryStore    | IE: knows/has all the ParameterCategory objects                                                                                           |
-| Msg 3: confirms the data                            | ... saving the created parameter category?                               | ParameterCategoryStore    | IE: records all the ParameterCategory objects                                                                                             |
-| Msg 3.2: informs operation success                  | ... informing operation success?                                         | UI                        | IE: responsible for user interaction                                                                                                      |
+| Msg 5: confirms the data                            | ... saving the created parameter category?                               | ParameterCategoryStore    | IE: records all the ParameterCategory objects                                                                                             |
+| Msg 6: informs operation success                  | ... informing operation success?                                         | UI                        | IE: responsible for user interaction                                                                                                      |
 
 #### Systematization
 
@@ -99,14 +99,12 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ### 3.2. Sequence Diagram (SD)
  
-**Alternative 1**
  
 ![US011_SD](US011_SD.svg)
 
  
 ### 3.3. Class Diagram (CD)
 
-**From alternative 1**
  
 ![US011_CD](US011_CD.svg) 
 
@@ -168,7 +166,5 @@ _It is also recommended organizing this content by subsections._
 
 ## 7. Observations
 
-Platform and Organization classes are getting too many responsibilities due to IE pattern and, therefore, they are
-becoming huge and harder to maintain.
+After analysing the code made available by the teacher in the base repository we realized that in order to access the UI that makes possible to the administrator select the operation he wants to use he already needs to be authenticated in the system therefore there is no need to referer to it in our artifacts. 
 
-Is there any way to avoid this to happen?

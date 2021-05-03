@@ -25,46 +25,50 @@ deactivate UI
 Administrator -> UI : types requested data
 activate UI
 
-activate CTRL
 
 
 UI -> CTRL : getCategoryList()
+activate CTRL
 
 
 CTRL -> COMPANY : catList = getCategoryList()
 activate COMPANY
-
-
-
+deactivate CTRL
 
 COMPANY -> CATEGORYSTORE  : catList = getCategoryList()
-
 activate CATEGORYSTORE
-deactivate CATEGORYSTORE
 deactivate COMPANY
+deactivate CATEGORYSTORE
+
 
 
 
 
 
 UI --> Administrator : Show Category list and ask to select one
+deactivate UI
 
 
 
 
 
 Administrator -> UI : selects a parameter category
+activate UI
+
+
+
+
+UI-> CTRL : createParameter()
+activate CTRL
 
 CTRL -> COMPANY : pStore = getParameterStore
 activate COMPANY
 deactivate COMPANY
-
-UI-> CTRL : createParameter()
-CTRL -> PARAMETERSTORE : pa = createParameter(code, description, NHSid, Category)
+CTRL -> PARAMETERSTORE : pa = createParameter(code,shortName,description,Category)
 
 activate PARAMETERSTORE
 
-PARAMETERSTORE -> PARAMETER : pa = createParameter(code, description, NHSid, Category)
+PARAMETERSTORE -> PARAMETER : pa = Parameter(code,shortName,description,Category)
 
 activate PARAMETER
 deactivate PARAMETER
@@ -74,18 +78,23 @@ activate PARAMETERSTORE
 deactivate PARAMETERSTORE
 
 UI --> Administrator : shows all data and requests confirmation
+deactivate UI
 
 Administrator -> UI : confirms the data
+activate UI
 
-UI-> CTRL : saveParameter()
+UI-> CTRL : saveParameter(pa)
 
 CTRL -> PARAMETERSTORE : saveParameter(pa)
+deactivate CTRL
 activate PARAMETERSTORE
 PARAMETERSTORE -> PARAMETERSTORE : validateParameter(pa)
 PARAMETERSTORE -> PARAMETERSTORE : saveParameter(pa)
 
 
 UI --> Administrator : Informs operation success
+deactivate UI
+
 deactivate PARAMETERSTORE
 
 
