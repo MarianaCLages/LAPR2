@@ -5,43 +5,70 @@ actor Administrator as A
 participant ":CreateClinicalAnalysisLabUI" as UI
 participant ":CreateClinicalAnalysisLabController" as CTRL
 participant ":Company" as C
-participant "cal: Clinical Analysis Laboratory" as CAL
-activate A
+participant "store: ClinicalAnalysisLabStore" as STO
+participant "cal: ClinicalAnalysisLaboratory" as CAL
+participant "tType:TestType" as TT
 
+activate A
 A -> UI: wants to register a new clinical analysis laboratory
 activate UI
 UI --> A: requests data (labID, name, address,\n phoneNumber, tinNumber)
 deactivate UI
 A -> UI: types requested data
 activate UI
+UI -> CTRL : getStore()
 activate CTRL
-UI -> CTRL : CreateClinicalAnalysisLab(labID, name, address, phoneNumber, tinNumber)
-CTRL -> C: cal = CreateClinicalAnalysisLab(labID, name, address, phoneNumber, tinNumber)
+CTRL -> C: store = getStore()
 activate C
-C --> CAL : create(labID, name, address, phoneNumber, tinNumber)
+C --> STO: create
+activate STO
+deactivate STO
+deactivate C
+deactivate CTRL
+
+UI -> CTRL : CreateClinicalAnalysisLab(labID, name, address, phoneNumber, tinNumber)
+activate CTRL
+CTRL -> STO: cal = CreateClinicalAnalysisLab(labID, name, address, phoneNumber, tinNumber)
+activate STO
+STO -> CAL : create(labID, name, address, phoneNumber, tinNumber)
 activate CAL
 deactivate CAL
-deactivate C
-CTRL -> C: validateClinicalAnalysisLab(cal)
-activate C
+deactivate STO
+CTRL -> STO: validateClinicalAnalysisLab(cal)
+activate STO
+deactivate STO
+deactivate CTRL
+UI -> CTRL: getTestTypeList()
+activate CTRL
+CTRL -> STO : tTypeList = getTestTypeList()
+activate STO
+STO->TT: tTypeList = getTestTypeList()
+activate TT
+deactivate TT
+deactivate STO
+deactivate CTRL
+
 UI --> A: shows types of test list and asks to select types
 deactivate C
 deactivate CTRL
 deactivate UI
 A -> UI: selects types of tests
 activate UI
-UI -> CTRL: setData(TypesTest)
+UI -> CTRL: setData()
 activate CTRL
-CTRL -> CAL: setTypeTest(cal)
+CTRL -> STO: t = setTypeTest()
+activate STO
+STO -> CAL: t = setTypeTest()
 activate CAL
 deactivate CAL
+deactivate STO
 deactivate C
-CTRL -> C: validateClinicalAnalysisLab(cal)
-activate C
-C -> CAL : validate()
+CTRL -> STO: validateClinicalAnalysisLab(cal)
+activate STO
+STO -> CAL : validate()
 activate CAL
 deactivate CAL
-deactivate C
+deactivate STO
 UI --> A: shows all data and requests confirmation
 deactivate CTRL
 deactivate UI
