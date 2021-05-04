@@ -5,6 +5,18 @@ import org.junit.Test;
 
 public class ParameterCategoryStoreTest {
 
+    @Test
+    public void validateValidParameterCategory() {
+        //Arrange
+        ParameterCategoryStore store = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
+        ParameterCategory pc2 = new ParameterCategory("A8554", "Hemograma");
+        //Act
+        store.add(pc1);
+        //Assert
+        Assert.assertFalse(store.ValidateParameterCategory(pc1));
+    }
+
 
 
     @Test
@@ -76,6 +88,7 @@ public class ParameterCategoryStoreTest {
         store.add(pc2);
         //act
         ParameterCategory expected = store.get(-1);
+
     }
 
     @Test
@@ -131,5 +144,71 @@ public class ParameterCategoryStoreTest {
 
         Assert.assertEquals(expected,actual);
 
+    }
+
+
+    @Test
+    public void containsTrue() {
+        //Assert
+        ParameterCategoryStore store = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
+
+        //Act
+        store.add(pc1);
+
+        //Assert
+        Assert.assertTrue(store.contains(pc1));
+    }
+
+
+    @Test
+    public void containsFalse() {
+        //Assert
+        ParameterCategoryStore store = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
+        ParameterCategory pc2 = new ParameterCategory("AF687","Hemogram");
+        //Act
+        store.add(pc1);
+
+        //Assert
+        Assert.assertFalse(store.contains(pc2));
+
+    }
+
+    @Test
+    public void saveParameterCategoryValid() {
+        //Arrange
+        ParameterCategoryStore store = new ParameterCategoryStore();
+        ParameterCategory pc  = store.CreateParameterCategory("AE554", "Hemogram");
+
+        //Assert
+        Assert.assertTrue(store.saveParameterCategory());
+
+    }
+
+    @Test
+    public void saveParameterCategoryInvalid() {
+        //Arrange
+        ParameterCategoryStore store = new ParameterCategoryStore();
+        ParameterCategory pc  = store.CreateParameterCategory("AE554", "Hemogram");
+        store.add(pc);
+        ParameterCategory pc1  = store.CreateParameterCategory("AE554", "Hemogram");
+
+        //Assert
+        Assert.assertFalse(store.saveParameterCategory());
+
+    }
+
+    @Test
+    public void addValid() {
+        ParameterCategoryStore store = new ParameterCategoryStore();
+        ParameterCategory pc  = store.CreateParameterCategory("AE554", "Hemogram");
+        Assert.assertTrue(store.add(pc));
+    }
+
+    @Test (expected = IllegalArgumentException.class)
+    public void addInvalid() {
+        ParameterCategoryStore store = new ParameterCategoryStore();
+        ParameterCategory pc  = store.CreateParameterCategory(null, null);
     }
 }
