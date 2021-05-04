@@ -77,4 +77,7 @@ public class Parameter {
                 ", description=" + description +
                 ", category=" + cat.toString();
     }
+    public String getCode() {
+        return code;
+    }
 }

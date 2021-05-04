@@ -26,13 +26,9 @@ public class ParameterStore {
      * @param name short name that characterize the Parameter
      * @return boolean value that indicates if the object created is valid or not
      */
-    public boolean CreateParameter(String code, String name, String description, ParameterCategory cat) {
-        this.pc = new Parameter(name , code, description, cat);
-        if (ValidateParameter(pc)) {
-            return true;
-        } else {
-            return false;
-        }
+    public Parameter CreateParameter(String code, String name, String description, ParameterCategory cat) {
+        this.pc = new Parameter(code, name, description, cat);
+        return this.pc;
     }
 
     /**
@@ -43,7 +39,7 @@ public class ParameterStore {
      */
 
     public boolean ValidateParameter(Parameter pc) {
-        if (pc == null && !contains(pc)) {
+        if (pc == null || contains(pc)) {
             return false;
         }
         return true;
@@ -67,11 +63,10 @@ public class ParameterStore {
     /**
      * this method is used to save the Parameter object in the arrayList already created, before adding the object teh method validates it
      *
-     * @param pc Parameter object
      * @return a boolean value that indicates the success of the operation
      */
-    public boolean saveParameter(Parameter pc) {
-        if (ValidateParameter(pc)) {
+    public boolean saveParameter() {
+        if (ValidateParameter(this.pc)) {
             add(pc);
             return true;
         } else {
@@ -106,14 +101,7 @@ public class ParameterStore {
         return null;
     }
 
-    public Parameter getByName(String name) {
-        for (Parameter pc : array) {
-            if (pc.getName().equals(name)) {
-                return pc;
-            }
-        }
-        return null;
-    }
+
 
     public String toString() {
         StringBuilder listString = new StringBuilder();

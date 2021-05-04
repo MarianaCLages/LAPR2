@@ -22,16 +22,12 @@ public class ParameterController {
     }
 
 
-    public boolean createParameter(String code, String name, String description, ParameterCategory cat) {
+    public void createParameter(String code, String name, String description, ParameterCategory cat) {
         store = company.getParameterList();
-        if (store.CreateParameter(code, name, description, cat)){
-            return true;
-        }else {
-            return false;
-        }
+        store.CreateParameter(code,name,description,cat);
     }
 
     public boolean saveParameterCategory() {
-        return this.store.saveParameter(pc);
+        return this.store.saveParameter();
     }
 }
