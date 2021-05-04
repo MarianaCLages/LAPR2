@@ -4,40 +4,14 @@ autonumber
 actor Receptionist as R
 participant ":RegisterClientUI" as UI
 participant ":RegisterClientController" as CTRL
-participant ":AuthFacade" as Auth
-participant ":UserSession" as User
 participant ":Company" as COMPANY
 participant "store:ClientStore" as S
 participant ": Client" as C
-participant ":RoleStore" as RoleStore
+participant ":AuthFacade" as AUTH
 
 activate R
 R -> UI: asks to register a new client
 activate UI
-
-
-
-
-
-UI -> CTRL : getRoleList()
-
-activate CTRL
-CTRL -> COMPANY : catList = getRoleList()
-
-activate COMPANY
-
-COMPANY -> RoleStore : catList = getRoleList()
-activate RoleStore
-deactivate RoleStore
-deactivate COMPANY
-deactivate CTRL
-UI --> R: asks to select role
-deactivate UI
-R -> UI: selects role
-
-activate UI
-
-
 
 
 UI --> R: requests Client's registration data (citizen card number, NHS number,\n birth date, sex, TIF number, phone number, e-mail, name)
@@ -49,7 +23,7 @@ UI -> CTRL : getStore()
 activate CTRL
 CTRL -> COMPANY: store = getStore()
 activate COMPANY
-COMPANY --> S**: create
+COMPANY --> S**: store = ClientStore()
 deactivate COMPANY
 CTRL <- UI: CreateClient(citizen card number, NHS number, birth date, sex,\n TIF number, phone number, e-mail, name)
 CTRL -> S:CreateClient(citizen card number, NHS number, birth date, sex,\n TIF number, phone number, e-mail, name)
@@ -76,18 +50,23 @@ S -> S : saveClient(c)
 activate S
 deactivate S
 deactivate S
+
+CTRL -> S : addUserWithRole(name,email,roleId)
 deactivate CTRL
 
-UI -> CTRL : addUserWithRole(name, email, password)
-activate CTRL
-
-CTRL -> S: existsUser(email)
 activate S
-CTRL -> S: addUserWithRole(name, email, password)
+S -> C : getPassword();
+activate C
+deactivate C
+
+S -> AUTH :addUserWithRole( name, email, password, roleId)
 deactivate S
 
+activate AUTH
+deactivate AUTH
+
+
 UI --> R : Informs operation success
-deactivate CTRL
 deactivate UI
 deactivate R
 

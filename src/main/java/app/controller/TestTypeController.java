@@ -5,7 +5,7 @@ import app.domain.model.*;
 public class TestTypeController {
     private Company company;
     private TestTypeStore store;
-    private TypeTest testT;
+    private TestType testT;
 
     public TestTypeController() {this(App.getInstance().getCompany());}
 

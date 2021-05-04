@@ -7,10 +7,6 @@ participant ":System" as S
 activate R
 R -> S: asks to register a new client
 activate S
-S --> R: asks to select role
-deactivate S
-R -> S: selects role
-activate S
 S --> R: requests Client's registration data (citizen card number, NHS number,\n birth date, sex, TIF number, phone number, e-mail, name)
 deactivate S
 R -> S: types data

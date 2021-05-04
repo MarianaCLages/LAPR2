@@ -68,23 +68,40 @@ birth date, sex, Tax Identification number (TIF), phone number, e-mail and name,
 > **Answer:** The e-mail address and phone number should be unique for each user. The system should present a message informing about the error and asking for a different phone number.
 >
 > **Link:** https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7615
+
+
+> **Question:** What should be the maximum length of the String with the name of the Client?
 >
+> **Answer:** A string with no more than 35 characters.
+>
+> **Link:** https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7945#p10383
+
+> **Question:** Is there any restrictions to the client age?
+>
+> **Answer:** A client should not have more than 150 years of age.
+>
+> **Link:** https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7945#p10383
 
 
-
-
+> **Question:** What should be the maximum length of the String with the name of the Client?
+>
+> **Answer:** A string with no more than 35 characters.
+>
+> **Link:** https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7945#p10383
 ### 1.3. Acceptance Criteria
 
 * **AC1:** The client must become a system user. The "auth" component
   available on the repository must be reused (without modifications).
-
 * **AC2:** To input the client's sex is optional while all the other fields are mandatory.
-
 * **AC3:** The e-mail address and phone number should be unique for each user
-* **AC4:** Citizen Card number is a 16 digit number.
+* **AC4:** Citizen Card number is a 16-digit number.
 * **AC5:** NHS number is a 10 digit number.
 * **AC6:** Date of birth has DD/MM/YY as format.
-* **AC7:** Phone number is a 11 digit number.
+* **AC7:** Phone number is an 11-digit number.
+* **AC8:** Age must be inferior to 150 years
+* **AC9:** TIN is a 10-digit number
+* **AC10** Name must have maximum of 35 characters
+
 
 ### 1.4. Found out Dependencies
 
@@ -100,16 +117,16 @@ birth date, sex, Tax Identification number (TIF), phone number, e-mail and name,
 	* Tax Identification Number
 	* Phone number
 	* E-mail
+	* Birthdate
 
 * Selected data:
-	* Birth date
 	* Sex
 
 ### 1.6. System Sequence Diagram (SSD)
 
 *Insert here a SSD depicting the envisioned Actor-System interactions and throughout which data is inputted and outputted to fulfill the requirement. All interactions must be numbered.*
 
-![USXX-SSD](USXX-SSD.svg)
+![US3_SSD](US3_SSD.svg)
 
 
 ### 1.7 Other Relevant Remarks
@@ -122,7 +139,7 @@ birth date, sex, Tax Identification number (TIF), phone number, e-mail and name,
 ### 2.1. Relevant Domain Model Excerpt
 *In this section, it is suggested to present an excerpt of the domain model that is seen as relevant to fulfill this requirement.*
 
-![USXX-MD](USXX-MD.svg)
+![US3_MD](US3_MD.svg)
 
 ### 2.2. Other Remarks
 
@@ -136,21 +153,21 @@ birth date, sex, Tax Identification number (TIF), phone number, e-mail and name,
 
 **The rationale grounds on the SSD interactions and the identified input/output data.**
 
-| Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
-|:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1: asks to register a new client                                                                                                   | ... asking to register a new client?                     | RegisterClientUI         | IE: the interface interacts with the actor.                                          |
-|                                                                                                                                         | ... coordinating the US?                                 | RegisterClientController | IE: it knows and controls the information needed, sending it to the next procedures. |
-|                                                                                                                                         | ... getting the role list?                               | RoleStore                | IE: it's responsible for saving all roles.                                           |
-| Step 2: asks to select role                                                                                                             | ... asking to select the role?                           |                          |                                                                                      |
-| Step 3: selects role                                                                                                                    | ... selecting the role?                                  | RegisterClientUI         | IE: the interface interacts with the actor.                                          |
-| Step 4: requests client's registration data (citizen card number, NHS number, birth date, sex, TIF number, phone number, e-mail, name)  | ... requesting the client's data?                        |                          |                                                                                      |
-| Step 5: types data                                                                                                                      | ... creating the ClientStore?                            | Company                  | IE: since it has the role lists, it's a easier way to store them.                    |
-|                                                                                                                                         | ... creating and storing the client's data?              | ClientStore              | IE: it has the needed data of the client.                                            |
-| Step 6: shows data and requests confirmation                                                                                            | ... showing and requesting the confirmation of the data? |                          |                                                                                      |
-| Step 7: confirms data                                                                                                                   | ... confirming the data?                                 | RegisterClientUI         | IE: the interface interacts with the actor.                                          |
-|                                                                                                                                         | ... saving and validating the client?                    | ClientStore              | IE: it has the needed data of the client.                                            |
-|                                                                                                                                         | ... adding the user with role?                           | ClientStore              | IE: it has the needed information of the client and their new user's data.           |
-| Step 8: informs operation success                                                                                                       | ... informing operation success?                          | RegisterClientUI         | IE: the interface interacts with the actor.                                          | 
+| Interaction ID                                                                                                                         | Question: Which class is responsible for...                              | Answer                   | Justification (with patterns)                                                                                 |
+| :-------------                                                                                                                         | :---------------------                                                   | :------------            | :----------------------------                                                                                 |
+| Step 1: asks to register a new client                                                                                                  | ... asking to register a new client?                                     | RegisterClientUI         | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model. |
+|                                                                                                                                        | ... coordinating the US?                                                 | RegisterClientController | Controller                                                                                                    |
+|                                                                                                                                        | ... instantiating a new Client?                                          | ClientStore              | Creator </br> LC/HC                                                                                           |
+| Step 2: requests client's registration data (citizen card number, NHS number, birth date, sex, TIF number, phone number, e-mail, name) | ... requesting the client's data?                                        | RegisterClientUI         | IE: the interface interacts with the actor.                                                                   |
+| Step 3: types data                                                                                                                     | ... creating the ClientStore?                                            | Company                  | IE: Company knows all lists of objects in the system                                                          |
+|                                                                                                                                        | ... saving the input data                                                | Client                   | IE: the object has its own data                                                                               |
+| Step 4: shows data and requests confirmation                                                                                           | ... showing and requesting the confirmation of the data?                 | RegisterClientUI         |                                                                                                               |
+|                                                                                                                                        | ... validating the data locally (e.g.: mandatory vs.non-mandatory data)? | Client                   | IE: knows its own data.                                                                                       |
+|                                                                                                                                        | ... validating the data globally (e.g.: duplicated)?                     | ClientStore              | IE: knows/has all the Client objects                                                                          |
+| Step 5: confirms data                                                                                                                  | ... confirming the data?                                                 | RegisterClientUI         | IE: the interface interacts with the actor.                                                                   |
+|                                                                                                                                        | ... adding the user with role?                                           | ClientStore              | IE: it has the needed information of the client and their new user's data.                                    |
+|                                                                                                                                        | ... creating the user password                                           | Client 		           | IE: knows his own data and generates its own data                                                                                                              |
+| Step 6: informs operation success                                                                                                      | ... informing operation success?                                         | RegisterClientUI         | IE: the interface interacts with the actor.                                                                   |
 
 ### Systematization ##
 
@@ -169,15 +186,11 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ## 3.2. Sequence Diagram (SD)
 
-*In this section, it is suggested to present an UML dynamic view stating the sequence of domain related software objects' interactions that allows to fulfill the requirement.*
-
-![USXX-SD](USXX-SD.svg)
+![US3_SD](US3_SD.svg)
 
 ## 3.3. Class Diagram (CD)
 
-*In this section, it is suggested to present an UML static view representing the main domain related software classes that are involved in fulfilling the requirement as well as and their relations, attributes and methods.*
-
-![USXX-CD](USXX-CD.svg)
+![US3_CD](US3_CD.svg)
 
 # 4. Tests
 *In this section, it is suggested to systematize how the tests were designed to allow a correct measurement of requirements fulfilling.*
