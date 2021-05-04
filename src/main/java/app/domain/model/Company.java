@@ -17,6 +17,7 @@ public class Company {
 
     private ParameterCategoryStore parameterCategoryList;
     private ParameterStore parameterList;
+    private TestTypeStore testTypeList;
 
     public Company(String designation) {
         if (StringUtils.isBlank(designation))
@@ -46,6 +47,8 @@ public class Company {
     public ParameterStore getParameterList() {
         return this.parameterList = new ParameterStore();
     }
+
+    public TestTypeStore getTestTypeList() {return this.testTypeList=new TestTypeStore();}
 
 
 }
