@@ -20,24 +20,20 @@ public class ParameterCategoryStore {
     }
 
     /**
-     * This method creates a new ParameterCategory object by calling his constructor. It also validates the object using the method ValidateParameterCategory implemented by this class
+     * This method creates a new ParameterCategory object by calling his constructor.
      *
      * @param code unique code needed to identify the Parameter Category
      * @param name short name that characterize the Parameter Category
-     * @return boolean value that indicates if the object created is valid or not
+     * @return Parameter Category object created
      */
-    public boolean CreateParameterCategory(String code, String name) {
+    public ParameterCategory CreateParameterCategory(String code, String name) {
 
         this.pc = new ParameterCategory(code, name);
-        if (ValidateParameterCategory(pc)) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.pc;
     }
 
     /**
-     * this method checks if the ParameterCategory object received is not null and if don't already exists.in the ArrayList
+     * this method checks if the ParameterCategory object received is not null, if don't already exists.in the ArrayList and if the ParameterCategory code dont already exist
      *
      * @param pc ParameterCategory object
      * @return boolean value that is true if the object is not null and dont already exists in the ArrayList
@@ -49,6 +45,12 @@ public class ParameterCategoryStore {
         }
         return true;
     }
+
+    /**
+     * This method searches in the Array List if alredy exists a Parameter Category object with the same code
+     * @param pc Parameter Category object in which we want to check the code
+     * @return true if the code dont already exists, false if not
+     */
 
     public boolean uniqueCode(ParameterCategory pc){
         boolean find = true;

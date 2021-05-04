@@ -31,7 +31,7 @@ public class ParameterCategoryUI implements Runnable {
                 try {
                     String code = Utils.readLineFromConsole("Please enter the code of the new Parameter Category");
                     String name = Utils.readLineFromConsole("Please enter the name of the new Parameter Category");
-                    cont = ctrl.createParameterCategory(code, name);
+                    ctrl.createParameterCategory(code, name);
                     exception = false;
                 } catch (Exception e) {
                     e.printStackTrace();

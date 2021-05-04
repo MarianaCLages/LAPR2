@@ -25,15 +25,9 @@ public class ParameterCategoryController {
     }
 
 
-    public boolean createParameterCategory(String code, String name) {
+    public void createParameterCategory(String code, String name) {
         store = company.getParameterCategoryList();
-        if (store.CreateParameterCategory(code,name)){
-            return true;
-        }else {
-            return false;
-        }
-
-
+        store.CreateParameterCategory(code,name);
     }
 
     public ParameterCategory getpc(){

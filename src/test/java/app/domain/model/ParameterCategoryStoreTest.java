@@ -5,6 +5,8 @@ import org.junit.Test;
 
 public class ParameterCategoryStoreTest {
 
+
+
     @Test
     public void validateParameterCategoryAlreadyExists() {
         //Arrange
@@ -24,6 +26,7 @@ public class ParameterCategoryStoreTest {
         //Assert
         Assert.assertFalse(store.ValidateParameterCategory(pc1));
     }
+
     @Test
     public void validateParameterCategoryAlreadyExistsCode(){
         //Arrange + act
@@ -36,11 +39,6 @@ public class ParameterCategoryStoreTest {
 
     }
 
-
-
-    @Test
-    public void add() {
-    }
 
     @Test
     public void getIDRight() {
@@ -115,4 +113,23 @@ public class ParameterCategoryStoreTest {
         Assert.assertEquals(expected,actual);
     }
 
+    @Test
+    public void createValidParameterCategory() {
+        ParameterCategoryStore store = new ParameterCategoryStore();
+
+        Assert.assertNotNull(store.CreateParameterCategory("AF784","Hemogram"));
+
+    }
+
+
+    @Test
+    public void getPcValid() {
+        ParameterCategoryStore store = new ParameterCategoryStore();
+        ParameterCategory pc1 = store.CreateParameterCategory("AF687","Hemogram");
+        ParameterCategory expected = pc1;
+        ParameterCategory actual= store.getPc();
+
+        Assert.assertEquals(expected,actual);
+
+    }
 }
