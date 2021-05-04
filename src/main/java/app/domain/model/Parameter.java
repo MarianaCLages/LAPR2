@@ -68,31 +68,4 @@ public class Parameter {
                 '}';
     }
 
-    /**
-     * Returns the code of the Parameter
-     *
-     * @return code: unique code needed to identify the Parameter
-     */
-
-    public String getCode() {
-        return code;
-    }
-
-    /**
-     * Returns the name of the Parameter
-     *
-     * @return name: unique name needed to identify the Parameter
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * modifies the code of the Parameter
-     *
-     * @param name unique name needed to identify the Parameter
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
 }
