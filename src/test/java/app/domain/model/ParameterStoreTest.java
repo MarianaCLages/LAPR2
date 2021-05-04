@@ -73,38 +73,7 @@ public class ParameterStoreTest {
         Parameter expected = store.get(-1);
 
     }
-    @Test
-    public void getByCodeRight() {
-        //Arrange
-        ParameterStore store = new ParameterStore();
-        Parameter pc1 = new Parameter("A1234", "PLT", "description", cat);
-        Parameter pc2 = new Parameter("A1235", "PLT", "description", cat);
-        store.add(pc1);
-        store.add(pc2);
 
-        //act
-        Parameter expected = pc1;
-        Parameter actual = store.getByCode("A1234");
-
-        //Assert
-        Assert.assertEquals(expected,actual);
-    }
-    @Test
-    public void getByCodeNotExists() {
-        //Arrange
-        ParameterStore store = new ParameterStore();
-        Parameter pc1 = new Parameter("A1234", "PLT", "description", cat);
-        Parameter pc2 = new Parameter("A1235", "PLT", "description", cat);
-        store.add(pc1);
-        store.add(pc2);
-
-        //act
-        Parameter expected = null;
-        Parameter actual = store.getByCode("A1236");
-
-        //Assert
-        Assert.assertEquals(expected,actual);
-    }
     @Test
     public void createValidParameter() {
         ParameterStore store = new ParameterStore();
