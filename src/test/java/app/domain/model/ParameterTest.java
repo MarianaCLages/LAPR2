@@ -15,9 +15,25 @@ public class ParameterTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
+    public void CreateCodeParameterNothingTest() {
+        //Arrange + Act
+        Parameter parameter = new Parameter("","SUP", "another one", cat );
+    }
+
+    @Test(expected = IllegalArgumentException.class)
     public void CreateCodeParameterUnder5Test() {
         //Arrange + Act
         Parameter parameter = new Parameter("A123","SUP", "another one", cat );
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void CreateCodeParameterEquals5Test() {
+        //Arrange + Act
+        Parameter parameter = new Parameter("A1234","SUP", "another one", cat );
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void CreateCodeParameterOver5Test() {
+        //Arrange + Act
+        Parameter parameter = new Parameter("A12345","SUP", "another one", cat );
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -25,11 +41,40 @@ public class ParameterTest {
         //Arrange + Act
         Parameter parameter = new Parameter("A1234", "ulittlebitch", "another one", cat);
     }
+    @Test(expected = IllegalArgumentException.class)
+    public void CreateInvalidNameParameterTestEquals8char() {
+        //Arrange + Act
+        Parameter parameter = new Parameter("A1234", "ulittleb", "another one", cat);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void CreateInvalidNameParameterTestUnder8char() {
+        //Arrange + Act
+        Parameter parameter = new Parameter("A1234", "ulittlebitch", "another one", cat);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void CreateNameParameterNothingTest() {
+        //Arrange + Act
+        Parameter parameter = new Parameter("A1234","", "another one", cat );
+    }
 
     @Test(expected = IllegalArgumentException.class)
     public void CreateInvalidDescriptionParameterTestOver20char() {
         //Arrange + Act
         Parameter parameter = new Parameter("A1234", "SUP", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", cat);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void CreateInvalidDescriptionParameterTestUnder20char() {
+        //Arrange + Act
+        Parameter parameter = new Parameter("A1234", "SUP", "aaaaaaaaa", cat);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void CreateDescriptionParameterNothingTest() {
+        //Arrange + Act
+        Parameter parameter = new Parameter("A1234","SUP", "", cat );
     }
 
     @Test(expected = IllegalArgumentException.class)
