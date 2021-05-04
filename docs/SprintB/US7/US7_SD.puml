@@ -77,10 +77,9 @@ CTRL -> EmployeeStore: CreateEmployee(Name, Address, Phone Number, E-Mail,  "SOC
 
 activate EmployeeStore
 
-EmployeeStore -> Employee : emp = Employee(Name, Address, Phone Number, E-Mail,  "SOC", Role)
+EmployeeStore -> Employee **: emp = Employee(ID,Name, Address, Phone Number, E-Mail,  "SOC", Role)
 
-activate Employee
-deactivate Employee
+
 deactivate EmployeeStore
 
 
@@ -88,6 +87,7 @@ deactivate EmployeeStore
 
 
 CTRL -> EmployeeStore: validateEmployee(em)
+
 activate EmployeeStore
 deactivate EmployeeStore
 
@@ -102,9 +102,12 @@ UI-> CTRL : saveEmployee(em)
 CTRL -> EmployeeStore : saveEmployee(em)
 activate EmployeeStore
 EmployeeStore -> EmployeeStore : validateEmployee(em)
+activate EmployeeStore
+deactivate EmployeeStore
 
 EmployeeStore -> EmployeeStore : saveEmployee(em)
-
+activate EmployeeStore
+deactivate EmployeeStore
 
 
 

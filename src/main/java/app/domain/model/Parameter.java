@@ -48,7 +48,18 @@ public class Parameter {
             throw new IllegalArgumentException("Name cannot be blank.");
         if (name.length() > 8)
             throw new IllegalArgumentException("Name must have 8 chars.");
+
+
+        name = name.toLowerCase();
+        char[] charArray = name.toCharArray();
+        for (int i = 0; i < charArray.length; i++) {
+            char c = charArray[i];
+            if (!(c >= 'a' && c <= 'z')) {
+                throw new IllegalArgumentException("Name only accepts letters");
+            }
+        }
     }
+
 
     private void checkDescriptionRules(String description) {
         if (StringUtils.isBlank(description))
@@ -60,39 +71,10 @@ public class Parameter {
 
     @Override
     public String toString() {
-        return "Parameter{" +
-                "code='" + code + '\'' +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", category='" + cat.toString() + '\'' +
-                '}';
-    }
-
-    /**
-     * Returns the code of the Parameter
-     *
-     * @return code: unique code needed to identify the Parameter
-     */
-
-    public String getCode() {
-        return code;
-    }
-
-    /**
-     * Returns the name of the Parameter
-     *
-     * @return name: unique name needed to identify the Parameter
-     */
-    public String getName() {
-        return name;
-    }
-
-    /**
-     * modifies the code of the Parameter
-     *
-     * @param name unique name needed to identify the Parameter
-     */
-    public void setName(String name) {
-        this.name = name;
+        return "Parameter: " +
+                "code=" + code +
+                ", name=" + name +
+                ", description=" + description +
+                ", category=" + cat.toString();
     }
 }
