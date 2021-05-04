@@ -18,6 +18,7 @@ public class Company {
     private ParameterCategoryStore parameterCategoryList;
     private ParameterStore parameterList;
     private TestTypeStore testTypeList;
+    private ClinicalAnalysisLabStore clinicalAnalysisLabList;
 
     public Company(String designation) {
         if (StringUtils.isBlank(designation))
@@ -48,7 +49,8 @@ public class Company {
         return this.parameterList = new ParameterStore();
     }
 
-    public TestTypeStore getTestTypeList() {return this.testTypeList=new TestTypeStore();}
+    public TestTypeStore getTestTypeList() {return this.testTypeList= new TestTypeStore();}
 
-
+    public ClinicalAnalysisLabStore getClinicalAnalysisLabList() {return this.clinicalAnalysisLabList = new ClinicalAnalysisLabStore();}
 }
+
