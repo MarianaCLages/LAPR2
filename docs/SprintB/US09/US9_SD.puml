@@ -6,7 +6,7 @@ participant ":CreateTestTypeController" as CTRL
 participant ":Company" as C
 
 participant "tType:TestTypeStore" as STO
-participant "t:Test Type" as T
+participant "t:TestType" as T
 participant "store: ParameterCategoryStore" as CAT
 
 activate A
@@ -58,7 +58,7 @@ deactivate T
 deactivate STO
 deactivate CTRL
 
-UI --> A: shows all data and requestes confirmation
+UI --> A: shows all data and requests confirmation
 deactivate UI
 
 A -> UI: confirms the data

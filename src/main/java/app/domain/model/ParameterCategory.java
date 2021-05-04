@@ -28,8 +28,8 @@ public class ParameterCategory {
     private void checkCodeRules(String code) {
         if (StringUtils.isBlank(code))
             throw new IllegalArgumentException("Code cannot be blank.");
-        if ((code.length() < 4) || (code.length() > 8))
-            throw new IllegalArgumentException("Code must have 4 to 8 chars.");
+        if ((code.length() < 5) || (code.length() > 8))
+            throw new IllegalArgumentException("Code must have 5 to 8 chars.");
     }
 
     /**
@@ -45,10 +45,7 @@ public class ParameterCategory {
 
     @Override
     public String toString() {
-        return "ParameterCategory{" +
-                "code='" + code + '\'' +
-                ", name='" + name + '\'' +
-                '}';
+        return "Code = "+code +" Name="+name;
     }
 
     /**
@@ -67,6 +64,7 @@ public class ParameterCategory {
      * @param code unique code needed to identify the Parameter Category
      */
     public void setCode(String code) {
+        checkCodeRules(code);
         this.code = code;
     }
 
@@ -85,6 +83,7 @@ public class ParameterCategory {
      * @param name unique name needed to identify the Parameter Category
      */
     public void setName(String name) {
+        checkNameRules(name);
         this.name = name;
     }
 }

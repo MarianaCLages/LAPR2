@@ -1,6 +1,41 @@
 @startuml
 
+class CreateTestTypeUI{
+}
 
+class CreateTestTypeController{
+    + CreateTestType(testID, collectingMethod, description)
+    + getCategoryList()
+    + setCategory()
+    + saveTestType()
+}
 
+class Company{
+    + CreateTestType(testID, collectingMethod, description)
+}
+
+class TestTypeStore{
+    + Create(testID, collectingMethod, description)
+    + setCategory()
+    + validateClinicalAnalysisLab()
+    + saveTestType()
+}
+
+class TestType{
+    + Create(testID, collectingMethod, description)
+    + setCategory()
+    + validate()
+}
+
+class ParameterCategoryStore{
+    + getCategoryList()
+}
+
+CreateTestTypeUI ..> CreateTestTypeController
+CreateTestTypeController ..> Company
+Company ..> TestTypeStore
+CreateTestTypeController ..> TestTypeStore
+CreateTestTypeController ..> ParameterCategoryStore
+TestTypeStore ..> TestType
 
 @enduml

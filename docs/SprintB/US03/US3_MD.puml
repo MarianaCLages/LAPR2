@@ -1,4 +1,8 @@
 @startuml
+
+class Company{
+}
+
 class Receptionist{
 Employee ID;
 Organization Role;
@@ -6,7 +10,7 @@ Name;
 Address;
 Phone Number;
 E-Mail;
-Standard Occupational Classification "SOC";
+Standard Occupational Classification "SOC".
 }
 
 class Client{
@@ -17,9 +21,10 @@ Birth date;
 Sex;
 Tax Identification Number;
 Phone;
-E-mail;
+E-mail.
 }
 
+Company "1" -- "*" Receptionist: employs >
 Receptionist "1" -- "*" Client: register in application >
 
 

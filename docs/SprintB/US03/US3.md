@@ -1,6 +1,6 @@
 # US 03 - To register a Client
 
-## 1. Requirements EngineeringAs a receptionist of the laboratory, I want to register a client.
+## 1. Requirements Engineering
 
 ### 1.1. User Story Description
 
@@ -138,27 +138,34 @@ birth date, sex, Tax Identification number (TIF), phone number, e-mail and name,
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1: asks to register a client in the system | ... registering a new client? | Receptionist | IE: they are the ones interacting with the new client. |
-|                                                 | ... requesting the user's data and login information? | RegisterClientUI | IE: the interface interacts with the actor. |
-|                                                 | ... typing the data requested?  | Receptionist | IE: they are the ones interacting with the new client. |
-| Step 2: creates a new client with the all the data input and connects with the current user session | ... creating and analyzing the data of the new client? | RegisterClientController | IE: it knows and controls the information needed, sending it to the next procedures. |  
-|                                                                                                     | ... adding user and login/logout in the current session? | AuthFacade | IE: its function is to get the client in their user session through the login and afterwards logout. |
-| Step 3: shows all data and requests confirmation | ... showing and requesting the confirmation of the data? | RegisterClientUI | IE: the interface interacts with the actor. |                              |              
-| Step 4: confirms the data | ... confirming the data input?  | Receptionist | IE: they are the ones interacting with the new client. |
-|                           | ... saving and validating the new client and its data?  | Company | Creator: ultimately the company has to store the inserted information and to authenticate it. |
-| Step 5: informs operation success | ... informing operation success?   | UI | IE: responsible for user interaction. |           
+| Step 1: asks to register a new client                                                                                                   | ... asking to register a new client?                     | RegisterClientUI         | IE: the interface interacts with the actor.                                          |
+|                                                                                                                                         | ... coordinating the US?                                 | RegisterClientController | IE: it knows and controls the information needed, sending it to the next procedures. |
+|                                                                                                                                         | ... getting the role list?                               | RoleStore                | IE: it's responsible for saving all roles.                                           |
+| Step 2: asks to select role                                                                                                             | ... asking to select the role?                           |                          |                                                                                      |
+| Step 3: selects role                                                                                                                    | ... selecting the role?                                  | RegisterClientUI         | IE: the interface interacts with the actor.                                          |
+| Step 4: requests client's registration data (citizen card number, NHS number, birth date, sex, TIF number, phone number, e-mail, name)  | ... requesting the client's data?                        |                          |                                                                                      |
+| Step 5: types data                                                                                                                      | ... creating the ClientStore?                            | Company                  | IE: since it has the role lists, it's a easier way to store them.                    |
+|                                                                                                                                         | ... creating and storing the client's data?              | ClientStore              | IE: it has the needed data of the client.                                            |
+| Step 6: shows data and requests confirmation                                                                                            | ... showing and requesting the confirmation of the data? |                          |                                                                                      |
+| Step 7: confirms data                                                                                                                   | ... confirming the data?                                 | RegisterClientUI         | IE: the interface interacts with the actor.                                          |
+|                                                                                                                                         | ... saving and validating the client?                    | ClientStore              | IE: it has the needed data of the client.                                            |
+|                                                                                                                                         | ... adding the user with role?                           | ClientStore              | IE: it has the needed information of the client and their new user's data.           |
+| Step 8: informs operation success                                                                                                       | ... informing operation success?                          | RegisterClientUI         | IE: the interface interacts with the actor.                                          | 
 
 ### Systematization ##
 
 According to the taken rationale, the conceptual classes promoted to software classes are:
 
-* Receptionist
-* AuthFacade
 * Company
+* Client
 
 Other software classes (i.e. Pure Fabrication) identified:
+
 * RegisterClientUI
 * RegisterClientController
+* ClientStore
+* RoleStore
+
 
 ## 3.2. Sequence Diagram (SD)
 

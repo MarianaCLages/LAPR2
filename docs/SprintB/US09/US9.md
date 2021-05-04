@@ -103,24 +103,31 @@ since each test type should have a set of categories.
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1  		 |							 |             |                              |
-| Step 2  		 |							 |             |                              |
-| Step 3  		 |							 |             |                              |
-| Step 4  		 |							 |             |                              |
-| Step 5  		 |							 |             |                              |
-| Step 6  		 |							 |             |                              |              
+| Step 1: wants to specify a new type of test 		              |	... specifying a new type of test?                                 | CreateTestTypeUI         | IE: the interface interacts with the actor.                                            |
+| Step 2: requests data (test ID, collecting method, description) |	... requesting the data?	                                       |                          |                                                                                        |
+| Step 3: types requested data                              	  |	... coordinating the US?	                                       | CreateTestTypeController | IE: it knows and controls the information needed, sending it to the next procedures.   |
+|                                                   	          |	... creating the test type and its parameters?                     | Company                  | IE: it has the authority to create a place to store all the data about the type tests. |
+|                                                   	          |	... getting the category list and save it?                         | ParameterCategoryStore   | IE: it's responsible for saving all parameters.                                        |
+| Step 4: shows parameter category list and asks to select  	  |	... showing and asking to select from the parameter category list? |                          |                                                                                        |
+| Step 5: selects  		                                          |	... setting the category and validate the test type?	           | TestType                 | IE: it has and knows the tests and their types which are needed.                       |
+| Step 6: shows all data and requests confirmation          	  | ... showing and requesting the confirmation of the data?	       |                          |                                                                                        |              
+| Step 7: confirms the data  		                              |	... confirming the data?					                       | CreateTestTypeUI         | IE: the interface interacts with the actor.                                            |
+| 		                                                          |	... saving and validating the test types?                          | TestTypeStore            | IE: it saves and authenticates the type of tests chosen.                               |
+| Step 8: informs operation success  		                      |	... informing operation success? 						           | CreateTestTypeUI         | IE: the interface interacts with the actor.                                            |
 
 ### Systematization ##
 
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
- * Class1
- * Class2
- * Class3
+ * Company
+ * TestType
 
 Other software classes (i.e. Pure Fabrication) identified: 
- * xxxxUI  
- * xxxxController
+ 
+ * CreateTestTypeUI
+ * CreateTestTypeController
+ * TestTypeStore
+ * ParameterCategoryStore
 
 ## 3.2. Sequence Diagram (SD)
 
