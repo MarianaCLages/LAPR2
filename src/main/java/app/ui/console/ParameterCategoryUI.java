@@ -48,7 +48,7 @@ public class ParameterCategoryUI implements Runnable {
                 }
 
             } else {
-                System.out.println("Couldn't create a Parameter please try again ");
+                System.out.println("Couldn't save the Parameter please try again ");
             }
 
 

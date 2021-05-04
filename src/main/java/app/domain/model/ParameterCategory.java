@@ -26,10 +26,12 @@ public class ParameterCategory {
      * @param code unique code needed to identify the Parameter Category
      */
     private void checkCodeRules(String code) {
-        if (StringUtils.isBlank(code))
+        if (StringUtils.isBlank(code)) {
             throw new IllegalArgumentException("Code cannot be blank.");
-        if ((code.length() < 5) || (code.length() > 8))
+        }
+        if ((code.length() != 5)) {
             throw new IllegalArgumentException("Code must have 5 to 8 chars.");
+        }
     }
 
     /**
@@ -38,14 +40,21 @@ public class ParameterCategory {
      * @param name name tha identifies the Parameter Category
      */
     private void checkNameRules(String name) {
-        if (StringUtils.isBlank(name))
+        if (StringUtils.isBlank(name)) {
             throw new IllegalArgumentException("Name cannot be blank.");
+        }
+        if (name.length()>10){
+            throw new IllegalArgumentException("Name cannot have more than 10 characters.");
+        }
     }
 
+    /**
+     * @return A string with the format "Code = code Name= name" where "code" and "name" are the two parameter of the Parameter Category object
+     */
 
     @Override
     public String toString() {
-        return "Code = "+code +" Name="+name;
+        return "Code = " + code + " Name=" + name;
     }
 
     /**
@@ -53,19 +62,8 @@ public class ParameterCategory {
      *
      * @return code: unique code needed to identify the Parameter Category
      */
-
     public String getCode() {
         return code;
-    }
-
-    /**
-     * modifies the code of the Parameter Category
-     *
-     * @param code unique code needed to identify the Parameter Category
-     */
-    public void setCode(String code) {
-        checkCodeRules(code);
-        this.code = code;
     }
 
     /**
@@ -77,13 +75,5 @@ public class ParameterCategory {
         return name;
     }
 
-    /**
-     * modifies the code of the Parameter Category
-     *
-     * @param name unique name needed to identify the Parameter Category
-     */
-    public void setName(String name) {
-        checkNameRules(name);
-        this.name = name;
-    }
+
 }
