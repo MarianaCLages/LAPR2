@@ -30,7 +30,7 @@ public class ParameterCategory {
             throw new IllegalArgumentException("Code cannot be blank.");
         }
         if ((code.length() != 5)) {
-            throw new IllegalArgumentException("Code must have 5 to 8 chars.");
+            throw new IllegalArgumentException("Code must have 5 chars.");
         }
     }
 
