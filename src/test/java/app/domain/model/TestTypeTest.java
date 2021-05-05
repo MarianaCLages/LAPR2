@@ -4,13 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 
-import static org.junit.jupiter.api.Assertions.*;
-
 public class TestTypeTest {
-    //   String testID; 5 chars
-    //   String description; <21
-    //   String collectingMethod; <16
-    //   ParameterCategory category;
 
     private ParameterCategoryStore cat;
 
