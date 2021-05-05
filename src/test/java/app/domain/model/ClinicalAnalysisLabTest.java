@@ -10,7 +10,7 @@ public class ClinicalAnalysisLabTest {
     @Test
     public void RegisterLabCorrect() {
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","63578976543","1627483987");
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","63578976543","12345678901");
         //Assert
         Assert.assertNotNull(lab);
     }

@@ -12,6 +12,9 @@ public class ClinicalAnalysisLab {
 
     public ClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber) {
         checkNameRules(name);
+        checkAdressRules(address);
+        checkPhoneNumberRules(phoneNumber);
+        checkLabIDRules(id);
         this.name = name;
         this.address = address;
         this.id = id;
