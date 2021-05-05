@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ParameterTest {
-    ParameterCategory cat = new ParameterCategory("12345678", "Hemogram");
+    ParameterCategory cat = new ParameterCategory("12345", "Hemogram");
 
 
     @Test

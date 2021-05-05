@@ -10,7 +10,7 @@ public class Employee {
     private String phonenumber;
     private String email;
     private String SOC;
-    private String Role;
+    private String role;
 
 
     public Employee(String name, String address, String phonenumber, String email, String SOC, String Role) {
@@ -24,7 +24,7 @@ public class Employee {
         this.phonenumber = phonenumber;
         this.email = email;
         this.SOC = SOC;
-        this.Role = Role;
+        this.role = role;
 
     }
 
@@ -108,14 +108,14 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", phonenumber='" + phonenumber + '\'' +
-                ", email='" + email + '\'' +
-                ", SOC='" + SOC + '\'' +
-                ", Role='" +  + '\'' +
-                '}';
+        return "Employee:" +
+                "name=" + name +
+                ", address=" + address +
+                ", phonenumber=" + phonenumber +
+                ", email='" + email +
+                ", SOC='" + SOC +
+                ", Role='" ;
+
     }
 
 

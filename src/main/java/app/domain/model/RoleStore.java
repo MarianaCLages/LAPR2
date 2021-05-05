@@ -1,18 +1,35 @@
+/*
 package app.domain.model;
 
-public enum RoleStore {
+import javax.management.relation.RoleList;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-    ClinicalChemistryTechnologist(1),MedicalLabTechnician(2),LaboratoryCoordinator(3),Receptionist(4),SpecialistDoctor(5),Administrator(6);
+public class RoleStore {
 
-    private int index;
 
-    RoleStore(int i) {
-        this.index = i;
+
+    List <Role> roleLists;
+
+    public RoleStore(){
+        this.roleLists = new ArrayList<Role>();
+
     }
-    public int getRoleStore() {
-        return this.index;
+
+    public List<Role> getRoleLists(){
+        return roleLists;
     }
+
+
+
+
+
+
+
+
 
 }
+*/
 
 
