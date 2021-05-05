@@ -166,7 +166,8 @@ birth date, sex, Tax Identification number (TIF), phone number, e-mail and name,
 |                                                                                                                                        | ... validating the data globally (e.g.: duplicated)?                     | ClientStore              | IE: knows/has all the Client objects                                                                          |
 | Step 5: confirms data                                                                                                                  | ... confirming the data?                                                 | RegisterClientUI         | IE: the interface interacts with the actor.                                                                   |
 |                                                                                                                                        | ... adding the user with role?                                           | ClientStore              | IE: it has the needed information of the client and their new user's data.                                    |
-|                                                                                                                                        | ... creating the user password                                           | Client 		           | IE: knows his own data and generates its own data                                                                                                              |
+|                                                                                                                                        | ... creating the user password                                           | Client                   | IE: knows his own data and generates its own data                                                             |
+|                                                                                                                                        | ... sending the email to confirm the register                            | ClientStore              | IE: class responsible for register in the system also is responsible for sending the confirmation             |
 | Step 6: informs operation success                                                                                                      | ... informing operation success?                                         | RegisterClientUI         | IE: the interface interacts with the actor.                                                                   |
 
 ### Systematization ##
@@ -219,5 +220,4 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 # 7. Observations
 
-*In this section, it is suggested to present a critical perspective on the developed work, pointing, for example, to other alternatives and or future related work.*
-
+The email class is not implemented since there is no need to implement this function in this Sprint B 

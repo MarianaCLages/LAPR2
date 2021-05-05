@@ -21,15 +21,20 @@ class Company{
 class Client{
     + Client(int cc, int nhs, string birthDate, string sex, int tinNumber, int phoneNumber, string email, string name)
     + getPassword()
+    + addUserWithRole(string name, string email, string roleId, string password)
+
 }
 
 class ClientStore{
     + createClient(int cc, int nhs, string birthDate, string sex, int tinNumber, int phoneNumber, string email, string name)
     + saveClient()
     + validateClient()
-    + addUserWithRole(string name, string email, string roleId)
+    + addUser()
 }
 
+class Email{
++sendConfirmation(email,password)
+}
 
 RegisterClientUI ..> RegisterClientController
 RegisterClientController ..> Company
@@ -37,5 +42,7 @@ RegisterClientController ..> ClientStore
 Company --> ClientStore
 
 ClientStore --> Client
-ClientStore ..> AuthFacade
+Client ..> AuthFacade
+Client ..> Email
+
 @enduml

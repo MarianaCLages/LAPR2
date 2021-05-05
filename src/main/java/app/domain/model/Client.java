@@ -1,17 +1,19 @@
 package app.domain.model;
 
+import app.domain.shared.Constants;
+import auth.AuthFacade;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
 import java.text.DateFormat;
+import java.text.Normalizer;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.ZoneId;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.regex.Pattern;
-import java.text.Normalizer;
 
 public class Client {
 
@@ -127,11 +129,13 @@ public class Client {
         }
 
     }
+
     /**
      * This methode checks if email is correct.
      * Retrieved by professor Paulo Maio code of template of the project.
-     * @author Paulo Maio <pam@isep.ipp.pt>
+     *
      * @param email
+     * @author Paulo Maio <pam@isep.ipp.pt>
      */
 
     private void checkEmailRules(String email) {
@@ -139,10 +143,10 @@ public class Client {
         if (StringUtils.isBlank(email))
             throw new IllegalArgumentException("Code cannot be blank.");
 
-        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@" +"(?:[a-zA-Z0-9-]+\\.)+[a-z" + "A-Z]{2,7}$";
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@" + "(?:[a-zA-Z0-9-]+\\.)+[a-z" + "A-Z]{2,7}$";
 
         Pattern pat = Pattern.compile(emailRegex);
-        if(!pat.matcher(email).matches()){
+        if (!pat.matcher(email).matches()) {
             throw new IllegalArgumentException("Invalid Email.");
         }
     }
@@ -162,7 +166,7 @@ public class Client {
             }
         }
 
-        if (name.length() >= 35){
+        if (name.length() >= 35) {
             throw new IllegalArgumentException("Name must have maximum of 35 characters");
         }
     }
@@ -171,9 +175,29 @@ public class Client {
     @Override
     public String toString() {
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        Calendar cal = Calendar.getInstance();
         String date = dateFormat.format(this.birthDate.getTime());
 
-        return "Client: " + "phoneNumber= " + phoneNumber + ", cc= " + cc +", nhs= " + nhs + ", tinNumber= " + tinNumber + ", birthDate= " + date +", sex= " + sex +", email= " + email +", name= " + name ;
+        return "Client: " + "phoneNumber= " + phoneNumber + ", cc= " + cc + ", nhs= " + nhs + ", tinNumber= " + tinNumber + ", birthDate= " + date + ", sex= " + sex + ", email= " + email + ", name= " + name;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    private String getPassword() {
+        int lenght = 10;
+
+        return RandomStringUtils.randomAlphanumeric(lenght);
+    }
+
+    public boolean addUser(Company company) {
+        String password = getPassword();
+        AuthFacade authFacade = company.getAuthFacade();
+        return authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_CLIENT);
+
     }
 }

@@ -3,22 +3,19 @@ package app.domain.model;
 import auth.AuthFacade;
 import org.apache.commons.lang3.StringUtils;
 
-import javax.management.relation.Role;
-import javax.management.relation.RoleList;
-import java.util.List;
-
 /**
  * @author Paulo Maio <pam@isep.ipp.pt>
  */
 public class Company {
 
-    private String designation;
-    private AuthFacade authFacade;
+    private final String designation;
+    private final AuthFacade authFacade;
 
     private ParameterCategoryStore parameterCategoryList;
     private ParameterStore parameterList;
     private TestTypeStore testTypeList;
     private ClinicalAnalysisLabStore clinicalAnalysisLabList;
+    private ClientStore ClientList;
 
     public Company(String designation) {
         if (StringUtils.isBlank(designation))
@@ -38,6 +35,7 @@ public class Company {
 
     /**
      * creates a new empty list of Parameter Categories objects
+     *
      * @return empty list of Parameter Categories objects
      */
 
@@ -49,8 +47,16 @@ public class Company {
         return this.parameterList = new ParameterStore();
     }
 
-    public TestTypeStore getTestTypeList() {return this.testTypeList= new TestTypeStore();}
+    public TestTypeStore getTestTypeList() {
+        return this.testTypeList = new TestTypeStore();
+    }
 
-    public ClinicalAnalysisLabStore getClinicalAnalysisLabList() {return this.clinicalAnalysisLabList = new ClinicalAnalysisLabStore();}
+    public ClinicalAnalysisLabStore getClinicalAnalysisLabList() {
+        return this.clinicalAnalysisLabList = new ClinicalAnalysisLabStore();
+    }
+
+    public ClientStore getClientList() {
+        return this.ClientList = new ClientStore();
+    }
 }
 
