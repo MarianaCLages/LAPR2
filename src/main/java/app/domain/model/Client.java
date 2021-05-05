@@ -1,5 +1,8 @@
 package app.domain.model;
 
+import app.domain.shared.Constants;
+import auth.AuthFacade;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
@@ -175,5 +178,26 @@ public class Client {
         String date = dateFormat.format(this.birthDate.getTime());
 
         return "Client: " + "phoneNumber= " + phoneNumber + ", cc= " + cc +", nhs= " + nhs + ", tinNumber= " + tinNumber + ", birthDate= " + date +", sex= " + sex +", email= " + email +", name= " + name ;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    private String getPassword() {
+        int lenght = 10;
+
+        return RandomStringUtils.randomAlphanumeric(lenght);
+    }
+
+    public boolean addUser(Company company) {
+        String password = getPassword();
+        AuthFacade authFacade = company.getAuthFacade();
+        return authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_CLIENT);
+
     }
 }

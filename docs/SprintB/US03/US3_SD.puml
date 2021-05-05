@@ -8,6 +8,7 @@ participant ":Company" as COMPANY
 participant "store:ClientStore" as S
 participant ": Client" as C
 participant ":AuthFacade" as AUTH
+participant "mail:email" as mail
 
 activate R
 R -> UI: asks to register a new client
@@ -41,7 +42,7 @@ R -> UI: confirms data
 activate UI
 UI-> CTRL : saveClient()
 activate CTRL
-CTRL -> S: saveClient(c)
+CTRL -> S: saveClient()
 activate S
 S -> S : validateClient(c)
 activate S
@@ -51,20 +52,24 @@ activate S
 deactivate S
 deactivate S
 
-CTRL -> S : addUserWithRole(name,email,roleId)
+CTRL -> S : addUser(company)
 deactivate CTRL
 
 activate S
-S -> C : getPassword();
+S -> C :addUserWithRole(company)
 activate C
-deactivate C
-
-S -> AUTH :addUserWithRole( name, email, password, roleId)
 deactivate S
 
+C -> C : getPassword();
+activate C
+deactivate C
+C -> AUTH :addUserWithRole(name, email, password, RoleId)
 activate AUTH
 deactivate AUTH
-
+C -> mail : email(email, password)
+activate mail
+deactivate mail
+deactivate C
 
 UI --> R : Informs operation success
 deactivate UI

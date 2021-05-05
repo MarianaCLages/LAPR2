@@ -8,6 +8,7 @@ public class RegisterEmployeeController{
     private Company company;
     private Employee em;
     private EmployeeStore store;
+    private RoleStore roleList;
 
     public RegisterEmployeeController() {
 
@@ -25,6 +26,10 @@ public class RegisterEmployeeController{
     public void createEmployee(String name, String address, String phonenumber, String email, String SOC, String DoctorIndexNumber, Role Role) {
         store = company.getEmployeeList();
         store.CreateEmployee(name, address, phonenumber, email, SOC, DoctorIndexNumber, Role);
+    }
+
+    public RoleStore getRoleList() {
+        return this.roleList = new RoleStore();
     }
 
     public boolean saveEmployee() {

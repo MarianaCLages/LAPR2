@@ -27,6 +27,10 @@ public class ParameterController {
         store.CreateParameter(code,name,description,cat);
     }
 
+    public Parameter getpc(){
+        return store.getPc();
+    }
+
     public boolean saveParameter() {
         return this.store.saveParameter();
     }
