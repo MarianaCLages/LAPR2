@@ -92,14 +92,6 @@ public class ParameterStore {
     }
 
 
-    public Parameter getByCode(String code) {
-        for (Parameter pc : array) {
-            if (pc.getCode().equals(code)) {
-                return pc;
-            }
-        }
-        return null;
-    }
 
 
 

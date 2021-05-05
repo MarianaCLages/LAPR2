@@ -4,45 +4,38 @@ class RegisterClientUI{
 }
 
 class RegisterClientController{
-    + getRoleList()
     + getStore()
     + createClient(int cc, int nhs, string birthDate, string sex, int tinNumber, int phoneNumber, string email, string name)
     + saveClient()
-    + addUserWithRole(string name, string email, string password)
 }
 
 class AuthFacade{
+    +addUserWithRole(name, email, password, roleId)
 }
 
-class UserSession{
-}
 
 class Company{
-    + getRoleList()
     + getStore()
 }
 
 class Client{
-    + createClient(int cc, int nhs, string birthDate, string sex, int tinNumber, int phoneNumber, string email, string name)
+    + Client(int cc, int nhs, string birthDate, string sex, int tinNumber, int phoneNumber, string email, string name)
+    + getPassword()
 }
 
 class ClientStore{
     + createClient(int cc, int nhs, string birthDate, string sex, int tinNumber, int phoneNumber, string email, string name)
     + saveClient()
     + validateClient()
-    + existsUser(string email)
-    + addUserWithRole(string name, string email, string password)
+    + addUserWithRole(string name, string email, string roleId)
 }
 
-class RoleStore{
-    + getRoleList()
-}
 
 RegisterClientUI ..> RegisterClientController
 RegisterClientController ..> Company
 RegisterClientController ..> ClientStore
-ClientStore ..> Client
-Company ..> ClientStore: creates
-Company ..> RoleStore
+Company --> ClientStore
 
+ClientStore --> Client
+ClientStore ..> AuthFacade
 @enduml
