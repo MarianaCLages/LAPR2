@@ -5,14 +5,15 @@ import java.util.List;
 
 public class TestTypeStore {
     List<TestType> array;
+    List<ParameterCategory> listCat;
     TestType t;
 
     public TestTypeStore() {
         this.array = new ArrayList<TestType>();
     }
 
-    public boolean CreateTestType(String testID,String description, String collectingMethod) {
-        this.t = new TestType(testID, description, collectingMethod);
+    public boolean CreateTestType(String testID,String description, String collectingMethod, ParameterCategoryStore cat) {
+        this.t = new TestType(testID, description, collectingMethod, cat);
         if (ValidateTestType(t)) {
             return true;
         } else {

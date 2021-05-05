@@ -11,13 +11,17 @@ public class TestType {
     private String testID;
     private String description;
     private String collectingMethod;
-    private ParameterCategory category;
+    private ParameterCategoryStore categories;
 
-    public TestType(String testID, String description, String collectingMethod){
-
+    public TestType(String testID, String description, String collectingMethod, ParameterCategoryStore categories){
+        checkCodeRules(testID);
+        checkCollectingMethodRules(collectingMethod);
+        checkDescriptionRules(description);
+        checkCategoriesList(categories);
         this.testID=testID;
         this.description=description;
         this.collectingMethod=collectingMethod;
+        this.categories=categories;
     }
 
     /**
@@ -56,15 +60,13 @@ public class TestType {
             throw new IllegalArgumentException("Collecting method must have, at maximum, 20 chars.");
     }
 
-
-    /**
-     * modifies the category of the test
-     *
-     * @param category category of the test
-     */
-    public void setCategory(ParameterCategory category) {
-        this.category = category;
+    private void checkCategoriesList(ParameterCategoryStore categories){
+        if (categories.isEmpty())
+            throw new IllegalArgumentException("Collecting method cannot be blank.");
     }
+
+
+
 }
 
 
