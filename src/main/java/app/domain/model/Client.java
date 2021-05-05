@@ -3,9 +3,12 @@ package app.domain.model;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.ZoneId;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.regex.Pattern;
 import java.text.Normalizer;
@@ -167,6 +170,10 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Client: " + "phoneNumber= " + phoneNumber + ", cc='" + cc +", nhs='" + nhs + ", tinNumber='" + tinNumber + ", birthDate=" + birthDate +", sex='" + sex +", email='" + email +", name='" + name ;
+        DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        Calendar cal = Calendar.getInstance();
+        String date = dateFormat.format(this.birthDate.getTime());
+
+        return "Client: " + "phoneNumber= " + phoneNumber + ", cc= " + cc +", nhs= " + nhs + ", tinNumber= " + tinNumber + ", birthDate= " + date +", sex= " + sex +", email= " + email +", name= " + name ;
     }
 }
