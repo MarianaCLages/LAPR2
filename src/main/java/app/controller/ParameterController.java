@@ -27,7 +27,7 @@ public class ParameterController {
         store.CreateParameter(code,name,description,cat);
     }
 
-    public boolean saveParameterCategory() {
+    public boolean saveParameter() {
         return this.store.saveParameter();
     }
 }

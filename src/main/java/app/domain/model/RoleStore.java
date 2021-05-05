@@ -1,4 +1,4 @@
-/*
+
 package app.domain.model;
 
 import javax.management.relation.RoleList;
@@ -10,15 +10,45 @@ public class RoleStore {
 
 
 
-    List <Role> roleLists;
+    List <Role> array;
+    private Role pc;
+
+    private Role ClinicalChemistryTechnologist = new Role("0","Clinical Chemistry Technologist");
+    private Role MedicalLabTechnician = new Role("1", "Medical Lab Technician");
+    private Role LaboratoryCoordinator = new Role("2", "LaboratoryCoordinator");
+    private Role Receptionist = new Role("3","Receptionist");
+    private Role Administrator = new Role("4","Administrator");
+    private Role SpecialistDoctor = new Role("5","SpecialistDoctor");
+
 
     public RoleStore(){
-        this.roleLists = new ArrayList<Role>();
+        this.array = new ArrayList<>();
 
+        array.add(ClinicalChemistryTechnologist);
+        array.add(MedicalLabTechnician);
+        array.add(LaboratoryCoordinator);
+        array.add(LaboratoryCoordinator);
+        array.add(Receptionist);
+        array.add(Administrator);
+        array.add(SpecialistDoctor);
     }
 
-    public List<Role> getRoleLists(){
-        return roleLists;
+
+
+
+
+
+    public Role get(int index ) {
+        return array.get(index);
+    }
+
+
+
+
+
+    public List<Role> getRoleList(){
+
+        return array;
     }
 
 
@@ -30,6 +60,6 @@ public class RoleStore {
 
 
 }
-*/
+
 
 
