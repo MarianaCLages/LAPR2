@@ -14,9 +14,9 @@ public class TestTypeController {
         this.testT = null;
     }
 
-    public boolean createTestType(String testID, String collectingMethod, String description) {
+    public boolean createTestType(String testID, String collectingMethod, String description, ParameterCategoryStore cat) {
         store = company.getTestTypeList();
-        if (store.CreateTestType(testID, collectingMethod, description)){
+        if (store.CreateTestType(testID, collectingMethod, description,cat)){
             return true;
         }else {
             return false;
