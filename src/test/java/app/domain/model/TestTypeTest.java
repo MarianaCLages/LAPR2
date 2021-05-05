@@ -1,15 +1,8 @@
 package app.domain.model;
 
 import org.junit.Assert;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.IllegalFormatPrecisionException;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
