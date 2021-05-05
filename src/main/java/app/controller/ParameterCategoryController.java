@@ -30,8 +30,8 @@ public class ParameterCategoryController {
         store.CreateParameterCategory(code,name);
     }
 
-    public ParameterCategory getpc(){
-        return store.getPc();
+    public String getpc(){
+        return store.getPc().toString();
     }
 
     public boolean saveParameterCategory() {
