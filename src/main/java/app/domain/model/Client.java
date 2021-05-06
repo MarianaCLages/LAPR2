@@ -195,10 +195,15 @@ public class Client {
     }
 
     public boolean addUser(Company company) {
+        boolean success = false;
         String password = getPassword();
         AuthFacade authFacade = company.getAuthFacade();
-        return authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_CLIENT);
+        success = authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_CLIENT);
+        if (success){
+            Email mail = new Email(this.email,getPassword());
 
+        }
+        return success;
     }
 
 }
