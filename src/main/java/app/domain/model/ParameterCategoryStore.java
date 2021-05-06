@@ -140,4 +140,8 @@ public class ParameterCategoryStore {
     public ParameterCategory getPc() {
         return pc;
     }
+
+    public boolean isEmpty(){
+        return this.array.isEmpty();
+    }
 }

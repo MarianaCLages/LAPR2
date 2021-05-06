@@ -46,9 +46,6 @@ public class Company {
     public ParameterCategoryStore getParameterCategoryList() {
         return this.parameterCategoryList = new ParameterCategoryStore();
     }
-    public RoleStore getRoleList() {
-        return this.roleList = new RoleStore();
-    }
 
     public EmployeeStore getEmployeeList(){
         return this.employeeList = new EmployeeStore();
@@ -59,6 +56,10 @@ public class Company {
     }
 
     public TestTypeStore getTestTypeList() {return this.testTypeList= new TestTypeStore();}
+
+    public RoleStore getRoleList() {
+        return this.roleList = new RoleStore();
+    }
 
     public ClinicalAnalysisLabStore getClinicalAnalysisLabList() {return this.clinicalAnalysisLabList = new ClinicalAnalysisLabStore();}
 }

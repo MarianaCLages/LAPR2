@@ -49,7 +49,7 @@ ParameterStore --> Parameter
 
 ParameterCategoryStore --> ParameterCategory
 
-Company --> Parameter
-Company --> ParameterCategory
-Parameter  -->  ParameterCategory
+
+
+Parameter  ..>  ParameterCategory
 @enduml
