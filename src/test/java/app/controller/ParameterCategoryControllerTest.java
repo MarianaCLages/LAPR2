@@ -11,6 +11,12 @@ import static org.junit.Assert.*;
 public class ParameterCategoryControllerTest {
     Company company =App.getInstance().getCompany();
 
+
+    @Test
+    public void CreateControllerNoAttribute(){
+        ParameterCategoryController controller = new ParameterCategoryController();
+    }
+
     @Test
     public void CreateController(){
         ParameterCategoryController controller = new ParameterCategoryController(company);
