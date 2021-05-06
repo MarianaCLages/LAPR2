@@ -112,9 +112,9 @@ public class Employee {
                 "name=" + name +
                 ", address=" + address +
                 ", phonenumber=" + phonenumber +
-                ", email='" + email +
-                ", SOC='" + SOC +
-                ", Role='"+ role ;
+                ", email=" + email +
+                ", SOC=" + SOC +
+                ", Role="+ role ;
 
     }
 

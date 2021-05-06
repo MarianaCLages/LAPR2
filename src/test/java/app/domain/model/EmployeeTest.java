@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -13,6 +14,16 @@ public class EmployeeTest {
         Employee employee = new Employee("Bino","AtuaTerra", "912345678","something@isep.com","111111111111111111",role);
     }
 
+    @Test
+    public void RegisterEmployeeNameLimits() {
+        //Arrange + Act
+        Employee employee = new Employee("AlBinoz","AtuaTerra", "912345678","something@isep.com","111111111111111111",role);
+    }
+    @Test
+    public void RegisterEmployeeNameOutLimits() {
+        //Arrange + Act
+        Employee employee = new Employee("AlBino.-","AtuaTerra", "912345678","something@isep.com","111111111111111111",role);
+    }
 
     @Test(expected = IllegalArgumentException.class)
     public void RegisterEmployeeNameWithNum() {
@@ -36,6 +47,11 @@ public class EmployeeTest {
     public void RegisterEmployeePhoneNumberWithLetter() {
         //Arrange + Act
         Employee employee = new Employee("Bino","AtuaTerra", "91234567A","something@isep.com","11111111111111111",role);
+    }
+    @Test(expected = IllegalArgumentException.class)
+    public void RegisterEmployeePhoneNumberOutLimits() {
+        //Arrange + Act
+        Employee employee = new Employee("Bino","AtuaTerra", "91234567-","something@isep.com","11111111111111111",role);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -66,6 +82,20 @@ public class EmployeeTest {
     public void RegisterEmployeeSOCWithLetter() {
         //Arrange + Act
         Employee employee = new Employee("Bino","AtuaTerra", "912345678","something@isep.com","11111111111111111A",role);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void RegisterEmployeeSOCOutLimits() {
+        //Arrange + Act
+        Employee employee = new Employee("Bino","AtuaTerra", "912345678","something@isep.com","11111111111111111-",role);
+    }
+
+    @Test
+    public void toStringTest(){
+        Employee employee = new Employee("Bino","AtuaTerra", "912345678","something@isep.com","111111111111111111",role);
+        String expected = "Employee:name=Bino, address=AtuaTerra, phonenumber=912345678, email=something@isep.com, SOC=111111111111111111, Role="+ role.toString();
+        String actual = employee.toString();
+        Assert.assertEquals(expected,actual);
     }
 
 }
