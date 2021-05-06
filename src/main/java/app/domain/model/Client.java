@@ -201,24 +201,4 @@ public class Client {
 
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    private String getPassword() {
-        int lenght = 10;
-
-        return RandomStringUtils.randomAlphanumeric(lenght);
-    }
-
-    public boolean addUser(Company company) {
-        String password = getPassword();
-        AuthFacade authFacade = company.getAuthFacade();
-        return authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_CLIENT);
-
-    }
 }
