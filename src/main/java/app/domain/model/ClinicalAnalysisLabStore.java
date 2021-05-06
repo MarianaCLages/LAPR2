@@ -11,8 +11,8 @@ public class ClinicalAnalysisLabStore {
         this.array = new ArrayList<ClinicalAnalysisLab>();
     }
 
-    public boolean CreateClinicalAnalysisLab(String name, String address, String id, String tin, String phonenumber, TestTypeStore tType) {
-        this.cal = new ClinicalAnalysisLab(name,address,id,tin,phonenumber, tType);
+    public boolean CreateClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber) {
+        this.cal = new ClinicalAnalysisLab(name, address, id, tin, phoneNumber);
         if (ValidateClinicalAnalysisLab(cal)) {
             return true;
         } else {
@@ -49,4 +49,3 @@ public class ClinicalAnalysisLabStore {
         return true;
     }
 }
-

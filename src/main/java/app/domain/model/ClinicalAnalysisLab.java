@@ -8,14 +8,14 @@ public class ClinicalAnalysisLab {
     private String id;
     private String tin;
     private String phoneNumber;
-    private TestTypeStore tType;
+    private TestType testType;
 
-    public ClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber, TestTypeStore tType) {
+    public ClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber) {
         checkNameRules(name);
-        checkAdressRules(address);
+        checkAddressRules(address);
         checkPhoneNumberRules(phoneNumber);
         checkLabIDRules(id);
-        checkTestTypeStoreRules(tType);
+        checkTINNumberRules(tin);
         this.name = name;
         this.address = address;
         this.id = id;
@@ -23,13 +23,21 @@ public class ClinicalAnalysisLab {
         this.phoneNumber = phoneNumber;
     }
 
-    private void checkTestTypeStoreRules(TestTypeStore tType) {
-        if (tType.isEmpty())
-            throw new IllegalArgumentException("Collecting method cannot be blank.");
+    /**
+     * This method checks if the code provided meets the requirements, if not it throws a exception making the execution to stop
+     *
+     * @param id laboratory's ID
+     */
+    private void checkLabIDRules(String id) {
+        if (StringUtils.isBlank(id))
+            throw new IllegalArgumentException("Laboratory ID cannot be blank.");
+        if (id.length() != 5)
+            throw new IllegalArgumentException("Laboratory ID must have 5 chars.");
     }
 
-    public ClinicalAnalysisLab(TestType testType){
-        this.tType = tType;
+
+    public ClinicalAnalysisLab(TestType testType) {
+        this.testType = testType;
     }
 
     /**
@@ -49,7 +57,7 @@ public class ClinicalAnalysisLab {
      *
      * @param address address of the laboratory
      */
-    private void checkAdressRules(String address) {
+    private void checkAddressRules(String address) {
         if (StringUtils.isBlank(address))
             throw new IllegalArgumentException("Address cannot be blank.");
         if (address.length() > 30)
@@ -66,6 +74,14 @@ public class ClinicalAnalysisLab {
             throw new IllegalArgumentException("Phone number cannot be blank.");
         if (phoneNumber.length() != 11)
             throw new IllegalArgumentException("Phone number must have 11 chars.");
+        phoneNumber = phoneNumber.toLowerCase();
+        char[] charArray = phoneNumber.toCharArray();
+        for (int i = 0; i < charArray.length; i++) {
+            char c = charArray[i];
+            if (!(c >= '0' && c <= '9')) {
+                throw new IllegalArgumentException("Phone Number only accepts numbers.");
+            }
+        }
     }
 
     /**
@@ -78,18 +94,13 @@ public class ClinicalAnalysisLab {
             throw new IllegalArgumentException("TIN cannot be blank.");
         if (tin.length() != 10)
             throw new IllegalArgumentException("TIN must have 10 chars.");
+        tin = tin.toLowerCase();
+        char[] charArray = tin.toCharArray();
+        for (int i = 0; i < charArray.length; i++) {
+            char c = charArray[i];
+            if (!(c >= '0' && c <= '9')) {
+                throw new IllegalArgumentException("TIN only accepts numbers.");
+            }
+        }
     }
-
-    /**
-     * This method checks if the code provided meets the requirements, if not it throws a exception making the execution to stop
-     *
-     * @param id laboratory's ID
-     */
-    private void checkLabIDRules(String id) {
-        if (StringUtils.isBlank(id))
-            throw new IllegalArgumentException("Laboratory ID cannot be blank.");
-        if (id.length() != 5)
-            throw new IllegalArgumentException("Laboratory ID must have 5 chars.");
-    }
-
 }
