@@ -8,6 +8,7 @@ participant ":Company" as C
 participant "store: ClinicalAnalysisLabStore" as STO
 participant "cal: ClinicalAnalysisLaboratory" as CAL
 participant "tType:TestTypeStore" as TT
+participant "testStore:TestTypeStore" as TT1
 
 activate A
 A -> UI: wants to register a new clinical analysis laboratory
@@ -16,6 +17,26 @@ UI --> A: requests data (labID, name, address,\n phoneNumber, tinNumber)
 deactivate UI
 A -> UI: types requested data
 activate UI
+UI -> CTRL: getTestTypeList()
+activate CTRL
+CTRL -> STO : tTypeList = getTestTypeList()
+activate STO
+STO->TT: tTypeList = getTestTypeList()
+activate TT
+deactivate TT
+CTRL --> TT1 **: TestTypeStore
+loop
+UI -> A: shows types of test list
+deactivate UI
+A -> UI: select the type of tests
+activate UI
+UI -> CTRL: add(t)
+CTRL -> TT1: add(t)
+activate TT1
+deactivate TT1
+end
+deactivate STO
+deactivate CTRL
 UI -> CTRL : getStore()
 activate CTRL
 CTRL -> C: store = getStore()
@@ -26,48 +47,21 @@ deactivate STO
 deactivate C
 deactivate CTRL
 
-UI -> CTRL : CreateClinicalAnalysisLab(labID, name, address, phoneNumber, tinNumber)
+UI -> CTRL : CreateClinicalAnalysisLab(labID, name, address, phoneNumber, tinNumber, testTypeStore)
 activate CTRL
-CTRL -> STO: cal = CreateClinicalAnalysisLab(labID, name, address, phoneNumber, tinNumber)
+CTRL -> STO: cal = CreateClinicalAnalysisLab(labID, name, address, phoneNumber, tinNumber, testTypeStore)
 activate STO
-STO --> CAL** : create(labID, name, address, phoneNumber, tinNumber)
+STO --> CAL** : create(labID, name, address, phoneNumber, tinNumber, testTypeStore)
 
 deactivate STO
 CTRL -> STO: validateClinicalAnalysisLab(cal)
 activate STO
 deactivate STO
 deactivate CTRL
-UI -> CTRL: getTestTypeList()
-activate CTRL
-CTRL -> STO : tTypeList = getTestTypeList()
-activate STO
-STO->TT: tTypeList = getTestTypeList()
-activate TT
-deactivate TT
-deactivate STO
+
+deactivate C
 deactivate CTRL
 
-UI --> A: shows types of test list and asks to select types
-deactivate C
-deactivate CTRL
-deactivate UI
-A -> UI: selects types of tests
-activate UI
-UI -> CTRL: setData()
-activate CTRL
-CTRL -> STO: t = setTypeTest()
-activate STO
-STO -> CAL: t = setTypeTest()
-activate CAL
-deactivate CAL
-deactivate STO
-deactivate C
-CTRL -> STO: validateClinicalAnalysisLab(cal)
-activate STO
-STO -> CAL : validate()
-activate CAL
-deactivate CAL
-deactivate STO
 UI --> A: shows all data and requests confirmation
 deactivate CTRL
 deactivate UI

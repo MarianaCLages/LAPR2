@@ -100,6 +100,8 @@ easily support other kinds of tests (e.g., urine)."
 
 * **AC4:** "TIN is a 10 digit number."
 
+* **AC5:** "The test types are selected from a list."
+
 ### 1.4. Found out Dependencies
 
 There is a dependency to "US9: As an administrator, I want to specify a new type of test and its collecting methods." since at least a type of test must exist to specify which type of test the clinical analysis laboratory operates.
