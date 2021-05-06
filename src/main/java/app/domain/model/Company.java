@@ -59,6 +59,9 @@ public class Company {
     public List parameterCategoryList(){
         return parameterCategoryList.array;
     }
+    public List roleList(){
+        return roleList.getRoleList();
+    }
 
     public TestTypeStore getTestTypeList() {return this.testTypeList= new TestTypeStore();}
 

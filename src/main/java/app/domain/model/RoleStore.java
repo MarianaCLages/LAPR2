@@ -10,15 +10,14 @@ public class RoleStore {
 
 
 
-    List <Role> array;
+    private  List <Role> array;
     private Role pc;
 
     private Role ClinicalChemistryTechnologist = new Role("0","Clinical Chemistry Technologist");
     private Role MedicalLabTechnician = new Role("1", "Medical Lab Technician");
     private Role LaboratoryCoordinator = new Role("2", "LaboratoryCoordinator");
     private Role Receptionist = new Role("3","Receptionist");
-    private Role Administrator = new Role("4","Administrator");
-    private Role SpecialistDoctor = new Role("5","SpecialistDoctor");
+    private Role SpecialistDoctor = new Role("4","SpecialistDoctor");
 
 
     public RoleStore(){
@@ -29,7 +28,6 @@ public class RoleStore {
         array.add(LaboratoryCoordinator);
         array.add(LaboratoryCoordinator);
         array.add(Receptionist);
-        array.add(Administrator);
         array.add(SpecialistDoctor);
     }
 

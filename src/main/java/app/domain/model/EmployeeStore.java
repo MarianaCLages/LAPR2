@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeStore {
-    List<Employee> array;
-    Employee em;
+    private List <Employee> array;
+    private Employee em;
 
     public EmployeeStore() {
         this.array = new ArrayList<Employee>();
@@ -13,12 +13,14 @@ public class EmployeeStore {
 
 
 
-    public Employee CreateEmployee(String name, String address, String phonenumber, String email, String SOC,String DoctorIndexNumber, Role role) {
+    public Employee CreateEmployee(String name, String address, String phonenumber, String email, String SOC,String DoctorIndexNumber, int role) {
 
-        if (role.getRoleID().equals("5")){
-            this.em = new SpecialistDoctor(name, address, phonenumber, email,SOC,DoctorIndexNumber ,role);
+        RoleStore roles = new RoleStore();
+
+        if (role == 4){
+            this.em = new SpecialistDoctor(name, address, phonenumber, email,SOC,DoctorIndexNumber ,roles.get(role));
         }else{
-            this.em = new Employee(name, address, phonenumber, email, SOC, role);
+            this.em = new Employee(name, address, phonenumber, email, SOC, roles.get(role));
         }
         return this.em;
     }
