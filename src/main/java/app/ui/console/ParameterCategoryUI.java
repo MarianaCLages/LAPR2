@@ -40,7 +40,7 @@ public class ParameterCategoryUI implements Runnable {
                 }
             }while (exception);
 
-            cont = Utils.confirm("The following Category was created do you want to save?" + ctrl.getpc().toString());
+            cont = Utils.confirm("The following Category was created do you want to save?" + ctrl.getpc());
             if (cont) {
 
                 if (ctrl.saveParameterCategory()){

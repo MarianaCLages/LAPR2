@@ -10,10 +10,10 @@ public class Employee {
     private String phonenumber;
     private String email;
     private String SOC;
-    private String role;
+    private Role role;
 
 
-    public Employee(String name, String address, String phonenumber, String email, String SOC, String Role) {
+    public Employee(String name, String address, String phonenumber, String email, String SOC, Role role) {
         checkNameRules(name);
         checkAdressRules(address);
         checkPhoneNumberRules(phonenumber);
@@ -112,9 +112,9 @@ public class Employee {
                 "name=" + name +
                 ", address=" + address +
                 ", phonenumber=" + phonenumber +
-                ", email='" + email +
-                ", SOC='" + SOC +
-                ", Role='" ;
+                ", email=" + email +
+                ", SOC=" + SOC +
+                ", Role="+ role ;
 
     }
 

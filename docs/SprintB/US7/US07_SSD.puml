@@ -15,7 +15,7 @@ deactivate ":System"
 
 ADM -> ":System": select a role
 activate ":System"
-ADM <-- ":System": asks for employee data(Name,Address,\n Phone Number, E-Mail,  "SOC")
+ADM <-- ":System": asks for employee data(Name,Address,\n Phone Number, E-Mail,  "SOC", Doctor Index Number)
 deactivate ":System"
 
 ADM -> ":System": type employee data

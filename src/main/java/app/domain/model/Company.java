@@ -19,6 +19,9 @@ public class Company {
     private ParameterStore parameterList;
     private TestTypeStore testTypeList;
     private ClinicalAnalysisLabStore clinicalAnalysisLabList;
+    private RoleStore roleList;
+    private EmployeeStore employeeList;
+    private ClientStore clientList;
 
     public Company(String designation) {
         if (StringUtils.isBlank(designation))
@@ -45,12 +48,31 @@ public class Company {
         return this.parameterCategoryList = new ParameterCategoryStore();
     }
 
+    public EmployeeStore getEmployeeList(){
+        return this.employeeList = new EmployeeStore();
+    }
+
     public ParameterStore getParameterList() {
         return this.parameterList = new ParameterStore();
     }
 
+    public List parameterCategoryList(){
+        return parameterCategoryList.array;
+    }
+    public List roleList(){
+        return roleList.getRoleList();
+    }
+
     public TestTypeStore getTestTypeList() {return this.testTypeList= new TestTypeStore();}
 
+    public RoleStore getRoleList() {
+        return this.roleList = new RoleStore();
+    }
+
     public ClinicalAnalysisLabStore getClinicalAnalysisLabList() {return this.clinicalAnalysisLabList = new ClinicalAnalysisLabStore();}
+
+    public ClientStore getClientList(){
+        return this.clientList = new ClientStore();
+    }
 }
 

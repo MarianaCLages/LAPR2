@@ -10,7 +10,7 @@ class RegisterClientController{
 }
 
 class AuthFacade{
-    +addUserWithRole(name, email, password, roleId)
+    + addUserWithRole(name, email, password, roleId)
 }
 
 
@@ -20,22 +20,28 @@ class Company{
 
 class Client{
     + Client(int cc, int nhs, string birthDate, string sex, int tinNumber, int phoneNumber, string email, string name)
-    + getPassword()
+    + addUserWithRole(company)
+    - getPassword()
+
 }
 
 class ClientStore{
     + createClient(int cc, int nhs, string birthDate, string sex, int tinNumber, int phoneNumber, string email, string name)
     + saveClient()
-    + validateClient()
-    + addUserWithRole(string name, string email, string roleId)
+    + validateClient(c)
+    + addUser(company)
 }
 
+class email{
++email(password, email)
+}
 
+Client --> email
 RegisterClientUI ..> RegisterClientController
 RegisterClientController ..> Company
 RegisterClientController ..> ClientStore
 Company --> ClientStore
 
 ClientStore --> Client
-ClientStore ..> AuthFacade
+Client ..> AuthFacade
 @enduml
