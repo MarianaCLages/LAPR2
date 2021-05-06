@@ -21,6 +21,7 @@ public class Company {
     private ClinicalAnalysisLabStore clinicalAnalysisLabList;
     private RoleStore roleList;
     private EmployeeStore employeeList;
+    private ClientStore clientList;
 
     public Company(String designation) {
         if (StringUtils.isBlank(designation))
@@ -62,5 +63,9 @@ public class Company {
     }
 
     public ClinicalAnalysisLabStore getClinicalAnalysisLabList() {return this.clinicalAnalysisLabList = new ClinicalAnalysisLabStore();}
+
+    public ClientStore getClientList(){
+        return this.clientList = new ClientStore();
+    }
 }
 
