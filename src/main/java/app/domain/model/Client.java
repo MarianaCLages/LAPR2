@@ -158,6 +158,7 @@ public class Client {
         name = name.toLowerCase();
         name = Normalizer.normalize(name, Normalizer.Form.NFD);
         name = name.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
+        name = name.replaceAll(" ", "");
         char[] charArray = name.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
             char c = charArray[i];

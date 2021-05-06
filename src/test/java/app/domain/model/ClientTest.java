@@ -36,7 +36,6 @@ public class ClientTest {
         Date date = df.parse(strDate);
 
         Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, "email@gamil.com", "Zé");
-
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -323,6 +322,11 @@ public class ClientTest {
 
         Assert.assertEquals(expected,actual);
 
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void ClientNull() throws ParseException {
+        Client client = new Client(null, null, null, null, null, ' ', null, null);
     }
 }
 

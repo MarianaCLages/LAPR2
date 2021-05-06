@@ -30,15 +30,11 @@ public class ClientController {
     }
 
 
-    public void getStore() {
-        this.store = this.company.getClientList();
-    }
-
-    public boolean saveClient(Company company) {
+    public boolean saveClient() {
         boolean saved = false;
 
         saved = store.saveClient();
-        saved = store.addUser(company);
+        saved = store.addUser(this.company);
 
         return saved;
     }
