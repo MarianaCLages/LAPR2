@@ -43,8 +43,8 @@ class TestTypeStore{
 CreateClinicalAnalysisLabUI ..> CreateClinicalAnalysisLabController
 CreateClinicalAnalysisLabController ..> Company
 CreateClinicalAnalysisLabController ..> ClinicalAnalysisLaboratoryStore
-Company ..> ClinicalAnalysisLaboratoryStore: creates
-ClinicalAnalysisLaboratoryStore ..> ClinicalAnalysisLaboratory: creates
-ClinicalAnalysisLaboratoryStore ..> TestTypeStore
+Company --> ClinicalAnalysisLaboratoryStore: creates
+ClinicalAnalysisLaboratoryStore --> ClinicalAnalysisLaboratory: creates
+ClinicalAnalysisLaboratoryStore --> TestTypeStore
 
 @enduml
