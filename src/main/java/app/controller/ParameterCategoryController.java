@@ -12,11 +12,7 @@ public class ParameterCategoryController {
 
     public ParameterCategoryController() {
         this(App.getInstance().getCompany());
-      //  App app = new App();
-      //  UserSession session = App.getCurrentUserSession();
-      //  if (!session.isLoggedInWithRole("ADMINISTRATOR")) {
-      //      throw new IllegalStateException("Not Authorized");
-      //  }
+
     }
 
     public ParameterCategoryController(Company company) {
