@@ -8,21 +8,28 @@ public class ClinicalAnalysisLab {
     private String id;
     private String tin;
     private String phoneNumber;
-    private TestType testType;
+    private TestTypeStore tType;
 
-    public ClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber) {
+    public ClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber, TestTypeStore tType) {
         checkNameRules(name);
         checkAdressRules(address);
         checkPhoneNumberRules(phoneNumber);
         checkLabIDRules(id);
+        checkTestTypeStoreRules(tType);
         this.name = name;
         this.address = address;
         this.id = id;
         this.tin = tin;
         this.phoneNumber = phoneNumber;
     }
+
+    private void checkTestTypeStoreRules(TestTypeStore tType) {
+        if (tType.isEmpty())
+            throw new IllegalArgumentException("Collecting method cannot be blank.");
+    }
+
     public ClinicalAnalysisLab(TestType testType){
-        this.testType = testType;
+        this.tType = tType;
     }
 
     /**
