@@ -3,17 +3,16 @@
 
 class RegisterEmployeeUI{
 }
-
 class RegisterEmployeeController{
 +getRoleList()
 +CreateEmployee(name,addresses,phoneNumber,email,soc,role)
 +CreateEmployee(name,addresses,phoneNumber,email,soc,role,docInNum)
 +saveEmployee(em)
-+
++createUser(name,email,password)
 }
 
-class AuthFacade{
-+addUserWithRole(name,email,password,roleID)
+class UserStore{
++createUser(name,email,password)
 }
 
 class Company{
@@ -38,34 +37,37 @@ class Employee{
 +Employee(name,addresses,phoneNumber,email,soc,role)
 +Employee(name,addresses,phoneNumber,email,soc,role,docInNum)
 }
-
 class RoleStore{
-ClinicalChemistryTechnologist
-MedicalLabTechnician
-LaboratoryCoordinator
-Receptionist
-SpecialistDoctor
-Administrator
 +getRoleList()
 }
 
+class ClinicalChemistryTechnologist{
+}
+class MedicalLabTechnician{
+}
+class LaboratoryCoordinator{
+}
+class Receptionist{
+}
 class SpecialistDoctor{
 -docInNum: int
 }
-class Role{
-roleID: String
-roleName: String
+class Administrator{
 }
-EmployeeStore --> SpecialistDoctor
 RegisterEmployeeController ..> EmployeeStore
 RegisterEmployeeUI ..> RegisterEmployeeController
 RegisterEmployeeController ..> Company
 Company ..> RoleStore
-EmployeeStore ..> AuthFacade
-Company --> EmployeeStore
-EmployeeStore --> Employee
+Company --> Employee
+Company ..> UserStore
+Company ..> EmployeeStore
+EmployeeStore ..> Employee
 SpecialistDoctor --|> Employee
-RoleStore --> Role
+ClinicalChemistryTechnologist --|> Employee
+MedicalLabTechnician --|> Employee
+LaboratoryCoordinator --|> Employee
+Receptionist --|> Employee
+Administrator --|> Employee
 
 
 

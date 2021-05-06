@@ -42,14 +42,14 @@ CreateParameterUI ..> CreateParameterController
 CreateParameterController ..> Company
 CreateParameterController ..> ParameterStore
 
-Company --> ParameterCategoryStore
-Company --> ParameterStore
+Company ..> ParameterCategoryStore
+Company ..> ParameterStore
 
-ParameterStore --> Parameter
+ParameterStore ..> Parameter
 
-ParameterCategoryStore --> ParameterCategory
+ParameterCategoryStore ..> ParameterCategory
 
-Company --> Parameter
-Company --> ParameterCategory
-Parameter  -->  ParameterCategory
+Company"1" --> "*"Parameter: knows
+Company"1" --> "*"ParameterCategory: knows
+Parameter "1" --> "1" ParameterCategory: caracterized by
 @enduml

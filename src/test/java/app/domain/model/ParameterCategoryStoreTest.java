@@ -10,13 +10,11 @@ public class ParameterCategoryStoreTest {
         //Arrange
         ParameterCategoryStore store = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
-        ParameterCategory pc2 = new ParameterCategory("A8554", "Hemograma");
         //Act
         store.add(pc1);
         //Assert
         Assert.assertFalse(store.ValidateParameterCategory(pc1));
     }
-
 
 
     @Test
@@ -50,7 +48,6 @@ public class ParameterCategoryStoreTest {
         Assert.assertFalse(store.ValidateParameterCategory(pc2));
 
     }
-
 
     @Test
     public void getIDRight() {
