@@ -19,7 +19,7 @@ public class EmployeeTest {
         //Arrange + Act
         Employee employee = new Employee("AlBinoz","AtuaTerra", "912345678","something@isep.com","111111111111111111",role);
     }
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void RegisterEmployeeNameOutLimits() {
         //Arrange + Act
         Employee employee = new Employee("AlBino.-","AtuaTerra", "912345678","something@isep.com","111111111111111111",role);
