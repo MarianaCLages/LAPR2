@@ -13,7 +13,11 @@ public class ClientStore {
     }
 
     public void CreateClient(String phoneNumber, String cc, String nhs, String tinNumber, Date birthDate, char sex, String email, String name) {
-        this.client = new Client(phoneNumber, cc, nhs, tinNumber, birthDate, sex, email, name);
+        if (sex == 'M' || sex == 'F') {
+            this.client = new Client(phoneNumber, cc, nhs, tinNumber, birthDate, sex, email, name);
+        } else {
+            this.client = new Client(phoneNumber, cc, nhs, tinNumber, birthDate, email, name);
+        }
     }
 
     public boolean ValidateClient(Client client) {
@@ -35,7 +39,6 @@ public class ClientStore {
             return false;
         }
     }
-
 
 
     public boolean contains(Client client) {

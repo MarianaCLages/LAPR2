@@ -3,6 +3,7 @@ package app.ui.console;
 import app.controller.ClientController;
 import app.ui.console.utils.Utils;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -12,6 +13,7 @@ public class CreateClientUI implements Runnable {
 
     public CreateClientUI() {
         this.ctrl = new ClientController();
+        this.sexes = new ArrayList<String>();
     }
 
 
@@ -44,14 +46,15 @@ public class CreateClientUI implements Runnable {
                     int sexIndex = Utils.showAndSelectIndex(sexes, "Please choose your sex");
                     char sex = ' ';
                     if (sexIndex == 0) {
-                        sex = 'm';
+                        sex = 'M';
                     } else if (sexIndex == 1) {
-                        sex = 's';
+                        sex = 'S';
                     }
                     String tif = Utils.readLineFromConsole("Please enter the TIF number of the new Client");
                     String phoneNumber = Utils.readLineFromConsole("Please enter the phone number of the new Client");
                     String email = Utils.readLineFromConsole("Please enter the email of the new Client");
                     ctrl.createClient(cc, nhs, birthDate, sex, tif, phoneNumber, email, name);
+                    exception = false;
                 } catch (Exception e) {
                     e.printStackTrace();
                     System.out.println("An error occurred during the creation during the creation of the Parameter please try again");
@@ -59,7 +62,10 @@ public class CreateClientUI implements Runnable {
                 }
             } while (exception);
 
-            cont = Utils.confirm("The following Client was created do you want to save?" + ctrl.getClient().toString());
+            cont = Utils.confirm("The following Client was created do you want to save? (s/n) \n" + ctrl.getClient().toString());
+            if (cont){
+                ctrl.saveClient();
+            }
 
 
         } while (!cont);
