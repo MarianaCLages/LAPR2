@@ -56,6 +56,10 @@ public class Company {
         return this.parameterList = new ParameterStore();
     }
 
+    public List parameterCategoryList(){
+        return parameterCategoryList.array;
+    }
+
     public TestTypeStore getTestTypeList() {return this.testTypeList= new TestTypeStore();}
 
     public RoleStore getRoleList() {
