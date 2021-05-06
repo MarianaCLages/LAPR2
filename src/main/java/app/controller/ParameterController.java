@@ -1,14 +1,14 @@
 package app.controller;
-import app.domain.model.Company;
-import app.domain.model.Parameter;
-import app.domain.model.ParameterCategory;
-import app.domain.model.ParameterStore;
+import app.domain.model.*;
+
+import java.util.List;
 
 public class ParameterController {
 
     private Company company;
     private Parameter pc;
     private ParameterStore store;
+    private List catStore;
 
     public ParameterController() {
 
@@ -26,6 +26,10 @@ public class ParameterController {
         store = company.getParameterList();
         store.CreateParameter(code,name,description,cat);
     }
+    public List getParameterCategoryList() {
+        return this.catStore = company.parameterCategoryList();
+    }
+
 
     public Parameter getpc(){
         return store.getPc();

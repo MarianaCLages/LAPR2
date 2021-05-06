@@ -1,6 +1,7 @@
 package app.ui.console;
 
 import app.controller.ParameterController;
+import app.domain.model.ParameterCategory;
 import app.ui.console.utils.Utils;
 
 public class ParameterUI implements Runnable {
@@ -33,10 +34,13 @@ public class ParameterUI implements Runnable {
                     String code = Utils.readLineFromConsole("Please enter the code of the new Parameter");
                     String name = Utils.readLineFromConsole("Please enter the name of the new Parameter");
                     String description = Utils.readLineFromConsole("Please enter the description of the new Parameter");
+
+
                     String category = Utils.readLineFromConsole("Please select category the  of the new Parameter");
 
-                    //   ParameterCategory cat = ;
-                    //   ctrl.createParameter(code, name, description, cat);
+
+                    ParameterCategory cat = (ParameterCategory) Utils.showAndSelectOne(ctrl.getParameterCategoryList(),"Select a Category");
+                    ctrl.createParameter(code, name, description, cat);
                     exception = false;
                 } catch (Exception e) {
                     e.printStackTrace();

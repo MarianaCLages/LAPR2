@@ -45,7 +45,6 @@ MedicalLabTechnician
 LaboratoryCoordinator
 Receptionist
 SpecialistDoctor
-Administrator
 +getRoleList()
 }
 
