@@ -8,7 +8,7 @@ public class ParameterController {
     private Company company;
     private Parameter pc;
     private ParameterStore store;
-    private List catStore;
+    private ParameterCategoryStore catStore;
 
     public ParameterController() {
 
@@ -26,7 +26,7 @@ public class ParameterController {
         store = company.getParameterList();
         store.CreateParameter(code,name,description,cat);
     }
-    public List getParameterCategoryList() {
+    public ParameterCategoryStore getParameterCategoryList() {
         return this.catStore = company.parameterCategoryList();
     }
 
