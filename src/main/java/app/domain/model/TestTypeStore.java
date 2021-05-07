@@ -14,7 +14,7 @@ public class TestTypeStore {
 
     public boolean CreateTestType(String testID,String description, String collectingMethod, ParameterCategoryStore cat) {
         this.t = new TestType(testID, description, collectingMethod, cat);
-        if (ValidateTestType(t)) {
+        if (ValidateTestType(t) && !alreadyUsedID(t)) {
             return true;
         } else {
             return false;
@@ -26,10 +26,20 @@ public class TestTypeStore {
     }
 
     public boolean ValidateTestType(TestType t) {
-        if (t == null && !contains(t)) {
+        if (t == null && !contains(t) ) {
             return false;
         }
         return true;
+    }
+
+    public boolean alreadyUsedID(TestType t){
+        boolean find = true;
+        for (TestType t1:array) {
+            if (t.getTestID().equals(t1.getTestID())){
+                find = false;
+            }
+        }
+        return find;
     }
 
     public boolean contains(TestType t) {

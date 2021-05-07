@@ -5,9 +5,9 @@ hide methods
 skinparam classAttributeIconSize 0
 
 class User{
--Name
--Email
--Password
+-name
+-email
+-password
 }
 
 class Employee{
@@ -24,18 +24,21 @@ class SpecialistDoctor{
 }
 
 class OrganizationRole{
--Description
+-description
 }
 
 class Company{
--Name
+Name
 }
 Company "1" - "*" OrganizationRole: knowns all the >
 Employee "1" - "1" OrganizationRole: is characterized by a  >
 Employee "1" -- "1" User: is a >
 Company "1" -- "*" Employee: employs >
 Administrator"1" -- "1" Employee: is a >
-
+Employee "1" -- "1" ClinicalChemistryTechnologist: can be a >
+Employee "1" -- "1" LaboratoryCoordinator: can be a >
+Employee "1" -- "1" MedicalLabTechnician: can be a >
+Employee "1" -- "1" Receptionist: can be a >
 Employee "1" -- "1" SpecialistDoctor: can be a >
 Administrator "1" -- "1" Employee: register >
 
