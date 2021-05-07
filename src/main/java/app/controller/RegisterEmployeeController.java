@@ -39,7 +39,12 @@ public class RegisterEmployeeController{
     }
 
     public boolean saveEmployee() {
-        return this.store.saveEmployee();
+        boolean saved = false;
+
+        saved = store.saveEmployee();
+        store.addUserWithRole(this.company);
+
+        return saved;
     }
 }
 

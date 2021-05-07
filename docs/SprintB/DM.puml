@@ -27,6 +27,7 @@ Type of Sample;
 class TypeTest{
 Test ID;
 Collecting Method;
+Parameter Categories;
 }
 
 
@@ -213,6 +214,6 @@ SpecialistDoctor "1" -- "1" Report: writes >
 SpecialistDoctor "1" -- "1" Results: analyse >
 Test "1" -- "*" Parameter : has >
 TypeSample "1" -- "1" Sample: has a <
-TypeTest "1" -- "*" Parameter : has >
+TypeTest "1" -- "*" ParameterCategory : has >
 TypeTest "1" -- "*" Test : as a <
 @enduml

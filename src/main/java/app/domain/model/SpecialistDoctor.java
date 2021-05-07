@@ -1,5 +1,8 @@
 package app.domain.model;
 
+import app.domain.shared.Constants;
+import auth.AuthFacade;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 
 public class SpecialistDoctor extends Employee{
@@ -52,5 +55,23 @@ public class SpecialistDoctor extends Employee{
                 ", Role="+ role ;
 
 
+    }
+
+    private String getPassword() {
+        int lenght = 10;
+
+        return RandomStringUtils.randomAlphanumeric(lenght);
+    }
+
+    public boolean addUserWithRole(Company company) {
+        boolean success = false;
+        String password = getPassword();
+        AuthFacade authFacade = company.getAuthFacade();
+        success = authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_SPECIALISTDOCTOR);
+        if (success){
+            Email mail = new Email(this.email,getPassword());
+
+        }
+        return success;
     }
 }

@@ -1,5 +1,8 @@
 package app.domain.model;
 
+import app.domain.shared.Constants;
+import auth.AuthFacade;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.regex.Pattern;
@@ -107,6 +110,39 @@ public class Employee {
         }
     }
 
+    private String getPassword() {
+        int lenght = 10;
+
+        return RandomStringUtils.randomAlphanumeric(lenght);
+    }
+
+    public boolean addUserWithRole(Company company) {
+
+        boolean success = false;
+        String password = getPassword();
+        AuthFacade authFacade = company.getAuthFacade();
+
+        if (role.equals("Clinical Chemistry Technologist")) {
+            success = authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_CLINICALCHEMISTRYTECHNOLOGIST);
+        }
+
+        if (role.equals("Medical Lab Technician")) {
+            success = authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_MEDICALLABTECHNICIIAN);
+        }
+
+        if (role.equals("LaboratoryCoordinator"))
+            success = authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_LABORATORYCOORDINATOR);
+
+        if (role.equals("Receptionist")) {
+            success = authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_RECEPTIONIST);
+        }
+
+        if (success){
+            Email mail = new Email(this.email,getPassword());
+
+        }
+        return success;
+    }
 
 
 

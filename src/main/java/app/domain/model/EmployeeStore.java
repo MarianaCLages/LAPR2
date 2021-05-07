@@ -85,6 +85,10 @@ public class EmployeeStore {
         return String.valueOf(listString);
     }
 
+    public boolean addUserWithRole(Company company) {
+        return em.addUserWithRole(company);
+    }
+
     public Employee getEm() {
         return em;
     }
