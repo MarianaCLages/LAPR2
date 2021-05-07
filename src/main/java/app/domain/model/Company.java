@@ -3,8 +3,6 @@ package app.domain.model;
 import auth.AuthFacade;
 import org.apache.commons.lang3.StringUtils;
 
-import javax.management.relation.Role;
-import javax.management.relation.RoleList;
 import java.util.List;
 
 /**
@@ -12,8 +10,8 @@ import java.util.List;
  */
 public class Company {
 
-    private String designation;
-    private AuthFacade authFacade;
+    private final String designation;
+    private final AuthFacade authFacade;
 
     private ParameterCategoryStore parameterCategoryList;
     private ParameterStore parameterList;
@@ -21,6 +19,7 @@ public class Company {
     private ClinicalAnalysisLabStore clinicalAnalysisLabList;
     private RoleStore roleList;
     private EmployeeStore employeeList;
+    private ClientStore clientList;
 
     public Company(String designation) {
         if (StringUtils.isBlank(designation))
@@ -40,17 +39,16 @@ public class Company {
 
     /**
      * creates a new empty list of Parameter Categories objects
+     *
      * @return empty list of Parameter Categories objects
      */
 
     public ParameterCategoryStore getParameterCategoryList() {
-        return this.parameterCategoryList = new ParameterCategoryStore();
-    }
-    public RoleStore getRoleList() {
-        return this.roleList = new RoleStore();
+        this.parameterCategoryList = new ParameterCategoryStore();
+        return this.parameterCategoryList;
     }
 
-    public EmployeeStore getEmployeeList(){
+    public EmployeeStore getEmployeeList() {
         return this.employeeList = new EmployeeStore();
     }
 
@@ -58,8 +56,29 @@ public class Company {
         return this.parameterList = new ParameterStore();
     }
 
-    public TestTypeStore getTestTypeList() {return this.testTypeList= new TestTypeStore();}
+    public List parameterCategoryList() {
+        return parameterCategoryList.array;
+    }
 
-    public ClinicalAnalysisLabStore getClinicalAnalysisLabList() {return this.clinicalAnalysisLabList = new ClinicalAnalysisLabStore();}
+    public List roleList() {
+        return roleList.getRoleList();
+    }
+
+    public TestTypeStore getTestTypeList() {
+        return this.testTypeList = new TestTypeStore();
+    }
+
+    public RoleStore getRoleList() {
+        return this.roleList = new RoleStore();
+    }
+
+    public ClinicalAnalysisLabStore getClinicalAnalysisLabList() {
+        return this.clinicalAnalysisLabList = new ClinicalAnalysisLabStore();
+    }
+
+    public ClientStore getClientList() {
+        this.clientList = new ClientStore();
+        return this.clientList;
+    }
 }
 

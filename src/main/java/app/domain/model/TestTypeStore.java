@@ -21,6 +21,10 @@ public class TestTypeStore {
         }
     }
 
+    public boolean isEmpty(){
+        return this.array.isEmpty();
+    }
+
     public boolean ValidateTestType(TestType t) {
         if (t == null && !contains(t) ) {
             return false;

@@ -14,9 +14,9 @@ public class ClinicalAnalysisLabController {
         this.cal = null;
     }
 
-    public boolean createClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber) {
+    public boolean createClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber, TestType tType) {
         store = company.getClinicalAnalysisLabList();
-        if (store.CreateClinicalAnalysisLab(name, address, id, tin, phoneNumber)){
+        if (store.CreateClinicalAnalysisLab(name, address, id, tin, phoneNumber, tType)){
             return true;
         }else {
             return false;
