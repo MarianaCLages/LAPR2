@@ -14,7 +14,7 @@ public class Employee {
     private String employeeID;
 
 
-    public Employee( String  name, String address, String phonenumber, String email, String SOC, Role role) {
+    public Employee(String employeeID, String name, String address, String phonenumber, String email, String SOC, Role role) {
         checkNameRules(name);
         checkAddressRules(address);
         checkPhoneNumberRules(phonenumber);
@@ -26,6 +26,7 @@ public class Employee {
         this.email = email;
         this.SOC = SOC;
         this.role = role;
+        this.employeeID = employeeID;
 
     }
 

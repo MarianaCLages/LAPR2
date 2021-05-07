@@ -18,9 +18,9 @@ public class EmployeeStore {
         RoleStore roles = new RoleStore();
 
         if (role == 4){
-            this.em = new SpecialistDoctor(name, address, phonenumber, email,SOC,DoctorIndexNumber ,roles.get(role));
+            this.em = new SpecialistDoctor(CreateEmployeeID(name),name, address, phonenumber, email,SOC,DoctorIndexNumber ,roles.get(role));
         }else{
-            this.em = new Employee(name, address, phonenumber, email, SOC, roles.get(role));
+            this.em = new Employee(CreateEmployeeID(name), name, address, phonenumber, email, SOC, roles.get(role));
         }
         return this.em;
     }
