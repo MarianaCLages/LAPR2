@@ -4,49 +4,105 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class TestTypeStoreTest {
+    private ParameterCategoryStore cat = new ParameterCategoryStore();
+    private TestTypeStore store = new TestTypeStore();
 
     @Test
-    public void validateValidTestType() {
-        ParameterCategoryStore cat = new ParameterCategoryStore();
+    public void validateTestTypeAlreadyExists() {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         //Arrange
-        TestTypeStore store = new TestTypeStore();
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
         //Act
         store.add(t);
         //Assert
-        Assert.assertTrue(store.ValidateTestType(t));
+        Assert.assertFalse(store.ValidateTestType(t));
     }
+
+
     @Test
     public void validateTestTypeIsNull() {
         //Arrange + act
-        TestTypeStore store = new TestTypeStore();
         TestType t = null;
         //Assert
         Assert.assertFalse(store.ValidateTestType(t));
     }
 
     @Test
-    public void validateTestTypeAlreadyExistsID(){
+    public void isEmptyTest(){ Assert.assertTrue(store.isEmpty());}
+
+
+
+    @Test
+    public void alreadyUsedID(){
         //Arrange + act
-        ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
         cat.add(pc1);
         //Arrange
-        TestTypeStore store = new TestTypeStore();
         TestType t1 = new TestType("283h3", "descrição", "metodo 1", cat);
-        TestType t2 = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestType t2 = new TestType("283h3", "descrição hc", "metodo 7", cat);
         //Act
         store.add(t1);
         store.add(t2);
         //Assert
-        Assert.assertTrue(store.ValidateTestType(t2));
+        Assert.assertFalse(store.uniqueID(t2));
     }
 
+    @Test
+    public void getByIDTest() {
+        ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
+        cat.add(pc1);
 
+        TestType t1 = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestType t2 = new TestType("1234r", "descrição", "metodo 3", cat);
 
+        store.add(t1);
+        store.add(t2);
 
+        TestType expected = t1;
+        TestType actual = store.getByID("283h3");
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getByIDTestNull() {
+        ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
+        cat.add(pc1);
+
+        TestType t1 = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestType t2 = new TestType("1234r", "descrição", "metodo 3", cat);
+
+        store.add(t1);
+        store.add(t2);
+
+        TestType expected = null;
+        TestType actual = store.getByID("28AK3");
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void saveTestTypeInvalid() {
+        //Arrange
+        ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
+        cat.add(pc1);
+        TestType t1 = new TestType("283h3", "descrição", "metodo 1", cat);
+        store.add(t1);
+        TestType t2 = new TestType("283h3", "descrição", "metodo 1", cat);
+        store.add(t2);
+        //Assert
+        Assert.assertFalse(store.saveTestType());
+    }
+
+    @Test
+    public void createValidTestType() {
+        TestTypeStore store = new TestTypeStore();
+        ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
+        cat.add(pc1);
+        Assert.assertNotNull(store.CreateTestType("283h3","descrição", "metodo 1", cat));
+
+    }
 
 
 
