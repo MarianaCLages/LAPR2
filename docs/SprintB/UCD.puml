@@ -1,0 +1,54 @@
+@startuml
+skinparam linetype polyline
+left to right direction
+actor "Client" as cl
+actor "Receptionist" as recep
+actor "Medical Lab Technician" as MLT
+actor "Administrator" as admin
+actor "Specialist Doctor" as SD
+actor "Clinical Chemistry Technologist" as CCT
+actor "Laboratory Coordinator" as LC
+actor "Company" as com
+rectangle "System" {
+  usecase "Checks the results of the test" as UC1
+  usecase "Register a new employee" as UC7
+  usecase "Register a new clinical analysis lab and choose the which kind of test it operates" as UC8
+  usecase "Specify a new type of test and its collecting methods" as UC9
+  usecase "specify a new parameter and categorize it" as UC10
+  usecase "Specify a new parameter category" as UC11
+  together {
+  usecase "Writes report" as UC5
+  usecase "Checks the results" as UC6
+  usecase "Records the results" as UC12
+  usecase "Validates the reports" as UC13
+  usecase "Validates the results" as UC14
+  usecase "generate daily reports with the information demanded by the NHS" as UC15
+  usecase "Records the Samples/Test" as UC4
+  usecase "Registers the test in the application" as UC2
+  usecase "Registers the client on the application" as UC3
+}
+
+}
+
+(UC1) -[hidden]- (UC5)
+
+cl -- UC1
+admin -- UC7
+admin -- UC8
+admin -- UC9
+admin -- UC10
+admin -- UC11
+together {
+UC12 -- CCT
+UC13 -- LC
+UC14 -- LC
+UC15 -- com
+UC5 -- SD
+UC6 -- SD
+UC4 -- MLT
+UC2 -- recep
+UC3 -- recep
+
+}
+
+@enduml
