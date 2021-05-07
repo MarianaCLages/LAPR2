@@ -174,7 +174,7 @@ ClinicalAnalysisLaboratory "1" -- "*" TypeTest : operates >
 ClinicalChemistryTechnologist "*" -- "1" ChemicalLaboratory : works on >
 ClinicalChemistryTechnologist "1" -- "1" Results : records >
 ClinicalChemistryTechnologist "1" -- "1" Sample : analyse >
-Company "1" - "*" OrganizationRole: knowns all the >
+Company "1" - "*" OrganizationRole: knows all the >
 Company "1" - "1" Covid19Report: sends to NHS >
 Company "1" -- "*" Administrator : employs
 Company "1" -- "*" Administrator: employs >
@@ -212,7 +212,7 @@ Sample "1" -- "1" Test : is used in >
 SpecialistDoctor "1" -- "1" Report: writes >
 SpecialistDoctor "1" -- "1" Results: analyse >
 Test "1" -- "*" Parameter : has >
-TypeTest "1" -- "*" Parameter : has >
 TypeSample "1" -- "1" Sample: has a <
+TypeTest "1" -- "*" Parameter : has >
 TypeTest "1" -- "*" Test : as a <
 @enduml
