@@ -6,13 +6,15 @@ import java.util.List;
 public class ClinicalAnalysisLabStore {
     List<ClinicalAnalysisLab> array;
     ClinicalAnalysisLab cal;
+    private ParameterCategoryStore cat = new ParameterCategoryStore();
+    private TestTypeStore store = new TestTypeStore();
 
     public ClinicalAnalysisLabStore() {
         this.array = new ArrayList<ClinicalAnalysisLab>();
     }
 
-    public boolean CreateClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber) {
-        this.cal = new ClinicalAnalysisLab(name, address, id, tin, phoneNumber);
+    public boolean CreateClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber, TestType tType) {
+        this.cal = new ClinicalAnalysisLab(name, address, id, tin, phoneNumber, tType);
         if (ValidateClinicalAnalysisLab(cal)) {
             return true;
         } else {
