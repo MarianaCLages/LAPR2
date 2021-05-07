@@ -4,38 +4,43 @@ class CreateTestTypeUI{
 }
 
 class CreateTestTypeController{
-    + CreateTestType(testID, collectingMethod, description)
-    + getCategoryList()
-    + setCategory()
+    + CreateTestType(testID, collectingMethod, description, catStore)
+    + getParameterCategoryStore()
     + saveTestType()
+    + add(catStore)
 }
 
 class Company{
-    + CreateTestType(testID, collectingMethod, description)
+-designation
+    + createParameterCategoryStore()
+    + createTestTypeStore()
 }
 
 class TestTypeStore{
-    + Create(testID, collectingMethod, description)
-    + setCategory()
-    + validateClinicalAnalysisLab()
-    + saveTestType()
+    + CreateTestType(testID, collectingMethod, description, catStore)
+    + ValidateTestType(t)
+    + saveTestType(t)
 }
 
 class TestType{
-    + Create(testID, collectingMethod, description)
-    + setCategory()
-    + validate()
+-String testeID
+-String collectingMethod
+-String description
+-ParameterCategoryStore catStore
+    + TestType(testID, collectingMethod, description, catStore)
 }
 
 class ParameterCategoryStore{
-    + getCategoryList()
+    + getParameterCategoryStore()
 }
 
 CreateTestTypeUI ..> CreateTestTypeController
 CreateTestTypeController ..> Company
 Company ..> TestTypeStore
+Company ..> ParameterCategoryStore
 CreateTestTypeController ..> TestTypeStore
 CreateTestTypeController ..> ParameterCategoryStore
-TestTypeStore ..> TestType
-
+TestTypeStore "1" --> "*" TestType: contains
+TestType "1"-right-> "1" ParameterCategoryStore: categorized by
 @enduml
+
