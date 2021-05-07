@@ -45,7 +45,7 @@ public class RoleStore {
 
     public List<Role> getRoleList(){
 
-        return array;
+        return this.array;
     }
 
 

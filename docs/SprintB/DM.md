@@ -16,7 +16,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 **Transaction Line Items**
 
-- Samples
+- Sample
 
 ---
 
@@ -36,6 +36,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 - Administrator
 - Clinical Chemistry Technologist
 - Laboratory Coordinator
+- User
 
 ---
 
@@ -62,6 +63,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 **Descriptions of Things**
 
+-Parameter
 - Type of Test
 - Type of Sample
 
@@ -80,51 +82,83 @@ To identify domain conceptual classes, start by making a list of candidate conce
 
 ---
 
+
 **Documents mentioned/used to perform some work/**
 
 - Lab Order
+- Notification  
+- Organization Role
 - Results
 - Report
+
+
 
 ---
 
 ###**Rationale to identify associations between conceptual classes**
 
-| Concept (A)                     |         Association         |                                                                                                                                    Concept (B) |
-| ------------------------------- | :-------------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------: |
-| Automatic Validation Module     |          validates          |                                                                                                                                        Results |
-| Chemical Analysis               |        take place in        |                                                                                                                            Chemical Laboratory |
-| Chemical Laboratory             |        is located in        |                                                                                                                           Company Headquarters |
-| Chemical Laboratory             |        is located in        |                                                                                                                           Company Headquarters |
-| Client                          | to execute the test needs a |                                                                                                                                      Lab Order |
-| Clinical Chemistry Technologist |           analyse           |                                                                                                                                         Sample |
-| Clinical Chemistry Technologist |          works on           |                                                                                                                            Chemical Laboratory |
-| Clinical Chemistry Technologist |           records           |                                                                                                                                        Results |
-| Company                         |          employees          | Receptionist <br> Medical Lab Technician <br> Specialist Doctor <br>Administrator<br>Clinical Chemistry Technologist<br>Laboratory Coordinator |
-| Company                         |            owns             |                                                              Clinical Analysis Laboratory <br> Chemical Laboratory <br> Company's Headquarters |
-| Laboratory Coordinator          |          verifies           |                                                                                                                                         Report |
-| Laboratory Coordinator          |            uses             |                                                                                                                    Automatic Validation Module |
-| Medical Lab Technician          |    collects and records     |                                                                                                                                         Sample |
-| Medical Lab Technician          |          works on           |                                                                                                                   Clinical Analysis Laboratory |
-| Notification                    |       is delivered to       |                                                                                                                                         Client |
-| Receptionist                    |          works on           |                                                                                                                   Clinical Analysis Laboratory |
-| Receptionist                    |   register in application   |                                                                                                                                         Client |
-| Receptionist                    |   register in application   |                                                                                                                                           Test |
-| Report                          |         is sent by          |                                                                                                                                   Notification |
-| Results                         |         is sent by          |                                                                                                                                   Notification |
-| Sample                          |          are sent           |                                                                                                                            Chemical Laboratory |
-| Sample                          |     is identified using     |                                                                                                                           Barcode External API |
-| Sample                          |         is used in          |                                                                                                                                           Test |
-| Sample                          |            has a            |                                                                                                                                 Type of Sample |
-| Specialist Doctor               |           writes            |                                                                                                                                         Report |
-| Specialist Doctor               |           analyse           |                                                                                                                                        Results |
-| Test                            |             has             |                                                                                                                                     Parameters |
-| Test                            |             has             |                                                                                                                                   Type of Test |
+| Concept (A)                     |         Association             |                                                                                                                                    Concept (B) |
+| ------------------------------- | :-------------------------:     | ---------------------------------------------------------------------------------------------------------------------------------------------: |
+| Administrator                   | create                          | Parameter                                                                                                                                      |
+| Administrator                   | choose for Parameter            | ParameterCategory                                                                                                                              |
+| Administrator                   | register a new                  | ClinicalAnalysisLaboratory                                                                                                                     |
+| Administrator                   | register                        | Employee                                                                                                                                       |
+| Administrator                   | creates                         | Parameter                                                                                                                                      |
+| Administrator                   |creates                          | TypeTest                                                                                                                                       |
+| Administrator                   |creates                          | ParameterCategory                                                                                                                              |
+| Administrator                   |is a                             | Employee                                                                                                                                       |
+| AutomaticValidationModule       |validate                         | Results                                                                                                                                        |
+| ChemicalAnalysis                |take place in                    | ChemicalLaboratory                                                                                                                             |
+| ChemicalLaboratory              |is located in                    | CompanyHeadquarters                                                                                                                            |
+| Client                          |is a                             | User                                                                                                                                           |
+| Client                          |to execute the test needs a      | LabOrder                                                                                                                                       |
+| ClinicalAnalysisLaboratory      |operates                         | TypeTest                                                                                                                                       |
+| ClinicalChemistryTechnologist   |works on                         | ChemicalLaboratory                                                                                                                             |
+| ClinicalChemistryTechnologist   |records                          | Results                                                                                                                                        |
+| ClinicalChemistryTechnologist   |analyse                          | Sample                                                                                                                                         |
+| Company                         |knows all the                   | OrganizationRole                                                                                                                                |
+| Company                         |sends to NHS                     | Covid19Report                                                                                                                                  |
+| Company                         |employs                          | Administrator                                                                                                                                  |
+| Company                         |employs                          | Administrator                                                                                                                                  |
+| Company                         |knows                            | Client                                                                                                                                         |
+| Company                         |owns                             | ClinicalAnalysisLaboratory                                                                                                                     |
+| Company                         |employs                          | Employee                                                                                                                                       |
+| Company                         |adopts                           | ParameterCategory                                                                                                                              |
+| Company                         |employs                          | Receptionist                                                                                                                                   |
+| Company                         |knows                            | User                                                                                                                                           |
+| Company                         |owns                             | ChemicalLaboratory                                                                                                                             |
+| Company                         |owns                             | CompanyHeadquarters                                                                                                                            |
+| Employee                        |is characterized by a            | OrganizationRole                                                                                                                               |
+| Employee                        |can be a                         | Administrator                                                                                                                                  |
+| Employee                        |can be a                         | ClinicalChemistryTechnologist                                                                                                                  |                                                    
+| Employee                        |can be a                         | LaboratoryCoordinator                                                                                                                          |                                            
+| Employee                        |can be a                         | MedicalLabTechnician                                                                                                                           |                                            
+| Employee                        |can be a                         | Receptionist                                                                                                                                   |                                    
+| Employee                        |can be a                         | SpecialistDoctor                                                                                                                               |                                        
+| Employee                        |can be a                         | SpecialistDoctor                                                                                                                               |                                        
+| Employee                        |is a                             | User                                                                                                                                           |                            
+| LaboratoryCoordinator           |verifies                         | Report                                                                                                                                         |                                
+| LaboratoryCoordinator           |uses                             | AutomaticValidationModule                                                                                                                      |                                                
+| MedicalLabTechnician            |collects and records             | Sample                                                                                                                                         |                                
+| MedicalLabTechnician            |works on                         | ClinicalAnalysisLaboratory                                                                                                                     |                                                    
+| Notification                    |delivered to                     | Client                                                                                                                                         |                                
+| Parameter                       |has a                            | ParameterCategory                                                                                                                              |                                        
+| Receptionist                    |works on                         | ClinicalAnalysisLaboratory                                                                                                                     |                                                    
+| Receptionist                    |is a                             | User                                                                                                                                           |    
+| Receptionist                    |register in application          | Client                                                                                                                                         |        
+| Receptionist                    |register in application          | Test                                                                                                                                           |    
+| Report                          |is sent by                       | Notification                                                                                                                                   |            
+| Results                         |is sent by                       | Notification                                                                                                                                   |            
+| Sample                          |is identified using              | BarcodeExternalAPI                                                                                                                             |                                                                                                          |                    
+| Sample                          |has a                            | TypeSample                                                                                                                                     |                         
+| Sample                          |used in                          | Test                                                                                                                                           |                 
+| SpecialistDoctor                |writes                           | Report                                                                                                                                         |                     
+| SpecialistDoctor                |analyse                          | Results                                                                                                                                        |                     
+| Test                            |as a                             | TypeTest                                                                                                                                       |                     
+| Test                            |has                              | Parameter                                                                                                                                      |                     
+| TypeSample                      |has                              | Parameter                                                                                                                                      |                     
+
 
 ## Domain Model
-
-**Do NOT forget to identify concepts atributes too.**
-
-**Insert below the Domain Model Diagram in a SVG format**
 
 ![DM.svg](DM.svg)
