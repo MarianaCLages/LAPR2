@@ -11,11 +11,12 @@ public class Employee {
     private String email;
     private String SOC;
     private Role role;
+    private String employeeID;
 
 
-    public Employee(String name, String address, String phonenumber, String email, String SOC, Role role) {
+    public Employee( String  name, String address, String phonenumber, String email, String SOC, Role role) {
         checkNameRules(name);
-        checkAdressRules(address);
+        checkAddressRules(address);
         checkPhoneNumberRules(phonenumber);
         checkEmailRules(email);
         checkSOCRules(SOC);
@@ -45,14 +46,16 @@ public class Employee {
         }
     }
 
-    private void checkAdressRules(String address) {
+    private void checkAddressRules(String address) {
         if (StringUtils.isBlank(address))
-            throw new IllegalArgumentException("Code cannot be blank.");
+            throw new IllegalArgumentException("Address cannot be blank.");
     }
 
     private void checkPhoneNumberRules(String phonenumber) {
         if (StringUtils.isBlank(phonenumber))
-            throw new IllegalArgumentException("Code cannot be blank.");
+            throw new IllegalArgumentException("Phonenumber cannot be blank.");
+        if (phonenumber.length() != 11)
+            throw new IllegalArgumentException("Phonenumber must have 11 chars.");
 
         char[] charArray = phonenumber.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
@@ -76,7 +79,7 @@ public class Employee {
     private void checkEmailRules(String email) {
 
         if (StringUtils.isBlank(email))
-            throw new IllegalArgumentException("Code cannot be blank.");
+            throw new IllegalArgumentException("Email cannot be blank.");
 
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@" +"(?:[a-zA-Z0-9-]+\\.)+[a-z" + "A-Z]{2,7}$";
 
@@ -92,7 +95,7 @@ public class Employee {
 
     private void checkSOCRules(String SOC) {
         if (StringUtils.isBlank(SOC))
-            throw new IllegalArgumentException("Code cannot be blank.");
+            throw new IllegalArgumentException("SOC cannot be blank.");
 
         char[] charArray = SOC.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
@@ -109,7 +112,8 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee:" +
-                "name=" + name +
+                "ID=" + employeeID +
+                ", name=" + name +
                 ", address=" + address +
                 ", phonenumber=" + phonenumber +
                 ", email=" + email +

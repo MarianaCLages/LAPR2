@@ -25,6 +25,28 @@ public class EmployeeStore {
         return this.em;
     }
 
+    private String CreateEmployeeID(String name){
+
+        int ID = array.size() + 1;
+        String EmployeeNumberID = String.valueOf(ID);
+        String EmployeeNameID = "";
+        String empty;
+
+        for (int i = 0; i < name.length(); i++) {
+            if (Character.isUpperCase(name.charAt(i))) {
+                EmployeeNameID += name.charAt(i);
+            }
+        }
+        empty = "" + ID;
+        while(empty.length() < 5){
+            empty = "0" + empty;
+        }
+        String EmployeeID = EmployeeNameID.concat(EmployeeNumberID);
+
+        return EmployeeID;
+    }
+
+
     public boolean ValidateEmployee(Employee em) {
         if (em == null || contains(em)) {
             return false;
