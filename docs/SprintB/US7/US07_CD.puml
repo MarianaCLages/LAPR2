@@ -40,11 +40,11 @@ class Employee{
 }
 
 class RoleStore{
-ClinicalChemistryTechnologist
-MedicalLabTechnician
-LaboratoryCoordinator
-Receptionist
-SpecialistDoctor
+-ClinicalChemistryTechnologist: Role
+-MedicalLabTechnician: Role
+-LaboratoryCoordinator: Role
+-Receptionist: Role
+-SpecialistDoctor: Role
 +getRoleList()
 }
 
