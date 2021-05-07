@@ -150,7 +150,21 @@ public class ParameterStoreTest {
         Parameter pc  = store.CreateParameter(null, null, null, null);
     }
 
+    @Test
+    public void toStringTest(){
+        ParameterStore store = new ParameterStore();
+        Parameter pc1  = store.CreateParameter("A1234", "PLT", "description", cat);
+        Parameter pc2  = store.CreateParameter("A1284", "PLT", "description", cat);
 
+        store.add(pc1);
+        store.add(pc2);
+
+        String actual = store.toString();
+
+        String expected = pc1.toString()+ "\n"+pc2.toString()+"\n";
+
+        Assert.assertEquals(actual,expected);
+    }
 
 
 
