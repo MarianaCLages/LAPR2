@@ -149,6 +149,17 @@ public class ParameterStoreTest {
         ParameterStore store = new ParameterStore();
         Parameter pc  = store.CreateParameter(null, null, null, null);
     }
+    @Test
+    public void toStringTest(){
+        StringBuilder list = new StringBuilder();
+        Parameter pc = new Parameter("A1234", "PLT", "description", cat);
+        list.append(pc.toString());
+        String.valueOf(list);
+
+        String expected = "Parameter: code=A1234, name=PLT, description=description, category="+ cat.toString();
+        String actual = list.toString();
+        Assert.assertEquals(expected,actual);
+    }
 
 
 
