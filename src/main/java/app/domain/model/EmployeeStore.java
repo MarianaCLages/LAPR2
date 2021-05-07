@@ -17,7 +17,7 @@ public class EmployeeStore {
 
         RoleStore roles = new RoleStore();
 
-        if (role == 4){
+        if (role == 5){
             this.em = new SpecialistDoctor(CreateEmployeeID(name),name, address, phonenumber, email,SOC,DoctorIndexNumber ,roles.get(role));
         }else{
             this.em = new Employee(CreateEmployeeID(name), name, address, phonenumber, email, SOC, roles.get(role));
@@ -41,7 +41,7 @@ public class EmployeeStore {
         while(empty.length() < 5){
             empty = "0" + empty;
         }
-        String EmployeeID = EmployeeNameID.concat(EmployeeNumberID);
+        String EmployeeID = EmployeeNameID+empty;
 
         return EmployeeID;
     }

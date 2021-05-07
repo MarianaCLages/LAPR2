@@ -38,4 +38,19 @@ public class SpecialistDoctor extends Employee{
             }
         }
     }
+
+    @Override
+    public String toString() {
+        return "Employee:" +
+                "ID=" + EmployeeID +
+                ", name=" + name +
+                ", address=" + address +
+                ", phonenumber=" + phonenumber +
+                ", email=" + email +
+                ", SOC=" + SOC +
+                ", DoctorIndexNumber="+ DoctorIndexNumber +
+                ", Role="+ role ;
+
+
+    }
 }
