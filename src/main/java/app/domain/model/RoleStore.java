@@ -26,7 +26,6 @@ public class RoleStore {
         array.add(ClinicalChemistryTechnologist);
         array.add(MedicalLabTechnician);
         array.add(LaboratoryCoordinator);
-        array.add(LaboratoryCoordinator);
         array.add(Receptionist);
         array.add(SpecialistDoctor);
     }

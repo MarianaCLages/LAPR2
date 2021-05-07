@@ -158,6 +158,34 @@ public class TestTypeTest {
         Assert.assertEquals(expected,actual);
     }
 
+    @Test
+    public void getTestIDTest() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("A8554", "Hemograma");
+        cat.add(pc1);
+
+        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+
+        String expected = "283h3";
+        String actual = t.getTestID();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getCatStoreTest() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("A8554", "Hemograma");
+        cat.add(pc1);
+
+        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+
+        ParameterCategoryStore expected = cat;
+        ParameterCategoryStore actual = t.getCatStore();
+
+        Assert.assertEquals(expected, actual);
+    }
+
 
 
 

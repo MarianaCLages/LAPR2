@@ -6,17 +6,17 @@ public class TestType {
     private String testID;
     private String description;
     private String collectingMethod;
-    private ParameterCategoryStore categories;
+    private ParameterCategoryStore catStore;
 
-    public TestType(String testID, String description, String collectingMethod, ParameterCategoryStore categories){
+    public TestType(String testID, String description, String collectingMethod, ParameterCategoryStore catStore){
         checkCodeRules(testID);
         checkCollectingMethodRules(collectingMethod);
         checkDescriptionRules(description);
-        checkCategoriesList(categories);
+        checkCategoriesList(catStore);
         this.testID=testID;
         this.description=description;
         this.collectingMethod=collectingMethod;
-        this.categories=categories;
+        this.catStore=catStore;
     }
 
     /**
@@ -59,10 +59,10 @@ public class TestType {
     /**
      * This method checks if the code provided meets the requirements, if not it throws a exception making the execution to stop
      *
-     * @param categories the categories of the test
+     * @param catStore the list of categories of the test
      */
-    private void checkCategoriesList(ParameterCategoryStore categories){
-        if (categories.isEmpty())
+    private void checkCategoriesList(ParameterCategoryStore catStore){
+        if (catStore.isEmpty())
             throw new IllegalArgumentException("Collecting method cannot be blank.");
     }
 
@@ -71,12 +71,16 @@ public class TestType {
         return "TestType{" + "testID=" + testID + '\n' +
                 "description=" + description + '\n' +
                 "collectingMethod=" + collectingMethod + '\n' +
-                "categories:\n          " + categories +
+                "categories:\n          " + catStore +
                 '}';
     }
 
     public String getTestID() {
         return testID;
+    }
+
+    public ParameterCategoryStore getCatStore() {
+        return catStore;
     }
 }
 

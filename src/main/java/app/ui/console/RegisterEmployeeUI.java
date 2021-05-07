@@ -4,14 +4,16 @@ import app.controller.ParameterController;
 import app.controller.RegisterEmployeeController;
 import app.domain.model.ParameterCategory;
 import app.domain.model.Role;
+import app.domain.model.RoleStore;
 import app.ui.console.utils.Utils;
 
 public class RegisterEmployeeUI implements Runnable{
 
         private RegisterEmployeeController ctrl;
-
+        private RoleStore roleList;
         public RegisterEmployeeUI() {
             this.ctrl = new RegisterEmployeeController();
+            this.roleList = new RoleStore();
         }
 
 
@@ -28,6 +30,7 @@ public class RegisterEmployeeUI implements Runnable{
          */
         @Override
         public void run() {
+            String DoctorIndexNumber ="";
             boolean cont = true;
             do {
                 boolean exception = false;
@@ -38,10 +41,13 @@ public class RegisterEmployeeUI implements Runnable{
                         String phonenumber = Utils.readLineFromConsole("Please enter the phonenumber of the new Employee");
                         String email = Utils.readLineFromConsole("Please enter the email of the new Employee");
                         String SOC = Utils.readLineFromConsole("Please enter the SOC of the new Employee");
-                        String DoctorIndexNumber = Utils.readLineFromConsole("Please enter the DoctorIndexNumber of the new Employee");
 
 
-                        int role = Utils.showAndSelectIndex(ctrl.getRoleList(),"Select a Role");
+                        int role = Utils.showAndSelectIndex(roleList.getRoleList(),"Select a Role");
+                        if(role == 4){
+                             DoctorIndexNumber = Utils.readLineFromConsole("Please enter the DoctorIndexNumber of the new Employee");
+
+                        }
                         ctrl.createEmployee(name, address, phonenumber, email,SOC,DoctorIndexNumber ,role);
                         exception = false;
                     } catch (Exception e) {

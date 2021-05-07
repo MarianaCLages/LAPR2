@@ -11,16 +11,20 @@ public class SpecialistDoctor extends Employee{
     private String phonenumber;
     private String email;
     private String SOC;
+    private String EmployeeID;
 
 
-    public SpecialistDoctor(String name, String address, String phonenumber, String email, String SOC,String DoctorIndexNumber ,Role role) {
-        super(name, address, phonenumber, email, SOC, role);
+    public SpecialistDoctor(String EmployeeID,String name, String address, String phonenumber, String email, String SOC, String DoctorIndexNumber, Role role) {
+        super(EmployeeID ,name, address, phonenumber, email, SOC, role);
 
         checkDoctorIndexNumberRules(DoctorIndexNumber);
 
         this.DoctorIndexNumber = DoctorIndexNumber;
 
+
     }
+
+
     private void checkDoctorIndexNumberRules(String DoctorIndexNumber) {
         if (StringUtils.isBlank(DoctorIndexNumber))
             throw new IllegalArgumentException("Doctor Index Number cannot be blank.");
@@ -33,5 +37,20 @@ public class SpecialistDoctor extends Employee{
                 throw new IllegalArgumentException("Doctor Index Number only accepts numbers");
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Employee:" +
+                "ID=" + EmployeeID +
+                ", name=" + name +
+                ", address=" + address +
+                ", phonenumber=" + phonenumber +
+                ", email=" + email +
+                ", SOC=" + SOC +
+                ", DoctorIndexNumber="+ DoctorIndexNumber +
+                ", Role="+ role ;
+
+
     }
 }

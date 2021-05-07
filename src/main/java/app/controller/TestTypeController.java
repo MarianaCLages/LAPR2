@@ -2,10 +2,14 @@ package app.controller;
 import app.domain.model.Company;
 import app.domain.model.*;
 
+import java.util.List;
+
 public class TestTypeController {
+
     private Company company;
     private TestTypeStore store;
     private TestType testT;
+    private ParameterCategoryStore cat;
 
     public TestTypeController() {this(App.getInstance().getCompany());}
 
@@ -14,17 +18,15 @@ public class TestTypeController {
         this.testT = null;
     }
 
-    public boolean createTestType(String testID, String collectingMethod, String description, ParameterCategoryStore cat) {
-        store = company.getTestTypeList();
-        if (store.CreateTestType(testID, collectingMethod, description,cat)){
-            return true;
-        }else {
-            return false;
-        }
 
+    public void createTestType(String testID, String description, String collectingMethod, ParameterCategoryStore catList){
+        store = company.getTestTypeList();
+        store.CreateTestType(testID,description,collectingMethod,catList);
     }
 
+    public boolean saveTestType() {
+        return this.store.saveTestType();
+    }
 
-    public boolean saveTestType(){return this.store.saveTestType(testT);}
 
 }
