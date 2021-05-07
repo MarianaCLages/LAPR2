@@ -1,10 +1,5 @@
 package app.domain.model;
 
-//Each test type should have a set of categories.
-//Each category should be chosen from a list of categories.
-//Each category has a name and a unique code. There are no subcategories.
-//There exists only one collection method per test type.
-
 import org.apache.commons.lang3.StringUtils;
 
 public class TestType {
@@ -48,6 +43,7 @@ public class TestType {
             throw new IllegalArgumentException("Description must have, at maximum, 15 chars.");
     }
 
+
     /**
      * This method checks if the code provided meets the requirements, if not it throws a exception making the execution to stop
      *
@@ -60,13 +56,28 @@ public class TestType {
             throw new IllegalArgumentException("Collecting method must have, at maximum, 20 chars.");
     }
 
+    /**
+     * This method checks if the code provided meets the requirements, if not it throws a exception making the execution to stop
+     *
+     * @param categories the categories of the test
+     */
     private void checkCategoriesList(ParameterCategoryStore categories){
         if (categories.isEmpty())
             throw new IllegalArgumentException("Collecting method cannot be blank.");
     }
 
+    @Override
+    public String toString() {
+        return "TestType{" + "testID=" + testID + '\n' +
+                "description=" + description + '\n' +
+                "collectingMethod=" + collectingMethod + '\n' +
+                "categories:\n          " + categories +
+                '}';
+    }
 
-
+    public String getTestID() {
+        return testID;
+    }
 }
 
 

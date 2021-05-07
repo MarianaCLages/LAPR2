@@ -1,7 +1,30 @@
 @startuml
 
+class Administrator{
+}
+class TypeTest{
+Test ID;
+Collecting Method;
+}
+class Parameter{
+Short Name;
+Code;
+Description;
+}
+class ParameterCategory{
+Designation;
+Code;
 
-
+}
+class Company{
+Name
+}
+Company "1" -- "*" ParameterCategory : adopts >
+Parameter "1" -- "1" ParameterCategory : has a >
+Administrator "1" -- "1" ParameterCategory : creates >
+Administrator "1" -- "1" Parameter : creates >
+Administrator "1" -- "1" TypeTest: creates >
+TypeTest "1" -- "*" Parameter : has >
 
 
 

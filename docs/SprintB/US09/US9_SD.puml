@@ -4,9 +4,9 @@ actor Administrator as A
 participant ":CreateTestTypeUI" as UI
 participant ":CreateTestTypeController" as CTRL
 participant ":Company" as C
-
+participant "listCat: List<ParameterCategory>" as listCat
 participant "tType:TestTypeStore" as STO
-participant "t:TestType" as T
+participant "t:Test Type" as T
 participant "store: ParameterCategoryStore" as CAT
 
 activate A
@@ -22,35 +22,48 @@ CTRL -> C: CreateTestType(testID, collectingMethod, description)
 activate C
 C -> STO: t = Create(testID, collectingMethod, description)
 activate STO
-STO-> T: t = Create(testID, collectingMethod, description)
-activate T
-deactivate T
+STO--> T**: t = Create(testID, collectingMethod, description)
+
 deactivate STO
 deactivate C
 deactivate CTRL
 
-loop
-UI -> CTRL: getCategoryList()
+UI -> CTRL: createListCat()
 activate CTRL
-CTRL -> CAT : pcList = getCategoryList()
+CTRL -> STO: createListCat()
+activate STO
+STO --> listCat**: create()
+deactivate STO
+deactivate CTRL
+
+UI -> CTRL: getParameterCategoryStore()
+activate CTRL
+CTRL -> CAT : cat = getParameterCategoryStore()()
 activate CAT
 deactivate CAT
 deactivate CTRL
-UI --> A: shows parameter category list and asks to select
+
+
+UI --> A: shows parameter category list and asks to choose parameter category
+
 deactivate UI
-A -> UI: selects
+loop "More categories"
+A -> UI: confirms the category
 activate UI
-end
-UI -> CTRL: setCategory()
+
+UI -> CTRL: add(pc)
 activate CTRL
-CTRL -> STO: c = setCategory()
-activate STO
-STO -> T: c = setCategory()
-activate T
-deactivate T
-deactivate STO
-deactivate C
-CTRL -> STO: validateClinicalAnalysisLab(cal)
+CTRL->listCat: add(pc)
+activate listCat
+deactivate listCat
+deactivate listCat
+deactivate CTRL
+end
+
+
+UI ->CTRL: validateTestType(t)
+activate CTRL
+CTRL -> STO: validateTestType(t)
 activate STO
 STO -> T : validate()
 activate T
@@ -58,11 +71,15 @@ deactivate T
 deactivate STO
 deactivate CTRL
 
-UI --> A: shows all data and requests confirmation
+UI --> A: shows all data and requestes confirmation
 deactivate UI
 
 A -> UI: confirms the data
 activate UI
+
+
+
+
 UI-> CTRL : saveTestType()
 activate CTRL
 CTRL -> STO: saveTestType(t)
