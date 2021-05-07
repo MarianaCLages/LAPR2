@@ -7,7 +7,7 @@ Test ID;
 Collecting Method;
 }
 class Parameter{
-Short Name;
+Name;
 Code;
 Description;
 }
@@ -19,6 +19,7 @@ Code;
 class Company{
 Name
 }
+
 Company "1" -- "*" ParameterCategory : adopts >
 Parameter "1" -- "1" ParameterCategory : has a >
 Administrator "1" -- "1" ParameterCategory : creates >

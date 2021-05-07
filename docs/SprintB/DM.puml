@@ -1,5 +1,9 @@
 @startuml
 
+
+skinparam linetype polyline
+
+
 class Covid19Report{
 Covid-19 tests performed;
 Positive Results to Covid-19 Tests
@@ -34,7 +38,7 @@ Birth date;
 Sex;
 Tax Identification Number;
 Phone;
-E-mail;
+E-mail.
 }
 
 class Receptionist{
@@ -124,18 +128,18 @@ Validation;
 }
 
 class Parameter{
-Short Name;
-Code;
-Description;
+name;
+code;
+description;
 }
 
 class ParameterCategory{
-Designation;
-Code;
+name;
+code;
 }
+
 class Employee{
 Employee ID;
-Organization Role;
 Name;
 Address;
 Phone Number;
@@ -143,51 +147,72 @@ E-Mail;
 Standard Occupational Classification "SOC";
 }
 
+class User{
+name
+email
+password
+}
 
+class OrganizationRole{
+Description
+}
+
+Administrator "1" -- "*" Parameter : create >
+Administrator "1" -- "*" ParameterCategory : choose for Parameter >
 Administrator "1" -- "1" ClinicalAnalysisLaboratory : register a new >
+Administrator "1" -- "1" Employee: register >
+Administrator "1" -- "1" Parameter : creates >
+Administrator "1" -- "1" TypeTest: creates >
+Administrator "1" -- "1" ParameterCategory : creates >
+Administrator"1" -- "1" Employee: is a >
+AutomaticValidationModule "1" -- "1" Results : Validate >
+ChemicalAnalysis "*" -- "1" ChemicalLaboratory : take place in >
+ChemicalLaboratory "1" -- "1" CompanyHeadquarters: is located in >
+Client "0..1" -- "1" User: is a >
+Client "1" -- "1" LabOrder: to execute the test needs a  >
 ClinicalAnalysisLaboratory "1" -- "*" TypeTest : operates >
+ClinicalChemistryTechnologist "*" -- "1" ChemicalLaboratory : works on >
+ClinicalChemistryTechnologist "1" -- "1" Results : records >
+ClinicalChemistryTechnologist "1" -- "1" Sample : analyse >
+Company "1" - "*" OrganizationRole: knowns all the >
+Company "1" - "1" Covid19Report: sends to NHS >
+Company "1" -- "*" Administrator : employs
+Company "1" -- "*" Administrator: employs >
+Company "1" -- "*" Client: knows >
+Company "1" -- "*" ClinicalAnalysisLaboratory: owns >
 Company "1" -- "*" Employee: employs >
+Company "1" -- "*" ParameterCategory : adopts >
+Company "1" -- "*" Receptionist: employs >
+Company "1" -- "*" User: knows >
+Company "1" -- "1" ChemicalLaboratory: owns >
+Company "1" -- "1" CompanyHeadquarters: owns >
+Employee "1" - "1" OrganizationRole: is characterized by a  >
 Employee "1" -- "1" Administrator: can be a >
 Employee "1" -- "1" ClinicalChemistryTechnologist: can be a >
 Employee "1" -- "1" LaboratoryCoordinator: can be a >
 Employee "1" -- "1" MedicalLabTechnician: can be a >
 Employee "1" -- "1" Receptionist: can be a >
 Employee "1" -- "1" SpecialistDoctor: can be a >
-Administrator "1" -- "1" Employee: register >
-Company "1" -- "*" ParameterCategory : adopts >
-Parameter "1" -- "1" ParameterCategory : has a >
-Administrator "1" -- "1" ParameterCategory : creates >
-Administrator "1" -- "1" ParameterCategory : creates >
-AutomaticValidationModule "1" -- "1" Results : Validate >
-ChemicalAnalysis "*" -- "1" ChemicalLaboratory : take place in >
-ChemicalLaboratory "1" -- "1" CompanyHeadquarters: is located in >
-Client "1" -- "1" LabOrder: to execute the test needs a  >
-ClinicalChemistryTechnologist "*" -- "1" ChemicalLaboratory : works on >
-ClinicalChemistryTechnologist "1" -- "1" Results : records >
-ClinicalChemistryTechnologist "1" -- "1" Sample : analyse >
-Company "1" - "1" Covid19Report: sends to NHS >
-Company "1" -- "*" ClinicalAnalysisLaboratory: owns >
-Company "1" -- "1" ChemicalLaboratory: owns >
-Company "1" -- "1" CompanyHeadquarters: owns >
+Employee "1" -- "1" SpecialistDoctor: can be a >
+Employee "0..1" -- "1" User: is a >
 LaboratoryCoordinator "1" -- "*" Report: verifies >
 LaboratoryCoordinator "1" -- "1" AutomaticValidationModule : uses >
 MedicalLabTechnician "1" -- "*" Sample: collects and records >
 MedicalLabTechnician "1" -- "1" ClinicalAnalysisLaboratory : works on >
 Notification "1" -- Client : delivered to >
+Parameter "1" -- "1" ParameterCategory : has a >
 Receptionist "*" -- "1" ClinicalAnalysisLaboratory: works on >
+Receptionist "0..1" -- "1" User: is a >
 Receptionist "1" -- "*" Client: register in application >
 Receptionist "1" -- "*" Test: register in application >
 Report "1" -- "1" Notification : is sent by >
 Results "1" -- "1" Notification : is sent by >
-Sample "*" -- "1" ChemicalLaboratory: are sent >
 Sample "1" -- "1" BarcodeExternalAPI : is identified using >
 Sample "1" -- "1" Test : is used in >
 SpecialistDoctor "1" -- "1" Report: writes >
 SpecialistDoctor "1" -- "1" Results: analyse >
 Test "1" -- "*" Parameter : has >
+TypeTest "1" -- "*" Parameter : has >
 TypeSample "1" -- "1" Sample: has a <
 TypeTest "1" -- "*" Test : as a <
-
-
-
 @enduml

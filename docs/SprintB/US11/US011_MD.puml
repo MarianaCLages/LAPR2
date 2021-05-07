@@ -16,12 +16,14 @@ Name
 }
 
 class Parameter{
-Designation;
+name;
+code;
+description;
 }
 
 class ParameterCategory{
-Designation;
-Code;
+name;
+code;
 }
 
 Company "1" -- "*" Administrator: employs >
