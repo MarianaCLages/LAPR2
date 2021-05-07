@@ -5,34 +5,30 @@ import java.util.List;
 
 public class TestTypeStore {
     List<TestType> array;
-    List<ParameterCategory> listCat;
     TestType t;
 
     public TestTypeStore() {
-        this.array = new ArrayList<TestType>();
+        this.array = new ArrayList<>();
     }
 
-    public boolean CreateTestType(String testID,String description, String collectingMethod, ParameterCategoryStore cat) {
-        this.t = new TestType(testID, description, collectingMethod, cat);
-        if (ValidateTestType(t) && !alreadyUsedID(t)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public boolean isEmpty(){
-        return this.array.isEmpty();
+    public TestType CreateTestType(String testID, String description, String collectingMethod, ParameterCategoryStore catStore) {
+        this.t = new TestType(testID, description, collectingMethod, catStore);
+        return this.t;
     }
 
     public boolean ValidateTestType(TestType t) {
-        if (t == null && !contains(t) ) {
+        if (t == null || contains(t)) {
             return false;
+        }
+        else {
+            if (uniqueID(t)) {
+                return true;
+            }
         }
         return true;
     }
 
-    public boolean alreadyUsedID(TestType t){
+    public boolean uniqueID(TestType t) {
         boolean find = true;
         for (TestType t1:array) {
             if (t.getTestID().equals(t1.getTestID())){
@@ -42,6 +38,7 @@ public class TestTypeStore {
         return find;
     }
 
+
     public boolean contains(TestType t) {
         if (this.array.contains(t)) {
             return true;
@@ -50,8 +47,8 @@ public class TestTypeStore {
         }
     }
 
-    public boolean saveTestType(TestType t) {
-        if (ValidateTestType(t)) {
+    public boolean saveTestType() {
+        if (ValidateTestType(this.t)) {
             add(t);
             return true;
         } else {
@@ -60,8 +57,18 @@ public class TestTypeStore {
     }
 
     public boolean add(TestType t) {
-        array.add(t);
-        return true;
+        return array.add(t);
     }
 
+
+    public TestType getByID(String id) {
+        for (TestType t : array) {
+            if (t.getTestID().equals(id)) {
+                return t;
+            }
+        }
+        return null;
+    }
+
+    public boolean isEmpty(){return array.isEmpty();}
 }
