@@ -167,7 +167,7 @@ public class Client {
             }
         }
 
-        if (name.length() >= 35) {
+        if (name.length() > 35) {
             throw new IllegalArgumentException("Name must have maximum of 35 characters");
         }
     }

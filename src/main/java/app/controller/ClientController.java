@@ -25,8 +25,8 @@ public class ClientController {
         store.CreateClient(phoneNumber, cc, nhs,tifNumber, birhDate, sex,  email, name);
     }
 
-    public Client getClient(){
-        return store.getClient();
+    public String getClient(){
+        return store.getClient().toString();
     }
 
 
@@ -34,7 +34,7 @@ public class ClientController {
         boolean saved = false;
 
         saved = store.saveClient();
-        saved = store.addUser(this.company);
+        store.addUser(this.company);
 
         return saved;
     }

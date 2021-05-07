@@ -166,6 +166,17 @@ public class ClientTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
+    public void BornToday() throws ParseException {
+
+
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+
+        Date date = new Date();
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'm', "email@gamil.com", "Zé");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
     public void TooOldToday() throws ParseException {
         String strDate = "25-06-1850";
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
@@ -327,6 +338,33 @@ public class ClientTest {
     @Test(expected = IllegalArgumentException.class)
     public void ClientNull() throws ParseException {
         Client client = new Client(null, null, null, null, null, ' ', null, null);
+    }
+
+    @Test
+    public void ClientName35Char() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zoseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+    }
+    @Test (expected = IllegalArgumentException.class)
+    public void ClientNamenull() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", null);
+    }
+
+    @Test
+    public void addUserSendEmail() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Manuel");
+
     }
 }
 
