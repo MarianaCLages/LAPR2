@@ -93,7 +93,7 @@ public class EmployeeTest {
     @Test
     public void toStringTest(){
         Employee employee = new Employee("B00001","Bino","AtuaTerra", "91234567811","something@isep.com","111111111111111111",role);
-        String expected = "Employee:ID=B00001, name=Bino, address=AtuaTerra, phonenumber=91234567811, email=something@isep.com, SOC=111111111111111111, Role="+ role.toString();
+        String expected = "Employee: ID=B00001, name=Bino, address=AtuaTerra, phonenumber=91234567811, email=something@isep.com, SOC=111111111111111111, Role="+ role.toString();
         String actual = employee.toString();
         Assert.assertEquals(expected,actual);
     }
