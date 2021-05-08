@@ -14,6 +14,18 @@ public class SpecialistDoctorTest {
         SpecialistDoctor employee = new SpecialistDoctor("B00001","Bino","AtuaTerra", "91234567811","something@isep.com","111111111111111111","1111111111111111",role);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void RegisterSpecialistDoctorIndexNumberLetter() {
+        //Arrange + Act
+        SpecialistDoctor employee = new SpecialistDoctor("B00001","Bino","AtuaTerra", "91234567811","something@isep.com","111111111111111111","1111111a111111111",role);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void RegisterSpecialistDoctorIndexNumberDot() {
+        //Arrange + Act
+        SpecialistDoctor employee = new SpecialistDoctor("B00001","Bino","AtuaTerra", "91234567811","something@isep.com","11111111111111111. ","1111111a111111111",role);
+    }
+
     @Test
     public void toStringTest(){
         SpecialistDoctor employee = new SpecialistDoctor("B00001","Bino","AtuaTerra", "91234567811","something@isep.com","111111111111111111","1111111111111111",role);
