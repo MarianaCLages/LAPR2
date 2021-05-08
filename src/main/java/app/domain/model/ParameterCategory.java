@@ -2,6 +2,9 @@ package app.domain.model;
 
 import org.apache.commons.lang3.StringUtils;
 
+/**
+ * Class that represents an Category of Parameters
+ */
 public class ParameterCategory {
     private String code;
     private String name;
