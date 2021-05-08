@@ -42,20 +42,6 @@ public class SpecialistDoctor extends Employee{
         }
     }
 
-    @Override
-    public String toString() {
-        return "Employee:" +
-                "ID=" + this.EmployeeID +
-                ", name=" + this.name +
-                ", address=" + this.address +
-                ", phonenumber=" + this.phonenumber +
-                ", email=" + this.email +
-                ", SOC=" + this.SOC +
-                ", DoctorIndexNumber="+ this.DoctorIndexNumber +
-                ", Role="+ this.role ;
-
-
-    }
 
     private String getPassword() {
         int lenght = 10;
@@ -73,5 +59,18 @@ public class SpecialistDoctor extends Employee{
 
         }
         return success;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+ ", DoctorIndexNumber="+ DoctorIndexNumber;
+
+
+
+
+
+
+
+
     }
 }
