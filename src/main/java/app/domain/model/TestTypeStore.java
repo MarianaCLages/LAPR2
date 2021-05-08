@@ -65,6 +65,11 @@ public class TestTypeStore {
         return null;
     }
 
+    public List<TestType> getList(){
+        return this.array;
+    }
+
+
     public boolean isEmpty(){return array.isEmpty();}
 
     public TestType getTestT() {

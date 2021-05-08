@@ -8,14 +8,12 @@ public class TestTypeController {
 
     private Company company;
     private TestTypeStore store;
-    private TestType testT;
     private ParameterCategoryStore cat;
 
     public TestTypeController() {this(App.getInstance().getCompany());}
 
     public TestTypeController(Company company) {
         this.company = company;
-        this.testT = null;
     }
 
 
