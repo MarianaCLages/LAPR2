@@ -41,7 +41,7 @@ public class ClientStoreTest {
         Date date = df.parse(strDate);
         store.CreateClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
 
-        Assert.assertTrue(store.ValidateClient(store.getClient()));
+        Assert.assertTrue(store.validateClient(store.getClient()));
     }
 
     @Test
@@ -52,7 +52,7 @@ public class ClientStoreTest {
         Date date = df.parse(strDate);
         store.CreateClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
         store.saveClient();
-        Assert.assertFalse(store.ValidateClient(store.getClient()));
+        Assert.assertFalse(store.validateClient(store.getClient()));
     }
 
     @Test
@@ -66,7 +66,7 @@ public class ClientStoreTest {
         store.CreateClient("12385678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
 
 
-        Assert.assertFalse(store.ValidateClient(store.getClient()));
+        Assert.assertFalse(store.validateClient(store.getClient()));
     }
 
     @Test
@@ -78,7 +78,7 @@ public class ClientStoreTest {
         store.CreateClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
         store.saveClient();
         store.CreateClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "emil@gamil.com", "Zé");
-        Assert.assertFalse(store.ValidateClient(store.getClient()));
+        Assert.assertFalse(store.validateClient(store.getClient()));
     }
 
     @Test
@@ -93,22 +93,6 @@ public class ClientStoreTest {
 
         Assert.assertFalse(store.saveClient());
     }
-
-/*    @Test
-    public void addUserValid() throws ParseException {
-        Company company = new Company("Many Labs");
-        ClientStore store = new ClientStore();
-        String strDate = "25-06-1950";
-        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-        Date date = df.parse(strDate);
-        store.CreateClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
-        store.saveClient();
-
-        Assert.assertTrue(store.addUser(company));
-
-    }
-
- */
 
     @Test
     public void saveClient() throws ParseException {
