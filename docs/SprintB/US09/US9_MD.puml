@@ -2,15 +2,20 @@
 
 class Administrator{
 }
+class Employee {
+Employee ID;
+Organization Role;
+Name;
+Address;
+Phone Number;
+E-Mail;
+Standard Occupational Classification "SOC";}
 class TypeTest{
 Test ID;
 Collecting Method;
+Parameter Categories
 }
-class Parameter{
-Short Name;
-Code;
-Description;
-}
+
 class ParameterCategory{
 Designation;
 Code;
@@ -19,12 +24,12 @@ Code;
 class Company{
 Name
 }
+Employee "1" -- "1"Administrator: can be a >
+Company "1" -- "*" Employee: employs >
 Company "1" -- "*" ParameterCategory : adopts >
-Parameter "1" -- "1" ParameterCategory : has a >
-Administrator "1" -- "1" ParameterCategory : creates >
-Administrator "1" -- "1" Parameter : creates >
-Administrator "1" -- "1" TypeTest: creates >
-TypeTest "1" -- "*" Parameter : has >
+Administrator "1" -- "*" ParameterCategory : creates >
+Administrator "1" -- "*" TypeTest: creates >
+TypeTest "1" -- "*" ParameterCategory: has >
 
 
 

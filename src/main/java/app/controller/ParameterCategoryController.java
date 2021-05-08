@@ -1,9 +1,7 @@
 package app.controller;
 
 import app.domain.model.Company;
-import app.domain.model.ParameterCategory;
 import app.domain.model.ParameterCategoryStore;
-import auth.UserSession;
 
 public class ParameterCategoryController {
 

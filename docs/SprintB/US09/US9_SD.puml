@@ -4,41 +4,28 @@ actor Administrator as A
 participant ":CreateTestTypeUI" as UI
 participant ":CreateTestTypeController" as CTRL
 participant ":Company" as C
-participant "listCat: List<ParameterCategory>" as listCat
 participant "tType:TestTypeStore" as STO
 participant "t:Test Type" as T
 participant "store: ParameterCategoryStore" as CAT
+participant "catStore: ParameterCategoryStore" as CatStore
 
 activate A
 A -> UI: wants to specify a new type of test
 activate UI
-UI --> A: requests data (testID, collectingMethod, description)
-deactivate UI
-A -> UI: types requested data
-activate UI
-UI -> CTRL: CreateTestType(testID, collectingMethod, description)
+UI -> CTRL: CreateParameterCategoryStore()
 activate CTRL
-CTRL -> C: CreateTestType(testID, collectingMethod, description)
+CTRL->C: CreateParameterCategoryStore()
 activate C
-C -> STO: t = Create(testID, collectingMethod, description)
-activate STO
-STO--> T**: t = Create(testID, collectingMethod, description)
-
-deactivate STO
+C--> CatStore** : catStore = createParameterCategoryStore()
 deactivate C
-deactivate CTRL
 
-UI -> CTRL: createListCat()
-activate CTRL
-CTRL -> STO: createListCat()
-activate STO
-STO --> listCat**: create()
 deactivate STO
 deactivate CTRL
 
-UI -> CTRL: getParameterCategoryStore()
+loop "More categories"
+UI -> CTRL: getPcStore()
 activate CTRL
-CTRL -> CAT : cat = getParameterCategoryStore()()
+CTRL -> CAT : store = getPcStore()
 activate CAT
 deactivate CAT
 deactivate CTRL
@@ -47,25 +34,43 @@ deactivate CTRL
 UI --> A: shows parameter category list and asks to choose parameter category
 
 deactivate UI
-loop "More categories"
 A -> UI: confirms the category
 activate UI
 
 UI -> CTRL: add(pc)
 activate CTRL
-CTRL->listCat: add(pc)
-activate listCat
-deactivate listCat
-deactivate listCat
+CTRL->CatStore: add(pc)
+activate CatStore
+deactivate CatStore
 deactivate CTRL
 end
 
-
-UI ->CTRL: validateTestType(t)
+UI --> A: requests data (testID, collectingMethod, description)
+deactivate UI
+A -> UI: types requested data
+activate UI
+UI->CTRL: CreateTestTypeStore()
 activate CTRL
-CTRL -> STO: validateTestType(t)
+CTRL -> C: CreateTestTypeStore()
+activate C
+C--> STO**: tType = CreateTestTypeStore())
+deactivate CTRL
+deactivate C
+UI -> CTRL: CreateTestType(testID, collectingMethod, description, cat)
+activate CTRL
+
+
+CTRL -> STO: CreateTestType(testID, collectingMethod, description, cat)
 activate STO
-STO -> T : validate()
+STO--> T**: t = CreateTestType(testID, collectingMethod, description, catStore)
+deactivate STO
+deactivate CTRL
+
+UI ->CTRL: ValidateTestType(t)
+activate CTRL
+CTRL -> STO: ValidateTestType(t)
+activate STO
+STO -> T : ValidateTestType(t)
 activate T
 deactivate T
 deactivate STO

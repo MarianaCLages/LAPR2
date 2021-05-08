@@ -127,6 +127,10 @@ public class ParameterCategoryStore {
         return null;
     }
 
+    public List<ParameterCategory> getList(){
+        return this.array;
+    }
+
 
     public String toString() {
         StringBuilder listString = new StringBuilder();
@@ -144,4 +148,6 @@ public class ParameterCategoryStore {
     public boolean isEmpty(){
         return this.array.isEmpty();
     }
+
+
 }

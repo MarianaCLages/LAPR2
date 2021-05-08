@@ -17,10 +17,10 @@ public class EmployeeStore {
 
         RoleStore roles = new RoleStore();
 
-        if (role == 4){
-            this.em = new SpecialistDoctor(name, address, phonenumber, email,SOC,DoctorIndexNumber ,roles.get(role));
+        if (role == 5){
+            this.em = new SpecialistDoctor(CreateEmployeeID(name),name, address, phonenumber, email,SOC,DoctorIndexNumber ,roles.get(role));
         }else{
-            this.em = new Employee(name, address, phonenumber, email, SOC, roles.get(role));
+            this.em = new Employee(CreateEmployeeID(name), name, address, phonenumber, email, SOC, roles.get(role));
         }
         return this.em;
     }
@@ -41,7 +41,7 @@ public class EmployeeStore {
         while(empty.length() < 5){
             empty = "0" + empty;
         }
-        String EmployeeID = EmployeeNameID.concat(EmployeeNumberID);
+        String EmployeeID = EmployeeNameID+empty;
 
         return EmployeeID;
     }
@@ -83,6 +83,10 @@ public class EmployeeStore {
             listString.append(s.toString()).append("\n");
         }
         return String.valueOf(listString);
+    }
+
+    public boolean addUserWithRole(Company company) {
+        return em.addUserWithRole(company);
     }
 
     public Employee getEm() {

@@ -48,6 +48,10 @@ public class Company {
         return this.parameterCategoryList;
     }
 
+    public ParameterCategoryStore parameterCategoryList() {
+        return this.parameterCategoryList;
+    }
+
     public EmployeeStore getEmployeeList() {
         return this.employeeList = new EmployeeStore();
     }
@@ -56,9 +60,7 @@ public class Company {
         return this.parameterList = new ParameterStore();
     }
 
-    public List parameterCategoryList() {
-        return parameterCategoryList.array;
-    }
+
 
     public List roleList() {
         return roleList.getRoleList();
@@ -66,6 +68,10 @@ public class Company {
 
     public TestTypeStore getTestTypeList() {
         return this.testTypeList = new TestTypeStore();
+    }
+
+    public TestTypeStore TestTypeList(){
+        return this.testTypeList;
     }
 
     public RoleStore getRoleList() {

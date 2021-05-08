@@ -2,29 +2,38 @@ package app.controller;
 import app.domain.model.Company;
 import app.domain.model.*;
 
+import java.util.List;
+
 public class TestTypeController {
+
     private Company company;
     private TestTypeStore store;
-    private TestType testT;
+    private ParameterCategoryStore cat;
 
     public TestTypeController() {this(App.getInstance().getCompany());}
 
     public TestTypeController(Company company) {
         this.company = company;
-        this.testT = null;
     }
 
-    public boolean createTestType(String testID, String collectingMethod, String description, ParameterCategoryStore cat) {
+
+    public void createTestType(String testID, String description, String collectingMethod, ParameterCategoryStore cat){
         store = company.getTestTypeList();
-        if (store.CreateTestType(testID, collectingMethod, description,cat)){
-            return true;
-        }else {
-            return false;
-        }
+        store.CreateTestType(testID,description,collectingMethod,cat);
+    }
 
+    public boolean saveTestType() {
+        return this.store.saveTestType();
     }
 
 
-    public boolean saveTestType(){return this.store.saveTestType(testT);}
+    public ParameterCategoryStore getParameterCategoryList() {
+        return this.cat = company.parameterCategoryList();
+    }
+
+    public TestType getTestT() {
+        return store.getTestT();
+    }
+
 
 }

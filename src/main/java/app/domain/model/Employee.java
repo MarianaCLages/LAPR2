@@ -1,7 +1,11 @@
 package app.domain.model;
 
+import app.domain.shared.Constants;
+import auth.AuthFacade;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 
+import java.text.Normalizer;
 import java.util.regex.Pattern;
 
 public class Employee {
@@ -14,7 +18,7 @@ public class Employee {
     private String employeeID;
 
 
-    public Employee( String  name, String address, String phonenumber, String email, String SOC, Role role) {
+    public Employee(String employeeID, String name, String address, String phonenumber, String email, String SOC, Role role) {
         checkNameRules(name);
         checkAddressRules(address);
         checkPhoneNumberRules(phonenumber);
@@ -26,6 +30,7 @@ public class Employee {
         this.email = email;
         this.SOC = SOC;
         this.role = role;
+        this.employeeID = employeeID;
 
     }
 
@@ -37,6 +42,11 @@ public class Employee {
             throw new IllegalArgumentException("Name cannot be blank.");
 
         name = name.toLowerCase();
+
+        name = Normalizer.normalize(name, Normalizer.Form.NFD);
+        name = name.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
+        name = name.replaceAll(" ", "");
+
         char[] charArray = name.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
             char c = charArray[i];
@@ -106,13 +116,46 @@ public class Employee {
         }
     }
 
+    private String getPassword() {
+        int lenght = 10;
+
+        return RandomStringUtils.randomAlphanumeric(lenght);
+    }
+
+    public boolean addUserWithRole(Company company) {
+
+        boolean success = false;
+        String password = getPassword();
+        AuthFacade authFacade = company.getAuthFacade();
+
+        if (role.equals("Clinical Chemistry Technologist")) {
+            success = authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_CLINICALCHEMISTRYTECHNOLOGIST);
+        }
+
+        if (role.equals("Medical Lab Technician")) {
+            success = authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_MEDICALLABTECHNICIIAN);
+        }
+
+        if (role.equals("LaboratoryCoordinator"))
+            success = authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_LABORATORYCOORDINATOR);
+
+        if (role.equals("Receptionist")) {
+            success = authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_RECEPTIONIST);
+        }
+
+        if (success){
+            Email mail = new Email(this.email,getPassword());
+
+        }
+        return success;
+    }
 
 
 
     @Override
     public String toString() {
         return "Employee:" +
-                "ID=" + employeeID +
+                " ID=" + employeeID +
                 ", name=" + name +
                 ", address=" + address +
                 ", phonenumber=" + phonenumber +
@@ -121,11 +164,6 @@ public class Employee {
                 ", Role="+ role ;
 
     }
-
-
-
-
-
 
 
 

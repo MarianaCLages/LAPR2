@@ -13,11 +13,11 @@ public class RoleStore {
     private  List <Role> array;
     private Role pc;
 
-    private Role ClinicalChemistryTechnologist = new Role("0","Clinical Chemistry Technologist");
-    private Role MedicalLabTechnician = new Role("1", "Medical Lab Technician");
-    private Role LaboratoryCoordinator = new Role("2", "LaboratoryCoordinator");
-    private Role Receptionist = new Role("3","Receptionist");
-    private Role SpecialistDoctor = new Role("4","SpecialistDoctor");
+    private final Role ClinicalChemistryTechnologist = new Role("0","Clinical Chemistry Technologist");
+    private final Role MedicalLabTechnician = new Role("1", "Medical Lab Technician");
+    private final Role LaboratoryCoordinator = new Role("2", "LaboratoryCoordinator");
+    private final Role Receptionist = new Role("3","Receptionist");
+    private final Role SpecialistDoctor = new Role("4","SpecialistDoctor");
 
 
     public RoleStore(){
@@ -25,7 +25,6 @@ public class RoleStore {
 
         array.add(ClinicalChemistryTechnologist);
         array.add(MedicalLabTechnician);
-        array.add(LaboratoryCoordinator);
         array.add(LaboratoryCoordinator);
         array.add(Receptionist);
         array.add(SpecialistDoctor);
@@ -46,7 +45,7 @@ public class RoleStore {
 
     public List<Role> getRoleList(){
 
-        return array;
+        return this.array;
     }
 
 
