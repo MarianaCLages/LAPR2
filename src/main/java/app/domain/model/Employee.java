@@ -5,6 +5,7 @@ import auth.AuthFacade;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 
+import java.text.Normalizer;
 import java.util.regex.Pattern;
 
 public class Employee {
@@ -41,6 +42,11 @@ public class Employee {
             throw new IllegalArgumentException("Name cannot be blank.");
 
         name = name.toLowerCase();
+
+        name = Normalizer.normalize(name, Normalizer.Form.NFD);
+        name = name.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
+        name = name.replaceAll(" ", "");
+
         char[] charArray = name.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
             char c = charArray[i];

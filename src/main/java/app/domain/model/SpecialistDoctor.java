@@ -45,14 +45,14 @@ public class SpecialistDoctor extends Employee{
     @Override
     public String toString() {
         return "Employee:" +
-                "ID=" + EmployeeID +
-                ", name=" + name +
-                ", address=" + address +
-                ", phonenumber=" + phonenumber +
-                ", email=" + email +
-                ", SOC=" + SOC +
-                ", DoctorIndexNumber="+ DoctorIndexNumber +
-                ", Role="+ role ;
+                "ID=" + this.EmployeeID +
+                ", name=" + this.name +
+                ", address=" + this.address +
+                ", phonenumber=" + this.phonenumber +
+                ", email=" + this.email +
+                ", SOC=" + this.SOC +
+                ", DoctorIndexNumber="+ this.DoctorIndexNumber +
+                ", Role="+ this.role ;
 
 
     }
