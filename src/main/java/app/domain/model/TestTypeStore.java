@@ -17,13 +17,8 @@ public class TestTypeStore {
     }
 
     public boolean ValidateTestType(TestType t) {
-        if (t == null || contains(t)) {
+        if (t == null || contains(t)|| !uniqueID(t)) {
             return false;
-        }
-        else {
-            if (uniqueID(t)) {
-                return true;
-            }
         }
         return true;
     }
@@ -71,4 +66,8 @@ public class TestTypeStore {
     }
 
     public boolean isEmpty(){return array.isEmpty();}
+
+    public TestType getTestT() {
+        return t;
+    }
 }

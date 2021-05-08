@@ -35,6 +35,13 @@ public class CompanyTest {
         ParameterCategoryStore store = company.getParameterCategoryList();
     }
 
+
+    @Test
+    public void getTestTypeList() {
+        Company company = new Company(Constants.PARAMS_COMPANY_DESIGNATION);
+        TestTypeStore store = company.getTestTypeList();
+    }
+
     @Test
     public void getClientList() {
         Company company = new Company(Constants.PARAMS_COMPANY_DESIGNATION);
