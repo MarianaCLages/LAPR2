@@ -28,7 +28,7 @@ public class Client {
 
 
     /**
-     * Constructor of the ParameterCategory specifying the sex of the Client, it calls methods in order to validate the parameters
+     * Constructor of the Client specifying the sex of the Client, it calls methods in order to validate the parameters
      *
      * @param phoneNumber unique phone number that belongs to client
      * @param cc          citizen card number of the client
@@ -69,7 +69,7 @@ public class Client {
     }
 
     /**
-     * Constructor of the ParameterCategory not specifying the sex of the Client, it calls methods in order to validate the parameters
+     * Constructor of the Client not specifying the sex of the Client, it calls methods in order to validate the parameters
      *
      * @param phoneNumber unique phone number that belongs to client
      * @param cc          citizen card number of the client

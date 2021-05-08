@@ -6,7 +6,6 @@ import java.util.List;
 public class ParameterController {
 
     private Company company;
-    private Parameter pc;
     private ParameterStore store;
     private ParameterCategoryStore catStore;
 
@@ -17,8 +16,6 @@ public class ParameterController {
 
     public ParameterController(Company company) {
         this.company = company;
-        this.pc = null;
-
     }
 
 
@@ -26,13 +23,14 @@ public class ParameterController {
         store = company.getParameterList();
         store.CreateParameter(code,name,description,cat);
     }
+
     public ParameterCategoryStore getParameterCategoryList() {
         return this.catStore = company.parameterCategoryList();
     }
 
 
-    public Parameter getpc(){
-        return store.getPc();
+    public String getpc(){
+        return store.getPc().toString();
     }
 
     public boolean saveParameter() {

@@ -6,7 +6,7 @@ import java.util.List;
 
 
 /**
- *
+ * Class that represents an List of all the Parameters in the system
  */
 public class ParameterStore {
     List<Parameter> array;
@@ -20,7 +20,7 @@ public class ParameterStore {
     }
 
     /**
-     * This method creates a new Parameter object by calling his constructor. It also validates the object using the method ValidateParameter implemented by this class
+     * This method creates a new Parameter object by calling his constructor
      *
      * @param code unique code needed to identify the Parameter
      * @param name short name that characterize the Parameter
@@ -86,15 +86,20 @@ public class ParameterStore {
         return true;
     }
 
-
+    /**
+     * returns an Parameter instance stored in the store given the index of it
+     * @param index position o the object in the ArrayList
+     * @return Parameter instance stored in the given index
+     */
     public Parameter get(int index) {
         return array.get(index);
     }
 
 
-
-
-
+    /**
+     * Go through all the objects in the ArrayList and appends the String of the method toString to a new String creating a new line for object
+     * @return String with all the objects in the ArrayList
+     */
     public String toString() {
         StringBuilder listString = new StringBuilder();
 
@@ -104,6 +109,9 @@ public class ParameterStore {
         return String.valueOf(listString);
     }
 
+    /**
+     * @return instance of Parameter that was created
+     */
     public Parameter getPc() {
         return pc;
     }
