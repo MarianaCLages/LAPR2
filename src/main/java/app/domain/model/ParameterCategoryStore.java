@@ -1,12 +1,11 @@
 package app.domain.model;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 
 /**
- *
+ * Class that represents an List of all the Category of Parameters in the system
  */
 public class ParameterCategoryStore {
     List<ParameterCategory> array;
@@ -48,14 +47,15 @@ public class ParameterCategoryStore {
 
     /**
      * This method searches in the Array List if alredy exists a Parameter Category object with the same code
+     *
      * @param pc Parameter Category object in which we want to check the code
      * @return true if the code dont already exists, false if not
      */
 
-    public boolean uniqueCode(ParameterCategory pc){
+    public boolean uniqueCode(ParameterCategory pc) {
         boolean find = true;
-        for (ParameterCategory pc1:array) {
-            if (pc.getCode().equals(pc1.getCode())){
+        for (ParameterCategory pc1 : array) {
+            if (pc.getCode().equals(pc1.getCode())) {
                 find = false;
             }
         }
@@ -104,6 +104,7 @@ public class ParameterCategoryStore {
 
     /**
      * This method search for an Parameter Category object by the index of that object in the ArrayList
+     *
      * @param index index of the array list where we want to get the object
      * @return the Parameter Category object that was in the index of the array list
      */
@@ -114,6 +115,7 @@ public class ParameterCategoryStore {
 
     /**
      * This method search for an Parameter Category object by the code of that object in the ArrayList
+     *
      * @param code code that characterize the Parameter Category object
      * @return if the object is found it returns the object, if not it returns null
      */
@@ -127,11 +129,17 @@ public class ParameterCategoryStore {
         return null;
     }
 
-    public List<ParameterCategory> getList(){
+    /**
+     * @return the list of Parameters Category
+     */
+    public List<ParameterCategory> getList() {
         return this.array;
     }
 
-
+    /**
+     * Go through all the objects in the ArrayList and appends the String of the method toString to a new String creating a new line for object
+     * @return String with all the objects in the ArrayList
+     */
     public String toString() {
         StringBuilder listString = new StringBuilder();
 
@@ -141,11 +149,18 @@ public class ParameterCategoryStore {
         return String.valueOf(listString);
     }
 
+    /**
+     * @return Parameter Category object
+     */
     public ParameterCategory getPc() {
         return pc;
     }
 
-    public boolean isEmpty(){
+    /**
+     * Checks if the ArrayList of Parameter Categories are empty
+     * @return a boolean value that represents if the ArrayList is empty
+     */
+    public boolean isEmpty() {
         return this.array.isEmpty();
     }
 

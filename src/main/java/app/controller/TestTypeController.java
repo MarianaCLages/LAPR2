@@ -1,8 +1,7 @@
 package app.controller;
+
 import app.domain.model.Company;
 import app.domain.model.*;
-
-import java.util.List;
 
 public class TestTypeController {
 
