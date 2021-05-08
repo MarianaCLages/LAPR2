@@ -26,7 +26,7 @@ public class ClinicalAnalysisLab {
     }
 
     private void checkTestTypeRules(TestType tType) {
-        if (tType.equals(null))
+        if (tType == null)
             throw new IllegalArgumentException("Collecting method cannot be blank.");
     }
 

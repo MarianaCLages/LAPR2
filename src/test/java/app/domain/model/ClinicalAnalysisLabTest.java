@@ -3,8 +3,6 @@ package app.domain.model;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class ClinicalAnalysisLabTest {
     private ParameterCategoryStore cat = new ParameterCategoryStore();
     private TestTypeStore store = new TestTypeStore();
@@ -136,5 +134,22 @@ public class ClinicalAnalysisLabTest {
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
         //Arrange + Act
         ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","6334906543","", t);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void TestTypeBlank(){
+        ParameterCategory pc1 = new ParameterCategory(null, null);
+        cat.add(pc1);
+        TestType t = new TestType(null, null, null, cat);
+        //Arrange + Act
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","6357896543","12345678901", t);
+    }
+
+    @Test
+    public void ClinicalAnalysisLab() {
+        ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
+        cat.add(pc1);
+        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab(t);
     }
 }
