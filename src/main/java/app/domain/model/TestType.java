@@ -68,11 +68,11 @@ public class TestType {
 
     @Override
     public String toString() {
-        return "TestType{" + "testID=" + testID + '\n' +
-                "description=" + description + '\n' +
-                "collectingMethod=" + collectingMethod + '\n' +
-                "categories:\n          " + catStore +
-                '}';
+        return "TestType: " + "testID=" + testID +
+                ", description=" + description +
+                ", collectingMethod=" + collectingMethod +
+                ", categories: " + catStore;
+
     }
 
     public String getTestID() {
