@@ -110,4 +110,14 @@ public class ClinicalAnalysisLab {
             }
         }
     }
+    @Override
+    public String toString() {
+        return "ClinicalAnalysisLab: " +
+                "name=" + this.name +
+                ", address=" + this.address +
+                ", id=" + this.id +
+                ", tin=" + this.tType +
+                ", phonenumber=" + this.phoneNumber +
+                ", typetest=" + this.tType.toString();
+    }
 }

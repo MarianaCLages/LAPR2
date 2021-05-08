@@ -6,6 +6,7 @@ public class ClinicalAnalysisLabController {
     private Company company;
     private ClinicalAnalysisLabStore store;
     private ClinicalAnalysisLab cal;
+    private TestTypeStore typeTStore;
 
     public ClinicalAnalysisLabController() {this(App.getInstance().getCompany());}
 
@@ -14,16 +15,22 @@ public class ClinicalAnalysisLabController {
         this.cal = null;
     }
 
-    public boolean createClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber, TestType tType) {
+    public void createClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber, TestType tType) {
         store = company.getClinicalAnalysisLabList();
-        if (store.CreateClinicalAnalysisLab(name, address, id, tin, phoneNumber, tType)){
-            return true;
-        }else {
-            return false;
-        }
+        store.CreateClinicalAnalysisLab(name,address,id,tin,phoneNumber,tType);
 
     }
 
-    public boolean saveTestType(){return this.store.saveClinicalAnalysisLab(cal);}
+    public  TestTypeStore getTypetestList(){
+        return this.typeTStore = company.TestTypeList();
+    }
+
+    public ClinicalAnalysisLab getcal(){
+        return store.getCal();
+    }
+
+    public boolean saveClinicalAnalysisLab() {
+        return this.store.saveClinicalAnalysisLab();
+    }
 
 }

@@ -19,7 +19,7 @@ public class ClinicalAnalysisLabStoreTest {
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
         //Arrange + Act
         ClinicalAnalysisLabStore lab = new ClinicalAnalysisLabStore();
-        Assert.assertEquals(true, lab.CreateClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", t));
+        Assert.assertNotNull(lab.CreateClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", t));
     }
 
     @Test
@@ -29,23 +29,11 @@ public class ClinicalAnalysisLabStoreTest {
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
         //Arrange + Act
         ClinicalAnalysisLabStore lab = new ClinicalAnalysisLabStore();
-        Assert.assertEquals(false, !lab.CreateClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", t));
+        Assert.assertNotNull(lab.CreateClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", t));
     }
 
-   @Test
-    public void ValidateClinicalAnalysisLab(){
-       ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
-       cat.add(pc1);
-       TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
-       //Arrange + Act
-       ClinicalAnalysisLabStore cal = new ClinicalAnalysisLabStore();
-       ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", t);
-       cal.add(lab);
-       Assert.assertEquals(true, cal.ValidateClinicalAnalysisLab(lab));
-   }
-
     @Test
-    public void ValidateClinicalAnalysisLabWrong(){
+    public void ValidateClinicalAnalysisLab(){
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
@@ -53,7 +41,20 @@ public class ClinicalAnalysisLabStoreTest {
         ClinicalAnalysisLabStore cal = new ClinicalAnalysisLabStore();
         ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", t);
         cal.add(lab);
-        Assert.assertEquals(false, !cal.ValidateClinicalAnalysisLab(lab));
+        Assert.assertFalse(cal.ValidateClinicalAnalysisLab(lab));
+    }
+
+
+    @Test (expected = IllegalArgumentException.class)
+    public void ValidateClinicalAnalysisLabWrong(){
+        ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
+        cat.add(pc1);
+        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        //Arrange + Act
+        ClinicalAnalysisLabStore cal = new ClinicalAnalysisLabStore();
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("lab2", "porto", "2gs45","6357896543", "12345678901", t);
+        cal.add(lab);
+        Assert.assertTrue(cal.ValidateClinicalAnalysisLab(lab));
     }
 
     @Test
@@ -65,7 +66,7 @@ public class ClinicalAnalysisLabStoreTest {
         ClinicalAnalysisLabStore cal = new ClinicalAnalysisLabStore();
         ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", t);
         cal.add(lab);
-        Assert.assertEquals(true, cal.contains(lab));
+        Assert.assertTrue(cal.contains(lab));
     }
 
     @Test
@@ -76,7 +77,7 @@ public class ClinicalAnalysisLabStoreTest {
         //Arrange + Act
         ClinicalAnalysisLabStore cal = new ClinicalAnalysisLabStore();
         ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", t);
-        Assert.assertEquals(true, cal.saveClinicalAnalysisLab(lab));
+        Assert.assertFalse(cal.saveClinicalAnalysisLab());
     }
 
     @Test
@@ -87,7 +88,7 @@ public class ClinicalAnalysisLabStoreTest {
         //Arrange + Act
         ClinicalAnalysisLabStore cal = new ClinicalAnalysisLabStore();
         ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", t);
-        Assert.assertEquals(false, !cal.saveClinicalAnalysisLab(lab));
+        Assert.assertFalse(cal.saveClinicalAnalysisLab());
     }
 
 
@@ -99,7 +100,7 @@ public class ClinicalAnalysisLabStoreTest {
         //Arrange + Act
         ClinicalAnalysisLabStore cal = new ClinicalAnalysisLabStore();
         ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", t);
-        Assert.assertEquals(true, cal.add(lab));
+        Assert.assertTrue(cal.add(lab));
     }
 
 }
