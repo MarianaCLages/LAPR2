@@ -50,7 +50,7 @@ public class ParameterUI implements Runnable {
                     }
                 } while (exception);
 
-                cont = Utils.confirm("The following Parameter was created do you want to save?" + ctrl.getpc().toString());
+                cont = Utils.confirm("The following Parameter was created do you want to save? " + ctrl.getpc().toString());
                 if (cont) {
 
                     if (ctrl.saveParameter()) {

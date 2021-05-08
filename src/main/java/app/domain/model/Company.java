@@ -79,7 +79,8 @@ public class Company {
     }
 
     public ClinicalAnalysisLabStore getClinicalAnalysisLabList() {
-        return this.clinicalAnalysisLabList = new ClinicalAnalysisLabStore();
+        this.clinicalAnalysisLabList = new ClinicalAnalysisLabStore();
+        return this.clinicalAnalysisLabList;
     }
 
     public ClientStore getClientList() {
@@ -87,4 +88,3 @@ public class Company {
         return this.clientList;
     }
 }
-

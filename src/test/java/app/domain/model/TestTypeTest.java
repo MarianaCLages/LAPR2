@@ -153,7 +153,7 @@ public class TestTypeTest {
         ParameterCategory pc1 = new ParameterCategory("A8554", "Hemograma");
         cat.add(pc1);
         TestType t = new TestType("12d3g","description","collecting method", cat);
-        String expected = "TestType{testID=12d3g\ndescription=description\ncollectingMethod=collecting method\ncategories:\n          Code = A8554 Name=Hemograma\n}";
+        String expected = "TestType: testID=12d3g, description=description, collectingMethod=collecting method, categories: Code = A8554 Name=Hemograma\n";
         String actual = t.toString();
         Assert.assertEquals(expected,actual);
     }

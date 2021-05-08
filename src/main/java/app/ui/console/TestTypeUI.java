@@ -43,7 +43,7 @@ public class TestTypeUI implements Runnable {
                         exception = true;
                     }
                 } while (exception);
-                cont = Utils.confirm("The following type of test was created do you want to save? (s/n)" + this.ctrl.getTestT().toString());
+                cont = Utils.confirm("The following type of test was created do you want to save? (s/n) " + this.ctrl.getTestT().toString());
                 if (cont) {
 
                     if (this.ctrl.saveTestType()) {

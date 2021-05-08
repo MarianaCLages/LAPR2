@@ -26,7 +26,7 @@ public class ClinicalAnalysisLab {
     }
 
     private void checkTestTypeRules(TestType tType) {
-        if (tType.equals(null))
+        if (tType == null)
             throw new IllegalArgumentException("Collecting method cannot be blank.");
     }
 
@@ -109,5 +109,15 @@ public class ClinicalAnalysisLab {
                 throw new IllegalArgumentException("TIN only accepts numbers.");
             }
         }
+    }
+    @Override
+    public String toString() {
+        return "ClinicalAnalysisLab: " +
+                "name=" + this.name +
+                ", address=" + this.address +
+                ", id=" + this.id +
+                ", tin=" + this.tType +
+                ", phonenumber=" + this.phoneNumber +
+                ", typetest=" + this.tType.toString();
     }
 }
