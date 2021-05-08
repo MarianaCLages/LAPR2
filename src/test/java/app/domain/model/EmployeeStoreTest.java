@@ -20,4 +20,17 @@ public class EmployeeStoreTest {
     }
 
 
+    @Test
+    public void EmployeeIDcheck() {
+        //Arrange + Act
+        String expected = "Employee: ID=B00001, name=Bino, address=AtuaTerra, phonenumber=91234567811, email=something@isep.com, SOC=111111111111111111, Role=Medical Lab Technician";
+        EmployeeStore store = new EmployeeStore();
+        store.CreateEmployee("Bino","AtuaTerra", "91234567811","something@isep.com","111111111111111111","",1);
+
+        Employee employee = new Employee("B00001","Bino","AtuaTerra", "91234567811","something@isep.com","111111111111111111",role);
+        String actual = store.getEm().toString();
+
+        Assert.assertEquals(expected,actual);
+
+    }
 }
