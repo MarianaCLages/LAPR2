@@ -10,6 +10,9 @@ class CreateClinicalAnalysisLabUI {
 }
 
 class CreateClinicalAnalysisLabController {
+    - company
+    - store
+    - testTypeStore
     + getStore()
     + CreateClinicalAnalysisLab(int labID, string name, string address, int phoneNumber, int tinNumber)
     + getTestTypeList()
@@ -28,6 +31,8 @@ class ClinicalAnalysisLaboratory{
 }
 
 class ClinicalAnalysisLaboratoryStore{
+    - clinicalAnalysisLaboratoryList
+    - clinicalAnalysisLab
     + CreateClinicalAnalysisLab(int labID, string name, string address, int phoneNumber, int tinNumber)
     + validateClinicalAnalysisLab()
     + getTestTypeList()
@@ -37,14 +42,19 @@ class ClinicalAnalysisLaboratoryStore{
 }
 
 class TestTypeStore{
+    - testTypeList
+    - testType
     + getTestTypeList()
 }
 
-CreateClinicalAnalysisLabUI ..> CreateClinicalAnalysisLabController
-CreateClinicalAnalysisLabController ..> Company
+CreateClinicalAnalysisLabUI --> CreateClinicalAnalysisLabController
+CreateClinicalAnalysisLabController --> Company
 CreateClinicalAnalysisLabController ..> ClinicalAnalysisLaboratoryStore
-Company --> ClinicalAnalysisLaboratoryStore: creates
-ClinicalAnalysisLaboratoryStore --> ClinicalAnalysisLaboratory: creates
-ClinicalAnalysisLaboratoryStore --> TestTypeStore
+Company --> ClinicalAnalysisLaboratoryStore
+ClinicalAnalysisLaboratoryStore --> ClinicalAnalysisLaboratory
+ClinicalAnalysisLaboratoryStore ..> TestTypeStore
+Company --> TestTypeStore
+CreateClinicalAnalysisLabController ..> TestTypeStore
+ClinicalAnalysisLaboratory "1" ..> "*" TestTypeStore
 
 @enduml

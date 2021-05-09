@@ -2,21 +2,32 @@ package app.domain.model;
 
 import org.apache.commons.lang3.StringUtils;
 
+/**
+ * Class that represents an Type of Test
+ */
 public class TestType {
     private String testID;
     private String description;
     private String collectingMethod;
     private ParameterCategoryStore catStore;
 
-    public TestType(String testID, String description, String collectingMethod, ParameterCategoryStore catStore){
+    /**
+     * Constructor of TestType, it calls methods in order to validate the parameters
+     *
+     * @param testID           ID of Type if test
+     * @param description      simple description of the type of test
+     * @param collectingMethod collecting methods of the type of test
+     * @param catStore         list of Parameter Categories associated with the test
+     */
+    public TestType(String testID, String description, String collectingMethod, ParameterCategoryStore catStore) {
         checkCodeRules(testID);
         checkCollectingMethodRules(collectingMethod);
         checkDescriptionRules(description);
         checkCategoriesList(catStore);
-        this.testID=testID;
-        this.description=description;
-        this.collectingMethod=collectingMethod;
-        this.catStore=catStore;
+        this.testID = testID;
+        this.description = description;
+        this.collectingMethod = collectingMethod;
+        this.catStore = catStore;
     }
 
     /**
@@ -61,24 +72,29 @@ public class TestType {
      *
      * @param catStore the list of categories of the test
      */
-    private void checkCategoriesList(ParameterCategoryStore catStore){
+    private void checkCategoriesList(ParameterCategoryStore catStore) {
         if (catStore.isEmpty())
             throw new IllegalArgumentException("Collecting method cannot be blank.");
     }
 
+    /**
+     * @return A string with the format "TestType: testID= testID, description= description, collectingMethod= collectingMethod, categories: (list of categories)";
+     */
     @Override
     public String toString() {
-        return "TestType: " + "testID=" + testID +
-                ", description=" + description +
-                ", collectingMethod=" + collectingMethod +
-                ", categories: " + catStore;
-
+        return "TestType: " + "testID=" + testID + ", description=" + description + ", collectingMethod=" + collectingMethod + ", categories: " + catStore;
     }
 
+    /**
+     * @return Id that characterizes the test
+     */
     public String getTestID() {
         return testID;
     }
 
+    /**
+     * @return List of categories associated with the test
+     */
     public ParameterCategoryStore getCatStore() {
         return catStore;
     }

@@ -2,6 +2,9 @@ package app.domain.model;
 
 import org.apache.commons.lang3.StringUtils;
 
+/**
+ * Class that represents an Clinical Analysis Lab
+ */
 public class ClinicalAnalysisLab {
     private String name;
     private String address;
@@ -10,6 +13,15 @@ public class ClinicalAnalysisLab {
     private String phoneNumber;
     private TestType tType;
 
+    /**
+     * Constructor of the ClinicalAnalysisLab, it calls methods in order to validate the parameters
+     * @param name name of the Clinical Analysis Lab
+     * @param address address of the Clinical Analysis Lab
+     * @param id id of Clinical Analysis Lab
+     * @param tin TIN of Clinical Analysis Lab
+     * @param phoneNumber Phone Number Clinical Analysis Lab
+     * @param tType list of Test Types associated with the test
+     */
     public ClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber, TestType tType) {
         checkNameRules(name);
         checkAddressRules(address);
@@ -25,6 +37,10 @@ public class ClinicalAnalysisLab {
         this.tType = tType;
     }
 
+    /**
+     * This method checks if the list of Types of tests provided meets the requirements, if not it throws a exception making the execution to stop
+     * @param tType list of Test Types associated with the test
+     */
     private void checkTestTypeRules(TestType tType) {
         if (tType == null)
             throw new IllegalArgumentException("Collecting method cannot be blank.");
@@ -110,6 +126,10 @@ public class ClinicalAnalysisLab {
             }
         }
     }
+
+    /**
+     * @return A string with the format ClinicalAnalysisLab: name= name, address= address, id= id, tin=tType, phonenumber= phoneNumber, typetest= (list of tests);
+     */
     @Override
     public String toString() {
         return "ClinicalAnalysisLab: " +

@@ -5,11 +5,12 @@ class RegisterEmployeeUI{
 }
 
 class RegisterEmployeeController{
+-company
+-store
 +getRoleList()
 +CreateEmployee(name,addresses,phoneNumber,email,soc,role)
 +CreateEmployee(name,addresses,phoneNumber,email,soc,role,docInNum)
 +saveEmployee(em)
-+
 }
 
 class AuthFacade{
@@ -17,11 +18,15 @@ class AuthFacade{
 }
 
 class Company{
+-roleList
+-employeeList
 +getRoleList()
 +getEmployeeStore()
 }
 
 class EmployeeStore{
+-EmployeeList
+-Employee
 +CreateEmployee(name,addresses,phoneNumber,email,soc,role)
 +CreateEmployee(name,addresses,phoneNumber,email,soc,role,docInNum)
 +validateEmployee(em)
@@ -30,11 +35,11 @@ class EmployeeStore{
 }
 
 class Employee{
--name: String
--address: String
--phoneNumber: int
--email: String
--soc: int
+-name
+-address
+-phoneNumber
+-email
+-soc
 +Employee(name,addresses,phoneNumber,email,soc,role)
 +Employee(name,addresses,phoneNumber,email,soc,role,docInNum)
 }
@@ -52,20 +57,20 @@ class SpecialistDoctor{
 -docInNum: int
 }
 class Role{
-roleID: String
-roleName: String
+-roleId
+-roleName
 }
 EmployeeStore --> SpecialistDoctor
 RegisterEmployeeController ..> EmployeeStore
-RegisterEmployeeUI ..> RegisterEmployeeController
-RegisterEmployeeController ..> Company
-Company ..> RoleStore
+RegisterEmployeeUI --> RegisterEmployeeController
+RegisterEmployeeController --> Company
+Company --> RoleStore
 EmployeeStore ..> AuthFacade
 Company --> EmployeeStore
 EmployeeStore --> Employee
 SpecialistDoctor --|> Employee
 RoleStore --> Role
-
-
+SpecialistDoctor ..> Role
+Employee ..> Role
 
 @enduml

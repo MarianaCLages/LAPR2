@@ -14,6 +14,12 @@ public class EmployeeTest {
         Employee employee = new Employee("B00001","Bino","AtuaTerra", "91234567811","something@isep.com","111111111111111111",role);
     }
 
+    @Test (expected = IllegalArgumentException.class)
+    public void RegisterEmployeeBlank() {
+        //Arrange + Act
+        Employee employee = new Employee(null,null,null, null,null,null,null);
+    }
+
     @Test
     public void RegisterEmployeeNameLimits() {
         //Arrange + Act

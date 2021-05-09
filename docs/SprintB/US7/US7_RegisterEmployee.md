@@ -174,43 +174,560 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 *In this section, it is suggested to present an UML dynamic view stating the sequence of domain related software objects' interactions that allows to fulfill the requirement.*
 
-![US07_SD](US7_SD.svg)
+![US07_SD](US07_SD.svg)
 
 ## 3.3. Class Diagram (CD)
 
 *In this section, it is suggested to present an UML static view representing the main domain related software classes that are involved in fulfilling the requirement as well as and their relations, attributes and methods.*
 
-![USXX-CD](USXX-CD.svg)
+![USXX-CD](US07-CD.svg)
 
 # 4. Tests
-*In this section, it is suggested to systematize how the tests were designed to allow a correct measurement of requirements fulfilling.*
 
-**_DO NOT COPY ALL DEVELOPED TESTS HERE_**
+**Test 1:** Check that it is not possible to create an instance of the Employee class with null values.
+    
+     @Test (expected = IllegalArgumentException.class)
+    public void RegisterEmployeeBlank() {
+        //Arrange + Act
+        Employee employee = new Employee(null,null,null, null,null,null,null);
+    }  
 
-**Test 1:** Check that it is not possible to create an instance of the Example class with null values.
+**Test 2:** Attributes of any employee (user) are unique.
+      
+      @Test
+    public void validateCreateEmployeeID() {
+        //Arrange + act
+        EmployeeStore store = new EmployeeStore();
+        Employee employeeID1 =new Employee("B00001","Bino", "casa", "91111111111","something@isep.pt","111111111111111111",role ) ;
 
-	@Test(expected = IllegalArgumentException.class)
-		public void ensureNullIsNotAllowed() {
-		Exemplo instance = new Exemplo(null, null);
-	}
+        //Assert
+        Assert.assertTrue(store.ValidateEmployee(employeeID1));
+    }
 
-*It is also recommended to organize this content by subsections.*
+**Test 3:** The employee ID should be generated from the initials of the employee name and should include a number. The number should have 5 digits, and it increases automatically when a new employee is registered in the system.
+
+    @Test
+    public void EmployeeIDcheck() {
+        //Arrange + Act
+        String expected = "Employee: ID=B00001, name=Bino, address=AtuaTerra, phonenumber=91234567811, email=something@isep.com, SOC=111111111111111111, Role=Medical Lab Technician";
+        EmployeeStore store = new EmployeeStore();
+        store.CreateEmployee("Bino","AtuaTerra", "91234567811","something@isep.com","111111111111111111","",1);
+
+        Employee employee = new Employee("B00001","Bino","AtuaTerra", "91234567811","something@isep.com","111111111111111111",role);
+        String actual = store.getEm().toString();
+
+        Assert.assertEquals(expected,actual);
+
+    }
+
+**Test 4:** The Doctor Index Number should be introduced by the administrator.
+  
+    @Test
+    public void checkDoctorIndexNumber() {
+        //Arrange + Act
+        SpecialistDoctor employee = new SpecialistDoctor("B00001","Bino","AtuaTerra", "91234567811","something@isep.com","111111111111111111","1111111111111111",role);
+    }
+
+**Test 5:** Each User has a specific email.
+
+    @Test(expected = IllegalArgumentException.class)
+    public void CreateEmployeeEmailWrongFormat() {
+        //Arrange + Act
+        Employee employee = new Employee("B00001","Bino","AtuaTerra", "91234567811","bino@fusivel","11111111111111111",role);
+    }
+
+**Test 6:** The application can have more than one administrator(adding a role).
+    
+    @Test
+    public void getRoleIndexRightTest() {
+        RoleStore roleList = new RoleStore();
+        String actual = String.valueOf(roleList.get(1));
+        String expected = String.valueOf(new Role("1", "Medical Lab Technician"));
+
+        Assert.assertEquals(actual, expected);
+    }
+
+
+
+
 
 # 5. Construction (Implementation)
 
-*In this section, it is suggested to provide, if necessary, some evidence that the construction/implementation is in accordance with the previously carried out design. Furthermore, it is recommeded to mention/describe the existence of other relevant (e.g. configuration) files and highlight relevant commits.*
+##Employee
 
-*It is also recommended to organize this content by subsections.*
+````
+package app.domain.model;
+
+import app.domain.shared.Constants;
+import auth.AuthFacade;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.StringUtils;
+
+import java.text.Normalizer;
+import java.util.regex.Pattern;
+
+public class Employee {
+    private String name;
+    private String address;
+    private String phonenumber;
+    private String email;
+    private String SOC;
+    private Role role;
+    private String employeeID;
+
+
+    public Employee(String employeeID, String name, String address, String phonenumber, String email, String SOC, Role role) {
+        checkNameRules(name);
+        checkAddressRules(address);
+        checkPhoneNumberRules(phonenumber);
+        checkEmailRules(email);
+        checkSOCRules(SOC);
+        this.name = name;
+        this.address = address;
+        this.phonenumber = phonenumber;
+        this.email = email;
+        this.SOC = SOC;
+        this.role = role;
+        this.employeeID = employeeID;
+
+    }
+
+
+
+
+    private void checkNameRules(String name) {
+        if (StringUtils.isBlank(name))
+            throw new IllegalArgumentException("Name cannot be blank.");
+
+        name = name.toLowerCase();
+
+        name = Normalizer.normalize(name, Normalizer.Form.NFD);
+        name = name.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
+        name = name.replaceAll(" ", "");
+
+        char[] charArray = name.toCharArray();
+        for (int i = 0; i < charArray.length; i++) {
+            char c = charArray[i];
+            if (!(c >= 'a' && c <= 'z')) {
+                throw new IllegalArgumentException("Name only accepts letters");
+            }
+        }
+    }
+
+    private void checkAddressRules(String address) {
+        if (StringUtils.isBlank(address))
+            throw new IllegalArgumentException("Address cannot be blank.");
+    }
+
+    private void checkPhoneNumberRules(String phonenumber) {
+        if (StringUtils.isBlank(phonenumber))
+            throw new IllegalArgumentException("Phonenumber cannot be blank.");
+        if (phonenumber.length() != 11)
+            throw new IllegalArgumentException("Phonenumber must have 11 chars.");
+
+        char[] charArray = phonenumber.toCharArray();
+        for (int i = 0; i < charArray.length; i++) {
+            char c = charArray[i];
+            if (!(c >= '0' && c <= '9')) {
+                throw new IllegalArgumentException("Phonenumber only accepts numbers");
+            }
+        }
+    }
+
+
+
+
+    /**
+     * This methode checks if email is correct.
+     * Retrieved by professor Paulo Maio code of template of the project.
+     * @author Paulo Maio <pam@isep.ipp.pt>
+      * @param email
+     */
+
+    private void checkEmailRules(String email) {
+
+        if (StringUtils.isBlank(email))
+            throw new IllegalArgumentException("Email cannot be blank.");
+
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@" +"(?:[a-zA-Z0-9-]+\\.)+[a-z" + "A-Z]{2,7}$";
+
+        Pattern pat = Pattern.compile(emailRegex);
+        if(!pat.matcher(email).matches()){
+            throw new IllegalArgumentException("Invalid Email.");
+        }
+    }
+
+
+
+
+
+    private void checkSOCRules(String SOC) {
+        if (StringUtils.isBlank(SOC))
+            throw new IllegalArgumentException("SOC cannot be blank.");
+
+        char[] charArray = SOC.toCharArray();
+        for (int i = 0; i < charArray.length; i++) {
+            char c = charArray[i];
+            if (!(c >= '0' && c <= '9')) {
+                throw new IllegalArgumentException("SOC only accepts numbers");
+            }
+        }
+    }
+
+    private String getPassword() {
+        int lenght = 10;
+
+        return RandomStringUtils.randomAlphanumeric(lenght);
+    }
+
+    public boolean addUserWithRole(Company company) {
+
+        boolean success = false;
+        String password = getPassword();
+        AuthFacade authFacade = company.getAuthFacade();
+
+        if (role.equals("Clinical Chemistry Technologist")) {
+            success = authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_CLINICALCHEMISTRYTECHNOLOGIST);
+        }
+
+        if (role.equals("Medical Lab Technician")) {
+            success = authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_MEDICALLABTECHNICIIAN);
+        }
+
+        if (role.equals("LaboratoryCoordinator"))
+            success = authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_LABORATORYCOORDINATOR);
+
+        if (role.equals("Receptionist")) {
+            success = authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_RECEPTIONIST);
+        }
+
+        if (success){
+            Email mail = new Email(this.email,getPassword());
+
+        }
+        return success;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "Employee:" +
+                " ID=" + employeeID +
+                ", name=" + name +
+                ", address=" + address +
+                ", phonenumber=" + phonenumber +
+                ", email=" + email +
+                ", SOC=" + SOC +
+                ", Role="+ role ;
+
+    }
+
+
+
+}
+````
+
+##EmployeeStore
+````
+package app.domain.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class EmployeeStore {
+    private List <Employee> array;
+    private Employee em;
+
+    public EmployeeStore() {
+        this.array = new ArrayList<Employee>();
+    }
+
+
+
+    public Employee CreateEmployee(String name, String address, String phonenumber, String email, String SOC,String DoctorIndexNumber, int role) {
+
+        RoleStore roles = new RoleStore();
+
+        if (role == 5){
+            this.em = new SpecialistDoctor(CreateEmployeeID(name),name, address, phonenumber, email,SOC,DoctorIndexNumber ,roles.get(role));
+        }else{
+            this.em = new Employee(CreateEmployeeID(name), name, address, phonenumber, email, SOC, roles.get(role));
+        }
+        return this.em;
+    }
+
+    private String CreateEmployeeID(String name){
+
+        int ID = array.size() + 1;
+        String EmployeeNumberID = String.valueOf(ID);
+        String EmployeeNameID = "";
+        String empty;
+
+        for (int i = 0; i < name.length(); i++) {
+            if (Character.isUpperCase(name.charAt(i))) {
+                EmployeeNameID += name.charAt(i);
+            }
+        }
+        empty = "" + ID;
+        while(empty.length() < 5){
+            empty = "0" + empty;
+        }
+        String EmployeeID = EmployeeNameID+empty;
+
+        return EmployeeID;
+    }
+
+
+    public boolean ValidateEmployee(Employee em) {
+        if (em == null || contains(em)) {
+            return false;
+        }
+        return true;
+    }
+    public boolean contains(Employee em) {
+        if (this.array.contains(em)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public boolean saveEmployee() {
+        if (ValidateEmployee(this.em)) {
+            add(em);
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public boolean add(Employee em) {
+        array.add(em);
+        return true;
+    }
+    public Employee get(int index) {
+        return array.get(index);
+    }
+
+    public String toString() {
+        StringBuilder listString = new StringBuilder();
+
+        for (Employee s : array) {
+            listString.append(s.toString()).append("\n");
+        }
+        return String.valueOf(listString);
+    }
+
+    public boolean addUserWithRole(Company company) {
+        return em.addUserWithRole(company);
+    }
+
+    public Employee getEm() {
+        return em;
+    }
+
+
+
+
+}
+
+
+````
+
+##Role
+````
+
+package app.domain.model;
+
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.Arrays;
+
+public class Role {
+
+    private String roleID;
+    private String roleName;
+
+
+    public Role(String roleID, String roleName) {
+
+        this.roleID = roleID;
+        this.roleName = roleName;
+
+
+
+    }
+
+    public String getRoleID() {
+        return roleID;
+    }
+
+    @Override
+    public String toString() {
+        return roleName ;
+
+
+    }
+
+
+}
+````
+
+##RoleStore
+````
+
+package app.domain.model;
+
+import javax.management.relation.RoleList;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class RoleStore {
+
+
+
+    private  List <Role> array;
+    private Role pc;
+
+    private final Role ClinicalChemistryTechnologist = new Role("0","Clinical Chemistry Technologist");
+    private final Role MedicalLabTechnician = new Role("1", "Medical Lab Technician");
+    private final Role LaboratoryCoordinator = new Role("2", "LaboratoryCoordinator");
+    private final Role Receptionist = new Role("3","Receptionist");
+    private final Role SpecialistDoctor = new Role("4","SpecialistDoctor");
+
+
+    public RoleStore(){
+        this.array = new ArrayList<>();
+
+        array.add(ClinicalChemistryTechnologist);
+        array.add(MedicalLabTechnician);
+        array.add(LaboratoryCoordinator);
+        array.add(Receptionist);
+        array.add(SpecialistDoctor);
+    }
+
+
+
+
+
+
+    public Role get(int index ) {
+        return array.get(index);
+    }
+
+
+
+
+
+    public List<Role> getRoleList(){
+
+        return this.array;
+    }
+
+
+
+
+
+
+
+
+
+}
+
+````
+
+
+
+##SpecialistDoctor
+````
+package app.domain.model;
+
+import app.domain.shared.Constants;
+import auth.AuthFacade;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.StringUtils;
+
+public class SpecialistDoctor extends Employee{
+
+    private String DoctorIndexNumber;
+    private Role role;
+    private String name;
+    private String address;
+    private String phonenumber;
+    private String email;
+    private String SOC;
+    private String EmployeeID;
+
+
+    public SpecialistDoctor(String EmployeeID,String name, String address, String phonenumber, String email, String SOC, String DoctorIndexNumber, Role role) {
+        super(EmployeeID ,name, address, phonenumber, email, SOC, role);
+
+        checkDoctorIndexNumberRules(DoctorIndexNumber);
+
+        this.DoctorIndexNumber = DoctorIndexNumber;
+
+
+    }
+
+
+    private void checkDoctorIndexNumberRules(String DoctorIndexNumber) {
+        if (StringUtils.isBlank(DoctorIndexNumber))
+            throw new IllegalArgumentException("Doctor Index Number cannot be blank.");
+
+        DoctorIndexNumber = DoctorIndexNumber.toLowerCase();
+        char[] charArray = DoctorIndexNumber.toCharArray();
+        for (int i = 0; i < charArray.length; i++) {
+            char c = charArray[i];
+            if (!(c >= '0' && c <= '9')) {
+                throw new IllegalArgumentException("Doctor Index Number only accepts numbers");
+            }
+        }
+    }
+
+
+    private String getPassword() {
+        int lenght = 10;
+
+        return RandomStringUtils.randomAlphanumeric(lenght);
+    }
+
+    public boolean addUserWithRole(Company company) {
+        boolean success = false;
+        String password = getPassword();
+        AuthFacade authFacade = company.getAuthFacade();
+        success = authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_SPECIALISTDOCTOR);
+        if (success){
+            Email mail = new Email(this.email,getPassword());
+
+        }
+        return success;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+ ", DoctorIndexNumber="+ DoctorIndexNumber;
+
+
+
+
+
+
+
+
+    }
+}
+````
+
 
 # 6. Integration and Demo
 
-*In this section, it is suggested to describe the efforts made to integrate this functionality with the other features of the system.*
+- It was needed a new option in the admin's menu.
+- It was needed to add more system roles when initializing the system.
 
 
 # 7. Observations
 
-After analysing the code made available by the teacher in the base repository we realized that in order to access the UI that makes possible to the administrator select the operation he wants to use he already needs to be authenticated in the system therefore there is no need to referer to it in our artifacts. 
-
+In US7, we could use the DTOs but we didn't have such time. So, in the future sprints, we will update the project providing the DTOs.
 
 
 

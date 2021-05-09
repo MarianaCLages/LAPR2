@@ -127,12 +127,12 @@ public class ParameterStoreTest {
 
     }
     @Test
-    public void saveParameterCategoryInvalid() {
+    public void saveParameterInvalid() {
         //Arrange
         ParameterStore store = new ParameterStore();
         Parameter pc  = store.CreateParameter("A1234", "PLT", "description", cat);
         store.add(pc);
-        Parameter pc1  = store.CreateParameter("A1234", "PLT", "description", cat);
+        Parameter pc1  = store.CreateParameter("A1232", "PLS", "description", cat);
         store.add(pc1);
         //Assert
         Assert.assertFalse(store.saveParameter());

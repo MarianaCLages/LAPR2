@@ -2,6 +2,9 @@ package app.domain.model;
 
 import org.apache.commons.lang3.StringUtils;
 
+/**
+ * Class that represents an Parameter
+ */
 public class Parameter {
     private String name;
     private String code;
@@ -13,8 +16,9 @@ public class Parameter {
      * Constructor of the Parameter, it calls 2 methods in order to validate the parameters
      *
      * @param code unique code needed to identify the Parameter
+     * @param description description that characterize the Parameter
      * @param name short name that characterize the Parameter
-     * @param cat
+     * @param cat  category associated with the Parameter
      */
     public Parameter(String code, String name, String description, ParameterCategory cat) {
         checkCodeRules(code);
@@ -48,8 +52,6 @@ public class Parameter {
             throw new IllegalArgumentException("Name cannot be blank.");
         if (name.length() > 8)
             throw new IllegalArgumentException("Name must have 8 chars.");
-
-
         name = name.toLowerCase();
         char[] charArray = name.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
@@ -60,7 +62,10 @@ public class Parameter {
         }
     }
 
-
+    /**
+     * This method checks if the description provided meets the requirements, if not it throws a exception making the execution to stop
+     * @param description description that characterize the Parameter
+     */
     private void checkDescriptionRules(String description) {
         if (StringUtils.isBlank(description))
             throw new IllegalArgumentException("Description cannot be blank.");
@@ -68,7 +73,9 @@ public class Parameter {
             throw new IllegalArgumentException("Description must have 20 chars.");
     }
 
-
+    /**
+     * @return "Parameter:code= code, name= name, description= description, category= cat;
+     */
     @Override
     public String toString() {
         return "Parameter: " +
@@ -77,6 +84,10 @@ public class Parameter {
                 ", description=" + description +
                 ", category=" + cat.toString();
     }
+
+    /**
+     * @return unique code needed to identify the Parameter
+     */
     public String getCode() {
         return code;
     }
