@@ -82,7 +82,7 @@ public class TestType {
      */
     @Override
     public String toString() {
-        return "TestType: " + "testID=" + testID + ", description=" + description + ", collectingMethod=" + collectingMethod +", categories: " + catStore;
+        return "TestType: " + "testID=" + testID + ", description=" + description + ", collectingMethod=" + collectingMethod + ", categories: " + catStore;
     }
 
     /**

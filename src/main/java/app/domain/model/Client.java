@@ -15,6 +15,9 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.regex.Pattern;
 
+/**
+ * Class that represents an Client
+ */
 public class Client {
 
     private String phoneNumber;

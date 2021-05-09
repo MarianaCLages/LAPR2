@@ -5,6 +5,9 @@ import app.domain.model.Company;
 
 import java.util.Date;
 
+/**
+ * Controller of the UserStory : Register a new Client
+ */
 public class ClientController {
 
     private Company company;
