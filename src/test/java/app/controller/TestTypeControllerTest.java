@@ -47,30 +47,8 @@ public class TestTypeControllerTest {
 
     }
 
-    @Test
-    public void getParameterList() {
-        TestTypeController controller = new TestTypeController(company);
-        ParameterCategory cat1 = new ParameterCategory("AE554", "Hemogram");
-        ParameterCategory cat2 = new ParameterCategory("AE555", "Hemogram");
-        ParameterCategoryStore store = new ParameterCategoryStore();
-        store.add(cat1);
-        store.add(cat2);
-        controller.createTestType("283h3", "descrição", "metodo 1", store);
 
-       controller.getTestT();
 
-    }
 
-    @Test
-    public void ParameterCategoryStore() {
-        TestTypeController controller = new TestTypeController(company);
-        ParameterCategory cat1 = new ParameterCategory("AE554", "Hemogram");
-        ParameterCategory cat2 = new ParameterCategory("AE555", "Hemogram");
-        ParameterCategoryStore store = new ParameterCategoryStore();
-        store.add(cat1);
-        store.add(cat2);
-        controller.createTestType("283h3", "descrição", "metodo 1", store);
-        controller.getParameterCategoryList();
-    }
 
 }
