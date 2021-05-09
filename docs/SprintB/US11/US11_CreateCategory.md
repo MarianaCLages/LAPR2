@@ -62,7 +62,6 @@ There are no subcategories.<br>
 
 ![US011_SSD](US011_SSD.svg)
 
-
 ### 1.7 Other Relevant Remarks
 
 -
@@ -481,7 +480,4 @@ public class ParameterCategoryUI implements Runnable {
 
 ## 7. Observations
 
-After analysing the code made available by the teacher in the base repository we realized that in order to access the UI
-that makes possible to the administrator select the operation he wants to use he already needs to be authenticated in
-the system therefore there is no need to referer to it in our artifacts. 
 

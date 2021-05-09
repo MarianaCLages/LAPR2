@@ -16,7 +16,7 @@ As an administrator, I want to specify a new type of test and its collecting met
 **From the client clarifications:**
  
 
-> **Question:** Does a type of test holds any atributte besides it's name and collecting methods?
+> **Question:** Does a type of test holds any attribute besides its name and collecting methods?
 >  
 > **Answer:** The attributes for a new test type are:            
 >   . Code: five alphanumeric characters. The code is not automatically generated.          
@@ -38,7 +38,7 @@ As an administrator, I want to specify a new type of test and its collecting met
 -
 
 > **Question:** What does the client mean by the collecting methods and  what collecting methods  are available?
-> Are the collecting methods stored simpled as a word or a sentence, or does it also must contain it's description, and/or another attributes?
+> Are the collecting methods stored simpled as a word or a sentence, or does it also must contain its description, and/or another attributes?
 >  
 > **Answer:** To make a Covid test you need a swab to collect a sample. To make a blood test you need sample tubes and a syringe.
               When the administrator specifies a new type of test, the administrator also specifies the method to collect a sample. The administrator introduces a brief description for specifying the collecting method. 
@@ -99,7 +99,7 @@ It might be used more times when Many Labs starts to make other types of test (U
 
 ### 3.1. Rationale
 
-**The rationale grounds on the SSD interactions and the identified input/output data.**
+**The rationale grounds on the SSD interactions, and the identified input/output data.**
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
@@ -482,6 +482,8 @@ Other software classes (i.e. Pure Fabrication) identified:
     
 
 # 6. Integration and Demo 
+
+- A new option on the admin menu was added
 
 
 # 7. Observations
