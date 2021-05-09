@@ -6,11 +6,16 @@ class ParameterCategory {
 }
 
 class Company{
+-parameterList
+-categoryList
 +getCategoryList()
 +getParameterStore()
 }
 
 class CreateParameterController {
+-company
+-store
+-categoryList
 +createParameter(code, description, NHSid, Category)
 +getCategoryList()
 +saveParameter()
@@ -20,26 +25,30 @@ class CreateParameterUI{
 }
 
 class ParameterCategoryStore{
+-categoryList
+-category
 +getCategoryList()
 }
 
 class ParameterStore{
+-parameterList
+-parameter
 +createParameter()
 +validateParameter()
 +saveParameter()
 }
 
 class Parameter{
--code: String
--name: String
--description: String
--Cat: Category
+-code
+-name
+-description
+-Category
 +Parameter()
 }
 
-CreateParameterUI ..> CreateParameterController
+CreateParameterUI --> CreateParameterController
 
-CreateParameterController ..> Company
+CreateParameterController --> Company
 CreateParameterController ..> ParameterStore
 
 Company --> ParameterCategoryStore

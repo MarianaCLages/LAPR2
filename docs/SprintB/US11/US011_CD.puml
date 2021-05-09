@@ -4,14 +4,19 @@
 class CreateParameterCategoryUI{
 }
 class CreateParameterCategoryController{
+-company
+- parameterStore
 +saveParameterCategory()
 +createParameterCategory(code, name)
 }
 class Company{
+-parameterStore
 -designation
 +getParameterCategoryStore()
 }
 class ParameterCategoryStore{
+-categoryList
+-category
 +createParameterCategory(code, name)
 +saveParameterCategory(pc)
 +validateParameterCategory(pc)
@@ -23,10 +28,10 @@ class ParameterCategory{
 -name
 +ParameterCategory(code,name)
 }
-CreateParameterCategoryUI ..> CreateParameterCategoryController
-CreateParameterCategoryController ..> Company
+CreateParameterCategoryUI --> CreateParameterCategoryController
+CreateParameterCategoryController --> Company
 CreateParameterCategoryController ..> ParameterCategoryStore
-Company "1" --> "1" ParameterCategoryStore : uses
-ParameterCategoryStore "1" --> "*" ParameterCategory : adopts
+Company -->  ParameterCategoryStore
+ParameterCategoryStore "1" --> "*" ParameterCategory
 
 @enduml
