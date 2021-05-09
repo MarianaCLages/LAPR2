@@ -107,6 +107,7 @@ As a receptionist of the laboratory, I want to register a client.
 * There is a dependency to "US7- Register a new employee" since there must be a receptionist employed to register the
   client.
 
+
 ### 1.5 Input and Output Data
 
 **Input Data:**
@@ -747,6 +748,5 @@ public class CreateClientUI implements Runnable {
 
 # 7. Observations
 
-*In this section, it is suggested to present a critical perspective on the developed work, pointing, for example, to
-other alternatives and or future related work.*
+We are passing a lot of information from UI layer to Domain layer, in the next sprints we might need to use data transfer objects to pass this information
 
