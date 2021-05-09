@@ -147,16 +147,6 @@ public class TestTypeTest {
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
     }
 
-    @Test
-    public void toStringTest(){
-        ParameterCategoryStore cat = new ParameterCategoryStore();
-        ParameterCategory pc1 = new ParameterCategory("A8554", "Hemograma");
-        cat.add(pc1);
-        TestType t = new TestType("12d3g","description","collecting method", cat);
-        String expected = "TestType: testID=12d3g, description=description, collectingMethod=collecting method, categories: Code = A8554 Name=Hemograma\n";
-        String actual = t.toString();
-        Assert.assertEquals(expected,actual);
-    }
 
     @Test
     public void getTestIDTest() {
