@@ -2,7 +2,6 @@ package app.controller;
 
 import app.domain.model.Company;
 import app.domain.model.ParameterCategory;
-import app.domain.model.ParameterCategoryStore;
 import app.domain.model.ParameterStore;
 import org.junit.Assert;
 import org.junit.Test;
@@ -57,7 +56,10 @@ public class ParameterControllerTest {
 
     @Test
     public void getParameterCategoryList() {
+        ParameterController controller = new ParameterController(company);
 
+        controller.createParameter("A1234","WBC","description",cat);
+        Assert.assertNotNull(controller.getParameterCategoryList());
     }
 
 }
