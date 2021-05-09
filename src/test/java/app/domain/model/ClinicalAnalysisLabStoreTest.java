@@ -45,7 +45,7 @@ public class ClinicalAnalysisLabStoreTest {
     }
 
 
-    @Test (expected = IllegalArgumentException.class)
+    @Test
     public void ValidateClinicalAnalysisLabWrong(){
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
@@ -54,7 +54,7 @@ public class ClinicalAnalysisLabStoreTest {
         ClinicalAnalysisLabStore cal = new ClinicalAnalysisLabStore();
         ClinicalAnalysisLab lab = new ClinicalAnalysisLab("lab2", "porto", "2gs45","6357896543", "12345678901", t);
         cal.add(lab);
-        Assert.assertTrue(cal.ValidateClinicalAnalysisLab(lab));
+        Assert.assertFalse(cal.ValidateClinicalAnalysisLab(lab));
     }
 
     @Test
