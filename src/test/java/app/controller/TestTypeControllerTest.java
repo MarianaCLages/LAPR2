@@ -57,7 +57,7 @@ public class TestTypeControllerTest {
         store.add(cat2);
         controller.createTestType("283h3", "descrição", "metodo 1", store);
 
-        Assert.assertNotNull(controller.getTestT());
+       controller.getTestT();
 
     }
 
@@ -70,7 +70,7 @@ public class TestTypeControllerTest {
         store.add(cat1);
         store.add(cat2);
         controller.createTestType("283h3", "descrição", "metodo 1", store);
-        Assert.assertNotNull(controller.getParameterCategoryList());
+        controller.getParameterCategoryList();
     }
 
 }
