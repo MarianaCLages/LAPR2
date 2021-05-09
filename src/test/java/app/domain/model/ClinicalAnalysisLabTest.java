@@ -7,6 +7,10 @@ public class ClinicalAnalysisLabTest {
     private ParameterCategoryStore cat = new ParameterCategoryStore();
     private TestTypeStore store = new TestTypeStore();
 
+    @Test(expected = IllegalArgumentException.class)
+    public void ClinicalNull() {
+        ClinicalAnalysisLab cli = new ClinicalAnalysisLab(null,null,null,null,null,null);
+    }
 
     @Test
     public void RegisterLabCorrect() {
