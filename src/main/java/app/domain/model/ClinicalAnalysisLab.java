@@ -71,8 +71,8 @@ public class ClinicalAnalysisLab {
     private void checkNameRules(String name) {
         if (StringUtils.isBlank(name))
             throw new IllegalArgumentException("Name cannot be blank.");
-        if (name.length() < 15)
-            throw new IllegalArgumentException("Name must have at least 15 chars.");
+        if (name.length() > 20)
+            throw new IllegalArgumentException("Name must have at maximum 20 chars.");
     }
 
     /**

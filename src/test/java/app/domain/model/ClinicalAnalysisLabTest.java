@@ -24,12 +24,12 @@ public class ClinicalAnalysisLabTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void RegisterLabNameTooShort() {
+    public void RegisterLabNameTooLong() {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("labo","porto", "2gs45","6357976543","16297483987", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio laboratorio dois","porto", "2gs45","6357976543","16297483987", t);
     }
 
     @Test(expected = IllegalArgumentException.class)

@@ -91,7 +91,7 @@ As an administrator, I want to register a new clinical analysis laboratory stati
 
 ### 1.3. Acceptance Criteria
 
-* **AC1:** "Name cannot be empty and has, at maximum, 15 chars."
+* **AC1:** AC1: "Name cannot be empty and has, at maximum, 20 chars."
 
 * **AC2:** "Address cannot be empty and has, at maximum, 30 chars."
 
@@ -195,11 +195,6 @@ that are involved in fulfilling the requirement as well as and their relations, 
 
 # 4. Tests
 
-*In this section, it is suggested to systematize how the tests were designed to allow a correct measurement of
-requirements fulfilling.*
-
-**_DO NOT COPY ALL DEVELOPED TESTS HERE_**
-
 **Test 1:** Check that it is not possible to create an instance of the Clinical Lab Analysis class with null values.
 
     @Test(expected = IllegalArgumentException.class)
@@ -207,17 +202,17 @@ requirements fulfilling.*
         ClinicalAnalysisLab cli = new ClinicalAnalysisLab(null,null,null,null,null,null);
     }
 
-**Test2** Check that it is not possible to create an instance of the Clinical Lab Analysis class with name with fewer
-letters than the minimum (AC1).
+**Test2** Check that it is not possible to create an instance of the Clinical Lab Analysis class with name with more
+letters than the maximum (AC1).
 
 ````
     @Test(expected = IllegalArgumentException.class)
-    public void RegisterLabNameTooShort() {
+    public void RegisterLabNameTooLong() {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("labo","porto", "2gs45","6357976543","16297483987", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio laboratorio dois","porto", "2gs45","6357976543","16297483987", t);
     }
     
 ````
