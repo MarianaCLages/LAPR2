@@ -92,7 +92,7 @@ easily support other kinds of tests (e.g., urine)."
 
 ### 1.3. Acceptance Criteria
 
-* **AC1:** "Name cannot be empty and has, at maximum, 15 chars."
+* **AC1:** "Name cannot be empty and has, at maximum, 20 chars."
 
 * **AC2:** "Address cannot be empty and has, at maximum, 30 chars."
 
@@ -124,10 +124,14 @@ There is a dependency to "US9: As an administrator, I want to specify a new type
 
 ### 1.6. System Sequence Diagram (SSD)
 
-*Insert here a SSD depicting the envisioned Actor-System interactions and throughout which data is inputted and outputted to fulfill the requirement. All interactions must be numbered.*
+**Alternative 1**
 
-![USXX-SSD](USXX-SSD.svg)
+![US8_SSD](US8_SSD.svg)
 
+
+**Alternative 2**
+
+![US8_SSD_v2](US8_SSD_v2.svg)
 
 ### 1.7 Other Relevant Remarks
 
@@ -181,45 +185,390 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ## 3.2. Sequence Diagram (SD)
 
-*In this section, it is suggested to present an UML dynamic view stating the sequence of domain related software objects' interactions that allows to fulfill the requirement.* 
-
-![USXX-SD](USXX-SD.svg)
+![US8_SD](US8_SD.svg)
 
 ## 3.3. Class Diagram (CD)
 
-*In this section, it is suggested to present an UML static view representing the main domain related software classes that are involved in fulfilling the requirement as well as and their relations, attributes and methods.*
-
-![USXX-CD](USXX-CD.svg)
+![US8_CD](US8_CD.svg)
 
 # 4. Tests 
-*In this section, it is suggested to systematize how the tests were designed to allow a correct measurement of requirements fulfilling.* 
 
-**_DO NOT COPY ALL DEVELOPED TESTS HERE_**
+**Test 1:** AC1- Check that the name cannot be empty.
+    
+    @Test(expected = IllegalArgumentException.class)
+        public void RegisterLabNameBlank() {
+            ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
+            cat.add(pc1);
+            TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+            //Arrange + Act
+            ClinicalAnalysisLab lab = new ClinicalAnalysisLab("","porto", "2gs45","6334906543","16274835987", t);
+        }
+        
+**Test 2:** AC1- Check that the name has, at maximum, 15 characters.
+     
+     @Test(expected = IllegalArgumentException.class)
+        public void RegisterLabNameTooLong() {
+            ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
+            cat.add(pc1);
+            TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+            //Arrange + Act
+            ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio laboratorio dois","porto", "2gs45","6357976543","16297483987", t);
+        }
+        
+**Test 3:** AC2- Check that the address cannot be empty.
 
-**Test 1:** Check that it is not possible to create an instance of the Example class with null values. 
+    @Test(expected = IllegalArgumentException.class)
+        public void RegisterAddressBlank() {
+            ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
+            cat.add(pc1);
+            TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+            //Arrange + Act
+            ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","", "2gs45","6334906543","16274835987", t);
+        } 
 
-	@Test(expected = IllegalArgumentException.class)
-		public void ensureNullIsNotAllowed() {
-		Exemplo instance = new Exemplo(null, null);
-	}
+**Test 4:** AC2- Check that the address has, at maximum, 30 chars.
 
-*It is also recommended to organize this content by subsections.* 
+    @Test(expected = IllegalArgumentException.class)
+    public void RegisterLabAddressTooLong() {
+        ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
+        cat.add(pc1);
+        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        //Arrange + Act
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","rio, porto, portugal, europa, terra", "2gs45","6357976543","16275483987", t);
+    }
+
+**Test 5:** AC3- Check that the phone number is an 11 digit number.
+
+    @Test(expected = IllegalArgumentException.class)
+    public void RegisterPhoneNumberNotElevenDigits() {
+        ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
+        cat.add(pc1);
+        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        //Arrange + Act
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","6334906543","16274980843573987", t);
+    }
+    
+**Test 6:** AC4- Check that TIN is a 10 digit number.
+
+    @Test(expected = IllegalArgumentException.class)
+    public void RegisterTinNot10Digits() {
+        ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
+        cat.add(pc1);
+        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        //Arrange + Act
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","63349369906543","16274835987", t);
+    }
 
 # 5. Construction (Implementation)
 
-*In this section, it is suggested to provide, if necessary, some evidence that the construction/implementation is in accordance with the previously carried out design. Furthermore, it is recommeded to mention/describe the existence of other relevant (e.g. configuration) files and highlight relevant commits.*
+##Class ClinicalAnalysisLabController
 
-*It is also recommended to organize this content by subsections.* 
+    package app.controller;
+    import app.domain.model.Company;
+    import app.domain.model.*;
+    
+    public class ClinicalAnalysisLabController {
+        private Company company;
+        private ClinicalAnalysisLabStore store;
+        private ClinicalAnalysisLab cal;
+        private TestTypeStore typeTStore;
+    
+        public ClinicalAnalysisLabController() {this(App.getInstance().getCompany());}
+    
+        public ClinicalAnalysisLabController(Company company) {
+            this.company = company;
+            this.cal = null;
+        }
+    
+        public void createClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber, TestType tType) {
+            store = company.getClinicalAnalysisLabList();
+            store.CreateClinicalAnalysisLab(name,address,id,tin,phoneNumber,tType);
+    
+        }
+    
+        public  TestTypeStore getTypetestList(){
+            return this.typeTStore = company.TestTypeList();
+        }
+    
+        public ClinicalAnalysisLab getcal(){
+            return store.getCal();
+        }
+    
+        public boolean saveClinicalAnalysisLab() {
+            return this.store.saveClinicalAnalysisLab();
+        }
+    
+    }
+    
+##Class ClinicalAnalysisLab
+
+    package app.domain.model;
+    
+    import org.apache.commons.lang3.StringUtils;
+    
+    public class ClinicalAnalysisLab {
+        private String name;
+        private String address;
+        private String id;
+        private String tin;
+        private String phoneNumber;
+        private TestType tType;
+    
+        public ClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber, TestType tType) {
+            checkNameRules(name);
+            checkAddressRules(address);
+            checkPhoneNumberRules(phoneNumber);
+            checkLabIDRules(id);
+            checkTINNumberRules(tin);
+            checkTestTypeRules(tType);
+            this.name = name;
+            this.address = address;
+            this.id = id;
+            this.tin = tin;
+            this.phoneNumber = phoneNumber;
+            this.tType = tType;
+        }
+    
+        private void checkTestTypeRules(TestType tType) {
+            if (tType == null)
+                throw new IllegalArgumentException("Collecting method cannot be blank.");
+        }
+    
+        /**
+         * This method checks if the code provided meets the requirements, if not it throws a exception making the execution to stop
+         *
+         * @param id laboratory's ID
+         */
+        private void checkLabIDRules(String id) {
+            if (StringUtils.isBlank(id))
+                throw new IllegalArgumentException("Laboratory ID cannot be blank.");
+            if (id.length() != 5)
+                throw new IllegalArgumentException("Laboratory ID must have 5 chars.");
+        }
+    
+    
+        public ClinicalAnalysisLab(TestType testType) {
+            this.tType = testType;
+        }
+    
+        /**
+         * This method checks if the code provided meets the requirements, if not it throws a exception making the execution to stop
+         *
+         * @param name name of the laboratory
+         */
+        private void checkNameRules(String name) {
+            if (StringUtils.isBlank(name))
+                throw new IllegalArgumentException("Name cannot be blank.");
+            if (name.length() > 20)
+                throw new IllegalArgumentException("Name must have at maximum 20 chars.");
+        }
+    
+        /**
+         * This method checks if the code provided meets the requirements, if not it throws a exception making the execution to stop
+         *
+         * @param address address of the laboratory
+         */
+        private void checkAddressRules(String address) {
+            if (StringUtils.isBlank(address))
+                throw new IllegalArgumentException("Address cannot be blank.");
+            if (address.length() > 30)
+                throw new IllegalArgumentException("Address has, at maximum, 30 chars.");
+        }
+    
+        /**
+         * This method checks if the code provided meets the requirements, if not it throws a exception making the execution to stop
+         *
+         * @param phoneNumber phone number of the laboratory
+         */
+        private void checkPhoneNumberRules(String phoneNumber) {
+            if (StringUtils.isBlank(phoneNumber))
+                throw new IllegalArgumentException("Phone number cannot be blank.");
+            if (phoneNumber.length() != 11)
+                throw new IllegalArgumentException("Phone number must have 11 chars.");
+            phoneNumber = phoneNumber.toLowerCase();
+            char[] charArray = phoneNumber.toCharArray();
+            for (int i = 0; i < charArray.length; i++) {
+                char c = charArray[i];
+                if (!(c >= '0' && c <= '9')) {
+                    throw new IllegalArgumentException("Phone Number only accepts numbers.");
+                }
+            }
+        }
+    
+        /**
+         * This method checks if the code provided meets the requirements, if not it throws a exception making the execution to stop
+         *
+         * @param tin TIN of the laboratory
+         */
+        private void checkTINNumberRules(String tin) {
+            if (StringUtils.isBlank(tin))
+                throw new IllegalArgumentException("TIN cannot be blank.");
+            if (tin.length() != 10)
+                throw new IllegalArgumentException("TIN must have 10 chars.");
+            tin = tin.toLowerCase();
+            char[] charArray = tin.toCharArray();
+            for (int i = 0; i < charArray.length; i++) {
+                char c = charArray[i];
+                if (!(c >= '0' && c <= '9')) {
+                    throw new IllegalArgumentException("TIN only accepts numbers.");
+                }
+            }
+        }
+        @Override
+        public String toString() {
+            return "ClinicalAnalysisLab: " +
+                    "name=" + this.name +
+                    ", address=" + this.address +
+                    ", id=" + this.id +
+                    ", tin=" + this.tType +
+                    ", phonenumber=" + this.phoneNumber +
+                    ", typetest=" + this.tType.toString();
+        }
+    }
+    
+##Class ClinicalAnalysisLabStore
+
+    package app.domain.model;
+    
+    import java.util.ArrayList;
+    import java.util.List;
+    
+    public class ClinicalAnalysisLabStore {
+        List<ClinicalAnalysisLab> array;
+        ClinicalAnalysisLab cal;
+    
+    
+        public ClinicalAnalysisLabStore() {
+            this.array = new ArrayList<ClinicalAnalysisLab>();
+        }
+    
+        public ClinicalAnalysisLab CreateClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber, TestType tType) {
+            this.cal = new ClinicalAnalysisLab(name, address, id, tin, phoneNumber, tType);
+            return this.cal;
+        }
+    
+        public boolean ValidateClinicalAnalysisLab(ClinicalAnalysisLab cal) {
+            if (cal == null || contains(cal)) {
+                return false;
+            }
+            return true;
+        }
+    
+    
+        public boolean contains(ClinicalAnalysisLab cal) {
+            if (this.array.contains(cal)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    
+        public boolean saveClinicalAnalysisLab() {
+            if (ValidateClinicalAnalysisLab(this.cal)) {
+                add(cal);
+                return true;
+            } else {
+                return false;
+            }
+        }
+    
+        public boolean add(ClinicalAnalysisLab cal) {
+            array.add(cal);
+            return true;
+        }
+        public ClinicalAnalysisLab get(int index) {
+            return array.get(index);
+        }
+    
+        public String toString() {
+            StringBuilder listString = new StringBuilder();
+    
+            for (ClinicalAnalysisLab s : array) {
+                listString.append(s.toString()).append("\n");
+            }
+            return String.valueOf(listString);
+        }
+        public ClinicalAnalysisLab getCal() {
+            return cal;
+        }
+    
+    }
+
+##Class ClinicalAnalysisLabUI
+
+    import app.domain.model.ParameterCategory;
+    import app.domain.model.TestType;
+    import app.ui.console.utils.Utils;
+    
+    public class ClinicalAnalysisLabUI implements Runnable {
+    
+        private ClinicalAnalysisLabController ctrl;
+    
+        public ClinicalAnalysisLabUI() {
+            this.ctrl = new ClinicalAnalysisLabController();
+        }
+    
+    
+        /**
+         * When an object implementing interface {@code Runnable} is used
+         * to create a thread, starting the thread causes the object's
+         * {@code run} method to be called in that separately executing
+         * thread.
+         * <p>
+         * The general contract of the method {@code run} is that it may
+         * take any action whatsoever.
+         *
+         * @see Thread#run()
+         */
+        @Override
+        public void run() {
+            boolean cont = true;
+            if (ctrl.getTypetestList() == null || ctrl.getTypetestList().isEmpty()) {
+                System.out.println("There are no TestTypes added to the system please add at least one before trying to create a new Clinical Analysis Lab");
+            } else {
+                do {
+                    boolean exception = false;
+                    do {
+                        try {
+                            String name = Utils.readLineFromConsole("Please enter the name of the new Clinical Analysis Lab");
+                            String address = Utils.readLineFromConsole("Please enter the address of the new Clinical Analysis Lab");
+                            String id = Utils.readLineFromConsole("Please enter the id of the new Clinical Analysis Lab");
+                            String tin = Utils.readLineFromConsole("Please enter the tin of the new Clinical Analysis Lab");
+                            String phoneNumber = Utils.readLineFromConsole("Please enter the phoneNumber of the new Clinical Analysis Lab");
+                            TestType testType = (TestType) Utils.showAndSelectOne(ctrl.getTypetestList().getList(), "Select a TypeTest");
+    
+                            ctrl.createClinicalAnalysisLab(name,address,id,tin,phoneNumber,testType);
+                            exception = false;
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            System.out.println("An error occurred during the creation during the creation of the Clinical Analysis Lab please try again");
+                            exception = true;
+                        }
+                    } while (exception);
+    
+                    cont = Utils.confirm("The following Clinical Analysis Lab was created do you want to save? " + ctrl.getcal().toString());
+                    if (cont) {
+    
+                        if (ctrl.saveClinicalAnalysisLab()) {
+                            System.out.println("The Clinical Analysis Lab was saved with success");
+                        }
+    
+                    } else {
+                        System.out.println("Couldn't save the Clinical Analysis Lab please try again ");
+                    }
+    
+    
+                } while (!cont);
+    
+            }
+        }
+    }
+
 
 # 6. Integration and Demo 
 
-*In this section, it is suggested to describe the efforts made to integrate this functionality with the other features of the system.*
-
 
 # 7. Observations
-
-*In this section, it is suggested to present a critical perspective on the developed work, pointing, for example, to other alternatives and or future related work.*
-
 
 
 

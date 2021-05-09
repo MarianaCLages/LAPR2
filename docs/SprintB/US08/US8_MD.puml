@@ -18,6 +18,7 @@ class Administrator{
 class TypeTest{
 Test ID;
 Collecting Method;
+Parameter Categories;
 }
 
 Administrator "1" -- "1" ClinicalAnalysisLaboratory : register a new >

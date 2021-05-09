@@ -24,16 +24,20 @@ activate STO
 STO->TT: tTypeList = getTestTypeList()
 activate TT
 deactivate TT
+deactivate STO
 CTRL --> TT1 **: TestTypeStore
+deactivate CTRL
 loop
 UI -> A: shows types of test list
 deactivate UI
-A -> UI: select the type of tests
+A -> UI: selects the type of tests
 activate UI
 UI -> CTRL: add(t)
+activate CTRL
 CTRL -> TT1: add(t)
 activate TT1
 deactivate TT1
+deactivate CTRL
 end
 deactivate STO
 deactivate CTRL
@@ -78,7 +82,7 @@ STO -> STO : saveClinicalAnalysisLab(cal)
 activate STO
 deactivate STO
 deactivate STO
-UI --> A : Informs operation success
+UI --> A : informs operation success
 deactivate CTRL
 deactivate UI
 deactivate A

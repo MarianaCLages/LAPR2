@@ -5,10 +5,12 @@ participant "System" as S
 activate A
 activate S
 A -> S: wants to register a new clinical analysis laboratory
-S --> A: shows types of test list and asks to select types
+loop
+S --> A: shows types of test list
 deactivate S
 A -> S: selects types of tests
 activate S
+end
 S --> A: requests data (laboratory ID, name, address,\n phone number, TIN number)
 deactivate S
 A -> S: types requested data

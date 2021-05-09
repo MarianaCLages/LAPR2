@@ -6,14 +6,16 @@ participant ":System" as S
 activate A
 A -> S: wants to register a new clinical analysis laboratory
 activate S
-S --> A: requests data (laboratory ID, name, address,\n phone number, TIN number)
+S --> A: requests data (labID, name, address,\n phoneNumber, tinNumber)
 deactivate S
 A -> S: types requested data
 activate S
-S --> A: shows types of test list and asks to select types
+loop
+S --> A: shows types of test list
 deactivate S
 A -> S: selects types of tests
 activate S
+end
 S --> A: shows all data and requests confirmation
 deactivate S
 A -> S: confirms the data
