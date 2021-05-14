@@ -1,0 +1,219 @@
+@startuml
+
+
+skinparam linetype polyline
+
+
+class Covid19Report{
+Covid-19 tests performed;
+Positive Results to Covid-19 Tests
+Number of Covid-19 Cases Per Day
+Number of Covid-19 Cases Per Week
+Number of Covid-19 Cases Per Month
+Number of Covid-19 Cases Per Year
+}
+
+class Test{
+Client;
+Test ID;
+Type of Test;
+}
+
+class Sample{
+Test ID;
+Type of Sample;
+}
+
+class TypeTest{
+Test ID;
+Collecting Method;
+Parameter Categories;
+}
+
+
+class Client{
+Name;
+Citizen card Number;
+National Healthcare Service Number
+Birth date;
+Sex;
+Tax Identification Number;
+Phone;
+E-mail.
+}
+
+class Receptionist{
+}
+
+class MedicalLabTechnician{
+}
+
+class SpecialistDoctor{
+
+Doctor Index Number;
+}
+
+class Administrator{
+}
+
+class ClinicalChemistryTechnologist{
+}
+
+class LaboratoryCoordinator{
+}
+
+class ClinicalAnalysisLaboratory{
+Laboratory ID;
+Name;
+Address;
+Phone Number;
+TIN number;
+Type of Tests;
+}
+
+class ChemicalLaboratory{
+Name;
+Address;
+Phone Number;
+TIN number;
+}
+
+class CompanyHeadquarters{
+Address;
+Phone Number;
+E-Mail;
+}
+
+class ChemicalAnalysis{
+Client;
+}
+
+
+class TypeSample{
+Sample ID;
+}
+
+class Company{
+Name
+}
+
+class BarcodeExternalAPI{
+Barcode Number;
+}
+
+class LabOrder{
+Client;
+Doctor;
+Type of Test;
+Parameters;
+}
+
+class Results{
+TestID;
+Client;
+}
+
+class Notification{
+SMS;
+E-mail;
+}
+
+class Report{
+TestID;
+Client;
+Doctor's text;
+}
+
+class AutomaticValidationModule{
+Validation;
+}
+
+class Parameter{
+name;
+code;
+description;
+}
+
+class ParameterCategory{
+name;
+code;
+}
+
+class Employee{
+Employee ID;
+Name;
+Address;
+Phone Number;
+E-Mail;
+Standard Occupational Classification "SOC";
+}
+
+class User{
+name
+email
+password
+}
+
+class OrganizationRole{
+Description
+}
+
+Administrator "1" -- "*" Parameter : create >
+Administrator "1" -- "*" ParameterCategory : choose for Parameter >
+Administrator "1" -- "1" ClinicalAnalysisLaboratory : register a new >
+Administrator "1" -- "1" Employee: register >
+Administrator "1" -- "1" Parameter : creates >
+Administrator "1" -- "1" TypeTest: creates >
+Administrator "1" -- "1" ParameterCategory : creates >
+Administrator"1" -- "1" Employee: is a >
+AutomaticValidationModule "1" -- "1" Results : Validate >
+ChemicalAnalysis "*" -- "1" ChemicalLaboratory : take place in >
+ChemicalLaboratory "1" -- "1" CompanyHeadquarters: is located in >
+Client "0..1" -- "1" User: is a >
+Client "1" -- "1" LabOrder: to execute the test needs a  >
+ClinicalAnalysisLaboratory "1" -- "*" TypeTest : operates >
+ClinicalChemistryTechnologist "*" -- "1" ChemicalLaboratory : works on >
+ClinicalChemistryTechnologist "1" -- "1" Results : records >
+ClinicalChemistryTechnologist "1" -- "1" Sample : analyse >
+Company "1" - "*" OrganizationRole: knows all the >
+Company "1" - "1" Covid19Report: sends to NHS >
+Company "1" -- "*" Administrator : employs
+Company "1" -- "*" Administrator: employs >
+Company "1" -- "*" Client: knows >
+Company "1" -- "*" ClinicalAnalysisLaboratory: owns >
+Company "1" -- "*" Employee: employs >
+Company "1" -- "*" ParameterCategory : adopts >
+Company "1" -- "*" Receptionist: employs >
+Company "1" -- "*" User: knows >
+Company "1" -- "1" ChemicalLaboratory: owns >
+Company "1" -- "1" CompanyHeadquarters: owns >
+Employee "1" - "1" OrganizationRole: is characterized by a  >
+Employee "1" -- "1" Administrator: can be a >
+Employee "1" -- "1" ClinicalChemistryTechnologist: can be a >
+Employee "1" -- "1" LaboratoryCoordinator: can be a >
+Employee "1" -- "1" MedicalLabTechnician: can be a >
+Employee "1" -- "1" Receptionist: can be a >
+Employee "1" -- "1" SpecialistDoctor: can be a >
+Employee "1" -- "1" SpecialistDoctor: can be a >
+Employee "0..1" -- "1" User: is a >
+LaboratoryCoordinator "1" -- "*" Report: verifies >
+LaboratoryCoordinator "1" -- "1" AutomaticValidationModule : uses >
+MedicalLabTechnician "1" -- "*" Sample: collects and records >
+MedicalLabTechnician "1" -- "1" ClinicalAnalysisLaboratory : works on >
+Notification "1" -- Client : delivered to >
+Parameter "1" -- "1" ParameterCategory : has a >
+Receptionist "*" -- "1" ClinicalAnalysisLaboratory: works on >
+Receptionist "0..1" -- "1" User: is a >
+Receptionist "1" -- "*" Client: register in application >
+Receptionist "1" -- "*" Test: register in application >
+Report "1" -- "1" Notification : is sent by >
+Results "1" -- "1" Notification : is sent by >
+Sample "1" -- "1" BarcodeExternalAPI : is identified using >
+Sample "1" -- "1" Test : is used in >
+SpecialistDoctor "1" -- "1" Report: writes >
+SpecialistDoctor "1" -- "1" Results: analyse >
+Test "1" -- "*" Parameter : has >
+TypeSample "1" -- "1" Sample: has a <
+TypeTest "1" -- "*" ParameterCategory : has >
+TypeTest "1" -- "*" Test : as a <
+@enduml

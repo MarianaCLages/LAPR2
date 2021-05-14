@@ -1,0 +1,27 @@
+@startuml
+hide methods
+
+
+class Test{
+}
+
+class TestParameterResult{
+-createdAt
+-value
+-metric
+}
+
+class TestReport{
+}
+
+class LaboratoryCoordinator{
+}
+
+
+Test "1" -- "*" TestParameterResult: associated with <
+Test "1" -- "1" TestReport: associated with <
+LaboratoryCoordinator "1" -- "1" TestReport: validates >
+LaboratoryCoordinator "1" -- "1..*" TestParameterResult: validates >
+
+
+@enduml
