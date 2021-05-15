@@ -1,0 +1,27 @@
+@startuml
+autonumber
+
+actor Receptionist as R
+participant ":System" as S
+
+activate R
+R -> S: wants to register a test
+activate S
+S --> R: requests data (citizen card number, type of test)
+deactivate S
+R -> S: types the requested data
+activate S
+loop "More parameters"
+S --> R: shows a list of parameters and asks to select
+deactivate S
+R -> S: selects parameters
+activate S
+end
+S --> R: confirms all data and asks to confirm
+deactivate S
+R -> S: confirms data
+activate S
+S --> R: informs operation success
+deactivate S
+deactivate R
+@enduml
