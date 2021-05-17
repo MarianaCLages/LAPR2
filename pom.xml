@@ -107,21 +107,21 @@
     <dependencies>
         <dependency>
             <groupId>isep.lei.sem2</groupId>
-            <artifactId>CovidReferenceValues1API</artifactId>
+            <artifactId>CovidReferenceValues1API.jar</artifactId>
             <version>1.0</version>
             <scope>system</scope>
             <systemPath>${basedir}/lib/CovidReferenceValues1API.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>isep.lei.sem2</groupId>
-            <artifactId>ExternalModule2API</artifactId>
+            <artifactId>ExternalModule2API.jar</artifactId>
             <version>1.0</version>
             <scope>system</scope>
             <systemPath>${basedir}/lib/ExternalModule2API.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>isep.lei.sem2</groupId>
-            <artifactId>ExternalModule3API</artifactId>
+            <artifactId>ExternalModule3API.jar</artifactId>
             <version>1.0</version>
             <scope>system</scope>
             <systemPath>${basedir}/lib/ExternalModule3API.jar</systemPath>
