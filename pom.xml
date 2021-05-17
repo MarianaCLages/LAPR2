@@ -27,21 +27,6 @@
                         <groupId>isep.lei.sem2</groupId>
                         <artifactId>CovidReferenceValues1API</artifactId>
                         <version>1.0</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>isep.lei.sem2</groupId>
-                        <artifactId>ExternalModule2API.jar</artifactId>
-                        <version>1.0</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>isep.lei.sem2</groupId>
-                        <artifactId>ExternalModule3API.jar</artifactId>
-                        <version>1.0</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>isep.lei.sem2</groupId>
-                        <artifactId>CovidReferenceValues1API</artifactId>
-                        <version>1.0</version>
                         <scope>system</scope>
                         <systemPath>${basedir}/lib/CovidReferenceValues1API.jar</systemPath>
                     </dependency>
