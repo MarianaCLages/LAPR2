@@ -26,6 +26,7 @@ public class ParameterCategoryController {
      */
     public ParameterCategoryController(Company company) {
         this.company = company;
+        store = company.getParameterCategoryList();
     }
 
     /**
@@ -34,7 +35,6 @@ public class ParameterCategoryController {
      * @param name short name that characterize the Parameter Category
      */
     public void createParameterCategory(String code, String name) {
-        store = company.getParameterCategoryList();
         store.CreateParameterCategory(code, name);
     }
 

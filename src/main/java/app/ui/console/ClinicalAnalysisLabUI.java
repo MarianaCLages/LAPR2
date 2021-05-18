@@ -1,9 +1,6 @@
 package app.ui.console;
 
 import app.controller.ClinicalAnalysisLabController;
-import app.controller.ParameterController;
-import app.domain.model.ClinicalAnalysisLab;
-import app.domain.model.ParameterCategory;
 import app.domain.model.TestType;
 import app.ui.console.utils.Utils;
 
@@ -30,6 +27,7 @@ public class ClinicalAnalysisLabUI implements Runnable {
     @Override
     public void run() {
         boolean cont = true;
+        boolean again = false;
         if (ctrl.getTypetestList() == null || ctrl.getTypetestList().isEmpty()) {
             System.out.println("There are no TestTypes added to the system please add at least one before trying to create a new Clinical Analysis Lab");
         } else {
@@ -42,9 +40,16 @@ public class ClinicalAnalysisLabUI implements Runnable {
                         String id = Utils.readLineFromConsole("Please enter the id of the new Clinical Analysis Lab");
                         String tin = Utils.readLineFromConsole("Please enter the tin of the new Clinical Analysis Lab");
                         String phoneNumber = Utils.readLineFromConsole("Please enter the phoneNumber of the new Clinical Analysis Lab");
-                        TestType testType = (TestType) Utils.showAndSelectOne(ctrl.getTypetestList().getList(), "Select a TypeTest");
 
-                        ctrl.createClinicalAnalysisLab(name,address,id,tin,phoneNumber,testType);
+                        do {
+
+                            TestType testType = (TestType) Utils.showAndSelectOne(ctrl.getTypetestList().getList(), "Select a TypeTest");
+                            ctrl.addToList(testType);
+
+                            again = Utils.confirm("Do you want to a add more tests? (s/n)");
+
+                        } while (again);
+                        ctrl.createClinicalAnalysisLab(name, address, id, tin, phoneNumber);
                         exception = false;
                     } catch (Exception e) {
                         e.printStackTrace();

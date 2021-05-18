@@ -28,7 +28,7 @@ public class ClinicalAnalysisLabStore {
      * @param tType       list of Test Types associated with the test
      * @return Clinical Analysis Lab object created
      */
-    public ClinicalAnalysisLab CreateClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber, TestType tType) {
+    public ClinicalAnalysisLab CreateClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber, TestTypeStore tType) {
         this.cal = new ClinicalAnalysisLab(name, address, id, tin, phoneNumber, tType);
         return this.cal;
     }

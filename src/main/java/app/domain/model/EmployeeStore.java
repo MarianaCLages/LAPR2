@@ -29,7 +29,7 @@ public class EmployeeStore {
      * @param role integer that indicates the role of the employee
      * @return Employee instance created
      */
-    public Employee CreateEmployee(String name, String address, String phonenumber, String email, String SOC,String DoctorIndexNumber, int role) {
+    public Employee CreateEmployee(String name, String address, String phonenumber, String email, String SOC, String DoctorIndexNumber, int role) {
 
         RoleStore roles = new RoleStore();
 
