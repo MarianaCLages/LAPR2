@@ -196,7 +196,7 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee:" +
-                " ID=" + employeeID +
+                " ID=" + this.employeeID +
                 ", name=" + name +
                 ", address=" + address +
                 ", phonenumber=" + phonenumber +
@@ -204,6 +204,13 @@ public class Employee {
                 ", SOC=" + SOC +
                 ", Role="+ role ;
 
+    }
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhonenumber() {
+        return phonenumber;
     }
 
 

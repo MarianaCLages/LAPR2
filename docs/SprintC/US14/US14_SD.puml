@@ -1,0 +1,108 @@
+@startuml
+autonumber
+'hide footbox
+actor "Administrator" as Administrator
+
+participant ":CreateParameterUI" as UI
+participant ":CreateParameterController" as CTRL
+participant ":Company" as COMPANY
+participant "pStore : ParameterStore" as PARAMETERSTORE
+participant ":ParameterCategoryStore" as CATEGORYSTORE
+participant "pa : Parameter" as PARAMETER
+
+
+activate Administrator
+Administrator -> UI: asks to create a new Parameter
+activate UI
+
+
+
+
+UI --> Administrator :requests ParameterData (code, name, description)
+deactivate UI
+
+
+Administrator -> UI : types requested data
+activate UI
+
+
+
+UI -> CTRL : getCategoryList()
+activate CTRL
+
+
+CTRL -> COMPANY : catList = getCategoryList()
+activate COMPANY
+deactivate CTRL
+
+COMPANY -> CATEGORYSTORE  : catList = getCategoryList()
+activate CATEGORYSTORE
+deactivate COMPANY
+deactivate CATEGORYSTORE
+
+
+
+
+
+
+UI --> Administrator : Show Category list and ask to select one
+deactivate UI
+
+
+
+
+
+Administrator -> UI : selects a parameter category
+activate UI
+
+
+
+
+UI-> CTRL : createParameter()
+activate CTRL
+
+CTRL -> COMPANY : pStore = getParameterStore
+activate COMPANY
+deactivate COMPANY
+CTRL -> PARAMETERSTORE : pa = createParameter(code, name,description,category)
+
+activate PARAMETERSTORE
+
+PARAMETERSTORE --> PARAMETER **: pa = Parameter(code,name,description,category)
+
+
+deactivate PARAMETERSTORE
+CTRL -> PARAMETERSTORE : validateParameter(pa)
+activate PARAMETERSTORE
+deactivate PARAMETERSTORE
+
+UI --> Administrator : shows all data and requests confirmation
+deactivate UI
+
+Administrator -> UI : confirms the data
+activate UI
+
+UI-> CTRL : saveParameter(pa)
+
+CTRL -> PARAMETERSTORE : saveParameter(pa)
+deactivate CTRL
+activate PARAMETERSTORE
+PARAMETERSTORE -> PARAMETERSTORE : validateParameter(pa)
+activate PARAMETERSTORE
+deactivate PARAMETERSTORE
+PARAMETERSTORE -> PARAMETERSTORE : saveParameter(pa)
+activate PARAMETERSTORE
+deactivate PARAMETERSTORE
+
+UI --> Administrator : Informs operation success
+deactivate UI
+
+deactivate PARAMETERSTORE
+
+
+
+
+
+
+
+@enduml
