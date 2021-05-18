@@ -17,9 +17,11 @@ public class ClinicalAnalysisLabStoreTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
         ClinicalAnalysisLabStore lab = new ClinicalAnalysisLabStore();
-        Assert.assertNotNull(lab.CreateClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", t));
+        Assert.assertNotNull(lab.CreateClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", store));
     }
 
     @Test
@@ -27,9 +29,11 @@ public class ClinicalAnalysisLabStoreTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
         ClinicalAnalysisLabStore lab = new ClinicalAnalysisLabStore();
-        Assert.assertNotNull(lab.CreateClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", t));
+        Assert.assertNotNull(lab.CreateClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", store));
     }
 
     @Test
@@ -37,9 +41,11 @@ public class ClinicalAnalysisLabStoreTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
         ClinicalAnalysisLabStore cal = new ClinicalAnalysisLabStore();
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", store);
         cal.add(lab);
         Assert.assertFalse(cal.ValidateClinicalAnalysisLab(lab));
     }
@@ -50,9 +56,11 @@ public class ClinicalAnalysisLabStoreTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
         ClinicalAnalysisLabStore cal = new ClinicalAnalysisLabStore();
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("lab2", "porto", "2gs45","6357896543", "12345678901", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("lab2", "porto", "2gs45","6357896543", "12345678901", store);
         cal.add(lab);
         Assert.assertFalse(cal.ValidateClinicalAnalysisLab(lab));
     }
@@ -62,9 +70,11 @@ public class ClinicalAnalysisLabStoreTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
         ClinicalAnalysisLabStore cal = new ClinicalAnalysisLabStore();
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", store);
         cal.add(lab);
         Assert.assertTrue(cal.contains(lab));
     }
@@ -74,9 +84,11 @@ public class ClinicalAnalysisLabStoreTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
         ClinicalAnalysisLabStore cal = new ClinicalAnalysisLabStore();
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", store);
         Assert.assertFalse(cal.saveClinicalAnalysisLab());
     }
 
@@ -85,9 +97,11 @@ public class ClinicalAnalysisLabStoreTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
         ClinicalAnalysisLabStore cal = new ClinicalAnalysisLabStore();
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", store);
         Assert.assertFalse(cal.saveClinicalAnalysisLab());
     }
 
@@ -97,9 +111,11 @@ public class ClinicalAnalysisLabStoreTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
         ClinicalAnalysisLabStore cal = new ClinicalAnalysisLabStore();
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45","6357896543", "12345678901", store);
         Assert.assertTrue(cal.add(lab));
     }
 

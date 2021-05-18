@@ -27,6 +27,8 @@ public class ClientController {
      */
     public ClientController(Company company) {
         this.company = company;
+        store = company.getClientList();
+
     }
 
     /**
@@ -42,7 +44,6 @@ public class ClientController {
      * @param name        name of the client
      */
     public void createClient(String cc, String nhs, Date birthDate, char sex, String tinNumber, String phoneNumber, String email, String name) {
-        store = company.getClientList();
         store.CreateClient(phoneNumber, cc, nhs, tinNumber, birthDate, sex, email, name);
     }
 

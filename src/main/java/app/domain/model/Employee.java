@@ -130,7 +130,7 @@ public class Employee {
     /**
      * Checks if the string that is received meets the requirements of the Standard Occupation Number, if not throws Exceptions
      *
-     * @param SOC unique phone number that belongs to client
+     * @param SOC standard occupation code of the Employee
      */
     private void checkSOCRules(String SOC) {
         if (StringUtils.isBlank(SOC))
