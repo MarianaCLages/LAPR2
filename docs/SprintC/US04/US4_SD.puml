@@ -115,11 +115,11 @@ deactivate PTSTORE
 deactivate CTRL
 end
 
-UI->CTRL: createTest(NHScode, testCode, parTestStore, state)
+UI->CTRL: createTest(NHScode, testCode, parTestStore)
 activate CTRL
-CTRL->STORE: createTest(NHScode, testCode, parTestStore, state)
+CTRL->STORE: createTest(NHScode, testCode, parTestStore)
 activate STORE
-STORE->TEST**: createTest(NHScode, testCode, parTestStore, state)
+STORE->TEST**: createTest(NHScode, testCode, parTestStore)
 deactivate STORE
 
 deactivate CTRL
