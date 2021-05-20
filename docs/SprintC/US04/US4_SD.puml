@@ -7,6 +7,8 @@ participant ":CreateTestController" as CTRL
 participant ":Company" as C
 participant "cl: ClientStore" as CS
 participant ":TestTypeStore" as TTS
+participant "parTestStore: ParameterTestStore" as PTSTORE
+participant "parTest: ParameterTest" as PT
 participant ":ParameterMapper" as MAPPER
 participant "listAllParameters: List<Parameters>" as AllP
 participant "listParametersDto: List<ParametersDto>" as DTO
@@ -23,9 +25,9 @@ UI --> R: requests data (NHS number, type of test)
 deactivate UI
 R -> UI: types the requested data
 activate UI
-UI -> CTRL: existsCC(NHSnumber)
+UI -> CTRL: existsClient(NHSnumber)
 activate CTRL
-CTRL -> CS : existsCC(NHSnumber)
+CTRL -> CS : existsClient(NHSnumber)
 activate CS
 deactivate CS
 deactivate CTRL
@@ -41,7 +43,14 @@ UI->CTRL: createParameterList()
 activate CTRL
 CTRL-> C: listParameters=createParameterList()
 activate C
-C->LPAR**: listParameters=createParameterList()
+C-->LPAR**: listParameters=createParameterList()
+deactivate C
+deactivate CTRL
+UI->CTRL: createTestParameterStore()
+activate CTRL
+CTRL->C: listCat=createParameterCategoryStore()
+activate C
+C-->LCAT**: listCat=createParameterCategoryStore()
 deactivate C
 deactivate CTRL
 UI->CTRL: getCategoryList(testType)
@@ -57,41 +66,16 @@ R->UI: selects category
 activate UI
 UI->CTRL: add(category)
 activate CTRL
-CTRL-> LCAT**: add(category)
+CTRL-> LCAT: add(category)
 deactivate CTRL
 end
 
 
-UI-> CTRL: getListOfParameters()
 
-activate CTRL
-CTRL -> C: getListOfParameters()
-activate C
-C-->AllP**
-rnote over C, AllP: loop to populate listAllParameters is ommited
-C->CTRL: listAllParameters
-deactivate C
-CTRL->MAPPER: toDto(listAllParameters)
-activate MAPPER
-MAPPER->DTO**: create()
 
-loop for each object of listAllParameters [i]
-loop for each object of listCat [j]
-alt getCategory[i]=listCat[j]
-MAPPER->AllP: obj=get[i]
-MAPPER->MAPPER:objDto=toDto(obj)
-activate MAPPER
-MAPPER-->OBJ**:create()
-deactivate MAPPER
-MAPPER->DTO:add(objDto)
-activate DTO
-deactivate DTO
-end
-end
-end
-MAPPER->CTRL: listParametersDto
-deactivate MAPPER
-CTRL->UI: listParameterDto
+UI ->o CTRL: getListOfParameters()
+rnote over CTRL: ParameterMapper to DTO List ommited
+CTRL o->UI: listParameterDto
 deactivate CTRL
 loop
 UI --> R: shows a list of parameters\n and asks to select
@@ -106,15 +90,36 @@ activate LPAR
 deactivate LPAR
 deactivate CTRL
 end
-UI->CTRL: createTest(NHScode, listCat, listParameters, state)
+UI->CTRL: createTestParameterStore()
 activate CTRL
-CTRL->STORE: createTest(NHScode, listCat, listParameters, state)
+CTRL->PTSTORE**: createTestParameterStore()
+deactivate CTRL
+UI->CTRL: generateCode()
+activate CTRL
+CTRL->STORE: testCode=generateCode()
 activate STORE
 STORE->STORE: generateCode()
 activate STORE
 deactivate STORE
-STORE->TEST**: createTest(NHScode, testCode, listCat, listParameters, state)
+deactivate STORE
+deactivate CTRL
 
+
+loop for each object of listParameter
+UI->CTRL: createTestParameter(parameterID, testCode)
+activate CTRL
+CTRL->PTSTORE: testPar=createTestParameter(parameterID, testCode)
+activate PTSTORE
+PTSTORE-->PT**: testPar=createTestParameter(parameterID, testCode)
+deactivate PTSTORE
+deactivate CTRL
+end
+
+UI->CTRL: createTest(NHScode, testCode, parTestStore, state)
+activate CTRL
+CTRL->STORE: createTest(NHScode, testCode, parTestStore, state)
+activate STORE
+STORE->TEST**: createTest(NHScode, testCode, parTestStore, state)
 deactivate STORE
 
 deactivate CTRL
