@@ -57,17 +57,15 @@ public class RegisterEmployeeUI implements Runnable{
                     }
                 } while (exception);
 
-                cont = Utils.confirm("The following Employee was created do you want to save? " + ctrl.getEm().toString());
+                cont = Utils.confirm("The following Employee was created do you want to save? (s/n) \n" + ctrl.getEm().toString());
                 if (cont) {
 
                     if (ctrl.saveEmployee()) {
                         System.out.println("The Employee was saved with success");
+                    } else {
+                        System.out.println("Couldn't save the Employee please try again ");
                     }
-
-                } else {
-                    System.out.println("Couldn't save the Employee please try again ");
                 }
-
 
             } while (!cont);
 

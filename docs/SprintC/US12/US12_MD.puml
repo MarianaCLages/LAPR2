@@ -1,0 +1,55 @@
+@startuml
+
+hide methods
+
+
+class Company{
+-designation
+}
+
+class Test{
+-code
+-NhsCode
+-createdAt
+}
+
+class TestType{
+-code
+-description
+-collectingMethod
+}
+
+class ExternalModule{
+}
+
+class ReferenceValue{
+}
+
+class TestParameterResult{
+-createdAt
+-value
+-metric
+}
+
+class TestParameter{
+}
+
+class Parameter{
+-code
+-shortName
+-description
+}
+
+Company "1" -- "*" Parameter: capable of analysing >
+Company "1" -- "*" Test: performs >
+Company "1" -- "*" TestType: conducts >
+ReferenceValue "*" - "1" ExternalModule: provided by >
+Test "*" - "1"TestType: is of >
+Test "*" -- "1..*" Parameter: requests analysis of >
+(Test, Parameter) .. TestParameter
+TestParameter "1" -- "0..1" TestParameterResult: contains >
+TestParameterResult "1" -- "1" ReferenceValue: record >
+TestType "*" - "1" ExternalModule: makes use of >
+
+
+@enduml

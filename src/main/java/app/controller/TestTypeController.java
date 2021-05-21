@@ -28,6 +28,7 @@ public class TestTypeController {
      */
     public TestTypeController(Company company) {
         this.company = company;
+        store = company.getTestTypeList();
     }
 
     /**
@@ -39,7 +40,7 @@ public class TestTypeController {
      * @param cat              list of Parameter Categories associated with the test
      */
     public void createTestType(String testID, String description, String collectingMethod, ParameterCategoryStore cat) {
-        store = company.getTestTypeList();
+
         store.CreateTestType(testID, description, collectingMethod, cat);
     }
 
@@ -56,7 +57,7 @@ public class TestTypeController {
      * @return the list with all the Parameter Categories in the system
      */
     public ParameterCategoryStore getParameterCategoryList() {
-        return this.cat = company.parameterCategoryList();
+        return company.parameterCategoryList();
     }
 
     /**

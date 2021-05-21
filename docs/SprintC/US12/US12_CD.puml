@@ -1,0 +1,66 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class RecordResultUI{
+}
+class RecordResultController{
+}
+class Test{
+}
+class TestStore{
+}
+class TestParameterStoreMapper{
+}
+class TestParameterStore{
+}
+class TestParameterStoreDTO{
+}
+class TestParameterDTO{
+}
+class TestParameter{
+}
+class Parameter{
+}
+class TestType{
+}
+interface ExternalModule{
+}
+class ReferenceValue{
+}
+class TestParameterResult{
+}
+class CovidReferenceValues1API{
+}
+class ExternalModule2API{
+}
+class ExternalModule3API{
+}
+class CovidReferenceValues1APIAdapter{
+}
+class ExternalModule2APIAdapter{
+}
+class ExternalModule3APIAdapter{
+}
+RecordResultUI --> RecordResultController
+RecordResultController ..> TestStore
+RecordResultController ..> Test
+TestStore o-- Test
+Test ..> TestParameterStore
+Test ..> TestParameter
+Test ..> ExternalModule
+TestParameter --> TestParameterResult
+
+CovidReferenceValues1API <-- CovidReferenceValues1APIAdapter
+ExternalModule2API <-- ExternalModule2APIAdapter
+ExternalModule3API <-- ExternalModule3APIAdapter
+
+CovidReferenceValues1APIAdapter ..|> ExternalModule
+ExternalModule2APIAdapter ..|> ExternalModule
+ExternalModule3APIAdapter ..|> ExternalModule
+
+RecordResultController ..> TestParameterStoreMapper
+TestParameterStoreMapper --> TestParameterStoreDTO
+TestParameterStoreMapper ..> TestParameterStore
+TestParameterStoreMapper  --> TestParameterDTO
+
+@enduml

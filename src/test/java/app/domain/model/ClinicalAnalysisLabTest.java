@@ -17,8 +17,10 @@ public class ClinicalAnalysisLabTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","6357896543","12345678901", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","6357896543","12345678901", store);
         //Assert
         Assert.assertNotNull(lab);
     }
@@ -28,8 +30,10 @@ public class ClinicalAnalysisLabTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio laboratorio dois","porto", "2gs45","6357976543","16297483987", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio laboratorio dois","porto", "2gs45","6357976543","16297483987", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -37,8 +41,10 @@ public class ClinicalAnalysisLabTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","rio, porto, portugal, europa, terra", "2gs45","6357976543","16275483987", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","rio, porto, portugal, europa, terra", "2gs45","6357976543","16275483987", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -46,8 +52,10 @@ public class ClinicalAnalysisLabTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","6334906543","16274980843573987", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","6334906543","16274980843573987", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -55,8 +63,10 @@ public class ClinicalAnalysisLabTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","6334906543","16!748a987t", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","6334906543","16!748a987t", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -64,8 +74,10 @@ public class ClinicalAnalysisLabTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","63349369906543","16274835987", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","63349369906543","16274835987", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -73,8 +85,10 @@ public class ClinicalAnalysisLabTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","63!906g543","16274835987", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","63!906g543","16274835987", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -82,8 +96,10 @@ public class ClinicalAnalysisLabTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs406k5t1","6334906543","16274835987", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs406k5t1","6334906543","16274835987", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -91,8 +107,10 @@ public class ClinicalAnalysisLabTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "12h","6334906543","16274835987", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "12h","6334906543","16274835987", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -100,8 +118,10 @@ public class ClinicalAnalysisLabTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("","porto", "2gs45","6334906543","16274835987", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("","porto", "2gs45","6334906543","16274835987", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -109,8 +129,10 @@ public class ClinicalAnalysisLabTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","", "2gs45","6334906543","16274835987", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","", "2gs45","6334906543","16274835987", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -118,8 +140,10 @@ public class ClinicalAnalysisLabTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "","6334906543","16274835987", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "","6334906543","16274835987", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -127,8 +151,10 @@ public class ClinicalAnalysisLabTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","","16274835987", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","","16274835987", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -136,8 +162,10 @@ public class ClinicalAnalysisLabTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","6334906543","", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","6334906543","", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -145,8 +173,10 @@ public class ClinicalAnalysisLabTest {
         ParameterCategory pc1 = new ParameterCategory(null, null);
         cat.add(pc1);
         TestType t = new TestType(null, null, null, cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","6357896543","12345678901", t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","6357896543","12345678901", store);
     }
 
     @Test
@@ -154,6 +184,8 @@ public class ClinicalAnalysisLabTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab(t);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab(store);
     }
 }

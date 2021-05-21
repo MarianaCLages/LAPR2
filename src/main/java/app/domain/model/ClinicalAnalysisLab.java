@@ -11,7 +11,7 @@ public class ClinicalAnalysisLab {
     private String id;
     private String tin;
     private String phoneNumber;
-    private TestType tType;
+    private TestTypeStore tType;
 
     /**
      * Constructor of the ClinicalAnalysisLab, it calls methods in order to validate the parameters
@@ -22,7 +22,7 @@ public class ClinicalAnalysisLab {
      * @param phoneNumber Phone Number Clinical Analysis Lab
      * @param tType list of Test Types associated with the test
      */
-    public ClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber, TestType tType) {
+    public ClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber, TestTypeStore tType) {
         checkNameRules(name);
         checkAddressRules(address);
         checkPhoneNumberRules(phoneNumber);
@@ -41,9 +41,9 @@ public class ClinicalAnalysisLab {
      * This method checks if the list of Types of tests provided meets the requirements, if not it throws a exception making the execution to stop
      * @param tType list of Test Types associated with the test
      */
-    private void checkTestTypeRules(TestType tType) {
+    private void checkTestTypeRules(TestTypeStore tType) {
         if (tType == null)
-            throw new IllegalArgumentException("Collecting method cannot be blank.");
+            throw new IllegalArgumentException("There should exist test types associated with this clinical lab");
     }
 
     /**
@@ -59,7 +59,7 @@ public class ClinicalAnalysisLab {
     }
 
 
-    public ClinicalAnalysisLab(TestType testType) {
+    public ClinicalAnalysisLab(TestTypeStore testType) {
         this.tType = testType;
     }
 
@@ -136,7 +136,7 @@ public class ClinicalAnalysisLab {
                 "name=" + this.name +
                 ", address=" + this.address +
                 ", id=" + this.id +
-                ", tin=" + this.tType +
+                ", tin=" + this.tin +
                 ", phonenumber=" + this.phoneNumber +
                 ", typetest=" + this.tType.toString();
     }

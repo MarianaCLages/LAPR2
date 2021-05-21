@@ -23,6 +23,8 @@ public class RegisterEmployeeController {
     public RegisterEmployeeController() {
 
         this(App.getInstance().getCompany());
+        store = company.getEmployeeList();
+
     }
 
     /**
@@ -47,7 +49,6 @@ public class RegisterEmployeeController {
      * @param Role integer that indicates the role of the employee
      */
     public void createEmployee(String name, String address, String phonenumber, String email, String SOC, String DoctorIndexNumber, int Role) {
-        store = company.getEmployeeList();
         store.CreateEmployee(name, address, phonenumber, email, SOC, DoctorIndexNumber, Role);
     }
 

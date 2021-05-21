@@ -24,11 +24,12 @@ public class TestTypeUI implements Runnable {
         } else {
             do {
                 boolean exception = false;
-                do{
+                this.catStore = new ParameterCategoryStore();
+                do {
                     ParameterCategory cat = (ParameterCategory) Utils.showAndSelectOne(this.ctrl.getParameterCategoryList().getList(), "Select a Category");
                     this.catStore.add(cat);
-                    leave = Utils.confirm("Do you want to select more categories? (s/n)");
-                }while (!leave);
+                    leave = !Utils.confirm("Do you want to select more categories? (s/n)");
+                } while (!leave);
                 do {
                     try {
                         String testID = Utils.readLineFromConsole("Please enter the ID code of the new type of test");
@@ -37,6 +38,7 @@ public class TestTypeUI implements Runnable {
 
                         this.ctrl.createTestType(testID, description, collectingMethod, this.catStore);
                         this.ctrl.saveTestType();
+                        exception = false;
                     } catch (Exception e) {
                         e.printStackTrace();
                         System.out.println("An error occurred during the creation during the creation of the type of test please try again");

@@ -75,7 +75,9 @@ public class Company {
      */
 
     public EmployeeStore getEmployeeList() {
-        return this.employeeList = new EmployeeStore();
+        this.employeeList = new EmployeeStore();
+        return this.employeeList;
+
     }
 
     /**

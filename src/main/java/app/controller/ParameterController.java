@@ -20,6 +20,8 @@ public class ParameterController {
     public ParameterController() {
 
         this(App.getInstance().getCompany());
+        store = company.getParameterList();
+
     }
 
     /**
@@ -39,7 +41,6 @@ public class ParameterController {
      * @param cat  category associated with the Parameter
      */
     public void createParameter(String code, String name, String description, ParameterCategory cat) {
-        store = company.getParameterList();
         store.CreateParameter(code, name, description, cat);
     }
 

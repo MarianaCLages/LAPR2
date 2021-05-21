@@ -1,30 +1,55 @@
-# US XXX - XXXX XXXX
-
+# US 4 -  To register a test to be performed to a registered client
 ## 1. Requirements Engineering
-
-*In this section, it is suggested to capture the requirement description and specifications as provided by the client as well as any further clarification on it. It is also suggested to capture the requirements acceptance criteria and existing dependencies to other requirements. At last, identfy the involved input and output data and depicted an Actor-System interaction in order to fulfill the requirement.*
 
 
 ### 1.1. User Story Description
 
-*Insert here the User Story as described by the client.*
+As a receptionist of the laboratory, I intend to register a test to be performed to a
+registered client.
 
 ### 1.2. Customer Specifications and Clarifications 
+**From the specifications document:**
+> "Typically, the client arrives at one of the clinical analysis laboratories with a lab order prescribed by
+   a doctor. Once there, a receptionist asks the client’s citizen card number, the lab order (which
+   contains the type of test and parameters to be measured), and registers in the application the test to
+   be performed to that client."
+>
+**From the client clarifications:**
 
-*Insert here any related specification and/or clarification provided by the client together with **your interpretation**. When possible, provide a link to such specifications/clarifications.*
+> **Question:** 
+>  
+> **Answer:**
+-
+> **Question:** 
+>  
+> **Answer:**
 
 ### 1.3. Acceptance Criteria
+- **AC1:** The receptionist must select the parameters to be analysed from
+           all possible parameters in accordance with the test type.
 
-*Insert here the client acceptance criteria.*
+- **AC2:** Citizen Card number is a 16-digit number.
+
 
 ### 1.4. Found out Dependencies
+* There is a dependency to "US3- To register a client." since the client must be registered in the application to register their test.
 
-*Identify here any found out dependency to other US and/or requirements.*
 
 ### 1.5 Input and Output Data
 
-*Identity here the data to be inputted by the system actor as well as the output data that the system have/needs to present in order to properly support the actor actions. Regarding the inputted data, it is suggested to distinguish between typed data and selected data (e.g. from a list)*
+**Input Data:**
 
+* Typed data:
+    * citizen card number
+	* type of test
+	
+* Selected data:
+    * parameters 
+	
+
+**Output Data:**
+
+* (In)Success of the operation
 
 ### 1.6. System Sequence Diagram (SSD)
 
@@ -59,24 +84,31 @@
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1  		 |							 |             |                              |
-| Step 2  		 |							 |             |                              |
-| Step 3  		 |							 |             |                              |
-| Step 4  		 |							 |             |                              |
-| Step 5  		 |							 |             |                              |
-| Step 6  		 |							 |             |                              |              
+| Step 1: wants to register a test|	... instantiating a new Test?| TestStore |Creator R1/2: we look to decrease the responsibilities assign to the the Company class in order to go accordingly to GRASP|
+| |... interacting with the actor?|CreateTestUI|Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model|
+| |... coordinating the US?|CreateTestController|Controller| 
+| Step 2: types the requested data|... create the TestStore?| Company |IE: Company knows all lists of objects in the system|                              |
+| | ...saving the inputted data? | Test | IE: object created has its own data.
+| | ..local validation?| Test|IE: knows its own data|
+|Step 3: shows a list of parameters and asks to select| ... knowing the parameters to show? | ParameterStore | IE: knows all parameters|
+| Step 4: selects parameters| ...saving the selected parameter?| Test|IE: test created in step 1 is classified in parameters.|
+| | ..local validation?| Test|IE: knows its own data|
+| Step 5: confirms data| ...global validation?| TestStore | IE: knows all tests|
+| | ... saving the created test? | TestStore |IE: owns all its tests|            
 
 ### Systematization ##
 
 According to the taken rationale, the conceptual classes promoted to software classes are: 
 
- * Class1
- * Class2
- * Class3
+ * Company
+ * Test
+ * Parameter
 
 Other software classes (i.e. Pure Fabrication) identified: 
- * xxxxUI  
- * xxxxController
+ * CreateTestUI  
+ * CreateTestController
+ * TestStore
+ * ParameterStore
 
 ## 3.2. Sequence Diagram (SD)
 

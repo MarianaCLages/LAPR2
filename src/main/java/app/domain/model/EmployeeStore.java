@@ -29,7 +29,7 @@ public class EmployeeStore {
      * @param role integer that indicates the role of the employee
      * @return Employee instance created
      */
-    public Employee CreateEmployee(String name, String address, String phonenumber, String email, String SOC,String DoctorIndexNumber, int role) {
+    public Employee CreateEmployee(String name, String address, String phonenumber, String email, String SOC, String DoctorIndexNumber, int role) {
 
         RoleStore roles = new RoleStore();
 
@@ -73,10 +73,14 @@ public class EmployeeStore {
      * @return boolean value that is true if the object is not null and don't already exists in the ArrayList
      */
     public boolean ValidateEmployee(Employee em) {
-        if (em == null || contains(em)) {
-            return false;
+        return em != null && !contains(em) && !exists(em);
+    }
+
+    private boolean exists(Employee em) {
+        for (Employee e : array) {
+            return e.getEmail().equals(em.getEmail()) || e.getPhonenumber().equals(em.getPhonenumber());
         }
-        return true;
+        return false;
     }
 
     /**
@@ -98,7 +102,7 @@ public class EmployeeStore {
      */
     public boolean saveEmployee() {
         if (ValidateEmployee(this.em)) {
-            add(em);
+            array.add(this.em);
             return true;
         } else {
             return false;
@@ -151,7 +155,7 @@ public class EmployeeStore {
      * @return the instance of client
      */
     public Employee getEm() {
-        return em;
+        return this.em;
     }
 
 
