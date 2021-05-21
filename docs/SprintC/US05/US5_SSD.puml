@@ -1,0 +1,26 @@
+@startuml
+
+autonumber
+actor MedicalLabTechnician as MLT
+participant ":System" as S
+activate MLT
+MLT -> S: wants to record the samples
+activate S
+S --> MLT: shows test list
+deactivate S
+MLT -> S: selects test
+activate S
+loop
+S --> MLT: asks for samples
+deactivate S
+MLT -> S: records the samples
+activate S
+end
+S --> MLT: shows all data and requests confirmation
+deactivate S
+MLT -> S: confirms the data
+activate S
+S --> MLT: informs operation success
+deactivate S
+deactivate MLT
+@enduml

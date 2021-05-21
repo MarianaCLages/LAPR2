@@ -91,7 +91,7 @@ As an administrator, I want to register a new clinical analysis laboratory stati
 
 ### 1.3. Acceptance Criteria
 
-* **AC1:** AC1: "Name cannot be empty and has, at maximum, 20 chars."
+* **AC1:** "Name cannot be empty and has, at maximum, 20 chars."
 
 * **AC2:** "Address cannot be empty and has, at maximum, 30 chars."
 
