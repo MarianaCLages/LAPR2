@@ -3,6 +3,7 @@ hide methods
 
 
 class Test{
+-createdAt
 }
 
 class TestParameterResult{
@@ -11,17 +12,21 @@ class TestParameterResult{
 -metric
 }
 
+
 class TestReport{
+-createdAt
 }
 
-class LaboratoryCoordinator{
+
+
+class Sample{
+-createdAt
 }
 
-
+Test "1" -- "*" Sample: associated with <
 Test "1" -- "*" TestParameterResult: associated with <
 Test "1" -- "1" TestReport: associated with <
-LaboratoryCoordinator "1" -- "1" TestReport: validates >
-LaboratoryCoordinator "1" -- "1..*" TestParameterResult: validates >
+
 
 
 @enduml

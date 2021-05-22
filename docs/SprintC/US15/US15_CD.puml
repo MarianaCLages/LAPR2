@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class ValidateUI{
+}
+class ControllerUI{
+}
+class TestStore{
+}
+class Test {
+}
+class Mail{
+}
+class TestStoreMapper{
+}
+
+class TestStoreDTO{
+}
+
+ValidateUI ..> ControllerUI
+ControllerUI ..> TestStore
+TestStore ..> Test
+Test -> Mail
+ControllerUI ..> TestStoreMapper
+TestStoreMapper ..> TestStoreDTO
+TestStore .> TestStoreMapper
+@enduml
