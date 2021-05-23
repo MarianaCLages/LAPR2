@@ -1,0 +1,29 @@
+@startuml
+
+class MedLabTechUI{
+}
+
+class MedLabTechController{
+getTestList();
+saveSample()
+}
+
+class TestStore{
+getTestList();
+}
+
+class SampleStore{
+saveSample();
+validateSample();
+}
+
+class Sample{
+saveSample();
+}
+
+MedLabTechUI ..> MedLabTechController
+MedLabTechController ..> TestStore
+MedLabTechController ..> SampleStore
+SampleStore --> Sample
+
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+
+class MedicalLabTechnician{
+}
+
+class Sample{
+Test ID;
+}
+
+class Test{
+Client;
+Test ID;
+Type of Test;
+}
+
+class BarcodeExternalAPI{
+Barcode Number;
+}
+
+MedicalLabTechnician "1" -- "*" Sample: collects and records >
+Sample "1" -- "1" BarcodeExternalAPI : is identified using >
+Sample "1" -- "1" Test : is used in >
+
+@enduml

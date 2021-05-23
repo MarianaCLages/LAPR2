@@ -10,9 +10,9 @@ SYS --> lc: Shows all the tests pending validation and asks to choose one
 deactivate SYS
 lc -> SYS: Chose the test that will be validated
 activate SYS
-SYS --> lc: Shows the test results and the report and asks for validation
+SYS --> lc: Asks for confirmation
 deactivate SYS
-lc -> SYS : Validates both
+lc -> SYS : Confirms
 activate SYS
 SYS --> lc: Shows success
 deactivate lc
