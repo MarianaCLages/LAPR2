@@ -1,19 +1,14 @@
 @startuml
-class Company{
-Name
-}
+
 class Test{
 Client;
 Test ID;
-Type of Test;
+Test NHS Number
 }
 class TypeTest{
 Test ID;
 Collecting Method;
 Parameter Categories;
-}
-
-class Receptionist{
 }
 
 class Parameter{
@@ -27,9 +22,7 @@ code;
 }
 
 
-Company "1" -- "*" Receptionist: employs >
 Parameter "1" -- "1" ParameterCategory : has a >
-Receptionist "1" -- "*" Test: register in application >
 Test "1" -- "*" Parameter : has >
 TypeTest "1" -- "*" Test : as a <
 TypeTest "1" -- "*" ParameterCategory : has >

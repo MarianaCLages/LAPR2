@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+participant ":RegisterTestController" as ctrl
+participant ":Company" as comp
+participant ":TestTypeListMapper" as mapper
+participant ":TestTypeList" as tTypeList
+participant ":TestTypeListDTO" as tTypeListDTO
+participant ":TestTypeDTO" as tTypeDTO
+participant ":TestType" as tType
+
+
+[o-> ctrl: getTestTypeList()
+activate ctrl
+ctrl -> comp: ttList = getTestTypeList()
+activate comp
+deactivate
+ctrl -> mapper: toDto(ttList)
+activate mapper
+return ttListDTO
+return ttListDTO
+deactivate mapper
+deactivate ctrl
+
+
+
+@enduml

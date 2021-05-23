@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+participant ":RegisterTestController" as ctrl
+participant ":CategoryStore" as catLStore
+participant "catList:CategoryStore" as catList
+participant "paList:ParameterStore" as paList
+participant ":ParameterMapper" as paMapper
+participant ":ParameterStore" as paStore
+
+autonumber
+
+[o-> ctrl: getParameters(categoryCode)
+activate ctrl
+ctrl -> catLStore: category = getCategory(categoryCode)
+activate catLStore
+deactivate
+ctrl -> catList: addCategory(category)
+activate catList
+deactivate
+ctrl -> paStore: paList = getParameterList(CategoryCode)
+activate paStore
+deactivate paStore
+ctrl -> paMapper: toDto(paList)
+activate paMapper
+return paListDTO
+return paListDTO
+deactivate paMapper
+
+@enduml

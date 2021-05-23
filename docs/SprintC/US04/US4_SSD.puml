@@ -7,15 +7,25 @@ participant ":System" as S
 activate R
 R -> S: wants to register a test
 activate S
-S --> R: requests data (citizen card number, type of test)
+S --> R: requests data (ClientCc, NhsNumber)
 deactivate S
 R -> S: types the requested data
 activate S
-loop "More parameters"
-S --> R: shows a list of parameters and asks to select
+S --> R: Show TestType list and asks to choose one
 deactivate S
-R -> S: selects parameters
+R -> S: Choose one TestType
 activate S
+loop "More categories"
+S --> R: shows the list of categories and asks to select
+deactivate S
+R -> S: selects category
+activate S
+loop "More parameters"
+S --> R: shows the list of parameters and asks to select
+deactivate S
+R -> S: selects parameter
+activate S
+end
 end
 S --> R: confirms all data and asks to confirm
 deactivate S

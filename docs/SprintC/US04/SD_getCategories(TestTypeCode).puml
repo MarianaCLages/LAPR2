@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+participant ":RegisterTestController" as ctrl
+participant ":CategoryListMapper" as catMapper
+participant ":TestTypeStore" as ttStore
+participant "testType : TestType" as tt
+
+autonumber
+[o-> ctrl: getCategories(TestTypeCode)
+activate ctrl
+ctrl -> ttStore:testType = getByCode(TestTypeCode)
+activate ttStore
+deactivate ttStore
+ctrl -> tt: categoriesList = getCategories()
+activate tt
+deactivate tt
+ctrl -> catMapper: toDto(categoriesList)
+activate catMapper
+return categoriesListDTO
+return categoriesListDTO
+deactivate catMapper
+
+deactivate ctrl
+
+@enduml

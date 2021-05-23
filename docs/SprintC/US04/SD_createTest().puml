@@ -1,0 +1,49 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+participant ":RegisterTestController" as ctrl
+participant ":TestStore" as tStore
+participant "t :Test" as t
+participant "ptStore:ParameterTestStore" as ptStore
+participant ":Parameter" as pa
+
+autonumber
+
+[o-> ctrl: createTest()
+activate ctrl
+ctrl -> tStore: createTest(testCode,testType,catList,paList,ClientCc)
+activate tStore
+
+tStore -> tStore: testCode = getTestCode()
+activate tStore
+deactivate tStore
+tStore -> t**: t = Test(testNhsNumber,testCode,testType,catList,paList,ClientCc)
+tStore -> t: addTestParameters()
+activate t
+t --> ptStore**: create
+loop for each Parameter in paList
+
+    t -> pa: pCode = getParameterCode()
+    activate pa
+    deactivate pa
+    t --> ptStore: createParameterTest(pCode)
+    activate ptStore
+    deactivate
+    t --> ptStore: add()
+    activate ptStore
+    deactivate
+
+end
+t -> t: changeState(created)
+activate t
+deactivate
+deactivate
+loop for each parameter
+tStore -> tStore: validateTest(t)
+activate tStore
+deactivate
+deactivate
+
+
+
+@enduml

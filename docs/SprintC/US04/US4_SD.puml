@@ -1,153 +1,118 @@
 @startuml
+
 autonumber
 
 actor Receptionist as R
-participant ":CreateTestUI" as UI
-participant ":CreateTestController" as CTRL
-participant ":Company" as C
-participant "cl: ClientStore" as CS
-participant ":TestTypeStore" as TTS
-participant "parTestStore: ParameterTestStore" as PTSTORE
-participant "parTest: ParameterTest" as PT
-participant ":ParameterMapper" as MAPPER
-participant "listAllParameters: List<Parameters>" as AllP
-participant "listParametersDto: List<ParametersDto>" as DTO
-participant "objDto:ParameterDto" as OBJ
-participant "store:TestStore" as STORE
-participant "test:Test" as TEST
-participant "listParameter: ParameterStore" as LPAR
-participant "listCat: ParameterCategoryStore" as LCAT
+participant ":RegisterTestUI" as UI
+participant ":RegisterTestController" as ctrl
+participant ":Company" as comp
+participant ":TestTypeListMapper" as mapper
+participant "catList:CategoryStore" as catList
+participant "paList:ParameterStore" as paList
+participant ":ParameterStore" as paStore
+participant ":TestStore" as tStore
+participant ":ClientStore" as cStore
+
+
 
 activate R
 R -> UI: wants to register a test
 activate UI
-UI --> R: requests data (NHS number, type of test)
+UI --> R: requests data (clientCc, testNhsNumber)
+UI -> ctrl: getLists()
+activate ctrl
+ctrl -> catList**: catList = CategoryStore()
+ctrl -> paList**: paList = ParameterStore()
+deactivate
 deactivate UI
 R -> UI: types the requested data
 activate UI
-UI -> CTRL: existsClient(NHSnumber)
-activate CTRL
-CTRL -> CS : existsClient(NHSnumber)
-activate CS
-deactivate CS
-deactivate CTRL
+UI -> ctrl: existClient(clientCc)
+activate ctrl
+ctrl -> cStore: existClient(clientCc)
+activate cStore
+cStore -> cStore: existsClient(clientCc)
+activate cStore
+return exists
+return exists
+return exists
+deactivate cStore
+deactivate cStore
 
-UI->CTRL:createTestStore()
-activate CTRL
-CTRL->C: store=createTestStore()
-activate C
-C-->STORE**:store=createTestStore()
-deactivate C
-deactivate CTRL
-UI->CTRL: createParameterList()
-activate CTRL
-CTRL-> C: listParameters=createParameterList()
-activate C
-C-->LPAR**: listParameters=createParameterList()
-deactivate C
-deactivate CTRL
-UI->CTRL: createTestParameterStore()
-activate CTRL
-CTRL->C: listCat=createParameterCategoryStore()
-activate C
-C-->LCAT**: listCat=createParameterCategoryStore()
-deactivate C
-deactivate CTRL
-UI->CTRL: getCategoryList(testType)
-activate CTRL
-CTRL->TTS: listCat=getCategoryList(testType)
-activate TTS
-deactivate TTS
-deactivate CTRL
-loop More categories
-UI->R: shows a list of categories and asks to select one
+UI -> ctrl: getTestTypeList()
+activate ctrl
+ctrl -> comp: ttList = getTestTypeList()
+activate comp
+deactivate
+ctrl -> mapper: toDto(ttList)
+activate mapper
+return ttListDTO
+return ttListDTO
+deactivate mapper
+deactivate ctrl
+
+deactivate ctrl
+UI --> R: Show TestType list and asks to choose one
 deactivate UI
-R->UI: selects category
+R -> UI: Choose one TestType
 activate UI
-UI->CTRL: add(category)
-activate CTRL
-CTRL-> LCAT: add(category)
-deactivate CTRL
-end
+UI -> ctrl: getCategories(TestTypeCode)
+activate ctrl
+ref over ctrl: SD_getCategories(TestTypeCode)
+return categoriesListDTO
+deactivate ctrl
 
+loop "More categories"
+UI --> R: shows the list of categories and asks to select
+deactivate UI
+R -> UI: selects category
+activate UI
+UI -> ctrl: getParameters(categoryCode)
+activate ctrl
+ref over ctrl: SD_getParameters(categoryCode)
+return paListDTO
 
-
-
-UI ->o CTRL: getListOfParameters()
-rnote over CTRL: ParameterMapper to DTO List ommited
-CTRL o->UI: listParameterDto
-deactivate CTRL
-loop
-UI --> R: shows a list of parameters\n and asks to select
+deactivate ctrl
+loop "More parameters"
+UI --> R: shows the list of parameters and asks to select
 deactivate UI
 R -> UI: selects parameter
-
 activate UI
-UI->CTRL: add(parameter)
-activate CTRL
-CTRL->LPAR: add(parameter)
-activate LPAR
-deactivate LPAR
-deactivate CTRL
+UI -> ctrl: addParameter(parameterCode)
+activate ctrl
+ctrl -> paStore: parameter = getParameter(parameterCode)
+activate paStore
+deactivate
+ctrl -> paList: addParameter(parameter)
+activate paList
+deactivate
+deactivate
 end
-UI->CTRL: createTestParameterStore()
-activate CTRL
-CTRL->PTSTORE**: createTestParameterStore()
-deactivate CTRL
-UI->CTRL: generateCode()
-activate CTRL
-CTRL->STORE: testCode=generateCode()
-activate STORE
-STORE->STORE: generateCode()
-activate STORE
-deactivate STORE
-deactivate STORE
-deactivate CTRL
-
-
-loop for each object of listParameter
-UI->CTRL: createTestParameter(parameterID, testCode)
-activate CTRL
-CTRL->PTSTORE: testPar=createTestParameter(parameterID, testCode)
-activate PTSTORE
-PTSTORE-->PT**: testPar=createTestParameter(parameterID, testCode)
-deactivate PTSTORE
-deactivate CTRL
 end
+UI -> ctrl: createTest()
+activate ctrl
+ref over ctrl: SD_createTest()
+ctrl --> UI: success
+deactivate ctrl
 
-UI->CTRL: createTest(NHScode, testCode, parTestStore)
-activate CTRL
-CTRL->STORE: createTest(NHScode, testCode, parTestStore)
-activate STORE
-STORE->TEST**: createTest(NHScode, testCode, parTestStore)
-deactivate STORE
-
-deactivate CTRL
-UI->CTRL:validateTest(test)
-activate CTRL
-CTRL->STORE: validateTest(test)
-activate STORE
-STORE->TEST: validateTest(test)
-activate TEST
-deactivate TEST
-deactivate STORE
-deactivate CTRL
 UI --> R: confirms all data and asks to confirm
 deactivate UI
 R -> UI: confirms data
 activate UI
-UI->CTRL: saveTest(test)
-activate CTRL
-CTRL->STORE: validateTest(test)
-activate STORE
-STORE->STORE: validateTest(test)
-activate STORE
-deactivate STORE
-STORE->STORE: saveTest(test)
-activate STORE
-deactivate STORE
-deactivate STORE
-deactivate CTRL
+UI -> ctrl: saveTest()
+activate ctrl
+ctrl -> tStore: saveTest()
+activate tStore
+tStore -> tStore: validateTest(t)
+activate tStore
+deactivate
+tStore -> tStore: addTest(t)
+activate tStore
+deactivate
+deactivate
+return success
+
+deactivate ctrl
 UI --> R: informs operation success
 deactivate UI
 deactivate R
