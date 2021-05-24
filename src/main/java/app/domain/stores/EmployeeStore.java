@@ -2,7 +2,6 @@ package app.domain.stores;
 
 import app.domain.model.Company;
 import app.domain.model.Employee;
-import app.domain.model.RoleStore;
 import app.domain.model.SpecialistDoctor;
 
 import java.util.ArrayList;

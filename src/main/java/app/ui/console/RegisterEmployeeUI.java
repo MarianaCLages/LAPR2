@@ -1,10 +1,7 @@
 package app.ui.console;
 
-import app.controller.ParameterController;
 import app.controller.RegisterEmployeeController;
-import app.domain.model.ParameterCategory;
-import app.domain.model.Role;
-import app.domain.model.RoleStore;
+import app.domain.stores.RoleStore;
 import app.ui.console.utils.Utils;
 
 public class RegisterEmployeeUI implements Runnable{
