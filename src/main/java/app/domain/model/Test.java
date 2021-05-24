@@ -1,9 +1,11 @@
 package app.domain.model;
 
+import app.domain.shared.Constants;
 import app.domain.stores.ParameterCategoryStore;
 import app.domain.stores.ParameterStore;
 import app.domain.stores.TestParameterStore;
 import org.apache.commons.lang3.StringUtils;
+
 import java.time.LocalDate;
 
 public class Test {
@@ -80,6 +82,10 @@ public class Test {
             throw new IllegalArgumentException("The NHS Number must have just alphanumeric characters");
         }
 
+        if (testNhsNumber.length() > Constants.TEST_NHS_CODE) {
+            throw new IllegalArgumentException("The NHS Number must have a maximum of 12 characters");
+        }
+
     }
 
     /**
@@ -106,11 +112,22 @@ public class Test {
         this.state = s;
     }
 
+    /**
+     * @return Test unique NHS number
+     */
     public String getTestNhsNumber() {
         return testNhsNumber;
     }
 
+    @Override
+    public String toString() {
+        return "Test: testCode=" + testCode + ", testNhsNumber=" + testNhsNumber + ", clientCc=" + clientCc + ", testType=" + testType + ", catList=" + catList + ", paList=" + paList;
+    }
 
+    
+    /**
+     * This enum represents all the states that the Test object can assume
+     */
     enum State {
         CREATED,
         SAMPLE_COLLECTED,

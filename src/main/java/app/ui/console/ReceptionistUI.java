@@ -14,10 +14,12 @@ import java.util.List;
         {
             List<MenuItem> options = new ArrayList<MenuItem>();
             options.add(new MenuItem("Create a new Client", new CreateClientUI()));
+            options.add(new MenuItem("Create a new Test", new RegisterTestUI()));
+
             int option = 0;
             do
             {
-                option = Utils.showAndSelectIndex(options, "\n\nAdmin Menu:");
+                option = Utils.showAndSelectIndex(options, "\n\nReceptionist Menu:");
 
                 if ( (option >= 0) && (option < options.size()))
                 {

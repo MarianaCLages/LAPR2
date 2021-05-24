@@ -9,7 +9,7 @@ import java.util.List;
 
 public class TestTypeListMapper {
 
-    public TestTypeDTO toDTO(TestType testType) {
+    private TestTypeDTO toDTO(TestType testType) {
         return new TestTypeDTO(testType.getTestID(), testType.getDescription());
     }
 

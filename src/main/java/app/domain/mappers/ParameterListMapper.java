@@ -2,14 +2,13 @@ package app.domain.mappers;
 
 import app.domain.mappers.dto.ParameterDTO;
 import app.domain.model.Parameter;
-import app.domain.stores.ParameterStore;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ParameterListMapper {
 
-    public ParameterDTO toDTO(Parameter pa) {
+    private ParameterDTO toDTO(Parameter pa) {
         return new ParameterDTO(pa.getCode(), pa.getName());
     }
 

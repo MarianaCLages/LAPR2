@@ -82,5 +82,9 @@ public class CreateTestController {
         this.paList.add(pa);
     }
 
+    public String getTest(){
+        return store.getTest();
+    }
+
 
 }

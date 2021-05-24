@@ -59,5 +59,9 @@ public class TestStore {
         return false;
     }
 
+    public String getTest(){
+        return this.t.toString();
+    }
+
 
 }
