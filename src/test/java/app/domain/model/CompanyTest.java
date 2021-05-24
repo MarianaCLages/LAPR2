@@ -1,6 +1,9 @@
 package app.domain.model;
 
 import app.domain.shared.Constants;
+import app.domain.stores.ClientStore;
+import app.domain.stores.ParameterCategoryStore;
+import app.domain.stores.TestTypeStore;
 import auth.AuthFacade;
 import org.junit.Assert;
 import org.junit.Test;

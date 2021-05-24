@@ -1,6 +1,8 @@
 package app.controller;
 
 import app.domain.model.*;
+import app.domain.stores.ClinicalAnalysisLabStore;
+import app.domain.stores.TestTypeStore;
 
 /**
  * Controller of the UserStory : Register a new clinical analysis laboratory
@@ -50,7 +52,7 @@ public class ClinicalAnalysisLabController {
      * @return the list with all the Type if Tests in the system
      */
     public TestTypeStore getTypetestList() {
-        return this.typeTStore = company.TestTypeList();
+        return this.typeTStore = company.testTypeList();
     }
 
     /**

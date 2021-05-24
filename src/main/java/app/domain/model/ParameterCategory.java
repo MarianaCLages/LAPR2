@@ -1,6 +1,9 @@
 package app.domain.model;
 
+import app.domain.shared.Constants;
 import org.apache.commons.lang3.StringUtils;
+
+import java.util.List;
 
 /**
  * Class that represents an Category of Parameters
@@ -32,7 +35,7 @@ public class ParameterCategory {
         if (StringUtils.isBlank(code)) {
             throw new IllegalArgumentException("Code cannot be blank.");
         }
-        if ((code.length() != 5)) {
+        if ((code.length() != Constants.MAX_CODE)) {
             throw new IllegalArgumentException("Code must have 5 chars.");
         }
     }
@@ -46,7 +49,7 @@ public class ParameterCategory {
         if (StringUtils.isBlank(name)) {
             throw new IllegalArgumentException("Name cannot be blank.");
         }
-        if (name.length()>10){
+        if (name.length() > Constants.MAX_CATEGORY_NAME) {
             throw new IllegalArgumentException("Name cannot have more than 10 characters.");
         }
     }
@@ -77,7 +80,6 @@ public class ParameterCategory {
     public String getName() {
         return name;
     }
-
 
 
 }

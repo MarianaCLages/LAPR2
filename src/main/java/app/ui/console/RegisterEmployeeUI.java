@@ -51,7 +51,7 @@ public class RegisterEmployeeUI implements Runnable{
                         ctrl.createEmployee(name, address, phonenumber, email,SOC,DoctorIndexNumber ,role);
                         exception = false;
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        System.out.println(e.getMessage());
                         System.out.println("An error occurred during the creation during the creation of the Employee please try again");
                         exception = true;
                     }

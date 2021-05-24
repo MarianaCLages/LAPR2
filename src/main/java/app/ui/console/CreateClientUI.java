@@ -56,7 +56,7 @@ public class CreateClientUI implements Runnable {
                     ctrl.createClient(cc, nhs, birthDate, sex, tif, phoneNumber, email, name);
                     exception = false;
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    System.out.println(e.getMessage());
                     System.out.println("An error occurred during the creation during the creation of the Parameter please try again");
                     exception = true;
                 }

@@ -89,7 +89,7 @@ public class Employee {
     private void checkPhoneNumberRules(String phoneNumber) {
         if (StringUtils.isBlank(phoneNumber))
             throw new IllegalArgumentException("Phonenumber cannot be blank.");
-        if (phoneNumber.length() != 11)
+        if (phoneNumber.length() != Constants.PHONE_NUMBER_DIGITS)
             throw new IllegalArgumentException("Phonenumber must have 11 chars.");
 
         char[] charArray = phoneNumber.toCharArray();
@@ -151,9 +151,7 @@ public class Employee {
      * @return random string representing the employee password
      */
     String getPassword() {
-        int lenght = 10;
-
-        return RandomStringUtils.randomAlphanumeric(lenght);
+        return RandomStringUtils.randomAlphanumeric(Constants.PASSWORD_LENGTH);
     }
 
     /**
@@ -205,6 +203,7 @@ public class Employee {
                 ", Role="+ role ;
 
     }
+
     public String getEmail() {
         return email;
     }

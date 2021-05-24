@@ -1,5 +1,7 @@
 package app.domain.model;
 
+import app.domain.shared.Constants;
+import app.domain.stores.ParameterCategoryStore;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -38,7 +40,7 @@ public class TestType {
     private void checkCodeRules(String testID) {
         if (StringUtils.isBlank(testID))
             throw new IllegalArgumentException("Code cannot be blank.");
-        if (testID.length() != 5)
+        if (testID.length() != Constants.MAX_CODE)
             throw new IllegalArgumentException("Code must have 5 alphanumeric chars.");
     }
 
@@ -50,7 +52,7 @@ public class TestType {
     private void checkDescriptionRules(String description) {
         if (StringUtils.isBlank(description))
             throw new IllegalArgumentException("Description cannot be blank.");
-        if (description.length() > 16)
+        if (description.length() > Constants.MAX_DESCRIPTION)
             throw new IllegalArgumentException("Description must have, at maximum, 15 chars.");
     }
 
@@ -63,7 +65,7 @@ public class TestType {
     private void checkCollectingMethodRules(String collectingMethod) {
         if (StringUtils.isBlank(collectingMethod))
             throw new IllegalArgumentException("Collecting method cannot be blank.");
-        if (collectingMethod.length() > 21)
+        if (collectingMethod.length() > Constants.MAX_COLLECTING_METHODS)
             throw new IllegalArgumentException("Collecting method must have, at maximum, 20 chars.");
     }
 
@@ -97,6 +99,10 @@ public class TestType {
      */
     public ParameterCategoryStore getCatStore() {
         return catStore;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }
 

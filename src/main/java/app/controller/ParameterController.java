@@ -2,8 +2,8 @@ package app.controller;
 
 import app.domain.model.Company;
 import app.domain.model.ParameterCategory;
-import app.domain.model.ParameterCategoryStore;
-import app.domain.model.ParameterStore;
+import app.domain.stores.ParameterCategoryStore;
+import app.domain.stores.ParameterStore;
 
 /**
  * Controller of the UserStory : Specify a new parameter
@@ -41,7 +41,7 @@ public class ParameterController {
      * @param cat  category associated with the Parameter
      */
     public void createParameter(String code, String name, String description, ParameterCategory cat) {
-        store.CreateParameter(code, name, description, cat);
+        store.createParameter(code, name, description, cat);
     }
 
     /**

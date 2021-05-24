@@ -1,7 +1,7 @@
 package app.controller;
 
 import app.domain.model.Company;
-import app.domain.model.ParameterCategoryStore;
+import app.domain.stores.ParameterCategoryStore;
 
 /**
  * Controller of the UserStory : Create a new Parameter Category
