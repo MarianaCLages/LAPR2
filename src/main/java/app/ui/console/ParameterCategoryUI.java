@@ -34,7 +34,7 @@ public class ParameterCategoryUI implements Runnable {
                     ctrl.createParameterCategory(code, name);
                     exception = false;
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    System.out.println(e.getMessage());
                     System.out.println("An error occurred during the creation during the creation of the Parameter please try again");
                     exception = true;
                 }

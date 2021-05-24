@@ -118,7 +118,7 @@ public class Client {
         if (!checkIfIsNumerical(phoneNumber)) {
             throw new IllegalArgumentException("Phone Number must be a number");
         }
-        if (phoneNumber.length() != 11) {
+        if (phoneNumber.length() != Constants.PHONE_NUMBER_DIGITS) {
             throw new IllegalArgumentException("Phone Number must have 11 digits");
         }
     }
@@ -132,7 +132,7 @@ public class Client {
         if (!checkIfIsNumerical(cc)) {
             throw new IllegalArgumentException("Citizen Card must be a number");
         }
-        if (cc.length() != 16) {
+        if (cc.length() != Constants.CC_LENGTH) {
             throw new IllegalArgumentException("Citizen Card must have 16 digits");
         }
     }
@@ -146,7 +146,7 @@ public class Client {
         if (!checkIfIsNumerical(nhs)) {
             throw new IllegalArgumentException("National Health System must be a number");
         }
-        if (nhs.length() != 10) {
+        if (nhs.length() != Constants.NHS_LENGTH) {
             throw new IllegalArgumentException("National Health System number must have 10 digits");
         }
     }
@@ -160,7 +160,7 @@ public class Client {
         if (!checkIfIsNumerical(tin)) {
             throw new IllegalArgumentException("Tax Identification Number must be a number");
         }
-        if (tin.length() != 10) {
+        if (tin.length() != Constants.TIN_LENGTH) {
             throw new IllegalArgumentException("Tax Identification Number number must have 10 digits");
         }
     }
@@ -187,10 +187,10 @@ public class Client {
         if (birthDate == null) {
             throw new IllegalArgumentException("Birth Date cannot be null");
         }
-        if (age < 0) {
+        if (age < Constants.MIN_AGE) {
             throw new IllegalArgumentException("Birth Date cannot be in the future");
         }
-        if (age > 150) {
+        if (age > Constants.MAX_AGE) {
             throw new IllegalArgumentException("Age cannot be more than 150");
         }
 
@@ -238,7 +238,7 @@ public class Client {
             }
         }
 
-        if (name.length() > 35) {
+        if (name.length() > Constants.MAX_CLIENT_NAME) {
             throw new IllegalArgumentException("Name must have maximum of 35 characters");
         }
     }
@@ -274,9 +274,7 @@ public class Client {
      * @return random string representing the client password
      */
     private String getPassword() {
-        int lenght = 10;
-
-        return RandomStringUtils.randomAlphanumeric(lenght);
+        return RandomStringUtils.randomAlphanumeric(Constants.PASSWORD_LENGTH);
     }
 
     /**
@@ -297,4 +295,7 @@ public class Client {
         return success;
     }
 
+    public String getCc() {
+        return cc;
+    }
 }

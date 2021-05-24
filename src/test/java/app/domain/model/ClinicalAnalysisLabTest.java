@@ -1,5 +1,7 @@
 package app.domain.model;
 
+import app.domain.stores.ParameterCategoryStore;
+import app.domain.stores.TestTypeStore;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import app.domain.stores.*;
 import auth.AuthFacade;
 import org.apache.commons.lang3.StringUtils;
 
@@ -20,6 +21,7 @@ public class Company {
     private RoleStore roleList;
     private EmployeeStore employeeList;
     private ClientStore clientList;
+    private TestStore testList;
 
     /**
      * Constructor of the Company Class, instances a new object of AuthFacade
@@ -114,7 +116,7 @@ public class Company {
      *
      * @return list of TestType objects
      */
-    public TestTypeStore TestTypeList() {
+    public TestTypeStore testTypeList() {
         return this.testTypeList;
     }
 
@@ -145,5 +147,24 @@ public class Company {
     public ClientStore getClientList() {
         this.clientList = new ClientStore();
         return this.clientList;
+    }
+
+    public ClientStore clientList(){
+        return this.clientList;
+    }
+
+
+    /**
+     * creates a new empty list of Test objects
+     * @return empty list of Test objects
+     */
+    public TestStore getTestList() {
+        this.testList = new TestStore();
+        return this.testList;
+    }
+
+
+    public ParameterStore parameterList() {
+        return this.parameterList;
     }
 }

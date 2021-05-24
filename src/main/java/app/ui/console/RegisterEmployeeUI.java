@@ -1,10 +1,7 @@
 package app.ui.console;
 
-import app.controller.ParameterController;
 import app.controller.RegisterEmployeeController;
-import app.domain.model.ParameterCategory;
-import app.domain.model.Role;
-import app.domain.model.RoleStore;
+import app.domain.stores.RoleStore;
 import app.ui.console.utils.Utils;
 
 public class RegisterEmployeeUI implements Runnable{
@@ -51,7 +48,7 @@ public class RegisterEmployeeUI implements Runnable{
                         ctrl.createEmployee(name, address, phonenumber, email,SOC,DoctorIndexNumber ,role);
                         exception = false;
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        System.out.println(e.getMessage());
                         System.out.println("An error occurred during the creation during the creation of the Employee please try again");
                         exception = true;
                     }

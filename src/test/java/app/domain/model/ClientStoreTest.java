@@ -1,7 +1,6 @@
 package app.domain.model;
 
-import app.domain.model.ClientStore;
-import app.domain.shared.Constants;
+import app.domain.stores.ClientStore;
 import org.junit.Assert;
 import org.junit.Test;
 

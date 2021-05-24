@@ -1,5 +1,7 @@
 package app.domain.model;
 
+import app.domain.shared.Constants;
+import app.domain.stores.TestTypeStore;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -54,7 +56,7 @@ public class ClinicalAnalysisLab {
     private void checkLabIDRules(String id) {
         if (StringUtils.isBlank(id))
             throw new IllegalArgumentException("Laboratory ID cannot be blank.");
-        if (id.length() != 5)
+        if (id.length() != Constants.MAX_CODE)
             throw new IllegalArgumentException("Laboratory ID must have 5 chars.");
     }
 
@@ -71,7 +73,7 @@ public class ClinicalAnalysisLab {
     private void checkNameRules(String name) {
         if (StringUtils.isBlank(name))
             throw new IllegalArgumentException("Name cannot be blank.");
-        if (name.length() > 20)
+        if (name.length() > Constants.MAX_LAB_NAME)
             throw new IllegalArgumentException("Name must have at maximum 20 chars.");
     }
 
@@ -83,7 +85,7 @@ public class ClinicalAnalysisLab {
     private void checkAddressRules(String address) {
         if (StringUtils.isBlank(address))
             throw new IllegalArgumentException("Address cannot be blank.");
-        if (address.length() > 30)
+        if (address.length() > Constants.MAX_LAB_ADDRESS)
             throw new IllegalArgumentException("Address has, at maximum, 30 chars.");
     }
 
@@ -95,7 +97,7 @@ public class ClinicalAnalysisLab {
     private void checkPhoneNumberRules(String phoneNumber) {
         if (StringUtils.isBlank(phoneNumber))
             throw new IllegalArgumentException("Phone number cannot be blank.");
-        if (phoneNumber.length() != 11)
+        if (phoneNumber.length() != Constants.PHONE_NUMBER_DIGITS)
             throw new IllegalArgumentException("Phone number must have 11 chars.");
         phoneNumber = phoneNumber.toLowerCase();
         char[] charArray = phoneNumber.toCharArray();
@@ -115,7 +117,7 @@ public class ClinicalAnalysisLab {
     private void checkTINNumberRules(String tin) {
         if (StringUtils.isBlank(tin))
             throw new IllegalArgumentException("TIN cannot be blank.");
-        if (tin.length() != 10)
+        if (tin.length() != Constants.TIN_LENGTH)
             throw new IllegalArgumentException("TIN must have 10 chars.");
         tin = tin.toLowerCase();
         char[] charArray = tin.toCharArray();

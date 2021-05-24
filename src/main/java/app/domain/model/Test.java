@@ -1,0 +1,123 @@
+package app.domain.model;
+
+import app.domain.stores.ParameterCategoryStore;
+import app.domain.stores.ParameterStore;
+import app.domain.stores.TestParameterStore;
+import org.apache.commons.lang3.StringUtils;
+import java.time.LocalDate;
+
+public class Test {
+
+    private State state;
+    private String testCode;
+    private String testNhsNumber;
+    private String clientCc;
+    private TestType testType;
+    private ParameterCategoryStore catList;
+    private ParameterStore paList;
+    private TestParameterStore testParam;
+    private LocalDate createdDate;
+
+    /**
+     * Constructor of the Test object, it call methods on order to validate the NhsNumber, the list of categories and the list of parameters
+     *
+     * @param testCode      unique code generated automatically
+     * @param testNhsNumber unique code that identifies the test
+     * @param clientCc      unique code that identifies the client associated with the test
+     * @param testType      type of this test
+     * @param catList       list of parameters categories that are measured in this test
+     * @param paList        list of parameters that are measured in this test
+     */
+    public Test(String testCode, String testNhsNumber, String clientCc, TestType testType, ParameterCategoryStore catList, ParameterStore paList) {
+
+        checkTestNhsNumberRules(testNhsNumber);
+        checkCatList(catList);
+        checkPaList(paList);
+        this.testCode = testCode;
+        this.testNhsNumber = testNhsNumber;
+        this.clientCc = clientCc;
+        this.testType = testType;
+        this.catList = catList;
+        this.paList = paList;
+        this.createdDate = LocalDate.now();
+
+    }
+
+    /**
+     * This method checks if the list of parameters meets the requirements, if not it throws a exception making the execution to stop
+     *
+     * @param paList list of parameters that are measured in this test
+     */
+    private void checkPaList(ParameterStore paList) {
+        if (paList.isEmpty() || paList == null) {
+            throw new IllegalArgumentException("Parameter List must not be empty");
+        }
+
+    }
+
+    /**
+     * This method checks if the list of parameters categories meets the requirements, if not it throws a exception making the execution to stop
+     *
+     * @param catList list of parameters categories that are measured in this test
+     */
+    private void checkCatList(ParameterCategoryStore catList) {
+        if (catList.isEmpty() || catList == null) {
+            throw new IllegalArgumentException("Category List must not be empty");
+        }
+    }
+
+    /**
+     * This method checks if the list of parameters categories meets the requirements, if not it throws a exception making the execution to stop
+     *
+     * @param testNhsNumber unique code that identifies the test
+     */
+    private void checkTestNhsNumberRules(String testNhsNumber) {
+        if (testNhsNumber == null) {
+            throw new IllegalArgumentException("The NHS Number must exist");
+        }
+
+        if (!StringUtils.isAlphanumeric(testNhsNumber)) {
+            throw new IllegalArgumentException("The NHS Number must have just alphanumeric characters");
+        }
+
+    }
+
+    /**
+     * Creates a new TestParameter object for each Parameter in the Parameter list received in the constructor and saves it in a new TestParameter List
+     */
+    public void addTestParameter() {
+        this.testParam = new TestParameterStore();
+        for (Parameter p : this.paList.getList()) {
+            String code = p.getCode();
+            this.testParam.createTestParameter(code);
+
+            this.testParam.addTestParameter();
+
+        }
+        changeState(State.CREATED);
+    }
+
+    /**
+     * Changes the state of the object test by changing the variable state with a value from the enum "State"
+     *
+     * @param s a value of the enum "State"
+     */
+    private void changeState(State s) {
+        this.state = s;
+    }
+
+    public String getTestNhsNumber() {
+        return testNhsNumber;
+    }
+
+
+    enum State {
+        CREATED,
+        SAMPLE_COLLECTED,
+        SAMPLE_ANALYSED,
+        DIAGNOSTIC_MADE,
+        VALIDATED;
+    }
+
+
+}

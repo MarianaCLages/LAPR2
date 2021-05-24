@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import app.domain.shared.Constants;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -38,7 +39,7 @@ public class Parameter {
     private void checkCodeRules(String code) {
         if (StringUtils.isBlank(code))
             throw new IllegalArgumentException("Code cannot be blank.");
-        if (code.length() != 5)
+        if (code.length() != Constants.MAX_CODE)
             throw new IllegalArgumentException("Code must have 5 chars.");
     }
 
@@ -50,8 +51,8 @@ public class Parameter {
     private void checkNameRules(String name) {
         if (StringUtils.isBlank(name))
             throw new IllegalArgumentException("Name cannot be blank.");
-        if (name.length() > 8)
-            throw new IllegalArgumentException("Name must have 8 chars.");
+        if (name.length() > Constants.MAX_PARAMETER_NAME)
+            throw new IllegalArgumentException("Name must have at least 8 chars.");
         name = name.toLowerCase();
         char[] charArray = name.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
@@ -69,7 +70,7 @@ public class Parameter {
     private void checkDescriptionRules(String description) {
         if (StringUtils.isBlank(description))
             throw new IllegalArgumentException("Description cannot be blank.");
-        if (description.length() > 20)
+        if (description.length() > Constants.MAX_PARAMETER_DESCRIPTION)
             throw new IllegalArgumentException("Description must have 20 chars.");
     }
 
@@ -90,5 +91,13 @@ public class Parameter {
      */
     public String getCode() {
         return code;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public ParameterCategory getCat() {
+        return cat;
     }
 }

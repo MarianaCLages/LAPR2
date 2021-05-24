@@ -2,7 +2,7 @@ package app.ui.console;
 
 import app.controller.TestTypeController;
 import app.domain.model.ParameterCategory;
-import app.domain.model.ParameterCategoryStore;
+import app.domain.stores.ParameterCategoryStore;
 import app.ui.console.utils.Utils;
 
 public class TestTypeUI implements Runnable {
@@ -40,7 +40,7 @@ public class TestTypeUI implements Runnable {
                         this.ctrl.saveTestType();
                         exception = false;
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        System.out.println(e.getMessage());
                         System.out.println("An error occurred during the creation during the creation of the type of test please try again");
                         exception = true;
                     }

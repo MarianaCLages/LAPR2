@@ -1,9 +1,8 @@
 package app.domain.model;
 
+import app.domain.stores.ParameterStore;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class ParameterStoreTest {
     ParameterCategory cat = new ParameterCategory("AE554", "Hemogram");
@@ -17,7 +16,7 @@ public class ParameterStoreTest {
         //Act
         store.add(pc1);
         //Assert
-        Assert.assertFalse(store.ValidateParameter(pc1));
+        Assert.assertFalse(store.validateParameter(pc1));
     }
     @Test
     public void validateParameterAlreadyExists() {
@@ -27,7 +26,7 @@ public class ParameterStoreTest {
          //Act
         store.add(pc1);
         //Assert
-        Assert.assertFalse(store.ValidateParameter(pc1));
+        Assert.assertFalse(store.validateParameter(pc1));
     }
     @Test
     public void validateParameterIsNull() {
@@ -35,7 +34,7 @@ public class ParameterStoreTest {
         ParameterStore store = new ParameterStore();
         Parameter pc1 = null;
         //Assert
-        Assert.assertFalse(store.ValidateParameter(pc1));
+        Assert.assertFalse(store.validateParameter(pc1));
     }
     @Test
     public void getIDRight() {
@@ -78,13 +77,13 @@ public class ParameterStoreTest {
     public void createValidParameter() {
         ParameterStore store = new ParameterStore();
 
-        Assert.assertNotNull(store.CreateParameter("A1234", "PLT", "description", cat));
+        Assert.assertNotNull(store.createParameter("A1234", "PLT", "description", cat));
 
     }
     @Test
     public void getPcValid() {
         ParameterStore store = new ParameterStore();
-        Parameter pc1 = store.CreateParameter("A1234", "PLT", "description", cat);
+        Parameter pc1 = store.createParameter("A1234", "PLT", "description", cat);
         Parameter expected = pc1;
         Parameter actual= store.getPc();
 
@@ -120,7 +119,7 @@ public class ParameterStoreTest {
     public void saveParameterValid() {
         //Arrange
         ParameterStore store = new ParameterStore();
-        Parameter pc  = store.CreateParameter("A1234", "PLT", "description", cat);
+        Parameter pc  = store.createParameter("A1234", "PLT", "description", cat);
 
         //Assert
         Assert.assertTrue(store.saveParameter());
@@ -130,9 +129,9 @@ public class ParameterStoreTest {
     public void saveParameterInvalid() {
         //Arrange
         ParameterStore store = new ParameterStore();
-        Parameter pc  = store.CreateParameter("A1234", "PLT", "description", cat);
+        Parameter pc  = store.createParameter("A1234", "PLT", "description", cat);
         store.add(pc);
-        Parameter pc1  = store.CreateParameter("A1232", "PLS", "description", cat);
+        Parameter pc1  = store.createParameter("A1232", "PLS", "description", cat);
         store.add(pc1);
         //Assert
         Assert.assertFalse(store.saveParameter());
@@ -141,20 +140,20 @@ public class ParameterStoreTest {
     @Test
     public void addValid() {
         ParameterStore store = new ParameterStore();
-        Parameter pc  = store.CreateParameter("A1234", "PLT", "description", cat);
+        Parameter pc  = store.createParameter("A1234", "PLT", "description", cat);
         Assert.assertTrue(store.add(pc));
     }
     @Test (expected = IllegalArgumentException.class)
     public void addInvalid() {
         ParameterStore store = new ParameterStore();
-        Parameter pc  = store.CreateParameter(null, null, null, null);
+        Parameter pc  = store.createParameter(null, null, null, null);
     }
 
     @Test
     public void toStringTest(){
         ParameterStore store = new ParameterStore();
-        Parameter pc1  = store.CreateParameter("A1234", "PLT", "description", cat);
-        Parameter pc2  = store.CreateParameter("A1284", "PLT", "description", cat);
+        Parameter pc1  = store.createParameter("A1234", "PLT", "description", cat);
+        Parameter pc2  = store.createParameter("A1284", "PLT", "description", cat);
 
         store.add(pc1);
         store.add(pc2);

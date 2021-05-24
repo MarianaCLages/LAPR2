@@ -1,9 +1,8 @@
 package app.domain.model;
 
+import app.domain.stores.EmployeeStore;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class EmployeeStoreTest {
     Role role = new Role("1", "Medical Lab Technician" );

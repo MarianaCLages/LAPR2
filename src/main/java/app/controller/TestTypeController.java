@@ -1,9 +1,10 @@
 package app.controller;
 
+
 import app.domain.model.Company;
-import app.domain.model.ParameterCategoryStore;
 import app.domain.model.TestType;
-import app.domain.model.TestTypeStore;
+import app.domain.stores.ParameterCategoryStore;
+import app.domain.stores.TestTypeStore;
 
 /**
  * Controller of the UserStory : Specify a new type of test

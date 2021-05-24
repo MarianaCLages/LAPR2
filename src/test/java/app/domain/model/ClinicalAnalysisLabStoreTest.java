@@ -1,6 +1,8 @@
 package app.domain.model;
 
-import app.controller.ClinicalAnalysisLabController;
+import app.domain.stores.ClinicalAnalysisLabStore;
+import app.domain.stores.ParameterCategoryStore;
+import app.domain.stores.TestTypeStore;
 import org.junit.Assert;
 import org.junit.Test;
 

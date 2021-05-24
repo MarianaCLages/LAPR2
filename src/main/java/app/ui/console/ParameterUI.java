@@ -44,7 +44,7 @@ public class ParameterUI implements Runnable {
                         ctrl.createParameter(code, name, description, cat);
                         exception = false;
                     } catch (Exception e) {
-                        e.printStackTrace();
+                        System.out.println(e.getMessage());
                         System.out.println("An error occurred during the creation during the creation of the Parameter please try again");
                         exception = true;
                     }

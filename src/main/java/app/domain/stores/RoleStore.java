@@ -1,4 +1,6 @@
-package app.domain.model;
+package app.domain.stores;
+
+import app.domain.model.Role;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +9,6 @@ import java.util.List;
  * Class that represent the list of all the roles of the system
  */
 public class RoleStore {
-
 
     private final Role ClinicalChemistryTechnologist = new Role("0", "Clinical Chemistry Technologist");
     private final Role MedicalLabTechnician = new Role("1", "Medical Lab Technician");

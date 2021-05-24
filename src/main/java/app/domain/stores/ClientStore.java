@@ -1,4 +1,7 @@
-package app.domain.model;
+package app.domain.stores;
+
+import app.domain.model.Client;
+import app.domain.model.Company;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -57,6 +60,13 @@ public class ClientStore {
     private boolean exists(Client client) {
         for (Client c : array) {
             return c.getEmail().equals(client.getEmail()) || c.getPhoneNumber().equals(client.getPhoneNumber());
+        }
+        return false;
+    }
+
+    public boolean exists(String cc){
+        for (Client c : array) {
+            return c.getCc().equals(cc);
         }
         return false;
     }
