@@ -1,5 +1,6 @@
-package app.domain.model;
+package app.domain.stores;
 
+import app.domain.model.Role;
 import app.domain.stores.RoleStore;
 import org.junit.Assert;
 import org.junit.Test;

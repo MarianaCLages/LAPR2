@@ -1,5 +1,7 @@
-package app.domain.model;
+package app.domain.stores;
 
+import app.domain.model.Employee;
+import app.domain.model.Role;
 import app.domain.stores.EmployeeStore;
 import org.junit.Assert;
 import org.junit.Test;

@@ -60,7 +60,7 @@ public class TestTest {
         pa.add(p1);
         TestType testType = new TestType("AF123","description","sei lá",cat);
 
-        app.domain.model.Test test = new app.domain.model.Test("1234s",null,"1234567890123456",testType,cat,pa);
+        app.domain.model.Test test = new app.domain.model.Test("000000000000001",null,"1234567890123456",testType,cat,pa);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -73,7 +73,7 @@ public class TestTest {
         pa.add(p1);
         TestType testType = new TestType("AF123","description","sei lá",cat);
 
-        app.domain.model.Test test = new app.domain.model.Test("1234s","12345678901?","1234567890123456",testType,cat,pa);
+        app.domain.model.Test test = new app.domain.model.Test("000000000000001","12345678901?","1234567890123456",testType,cat,pa);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -86,7 +86,7 @@ public class TestTest {
         pa.add(p1);
         TestType testType = new TestType("AF123","description","sei lá",cat);
 
-        app.domain.model.Test test = new app.domain.model.Test("1234s","1234567890187","1234567890123456",testType,cat,pa);
+        app.domain.model.Test test = new app.domain.model.Test("000000000000001","1234567890187","1234567890123456",testType,cat,pa);
     }
 
     @Test
@@ -99,7 +99,7 @@ public class TestTest {
         pa.add(p1);
         TestType testType = new TestType("AF123","description","sei lá",cat);
 
-        app.domain.model.Test test = new app.domain.model.Test("1234s","123456789187","1234567890123456",testType,cat,pa);
+        app.domain.model.Test test = new app.domain.model.Test("000000000000001","123456789187","1234567890123456",testType,cat,pa);
 
         test.addTestParameter();
     }
@@ -114,7 +114,7 @@ public class TestTest {
         pa.add(p1);
         TestType testType = new TestType("AF123","description","sei lá",cat);
 
-        app.domain.model.Test test = new app.domain.model.Test("1234s","123456789187","1234567890123456",testType,cat,pa);
+        app.domain.model.Test test = new app.domain.model.Test("000000000000001","123456789187","1234567890123456",testType,cat,pa);
 
         String expected = "123456789187";
         String actual = test.getTestNhsNumber();
@@ -132,9 +132,9 @@ public class TestTest {
         pa.add(p1);
         TestType testType = new TestType("AF123","description","sei lá",cat);
 
-        app.domain.model.Test test = new app.domain.model.Test("1234s","123456789187","1234567890123456",testType,cat,pa);
+        app.domain.model.Test test = new app.domain.model.Test("000000000000001","123456789187","1234567890123456",testType,cat,pa);
 
-        String expected = "Test: testCode=1234s, testNhsNumber=123456789187, clientCc=1234567890123456, testType="+testType.toString()+", catList="+cat.toString()+", paList="+pa.toString();
+        String expected = "Test: testCode=000000000000001, testNhsNumber=123456789187, clientCc=1234567890123456, testType="+testType.toString()+", catList="+cat.toString()+", paList="+pa.toString();
         String actual = test.toString();
 
         Assert.assertEquals(expected,actual);

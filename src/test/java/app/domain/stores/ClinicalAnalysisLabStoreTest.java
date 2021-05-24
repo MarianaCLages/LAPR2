@@ -1,5 +1,8 @@
-package app.domain.model;
+package app.domain.stores;
 
+import app.domain.model.ClinicalAnalysisLab;
+import app.domain.model.ParameterCategory;
+import app.domain.model.TestType;
 import app.domain.stores.ClinicalAnalysisLabStore;
 import app.domain.stores.ParameterCategoryStore;
 import app.domain.stores.TestTypeStore;
