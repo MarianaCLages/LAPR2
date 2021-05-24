@@ -6,8 +6,12 @@ import app.domain.mappers.TestTypeListMapper;
 import app.domain.mappers.dto.CategoryListDTO;
 import app.domain.mappers.dto.ParameterDTO;
 import app.domain.mappers.dto.TestTypeDTO;
-import app.domain.model.*;
+import app.domain.model.Company;
+import app.domain.model.Parameter;
+import app.domain.model.ParameterCategory;
+import app.domain.model.TestType;
 import app.domain.stores.*;
+
 
 import java.util.List;
 
