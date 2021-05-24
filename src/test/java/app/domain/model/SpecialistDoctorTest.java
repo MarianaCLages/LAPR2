@@ -1,5 +1,7 @@
 package app.domain.model;
 
+import app.domain.model.Role;
+import app.domain.model.SpecialistDoctor;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package app.domain.stores;
+package app.domain;
 
 import app.domain.model.Role;
 import app.domain.stores.RoleStore;
