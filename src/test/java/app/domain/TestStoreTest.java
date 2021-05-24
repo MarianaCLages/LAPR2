@@ -1,8 +1,9 @@
-package app.domain.stores;
+package app.domain;
 
 import app.domain.model.Parameter;
 import app.domain.model.ParameterCategory;
 import app.domain.model.TestType;
+import app.domain.stores.*;
 import org.junit.Assert;
 import org.junit.Test;
 
