@@ -5,16 +5,20 @@ actor "Laboratory Coordinator" as lc
 actor "System" as SYS
 activate lc
 lc -> SYS: Asks the list of tests waiting to validation
+
+loop for any other intended Test
 activate SYS
 SYS --> lc: Shows all the tests pending validation and asks to choose one
 deactivate SYS
 lc -> SYS: Chose the test that will be validated
 activate SYS
+end
 SYS --> lc: Asks for confirmation
 deactivate SYS
 lc -> SYS : Confirms
 activate SYS
 SYS --> lc: Shows success
+deactivate SYS
 deactivate lc
 
 @enduml
