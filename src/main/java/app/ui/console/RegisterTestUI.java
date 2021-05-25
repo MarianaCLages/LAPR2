@@ -1,9 +1,9 @@
 package app.ui.console;
 
 import app.controller.CreateTestController;
-import app.domain.mappers.dto.CategoryListDTO;
-import app.domain.mappers.dto.ParameterDTO;
-import app.domain.mappers.dto.TestTypeDTO;
+import app.mappers.dto.CategoryListDTO;
+import app.mappers.dto.ParameterDTO;
+import app.mappers.dto.TestTypeDTO;
 import app.ui.console.utils.Utils;
 
 import java.util.List;
