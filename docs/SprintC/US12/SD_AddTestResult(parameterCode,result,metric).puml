@@ -11,7 +11,7 @@ participant "em:ExternalModule" as ExMod
 participant "refValue: ReferenceValue" as RefVal
 participant "testResult:TestParameterResult" as TestParamRes
 
-[o-> Test: addTestResult(parameterCode,result,metric)
+[o-> Test: addTestResult(parameterCode,result)
 activate Test
 Test -> tpStore: getParameterFor(parameterCode)
 activate Test
@@ -34,9 +34,9 @@ ExMod -> RefVal**: create()
 ExMod --> Test: refValue
 deactivate
 
-Test -> TestPa: addResult(result,metric,refValue)
+Test -> TestPa: addResult(result,refValue)
 activate TestPa
-TestPa -> TestParamRes**: create(result,metric,refValue)
+TestPa -> TestParamRes**: create(result,refValue)
 return ok
 return ok
 

@@ -99,8 +99,7 @@ NHS code: 12 alphanumeric characters.
 *Insert here a SSD depicting the envisioned Actor-System interactions and throughout which data is inputted and
 outputted to fulfill the requirement. All interactions must be numbered.*
 
-![USXX-SSD](USXX-SSD.svg)
-
+![US4_SSD](US4_SSD.svg) 
 ### 1.7 Other Relevant Remarks
 
 *Use this section to capture other relevant information that is related with this US such as (i) special requirements
@@ -113,7 +112,7 @@ outputted to fulfill the requirement. All interactions must be numbered.*
 *In this section, it is suggested to present an excerpt of the domain model that is seen as relevant to fulfill this
 requirement.*
 
-![USXX-MD](USXX-MD.svg)
+![US4_MD](US4_MD.svg)
 
 ### 2.2. Other Remarks
 
@@ -126,23 +125,30 @@ activity. In some case, it might be usefull to add other analysis artifacts (e.g
 
 **The rationale grounds on the SSD interactions and the identified input/output data.**
 
-| Interaction ID                                          | Question: Which class is responsible for...                                | Answer               | Justification (with patterns)                                                                                |
-| :-------------                                          | :---------------------                                                     | :------------        | :----------------------------                                                                                |
-| Step 1: wants to register a test                        | ... interacting with the actor?                                            | CreateTestUI         | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model |
-|                                                         | ... coordinating the US?                                                   | CreateTestController | Controller                                                                                                   |
-| Step 2: requests data (clientCc, testNhsNumber)         | ... create the CategoryStore and ParameterStore objects of the Test Object | Controller           | IE: ver isto não está bem                                                                                    |
-| Step 3: types the requested data                        | ... checks if the Client object exists                                     | ClientStore          | IE: knows all the clients in the system                                                                      |
-|                                                         | ...                                                 |                      |                                                                                                              |
-| Step 4: Show TestType list and asks to choose one       | ... saving the selected parameter?                                         | Test                 | IE: test created in step 1 is classified in parameters.                                                      |
-|                                                         | ... local validation?                                                      | Test                 | IE: knows its own data                                                                                       |
-| Step 5: Choose one TestType                             | ... global validation?                                                     | TestStore            | IE: knows all tests                                                                                          |
-| Step 6: shows the list of categories and asks to select | ... global validation?                                                     | TestStore            | IE: knows all tests                                                                                          |
-| Step 7: selects category                                | ... global validation?                                                     | TestStore            | IE: knows all tests                                                                                          |
-| Step 8: shows the list of parameters and asks to select | ... global validation?                                                     | TestStore            | IE: knows all tests                                                                                          |
-| Step 9: selects parameter                               | ... global validation?                                                     | TestStore            | IE: knows all tests                                                                                          |
-| Step 10: confirms all data and asks to confirm          | ... global validation?                                                     | TestStore            | IE: knows all tests                                                                                          |
-| Step 11: confirms data                                  | ... global validation?                                                     | TestStore            | IE: knows all tests                                                                                          |
-| Step 12: informs operation success                      | ... global validation?                                                     | TestStore            | IE: knows all tests                                                                                          |
+| Interaction ID                                          | Question: Which class is responsible for...                                 | Answer               | Justification (with patterns)                                                                                                                                                                                                                                                                                                   |
+| :-------------                                          | :---------------------                                                      | :------------        | :----------------------------                                                                                                                                                                                                                                                                                                   |
+| Step 1: wants to register a test                        | ... interacting with the actor?                                             | CreateTestUI         | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model                                                                                                                                                                                                                    |
+|                                                         | ... coordinating the US?                                                    | CreateTestController | Controller                                                                                                                                                                                                                                                                                                                      |
+| Step 2: requests data (clientCc, testNhsNumber)         | ... create the CategoryStore and ParameterStore objects of the Test Object? | Controller           | IE: ver isto não está bem                                                                                                                                                                                                                                                                                                       |
+| Step 3: types the requested data                        | ... checks if the Client object exists ?                                    | ClientStore          | IE: knows all the clients in the system                                                                                                                                                                                                                                                                                         |
+|                                                         | ... get the data to show the user?                                          | TypeTestMapper       | DTO: in order to detach the domain layer from the the ui layer we use a data transfer object in order to only extract data from the domain class and dont extract operations                                                                                                                                                    |
+| Step 4: Show TestType list and asks to choose one       |                                                                             |                      |                                                                                                                                                                                                                                                                                                                                 |
+| Step 5: Choose one TestType                             | ... get the Type of Test?                                                   | TestTypeStore        | IE: The store knows all the types of test in the system                                                                                                                                                                                                                                                                         |
+|                                                         | ... get the categories associated with the type of test?                    | TestType             | IE: TestType knows all the categories associated with it                                                                                                                                                                                                                                                                        |
+| Step 6: shows the list of categories and asks to select |                                                                             |                      |                                                                                                                                                                                                                                                                                                                                 |
+| Step 7: selects category                                | ... get the Category?                                                       | CategoryStore        | IE: The store knows all the categories in the system                                                                                                                                                                                                                                                                            |
+|                                                         | ... get the parameters associated with the categories?                      | ParameterStore       | IE: Since the category object does not hold the information of which parameters are associated with the category object the class that knows all the parameters object and all his proprieties is the ParameterStore class. Therefore is the class responsible for getting the te parameters associated with the given category |
+| Step 8: shows the list of parameters and asks to select |                                                                             |                      |                                                                                                                                                                                                                                                                                                                                 |
+| Step 9: selects parameter                               | ... get the Parameter                                                       | ParameterStore       | IE: The store knows all the parameters in the system                                                                                                                                                                                                                                                                            |
+|                                                         | ... create the Test ?                                                       | TestStore            | Creator (R1) and HC+LC: By the application of the Creator (R1) it would be the Company. But, by applying HC + LC to the Company, this delegates that responsibility to the TestStore                                                                                                                                            |
+|                                                         | ... create the test code?                                                   | TestStore            | IE: Store knows all the tests and so have the information to generate the ID                                                                                                                                                                                                                                                    |
+|                                                         | ... change the object state?                                                | Test                 | IE: Test knows his own state                                                                                                                                                                                                                                                                                                    |
+|                                                         | ... validate the date? (locally)                                            | Test                 | IE: knows its own information                                                                                                                                                                                                                                                                                                   |
+|                                                         | ... validate data? (globally)                                               | TestStore            | IE: Store knows all the tests                                                                                                                                                                                                                                                                                                   |
+| Step 10: confirms all data and asks to confirm          |                                                                             |                      |                                                                                                                                                                                                                                                                                                                                 |
+| Step 11: confirms data                                  | ... saving the Test object                                                  | TestStore            | IE: knows all                                                                                                                                                                                                                                                                                                                   |
+|                                                         |                                                                             |                      |                                                                                                                                                                                                                                                                                                                                 |
+| Step 12: informs operation success                      | ...informing operation success                                              | CreateTestUI         | **IE:** is responsible for user interactions                                                                                                                                                                                                                                                                                    |
 
 ### Systematization ##
 
@@ -151,6 +157,8 @@ According to the taken rationale, the conceptual classes promoted to software cl
 * Company
 * Test
 * Parameter
+* Category
+* TestType
 
 Other software classes (i.e. Pure Fabrication) identified:
 
@@ -158,20 +166,34 @@ Other software classes (i.e. Pure Fabrication) identified:
 * CreateTestController
 * TestStore
 * ParameterStore
+* CategoryStore
+* TestTypeStore
 
 ## 3.2. Sequence Diagram (SD)
 
-*In this section, it is suggested to present an UML dynamic view stating the sequence of domain related software
-objects' interactions that allows to fulfill the requirement.*
 
-![USXX-SD](USXX-SD.svg)
+### Main Sequence Diagram
+![US4_SD](US4_SD.svg)
+
+### createTest() Sequence Diagram
+![SD_createTest](SD_createTest().svg)
+
+### getCategories(TestTypeCode) Sequence Diagram
+![SD_getCategories(TestTypeCode)](SD_getCategories(TestTypeCode).svg)
+
+### getParameters(categoryCode) Sequence Diagram
+![SD_getParameters(categoryCode)](SD_getParameters(categoryCode).svg)
+
+### getTestTypeList() Sequence Diagram
+![SD_getTestTypeList()](SD_getTestTypeList().svg)
+
 
 ## 3.3. Class Diagram (CD)
 
 *In this section, it is suggested to present an UML static view representing the main domain related software classes
 that are involved in fulfilling the requirement as well as and their relations, attributes and methods.*
 
-![USXX-CD](USXX-CD.svg)
+![US4_CD](US4_CD.svg)
 
 # 4. Tests
 

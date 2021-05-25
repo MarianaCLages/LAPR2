@@ -1,0 +1,127 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class ClientStore{
++existClient(clientCc)
+}
+class TestStore{
++saveTest()
+-validateTest(t)
+-addTest(t)
+}
+class TestTypeStore{
++getByCode(testTypeCode)
+}
+class ParameterStore{
++ParameterStore()
++getParameter(parameterCode)
++addParameter(parameter)
+}
+class CategoryStore{
++getCategory(categoryCode)
++addCategory(category)
+}
+class TestTypeMapper{
++toDto(ttList)
+-toDto(testType)
+}
+class TestTypeDTO{
+-TestTypeID
+-description
++getTestTypeID()
++getDescription()
+}
+
+class CategoryListMapper{
++toDTO(categoriesList)
+-toDTO(category)
+}
+class CategoryDTO{
+-code
+-name
++getCode()
++getName()
+}
+
+class ParameterMapper{
++toDTO(parametersList)
+-toDTO(parameter)
+}
+class ParameterDTO{
+-code
+-name
++getCode()
++getName()
+}
+
+class Company{
++getTestTypeList()
++categoryStore()
++parameterStore()
+}
+class RegisterTestController{
++getLists()
++existsClients(clientCC)
++getTestTypeList()
++getCategories(testTypeCode)
++getParameters(categoryCode)
++addParameter(parameterCode)
++createTest()
++saveTest()
+}
+class RegisterTestUI{
+}
+
+class TestType{
++getCategories()
+}
+
+class Test{
++Test(testNhsNumber,testCode,testType,catList,paList,ClientCc)
++addTestParameters()
+-changeState(state)
+}
+class TestParameterStore{
++TestParameterStore()
++createParameterTest(pCode)
++add()
+}
+class TestParameter{
+-parameterCode
++TestParameter(parameterCode)
+}
+
+class Parameter{
++getParameterCode()
+}
+
+
+RegisterTestUI ..> RegisterTestController
+RegisterTestController ..>CategoryListMapper
+RegisterTestController ..>TestTypeMapper
+RegisterTestController ..>TestType
+RegisterTestController ..>Company
+RegisterTestController ..>ParameterStore
+RegisterTestController ..>TestStore
+RegisterTestController ..>CategoryStore
+RegisterTestController ..>ParameterMapper
+RegisterTestController ..>TestTypeStore
+RegisterTestController ..>ClientStore
+
+ParameterMapper ..> ParameterDTO
+CategoryListMapper ..> CategoryDTO
+TestTypeMapper ..> TestTypeDTO
+
+Company "1" --> "1" TestTypeStore: adopts
+Company "1" --> "1" ClientStore: adopts
+Company "1" --> "1" ParameterStore: adopts
+Company "1" --> "1" TestStore: adopts
+Company "1" --> "1" CategoryStore: adopts
+
+TestTypeStore "1" --> "*" TestType:stores
+TestStore "1" --> "*" Test: stores
+Test "1" --> "1" TestParameterStore
+TestParameterStore "1" --> "*" TestParameter: stores
+ParameterStore "1" --> "*" Parameter: stores
+Test "1" --> "*" Parameter: has
+@enduml

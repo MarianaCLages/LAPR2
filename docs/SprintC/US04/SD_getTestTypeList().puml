@@ -5,10 +5,7 @@ autonumber
 participant ":RegisterTestController" as ctrl
 participant ":Company" as comp
 participant ":TestTypeListMapper" as mapper
-participant ":TestTypeList" as tTypeList
-participant ":TestTypeListDTO" as tTypeListDTO
-participant ":TestTypeDTO" as tTypeDTO
-participant ":TestType" as tType
+
 
 
 [o-> ctrl: getTestTypeList()

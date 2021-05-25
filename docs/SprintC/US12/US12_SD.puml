@@ -22,16 +22,16 @@ loop for all the parameters
     deactivate UI
     cct -> UI: Choose parameter
     activate UI
-    UI -> cct: Asks for results value and metric
+    UI -> cct: Asks for results value
     deactivate UI
-    cct -> UI: Types results value and metric
+    cct -> UI: Types results value
     activate UI
 
-    UI -> ctrl: addTestResult(parameterCode,result,metric)
+    UI -> ctrl: addTestResult(parameterCode,result)
     activate ctrl
     ctrl -> Test: addTestResult(parameterCode,result,metric)
     activate Test
-    ref over Test : SD_AddTestResult(parameterCode,result,metric)
+    ref over Test : SD_AddTestResult(parameterCode,result)
     Test --> ctrl : ok
     deactivate Test
     ctrl --> UI: ok
@@ -40,11 +40,9 @@ loop for all the parameters
 
 end
 
-UI --> cct: Show all data and request confirmation
+UI --> cct: Show all data and show success
 deactivate UI
-cct -> UI: confirms the operation
-activate UI
-UI --> cct: Show success
+
 
 
 
