@@ -46,7 +46,7 @@ public class CreateTestController {
     }
 
     public void createTest(String testNhsNumber, String clientCc) {
-        store.CreateTest(testNhsNumber, clientCc, this.testType, this.caList, this.paList);
+        store.createTest(testNhsNumber, clientCc, this.testType, this.caList, this.paList);
     }
 
     public boolean saveTest() {
@@ -80,6 +80,10 @@ public class CreateTestController {
         ParameterStore paStore = company.parameterList();
         Parameter pa = paStore.getParameter(parameterCode);
         this.paList.add(pa);
+    }
+
+    public String getTest(){
+        return store.getTest();
     }
 
 

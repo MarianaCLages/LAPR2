@@ -15,7 +15,7 @@ public class TestStore {
         this.array = new ArrayList<>();
     }
 
-    public boolean CreateTest(String testNhsNumber, String clientCc, TestType testType, ParameterCategoryStore catList, ParameterStore paList) {
+    public boolean createTest(String testNhsNumber, String clientCc, TestType testType, ParameterCategoryStore catList, ParameterStore paList) {
 
         this.t = new Test(getTestId(), testNhsNumber, clientCc, testType, catList, paList);
         this.t.addTestParameter();
@@ -57,6 +57,10 @@ public class TestStore {
             return true;
         }
         return false;
+    }
+
+    public String getTest(){
+        return this.t.toString();
     }
 
 

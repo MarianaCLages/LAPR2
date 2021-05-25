@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryListMapper {
-    public CategoryListDTO toDTO(ParameterCategory cat) {
+    private CategoryListDTO toDTO(ParameterCategory cat) {
         return new CategoryListDTO(cat.getCode(), cat.getName());
     }
 
