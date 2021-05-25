@@ -2,7 +2,6 @@
 'https://plantuml.com/sequence-diagram
 participant "TestController" as ctrl
 participant "TestStore" as tStore
-participant "Test" as Test
 participant "TestStoreMapper" as tStoreMapper
 participant "tList : TestStore" as tStore1
 participant "tListDto : TestStoreDTO" as tStoreDTO
@@ -13,11 +12,8 @@ autonumber
 
 [o-> ctrl: getTestList(testID)
 activate ctrl
-ctrl -> tStore: tList = getTestList(testID)
+ctrl -> tStore: getTestList()
 activate tStore
-tStore -> Test: tList = getTestList()
-activate Test
-deactivate Test
 deactivate tStore
 
 ctrl -> tStoreMapper: toDTO(tList)

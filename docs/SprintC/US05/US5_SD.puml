@@ -4,8 +4,11 @@ actor MedLabTech as MLT
 participant ":MedLabTechUI" as UI
 participant ":MedLabTechController" as CTRL
 participant "ts:TestStore" as TT
-participant "store: SampleStore" as STO
+participant "test:Test" as t
 participant "s: Sample" as S
+participant ":BarcodeAdapter" as Bc
+participant ":ExternalAPI" as Ea
+participant ":Barcode" as Bar
 
 activate MLT
 MLT -> UI: wants to record the samples
@@ -15,39 +18,61 @@ ref over CTRL: SD_TestIDDTO(testID)
 activate CTRL
 CTRL --> UI: tpStoreDTO
 deactivate CTRL
-loop
+
 UI --> MLT: shows test list
 deactivate UI
 MLT -> UI: selects a test from the list
 activate UI
-loop
-UI --> MLT: asks for a sample
-UI -> CTRL: saveSample()
+UI -> CTRL: selectTest(testID)
 activate CTRL
-CTRL -> STO: saveSample()
+CTRL -> TT:test = getTest(testID)
+activate TT
+deactivate
+deactivate
+UI --> MLT: Asks how many samples
+loop for each sample
+UI -> CTRL: createSampleBarcode()
+activate CTRL
+CTRL -> t: createSampleBarcode()
+activate t
+t --> S**: Sample()
+activate S
+S -> Bc: barcode = getBarcode()
+activate Bc
+Bc -> Ea: generate()
+activate Ea
+Ea --> Bar** :create
+deactivate Ea
+deactivate Bc
+return barcode
+return barcode
+return barcode
+deactivate S
+deactivate t
 deactivate CTRL
-activate STO
-STO -> S**: saveSample()
-deactivate STO
-UI --> MLT: shows all data and requests confirmation
+
+UI --> MLT: shows sample barcode and requests confirmation
 deactivate UI
-end
-end
+
 deactivate UI
-deactivate STO
 deactivate CTRL
 deactivate CTRL
-MLT -> UI: confirms the data
+MLT -> UI: confirms barcode
 activate UI
 UI -> CTRL: saveSample()
 activate CTRL
-CTRL -> STO: saveSample()
-activate STO
-STO -> STO: validateSample()
-STO -> STO: saveSample()
-UI --> MLT: informs operation success
-deactivate STO
+CTRL -> t: saveSample()
+activate t
+t -> t: validateSample()
+activate t
+deactivate
+t -> t: saveSample()
+activate t
+deactivate
+deactivate t
 deactivate CTRL
+end
+UI --> MLT: informs operation success
 deactivate UI
 deactivate MLT
 @enduml
