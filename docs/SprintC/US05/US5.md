@@ -161,31 +161,33 @@ given test.
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| Step 1: wants to record the samples                   | ... recording the samples?                        | MedLabTechUI         | IE: the interface interacts with the actor.                                          |
-|                                                       | ... getting the test list?                        | MedLabController     | IE: it knows and controls the information needed, sending it to the next procedures. |
-|                                                       | ... having all the tests?                         | TestStore            | IE: it's the place that has a list with all the tests and their data.                |
-| Step 2: shows test list                               | ... showing the test list?                        |                      |                                                                                      |
-| Step 3: selects test                                  | ... selecting the test?                           | MedLabTechUI         | IE: the interface interacts with the actor.                                          |
-| Step 4: asks for samples                              | ... asking for samples?                           |                      |                                                                                      |
-|                                                       | ... saving the samples?                           | SampleStore          | IE: it's the place that has the samples and their information saved.                 |
-| Step 5: shows all data and requests confirmation      | ... showing all data and requesting confirmation? |                      |                                                                                      |
-| Step 6: confirms the data                             | ... confirming the data?                          | MedLabTechUI         | IE: the interface interacts with the actor.                                          |
-| Step 7: informs operation success                     | ... informing the success of the operation?       | MedLabTechUI         | IE: the interface interacts with the actor.                                          |
+| Step 1: wants to record the samples                    | ... getting the test list?                        | MedLabTechUI         | IE: the interface interacts with the actor.                                          |
+|                                                        | ... handling the tests lists?                     | MedLabController     | IE: it knows and controls the information needed, sending it to the next procedures. |
+| Step 2: shows test list                                | ... showing the test list?                        |                      |                                                                                      |
+| Step 3: select a test from the list                    | ... selecting the test?                           | MedLabTechUI         | IE: the interface interacts with the actor.                                          |
+|                                                        | ... stores the tests and their respective data?   | Test Store           | IE: it knows and saves all the information related to the tests.                     |
+| Step 4: asks how many samples                          | ... asking for samples?                           |                      |                                                                                      |
+|                                                        | ... creates the samples barcodes?                 | Test                 | IE: the tests can have more than one sample and each sample has a unique barcode.    |
+|                                                        | ... getting and generating the barcodes?          | Barcode              | IE: it's where the barcode for each sample will be created.                          |
+| Step 5: shows sample barcode and requests confirmation | ... showing all data and requesting confirmation? |                      |                                                                                      |
+| Step 6: confirms barcode                               | ... validating and saving the sample?             | Test                 | IE: it's where the samples needed are recorded.                                      |
+| Step 7: informs operation success                      | ... informing the success of the operation?       | MedLabTechUI         | IE: the interface interacts with the actor.                                          |
 
 ### Systematization ##
 
 According to the taken rationale, the conceptual classes promoted to software classes are:
 
-* MedLabTech
 * Company
-+ Sample
+* Sample
+* Test
+* Barcode
 
 Other software classes (i.e. Pure Fabrication) identified:
 
 * MedLabTechUI
 * MedLabTechController
-* SampleStore
 * TestStore
+* BarcodeAdapter
 
 ## 3.2. Sequence Diagram (SD)
 

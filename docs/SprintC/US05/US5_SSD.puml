@@ -8,18 +8,15 @@ MLT -> S: wants to record the samples
 activate S
 S --> MLT: shows test list
 deactivate S
-MLT -> S: selects test
+MLT -> S: selects a test from the list
 activate S
+S --> MLT: asks how many samples
+deactivate S
 loop
-S --> MLT: asks for samples
-deactivate S
-MLT -> S: records the samples
+S --> MLT: shows sample barcode and requests confirmation
 activate S
+MLT -> S: confirms barcode
 end
-S --> MLT: shows all data and requests confirmation
-deactivate S
-MLT -> S: confirms the data
-activate S
 S --> MLT: informs operation success
 deactivate S
 deactivate MLT

@@ -29,7 +29,7 @@ CTRL -> TT:test = getTest(testID)
 activate TT
 deactivate
 deactivate
-UI --> MLT: Asks how many samples
+UI --> MLT: asks how many samples
 loop for each sample
 UI -> CTRL: createSampleBarcode()
 activate CTRL
