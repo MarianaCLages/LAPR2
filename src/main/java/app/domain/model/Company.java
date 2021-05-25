@@ -162,7 +162,9 @@ public class Company {
         this.testList = new TestStore();
         return this.testList;
     }
-
+    public TestStore testList(){
+        return this.testList;
+    }
 
     public ParameterStore parameterList() {
         return this.parameterList;

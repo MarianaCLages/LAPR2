@@ -87,9 +87,7 @@ public class CreateTestController {
         return store.getTest();
     }
 
-    public void createSampleBarcode(){
 
-    }
 
 
 }

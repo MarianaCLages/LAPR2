@@ -59,6 +59,10 @@ public class TestStore {
         return false;
     }
 
+    public List<Test> getList() {
+        return this.array;
+    }
+
     public String getTest(){
         return this.t.toString();
     }

@@ -1,19 +1,20 @@
 package app.domain.model;
 
 import app.domain.stores.TestParameterStore;
+import net.sourceforge.barbecue.Barcode;
 
 public class Sample {
 
     private String collectingMethod;
-    private String barcode;
+    private net.sourceforge.barbecue.Barcode barcode;
 
 
-    public Sample(String collectingMethod, String barcode){
-        this.collectingMethod = collectingMethod;
+    public Sample(net.sourceforge.barbecue.Barcode barcode){
         this.barcode = barcode;
     }
 
-    public String getBarcode() {
+
+    public Object getBarcode() {
         return barcode;
     }
 }
