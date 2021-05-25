@@ -10,12 +10,11 @@ participant "s: Sample" as S
 activate MLT
 MLT -> UI: wants to record the samples
 activate UI
-UI -> CTRL: getTestList()
+UI -> CTRL : SD_getTestList(testID)
+ref over CTRL: SD_TestIDDTO(testID)
 activate CTRL
-CTRL -> TT: getTestList()
-activate TT
+CTRL --> UI: tpStoreDTO
 deactivate CTRL
-deactivate TT
 loop
 UI --> MLT: shows test list
 deactivate UI
@@ -28,7 +27,7 @@ activate CTRL
 CTRL -> STO: saveSample()
 deactivate CTRL
 activate STO
-STO -> S: saveSample()
+STO -> S**: saveSample()
 deactivate STO
 UI --> MLT: shows all data and requests confirmation
 deactivate UI

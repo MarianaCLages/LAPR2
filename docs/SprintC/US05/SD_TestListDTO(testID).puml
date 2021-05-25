@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+participant "TestController" as ctrl
+participant "TestStore" as tStore
+participant "Test" as Test
+participant "TestStoreMapper" as tStoreMapper
+participant "tList : TestStore" as tStore1
+participant "tListDto : TestStoreDTO" as tStoreDTO
+participant "TestDTO" as tDTO
+
+
+autonumber
+
+[o-> ctrl: getTestList(testID)
+activate ctrl
+ctrl -> tStore: tList = getTestList(testID)
+activate tStore
+tStore -> Test: tList = getTestList()
+activate Test
+deactivate Test
+deactivate tStore
+
+ctrl -> tStoreMapper: toDTO(tList)
+activate tStoreMapper
+tStoreMapper --> tStoreDTO**: create()
+loop for each test in tList
+    tStoreMapper -> tStore1: test = get(i)
+    activate tStore1
+    deactivate tStore1
+    tStoreMapper -> tStoreMapper: testDto = toDTO(test)
+    activate tStoreMapper
+    tStoreMapper --> tDTO**: create(testID)
+    deactivate tStoreMapper
+    tStoreMapper -> tStoreDTO: add(testDto)
+    activate tStoreDTO
+    deactivate tStoreDTO
+end
+tStoreMapper --> ctrl: tStoreDTO
+deactivate tStoreMapper
+return tStoreDTO
+deactivate ctrl
+deactivate tStore
+@enduml
