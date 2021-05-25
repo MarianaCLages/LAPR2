@@ -1,5 +1,6 @@
 package app.controller;
 
+
 import app.domain.model.Company;
 import app.domain.model.TestType;
 import app.domain.stores.TestStore;
@@ -9,12 +10,18 @@ import app.mappers.dto.TestTypeDTO;
 
 import java.util.List;
 
-public class MedLabTechController {
+public class CreateReportController {
 
     private Company company;
     private TestStore store;
     private TestTypeStore ttList;
     private TestType testType;
+
+    public CreateReportController(Company company) {
+        this.company = company;
+        store = company.getTestList();
+    }
+
 
 
     public List<TestTypeDTO> getTestTypeList() {
@@ -23,8 +30,6 @@ public class MedLabTechController {
         return typeMapper.toDTO(ttList);
     }
 
-    public String getTest(){
-        return store.getTest();
-    }
+
 
 }

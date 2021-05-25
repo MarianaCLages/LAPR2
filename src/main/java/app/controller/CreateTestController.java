@@ -24,6 +24,7 @@ public class CreateTestController {
     private ParameterStore paList;
 
 
+
     public CreateTestController() {
         this(App.getInstance().getCompany());
     }
@@ -84,6 +85,10 @@ public class CreateTestController {
 
     public String getTest(){
         return store.getTest();
+    }
+
+    public void createSampleBarcode(){
+
     }
 
 

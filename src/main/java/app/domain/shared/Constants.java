@@ -29,6 +29,7 @@ public class Constants {
     public static final int MAX_LAB_NAME = 20;
     public static final int MAX_LAB_ADDRESS = 30;
     public static final int TEST_NHS_CODE = 12;
+    public static final int DIAGNOSIS_MAX_LENGHT = 200;
 
 
     public static final String PARAMS_FILENAME = "config.properties";

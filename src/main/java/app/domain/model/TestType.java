@@ -104,6 +104,8 @@ public class TestType {
     public String getDescription() {
         return description;
     }
+
+    public String getCollectingMethod() {return collectingMethod;}
 }
 
 

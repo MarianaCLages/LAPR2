@@ -7,6 +7,7 @@ import app.domain.stores.TestParameterStore;
 import org.apache.commons.lang3.StringUtils;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 
 public class Test {
@@ -20,7 +21,10 @@ public class Test {
     private ParameterStore paList;
     private TestParameterStore testParam;
     private LocalDate createdDate;
-    private List<?> testSamples;
+    private List<Sample> testSamples;
+    private String collectingMethod;
+    private String barcode;
+    private Sample sample;
 
     /**
      * Constructor of the Test object, it call methods on order to validate the NhsNumber, the list of categories and the list of parameters
@@ -138,5 +142,29 @@ public class Test {
         VALIDATED;
     }
 
+    public boolean createSample(String collectingMethod, String barcode) {
+
+        this.sample = new Sample(collectingMethod, barcode);
+        testSamples.add(this.sample);
+
+        return validateSample();
+    }
+
+    public boolean validateSample() {
+        return this.sample != null && !contains(this.sample) && !exists(this.sample);
+    }
+
+    private boolean exists(Sample sample) {
+        for (Sample sample1 : this.testSamples) {
+            if (sample.getBarcode().equals(sample1.getBarcode())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean contains(Sample sample) {
+        return testSamples.contains(sample);
+    }
 
 }

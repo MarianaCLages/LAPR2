@@ -3,7 +3,7 @@
 participant "TestController" as ctrl
 participant "TestStore" as tStore
 participant "Test" as Test
-participant "TestStoreMapper" as tStoreMapper
+participant "TestDataStoreMapper" as tStoreMapper
 participant "tdataList : TestStore" as tStore1
 participant "tdataListDto : TestStoreDTO" as tStoreDTO
 participant "TestDataDTO" as tDTO

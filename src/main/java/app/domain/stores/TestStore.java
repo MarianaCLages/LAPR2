@@ -23,7 +23,7 @@ public class TestStore {
         return validateTest();
     }
 
-    private String getTestId() {
+    public String getTestId() {
         int ID = this.array.size() + 1;
         StringBuilder testNumber = new StringBuilder(String.valueOf(ID));
 
