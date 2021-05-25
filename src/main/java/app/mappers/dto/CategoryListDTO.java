@@ -1,4 +1,4 @@
-package app.domain.mappers.dto;
+package app.mappers.dto;
 
 public class CategoryListDTO {
     private String code;

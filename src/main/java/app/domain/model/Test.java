@@ -7,6 +7,7 @@ import app.domain.stores.TestParameterStore;
 import org.apache.commons.lang3.StringUtils;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Test {
 
@@ -19,6 +20,7 @@ public class Test {
     private ParameterStore paList;
     private TestParameterStore testParam;
     private LocalDate createdDate;
+    private List<?> testSamples;
 
     /**
      * Constructor of the Test object, it call methods on order to validate the NhsNumber, the list of categories and the list of parameters

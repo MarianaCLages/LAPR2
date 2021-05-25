@@ -1,4 +1,4 @@
-package app.domain.mappers.dto;
+package app.mappers.dto;
 
 public class ParameterDTO {
     private String name;
