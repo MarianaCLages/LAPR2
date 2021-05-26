@@ -118,6 +118,11 @@ public class Test {
         this.state = s;
     }
 
+    public void changeState(String s) {
+        changeState(State.contains(s));
+    }
+
+
     /**
      * @return Test unique NHS number
      */
@@ -130,7 +135,7 @@ public class Test {
         return "Test: testCode=" + testCode + ", testNhsNumber=" + testNhsNumber + ", clientCc=" + clientCc + ", testType=" + testType + ", catList=" + catList + ", paList=" + paList;
     }
 
-    public boolean createSample(String collectingMethod, Barcode barcode) {
+    public boolean createSample(Barcode barcode) {
 
         this.sample = new Sample(barcode);
         testSamples.add(this.sample);
@@ -177,10 +182,17 @@ public class Test {
 
         pa.addResult(result, em.getRefValue(pa.getpCode()));
 
-        changeState(State.SAMPLE_ANALYSED);
-
         return true;
     }
+
+    public String getBarcode() {
+        return barcode;
+    }
+
+    public List<TestParameter> getTestParam() {
+        return testParam;
+    }
+
 
     /**
      * This enum represents all the states that the Test object can assume
@@ -191,5 +203,16 @@ public class Test {
         SAMPLE_ANALYSED,
         DIAGNOSTIC_MADE,
         VALIDATED;
+
+        public static State contains(String state) {
+
+            for (State c : State.values()) {
+                if (c.name().equals(state)) {
+                    return c;
+                }
+            }
+            return null;
+        }
+
     }
 }

@@ -5,7 +5,6 @@ public class TestParameter {
     private TestParameterResult testParameterResult;
 
     /**
-     *
      * @param pCode Parameter Code
      */
     public TestParameter(String pCode) {
@@ -16,7 +15,8 @@ public class TestParameter {
         return pCode;
     }
 
-    public void addResult(double result,RefValue refValue){
-        this.testParameterResult = new TestParameterResult(result,this.pCode,refValue);
+    public void addResult(double result, RefValue refValue) {
+        this.testParameterResult = new TestParameterResult(result, this.pCode, refValue);
     }
+
 }
