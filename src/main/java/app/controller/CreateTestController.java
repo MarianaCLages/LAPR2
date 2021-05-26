@@ -41,9 +41,9 @@ public class CreateTestController {
 
     }
 
-    public boolean existClient(String clientCc) {
+    public boolean existClient(String clientTin) {
         ClientStore cList = company.clientList();
-        return cList.exists(clientCc);
+        return cList.exists(clientTin);
     }
 
     public void createTest(String testNhsNumber, String clientCc) {

@@ -4,7 +4,6 @@ import app.domain.shared.Constants;
 import app.domain.stores.ParameterCategoryStore;
 import app.domain.stores.ParameterStore;
 import net.sourceforge.barbecue.Barcode;
-import net.sourceforge.barbecue.BarcodeException;
 import org.apache.commons.lang3.StringUtils;
 
 import java.time.LocalDate;
@@ -16,7 +15,7 @@ public class Test {
     private State state;
     private String testCode;
     private String testNhsNumber;
-    private String clientCc;
+    private String clientTin;
     private TestType testType;
     private ParameterCategoryStore catList;
     private ParameterStore paList;
@@ -31,19 +30,19 @@ public class Test {
      *
      * @param testCode      unique code generated automatically
      * @param testNhsNumber unique code that identifies the test
-     * @param clientCc      unique code that identifies the client associated with the test
+     * @param clientTin      unique code that identifies the client associated with the test
      * @param testType      type of this test
      * @param catList       list of parameters categories that are measured in this test
      * @param paList        list of parameters that are measured in this test
      */
-    public Test(String testCode, String testNhsNumber, String clientCc, TestType testType, ParameterCategoryStore catList, ParameterStore paList) {
+    public Test(String testCode, String testNhsNumber, String clientTin, TestType testType, ParameterCategoryStore catList, ParameterStore paList) {
 
         checkTestNhsNumberRules(testNhsNumber);
         checkCatList(catList);
         checkPaList(paList);
         this.testCode = testCode;
         this.testNhsNumber = testNhsNumber;
-        this.clientCc = clientCc;
+        this.clientTin = clientTin;
         this.testType = testType;
         this.catList = catList;
         this.paList = paList;
@@ -119,7 +118,25 @@ public class Test {
     }
 
     public void changeState(String s) {
-        changeState(State.contains(s));
+        switch (s) {
+            case "CREATED":
+                changeState(State.CREATED);
+                break;
+            case "SAMPLE_COLLECTED":
+                changeState(State.SAMPLE_COLLECTED);
+                break;
+            case "SAMPLE_ANALYSED":
+                changeState(State.SAMPLE_ANALYSED);
+                break;
+            case "DIAGNOSTIC_MADE":
+                changeState(State.DIAGNOSTIC_MADE);
+                break;
+            case "VALIDATED":
+                changeState(State.VALIDATED);
+                break;
+            default:
+                break;
+        }
     }
 
 
@@ -131,9 +148,8 @@ public class Test {
     }
 
     @Override
-
     public String toString() {
-        return "Test: testCode=" + testCode + ", testNhsNumber=" + testNhsNumber + ", clientCc=" + clientCc + ", testType=" + testType + ", catList=" + catList + ", paList=" + paList;
+        return "Test: testCode=" + testCode + ", testNhsNumber=" + testNhsNumber + ", clientCc=" + clientTin + ", testType=" + testType + ", catList=" + catList + ", paList=" + paList;
     }
 
 
@@ -181,15 +197,7 @@ public class Test {
         DIAGNOSTIC_MADE,
         VALIDATED;
 
-        public static State contains(String state) {
 
-            for (State c : State.values()) {
-                if (c.name().equals(state)) {
-                    return c;
-                }
-            }
-            return null;
-        }
 
     }
 }

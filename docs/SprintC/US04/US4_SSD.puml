@@ -7,7 +7,7 @@ participant ":System" as S
 activate R
 R -> S: wants to register a test
 activate S
-S --> R: requests data (ClientCc, NhsNumber)
+S --> R: requests data (ClientTin, NhsNumber)
 deactivate S
 R -> S: types the requested data
 activate S

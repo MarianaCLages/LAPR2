@@ -298,4 +298,8 @@ public class Client {
     public String getCc() {
         return cc;
     }
+
+    public String getTinNumber() {
+        return tinNumber;
+    }
 }

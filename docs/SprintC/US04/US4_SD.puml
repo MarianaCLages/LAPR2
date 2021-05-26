@@ -18,7 +18,7 @@ participant ":ClientStore" as cStore
 activate R
 R -> UI: wants to register a test
 activate UI
-UI --> R: requests data (clientCc, testNhsNumber)
+UI --> R: requests data (clientTin, testNhsNumber)
 UI -> ctrl: getLists()
 activate ctrl
 ctrl -> catList**: catList = CategoryStore()
@@ -27,11 +27,11 @@ deactivate
 deactivate UI
 R -> UI: types the requested data
 activate UI
-UI -> ctrl: existClient(clientCc)
+UI -> ctrl: existClient(clientTin)
 activate ctrl
-ctrl -> cStore: existClient(clientCc)
+ctrl -> cStore: existClient(clientTin)
 activate cStore
-cStore -> cStore: existsClient(clientCc)
+cStore -> cStore: existsClient(clientTin)
 activate cStore
 return exists
 return exists

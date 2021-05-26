@@ -34,6 +34,12 @@ public class Company {
 
         this.designation = designation;
         this.authFacade = new AuthFacade();
+
+        this.parameterCategoryList = new ParameterCategoryStore();
+        this.employeeList = new EmployeeStore();
+        this.clinicalAnalysisLabList = new ClinicalAnalysisLabStore();
+        this.clientList = new ClientStore();
+        this.testList = new TestStore();
     }
 
     /**
@@ -57,7 +63,6 @@ public class Company {
      */
 
     public ParameterCategoryStore getParameterCategoryList() {
-        this.parameterCategoryList = new ParameterCategoryStore();
         return this.parameterCategoryList;
     }
 
@@ -77,7 +82,6 @@ public class Company {
      */
 
     public EmployeeStore getEmployeeList() {
-        this.employeeList = new EmployeeStore();
         return this.employeeList;
 
     }
@@ -135,7 +139,6 @@ public class Company {
      * @return empty list of ClinicalAnalysisLab objects
      */
     public ClinicalAnalysisLabStore getClinicalAnalysisLabList() {
-        this.clinicalAnalysisLabList = new ClinicalAnalysisLabStore();
         return this.clinicalAnalysisLabList;
     }
 
@@ -145,7 +148,6 @@ public class Company {
      * @return empty list of Client objects
      */
     public ClientStore getClientList() {
-        this.clientList = new ClientStore();
         return this.clientList;
     }
 
@@ -159,7 +161,6 @@ public class Company {
      * @return empty list of Test objects
      */
     public TestStore getTestList() {
-        this.testList = new TestStore();
         return this.testList;
     }
     public TestStore testList(){

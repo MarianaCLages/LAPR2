@@ -22,10 +22,10 @@ public class ExternalApi implements BarcodeAdapter{
 
 
 
-    public Barcode createBarcode() throws BarcodeException {
+    public String createBarcode() throws BarcodeException {
         barcodegrown++;
         Barcode barcode = BarcodeFactory.createUPCA(String.format("%011d",barcodegrown));
-        return barcode;
+        return barcode.getData();
     }
 
     public BufferedImage createBarcodeImage(Barcode barcode) throws OutputException {

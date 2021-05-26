@@ -64,9 +64,9 @@ public class ClientStore {
         return false;
     }
 
-    public boolean exists(String cc){
+    public boolean exists(String tin){
         for (Client c : array) {
-            return c.getCc().equals(cc);
+            return c.getTinNumber().equals(tin);
         }
         return false;
     }

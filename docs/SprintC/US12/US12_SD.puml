@@ -29,16 +29,23 @@ loop for all the parameters
 
     UI -> ctrl: addTestResult(parameterCode,result)
     activate ctrl
-    ctrl -> Test: addTestResult(parameterCode,result,metric)
+    ctrl -> Test: addTestResult(parameterCode,result)
     activate Test
     ref over Test : SD_AddTestResult(parameterCode,result)
     Test --> ctrl : ok
     deactivate Test
-    ctrl --> UI: ok
-    deactivate ctrl
-
 
 end
+ctrl -> Test: ChangeStage()
+activate Test
+Test -> Test: changeState()
+activate Test
+deactivate
+Test --> ctrl: ok
+deactivate
+ctrl --> UI : ok
+deactivate ctrl
+
 
 UI --> cct: Show all data and show success
 deactivate UI

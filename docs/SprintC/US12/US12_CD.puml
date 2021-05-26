@@ -50,9 +50,9 @@ Test ..> TestParameter
 Test ..> ExternalModule
 TestParameter --> TestParameterResult
 
-CovidReferenceValues1API <-- CovidReferenceValues1APIAdapter
-ExternalModule2API <-- ExternalModule2APIAdapter
-ExternalModule3API <-- ExternalModule3APIAdapter
+CovidReferenceValues1API <.. CovidReferenceValues1APIAdapter
+ExternalModule2API <.. ExternalModule2APIAdapter
+ExternalModule3API <.. ExternalModule3APIAdapter
 
 CovidReferenceValues1APIAdapter ..|> ExternalModule
 ExternalModule2APIAdapter ..|> ExternalModule

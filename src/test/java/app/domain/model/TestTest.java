@@ -142,7 +142,7 @@ public class TestTest {
     }
 
 
- /*   @Test
+    @Test
     public void addTestResultTestValid() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         ParameterCategoryStore cat = new ParameterCategoryStore();
@@ -155,10 +155,45 @@ public class TestTest {
 
         app.domain.model.Test test = new app.domain.model.Test("000000000000001","123456789187","1234567890123456",testType,cat,pa);
         test.addTestParameter();
+        test.changeState("SAMPLE_COLLECTED");
 
         Assert.assertTrue(test.addTestResult("AH000",0.254));
     }
 
-  */
+    @Test
+    public void addTestResultNotAnalysedSample() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        ParameterStore pa = new ParameterStore();
+        Parameter p1 = new Parameter("AH000","Nome","description",pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000","description","sei lá",cat);
+
+        app.domain.model.Test test = new app.domain.model.Test("000000000000001","123456789187","1234567890123456",testType,cat,pa);
+        test.addTestParameter();
+
+        Assert.assertFalse(test.addTestResult("AH000",0.254));
+    }
+
+    @Test
+    public void addTestResultNullTestParameters() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        ParameterStore pa = new ParameterStore();
+        Parameter p1 = new Parameter("AH000","Nome","description",pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000","description","sei lá",cat);
+
+        app.domain.model.Test test = new app.domain.model.Test("000000000000001","123456789187","1234567890123456",testType,cat,pa);
+
+        test.addTestParameter();
+        test.changeState("SAMPLE_COLLECTED");
+        boolean value = test.addTestResult("AH001",0.254);
+        Assert.assertFalse(value);
+    }
 
 }

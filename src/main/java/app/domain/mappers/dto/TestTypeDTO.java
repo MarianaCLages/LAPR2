@@ -16,4 +16,9 @@ public class TestTypeDTO {
     public String getDescription() {
         return description;
     }
+
+    @Override
+    public String toString() {
+        return "TestType :" + "testID=" + testID + ", description=" + description;
+    }
 }

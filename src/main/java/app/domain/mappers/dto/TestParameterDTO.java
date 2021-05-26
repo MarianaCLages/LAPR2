@@ -10,4 +10,9 @@ public class TestParameterDTO {
     public String getPcode() {
         return pcode;
     }
+
+    @Override
+    public String toString() {
+        return "TestParameterDTO" + "pcode=" + pcode;
+    }
 }

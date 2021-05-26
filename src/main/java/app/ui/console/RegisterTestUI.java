@@ -39,9 +39,9 @@ public class RegisterTestUI implements Runnable {
         boolean pa = true;
 
         do {
-            String cc = Utils.readLineFromConsole("Please enter the cc of the Client ()");
+            String tin = Utils.readLineFromConsole("Please enter the Tin of the Client ()");
             ctrl.getLists();
-            if (ctrl.existClient(cc)) {
+            if (ctrl.existClient(tin)) {
                 boolean exception = false;
                 do {
                     String testNhsCode = Utils.readLineFromConsole("Please enter the Test NHS Code (12 characters)");
@@ -64,7 +64,7 @@ public class RegisterTestUI implements Runnable {
                         System.out.println("There must exist Types of Tests, Parameter Categories and Parameters in the system \n");
                     }
                     try {
-                        ctrl.createTest(testNhsCode, cc);
+                        ctrl.createTest(testNhsCode, tin);
                         exception = false;
                     } catch (Exception e) {
                         System.out.println(e.getMessage());

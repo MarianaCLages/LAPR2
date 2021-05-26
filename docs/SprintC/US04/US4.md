@@ -58,7 +58,7 @@ NHS code: 12 alphanumeric characters.
 
 - **AC1:** The receptionist must select the Categories and Parameters to be analysed from all possible Categories and Parameters in accordance with
   the test type.
-- **AC2:** Citizen Card number is a 16-digit number.
+- **AC2:** Client's Tax Identification Number must have 10 digits.
 - **AC3:** Test Code must be a sequential number with 12 digits that is generated automatically
 - **AC4:** Each test can have more than one category.
 - **AC5:** The system should automatically generate the date and time of the every event
@@ -79,7 +79,7 @@ NHS code: 12 alphanumeric characters.
 
 * Typed data:
     * client's citizen card number
-    * Nhs Number
+    * Client's Tin Number
 
 
 * Selected data:

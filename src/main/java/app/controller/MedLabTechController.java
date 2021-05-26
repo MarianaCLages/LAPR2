@@ -29,9 +29,9 @@ public class MedLabTechController {
         return store.getTest();
     }
 
-    public void createSampleBarcode(net.sourceforge.barbecue.Barcode barcode){
-        sample.createSample(barcode);
-    }
+    //public void createSampleBarcode(net.sourceforge.barbecue.Barcode barcode){
+   //     sample.createSample(barcode);
+ //   }
 
 
 }
