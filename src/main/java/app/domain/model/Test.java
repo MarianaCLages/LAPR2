@@ -3,11 +3,11 @@ package app.domain.model;
 import app.domain.shared.Constants;
 import app.domain.stores.ParameterCategoryStore;
 import app.domain.stores.ParameterStore;
-import app.domain.stores.TestParameterStore;
+import net.sourceforge.barbecue.Barcode;
 import org.apache.commons.lang3.StringUtils;
 
 import java.time.LocalDate;
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Test {
@@ -19,7 +19,7 @@ public class Test {
     private TestType testType;
     private ParameterCategoryStore catList;
     private ParameterStore paList;
-    private TestParameterStore testParam;
+    private List<TestParameter> testParam;
     private LocalDate createdDate;
     private List<Sample> testSamples;
     private String collectingMethod;
@@ -98,12 +98,12 @@ public class Test {
      * Creates a new TestParameter object for each Parameter in the Parameter list received in the constructor and saves it in a new TestParameter List
      */
     public void addTestParameter() {
-        this.testParam = new TestParameterStore();
+        this.testParam = new ArrayList<>();
         for (Parameter p : this.paList.getList()) {
             String code = p.getCode();
-            this.testParam.createTestParameter(code);
+            TestParameter tp = new TestParameter(code);
 
-            this.testParam.addTestParameter();
+            this.testParam.add(tp);
 
         }
         changeState(State.CREATED);
@@ -118,6 +118,11 @@ public class Test {
         this.state = s;
     }
 
+    public void changeState(String s) {
+        changeState(State.contains(s));
+    }
+
+
     /**
      * @return Test unique NHS number
      */
@@ -130,19 +135,7 @@ public class Test {
         return "Test: testCode=" + testCode + ", testNhsNumber=" + testNhsNumber + ", clientCc=" + clientCc + ", testType=" + testType + ", catList=" + catList + ", paList=" + paList;
     }
 
-    
-    /**
-     * This enum represents all the states that the Test object can assume
-     */
-    enum State {
-        CREATED,
-        SAMPLE_COLLECTED,
-        SAMPLE_ANALYSED,
-        DIAGNOSTIC_MADE,
-        VALIDATED;
-    }
-
-    public boolean createSample( net.sourceforge.barbecue.Barcode barcode) {
+    public boolean createSample(Barcode barcode) {
 
         this.sample = new Sample(barcode);
         testSamples.add(this.sample);
@@ -167,4 +160,59 @@ public class Test {
         return testSamples.contains(sample);
     }
 
+    public boolean addTestResult(String parameterCode, double result) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+
+        if (!state.equals(State.SAMPLE_COLLECTED)) {
+            return false;
+        }
+
+        TestParameter pa = null;
+        for (TestParameter p : testParam) {
+            if (p.getpCode().equals(parameterCode)) {
+                pa = p;
+            }
+        }
+        if (pa == null) {
+            return false;
+        }
+
+        String externalModule = testType.getExternalModule();
+        Class<?> oClass = Class.forName(externalModule);
+        RefValueAdapter em = (RefValueAdapter) oClass.newInstance();
+
+        pa.addResult(result, em.getRefValue(pa.getpCode()));
+
+        return true;
+    }
+
+    public String getBarcode() {
+        return barcode;
+    }
+
+    public List<TestParameter> getTestParam() {
+        return testParam;
+    }
+
+
+    /**
+     * This enum represents all the states that the Test object can assume
+     */
+    enum State {
+        CREATED,
+        SAMPLE_COLLECTED,
+        SAMPLE_ANALYSED,
+        DIAGNOSTIC_MADE,
+        VALIDATED;
+
+        public static State contains(String state) {
+
+            for (State c : State.values()) {
+                if (c.name().equals(state)) {
+                    return c;
+                }
+            }
+            return null;
+        }
+
+    }
 }

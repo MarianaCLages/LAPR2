@@ -1,12 +1,13 @@
 package app.controller;
 
 
+import app.domain.mappers.TestTypeListMapper;
+import app.domain.mappers.dto.TestTypeDTO;
 import app.domain.model.Company;
 import app.domain.model.TestType;
 import app.domain.stores.TestStore;
 import app.domain.stores.TestTypeStore;
-import app.mappers.TestTypeListMapper;
-import app.mappers.dto.TestTypeDTO;
+
 
 import java.util.List;
 
