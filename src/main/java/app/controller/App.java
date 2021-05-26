@@ -132,7 +132,8 @@ public class App {
         testStore.createTest("100000000000", "1234567890", bloodTest, parameterCategoryStore, parameterStore);
         testStore.createTest("100000000001", "1234567890", covidTest, parameterCategoryStore, parameterStore1);
 
-
+        this.authFacade.addUserWithRole("Clinical Chemistry Technologist ", "clichetec@lei.sem2.pt", "123456", Constants.ROLE_CLINICALCHEMISTRYTECHNOLOGIST);
+        this.authFacade.addUserWithRole("Medical Lab Technician ", "melate@lei.sem2.pt", "123456", Constants.ROLE_MEDICALLABTECHNICIIAN);
         this.authFacade.addUserWithRole("Receptionist", "recep@lei.sem2.pt", "123456", Constants.ROLE_RECEPTIONIST);
         this.authFacade.addUserWithRole("Main Administrator", "admin@lei.sem2.pt", "123456", Constants.ROLE_ADMIN);
     }

@@ -26,9 +26,13 @@ public class RecordResultsController {
 
     public List<TestParameterDTO> getTestParameterList(String sampleId){
         this.t = tStore.getTest(sampleId);
-        testParameters = t.getTestParam();
-        TestParameterListMapper testParameterListMapper = new TestParameterListMapper();
-        return testParameterListMapper.toDTO(testParameters);
+        if (this.t == null){
+            throw new IllegalStateException("Sample does not exists");
+        }else {
+            testParameters = t.getTestParam();
+            TestParameterListMapper testParameterListMapper = new TestParameterListMapper();
+            return testParameterListMapper.toDTO(testParameters);
+        }
     }
 
     public boolean addTestResult(String parameterCode, double result) throws ClassNotFoundException, InstantiationException, IllegalAccessException {

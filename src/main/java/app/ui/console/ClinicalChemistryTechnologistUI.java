@@ -5,14 +5,13 @@ import app.ui.console.utils.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MedLabTechUI implements Runnable {
-    public MedLabTechUI() {
+public class ClinicalChemistryTechnologistUI implements Runnable {
+    public ClinicalChemistryTechnologistUI() {
     }
 
     public void run()
     {
         List<MenuItem> options = new ArrayList<MenuItem>();
-      //  options.add(new MenuItem("Create a new Sample", new RecordSampleUI()));
         options.add(new MenuItem("Record Results", new RecordResultsUI()));
 
         int option = 0;
