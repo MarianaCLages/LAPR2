@@ -1,8 +1,8 @@
 @startuml
 autonumber
 actor MedLabTech as MLT
-participant ":MedLabTechUI" as UI
-participant ":MedLabTechController" as CTRL
+participant ":RecordSampleUI" as UI
+participant ":RecordSampleController" as CTRL
 participant "ts:TestStore" as TT
 participant "test:Test" as t
 participant "s: Sample" as S

@@ -1,9 +1,9 @@
 @startuml
 
-class MedLabTechUI{
+class RecordSampleUI{
 }
 
-class MedLabTechController{
+class RecordSampleController{
 getTestList();
 saveSample()
 }
@@ -21,9 +21,9 @@ class Sample{
 saveSample();
 }
 
-MedLabTechUI ..> MedLabTechController
-MedLabTechController ..> TestStore
-MedLabTechController ..> SampleStore
+RecordSampleUI ..> RecordSampleController
+RecordSampleController ..> TestStore
+RecordSampleController ..> SampleStore
 SampleStore --> Sample
 
 @enduml
