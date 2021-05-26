@@ -20,21 +20,21 @@ public class RefValueAdapter2 implements RefValueAdapter {
 
     @Override
     public double getMinValue(String param) {
-        EMRefValue reference = api.getReferenceFor(param, Date.from(Instant.now()));
+        EMRefValue reference = api.getReferenceFor(param);
 
         return reference.getMinValue();
     }
 
     @Override
     public double getMaxValue(String param) {
-        EMRefValue reference = api.getReferenceFor(param, Date.from(Instant.now()));
+        EMRefValue reference = api.getReferenceFor(param);
 
         return reference.getMaxValue();
     }
 
     @Override
     public String getMetric(String param) {
-        EMRefValue reference = api.getReferenceFor(param, Date.from(Instant.now()));
+        EMRefValue reference = api.getReferenceFor(param);
 
         return reference.getMetric();
     }

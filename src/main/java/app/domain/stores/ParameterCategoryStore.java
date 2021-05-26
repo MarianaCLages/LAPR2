@@ -87,7 +87,6 @@ public class ParameterCategoryStore {
     public boolean saveParameterCategory() {
         if (ValidateParameterCategory(this.pc)) {
             add(this.pc);
-            System.out.println(this.pc.toString());
             return true;
         } else {
             return false;
