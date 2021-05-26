@@ -130,18 +130,6 @@ public class Test {
         return "Test: testCode=" + testCode + ", testNhsNumber=" + testNhsNumber + ", clientCc=" + clientCc + ", testType=" + testType + ", catList=" + catList + ", paList=" + paList;
     }
 
-    
-    /**
-     * This enum represents all the states that the Test object can assume
-     */
-    enum State {
-        CREATED,
-        SAMPLE_COLLECTED,
-        SAMPLE_ANALYSED,
-        DIAGNOSTIC_MADE,
-        VALIDATED;
-    }
-
     public boolean createSample(String collectingMethod, Barcode barcode) {
 
         this.sample = new Sample(barcode);
@@ -167,4 +155,41 @@ public class Test {
         return testSamples.contains(sample);
     }
 
+    public boolean addTestResult(String parameterCode, double result) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+
+        if (!state.equals(State.SAMPLE_COLLECTED)) {
+            return false;
+        }
+
+        TestParameter pa = null;
+        for (TestParameter p : testParam) {
+            if (p.getpCode().equals(parameterCode)) {
+                pa = p;
+            }
+        }
+        if (pa == null) {
+            return false;
+        }
+
+        String externalModule = testType.getExternalModule();
+        Class<?> oClass = Class.forName(externalModule);
+        RefValueAdapter em = (RefValueAdapter) oClass.newInstance();
+
+        pa.addResult(result, em.getRefValue(pa.getpCode()));
+
+        changeState(State.SAMPLE_ANALYSED);
+
+        return true;
+    }
+
+    /**
+     * This enum represents all the states that the Test object can assume
+     */
+    enum State {
+        CREATED,
+        SAMPLE_COLLECTED,
+        SAMPLE_ANALYSED,
+        DIAGNOSTIC_MADE,
+        VALIDATED;
+    }
 }

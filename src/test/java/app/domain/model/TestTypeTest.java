@@ -17,7 +17,7 @@ public class TestTypeTest {
         cat.add(pc1);
         cat.add(pc2);
         //Arrange + Act
-        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
         //Assert
         Assert.assertNotNull(t);
     }
@@ -39,7 +39,7 @@ public class TestTypeTest {
         ParameterCategory pc2 = new ParameterCategory("A8554", "Hemograma");
         cat.add(pc1);
         cat.add(pc2);
-        TestType t = new TestType("wl11w", "descrição", "metodo 1", cat);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
     }
 
 
@@ -72,7 +72,7 @@ public class TestTypeTest {
         ParameterCategory pc2 = new ParameterCategory("A8554", "Hemograma");
         cat.add(pc1);
         cat.add(pc2);
-        TestType t = new TestType("2ed45", "descrição descr", "metodo 1", cat);
+        TestType t = new TestType("BL000", "descrição descr", "metodo 1", cat);
     }
 
     @Test
@@ -83,7 +83,7 @@ public class TestTypeTest {
         ParameterCategory pc2 = new ParameterCategory("A8554", "Hemograma");
         cat.add(pc1);
         cat.add(pc2);
-        TestType t = new TestType("2ed45", "descrição dqwr", "metodo 1", cat);
+        TestType t = new TestType("BL000", "descrição dqwr", "metodo 1", cat);
     }
 
 
@@ -117,7 +117,7 @@ public class TestTypeTest {
         ParameterCategory pc2 = new ParameterCategory("A8554", "Hemograma");
         cat.add(pc1);
         cat.add(pc2);
-        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
     }
 
     @Test
@@ -128,7 +128,7 @@ public class TestTypeTest {
         ParameterCategory pc2 = new ParameterCategory("A8554", "Hemograma");
         cat.add(pc1);
         cat.add(pc2);
-        TestType t = new TestType("283h3", "descrição", "metodo 1 metodo 2 me", cat);
+        TestType t = new TestType("BL000", "descrição", "metodo 1 metodo 2 me", cat);
     }
 
 
@@ -139,13 +139,13 @@ public class TestTypeTest {
         ParameterCategory pc2 = new ParameterCategory("A8554", "Hemograma");
         cat.add(pc1);
         cat.add(pc2);
-        TestType t = new TestType("283h3", "descrição", "", cat);
+        TestType t = new TestType("BL000", "descrição", "", cat);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void CreateInvalidTestTypeEmptyCategories() {
         ParameterCategoryStore cat = new ParameterCategoryStore();
-        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
     }
 
 
@@ -155,9 +155,9 @@ public class TestTypeTest {
         ParameterCategory pc1 = new ParameterCategory("A8554", "Hemograma");
         cat.add(pc1);
 
-        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
 
-        String expected = "283h3";
+        String expected = "BL000";
         String actual = t.getTestID();
 
         Assert.assertEquals(expected, actual);
@@ -169,7 +169,7 @@ public class TestTypeTest {
         ParameterCategory pc1 = new ParameterCategory("A8554", "Hemograma");
         cat.add(pc1);
 
-        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
 
         ParameterCategoryStore expected = cat;
         ParameterCategoryStore actual = t.getCatStore();

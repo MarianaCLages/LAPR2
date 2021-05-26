@@ -1,8 +1,8 @@
-package app.mappers;
+package app.domain.mappers;
 
 import app.domain.model.Test;
 import app.domain.stores.TestStore;
-import app.mappers.dto.TestDTO;
+import app.domain.mappers.dto.TestDTO;
 
 import java.util.ArrayList;
 import java.util.List;

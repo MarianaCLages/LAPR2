@@ -1,6 +1,6 @@
-package app.mappers;
+package app.domain.mappers;
 
-import app.mappers.dto.ParameterDTO;
+import app.domain.mappers.dto.ParameterDTO;
 import app.domain.model.Parameter;
 
 import java.util.ArrayList;

@@ -16,7 +16,7 @@ public class TestTypeStoreTest {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
         //Arrange
-        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
         //Act
         store.add(t);
         //Assert
@@ -43,8 +43,8 @@ public class TestTypeStoreTest {
         ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
         cat.add(pc1);
         //Arrange
-        TestType t1 = new TestType("283h3", "descrição", "metodo 1", cat);
-        TestType t2 = new TestType("283h3", "descrição hc", "metodo 7", cat);
+        TestType t1 = new TestType("COV19", "descrição", "metodo 1", cat);
+        TestType t2 = new TestType("COV19", "descrição hc", "metodo 7", cat);
         //Act
         store.add(t1);
         store.add(t2);
@@ -57,14 +57,14 @@ public class TestTypeStoreTest {
         ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
         cat.add(pc1);
 
-        TestType t1 = new TestType("283h3", "descrição", "metodo 1", cat);
-        TestType t2 = new TestType("1234r", "descrição", "metodo 3", cat);
+        TestType t1 = new TestType("COV19", "descrição", "metodo 1", cat);
+        TestType t2 = new TestType("COV19", "descrição", "metodo 3", cat);
 
         store.add(t1);
         store.add(t2);
 
         TestType expected = t1;
-        TestType actual = store.getByID("283h3");
+        TestType actual = store.getByID("COV19");
 
         Assert.assertEquals(expected, actual);
     }
@@ -74,14 +74,14 @@ public class TestTypeStoreTest {
         ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
         cat.add(pc1);
 
-        TestType t1 = new TestType("283h3", "descrição", "metodo 1", cat);
-        TestType t2 = new TestType("1234r", "descrição", "metodo 3", cat);
+        TestType t1 = new TestType("COV19", "descrição", "metodo 1", cat);
+        TestType t2 = new TestType("COV19", "descrição", "metodo 3", cat);
 
         store.add(t1);
         store.add(t2);
 
         TestType expected = null;
-        TestType actual = store.getByID("28AK3");
+        TestType actual = store.getByID("COt19");
 
         Assert.assertEquals(expected, actual);
     }
@@ -91,9 +91,9 @@ public class TestTypeStoreTest {
         //Arrange
         ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
         cat.add(pc1);
-        TestType t1 = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestType t1 = new TestType("COV19", "descrição", "metodo 1", cat);
         store.add(t1);
-        TestType t2 = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestType t2 = new TestType("COV19", "descrição", "metodo 1", cat);
         store.add(t2);
         //Assert
         Assert.assertFalse(store.saveTestType());
@@ -104,7 +104,7 @@ public class TestTypeStoreTest {
         TestTypeStore store = new TestTypeStore();
         ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
         cat.add(pc1);
-        Assert.assertNotNull(store.CreateTestType("283h3","descrição", "metodo 1", cat));
+        Assert.assertNotNull(store.CreateTestType("COV19","descrição", "metodo 1", cat));
 
     }
 
