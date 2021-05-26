@@ -3,11 +3,11 @@ package app.domain.model;
 import app.domain.shared.Constants;
 import app.domain.stores.ParameterCategoryStore;
 import app.domain.stores.ParameterStore;
-import net.sourceforge.barbecue.Barcode;
+import app.domain.stores.TestParameterStore;
 import org.apache.commons.lang3.StringUtils;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Test {
@@ -19,7 +19,7 @@ public class Test {
     private TestType testType;
     private ParameterCategoryStore catList;
     private ParameterStore paList;
-    private List<TestParameter> testParam;
+    private TestParameterStore testParam;
     private LocalDate createdDate;
     private List<Sample> testSamples;
     private String collectingMethod;
@@ -98,12 +98,12 @@ public class Test {
      * Creates a new TestParameter object for each Parameter in the Parameter list received in the constructor and saves it in a new TestParameter List
      */
     public void addTestParameter() {
-        this.testParam = new ArrayList<>();
+        this.testParam = new TestParameterStore();
         for (Parameter p : this.paList.getList()) {
             String code = p.getCode();
-            TestParameter tp = new TestParameter(code);
+            this.testParam.createTestParameter(code);
 
-            this.testParam.add(tp);
+            this.testParam.addTestParameter();
 
         }
         changeState(State.CREATED);
@@ -142,7 +142,7 @@ public class Test {
         VALIDATED;
     }
 
-    public boolean createSample(String collectingMethod, Barcode barcode) {
+    public boolean createSample( net.sourceforge.barbecue.Barcode barcode) {
 
         this.sample = new Sample(barcode);
         testSamples.add(this.sample);

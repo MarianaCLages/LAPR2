@@ -1,12 +1,12 @@
 package app.controller;
 
-
 import app.domain.model.Company;
 import app.domain.model.TestType;
+import app.domain.model.Test;
 import app.domain.stores.TestStore;
-import app.domain.stores.TestTypeStore;
-import app.mappers.TestTypeListMapper;
-import app.mappers.dto.TestTypeDTO;
+import app.mappers.TestListMapper;
+import app.mappers.dto.TestDTO;
+
 
 import java.util.List;
 
@@ -14,22 +14,20 @@ public class CreateReportController {
 
     private Company company;
     private TestStore store;
-    private TestTypeStore ttList;
+    private TestStore tList;
     private TestType testType;
+    private Test sample;
 
-    public CreateReportController(Company company) {
-        this.company = company;
-        store = company.getTestList();
+
+    public List<TestDTO> tList() {
+        this.tList = company.testList();
+        TestListMapper typeMapper = new TestListMapper();
+        return typeMapper.toDTO(tList);
     }
 
-
-
-    public List<TestTypeDTO> getTestTypeList() {
-        this.ttList = company.testTypeList();
-        TestTypeListMapper typeMapper = new TestTypeListMapper();
-        return typeMapper.toDTO(ttList);
+    public String getTest(){
+        return store.getTest();
     }
-
 
 
 }
