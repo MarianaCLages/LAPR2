@@ -22,4 +22,13 @@ public class RefValue {
     public String getMetric() {
         return metric;
     }
+
+    @Override
+    public String toString() {
+        return "RefValue{" +
+                "minValue=" + minValue +
+                ", maxValue=" + maxValue +
+                ", metric='" + metric + '\'' +
+                '}';
+    }
 }
