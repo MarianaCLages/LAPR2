@@ -12,7 +12,7 @@ public class TestType {
     private String description;
     private String collectingMethod;
     private ParameterCategoryStore catStore;
-
+    private String ExternalModule;
     /**
      * Constructor of TestType, it calls methods in order to validate the parameters
      *
@@ -30,6 +30,22 @@ public class TestType {
         this.description = description;
         this.collectingMethod = collectingMethod;
         this.catStore = catStore;
+        this.ExternalModule = setExternalModule(testID);
+
+    }
+
+    private String setExternalModule(String testID){
+        if (testID.equals("BL000")){
+            ExternalModule = Constants.RESULTS_REFERENCE_API;
+        }
+        else{
+            if(testID.equals("COV19")){
+                ExternalModule = Constants.COVID_REFERENCE_API;
+            }else {
+                throw new IllegalArgumentException("There is no external module in the System associated with this type of test");
+            }
+        }
+        return ExternalModule;
     }
 
     /**
@@ -106,6 +122,10 @@ public class TestType {
     }
 
     public String getCollectingMethod() {return collectingMethod;}
+
+    public String getExternalModule() {
+        return ExternalModule;
+    }
 }
 
 

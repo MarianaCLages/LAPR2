@@ -18,7 +18,7 @@ public class ClinicalAnalysisLabTest {
     public void RegisterLabCorrect() {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
-        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
@@ -185,7 +185,7 @@ public class ClinicalAnalysisLabTest {
     public void ClinicalAnalysisLab() {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
-        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         ClinicalAnalysisLab lab = new ClinicalAnalysisLab(store);

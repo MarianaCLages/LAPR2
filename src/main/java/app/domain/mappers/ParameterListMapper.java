@@ -1,6 +1,6 @@
-package app.mappers;
+package app.domain.mappers;
 
-import app.mappers.dto.ParameterDTO;
+import app.domain.mappers.dto.ParameterDTO;
 import app.domain.model.Parameter;
 
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.List;
 public class ParameterListMapper {
 
     private ParameterDTO toDTO(Parameter pa) {
-        return new ParameterDTO(pa.getCode(), pa.getName());
+        return new ParameterDTO(pa.getName(),pa.getCode());
     }
 
     public List<ParameterDTO> toDTO(List<Parameter> paList) {

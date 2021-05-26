@@ -19,7 +19,7 @@ public class TestStoreTest {
         ParameterStore pa = new ParameterStore();
         Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
         pa.add(p1);
-        TestType testType = new TestType("AF123", "description", "sei lá", cat);
+        TestType testType = new TestType("COV19", "description", "sei lá", cat);
         TestStore store = new TestStore();
 
         Assert.assertTrue(store.createTest("123456789187", "1234567890123456", testType, cat, pa));
@@ -35,7 +35,7 @@ public class TestStoreTest {
         ParameterStore pa = new ParameterStore();
         Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
         pa.add(p1);
-        TestType testType = new TestType("AF123", "description", "sei lá", cat);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
         TestStore store = new TestStore();
 
         store.createTest("123456789187", "1234567890123456", testType, cat, pa);
@@ -53,7 +53,7 @@ public class TestStoreTest {
         ParameterStore pa = new ParameterStore();
         Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
         pa.add(p1);
-        TestType testType = new TestType("AF123", "description", "sei lá", cat);
+        TestType testType = new TestType("COV19", "description", "sei lá", cat);
         TestStore store = new TestStore();
 
         store.createTest("123456789187", "1234567890123456", testType, cat, pa);
@@ -74,7 +74,7 @@ public class TestStoreTest {
         ParameterStore pa = new ParameterStore();
         Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
         pa.add(p1);
-        TestType testType = new TestType("AF123", "description", "sei lá", cat);
+        TestType testType = new TestType("COV19", "description", "sei lá", cat);
         TestStore store = new TestStore();
 
         store.createTest("123456789187", "1234567890123456", testType, cat, pa);

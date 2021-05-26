@@ -63,8 +63,17 @@ public class TestStore {
         return this.array;
     }
 
-    public String getTest(){
+    public String getTest() {
         return this.t.toString();
+    }
+
+    public Test getTest(String sampleId) {
+        for (Test t : this.array) {
+            if (t.getBarcode().equals(sampleId)) {
+                return t;
+            }
+        }
+        return null;
     }
 
 

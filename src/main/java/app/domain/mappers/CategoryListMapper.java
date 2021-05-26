@@ -1,6 +1,6 @@
-package app.mappers;
+package app.domain.mappers;
 
-import app.mappers.dto.CategoryListDTO;
+import app.domain.mappers.dto.CategoryListDTO;
 import app.domain.model.ParameterCategory;
 import app.domain.stores.ParameterCategoryStore;
 

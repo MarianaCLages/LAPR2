@@ -15,7 +15,7 @@ public class RefValueAdapter2 implements RefValueAdapter {
 
     @Override
     public RefValue getRefValue(String param) {
-        return new RefValue(getMinValue(param),getMaxValue(param),getMetric(param));
+        return new RefValue(getMinValue(param), getMaxValue(param), getMetric(param));
     }
 
     @Override

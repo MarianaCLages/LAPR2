@@ -31,6 +31,8 @@ public class Constants {
     public static final int TEST_NHS_CODE = 12;
     public static final int DIAGNOSIS_MAX_LENGHT = 200;
 
+    public static final int ACCESS_KEY = 12345;
+
     public static final String BARCODE_API = "net.sourceforge.barbecue";
     public static final String COVID_REFERENCE_API = "com.example3.CovidReferenceValues1API";
     public static final String RESULTS_REFERENCE_API = "com.example2.ExternalModule2API";

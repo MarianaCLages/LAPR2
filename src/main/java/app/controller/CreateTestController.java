@@ -1,11 +1,11 @@
 package app.controller;
 
-import app.mappers.CategoryListMapper;
-import app.mappers.ParameterListMapper;
-import app.mappers.TestTypeListMapper;
-import app.mappers.dto.CategoryListDTO;
-import app.mappers.dto.ParameterDTO;
-import app.mappers.dto.TestTypeDTO;
+import app.domain.mappers.CategoryListMapper;
+import app.domain.mappers.ParameterListMapper;
+import app.domain.mappers.TestTypeListMapper;
+import app.domain.mappers.dto.CategoryListDTO;
+import app.domain.mappers.dto.ParameterDTO;
+import app.domain.mappers.dto.TestTypeDTO;
 import app.domain.model.Company;
 import app.domain.model.Parameter;
 import app.domain.model.ParameterCategory;

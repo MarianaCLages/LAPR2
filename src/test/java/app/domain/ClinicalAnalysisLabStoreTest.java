@@ -21,7 +21,7 @@ public class ClinicalAnalysisLabStoreTest {
     public void CreateClinicalAnalysisLab() {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
-        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
@@ -33,7 +33,7 @@ public class ClinicalAnalysisLabStoreTest {
     public void CreateClinicalAnalysisLabWrong() {
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
-        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
@@ -45,7 +45,7 @@ public class ClinicalAnalysisLabStoreTest {
     public void ValidateClinicalAnalysisLab(){
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
-        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
@@ -60,7 +60,7 @@ public class ClinicalAnalysisLabStoreTest {
     public void ValidateClinicalAnalysisLabWrong(){
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
-        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
@@ -74,7 +74,7 @@ public class ClinicalAnalysisLabStoreTest {
     public void contains(){
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
-        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
@@ -88,7 +88,7 @@ public class ClinicalAnalysisLabStoreTest {
     public void saveClinicalAnalysisLab(){
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
-        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
@@ -101,7 +101,7 @@ public class ClinicalAnalysisLabStoreTest {
     public void saveClinicalAnalysisLabWrong(){
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
-        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
@@ -115,7 +115,7 @@ public class ClinicalAnalysisLabStoreTest {
     public void add(){
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         cat.add(pc1);
-        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act

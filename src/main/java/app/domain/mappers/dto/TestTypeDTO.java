@@ -1,4 +1,4 @@
-package app.mappers.dto;
+package app.domain.mappers.dto;
 
 public class TestTypeDTO {
     private String testID;

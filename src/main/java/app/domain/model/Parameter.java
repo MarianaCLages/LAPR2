@@ -54,6 +54,7 @@ public class Parameter {
         if (name.length() > Constants.MAX_PARAMETER_NAME)
             throw new IllegalArgumentException("Name must have at least 8 chars.");
         name = name.toLowerCase();
+        name = name.replace(" ", "");
         char[] charArray = name.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
             char c = charArray[i];

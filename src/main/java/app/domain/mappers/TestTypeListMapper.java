@@ -1,6 +1,6 @@
-package app.mappers;
+package app.domain.mappers;
 
-import app.mappers.dto.TestTypeDTO;
+import app.domain.mappers.dto.TestTypeDTO;
 import app.domain.model.TestType;
 import app.domain.stores.TestTypeStore;
 
