@@ -11,7 +11,7 @@ public class ClinicalAnalysisLabTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void ClinicalNull() {
-        ClinicalAnalysisLab cli = new ClinicalAnalysisLab(null,null,null,null,null,null);
+        ClinicalAnalysisLab cli = new ClinicalAnalysisLab(null, null, null, null, null, null);
     }
 
     @Test
@@ -22,7 +22,7 @@ public class ClinicalAnalysisLabTest {
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","6357896543","12345678901", store);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45", "6357896543", "12345678901", store);
         //Assert
         Assert.assertNotNull(lab);
     }
@@ -35,7 +35,7 @@ public class ClinicalAnalysisLabTest {
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio laboratorio dois","porto", "2gs45","6357976543","16297483987", store);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio laboratorio dois", "porto", "2gs45", "6357976543", "16297483987", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -46,7 +46,7 @@ public class ClinicalAnalysisLabTest {
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","rio, porto, portugal, europa, terra", "2gs45","6357976543","16275483987", store);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "rio, porto, portugal, europa, terra", "2gs45", "6357976543", "16275483987", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -57,7 +57,7 @@ public class ClinicalAnalysisLabTest {
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","6334906543","16274980843573987", store);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45", "6334906543", "16274980843573987", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -68,7 +68,7 @@ public class ClinicalAnalysisLabTest {
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","6334906543","16!748a987t", store);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45", "6334906543", "16!748a987t", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -79,7 +79,7 @@ public class ClinicalAnalysisLabTest {
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","63349369906543","16274835987", store);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45", "63349369906543", "16274835987", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -90,7 +90,7 @@ public class ClinicalAnalysisLabTest {
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","63!906g543","16274835987", store);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45", "63!906g543", "16274835987", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -101,7 +101,7 @@ public class ClinicalAnalysisLabTest {
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs406k5t1","6334906543","16274835987", store);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs406k5t1", "6334906543", "16274835987", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -112,7 +112,7 @@ public class ClinicalAnalysisLabTest {
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "12h","6334906543","16274835987", store);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "12h", "6334906543", "16274835987", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -123,7 +123,7 @@ public class ClinicalAnalysisLabTest {
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("","porto", "2gs45","6334906543","16274835987", store);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("", "porto", "2gs45", "6334906543", "16274835987", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -134,7 +134,7 @@ public class ClinicalAnalysisLabTest {
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","", "2gs45","6334906543","16274835987", store);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "", "2gs45", "6334906543", "16274835987", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -145,7 +145,7 @@ public class ClinicalAnalysisLabTest {
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "","6334906543","16274835987", store);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "", "6334906543", "16274835987", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -156,7 +156,7 @@ public class ClinicalAnalysisLabTest {
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","","16274835987", store);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45", "", "16274835987", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -167,18 +167,18 @@ public class ClinicalAnalysisLabTest {
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","6334906543","", store);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45", "6334906543", "", store);
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void TestTypeBlank(){
+    public void TestTypeBlank() {
         ParameterCategory pc1 = new ParameterCategory(null, null);
         cat.add(pc1);
         TestType t = new TestType(null, null, null, cat);
         TestTypeStore store = new TestTypeStore();
         store.add(t);
         //Arrange + Act
-        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois","porto", "2gs45","6357896543","12345678901", store);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45", "6357896543", "12345678901", store);
     }
 
     @Test
@@ -190,4 +190,64 @@ public class ClinicalAnalysisLabTest {
         store.add(t);
         ClinicalAnalysisLab lab = new ClinicalAnalysisLab(store);
     }
+
+
+    @Test(expected = IllegalArgumentException.class)
+    public void ClinicalAnalysisLabNameNull() {
+        ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
+        cat.add(pc1);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab(null, "porto", "2gs45", "6357896543", "12345678901", store);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void ClinicalAnalysisLabNameMax() {
+        ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
+        cat.add(pc1);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("qwertyuiopasdfghjkler", "porto", "2gs45", "6357896543", "12345678901", store);
+    }
+
+
+    @Test(expected = IllegalArgumentException.class)
+    public void ClinicalAnalysisLabAddressBlank() {
+        ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
+        cat.add(pc1);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratório três", "", "2gs45", "6357896543", "12345678901", store);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void ClinicalAnalysisLabAddressMax() {
+        ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
+        cat.add(pc1);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratório três", "qwertyuiopasdfghjklerifhadygopy", "2gs45", "6357896543", "12345678901", store);
+    }
+
+    @Test
+    public void toStringTest() {
+        ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
+        cat.add(pc1);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratório três", "porto", "2gs45", "6357896543", "12345678901", store);
+
+        String expected = "ClinicalAnalysisLab: name=laboratório três, address=porto, id=2gs45, tin=6357896543, phonenumber=12345678901, typetest=" + store.toString();
+
+        String actual = lab.toString();
+
+        Assert.assertEquals(actual, expected);
+    }
+
+
 }

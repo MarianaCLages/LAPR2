@@ -110,4 +110,25 @@ public class ParameterTest {
         String actual = parameter.toString();
         Assert.assertEquals(expected,actual);
     }
+
+    @Test
+    public void getName(){
+        Parameter parameter = new Parameter("A1234","WBC","description",cat);
+
+        String actual = parameter.getName();
+        String expected = "WBC";
+
+        Assert.assertEquals(actual,expected);
+    }
+
+    @Test
+    public void getCode(){
+        Parameter parameter = new Parameter("A1234","WBC","description",cat);
+
+        ParameterCategory actual = parameter.getCat();
+        ParameterCategory expected = this.cat;
+
+        Assert.assertEquals(actual,expected);
+    }
+
 }
