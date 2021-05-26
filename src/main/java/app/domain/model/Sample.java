@@ -5,15 +5,22 @@ import net.sourceforge.barbecue.Barcode;
 
 public class Sample {
 
-    private net.sourceforge.barbecue.Barcode barcode;
+    private String barcode;
+    private String testID;
 
 
-    public Sample(net.sourceforge.barbecue.Barcode barcode){
+    public Sample(String TestID, String barcode){
+        this.testID = testID;
         this.barcode = barcode;
+
+
     }
 
-
-    public net.sourceforge.barbecue.Barcode getBarcode() {
+    public String getBarcode() {
         return barcode;
+    }
+
+    public String getTestID() {
+        return testID;
     }
 }

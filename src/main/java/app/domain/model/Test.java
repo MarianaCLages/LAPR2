@@ -4,6 +4,7 @@ import app.domain.shared.Constants;
 import app.domain.stores.ParameterCategoryStore;
 import app.domain.stores.ParameterStore;
 import net.sourceforge.barbecue.Barcode;
+import net.sourceforge.barbecue.BarcodeException;
 import org.apache.commons.lang3.StringUtils;
 
 import java.time.LocalDate;
@@ -22,8 +23,7 @@ public class Test {
     private List<TestParameter> testParam;
     private LocalDate createdDate;
     private List<Sample> testSamples;
-    private String collectingMethod;
-    private String barcode;
+    private Barcode barcode;
     private Sample sample;
 
     /**
@@ -131,34 +131,11 @@ public class Test {
     }
 
     @Override
+
     public String toString() {
         return "Test: testCode=" + testCode + ", testNhsNumber=" + testNhsNumber + ", clientCc=" + clientCc + ", testType=" + testType + ", catList=" + catList + ", paList=" + paList;
     }
 
-    public boolean createSample(Barcode barcode) {
-
-        this.sample = new Sample(barcode);
-        testSamples.add(this.sample);
-
-        return validateSample();
-    }
-
-    public boolean validateSample() {
-        return this.sample != null && !contains(this.sample) && !exists(this.sample);
-    }
-
-    private boolean exists(Sample sample) {
-        for (Sample sample1 : this.testSamples) {
-            if (sample.getBarcode().equals(sample1.getBarcode())) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private boolean contains(Sample sample) {
-        return testSamples.contains(sample);
-    }
 
     public boolean addTestResult(String parameterCode, double result) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
 
@@ -185,7 +162,7 @@ public class Test {
         return true;
     }
 
-    public String getBarcode() {
+    public Barcode getBarcode() {
         return barcode;
     }
 
