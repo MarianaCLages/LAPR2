@@ -5,15 +5,15 @@ import net.sourceforge.barbecue.Barcode;
 
 public class Sample {
 
-    private Barcode barcode;
+    private net.sourceforge.barbecue.Barcode barcode;
 
 
-    public Sample(Barcode barcode) {
+    public Sample(net.sourceforge.barbecue.Barcode barcode){
         this.barcode = barcode;
     }
 
 
-    public Object getBarcode() {
+    public net.sourceforge.barbecue.Barcode getBarcode() {
         return barcode;
     }
 }
