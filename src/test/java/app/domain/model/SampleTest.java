@@ -4,6 +4,9 @@ import app.domain.stores.ParameterCategoryStore;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SampleTest {
 
     @Test
@@ -11,9 +14,9 @@ public class SampleTest {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
         cat.add(pc1);
-        ParameterCategoryList cat1 = new ParameterCategoryList();
+        List<ParameterCategory> cat1 = new ArrayList<>();
         cat1.add(pc1);
-        ParameterList pa = new ParameterList();
+        List<Parameter> pa = new ArrayList<>();
         Parameter p1 = new Parameter("AH000","Nome","description",pc1);
         pa.add(p1);
         TestType testType = new TestType("BL000","description","sei lá",cat);
@@ -27,9 +30,9 @@ public class SampleTest {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
         cat.add(pc1);
-        ParameterCategoryList cat1 = new ParameterCategoryList();
+        List<ParameterCategory> cat1 = new ArrayList<>();
         cat1.add(pc1);
-        ParameterList pa = new ParameterList();
+        List<Parameter> pa = new ArrayList<>();
         Parameter p1 = new Parameter("AH000","Nome","description",pc1);
         pa.add(p1);
         TestType testType = new TestType("BL000","description","sei lá",cat);
@@ -43,9 +46,9 @@ public class SampleTest {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
         cat.add(pc1);
-        ParameterCategoryList cat1 = new ParameterCategoryList();
+        List<ParameterCategory> cat1 = new ArrayList<>();
         cat1.add(pc1);
-        ParameterList pa = new ParameterList();
+        List<Parameter> pa = new ArrayList<>();
         Parameter p1 = new Parameter("AH000","Nome","description",pc1);
         pa.add(p1);
         TestType testType = new TestType("BL000","description","sei lá",cat);
@@ -59,9 +62,9 @@ public class SampleTest {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
         cat.add(pc1);
-        ParameterCategoryList cat1 = new ParameterCategoryList();
+        List<ParameterCategory> cat1 = new ArrayList<>();
         cat1.add(pc1);
-        ParameterList pa = new ParameterList();
+        List<Parameter> pa = new ArrayList<>();
         Parameter p1 = new Parameter("AH000","Nome","description",pc1);
         pa.add(p1);
         TestType testType = new TestType("BL000","description","sei lá",cat);
