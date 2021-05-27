@@ -76,5 +76,20 @@ public class TestStore {
         return null;
     }
 
+    /*
+    public Test getTestWithID(String testID){
+        for (Test t : this.array) {
+            if (t.getID().equals(testID)) {return t;}
+        }
+        return null;
+    }
+
+    public List<Test> getListOfTestsToValidate(){}
+
+    public boolean validateTestList(){}
+
+    public boolean addTest(Test t) {
+        return array.add(t);
+    }*/
 
 }
