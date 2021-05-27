@@ -12,7 +12,7 @@ import java.io.IOException;
  */
 public class Email {
     public static void sendPasswordNotification(String name, String email, String password) {
-        File passFile = new File(Constants.PASSWORD_FILE);
+        File passFile = new File(Constants.FILE);
 
         try {
             FileWriter writer = new FileWriter(passFile);

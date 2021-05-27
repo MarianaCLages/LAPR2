@@ -2,7 +2,6 @@ package app.domain.model;
 
 import app.domain.shared.Constants;
 
-import net.sourceforge.barbecue.Barcode;
 import org.apache.commons.lang3.StringUtils;
 
 import java.time.LocalDate;
@@ -16,8 +15,8 @@ public class Test {
     private String testNhsNumber;
     private String clientTin;
     private TestType testType;
-    private ParameterCategoryList catList;
-    private ParameterList paList;
+    private List<ParameterCategory> catList;
+    private List<Parameter> paList;
     private List<TestParameter> testParam;
     private LocalDate createdDate;
     private LocalDate sampleCreatedDate;
@@ -37,7 +36,7 @@ public class Test {
      * @param catList       list of parameters categories that are measured in this test
      * @param paList        list of parameters that are measured in this test
      */
-    public Test(String testCode, String testNhsNumber, String clientTin, TestType testType, ParameterCategoryList catList, ParameterList paList) {
+    public Test(String testCode, String testNhsNumber, String clientTin, TestType testType, List<ParameterCategory> catList, List<Parameter> paList) {
 
         checkTestNhsNumberRules(testNhsNumber);
         checkCatList(catList);
@@ -57,7 +56,7 @@ public class Test {
      *
      * @param paList list of parameters that are measured in this test
      */
-    private void checkPaList(ParameterList paList) {
+    private void checkPaList(List<Parameter> paList) {
         if (paList.isEmpty() || paList == null) {
             throw new IllegalArgumentException("Parameter List must not be empty");
         }
@@ -69,7 +68,7 @@ public class Test {
      *
      * @param catList list of parameters categories that are measured in this test
      */
-    private void checkCatList(ParameterCategoryList catList) {
+    private void checkCatList(List<ParameterCategory> catList) {
         if (catList.isEmpty() || catList == null) {
             throw new IllegalArgumentException("Category List must not be empty");
         }
@@ -100,7 +99,7 @@ public class Test {
      */
     public void addTestParameter() {
         this.testParam = new ArrayList<>();
-        for (Parameter p : this.paList.getList()) {
+        for (Parameter p : this.paList) {
             String code = p.getCode();
             TestParameter tp = new TestParameter(code);
 
