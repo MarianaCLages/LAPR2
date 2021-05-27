@@ -27,7 +27,7 @@ public class Report {
             throw new IllegalArgumentException("Diagnosis cannot be blank.");
     }
 
-        if (diagnosis.length() >= Constants.DIAGNOSIS_MAX_LENGHT){
+        if (diagnosis.length() > Constants.DIAGNOSIS_MAX_LENGHT){
             throw new IllegalArgumentException("Diagnosis cannot exceed 200 char.");
         }
 
