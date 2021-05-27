@@ -9,7 +9,7 @@ import java.awt.image.BufferedImage;
 
 public interface BarcodeAdapter {
 
-    String createBarcode() throws BarcodeException;
+    String createBarcode(String ID) throws BarcodeException;
 
     BufferedImage createBarcodeImage(Barcode barcode) throws OutputException;
 

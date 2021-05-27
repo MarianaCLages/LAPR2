@@ -147,6 +147,8 @@ public class Test {
         return testNhsNumber;
     }
 
+    public String getTestCode() { return testCode; }
+
     @Override
     public String toString() {
         return "Test: testCode=" + testCode + ", testNhsNumber=" + testNhsNumber + ", clientCc=" + clientTin + ", testType=" + testType + ", catList=" + catList + ", paList=" + paList;

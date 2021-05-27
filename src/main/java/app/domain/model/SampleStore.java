@@ -18,20 +18,22 @@ public class SampleStore {
     }
 
 
-    public boolean createSample(String testID,String barcode) throws ClassNotFoundException, IllegalAccessException, InstantiationException, BarcodeException {
+    public boolean createSample(String testID) throws ClassNotFoundException, IllegalAccessException, InstantiationException, BarcodeException {
         Class<?> oClass = Class.forName(Constants.BARCODE_API);
         BarcodeAdapter em = (BarcodeAdapter) oClass.newInstance();
+        this.sample = new Sample(testID,em.createBarcode(CreateSampleID()));
 
-        this.sample = new Sample(testID,em.createBarcode());
+
         if (validateSample(this.sample)){
             testSamples.add(this.sample);
+
             return true;
 
         }else{
             return false;
         }
     }
-    public boolean saveSample(Sample sample) {
+    public boolean saveSample() {
         if (validateSample(this.sample)) {
             testSamples.add(this.sample);
             System.out.println(this.sample.toString());
@@ -57,6 +59,22 @@ public class SampleStore {
 
     private boolean contains(Sample sample) {
         return testSamples.contains(sample);
+    }
+
+    public String CreateSampleID(){
+        int ID = testSamples.size() + 1;
+        String SampleID = String.valueOf(ID);
+        String empty;
+        empty = ""+SampleID;
+        while(empty.length() < 11){
+            empty = "0" + empty;
+        }
+
+        return empty;
+    }
+
+    public String getSample(){
+        return this.sample.toString();
     }
 
 }

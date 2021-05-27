@@ -12,13 +12,13 @@ public class MedLabTechUI implements Runnable {
     public void run()
     {
         List<MenuItem> options = new ArrayList<MenuItem>();
-      //  options.add(new MenuItem("Create a new Sample", new RecordSampleUI()));
-        options.add(new MenuItem("Record Results", new RecordResultsUI()));
+        options.add(new MenuItem("Create a new Sample", new RecordSampleUI()));
+
 
         int option = 0;
         do
         {
-            option = Utils.showAndSelectIndex(options, "\n\nReceptionist Menu:");
+            option = Utils.showAndSelectIndex(options, "\n\nMedical Lab Technician Menu:");
 
             if ( (option >= 0) && (option < options.size()))
             {

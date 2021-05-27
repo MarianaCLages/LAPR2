@@ -19,7 +19,7 @@ public class RecordSampleController {
     private TestStore store;
     private TestStore tList;
     private SampleStore sampleList;
-    private TestType testType;
+
     private Test sample;
 
 
@@ -35,9 +35,14 @@ public class RecordSampleController {
     public String getTest(){
         return store.getTest();
     }
-    public void createSample(String testID,String barcode) throws ClassNotFoundException, InstantiationException, BarcodeException, IllegalAccessException {
-        sampleList.createSample(testID,barcode);
+    public void createSample(String testID) throws ClassNotFoundException, InstantiationException, BarcodeException, IllegalAccessException {
+        sampleList.createSample(testID);
     }
 
-
+    public String getSample(){
+        return sampleList.getSample();
+    }
+    public boolean saveSample(){
+        return sampleList.saveSample();
+    }
 }

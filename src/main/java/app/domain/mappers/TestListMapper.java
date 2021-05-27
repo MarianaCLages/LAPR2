@@ -10,7 +10,7 @@ import java.util.List;
 public class TestListMapper {
 
     private TestDTO toDTO(Test t) {
-        return new TestDTO(t.getTestNhsNumber(), t.getTestNhsNumber());
+        return new TestDTO(t.getTestCode(), t.getTestNhsNumber());
     }
 
     public List<TestDTO> toDTO(TestStore tList) {

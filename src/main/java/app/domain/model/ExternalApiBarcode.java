@@ -19,10 +19,8 @@ public class ExternalApiBarcode implements BarcodeAdapter{
     }
 
 
-
-
-    public String createBarcode() throws BarcodeException {
-        Barcode barcode = BarcodeFactory.createUPCA(String.format("%011d"));
+    public String createBarcode(String ID) throws BarcodeException {
+        Barcode barcode = BarcodeFactory.createUPCA(ID);
         return barcode.getData();
     }
 

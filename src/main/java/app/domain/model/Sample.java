@@ -21,4 +21,10 @@ public class Sample {
     public String getTestID() {
         return testID;
     }
+
+
+    @Override
+    public String toString() {
+        return "Sample: testID=" +testID +", barcode=" +barcode;
+    }
 }
