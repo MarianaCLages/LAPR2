@@ -38,5 +38,6 @@ public class Constants {
     public static final String RESULTS_REFERENCE_API = "app.domain.model.RefValueAdapter2";
     public static final String PARAMS_FILENAME = "config.properties";
     public static final String PARAMS_COMPANY_DESIGNATION = "Company.Designation";
+    public static final String PASSWORD_FILE="ClientInformation\\notification.txt";
 
 }
