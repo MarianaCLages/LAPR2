@@ -1,19 +1,16 @@
-
 package app.ui.console;
 
 import app.controller.CreateReportController;
-import app.controller.RecordSampleController;
 import app.domain.mappers.dto.TestDTO;
-import app.domain.model.SampleStore;
 import app.ui.console.utils.Utils;
 
-import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class CreateReportUI implements Runnable {
-/*
+
     private CreateReportController ctrl;
     private TestDTO test;
-
+    private String diagnosis;
 
 
     public CreateReportUI() {
@@ -32,7 +29,7 @@ public class CreateReportUI implements Runnable {
      *
      * @see Thread#run()
      */
- /*   @Override
+    @Override
     public void run() {
         boolean cont = true;
         do {
@@ -46,15 +43,11 @@ public class CreateReportUI implements Runnable {
                 } else {
                     try {
 
+                        System.out.println(ctrl.getResults(this.test.getTestCode()));
+                        this.diagnosis = Utils.readLineFromConsole("Please write the report: ");
 
+                        ctrl.createReport(diagnosis);
 
-                        int i = Utils.readIntegerFromConsole("How many samples do you want to record?");
-
-                        for (int x = 0; x < i; x++) {
-                            ctrl.createSample(this.test.getTestCode());
-                            ctrl.saveSample();
-
-                        }
                         exception = false;
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
@@ -64,9 +57,10 @@ public class CreateReportUI implements Runnable {
                 }
             } while (exception);
 
-            cont = Utils.confirm("The Sample(s) was(were) recorded. Do you want to save? (s/n) \n" );
-            if (cont){
-                ctrl.confirm(this.test.getTestCode());
+            cont = Utils.confirm("This report were created do you want to save it? (s/n) \n");
+            if (cont) {
+                ctrl.saveReport();
+                System.out.println("Saved!");
             }
 
         } while (!cont);
@@ -74,8 +68,6 @@ public class CreateReportUI implements Runnable {
     }
 }
 
-*/
 
 
 
-}

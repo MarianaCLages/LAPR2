@@ -30,13 +30,13 @@ public class CreateReportController {
 
 
     public List<TestDTO> tList() {
-        this.tList = company.testList();
+        this.tList = company.testList().getListOfTestsAnalysed();
         TestListMapper typeMapper = new TestListMapper();
         return typeMapper.toDTO(tList);
     }
 
-    public String getResults(String ) {
-        this.t = tList.getTestByCode();
+    public String getResults(String testId ) {
+        this.t = tList.getTestByCode(testId);
         return t.getResults();
     }
 
@@ -48,9 +48,6 @@ public class CreateReportController {
         t.saveReport();
     }
 
-    public void getTestCode(){
-        t.getTestCode();
-    }
 
 
 

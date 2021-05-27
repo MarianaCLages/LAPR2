@@ -86,6 +86,16 @@ public class TestStore {
         return listToValidate;
     }
 
+    public TestStore getListOfTestsAnalysed(){
+        TestStore listToReport = new TestStore();
+        for (Test t : this.array) {
+            if (t.getState().equals("SAMPLE_ANALYSED")){
+                listToReport.addTest(t);
+            }
+        }
+        return listToReport;
+    }
+
     public String getState(Test t){ return t.getState();}
 
     public Test getTestWithID(String testID){
