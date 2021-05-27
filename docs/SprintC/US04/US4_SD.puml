@@ -6,18 +6,19 @@ actor Receptionist as R
 participant ":RegisterTestUI" as UI
 participant ":RegisterTestController" as ctrl
 participant ":Company" as comp
+participant ":ClientStore" as cStore
 participant ":TestTypeListMapper" as mapper
 participant "catList:CategoryStore" as catList
 participant "paList:ParameterList" as paList
 participant ":ParameterStore" as paStore
 participant ":TestStore" as tStore
-participant ":ClientStore" as cStore
 
 
 
 activate R
 R -> UI: wants to register a test
 activate UI
+UI --> R: requests data (clientCc, testNhsNumber)
 
 deactivate UI
 R -> UI: types the requested data
