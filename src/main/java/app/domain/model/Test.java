@@ -40,6 +40,7 @@ public class Test {
     public Test(String testCode, String testNhsNumber, String clientTin, TestType testType, ParameterCategoryList catList, ParameterList paList) {
 
         checkTestNhsNumberRules(testNhsNumber);
+        checkTestCodeRules(testCode);
         checkCatList(catList);
         checkPaList(paList);
         this.testCode = testCode;
@@ -50,6 +51,12 @@ public class Test {
         this.paList = paList;
         this.createdDate = LocalDate.now();
 
+    }
+
+    private void checkTestCodeRules(String testCode){
+        if (testCode == null) {
+            throw new IllegalArgumentException("The Test Code must exist");
+        }
     }
 
     /**

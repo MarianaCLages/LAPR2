@@ -4,14 +4,27 @@ package app.domain.model;
 public class Sample {
 
     private String barcode;
-    private String testID;
+    private String TestID;
 
 
     public Sample(String TestID, String barcode){
-        this.testID = TestID;
+        checkBarcodeRules(barcode);
+        checkTestIDRules(TestID);
+        this.TestID = TestID;
         this.barcode = barcode;
 
+    }
 
+    private void checkTestIDRules(String testID){
+        if (testID == null) {
+            throw new IllegalArgumentException("The Test ID must exist");
+        }
+    }
+
+    private void checkBarcodeRules(String barcode) {
+        if (barcode == null) {
+            throw new IllegalArgumentException("The Test Code must exist");
+        }
     }
 
     public String getBarcode() {
@@ -19,12 +32,12 @@ public class Sample {
     }
 
     public String getTestID() {
-        return testID;
+        return TestID;
     }
 
 
     @Override
     public String toString() {
-        return "Sample: testID=" +testID +", barcode=" +barcode;
+        return "Sample: testID=" +TestID +", barcode=" +barcode;
     }
 }

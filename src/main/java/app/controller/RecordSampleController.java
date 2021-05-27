@@ -3,8 +3,8 @@ package app.controller;
 import app.domain.mappers.TestListMapper;
 import app.domain.mappers.dto.TestDTO;
 import app.domain.model.Company;
-import app.domain.model.SampleStore;
 import app.domain.model.Test;
+import app.domain.stores.SampleStore;
 import app.domain.stores.TestStore;
 import net.sourceforge.barbecue.BarcodeException;
 
