@@ -1,9 +1,13 @@
 package app.controller;
 
+import app.domain.mappers.TestListMapper;
 import app.domain.mappers.TestStoreMapper;
+import app.domain.mappers.dto.TestDTO;
 import app.domain.mappers.dto.TestStoreDTO;
 import app.domain.model.Company;
 import app.domain.stores.TestStore;
+
+import java.util.List;
 
 public class ValidateController {
     private Company company;
@@ -19,9 +23,9 @@ public class ValidateController {
         this.tSt = company.testList();
     }
 
-    public TestStoreDTO getListOfTests() {
+    public List<TestDTO> getListOfTests() {
         tSt.getListOfTestsToValidate();
-        TestStoreMapper mapper = new TestStoreMapper();
+        TestListMapper mapper = new TestListMapper();
         return mapper.toDTO(tSt);
     }
 
@@ -31,7 +35,7 @@ public class ValidateController {
 
     }
 
-    public boolean validateTestList(){ return tSt.validateTestList();}
+  //  public boolean validateTestList(){ return tSt.validateTestList();}
 
 
 }
