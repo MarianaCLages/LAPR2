@@ -33,9 +33,10 @@ public class Constants {
 
     public static final int ACCESS_KEY = 12345;
 
-    public static final String BARCODE_API = "net.sourceforge.barbecue";
+    public static final String BARCODE_API = "app.domain.model.ExternalApiBarcode";
     public static final String COVID_REFERENCE_API = "app.domain.model.RefValueAdapter1";
     public static final String RESULTS_REFERENCE_API = "app.domain.model.RefValueAdapter2";
     public static final String PARAMS_FILENAME = "config.properties";
     public static final String PARAMS_COMPANY_DESIGNATION = "Company.Designation";
+
 }

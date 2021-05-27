@@ -3,7 +3,7 @@
 
 participant ":RegisterTestController" as ctrl
 participant ":CategoryStore" as catLStore
-participant "catList:CategoryStore" as catList
+participant "catList:CategoryList" as catList
 participant "paList:ParameterStore" as paList
 participant ":ParameterMapper" as paMapper
 participant ":ParameterStore" as paStore

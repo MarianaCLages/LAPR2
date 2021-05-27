@@ -12,7 +12,7 @@ import java.util.List;
 public class RecordResultsController {
     private Company company;
     private TestStore tStore;
-    private List<TestParameter> testParameters;
+    private List<TestParameter> pList;
     private Test t;
 
     public RecordResultsController() {
@@ -24,22 +24,22 @@ public class RecordResultsController {
         this.tStore = company.testList();
     }
 
-    public List<TestParameterDTO> getTestParameterList(String sampleId){
+    public List<TestParameterDTO> getTestParameterList(String sampleId) {
         this.t = tStore.getTest(sampleId);
-        if (this.t == null){
+        if (this.t == null) {
             throw new IllegalStateException("Sample does not exists");
-        }else {
-            testParameters = t.getTestParam();
+        } else {
+            pList = t.getTestParam();
             TestParameterListMapper testParameterListMapper = new TestParameterListMapper();
-            return testParameterListMapper.toDTO(testParameters);
+            return testParameterListMapper.toDTO(pList);
         }
     }
 
     public boolean addTestResult(String parameterCode, double result) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-       if (t.addTestResult(parameterCode,result)){
-           t.changeState("SAMPLE_ANALYSED");
-           return true;
-       }
-       return false;
+        if (t.addTestResult(parameterCode, result)) {
+            t.changeState("SAMPLE_ANALYSED");
+            return true;
+        }
+        return false;
     }
 }

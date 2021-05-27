@@ -1,9 +1,6 @@
 package app.controller;
 
-import app.domain.model.Client;
-import app.domain.model.Company;
-import app.domain.model.ParameterCategory;
-import app.domain.model.TestType;
+import app.domain.model.*;
 import app.domain.shared.Constants;
 import app.domain.stores.*;
 import auth.AuthFacade;
@@ -101,16 +98,16 @@ public class App {
 
         ttStore.add(covidTest);
         ParameterStore parameterStore = company.getParameterList();
-        parameterStore.createParameter("MCH00", "MCH", "Mean Haemoglobin", pc1);
-        parameterStore.saveParameter();
-        parameterStore.createParameter("ESR00", "ESR", "Erythrocyte Rate", pc2);
-        parameterStore.saveParameter();
-        parameterStore.createParameter("HB000", "HB", "Haemoglobin", pc1);
-        parameterStore.saveParameter();
+        Parameter p1 = new  Parameter("MCH00", "MCH", "Mean Haemoglobin", pc1);
+        parameterStore.add(p1);
+        Parameter p2 = new  Parameter("ESR00", "ESR", "Erythrocyte Rate", pc2);
+        parameterStore.add(p2);
+        Parameter p3 = new  Parameter("HB000", "HB", "Haemoglobin", pc1);
+        parameterStore.add(p3);
 
-        ParameterStore parameterStore1 = new ParameterStore();
-        parameterStore1.createParameter("IgGAN", "COVID", "000", pc1);
-        parameterStore1.saveParameter();
+
+        Parameter p4 = new  Parameter("IgGAN", "COVID", "000", pc1);
+        parameterStore.add(p4);
 
         ClientStore store = company.clientList();
 
@@ -124,13 +121,26 @@ public class App {
             e.printStackTrace();
         }
 
+        ParameterCategoryList testCategories = new  ParameterCategoryList();
+        testCategories.add(pc1);
+
+        ParameterList testParameters = new  ParameterList();
+        testParameters.add(p1);
+        testParameters.add(p2);
+        testParameters.add(p3);
+
+        ParameterList testParameters1 = new  ParameterList();
+        testParameters1.add(p4);
+
 
         store.CreateClient("12345678901","1234567890123456","1234567890","1234567890",date,'M',"ze@ze.com","Zé");
         store.saveClient();
         TestStore testStore = company.getTestList();
 
-        testStore.createTest("100000000000", "1234567890", bloodTest, parameterCategoryStore, parameterStore);
-        testStore.createTest("100000000001", "1234567890", covidTest, parameterCategoryStore, parameterStore1);
+        testStore.createTest("100000000000", "1234567890", bloodTest, testCategories, testParameters);
+        testStore.saveTest();
+        testStore.createTest("100000000001", "1234567890", covidTest, testCategories, testParameters1);
+        testStore.saveTest();
 
         this.authFacade.addUserWithRole("Clinical Chemistry Technologist ", "clichetec@lei.sem2.pt", "123456", Constants.ROLE_CLINICALCHEMISTRYTECHNOLOGIST);
         this.authFacade.addUserWithRole("Medical Lab Technician ", "melate@lei.sem2.pt", "123456", Constants.ROLE_MEDICALLABTECHNICIIAN);

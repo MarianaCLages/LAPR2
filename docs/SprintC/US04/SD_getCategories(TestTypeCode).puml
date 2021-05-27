@@ -1,6 +1,7 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 participant ":RegisterTestController" as ctrl
+participant ":Company" as comp
 participant ":CategoryListMapper" as catMapper
 participant ":TestTypeStore" as ttStore
 participant "testType : TestType" as tt
@@ -8,6 +9,7 @@ participant "testType : TestType" as tt
 autonumber
 [o-> ctrl: getCategories(TestTypeCode)
 activate ctrl
+ctrl -> comp:
 ctrl -> ttStore:testType = getByCode(TestTypeCode)
 activate ttStore
 deactivate ttStore

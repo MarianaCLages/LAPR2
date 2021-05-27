@@ -2,8 +2,19 @@
 autonumber
 actor "Clinical Chemistry Technologist" as cct
 participant ":RecordResultsUI" as UI
-participant ":RecordResultsController" as ctrl
+participant "RecordResultsController" as ctrl
+participant ":Company" as Comp
+participant ":TestStore" as tStore
 participant ":Test" as Test
+participant ":TestParameterStoreMapper" as tpStoreMapper
+participant ":TestParameterStore" as tpStore
+participant "testParam:TestParameter" as TestPa
+participant "param:Parameter" as Param
+participant "type:TestType" as TestTy
+participant "em:ExternalModule" as ExMod
+participant "refValue: ReferenceValue" as RefVal
+participant "testResult:TestParameterResult" as TestParamRes
+
 
 activate cct
 cct -> UI: Asks for record the results of a given test
@@ -12,35 +23,43 @@ UI --> cct: Asks for the code of the sample
 deactivate UI
 cct -> UI: Inserts the sample ID
 activate UI
-UI -> ctrl: SD_getTestParameterList(sampleId)
-ref over ctrl: SD_AddTestResult(parameterCode,result,metric)
-activate ctrl
-ctrl --> UI: tpStoreDTO
-deactivate ctrl
+UI -> ctrl: getTestParameterList(sampleId)
+      activate ctrl
+      ctrl -> Comp: getTestStore()
+      ctrl -> tStore: pList = getTestParametersList(sampleId)
+      activate tStore
+      tStore -> Test: pList = getTestParameterList()
+      activate Test
+      deactivate
+      deactivate tStore
+
+      ctrl -> tpStoreMapper: toDTO(pList)
+      activate tpStoreMapper
+
+      tpStoreMapper --> ctrl: tpStoreDTO
+      deactivate tpStoreMapper
+      return tpStoreDTO
+      deactivate ctrl
+      deactivate tStore
 loop for all the parameters
     UI --> cct: Show parameters and asks to choose one
     deactivate UI
     cct -> UI: Choose parameter
     activate UI
-    UI -> cct: Asks for results value
+    UI --> cct: Asks for results value
     deactivate UI
     cct -> UI: Types results value
     activate UI
 
     UI -> ctrl: addTestResult(parameterCode,result)
     activate ctrl
-    ctrl -> Test: addTestResult(parameterCode,result)
-    activate Test
-    ref over Test : SD_AddTestResult(parameterCode,result)
-    Test --> ctrl : ok
-    deactivate Test
-
-end
-ctrl -> Test: ChangeStage()
+   ref over ctrl: addTestResult(parameterCode,result)
+ctrl -> Test: changeState()
 activate Test
 Test -> Test: changeState()
 activate Test
 deactivate
+
 Test --> ctrl: ok
 deactivate
 ctrl --> UI : ok

@@ -8,7 +8,7 @@ participant ":RegisterTestController" as ctrl
 participant ":Company" as comp
 participant ":TestTypeListMapper" as mapper
 participant "catList:CategoryStore" as catList
-participant "paList:ParameterStore" as paList
+participant "paList:ParameterList" as paList
 participant ":ParameterStore" as paStore
 participant ":TestStore" as tStore
 participant ":ClientStore" as cStore
@@ -18,17 +18,15 @@ participant ":ClientStore" as cStore
 activate R
 R -> UI: wants to register a test
 activate UI
-UI --> R: requests data (clientTin, testNhsNumber)
-UI -> ctrl: getLists()
-activate ctrl
-ctrl -> catList**: catList = CategoryStore()
-ctrl -> paList**: paList = ParameterStore()
-deactivate
+
 deactivate UI
 R -> UI: types the requested data
 activate UI
 UI -> ctrl: existClient(clientTin)
 activate ctrl
+ctrl -> comp: getClientStore()
+activate comp
+deactivate
 ctrl -> cStore: existClient(clientTin)
 activate cStore
 cStore -> cStore: existsClient(clientTin)

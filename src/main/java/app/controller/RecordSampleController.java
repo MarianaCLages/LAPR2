@@ -20,8 +20,15 @@ public class RecordSampleController {
     private TestStore tList;
     private SampleStore sampleList;
 
-    private Test sample;
 
+    public RecordSampleController(Company company) {
+        this.company = company;
+    }
+
+    public RecordSampleController() {
+        this(App.getInstance().getCompany());
+
+    }
 
 
     public List<TestDTO> tList() {
@@ -31,12 +38,14 @@ public class RecordSampleController {
     }
     public void getLists(){
         this.sampleList = new SampleStore();
+        this.tList = company.testList();
     }
     public String getTest(){
         return store.getTest();
     }
     public void createSample(String testID) throws ClassNotFoundException, InstantiationException, BarcodeException, IllegalAccessException {
         sampleList.createSample(testID);
+
     }
 
     public String getSample(){

@@ -6,10 +6,7 @@ import app.domain.mappers.TestTypeListMapper;
 import app.domain.mappers.dto.CategoryListDTO;
 import app.domain.mappers.dto.ParameterDTO;
 import app.domain.mappers.dto.TestTypeDTO;
-import app.domain.model.Company;
-import app.domain.model.Parameter;
-import app.domain.model.ParameterCategory;
-import app.domain.model.TestType;
+import app.domain.model.*;
 import app.domain.stores.*;
 
 import java.util.List;
@@ -20,8 +17,8 @@ public class CreateTestController {
     private TestTypeStore ttList;
     private TestType testType;
     private ParameterCategoryStore categoriesList;
-    private ParameterCategoryStore caList;
-    private ParameterStore paList;
+    private ParameterCategoryList caList;
+    private ParameterList paList;
 
 
 
@@ -36,8 +33,8 @@ public class CreateTestController {
 
     public void getLists() {
 
-        this.caList = new ParameterCategoryStore();
-        this.paList = new ParameterStore();
+        this.caList = new ParameterCategoryList();
+        this.paList = new ParameterList();
 
     }
 
@@ -62,7 +59,7 @@ public class CreateTestController {
 
     public List<CategoryListDTO> getCategories(String testTypeCode) {
         this.testType = ttList.getByID(testTypeCode);
-        this.categoriesList = testType.getCatStore();
+        this.categoriesList = company.getParameterCategoryList();
         CategoryListMapper catMapper = new CategoryListMapper();
         return catMapper.toDTO(categoriesList);
     }

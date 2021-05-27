@@ -29,10 +29,10 @@ public class RecordResultsUI implements Runnable {
         String barcode = Utils.readLineFromConsole("Please enter the barcode number of the sample of the test to register results");
         try {
 
-
             for (TestParameterDTO tp : ctr.getTestParameterList(barcode)) {
                 System.out.println(tp.toString());
-                double result = Utils.readDoubleFromConsole("Plese insert the result");
+                double result = Utils.readDoubleFromConsole("Please insert the result: ");
+                ctr.addTestResult(tp.getPcode(), result);
 
             }
         }catch (Exception e){

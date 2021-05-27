@@ -8,7 +8,7 @@ public class Sample {
 
 
     public Sample(String TestID, String barcode){
-        this.testID = testID;
+        this.testID = TestID;
         this.barcode = barcode;
 
 

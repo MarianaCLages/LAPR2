@@ -17,8 +17,8 @@ public class Test {
     private String testNhsNumber;
     private String clientTin;
     private TestType testType;
-    private ParameterCategoryStore catList;
-    private ParameterStore paList;
+    private ParameterCategoryList catList;
+    private ParameterList paList;
     private List<TestParameter> testParam;
     private LocalDate createdDate;
     private List<Sample> testSamples;
@@ -35,7 +35,7 @@ public class Test {
      * @param catList       list of parameters categories that are measured in this test
      * @param paList        list of parameters that are measured in this test
      */
-    public Test(String testCode, String testNhsNumber, String clientTin, TestType testType, ParameterCategoryStore catList, ParameterStore paList) {
+    public Test(String testCode, String testNhsNumber, String clientTin, TestType testType, ParameterCategoryList catList, ParameterList paList) {
 
         checkTestNhsNumberRules(testNhsNumber);
         checkCatList(catList);
@@ -55,7 +55,7 @@ public class Test {
      *
      * @param paList list of parameters that are measured in this test
      */
-    private void checkPaList(ParameterStore paList) {
+    private void checkPaList(ParameterList paList) {
         if (paList.isEmpty() || paList == null) {
             throw new IllegalArgumentException("Parameter List must not be empty");
         }
@@ -67,7 +67,7 @@ public class Test {
      *
      * @param catList list of parameters categories that are measured in this test
      */
-    private void checkCatList(ParameterCategoryStore catList) {
+    private void checkCatList(ParameterCategoryList catList) {
         if (catList.isEmpty() || catList == null) {
             throw new IllegalArgumentException("Category List must not be empty");
         }

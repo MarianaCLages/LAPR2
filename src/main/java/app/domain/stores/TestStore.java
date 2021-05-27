@@ -1,5 +1,7 @@
 package app.domain.stores;
 
+import app.domain.model.ParameterCategoryList;
+import app.domain.model.ParameterList;
 import app.domain.model.Test;
 import app.domain.model.TestType;
 
@@ -15,7 +17,7 @@ public class TestStore {
         this.array = new ArrayList<>();
     }
 
-    public boolean createTest(String testNhsNumber, String clientCc, TestType testType, ParameterCategoryStore catList, ParameterStore paList) {
+    public boolean createTest(String testNhsNumber, String clientCc, TestType testType, ParameterCategoryList catList, ParameterList paList) {
 
         this.t = new Test(getTestId(), testNhsNumber, clientCc, testType, catList, paList);
         this.t.addTestParameter();

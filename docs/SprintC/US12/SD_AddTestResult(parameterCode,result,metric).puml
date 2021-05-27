@@ -3,7 +3,7 @@
 
 autonumber
 participant "test:Test" as Test
-participant ":TestParameterStore" as tpStore
+participant ":TestParameterList" as tpStore
 participant "testParam:TestParameter" as TestPa
 participant "param:Parameter" as Param
 participant "type:TestType" as TestTy
@@ -12,10 +12,11 @@ participant "refValue: ReferenceValue" as RefVal
 participant "testResult:TestParameterResult" as TestParamRes
 
 [o-> Test: addTestResult(parameterCode,result)
+
 activate Test
 Test -> tpStore: getParameterFor(parameterCode)
 activate Test
-Test --> Test: testParam
+tpStore --> Test: testParam
 deactivate Test
 
 Test -> TestPa: getParameter()

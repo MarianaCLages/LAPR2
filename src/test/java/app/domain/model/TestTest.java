@@ -1,10 +1,8 @@
 package app.domain.model;
 
 import app.domain.stores.ParameterCategoryStore;
-import app.domain.stores.ParameterStore;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import static org.junit.Assert.*;
 
@@ -15,12 +13,14 @@ public class TestTest {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
         cat.add(pc1);
-        ParameterStore pa = new ParameterStore();
+        ParameterCategoryList cat1 = new ParameterCategoryList();
+        cat1.add(pc1);
+        ParameterList pa = new ParameterList();
         Parameter p1 = new Parameter("AH000","Nome","description",pc1);
         pa.add(p1);
         TestType testType = new TestType("BL000","description","sei lá",cat);
 
-        app.domain.model.Test test = new app.domain.model.Test("1234s","123456789012","1234567890123456",testType,cat,pa);
+        app.domain.model.Test test = new app.domain.model.Test("1234s","123456789012","1234567890123456",testType,cat1,pa);
         Assert.assertNotNull(test);
     }
 
@@ -29,22 +29,25 @@ public class TestTest {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
         cat.add(pc1);
-        ParameterStore pa = new ParameterStore();
-        TestType testType = new TestType("AF123","description","sei lá",cat);
+        ParameterCategoryList cat1 = new ParameterCategoryList();
+        cat1.add(pc1);
+        ParameterList pa = new ParameterList();
+        Parameter p1 = new Parameter("AH000","Nome","description",pc1);
+        TestType testType = new TestType("BL000","description","sei lá",cat);
 
-        app.domain.model.Test test = new app.domain.model.Test("1234s","123456789012","1234567890123456",testType,cat,pa);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234s","123456789012","1234567890123456",testType,cat1,pa);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void createInvalidTestCategoryEmpty(){
-        ParameterCategoryStore cat1 = new ParameterCategoryStore();
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
         cat.add(pc1);
-        ParameterStore pa = new ParameterStore();
+        ParameterCategoryList cat1 = new ParameterCategoryList();
+        ParameterList pa = new ParameterList();
         Parameter p1 = new Parameter("AH000","Nome","description",pc1);
-        pa.add(p1);
-        TestType testType = new TestType("AF123","description","sei lá",cat);
+        TestType testType = new TestType("BL000","description","sei lá",cat);
 
         app.domain.model.Test test = new app.domain.model.Test("1234s","123456789012","1234567890123456",testType,cat1,pa);
     }
@@ -55,12 +58,14 @@ public class TestTest {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
         cat.add(pc1);
-        ParameterStore pa = new ParameterStore();
+        ParameterCategoryList cat1 = new ParameterCategoryList();
+        cat1.add(pc1);
+        ParameterList pa = new ParameterList();
         Parameter p1 = new Parameter("AH000","Nome","description",pc1);
         pa.add(p1);
-        TestType testType = new TestType("AF123","description","sei lá",cat);
+        TestType testType = new TestType("BL000","description","sei lá",cat);
 
-        app.domain.model.Test test = new app.domain.model.Test("000000000000001",null,"1234567890123456",testType,cat,pa);
+        app.domain.model.Test test = new app.domain.model.Test("000000000000001",null,"1234567890123456",testType,cat1,pa);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -68,12 +73,14 @@ public class TestTest {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
         cat.add(pc1);
-        ParameterStore pa = new ParameterStore();
+        ParameterCategoryList cat1 = new ParameterCategoryList();
+        cat1.add(pc1);
+        ParameterList pa = new ParameterList();
         Parameter p1 = new Parameter("AH000","Nome","description",pc1);
         pa.add(p1);
-        TestType testType = new TestType("AF123","description","sei lá",cat);
+        TestType testType = new TestType("BL000","description","sei lá",cat);
 
-        app.domain.model.Test test = new app.domain.model.Test("000000000000001","12345678901?","1234567890123456",testType,cat,pa);
+        app.domain.model.Test test = new app.domain.model.Test("000000000000001","12345678901?","1234567890123456",testType,cat1,pa);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -81,12 +88,14 @@ public class TestTest {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
         cat.add(pc1);
-        ParameterStore pa = new ParameterStore();
+        ParameterCategoryList cat1 = new ParameterCategoryList();
+        cat1.add(pc1);
+        ParameterList pa = new ParameterList();
         Parameter p1 = new Parameter("AH000","Nome","description",pc1);
         pa.add(p1);
-        TestType testType = new TestType("AF123","description","sei lá",cat);
+        TestType testType = new TestType("BL000","description","sei lá",cat);
 
-        app.domain.model.Test test = new app.domain.model.Test("000000000000001","1234567890187","1234567890123456",testType,cat,pa);
+        app.domain.model.Test test = new app.domain.model.Test("000000000000001","1234567890187","1234567890123456",testType,cat1,pa);
     }
 
     @Test
@@ -94,12 +103,14 @@ public class TestTest {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
         cat.add(pc1);
-        ParameterStore pa = new ParameterStore();
+        ParameterCategoryList cat1 = new ParameterCategoryList();
+        cat1.add(pc1);
+        ParameterList pa = new ParameterList();
         Parameter p1 = new Parameter("AH000","Nome","description",pc1);
         pa.add(p1);
         TestType testType = new TestType("BL000","description","sei lá",cat);
 
-        app.domain.model.Test test = new app.domain.model.Test("000000000000001","123456789187","1234567890123456",testType,cat,pa);
+        app.domain.model.Test test = new app.domain.model.Test("000000000000001","123456789187","1234567890123456",testType,cat1,pa);
 
         test.addTestParameter();
     }
@@ -109,12 +120,14 @@ public class TestTest {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
         cat.add(pc1);
-        ParameterStore pa = new ParameterStore();
+        ParameterCategoryList cat1 = new ParameterCategoryList();
+        cat1.add(pc1);
+        ParameterList pa = new ParameterList();
         Parameter p1 = new Parameter("AH000","Nome","description",pc1);
         pa.add(p1);
         TestType testType = new TestType("BL000","description","sei lá",cat);
 
-        app.domain.model.Test test = new app.domain.model.Test("000000000000001","123456789187","1234567890123456",testType,cat,pa);
+        app.domain.model.Test test = new app.domain.model.Test("000000000000001","123456789187","1234567890123456",testType,cat1,pa);
 
         String expected = "123456789187";
         String actual = test.getTestNhsNumber();
@@ -127,14 +140,16 @@ public class TestTest {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
         cat.add(pc1);
-        ParameterStore pa = new ParameterStore();
+        ParameterCategoryList cat1 = new ParameterCategoryList();
+        cat1.add(pc1);
+        ParameterList pa = new ParameterList();
         Parameter p1 = new Parameter("AH000","Nome","description",pc1);
         pa.add(p1);
         TestType testType = new TestType("BL000","description","sei lá",cat);
 
-        app.domain.model.Test test = new app.domain.model.Test("000000000000001","123456789187","1234567890123456",testType,cat,pa);
+        app.domain.model.Test test = new app.domain.model.Test("000000000000001","123456789187","1234567890123456",testType,cat1,pa);
 
-        String expected = "Test: testCode=000000000000001, testNhsNumber=123456789187, clientCc=1234567890123456, testType="+testType.toString()+", catList="+cat.toString()+", paList="+pa.toString();
+        String expected = "Test: testCode=000000000000001, testNhsNumber=123456789187, clientCc=1234567890123456, testType="+testType.toString()+", catList="+cat1.toString()+", paList="+pa.toString();
         String actual = test.toString();
 
         Assert.assertEquals(expected,actual);
@@ -148,12 +163,14 @@ public class TestTest {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
         cat.add(pc1);
-        ParameterStore pa = new ParameterStore();
+        ParameterCategoryList cat1 = new ParameterCategoryList();
+        cat1.add(pc1);
+        ParameterList pa = new ParameterList();
         Parameter p1 = new Parameter("AH000","Nome","description",pc1);
         pa.add(p1);
         TestType testType = new TestType("BL000","description","sei lá",cat);
 
-        app.domain.model.Test test = new app.domain.model.Test("000000000000001","123456789187","1234567890123456",testType,cat,pa);
+        app.domain.model.Test test = new app.domain.model.Test("000000000000001","123456789187","1234567890123456",testType,cat1,pa);
         test.addTestParameter();
         test.changeState("SAMPLE_COLLECTED");
 
@@ -166,12 +183,14 @@ public class TestTest {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
         cat.add(pc1);
-        ParameterStore pa = new ParameterStore();
+        ParameterCategoryList cat1 = new ParameterCategoryList();
+        cat1.add(pc1);
+        ParameterList pa = new ParameterList();
         Parameter p1 = new Parameter("AH000","Nome","description",pc1);
         pa.add(p1);
         TestType testType = new TestType("BL000","description","sei lá",cat);
 
-        app.domain.model.Test test = new app.domain.model.Test("000000000000001","123456789187","1234567890123456",testType,cat,pa);
+        app.domain.model.Test test = new app.domain.model.Test("000000000000001","123456789187","1234567890123456",testType,cat1,pa);
         test.addTestParameter();
 
         Assert.assertFalse(test.addTestResult("AH000",0.254));
@@ -183,12 +202,14 @@ public class TestTest {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
         cat.add(pc1);
-        ParameterStore pa = new ParameterStore();
+        ParameterCategoryList cat1 = new ParameterCategoryList();
+        cat1.add(pc1);
+        ParameterList pa = new ParameterList();
         Parameter p1 = new Parameter("AH000","Nome","description",pc1);
         pa.add(p1);
         TestType testType = new TestType("BL000","description","sei lá",cat);
 
-        app.domain.model.Test test = new app.domain.model.Test("000000000000001","123456789187","1234567890123456",testType,cat,pa);
+        app.domain.model.Test test = new app.domain.model.Test("000000000000001","123456789187","1234567890123456",testType,cat1,pa);
 
         test.addTestParameter();
         test.changeState("SAMPLE_COLLECTED");
