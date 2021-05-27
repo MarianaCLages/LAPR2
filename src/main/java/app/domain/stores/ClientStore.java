@@ -2,6 +2,7 @@ package app.domain.stores;
 
 import app.domain.model.Client;
 import app.domain.model.Company;
+import auth.AuthFacade;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -97,11 +98,10 @@ public class ClientStore {
 
     /**
      * Adds user to the system by calling the Client instance method
-     * @param company instance of company class in order to be able to get the AuthFacade class that is associated with the system
      * @return boolean value that represents the success of the operation
      */
-    public boolean addUser(Company company) {
-        return client.addUser(company);
+    public boolean addUser() {
+        return client.addUser();
     }
 
     /**
