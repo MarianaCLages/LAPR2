@@ -78,20 +78,33 @@ public class TestStore {
     }
 
 
-    /*
+
+    public TestStore getListOfTestsToValidate(){
+        TestStore listToValidate = new TestStore();
+        for (Test t : this.array) {
+            if (t.getState().equals("DIAGNOSTIC_MADE")){
+                listToValidate.addTest(t);
+            }
+        }
+        return listToValidate;
+    }
+
+    public String getState(Test t){ return t.getState();}
+
     public Test getTestWithID(String testID){
         for (Test t : this.array) {
-            if (t.getID().equals(testID)) {return t;}
+            if (t.getID().equals(testID)) {
+                return t;
+            }
         }
         return null;
     }
 
-    public List<Test> getListOfTestsToValidate(){}
-
-    public boolean validateTestList(){}
-
     public boolean addTest(Test t) {
         return array.add(t);
-    }*/
+    }
+
+
+    //public boolean validateTestList() { }
 
 }
