@@ -11,7 +11,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 
 /**
@@ -81,6 +83,7 @@ public class App {
         this.authFacade.addUserRole(Constants.ROLE_LABORATORYCOORDINATOR, Constants.ROLE_LABORATORYCOORDINATOR);
         this.authFacade.addUserRole(Constants.ROLE_SPECIALISTDOCTOR, Constants.ROLE_SPECIALISTDOCTOR);
         this.authFacade.addUserRole(Constants.ROLE_RECEPTIONIST, Constants.ROLE_RECEPTIONIST);
+        this.authFacade.addUserRole(Constants.ROLE_CLIENT,Constants.ROLE_CLIENT);
 
 
         ParameterCategoryStore parameterCategoryStore = company.getParameterCategoryList();
@@ -121,15 +124,15 @@ public class App {
             e.printStackTrace();
         }
 
-        ParameterCategoryList testCategories = new  ParameterCategoryList();
+        List<ParameterCategory> testCategories = new ArrayList<>();
         testCategories.add(pc1);
 
-        ParameterList testParameters = new  ParameterList();
+        List<Parameter> testParameters = new ArrayList<>();
         testParameters.add(p1);
         testParameters.add(p2);
         testParameters.add(p3);
 
-        ParameterList testParameters1 = new  ParameterList();
+        List<Parameter> testParameters1 = new ArrayList<>();
         testParameters1.add(p4);
 
 

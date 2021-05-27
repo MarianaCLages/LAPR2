@@ -145,14 +145,7 @@ public class Employee {
         }
     }
 
-    /**
-     * This method generates a new random password with alphanumeric characters using the class RandomStringUtils
-     *
-     * @return random string representing the employee password
-     */
-    String getPassword() {
-        return RandomStringUtils.randomAlphanumeric(Constants.PASSWORD_LENGTH);
-    }
+
 
     /**
      * Adds a new user to the system with the respective role using the getPassword method to create the user's password
@@ -162,26 +155,26 @@ public class Employee {
     public boolean addUserWithRole(Company company) {
 
         boolean success = false;
-        String password = getPassword();
-        AuthFacade authFacade = company.getAuthFacade();
+        String password = PasswordGenerator.getPassword();
+        AuthFacade authFacade = new AuthFacade();
 
         if (role.equals("Clinical Chemistry Technologist")) {
-            success = authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_CLINICALCHEMISTRYTECHNOLOGIST);
+            success = authFacade.addUserWithRole(this.name, this.email, password, Constants.ROLE_CLINICALCHEMISTRYTECHNOLOGIST);
         }
 
         if (role.equals("Medical Lab Technician")) {
-            success = authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_MEDICALLABTECHNICIIAN);
+            success = authFacade.addUserWithRole(this.name, this.email, password, Constants.ROLE_MEDICALLABTECHNICIIAN);
         }
 
         if (role.equals("LaboratoryCoordinator"))
-            success = authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_LABORATORYCOORDINATOR);
+            success = authFacade.addUserWithRole(this.name, this.email, password, Constants.ROLE_LABORATORYCOORDINATOR);
 
         if (role.equals("Receptionist")) {
-            success = authFacade.addUserWithRole(this.name, this.email, getPassword(), Constants.ROLE_RECEPTIONIST);
+            success = authFacade.addUserWithRole(this.name, this.email, password, Constants.ROLE_RECEPTIONIST);
         }
 
         if (success){
-            Email mail = new Email(this.email,getPassword());
+            Email.sendPasswordNotification(this.name,this.email, password);
 
         }
         return success;

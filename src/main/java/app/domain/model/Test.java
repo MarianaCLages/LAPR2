@@ -15,8 +15,8 @@ public class Test {
     private String testNhsNumber;
     private String clientTin;
     private TestType testType;
-    private ParameterCategoryList catList;
-    private ParameterList paList;
+    private List<ParameterCategory> catList;
+    private List<Parameter> paList;
     private List<TestParameter> testParam;
     private LocalDate createdDate;
     private LocalDate sampleCreatedDate;
@@ -37,9 +37,10 @@ public class Test {
      * @param catList       list of parameters categories that are measured in this test
      * @param paList        list of parameters that are measured in this test
      */
-    public Test(String testCode, String testNhsNumber, String clientTin, TestType testType, ParameterCategoryList catList, ParameterList paList) {
+    public Test(String testCode, String testNhsNumber, String clientTin, TestType testType, List<ParameterCategory> catList, List<Parameter> paList) {
 
         checkTestNhsNumberRules(testNhsNumber);
+        checkTestCodeRules(testCode);
         checkCatList(catList);
         checkPaList(paList);
         this.testCode = testCode;
@@ -52,12 +53,18 @@ public class Test {
 
     }
 
+    private void checkTestCodeRules(String testCode){
+        if (testCode == null) {
+            throw new IllegalArgumentException("The Test Code must exist");
+        }
+    }
+
     /**
      * This method checks if the list of parameters meets the requirements, if not it throws a exception making the execution to stop
      *
      * @param paList list of parameters that are measured in this test
      */
-    private void checkPaList(ParameterList paList) {
+    private void checkPaList(List<Parameter> paList) {
         if (paList.isEmpty() || paList == null) {
             throw new IllegalArgumentException("Parameter List must not be empty");
         }
@@ -69,7 +76,7 @@ public class Test {
      *
      * @param catList list of parameters categories that are measured in this test
      */
-    private void checkCatList(ParameterCategoryList catList) {
+    private void checkCatList(List<ParameterCategory> catList) {
         if (catList.isEmpty() || catList == null) {
             throw new IllegalArgumentException("Category List must not be empty");
         }
@@ -100,7 +107,7 @@ public class Test {
      */
     public void addTestParameter() {
         this.testParam = new ArrayList<>();
-        for (Parameter p : this.paList.getList()) {
+        for (Parameter p : this.paList) {
             String code = p.getCode();
             TestParameter tp = new TestParameter(code);
 
@@ -246,7 +253,13 @@ public class Test {
 
 
 
-    /*
-    public String getID(){return testCode;}
-*/
+    public String getID() {
+        return testCode;
+    }
+
+    public String getState() {
+        return state.toString();
+    }
+
+
 }

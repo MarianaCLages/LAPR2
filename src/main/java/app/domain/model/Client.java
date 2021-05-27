@@ -2,7 +2,6 @@ package app.domain.model;
 
 import app.domain.shared.Constants;
 import auth.AuthFacade;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
@@ -14,6 +13,8 @@ import java.time.Period;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.regex.Pattern;
+
+import static app.domain.model.PasswordGenerator.getPassword;
 
 /**
  * Class that represents an Client
@@ -268,28 +269,20 @@ public class Client {
         return email;
     }
 
-    /**
-     * This method generates a new random password with alphanumeric characters using the class RandomStringUtils
-     *
-     * @return random string representing the client password
-     */
-    private String getPassword() {
-        return RandomStringUtils.randomAlphanumeric(Constants.PASSWORD_LENGTH);
-    }
+
 
     /**
      * Adds a new user to the system with the role of the client using the getPassword method to create the user's password
-     * @param company instance of company class in order to be able to get the AuthFacade class that is associated with the system
      * @return a boolean value representing the success of the operation
      */
 
-    public boolean addUser(Company company) {
+    public boolean addUser() {
         boolean success = false;
-        String password = getPassword();
-        AuthFacade authFacade = company.getAuthFacade();
-        success = authFacade.addUserWithRole(this.name, this.email, password, Constants.ROLE_CLIENT);
+        AuthFacade auth = new AuthFacade();
+        String password = PasswordGenerator.getPassword();
+        success = auth.addUser(this.name, this.email, password);
         if (success) {
-            Email mail = new Email(this.email, password);
+             Email.sendPasswordNotification(this.name,this.email, password);
 
         }
         return success;

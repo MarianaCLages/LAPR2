@@ -69,11 +69,11 @@ public class SpecialistDoctor extends Employee {
 
     public boolean addUserWithRole(Company company) {
         boolean success = false;
-        String password = super.getPassword();
+        String password = PasswordGenerator.getPassword();
         AuthFacade authFacade = company.getAuthFacade();
-        success = authFacade.addUserWithRole(this.name, this.email, super.getPassword(), Constants.ROLE_SPECIALISTDOCTOR);
+        success = authFacade.addUserWithRole(this.name, this.email, password, Constants.ROLE_SPECIALISTDOCTOR);
         if (success) {
-            Email mail = new Email(this.email, getPassword());
+            Email.sendPasswordNotification(this.name,this.email, password);
 
         }
         return success;

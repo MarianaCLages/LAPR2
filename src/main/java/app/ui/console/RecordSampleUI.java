@@ -3,7 +3,7 @@ package app.ui.console;
 
 import app.controller.RecordSampleController;
 import app.domain.mappers.dto.TestDTO;
-import app.domain.model.SampleStore;
+import app.domain.stores.SampleStore;
 import app.ui.console.utils.Utils;
 
 import java.util.Scanner;

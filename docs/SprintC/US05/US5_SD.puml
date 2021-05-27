@@ -16,7 +16,7 @@ activate UI
 UI -> CTRL : SD_getTestList(testID)
 ref over CTRL: SD_TestIDDTO(testID)
 activate CTRL
-CTRL --> UI: tpStoreDTO
+CTRL --> UI: tStoreDTO
 deactivate CTRL
 
 UI --> MLT: shows test list
