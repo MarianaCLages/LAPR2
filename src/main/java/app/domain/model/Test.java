@@ -2,7 +2,6 @@ package app.domain.model;
 
 import app.domain.shared.Constants;
 
-import net.sourceforge.barbecue.Barcode;
 import org.apache.commons.lang3.StringUtils;
 
 import java.time.LocalDate;
@@ -26,6 +25,7 @@ public class Test {
     private LocalDate validatedDate;
     private List<Sample> testSamples;
     private Sample sample;
+    private Report rep;
 
     /**
      * Constructor of the Test object, it call methods on order to validate the NhsNumber, the list of categories and the list of parameters
@@ -225,6 +225,26 @@ public class Test {
 
 
     }
+    public boolean createReport(String diagnosis){
+        this.rep = new Report(this.testCode,diagnosis);
+
+        if (this.rep == null){
+            return false;
+        }else {
+            return true;
+        }
+    }
+
+    public void saveReport(){
+        changeState(State.DIAGNOSTIC_MADE);
+    }
+
+
+
+
+
+
+
 
     /*
     public String getID(){return testCode;}

@@ -13,9 +13,9 @@ autonumber
 
 [o-> ctrl: getTestDataList(Test)
 activate ctrl
-ctrl -> tStore: tdataList = getTestDataList(Test)
+ctrl -> tStore: tresults = getTestDataList(Test)
 activate tStore
-tStore -> Test: tdataList = getTestDataList()
+tStore -> Test: tdataList = getResults()
 activate Test
 deactivate Test
 deactivate tStore

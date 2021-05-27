@@ -6,28 +6,34 @@ import org.apache.commons.lang3.StringUtils;
 
 public class Report {
 
-    private String TestID;
-    private String Diagnosis;
+    private String testID;
+    private String diagnosis;
 
-    public Report(String TestID, String Diagnosis) {
-        checkDiagnosisRules(Diagnosis);
-        this.TestID = TestID;
-        this.Diagnosis = Diagnosis;
+    public Report(String testID, String diagnosis) {
+        checkDiagnosisRules(diagnosis);
+        this.testID = testID;
+        this.diagnosis = diagnosis;
     }
 
 
-    private void checkDiagnosisRules(String Diagnosis) {
+    private void checkDiagnosisRules(String diagnosis) {
 
-        if (StringUtils.isBlank(Diagnosis)){
+        if (StringUtils.isBlank(diagnosis)){
             throw new IllegalArgumentException("Diagnosis cannot be blank.");
     }
 
-        if (Diagnosis.length() <= Constants.DIAGNOSIS_MAX_LENGHT){
+        if (diagnosis.length() <= Constants.DIAGNOSIS_MAX_LENGHT){
             throw new IllegalArgumentException("Diagnosis cannot exceed 200 char.");
         }
 
     }
 
+    public String getTestID() {
+        return testID;
+    }
 
 
+    public String getDiagnosis() {
+        return diagnosis;
+    }
 }

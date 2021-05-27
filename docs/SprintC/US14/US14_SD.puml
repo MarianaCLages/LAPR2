@@ -35,22 +35,25 @@ deactivate CTRL
 Administrator -> UI : select a test
 activate UI
 
-UI -> CTRL : SD_getTestData(Test)
-ref over CTRL: SD_TestDataDTO(Test)
+UI -> CTRL : getResult();
+
+
+
 activate CTRL
 
-CTRL --> UI: tdataStoreDTO
+CTRL -> TEST : getResult()
 
 deactivate CTRL
-deactivate TESTSTORE
 
+
+activate TEST
 
 
 UI --> Administrator : shows Test data list and ask for a diagnosis of the test
 deactivate UI
 
 
-
+deactivate TEST
 
 
 Administrator -> UI : type diagnosis data

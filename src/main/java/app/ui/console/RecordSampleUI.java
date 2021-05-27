@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class RecordSampleUI implements Runnable {
 
-    Scanner scanner = new Scanner(System.in);
+
     private RecordSampleController ctrl;
     private TestDTO test;
     private SampleStore SampleList;
