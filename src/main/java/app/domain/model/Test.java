@@ -1,8 +1,7 @@
 package app.domain.model;
 
 import app.domain.shared.Constants;
-import app.domain.stores.ParameterCategoryStore;
-import app.domain.stores.ParameterStore;
+
 import net.sourceforge.barbecue.Barcode;
 import org.apache.commons.lang3.StringUtils;
 
@@ -21,8 +20,11 @@ public class Test {
     private ParameterList paList;
     private List<TestParameter> testParam;
     private LocalDate createdDate;
+    private LocalDate sampleCreatedDate;
+    private LocalDate analysedData;
+    private LocalDate diagnosticDate;
+    private LocalDate validatedDate;
     private List<Sample> testSamples;
-    private Barcode barcode;
     private Sample sample;
 
     /**
@@ -124,19 +126,33 @@ public class Test {
                 break;
             case "SAMPLE_COLLECTED":
                 changeState(State.SAMPLE_COLLECTED);
+                this.sampleCreatedDate = LocalDate.now();
                 break;
             case "SAMPLE_ANALYSED":
                 changeState(State.SAMPLE_ANALYSED);
+                this.analysedData = LocalDate.now();
                 break;
             case "DIAGNOSTIC_MADE":
                 changeState(State.DIAGNOSTIC_MADE);
+                this.diagnosticDate = LocalDate.now();
                 break;
             case "VALIDATED":
                 changeState(State.VALIDATED);
+                this.validatedDate = LocalDate.now();
                 break;
             default:
                 break;
         }
+    }
+
+    public String getDates(){
+        StringBuilder listString = new StringBuilder();
+        listString.append("Created at:"); listString.append(this.createdDate.toString()).append("\n");
+        listString.append("Samples collected at:"); listString.append(this.sampleCreatedDate.toString()).append("\n");
+        listString.append("Analysed at:"); listString.append(this.analysedData.toString()).append("\n");
+        listString.append("Diagnosed at:"); listString.append(this.diagnosticDate.toString()).append("\n");
+
+        return String.valueOf(listString);
     }
 
 
@@ -152,6 +168,15 @@ public class Test {
     @Override
     public String toString() {
         return "Test: testCode=" + testCode + ", testNhsNumber=" + testNhsNumber + ", clientCc=" + clientTin + ", testType=" + testType + ", catList=" + catList + ", paList=" + paList;
+    }
+    public String getResults(){
+        StringBuilder listString = new StringBuilder();
+
+        for (TestParameter s : this.testParam) {
+            listString.append(s.getTestParameterResult()).append("\n");
+        }
+        return String.valueOf(listString);
+
     }
 
 
@@ -180,9 +205,7 @@ public class Test {
         return true;
     }
 
-    public Barcode getBarcode() {
-        return barcode;
-    }
+
 
     public List<TestParameter> getTestParam() {
         return testParam;

@@ -70,6 +70,15 @@ public class SampleStore {
         return empty;
     }
 
+    public Sample getSample(String sampleID){
+        for (Sample s: testSamples) {
+            if (s.getBarcode().equals(sampleID)){
+                return s;
+            }
+        }
+        return null;
+    }
+
     public String getSample(){
         return this.sample.toString();
     }

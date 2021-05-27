@@ -16,4 +16,9 @@ public class TestDTO {
     public String getTestCode() {
         return testCode;
     }
+
+    @Override
+    public String toString() {
+        return "Test: " + "testNhsNumber= " + testNhsNumber+", testCode= " + testCode;
+    }
 }

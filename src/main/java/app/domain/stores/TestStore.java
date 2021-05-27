@@ -68,15 +68,15 @@ public class TestStore {
     public String getTest() {
         return this.t.toString();
     }
-
-    public Test getTest(String sampleId) {
+    public Test getTestByCode(String testId){
         for (Test t : this.array) {
-            if (t.getBarcode().equals(sampleId)) {
+            if (t.getTestNhsNumber().equals(testId)) {
                 return t;
             }
         }
         return null;
     }
+
 
     /*
     public Test getTestWithID(String testID){

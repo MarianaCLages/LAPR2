@@ -22,6 +22,7 @@ public class Company {
     private EmployeeStore employeeList;
     private ClientStore clientList;
     private TestStore testList;
+    private SampleStore sampleStore;
 
     /**
      * Constructor of the Company Class, instances a new object of AuthFacade
@@ -40,6 +41,8 @@ public class Company {
         this.clinicalAnalysisLabList = new ClinicalAnalysisLabStore();
         this.clientList = new ClientStore();
         this.testList = new TestStore();
+        this.sampleStore = new SampleStore();
+
     }
 
     /**
@@ -169,5 +172,9 @@ public class Company {
 
     public ParameterStore parameterList() {
         return this.parameterList;
+    }
+
+    public SampleStore getSampleStore() {
+        return sampleStore;
     }
 }

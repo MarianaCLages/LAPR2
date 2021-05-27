@@ -19,4 +19,8 @@ public class TestParameter {
         this.testParameterResult = new TestParameterResult(result, this.pCode, refValue);
     }
 
+
+    public String getTestParameterResult() {
+        return this.testParameterResult.toString();
+    }
 }

@@ -62,9 +62,10 @@ public class RecordSampleUI implements Runnable {
                 }
             } while (exception);
 
-            System.out.println();
             cont = Utils.confirm("The Sample(s) was(were) recorded. Do you want to save? (s/n) \n" );
-
+            if (cont){
+                ctrl.confirm(this.test.getTestCode());
+            }
 
         } while (!cont);
 
