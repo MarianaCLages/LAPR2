@@ -7,14 +7,6 @@ participant ":Company" as Comp
 participant ":TestStore" as tStore
 participant ":Test" as Test
 participant ":TestParameterStoreMapper" as tpStoreMapper
-participant ":TestParameterStore" as tpStore
-participant "testParam:TestParameter" as TestPa
-participant "param:Parameter" as Param
-participant "type:TestType" as TestTy
-participant "em:ExternalModule" as ExMod
-participant "refValue: ReferenceValue" as RefVal
-participant "testResult:TestParameterResult" as TestParamRes
-
 
 activate cct
 cct -> UI: Asks for record the results of a given test
