@@ -5,6 +5,8 @@ import app.domain.model.ParameterCategory;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.List;
+
 public class ParameterStoreTest {
     ParameterCategory cat = new ParameterCategory("AE554", "Hemogram");
 
@@ -173,10 +175,41 @@ public class ParameterStoreTest {
 
         String actual = store.toString();
 
-        String expected = pc1.toString() + "\n" + pc2.toString() + "\n";
+        String expected = "[" + pc1.toString() + ", " + pc2.toString() + "]";
 
         Assert.assertEquals(actual, expected);
     }
 
 
+    @Test
+    public void getParameterList() {
+        ParameterStore store = new ParameterStore();
+        Parameter pc1 = store.createParameter("A1234", "PLT", "description", cat);
+        Parameter pc2 = store.createParameter("A1284", "PLT", "description", cat);
+
+        store.add(pc1);
+        store.add(pc2);
+
+        List<Parameter> parameterList = store.getParameterList("AE554");
+
+        String actual = parameterList.toString();
+        String expected = store.toString();
+        Assert.assertEquals(actual, expected);
+
+    }
+
+
+    @Test
+    public void getParameterTest(){
+        ParameterStore store = new ParameterStore();
+        Parameter pc1 = store.createParameter("A1234", "PLT", "description", cat);
+        Parameter pc2 = store.createParameter("A1284", "PLT", "description", cat);
+
+        store.add(pc1);
+        store.add(pc2);
+
+        Parameter p = store.getParameter("A1284");
+
+        Assert.assertEquals(p,pc2);
+    }
 }
