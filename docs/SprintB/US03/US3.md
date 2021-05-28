@@ -107,7 +107,6 @@ As a receptionist of the laboratory, I want to register a client.
 * There is a dependency to "US7- Register a new employee" since there must be a receptionist employed to register the
   client.
 
-
 ### 1.5 Input and Output Data
 
 **Input Data:**
@@ -354,6 +353,7 @@ accordance with the previously carried out design. Furthermore, it is recommeded
 other relevant (e.g. configuration) files and highlight relevant commits.*
 
 ## Class Client
+
 ```
 package app.domain.model;
 
@@ -568,6 +568,7 @@ public class Client {
 ```
 
 ## Class ClientStore
+
 ```
 package app.domain.model;
 
@@ -620,6 +621,7 @@ public class ClientStore {
 ```
 
 ## Class ClientController
+
 ````
 package app.controller;
 
@@ -665,6 +667,7 @@ public class ClientController {
 ````
 
 ### Class CreateClientUI
+
 ```
 package app.ui.console;
 
@@ -748,5 +751,6 @@ public class CreateClientUI implements Runnable {
 
 # 7. Observations
 
-We are passing a lot of information from UI layer to Domain layer, in the next sprints we might need to use data transfer objects to pass this information
+We are passing a lot of information from UI layer to Domain layer, in the next sprints we might need to use data
+transfer objects to pass this information
 

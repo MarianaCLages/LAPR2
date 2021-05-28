@@ -74,7 +74,7 @@ public class TestStoreTest {
     }
 
     @Test
-    public void addAlreadyExistentTest(){
+    public void addAlreadyExistentTest() {
 
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");

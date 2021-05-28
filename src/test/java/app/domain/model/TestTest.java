@@ -385,6 +385,7 @@ public class TestTest {
         Assert.assertEquals(actual, expected);
 
     }
+
     @Test(expected = NullPointerException.class)
     public void changeStateNotValid() {
         ParameterCategoryStore cat = new ParameterCategoryStore();
@@ -494,7 +495,7 @@ public class TestTest {
 
 
     @Test
-    public void getTestparamTest(){
+    public void getTestparamTest() {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
         cat.add(pc1);
@@ -514,7 +515,7 @@ public class TestTest {
         TestParameter tp = new TestParameter("AH000");
         expected.add(tp);
 
-        Assert.assertEquals(actual.toString(),expected.toString());
+        Assert.assertEquals(actual.toString(), expected.toString());
 
     }
 

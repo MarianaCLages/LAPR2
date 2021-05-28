@@ -1,63 +1,1065 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1351px" preserveAspectRatio="none" style="width:2144px;height:1351px;" version="1.1" viewBox="0 0 2144 1351" width="2144px" zoomAndPan="magnify"><defs><filter height="300%" id="f88u4sc8wwupo" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[8ccb22436dd277bde4e48928c0f3fb40]
-class Covid19Report--><rect codeLine="2" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="131.0156" id="Covid19Report" style="stroke:#A80036;stroke-width:1.5;" width="193" x="1256" y="7"/><ellipse cx="1307.25" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1309.25,19.5 Q1309.4531,19 1309.6875,18.75 Q1309.9219,18.5 1310.1875,18.5 Q1310.6563,18.5 1310.9531,18.7813 Q1311.25,19.0625 1311.25,19.7188 L1311.25,21.2813 Q1311.25,21.9375 1310.9688,22.2188 Q1310.6875,22.5 1310.25,22.5 Q1309.8594,22.5 1309.6094,22.3281 Q1309.3594,22.1563 1309.25,21.7031 Q1309.2031,21.3906 1309.0313,21.2188 Q1308.7188,20.8906 1308.1563,20.7031 Q1307.5938,20.5 1307.0313,20.5 Q1306.3281,20.5 1305.7344,20.7813 Q1305.1563,21.0625 1304.7031,21.6875 Q1304.25,22.3125 1304.25,23.1719 L1304.25,24.0938 Q1304.25,25.125 1305.0938,25.8125 Q1305.9375,26.5 1307.4375,26.5 Q1308.3281,26.5 1308.9531,26.2969 Q1309.3125,26.1875 1309.7188,25.8281 Q1309.9844,25.625 1310.125,25.5625 Q1310.2656,25.5 1310.4375,25.5 Q1310.7656,25.5 1311,25.7656 Q1311.25,26.0156 1311.25,26.375 Q1311.25,26.7188 1310.9063,27.125 Q1310.4063,27.7188 1309.6094,28.0469 Q1308.5625,28.5 1307.2813,28.5 Q1305.7813,28.5 1304.5781,27.9063 Q1303.6094,27.4375 1302.9219,26.4219 Q1302.25,25.4063 1302.25,24.2031 L1302.25,23.1094 Q1302.25,21.8594 1302.8438,20.7656 Q1303.4531,19.6719 1304.5,19.0938 Q1305.5625,18.5 1306.75,18.5 Q1307.4688,18.5 1308.0938,18.75 Q1308.7188,19 1309.25,19.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="82" x="1327.75" y="27.9102">Covid19Report</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1257" x2="1448" y1="39" y2="39"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="126" x="1262" y="54.4189">Covid-19 tests performed;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="164" x="1262" y="68.2549">Positive Results to Covid-19 Tests</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="171" x="1262" y="82.0908">Number of Covid-19 Cases Per Day</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="179" x="1262" y="95.9268">Number of Covid-19 Cases Per Week</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="181" x="1262" y="109.7627">Number of Covid-19 Cases Per Month</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="176" x="1262" y="123.5986">Number of Covid-19 Cases Per Year</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1257" x2="1448" y1="130.0156" y2="130.0156"/><!--MD5=[df38be88ccee13e832d6fafd6288a4ca]
-class Test--><rect codeLine="11" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="89.5078" id="Test" style="stroke:#A80036;stroke-width:1.5;" width="76" x="1240.5" y="654.5"/><ellipse cx="1264.5" cy="670.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1266.5,667 Q1266.7031,666.5 1266.9375,666.25 Q1267.1719,666 1267.4375,666 Q1267.9063,666 1268.2031,666.2813 Q1268.5,666.5625 1268.5,667.2188 L1268.5,668.7813 Q1268.5,669.4375 1268.2188,669.7188 Q1267.9375,670 1267.5,670 Q1267.1094,670 1266.8594,669.8281 Q1266.6094,669.6563 1266.5,669.2031 Q1266.4531,668.8906 1266.2813,668.7188 Q1265.9688,668.3906 1265.4063,668.2031 Q1264.8438,668 1264.2813,668 Q1263.5781,668 1262.9844,668.2813 Q1262.4063,668.5625 1261.9531,669.1875 Q1261.5,669.8125 1261.5,670.6719 L1261.5,671.5938 Q1261.5,672.625 1262.3438,673.3125 Q1263.1875,674 1264.6875,674 Q1265.5781,674 1266.2031,673.7969 Q1266.5625,673.6875 1266.9688,673.3281 Q1267.2344,673.125 1267.375,673.0625 Q1267.5156,673 1267.6875,673 Q1268.0156,673 1268.25,673.2656 Q1268.5,673.5156 1268.5,673.875 Q1268.5,674.2188 1268.1563,674.625 Q1267.6563,675.2188 1266.8594,675.5469 Q1265.8125,676 1264.5313,676 Q1263.0313,676 1261.8281,675.4063 Q1260.8594,674.9375 1260.1719,673.9219 Q1259.5,672.9063 1259.5,671.7031 L1259.5,670.6094 Q1259.5,669.3594 1260.0938,668.2656 Q1260.7031,667.1719 1261.75,666.5938 Q1262.8125,666 1264,666 Q1264.7188,666 1265.3438,666.25 Q1265.9688,666.5 1266.5,667 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="24" x="1280.5" y="675.4102">Test</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1241.5" x2="1315.5" y1="686.5" y2="686.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="29" x="1246.5" y="701.9189">Client;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="1246.5" y="715.7549">Test ID;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="64" x="1246.5" y="729.5908">Type of Test;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1241.5" x2="1315.5" y1="736.0078" y2="736.0078"/><!--MD5=[9681492165142af2a4a3a169d90ee8d4]
-class Sample--><rect codeLine="17" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="75.6719" id="Sample" style="stroke:#A80036;stroke-width:1.5;" width="90" x="1442.5" y="473.5"/><ellipse cx="1464.25" cy="489.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1466.25,486 Q1466.4531,485.5 1466.6875,485.25 Q1466.9219,485 1467.1875,485 Q1467.6563,485 1467.9531,485.2813 Q1468.25,485.5625 1468.25,486.2188 L1468.25,487.7813 Q1468.25,488.4375 1467.9688,488.7188 Q1467.6875,489 1467.25,489 Q1466.8594,489 1466.6094,488.8281 Q1466.3594,488.6563 1466.25,488.2031 Q1466.2031,487.8906 1466.0313,487.7188 Q1465.7188,487.3906 1465.1563,487.2031 Q1464.5938,487 1464.0313,487 Q1463.3281,487 1462.7344,487.2813 Q1462.1563,487.5625 1461.7031,488.1875 Q1461.25,488.8125 1461.25,489.6719 L1461.25,490.5938 Q1461.25,491.625 1462.0938,492.3125 Q1462.9375,493 1464.4375,493 Q1465.3281,493 1465.9531,492.7969 Q1466.3125,492.6875 1466.7188,492.3281 Q1466.9844,492.125 1467.125,492.0625 Q1467.2656,492 1467.4375,492 Q1467.7656,492 1468,492.2656 Q1468.25,492.5156 1468.25,492.875 Q1468.25,493.2188 1467.9063,493.625 Q1467.4063,494.2188 1466.6094,494.5469 Q1465.5625,495 1464.2813,495 Q1462.7813,495 1461.5781,494.4063 Q1460.6094,493.9375 1459.9219,492.9219 Q1459.25,491.9063 1459.25,490.7031 L1459.25,489.6094 Q1459.25,488.3594 1459.8438,487.2656 Q1460.4531,486.1719 1461.5,485.5938 Q1462.5625,485 1463.75,485 Q1464.4688,485 1465.0938,485.25 Q1465.7188,485.5 1466.25,486 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="43" x="1479.75" y="494.4102">Sample</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1443.5" x2="1531.5" y1="505.5" y2="505.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="1448.5" y="520.9189">Test ID;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="1448.5" y="534.7549">Type of Sample;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1443.5" x2="1531.5" y1="541.1719" y2="541.1719"/><!--MD5=[fdca102e342db1d5733f5f3c41f4f0c8]
-class TypeTest--><rect codeLine="22" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="61.8359" id="TypeTest" style="stroke:#A80036;stroke-width:1.5;" width="82" x="1259.5" y="480.5"/><ellipse cx="1274.5" cy="496.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1276.5,493 Q1276.7031,492.5 1276.9375,492.25 Q1277.1719,492 1277.4375,492 Q1277.9063,492 1278.2031,492.2813 Q1278.5,492.5625 1278.5,493.2188 L1278.5,494.7813 Q1278.5,495.4375 1278.2188,495.7188 Q1277.9375,496 1277.5,496 Q1277.1094,496 1276.8594,495.8281 Q1276.6094,495.6563 1276.5,495.2031 Q1276.4531,494.8906 1276.2813,494.7188 Q1275.9688,494.3906 1275.4063,494.2031 Q1274.8438,494 1274.2813,494 Q1273.5781,494 1272.9844,494.2813 Q1272.4063,494.5625 1271.9531,495.1875 Q1271.5,495.8125 1271.5,496.6719 L1271.5,497.5938 Q1271.5,498.625 1272.3438,499.3125 Q1273.1875,500 1274.6875,500 Q1275.5781,500 1276.2031,499.7969 Q1276.5625,499.6875 1276.9688,499.3281 Q1277.2344,499.125 1277.375,499.0625 Q1277.5156,499 1277.6875,499 Q1278.0156,499 1278.25,499.2656 Q1278.5,499.5156 1278.5,499.875 Q1278.5,500.2188 1278.1563,500.625 Q1277.6563,501.2188 1276.8594,501.5469 Q1275.8125,502 1274.5313,502 Q1273.0313,502 1271.8281,501.4063 Q1270.8594,500.9375 1270.1719,499.9219 Q1269.5,498.9063 1269.5,497.7031 L1269.5,496.6094 Q1269.5,495.3594 1270.0938,494.2656 Q1270.7031,493.1719 1271.75,492.5938 Q1272.8125,492 1274,492 Q1274.7188,492 1275.3438,492.25 Q1275.9688,492.5 1276.5,493 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="50" x="1288.5" y="501.4102">TypeTest</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1260.5" x2="1340.5" y1="512.5" y2="512.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="1265.5" y="527.9189">Test ID;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1260.5" x2="1340.5" y1="534.3359" y2="534.3359"/><!--MD5=[ed6624c6556d5e7b1bd23032162d20b7]
-class Client--><rect codeLine="27" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="158.6875" id="Client" style="stroke:#A80036;stroke-width:1.5;" width="185" x="493" y="997"/><ellipse cx="565.25" cy="1013" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M567.25,1009.5 Q567.4531,1009 567.6875,1008.75 Q567.9219,1008.5 568.1875,1008.5 Q568.6563,1008.5 568.9531,1008.7813 Q569.25,1009.0625 569.25,1009.7188 L569.25,1011.2813 Q569.25,1011.9375 568.9688,1012.2188 Q568.6875,1012.5 568.25,1012.5 Q567.8594,1012.5 567.6094,1012.3281 Q567.3594,1012.1563 567.25,1011.7031 Q567.2031,1011.3906 567.0313,1011.2188 Q566.7188,1010.8906 566.1563,1010.7031 Q565.5938,1010.5 565.0313,1010.5 Q564.3281,1010.5 563.7344,1010.7813 Q563.1563,1011.0625 562.7031,1011.6875 Q562.25,1012.3125 562.25,1013.1719 L562.25,1014.0938 Q562.25,1015.125 563.0938,1015.8125 Q563.9375,1016.5 565.4375,1016.5 Q566.3281,1016.5 566.9531,1016.2969 Q567.3125,1016.1875 567.7188,1015.8281 Q567.9844,1015.625 568.125,1015.5625 Q568.2656,1015.5 568.4375,1015.5 Q568.7656,1015.5 569,1015.7656 Q569.25,1016.0156 569.25,1016.375 Q569.25,1016.7188 568.9063,1017.125 Q568.4063,1017.7188 567.6094,1018.0469 Q566.5625,1018.5 565.2813,1018.5 Q563.7813,1018.5 562.5781,1017.9063 Q561.6094,1017.4375 560.9219,1016.4219 Q560.25,1015.4063 560.25,1014.2031 L560.25,1013.1094 Q560.25,1011.8594 560.8438,1010.7656 Q561.4531,1009.6719 562.5,1009.0938 Q563.5625,1008.5 564.75,1008.5 Q565.4688,1008.5 566.0938,1008.75 Q566.7188,1009 567.25,1009.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="32" x="585.75" y="1017.9102">Client</text><line style="stroke:#A80036;stroke-width:1.5;" x1="494" x2="677" y1="1029" y2="1029"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="499" y="1044.4189">Name;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="100" x="499" y="1058.2549">Citizen card Number;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="173" x="499" y="1072.0908">National Healthcare Service Number</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="49" x="499" y="1085.9268">Birth date;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="22" x="499" y="1099.7627">Sex;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="124" x="499" y="1113.5986">Tax Identification Number;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="33" x="499" y="1127.4346">Phone;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="499" y="1141.2705">E-mail;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="494" x2="677" y1="1147.6875" y2="1147.6875"/><!--MD5=[03960189e81aa2c066c762ffabbee709]
-class Receptionist--><rect codeLine="38" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="144.8516" id="Receptionist" style="stroke:#A80036;stroke-width:1.5;" width="225" x="527" y="223"/><ellipse cx="600.75" cy="239" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M602.75,235.5 Q602.9531,235 603.1875,234.75 Q603.4219,234.5 603.6875,234.5 Q604.1563,234.5 604.4531,234.7813 Q604.75,235.0625 604.75,235.7188 L604.75,237.2813 Q604.75,237.9375 604.4688,238.2188 Q604.1875,238.5 603.75,238.5 Q603.3594,238.5 603.1094,238.3281 Q602.8594,238.1563 602.75,237.7031 Q602.7031,237.3906 602.5313,237.2188 Q602.2188,236.8906 601.6563,236.7031 Q601.0938,236.5 600.5313,236.5 Q599.8281,236.5 599.2344,236.7813 Q598.6563,237.0625 598.2031,237.6875 Q597.75,238.3125 597.75,239.1719 L597.75,240.0938 Q597.75,241.125 598.5938,241.8125 Q599.4375,242.5 600.9375,242.5 Q601.8281,242.5 602.4531,242.2969 Q602.8125,242.1875 603.2188,241.8281 Q603.4844,241.625 603.625,241.5625 Q603.7656,241.5 603.9375,241.5 Q604.2656,241.5 604.5,241.7656 Q604.75,242.0156 604.75,242.375 Q604.75,242.7188 604.4063,243.125 Q603.9063,243.7188 603.1094,244.0469 Q602.0625,244.5 600.7813,244.5 Q599.2813,244.5 598.0781,243.9063 Q597.1094,243.4375 596.4219,242.4219 Q595.75,241.4063 595.75,240.2031 L595.75,239.1094 Q595.75,237.8594 596.3438,236.7656 Q596.9531,235.6719 598,235.0938 Q599.0625,234.5 600.25,234.5 Q600.9688,234.5 601.5938,234.75 Q602.2188,235 602.75,235.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="69" x="621.25" y="243.9102">Receptionist</text><line style="stroke:#A80036;stroke-width:1.5;" x1="528" x2="751" y1="255" y2="255"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="61" x="533" y="270.4189">Employee ID;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="88" x="533" y="284.2549">Organization Role;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="533" y="298.0908">Name;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="533" y="311.9268">Address;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="533" y="325.7627">Phone Number;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="533" y="339.5986">E-Mail;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="213" x="533" y="353.4346">Standard Occupational Classification "soc";</text><line style="stroke:#A80036;stroke-width:1.5;" x1="528" x2="751" y1="359.8516" y2="359.8516"/><!--MD5=[01931d41e78f8996acd44f6f0fd8de28]
-class MedicalLabTechnician--><rect codeLine="48" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="144.8516" id="MedicalLabTechnician" style="stroke:#A80036;stroke-width:1.5;" width="225" x="1163" y="223"/><ellipse cx="1209.75" cy="239" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1211.75,235.5 Q1211.9531,235 1212.1875,234.75 Q1212.4219,234.5 1212.6875,234.5 Q1213.1563,234.5 1213.4531,234.7813 Q1213.75,235.0625 1213.75,235.7188 L1213.75,237.2813 Q1213.75,237.9375 1213.4688,238.2188 Q1213.1875,238.5 1212.75,238.5 Q1212.3594,238.5 1212.1094,238.3281 Q1211.8594,238.1563 1211.75,237.7031 Q1211.7031,237.3906 1211.5313,237.2188 Q1211.2188,236.8906 1210.6563,236.7031 Q1210.0938,236.5 1209.5313,236.5 Q1208.8281,236.5 1208.2344,236.7813 Q1207.6563,237.0625 1207.2031,237.6875 Q1206.75,238.3125 1206.75,239.1719 L1206.75,240.0938 Q1206.75,241.125 1207.5938,241.8125 Q1208.4375,242.5 1209.9375,242.5 Q1210.8281,242.5 1211.4531,242.2969 Q1211.8125,242.1875 1212.2188,241.8281 Q1212.4844,241.625 1212.625,241.5625 Q1212.7656,241.5 1212.9375,241.5 Q1213.2656,241.5 1213.5,241.7656 Q1213.75,242.0156 1213.75,242.375 Q1213.75,242.7188 1213.4063,243.125 Q1212.9063,243.7188 1212.1094,244.0469 Q1211.0625,244.5 1209.7813,244.5 Q1208.2813,244.5 1207.0781,243.9063 Q1206.1094,243.4375 1205.4219,242.4219 Q1204.75,241.4063 1204.75,240.2031 L1204.75,239.1094 Q1204.75,237.8594 1205.3438,236.7656 Q1205.9531,235.6719 1207,235.0938 Q1208.0625,234.5 1209.25,234.5 Q1209.9688,234.5 1210.5938,234.75 Q1211.2188,235 1211.75,235.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="123" x="1230.25" y="243.9102">MedicalLabTechnician</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1164" x2="1387" y1="255" y2="255"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="61" x="1169" y="270.4189">Employee ID;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="88" x="1169" y="284.2549">Organization Role;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="1169" y="298.0908">Name;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="1169" y="311.9268">Address;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="1169" y="325.7627">Phone Number;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="1169" y="339.5986">E-Mail;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="213" x="1169" y="353.4346">Standard Occupational Classification "soc";</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1164" x2="1387" y1="359.8516" y2="359.8516"/><!--MD5=[7d96fd15f3014691d2fcaf89c5791e2a]
-class SpecialistDoctor--><rect codeLine="58" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="158.6875" id="SpecialistDoctor" style="stroke:#A80036;stroke-width:1.5;" width="225" x="7" y="216"/><ellipse cx="70.25" cy="232" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M72.25,228.5 Q72.4531,228 72.6875,227.75 Q72.9219,227.5 73.1875,227.5 Q73.6563,227.5 73.9531,227.7813 Q74.25,228.0625 74.25,228.7188 L74.25,230.2813 Q74.25,230.9375 73.9688,231.2188 Q73.6875,231.5 73.25,231.5 Q72.8594,231.5 72.6094,231.3281 Q72.3594,231.1563 72.25,230.7031 Q72.2031,230.3906 72.0313,230.2188 Q71.7188,229.8906 71.1563,229.7031 Q70.5938,229.5 70.0313,229.5 Q69.3281,229.5 68.7344,229.7813 Q68.1563,230.0625 67.7031,230.6875 Q67.25,231.3125 67.25,232.1719 L67.25,233.0938 Q67.25,234.125 68.0938,234.8125 Q68.9375,235.5 70.4375,235.5 Q71.3281,235.5 71.9531,235.2969 Q72.3125,235.1875 72.7188,234.8281 Q72.9844,234.625 73.125,234.5625 Q73.2656,234.5 73.4375,234.5 Q73.7656,234.5 74,234.7656 Q74.25,235.0156 74.25,235.375 Q74.25,235.7188 73.9063,236.125 Q73.4063,236.7188 72.6094,237.0469 Q71.5625,237.5 70.2813,237.5 Q68.7813,237.5 67.5781,236.9063 Q66.6094,236.4375 65.9219,235.4219 Q65.25,234.4063 65.25,233.2031 L65.25,232.1094 Q65.25,230.8594 65.8438,229.7656 Q66.4531,228.6719 67.5,228.0938 Q68.5625,227.5 69.75,227.5 Q70.4688,227.5 71.0938,227.75 Q71.7188,228 72.25,228.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="90" x="90.75" y="236.9102">SpecialistDoctor</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="231" y1="248" y2="248"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="61" x="13" y="263.4189">Employee ID;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="88" x="13" y="277.2549">Organization Role;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="13" y="291.0908">Name;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="13" y="304.9268">Address;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="13" y="318.7627">Phone Number;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="13" y="332.5986">E-Mail;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="213" x="13" y="346.4346">Standard Occupational Classification "soc";</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="104" x="13" y="360.2705">Doctor Index Number;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="231" y1="366.6875" y2="366.6875"/><!--MD5=[da547346deef918ea16944ba046651ef]
-class Administrator--><rect codeLine="69" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="144.8516" id="Administrator" style="stroke:#A80036;stroke-width:1.5;" width="225" x="787" y="223"/><ellipse cx="858.75" cy="239" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M860.75,235.5 Q860.9531,235 861.1875,234.75 Q861.4219,234.5 861.6875,234.5 Q862.1563,234.5 862.4531,234.7813 Q862.75,235.0625 862.75,235.7188 L862.75,237.2813 Q862.75,237.9375 862.4688,238.2188 Q862.1875,238.5 861.75,238.5 Q861.3594,238.5 861.1094,238.3281 Q860.8594,238.1563 860.75,237.7031 Q860.7031,237.3906 860.5313,237.2188 Q860.2188,236.8906 859.6563,236.7031 Q859.0938,236.5 858.5313,236.5 Q857.8281,236.5 857.2344,236.7813 Q856.6563,237.0625 856.2031,237.6875 Q855.75,238.3125 855.75,239.1719 L855.75,240.0938 Q855.75,241.125 856.5938,241.8125 Q857.4375,242.5 858.9375,242.5 Q859.8281,242.5 860.4531,242.2969 Q860.8125,242.1875 861.2188,241.8281 Q861.4844,241.625 861.625,241.5625 Q861.7656,241.5 861.9375,241.5 Q862.2656,241.5 862.5,241.7656 Q862.75,242.0156 862.75,242.375 Q862.75,242.7188 862.4063,243.125 Q861.9063,243.7188 861.1094,244.0469 Q860.0625,244.5 858.7813,244.5 Q857.2813,244.5 856.0781,243.9063 Q855.1094,243.4375 854.4219,242.4219 Q853.75,241.4063 853.75,240.2031 L853.75,239.1094 Q853.75,237.8594 854.3438,236.7656 Q854.9531,235.6719 856,235.0938 Q857.0625,234.5 858.25,234.5 Q858.9688,234.5 859.5938,234.75 Q860.2188,235 860.75,235.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="73" x="879.25" y="243.9102">Administrator</text><line style="stroke:#A80036;stroke-width:1.5;" x1="788" x2="1011" y1="255" y2="255"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="61" x="793" y="270.4189">Employee ID;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="88" x="793" y="284.2549">Organization Role;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="793" y="298.0908">Name;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="793" y="311.9268">Address;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="793" y="325.7627">Phone Number;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="793" y="339.5986">E-Mail;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="213" x="793" y="353.4346">Standard Occupational Classification "soc";</text><line style="stroke:#A80036;stroke-width:1.5;" x1="788" x2="1011" y1="359.8516" y2="359.8516"/><!--MD5=[012ee2a8bf3ae2b319009b06f951c2e5]
-class ClinicalChemistryTechnologist--><rect codeLine="79" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="144.8516" id="ClinicalChemistryTechnologist" style="stroke:#A80036;stroke-width:1.5;" width="225" x="1423" y="223"/><ellipse cx="1449.25" cy="239" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1451.25,235.5 Q1451.4531,235 1451.6875,234.75 Q1451.9219,234.5 1452.1875,234.5 Q1452.6563,234.5 1452.9531,234.7813 Q1453.25,235.0625 1453.25,235.7188 L1453.25,237.2813 Q1453.25,237.9375 1452.9688,238.2188 Q1452.6875,238.5 1452.25,238.5 Q1451.8594,238.5 1451.6094,238.3281 Q1451.3594,238.1563 1451.25,237.7031 Q1451.2031,237.3906 1451.0313,237.2188 Q1450.7188,236.8906 1450.1563,236.7031 Q1449.5938,236.5 1449.0313,236.5 Q1448.3281,236.5 1447.7344,236.7813 Q1447.1563,237.0625 1446.7031,237.6875 Q1446.25,238.3125 1446.25,239.1719 L1446.25,240.0938 Q1446.25,241.125 1447.0938,241.8125 Q1447.9375,242.5 1449.4375,242.5 Q1450.3281,242.5 1450.9531,242.2969 Q1451.3125,242.1875 1451.7188,241.8281 Q1451.9844,241.625 1452.125,241.5625 Q1452.2656,241.5 1452.4375,241.5 Q1452.7656,241.5 1453,241.7656 Q1453.25,242.0156 1453.25,242.375 Q1453.25,242.7188 1452.9063,243.125 Q1452.4063,243.7188 1451.6094,244.0469 Q1450.5625,244.5 1449.2813,244.5 Q1447.7813,244.5 1446.5781,243.9063 Q1445.6094,243.4375 1444.9219,242.4219 Q1444.25,241.4063 1444.25,240.2031 L1444.25,239.1094 Q1444.25,237.8594 1444.8438,236.7656 Q1445.4531,235.6719 1446.5,235.0938 Q1447.5625,234.5 1448.75,234.5 Q1449.4688,234.5 1450.0938,234.75 Q1450.7188,235 1451.25,235.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="168" x="1465.75" y="243.9102">ClinicalChemistryTechnologist</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1424" x2="1647" y1="255" y2="255"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="61" x="1429" y="270.4189">Employee ID;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="88" x="1429" y="284.2549">Organization Role;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="1429" y="298.0908">Name;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="1429" y="311.9268">Address;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="1429" y="325.7627">Phone Number;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="1429" y="339.5986">E-Mail;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="213" x="1429" y="353.4346">Standard Occupational Classification "soc";</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1424" x2="1647" y1="359.8516" y2="359.8516"/><!--MD5=[052425de1c0eb6cc1c1b48342b0bb88f]
-class LaboratoryCoordinator--><rect codeLine="89" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="144.8516" id="LaboratoryCoordinator" style="stroke:#A80036;stroke-width:1.5;" width="225" x="267" y="223"/><ellipse cx="313.75" cy="239" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M315.75,235.5 Q315.9531,235 316.1875,234.75 Q316.4219,234.5 316.6875,234.5 Q317.1563,234.5 317.4531,234.7813 Q317.75,235.0625 317.75,235.7188 L317.75,237.2813 Q317.75,237.9375 317.4688,238.2188 Q317.1875,238.5 316.75,238.5 Q316.3594,238.5 316.1094,238.3281 Q315.8594,238.1563 315.75,237.7031 Q315.7031,237.3906 315.5313,237.2188 Q315.2188,236.8906 314.6563,236.7031 Q314.0938,236.5 313.5313,236.5 Q312.8281,236.5 312.2344,236.7813 Q311.6563,237.0625 311.2031,237.6875 Q310.75,238.3125 310.75,239.1719 L310.75,240.0938 Q310.75,241.125 311.5938,241.8125 Q312.4375,242.5 313.9375,242.5 Q314.8281,242.5 315.4531,242.2969 Q315.8125,242.1875 316.2188,241.8281 Q316.4844,241.625 316.625,241.5625 Q316.7656,241.5 316.9375,241.5 Q317.2656,241.5 317.5,241.7656 Q317.75,242.0156 317.75,242.375 Q317.75,242.7188 317.4063,243.125 Q316.9063,243.7188 316.1094,244.0469 Q315.0625,244.5 313.7813,244.5 Q312.2813,244.5 311.0781,243.9063 Q310.1094,243.4375 309.4219,242.4219 Q308.75,241.4063 308.75,240.2031 L308.75,239.1094 Q308.75,237.8594 309.3438,236.7656 Q309.9531,235.6719 311,235.0938 Q312.0625,234.5 313.25,234.5 Q313.9688,234.5 314.5938,234.75 Q315.2188,235 315.75,235.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="123" x="334.25" y="243.9102">LaboratoryCoordinator</text><line style="stroke:#A80036;stroke-width:1.5;" x1="268" x2="491" y1="255" y2="255"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="61" x="273" y="270.4189">Employee ID;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="88" x="273" y="284.2549">Organization Role;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="273" y="298.0908">Name;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="273" y="311.9268">Address;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="273" y="325.7627">Phone Number;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="273" y="339.5986">E-Mail;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="213" x="273" y="353.4346">Standard Occupational Classification "soc";</text><line style="stroke:#A80036;stroke-width:1.5;" x1="268" x2="491" y1="359.8516" y2="359.8516"/><!--MD5=[1934a092c0e7d4da7dc7075b6f4b6b03]
-class ClinicalAnalysisLaboratory--><rect codeLine="99" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="117.1797" id="ClinicalAnalysisLaboratory" style="stroke:#A80036;stroke-width:1.5;" width="177" x="919" y="453"/><ellipse cx="934" cy="469" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M936,465.5 Q936.2031,465 936.4375,464.75 Q936.6719,464.5 936.9375,464.5 Q937.4063,464.5 937.7031,464.7813 Q938,465.0625 938,465.7188 L938,467.2813 Q938,467.9375 937.7188,468.2188 Q937.4375,468.5 937,468.5 Q936.6094,468.5 936.3594,468.3281 Q936.1094,468.1563 936,467.7031 Q935.9531,467.3906 935.7813,467.2188 Q935.4688,466.8906 934.9063,466.7031 Q934.3438,466.5 933.7813,466.5 Q933.0781,466.5 932.4844,466.7813 Q931.9063,467.0625 931.4531,467.6875 Q931,468.3125 931,469.1719 L931,470.0938 Q931,471.125 931.8438,471.8125 Q932.6875,472.5 934.1875,472.5 Q935.0781,472.5 935.7031,472.2969 Q936.0625,472.1875 936.4688,471.8281 Q936.7344,471.625 936.875,471.5625 Q937.0156,471.5 937.1875,471.5 Q937.5156,471.5 937.75,471.7656 Q938,472.0156 938,472.375 Q938,472.7188 937.6563,473.125 Q937.1563,473.7188 936.3594,474.0469 Q935.3125,474.5 934.0313,474.5 Q932.5313,474.5 931.3281,473.9063 Q930.3594,473.4375 929.6719,472.4219 Q929,471.4063 929,470.2031 L929,469.1094 Q929,467.8594 929.5938,466.7656 Q930.2031,465.6719 931.25,465.0938 Q932.3125,464.5 933.5,464.5 Q934.2188,464.5 934.8438,464.75 Q935.4688,465 936,465.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="145" x="948" y="473.9102">ClinicalAnalysisLaboratory</text><line style="stroke:#A80036;stroke-width:1.5;" x1="920" x2="1095" y1="485" y2="485"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="68" x="925" y="500.4189">Laboratory ID;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="925" y="514.2549">Name;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="925" y="528.0908">Address;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="925" y="541.9268">Phone Number;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="57" x="925" y="555.7627">TIN number;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="920" x2="1095" y1="562.1797" y2="562.1797"/><!--MD5=[a64badb107d3691f2dc6af242cdbeb21]
-class ChemicalLaboratory--><rect codeLine="107" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="103.3438" id="ChemicalLaboratory" style="stroke:#A80036;stroke-width:1.5;" width="143" x="1766" y="648"/><ellipse cx="1781" cy="664" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1783,660.5 Q1783.2031,660 1783.4375,659.75 Q1783.6719,659.5 1783.9375,659.5 Q1784.4063,659.5 1784.7031,659.7813 Q1785,660.0625 1785,660.7188 L1785,662.2813 Q1785,662.9375 1784.7188,663.2188 Q1784.4375,663.5 1784,663.5 Q1783.6094,663.5 1783.3594,663.3281 Q1783.1094,663.1563 1783,662.7031 Q1782.9531,662.3906 1782.7813,662.2188 Q1782.4688,661.8906 1781.9063,661.7031 Q1781.3438,661.5 1780.7813,661.5 Q1780.0781,661.5 1779.4844,661.7813 Q1778.9063,662.0625 1778.4531,662.6875 Q1778,663.3125 1778,664.1719 L1778,665.0938 Q1778,666.125 1778.8438,666.8125 Q1779.6875,667.5 1781.1875,667.5 Q1782.0781,667.5 1782.7031,667.2969 Q1783.0625,667.1875 1783.4688,666.8281 Q1783.7344,666.625 1783.875,666.5625 Q1784.0156,666.5 1784.1875,666.5 Q1784.5156,666.5 1784.75,666.7656 Q1785,667.0156 1785,667.375 Q1785,667.7188 1784.6563,668.125 Q1784.1563,668.7188 1783.3594,669.0469 Q1782.3125,669.5 1781.0313,669.5 Q1779.5313,669.5 1778.3281,668.9063 Q1777.3594,668.4375 1776.6719,667.4219 Q1776,666.4063 1776,665.2031 L1776,664.1094 Q1776,662.8594 1776.5938,661.7656 Q1777.2031,660.6719 1778.25,660.0938 Q1779.3125,659.5 1780.5,659.5 Q1781.2188,659.5 1781.8438,659.75 Q1782.4688,660 1783,660.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="111" x="1795" y="668.9102">ChemicalLaboratory</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1767" x2="1908" y1="680" y2="680"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="1772" y="695.4189">Name;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="1772" y="709.2549">Address;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="1772" y="723.0908">Phone Number;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="57" x="1772" y="736.9268">TIN number;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1767" x2="1908" y1="743.3438" y2="743.3438"/><!--MD5=[628c1010a7b084d4bd8091fdea3514d5]
-class CompanyHeadquarters--><rect codeLine="114" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="89.5078" id="CompanyHeadquarters" style="stroke:#A80036;stroke-width:1.5;" width="161" x="1948" y="829"/><ellipse cx="1963" cy="845" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1965,841.5 Q1965.2031,841 1965.4375,840.75 Q1965.6719,840.5 1965.9375,840.5 Q1966.4063,840.5 1966.7031,840.7813 Q1967,841.0625 1967,841.7188 L1967,843.2813 Q1967,843.9375 1966.7188,844.2188 Q1966.4375,844.5 1966,844.5 Q1965.6094,844.5 1965.3594,844.3281 Q1965.1094,844.1563 1965,843.7031 Q1964.9531,843.3906 1964.7813,843.2188 Q1964.4688,842.8906 1963.9063,842.7031 Q1963.3438,842.5 1962.7813,842.5 Q1962.0781,842.5 1961.4844,842.7813 Q1960.9063,843.0625 1960.4531,843.6875 Q1960,844.3125 1960,845.1719 L1960,846.0938 Q1960,847.125 1960.8438,847.8125 Q1961.6875,848.5 1963.1875,848.5 Q1964.0781,848.5 1964.7031,848.2969 Q1965.0625,848.1875 1965.4688,847.8281 Q1965.7344,847.625 1965.875,847.5625 Q1966.0156,847.5 1966.1875,847.5 Q1966.5156,847.5 1966.75,847.7656 Q1967,848.0156 1967,848.375 Q1967,848.7188 1966.6563,849.125 Q1966.1563,849.7188 1965.3594,850.0469 Q1964.3125,850.5 1963.0313,850.5 Q1961.5313,850.5 1960.3281,849.9063 Q1959.3594,849.4375 1958.6719,848.4219 Q1958,847.4063 1958,846.2031 L1958,845.1094 Q1958,843.8594 1958.5938,842.7656 Q1959.2031,841.6719 1960.25,841.0938 Q1961.3125,840.5 1962.5,840.5 Q1963.2188,840.5 1963.8438,840.75 Q1964.4688,841 1965,841.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="129" x="1977" y="849.9102">CompanyHeadquarters</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1949" x2="2108" y1="861" y2="861"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="1954" y="876.4189">Address;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="1954" y="890.2549">Phone Number;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="1954" y="904.0908">E-Mail;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1949" x2="2108" y1="910.5078" y2="910.5078"/><!--MD5=[a05769ccb6ff68467d0f03d44782bb8a]
-class ChemicalAnalysis--><rect codeLine="120" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="61.8359" id="ChemicalAnalysis" style="stroke:#A80036;stroke-width:1.5;" width="131" x="1891" y="480.5"/><ellipse cx="1906" cy="496.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1908,493 Q1908.2031,492.5 1908.4375,492.25 Q1908.6719,492 1908.9375,492 Q1909.4063,492 1909.7031,492.2813 Q1910,492.5625 1910,493.2188 L1910,494.7813 Q1910,495.4375 1909.7188,495.7188 Q1909.4375,496 1909,496 Q1908.6094,496 1908.3594,495.8281 Q1908.1094,495.6563 1908,495.2031 Q1907.9531,494.8906 1907.7813,494.7188 Q1907.4688,494.3906 1906.9063,494.2031 Q1906.3438,494 1905.7813,494 Q1905.0781,494 1904.4844,494.2813 Q1903.9063,494.5625 1903.4531,495.1875 Q1903,495.8125 1903,496.6719 L1903,497.5938 Q1903,498.625 1903.8438,499.3125 Q1904.6875,500 1906.1875,500 Q1907.0781,500 1907.7031,499.7969 Q1908.0625,499.6875 1908.4688,499.3281 Q1908.7344,499.125 1908.875,499.0625 Q1909.0156,499 1909.1875,499 Q1909.5156,499 1909.75,499.2656 Q1910,499.5156 1910,499.875 Q1910,500.2188 1909.6563,500.625 Q1909.1563,501.2188 1908.3594,501.5469 Q1907.3125,502 1906.0313,502 Q1904.5313,502 1903.3281,501.4063 Q1902.3594,500.9375 1901.6719,499.9219 Q1901,498.9063 1901,497.7031 L1901,496.6094 Q1901,495.3594 1901.5938,494.2656 Q1902.2031,493.1719 1903.25,492.5938 Q1904.3125,492 1905.5,492 Q1906.2188,492 1906.8438,492.25 Q1907.4688,492.5 1908,493 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="99" x="1920" y="501.4102">ChemicalAnalysis</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1892" x2="2021" y1="512.5" y2="512.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="29" x="1897" y="527.9189">Client;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1892" x2="2021" y1="534.3359" y2="534.3359"/><!--MD5=[72b025e65ce7277b694e85cc33e5a3e3]
-class TypeSample--><rect codeLine="125" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="61.8359" id="TypeSample" style="stroke:#A80036;stroke-width:1.5;" width="101" x="1683" y="264.5"/><ellipse cx="1698" cy="280.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1700,277 Q1700.2031,276.5 1700.4375,276.25 Q1700.6719,276 1700.9375,276 Q1701.4063,276 1701.7031,276.2813 Q1702,276.5625 1702,277.2188 L1702,278.7813 Q1702,279.4375 1701.7188,279.7188 Q1701.4375,280 1701,280 Q1700.6094,280 1700.3594,279.8281 Q1700.1094,279.6563 1700,279.2031 Q1699.9531,278.8906 1699.7813,278.7188 Q1699.4688,278.3906 1698.9063,278.2031 Q1698.3438,278 1697.7813,278 Q1697.0781,278 1696.4844,278.2813 Q1695.9063,278.5625 1695.4531,279.1875 Q1695,279.8125 1695,280.6719 L1695,281.5938 Q1695,282.625 1695.8438,283.3125 Q1696.6875,284 1698.1875,284 Q1699.0781,284 1699.7031,283.7969 Q1700.0625,283.6875 1700.4688,283.3281 Q1700.7344,283.125 1700.875,283.0625 Q1701.0156,283 1701.1875,283 Q1701.5156,283 1701.75,283.2656 Q1702,283.5156 1702,283.875 Q1702,284.2188 1701.6563,284.625 Q1701.1563,285.2188 1700.3594,285.5469 Q1699.3125,286 1698.0313,286 Q1696.5313,286 1695.3281,285.4063 Q1694.3594,284.9375 1693.6719,283.9219 Q1693,282.9063 1693,281.7031 L1693,280.6094 Q1693,279.3594 1693.5938,278.2656 Q1694.2031,277.1719 1695.25,276.5938 Q1696.3125,276 1697.5,276 Q1698.2188,276 1698.8438,276.25 Q1699.4688,276.5 1700,277 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="69" x="1712" y="285.4102">TypeSample</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1684" x2="1783" y1="296.5" y2="296.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="50" x="1689" y="311.9189">Sample ID;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1684" x2="1783" y1="318.3359" y2="318.3359"/><!--MD5=[02e4b9b7573f1156f41e60aa5b4e25a4]
-class Company--><rect codeLine="129" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="61.8359" id="Company" style="stroke:#A80036;stroke-width:1.5;" width="85" x="1040" y="41.5"/><ellipse cx="1055" cy="57.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1057,54 Q1057.2031,53.5 1057.4375,53.25 Q1057.6719,53 1057.9375,53 Q1058.4063,53 1058.7031,53.2813 Q1059,53.5625 1059,54.2188 L1059,55.7813 Q1059,56.4375 1058.7188,56.7188 Q1058.4375,57 1058,57 Q1057.6094,57 1057.3594,56.8281 Q1057.1094,56.6563 1057,56.2031 Q1056.9531,55.8906 1056.7813,55.7188 Q1056.4688,55.3906 1055.9063,55.2031 Q1055.3438,55 1054.7813,55 Q1054.0781,55 1053.4844,55.2813 Q1052.9063,55.5625 1052.4531,56.1875 Q1052,56.8125 1052,57.6719 L1052,58.5938 Q1052,59.625 1052.8438,60.3125 Q1053.6875,61 1055.1875,61 Q1056.0781,61 1056.7031,60.7969 Q1057.0625,60.6875 1057.4688,60.3281 Q1057.7344,60.125 1057.875,60.0625 Q1058.0156,60 1058.1875,60 Q1058.5156,60 1058.75,60.2656 Q1059,60.5156 1059,60.875 Q1059,61.2188 1058.6563,61.625 Q1058.1563,62.2188 1057.3594,62.5469 Q1056.3125,63 1055.0313,63 Q1053.5313,63 1052.3281,62.4063 Q1051.3594,61.9375 1050.6719,60.9219 Q1050,59.9063 1050,58.7031 L1050,57.6094 Q1050,56.3594 1050.5938,55.2656 Q1051.2031,54.1719 1052.25,53.5938 Q1053.3125,53 1054.5,53 Q1055.2188,53 1055.8438,53.25 Q1056.4688,53.5 1057,54 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53" x="1069" y="62.4102">Company</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1041" x2="1124" y1="73.5" y2="73.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="27" x="1046" y="88.9189">Name</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1041" x2="1124" y1="95.3359" y2="95.3359"/><!--MD5=[2a962ae93217d0020b2ed3696d7c22bf]
-class BarcodeExternalAPI--><rect codeLine="133" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="61.8359" id="BarcodeExternalAPI" style="stroke:#A80036;stroke-width:1.5;" width="140" x="1399.5" y="668.5"/><ellipse cx="1414.5" cy="684.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1416.5,681 Q1416.7031,680.5 1416.9375,680.25 Q1417.1719,680 1417.4375,680 Q1417.9063,680 1418.2031,680.2813 Q1418.5,680.5625 1418.5,681.2188 L1418.5,682.7813 Q1418.5,683.4375 1418.2188,683.7188 Q1417.9375,684 1417.5,684 Q1417.1094,684 1416.8594,683.8281 Q1416.6094,683.6563 1416.5,683.2031 Q1416.4531,682.8906 1416.2813,682.7188 Q1415.9688,682.3906 1415.4063,682.2031 Q1414.8438,682 1414.2813,682 Q1413.5781,682 1412.9844,682.2813 Q1412.4063,682.5625 1411.9531,683.1875 Q1411.5,683.8125 1411.5,684.6719 L1411.5,685.5938 Q1411.5,686.625 1412.3438,687.3125 Q1413.1875,688 1414.6875,688 Q1415.5781,688 1416.2031,687.7969 Q1416.5625,687.6875 1416.9688,687.3281 Q1417.2344,687.125 1417.375,687.0625 Q1417.5156,687 1417.6875,687 Q1418.0156,687 1418.25,687.2656 Q1418.5,687.5156 1418.5,687.875 Q1418.5,688.2188 1418.1563,688.625 Q1417.6563,689.2188 1416.8594,689.5469 Q1415.8125,690 1414.5313,690 Q1413.0313,690 1411.8281,689.4063 Q1410.8594,688.9375 1410.1719,687.9219 Q1409.5,686.9063 1409.5,685.7031 L1409.5,684.6094 Q1409.5,683.3594 1410.0938,682.2656 Q1410.7031,681.1719 1411.75,680.5938 Q1412.8125,680 1414,680 Q1414.7188,680 1415.3438,680.25 Q1415.9688,680.5 1416.5,681 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="108" x="1428.5" y="689.4102">BarcodeExternalAPI</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1400.5" x2="1538.5" y1="700.5" y2="700.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="84" x="1405.5" y="715.9189">Barcode Number;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1400.5" x2="1538.5" y1="722.3359" y2="722.3359"/><!--MD5=[a999c1570c205a2156b04a15307bc1ff]
-class LabOrder--><rect codeLine="137" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="103.3438" id="LabOrder" style="stroke:#A80036;stroke-width:1.5;" width="84" x="543.5" y="1234"/><ellipse cx="558.5" cy="1250" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M560.5,1246.5 Q560.7031,1246 560.9375,1245.75 Q561.1719,1245.5 561.4375,1245.5 Q561.9063,1245.5 562.2031,1245.7813 Q562.5,1246.0625 562.5,1246.7188 L562.5,1248.2813 Q562.5,1248.9375 562.2188,1249.2188 Q561.9375,1249.5 561.5,1249.5 Q561.1094,1249.5 560.8594,1249.3281 Q560.6094,1249.1563 560.5,1248.7031 Q560.4531,1248.3906 560.2813,1248.2188 Q559.9688,1247.8906 559.4063,1247.7031 Q558.8438,1247.5 558.2813,1247.5 Q557.5781,1247.5 556.9844,1247.7813 Q556.4063,1248.0625 555.9531,1248.6875 Q555.5,1249.3125 555.5,1250.1719 L555.5,1251.0938 Q555.5,1252.125 556.3438,1252.8125 Q557.1875,1253.5 558.6875,1253.5 Q559.5781,1253.5 560.2031,1253.2969 Q560.5625,1253.1875 560.9688,1252.8281 Q561.2344,1252.625 561.375,1252.5625 Q561.5156,1252.5 561.6875,1252.5 Q562.0156,1252.5 562.25,1252.7656 Q562.5,1253.0156 562.5,1253.375 Q562.5,1253.7188 562.1563,1254.125 Q561.6563,1254.7188 560.8594,1255.0469 Q559.8125,1255.5 558.5313,1255.5 Q557.0313,1255.5 555.8281,1254.9063 Q554.8594,1254.4375 554.1719,1253.4219 Q553.5,1252.4063 553.5,1251.2031 L553.5,1250.1094 Q553.5,1248.8594 554.0938,1247.7656 Q554.7031,1246.6719 555.75,1246.0938 Q556.8125,1245.5 558,1245.5 Q558.7188,1245.5 559.3438,1245.75 Q559.9688,1246 560.5,1246.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="52" x="572.5" y="1254.9102">LabOrder</text><line style="stroke:#A80036;stroke-width:1.5;" x1="544.5" x2="626.5" y1="1266" y2="1266"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="29" x="549.5" y="1281.4189">Client;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="35" x="549.5" y="1295.2549">Doctor;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="64" x="549.5" y="1309.0908">Type of Test;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="58" x="549.5" y="1322.9268">Parameters;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="544.5" x2="626.5" y1="1329.3438" y2="1329.3438"/><!--MD5=[f856f85595ce4f8bf435bc42f531c692]
-class Results--><rect codeLine="144" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="75.6719" id="Results" style="stroke:#A80036;stroke-width:1.5;" width="75" x="458" y="661.5"/><ellipse cx="473" cy="677.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M475,674 Q475.2031,673.5 475.4375,673.25 Q475.6719,673 475.9375,673 Q476.4063,673 476.7031,673.2813 Q477,673.5625 477,674.2188 L477,675.7813 Q477,676.4375 476.7188,676.7188 Q476.4375,677 476,677 Q475.6094,677 475.3594,676.8281 Q475.1094,676.6563 475,676.2031 Q474.9531,675.8906 474.7813,675.7188 Q474.4688,675.3906 473.9063,675.2031 Q473.3438,675 472.7813,675 Q472.0781,675 471.4844,675.2813 Q470.9063,675.5625 470.4531,676.1875 Q470,676.8125 470,677.6719 L470,678.5938 Q470,679.625 470.8438,680.3125 Q471.6875,681 473.1875,681 Q474.0781,681 474.7031,680.7969 Q475.0625,680.6875 475.4688,680.3281 Q475.7344,680.125 475.875,680.0625 Q476.0156,680 476.1875,680 Q476.5156,680 476.75,680.2656 Q477,680.5156 477,680.875 Q477,681.2188 476.6563,681.625 Q476.1563,682.2188 475.3594,682.5469 Q474.3125,683 473.0313,683 Q471.5313,683 470.3281,682.4063 Q469.3594,681.9375 468.6719,680.9219 Q468,679.9063 468,678.7031 L468,677.6094 Q468,676.3594 468.5938,675.2656 Q469.2031,674.1719 470.25,673.5938 Q471.3125,673 472.5,673 Q473.2188,673 473.8438,673.25 Q474.4688,673.5 475,674 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="43" x="487" y="682.4102">Results</text><line style="stroke:#A80036;stroke-width:1.5;" x1="459" x2="532" y1="693.5" y2="693.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="33" x="464" y="708.9189">TestID;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="29" x="464" y="722.7549">Client;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="459" x2="532" y1="729.1719" y2="729.1719"/><!--MD5=[76b5e19c9337179d2d7ae334371d68c8]
-class Notification--><rect codeLine="149" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="75.6719" id="Notification" style="stroke:#A80036;stroke-width:1.5;" width="93" x="449" y="836"/><ellipse cx="464" cy="852" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M466,848.5 Q466.2031,848 466.4375,847.75 Q466.6719,847.5 466.9375,847.5 Q467.4063,847.5 467.7031,847.7813 Q468,848.0625 468,848.7188 L468,850.2813 Q468,850.9375 467.7188,851.2188 Q467.4375,851.5 467,851.5 Q466.6094,851.5 466.3594,851.3281 Q466.1094,851.1563 466,850.7031 Q465.9531,850.3906 465.7813,850.2188 Q465.4688,849.8906 464.9063,849.7031 Q464.3438,849.5 463.7813,849.5 Q463.0781,849.5 462.4844,849.7813 Q461.9063,850.0625 461.4531,850.6875 Q461,851.3125 461,852.1719 L461,853.0938 Q461,854.125 461.8438,854.8125 Q462.6875,855.5 464.1875,855.5 Q465.0781,855.5 465.7031,855.2969 Q466.0625,855.1875 466.4688,854.8281 Q466.7344,854.625 466.875,854.5625 Q467.0156,854.5 467.1875,854.5 Q467.5156,854.5 467.75,854.7656 Q468,855.0156 468,855.375 Q468,855.7188 467.6563,856.125 Q467.1563,856.7188 466.3594,857.0469 Q465.3125,857.5 464.0313,857.5 Q462.5313,857.5 461.3281,856.9063 Q460.3594,856.4375 459.6719,855.4219 Q459,854.4063 459,853.2031 L459,852.1094 Q459,850.8594 459.5938,849.7656 Q460.2031,848.6719 461.25,848.0938 Q462.3125,847.5 463.5,847.5 Q464.2188,847.5 464.8438,847.75 Q465.4688,848 466,848.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="61" x="478" y="856.9102">Notification</text><line style="stroke:#A80036;stroke-width:1.5;" x1="450" x2="541" y1="868" y2="868"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="25" x="455" y="883.4189">SMS;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="455" y="897.2549">E-mail;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="450" x2="541" y1="903.6719" y2="903.6719"/><!--MD5=[f00dbe8c0302c6aec2cb26b3c659c8fc]
-class Report--><rect codeLine="154" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="89.5078" id="Report" style="stroke:#A80036;stroke-width:1.5;" width="76" x="164.5" y="466.5"/><ellipse cx="182.65" cy="482.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M184.65,479 Q184.8531,478.5 185.0875,478.25 Q185.3219,478 185.5875,478 Q186.0563,478 186.3531,478.2813 Q186.65,478.5625 186.65,479.2188 L186.65,480.7813 Q186.65,481.4375 186.3688,481.7188 Q186.0875,482 185.65,482 Q185.2594,482 185.0094,481.8281 Q184.7594,481.6563 184.65,481.2031 Q184.6031,480.8906 184.4313,480.7188 Q184.1188,480.3906 183.5563,480.2031 Q182.9938,480 182.4313,480 Q181.7281,480 181.1344,480.2813 Q180.5563,480.5625 180.1031,481.1875 Q179.65,481.8125 179.65,482.6719 L179.65,483.5938 Q179.65,484.625 180.4938,485.3125 Q181.3375,486 182.8375,486 Q183.7281,486 184.3531,485.7969 Q184.7125,485.6875 185.1188,485.3281 Q185.3844,485.125 185.525,485.0625 Q185.6656,485 185.8375,485 Q186.1656,485 186.4,485.2656 Q186.65,485.5156 186.65,485.875 Q186.65,486.2188 186.3063,486.625 Q185.8063,487.2188 185.0094,487.5469 Q183.9625,488 182.6813,488 Q181.1813,488 179.9781,487.4063 Q179.0094,486.9375 178.3219,485.9219 Q177.65,484.9063 177.65,483.7031 L177.65,482.6094 Q177.65,481.3594 178.2438,480.2656 Q178.8531,479.1719 179.9,478.5938 Q180.9625,478 182.15,478 Q182.8688,478 183.4938,478.25 Q184.1188,478.5 184.65,479 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="37" x="197.35" y="487.4102">Report</text><line style="stroke:#A80036;stroke-width:1.5;" x1="165.5" x2="239.5" y1="498.5" y2="498.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="33" x="170.5" y="513.9189">TestID;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="29" x="170.5" y="527.7549">Client;</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="64" x="170.5" y="541.5908">Doctor's text;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="165.5" x2="239.5" y1="548.0078" y2="548.0078"/><!--MD5=[c0c1e006f407003ed2dd9da61480cafe]
-class AutomaticValidationModule--><rect codeLine="160" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="61.8359" id="AutomaticValidationModule" style="stroke:#A80036;stroke-width:1.5;" width="180" x="405.5" y="480.5"/><ellipse cx="420.5" cy="496.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M422.5,493 Q422.7031,492.5 422.9375,492.25 Q423.1719,492 423.4375,492 Q423.9063,492 424.2031,492.2813 Q424.5,492.5625 424.5,493.2188 L424.5,494.7813 Q424.5,495.4375 424.2188,495.7188 Q423.9375,496 423.5,496 Q423.1094,496 422.8594,495.8281 Q422.6094,495.6563 422.5,495.2031 Q422.4531,494.8906 422.2813,494.7188 Q421.9688,494.3906 421.4063,494.2031 Q420.8438,494 420.2813,494 Q419.5781,494 418.9844,494.2813 Q418.4063,494.5625 417.9531,495.1875 Q417.5,495.8125 417.5,496.6719 L417.5,497.5938 Q417.5,498.625 418.3438,499.3125 Q419.1875,500 420.6875,500 Q421.5781,500 422.2031,499.7969 Q422.5625,499.6875 422.9688,499.3281 Q423.2344,499.125 423.375,499.0625 Q423.5156,499 423.6875,499 Q424.0156,499 424.25,499.2656 Q424.5,499.5156 424.5,499.875 Q424.5,500.2188 424.1563,500.625 Q423.6563,501.2188 422.8594,501.5469 Q421.8125,502 420.5313,502 Q419.0313,502 417.8281,501.4063 Q416.8594,500.9375 416.1719,499.9219 Q415.5,498.9063 415.5,497.7031 L415.5,496.6094 Q415.5,495.3594 416.0938,494.2656 Q416.7031,493.1719 417.75,492.5938 Q418.8125,492 420,492 Q420.7188,492 421.3438,492.25 Q421.9688,492.5 422.5,493 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="148" x="434.5" y="501.4102">AutomaticValidationModule</text><line style="stroke:#A80036;stroke-width:1.5;" x1="406.5" x2="584.5" y1="512.5" y2="512.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="50" x="411.5" y="527.9189">Validation;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="406.5" x2="584.5" y1="534.3359" y2="534.3359"/><!--MD5=[56f671791a7bc69038cb91d87520b796]
-class Parameters--><rect codeLine="164" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="61.8359" id="Parameters" style="stroke:#A80036;stroke-width:1.5;" width="97" x="1230" y="843"/><ellipse cx="1245" cy="859" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1247,855.5 Q1247.2031,855 1247.4375,854.75 Q1247.6719,854.5 1247.9375,854.5 Q1248.4063,854.5 1248.7031,854.7813 Q1249,855.0625 1249,855.7188 L1249,857.2813 Q1249,857.9375 1248.7188,858.2188 Q1248.4375,858.5 1248,858.5 Q1247.6094,858.5 1247.3594,858.3281 Q1247.1094,858.1563 1247,857.7031 Q1246.9531,857.3906 1246.7813,857.2188 Q1246.4688,856.8906 1245.9063,856.7031 Q1245.3438,856.5 1244.7813,856.5 Q1244.0781,856.5 1243.4844,856.7813 Q1242.9063,857.0625 1242.4531,857.6875 Q1242,858.3125 1242,859.1719 L1242,860.0938 Q1242,861.125 1242.8438,861.8125 Q1243.6875,862.5 1245.1875,862.5 Q1246.0781,862.5 1246.7031,862.2969 Q1247.0625,862.1875 1247.4688,861.8281 Q1247.7344,861.625 1247.875,861.5625 Q1248.0156,861.5 1248.1875,861.5 Q1248.5156,861.5 1248.75,861.7656 Q1249,862.0156 1249,862.375 Q1249,862.7188 1248.6563,863.125 Q1248.1563,863.7188 1247.3594,864.0469 Q1246.3125,864.5 1245.0313,864.5 Q1243.5313,864.5 1242.3281,863.9063 Q1241.3594,863.4375 1240.6719,862.4219 Q1240,861.4063 1240,860.2031 L1240,859.1094 Q1240,857.8594 1240.5938,856.7656 Q1241.2031,855.6719 1242.25,855.0938 Q1243.3125,854.5 1244.5,854.5 Q1245.2188,854.5 1245.8438,854.75 Q1246.4688,855 1247,855.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="65" x="1259" y="863.9102">Parameters</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1231" x2="1326" y1="875" y2="875"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="1236" y="890.4189">Value;</text><line style="stroke:#A80036;stroke-width:1.5;" x1="1231" x2="1326" y1="896.8359" y2="896.8359"/><!--MD5=[c0fd25e36e68ccf134d8e46f2ca5189b]
-link AutomaticValidationModule to Results--><path codeLine="168" d="M495.5,542.8 C495.5,575.22 495.5,626.69 495.5,661.49 " fill="none" id="AutomaticValidationModule-Results" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="500.5,614.1758,503.4389,605.1307,497.5611,605.1307,500.5,614.1758" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="47" x="509.5" y="614.4951">Validate</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="487.8328" y="563.8358">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="487.8547" y="650.5647">1</text><!--MD5=[97f0e67b6e351c541401326f382aebd9]
-link ChemicalAnalysis to ChemicalLaboratory--><path codeLine="169" d="M1937.12,542.8 C1918.94,571.21 1891.41,614.24 1869.9,647.86 " fill="none" id="ChemicalAnalysis-ChemicalLaboratory" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="1898.8053,613.3875,1906.1557,607.3524,1901.2045,604.1845,1898.8053,613.3875" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="74" x="1910.5" y="614.4951">take place in</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1927.9491" y="563.8358">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1866.9641" y="636.9688">1</text><!--MD5=[e8dee32c8f22193c49a500f12de243cb]
-link ChemicalLaboratory to CompanyHeadquarters--><path codeLine="170" d="M1893.52,751.09 C1920.81,775.74 1953.34,805.12 1979.62,828.85 " fill="none" id="ChemicalLaboratory-CompanyHeadquarters" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="1952.2107,793.527,1947.4678,785.2835,1943.5282,789.6456,1952.2107,793.527" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="70" x="1957.5" y="795.4951">is located in</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1893.9056" y="772.9655">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1964.5993" y="818.2711">1</text><!--MD5=[0bde84c484199f8c429a86e32cc6847f]
-link Client to LabOrder--><path codeLine="171" d="M585.5,1156.05 C585.5,1182.13 585.5,1210.45 585.5,1233.85 " fill="none" id="Client-LabOrder" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="590.5,1200.1758,593.4389,1191.1307,587.5611,1191.1307,590.5,1200.1758" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="159" x="599.5" y="1200.4951">to execute the test needs a</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="578.1992" y="1177.0975">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="578.0078" y="1222.9574">1</text><!--MD5=[c3a86c626b5b742f72786125539e9227]
-link ClinicalChemistryTechnologist to ChemicalLaboratory--><path codeLine="172" d="M1589.49,368.37 C1649.98,448.88 1746.47,577.33 1799.5,647.92 " fill="none" id="ClinicalChemistryTechnologist-ChemicalLaboratory" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="1748.5032,515.6734,1745.4201,506.6764,1740.7206,510.2069,1748.5032,515.6734" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="52" x="1754.5" y="516.9951">works on</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1589.2367" y="389.3434">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1786.6641" y="637.0372">1</text><!--MD5=[a30fd0de2ece51448e49a79ae7d6d462]
-link ClinicalChemistryTechnologist to Results--><path codeLine="173" d="M1464.08,368.1 C1439.47,388.94 1410.5,409.67 1380.5,423 C1299.97,458.79 1257.79,404.07 1184.5,453 C1133.91,486.77 1164.04,536.15 1113.5,570 C927,694.93 830.34,586.36 614.5,648 C586.45,656.01 556.2,668.91 533.22,679.66 " fill="none" id="ClinicalChemistryTechnologist-Results" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="1184.7585,513.2628,1194.2687,513.1789,1192.4031,507.6049,1184.7585,513.2628" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43" x="1198.5" y="516.9951">records</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1449.9392" y="389.3011">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="541.0776" y="671.9129">1</text><!--MD5=[98994e1502641fa381021dffe882d56a]
-link ClinicalChemistryTechnologist to Sample--><path codeLine="174" d="M1519.45,368.06 C1511.55,403.29 1502.35,444.31 1495.85,473.26 " fill="none" id="ClinicalChemistryTechnologist-Sample" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="1513.4055,419.0545,1518.2531,410.8721,1512.5178,409.5855,1513.4055,419.0545" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="45" x="1523.5" y="419.4951">analyse</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1510.5866" y="389.2573">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1489.7139" y="462.5792">1</text><!--MD5=[7449b8cd0f46c95a2c65666eb7f038bd]
-link Company to Covid19Report--><path codeLine="175" d="M1125.28,72.5 C1160.3,72.5 1211.18,72.5 1255.91,72.5 " fill="none" id="Company-Covid19Report" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="1152.5,60.6758,1143.4549,57.7369,1143.4549,63.6147,1152.5,60.6758" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="81" x="1156.5" y="65.9951">sends to NHS</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1132.9451" y="68.7128">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1240.9341" y="69.371">1</text><!--MD5=[eaea43e34e45c5b9d20b595fc78f1f20]
-link Company to Administrator--><path codeLine="176" d="M1051.89,103.66 C1033.98,121.78 1011.27,145.6 992.5,168 C978.06,185.24 963.26,204.5 949.85,222.7 " fill="none" id="Company-Administrator" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="994.2459,180.972,1002.3639,176.0173,997.9012,172.1919,994.2459,180.972" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="1006.5" y="182.4951">employs</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1038.1746" y="124.9155">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="949.5602" y="212.266">*</text><!--MD5=[aafc5d8a5829a6a8d6dc892cb1ff5d24]
-link Company to ClinicalAnalysisLaboratory--><path codeLine="177" d="M1077.34,103.54 C1065,175.46 1033.57,358.58 1017.42,452.71 " fill="none" id="Company-ClinicalAnalysisLaboratory" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="1060.6543,300.6037,1065.0807,292.186,1059.2876,291.1919,1060.6543,300.6037" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="1070.5" y="300.9951">owns</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1068.6351" y="124.7719">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1013.3243" y="442.0756">*</text><!--MD5=[1ca3dfffd6d11e2dcc22d81a95bb4023]
-link Company to ClinicalChemistryTechnologist--><path codeLine="178" d="M1125.24,91.55 C1200.54,123.49 1353.77,189.11 1405.5,216 C1411.23,218.98 1417.06,222.11 1422.9,225.33 " fill="none" id="Company-ClinicalChemistryTechnologist" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="1347.0606,179.2255,1340.0152,172.8369,1337.6056,178.1982,1347.0606,179.2255" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="1351.5" y="182.4951">employs</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1132.8985" y="90.918">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1410.1667" y="217.5899">*</text><!--MD5=[baa6ff38ec20def42e063e01f85f91ae]
-link Company to LaboratoryCoordinator--><path codeLine="179" d="M1039.79,79.63 C942.68,94.53 699.09,137.29 509.5,216 C503.78,218.38 498.01,220.98 492.25,223.74 " fill="none" id="Company-LaboratoryCoordinator" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="631.6647,178.4484,641.1599,178.9883,639.6638,173.3041,631.6647,178.4484" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="645.5" y="182.4951">employs</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1025.1365" y="95.6737">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="499.9934" y="215.893">*</text><!--MD5=[b3ce5a6630a4618a8b0d497d766f4e5a]
-link Company to MedicalLabTechnician--><path codeLine="180" d="M1108.93,103.77 C1135.57,134.27 1177.65,182.46 1212.86,222.77 " fill="none" id="Company-MedicalLabTechnician" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="1186.789,180.9417,1183.0527,172.1958,1178.6256,176.0623,1186.789,180.9417" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="1192.5" y="182.4951">employs</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1106.301" y="124.8001">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1201.1424" y="211.9656">*</text><!--MD5=[5448e79142bdfcbfebd9929e0faf45a6]
-link Company to Receptionist--><path codeLine="181" d="M1039.99,91 C979.08,116.48 863.91,166.22 769.5,216 C763.79,219.01 757.98,222.17 752.14,225.41 " fill="none" id="Company-Receptionist" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="863.9696,179.2912,873.4086,178.1273,870.9218,172.8014,863.9696,179.2912" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="877.5" y="182.4951">employs</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1025.082" y="109.0941">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="759.876" y="217.6752">*</text><!--MD5=[137816425ceb0c0d2300eee5a01b984a]
-link Company to SpecialistDoctor--><path codeLine="182" d="M1039.89,75.2 C914.68,81.37 538.55,108.25 249.5,216 C243.69,218.16 237.86,220.59 232.05,223.22 " fill="none" id="Company-SpecialistDoctor" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="381.5819,178.0769,391.0085,179.3375,389.9492,173.5559,381.5819,178.0769" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="395.5" y="182.4951">employs</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1024.9648" y="71.8285">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="240.1395" y="215.0938">*</text><!--MD5=[d6a5ae732362cd0f86c2003645f951b1]
-link Company to ChemicalLaboratory--><path codeLine="183" d="M1125.17,94.61 C1155.96,108.98 1198.9,127.26 1238.5,138 C1360.4,171.06 1715.05,123.91 1801.5,216 C1858.92,277.17 1848.65,536.64 1841.37,647.71 " fill="none" id="Company-ChemicalLaboratory" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="1854.4573,417.2319,1849.0948,409.3773,1845.5021,414.0294,1854.4573,417.2319" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="1859.5" y="419.4951">owns</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1133.1055" y="113.3246">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1834.4197" y="637.1714">1</text><!--MD5=[ad2296f8a7e01dc4a4d3518457849209]
-link Company to CompanyHeadquarters--><path codeLine="184" d="M1125.26,95.73 C1155.91,110.52 1198.65,128.86 1238.5,138 C1426.55,181.15 2092.5,101.56 2092.5,294.5 C2092.5,294.5 2092.5,294.5 2092.5,700.5 C2092.5,746.34 2072.39,794.99 2054.72,828.9 " fill="none" id="Company-CompanyHeadquarters" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="2101.4257,514.7724,2096.1442,506.8631,2092.5039,511.478,2101.4257,514.7724" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="2106.5" y="516.9951">owns</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1133.2279" y="121.2298">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="2051.341" y="817.9995">1</text><!--MD5=[848c8065b29fb9bba3c9b45c1c07083f]
-link LaboratoryCoordinator to Report--><path codeLine="185" d="M320.32,368.06 C293.38,400.62 262.36,438.12 238.92,466.47 " fill="none" id="LaboratoryCoordinator-Report" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="288.3132,418.0286,296.3428,412.932,291.8136,409.1856,288.3132,418.0286" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="39" x="300.5" y="419.4951">verifies</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="307.3458" y="389.2573">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="239.326" y="455.5807">*</text><!--MD5=[35aee8b19f31a944c494919366488859]
-link LaboratoryCoordinator to AutomaticValidationModule--><path codeLine="186" d="M418.56,368.27 C425.22,380.52 432.06,393.12 438.5,405 C452.29,430.44 467.91,459.36 479.31,480.47 " fill="none" id="LaboratoryCoordinator-AutomaticValidationModule" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="455.8807,418.5727,454.1584,409.2193,448.9896,412.018,455.8807,418.5727" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="28" x="462.5" y="419.4951">uses</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="414.8382" y="389.2341">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="468.0028" y="469.4837">1</text><!--MD5=[0a29b4543c1af9e8341b856b8b8ec05c]
-link MedicalLabTechnician to Sample--><path codeLine="187" d="M1321.09,368.3 C1334.59,387.08 1350.16,406.62 1366.5,423 C1389.2,445.76 1418.3,467 1442.27,482.85 " fill="none" id="MedicalLabTechnician-Sample" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="1375.1335,417.6105,1370.5793,409.2613,1366.5415,413.5328,1375.1335,417.6105" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="117" x="1380.5" y="419.4951">collects and records</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1317.9702" y="389.2669">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1429.3647" y="474.3312">*</text><!--MD5=[738f0445d4a0804ca0738b44323ae22b]
-link MedicalLabTechnician to ClinicalAnalysisLaboratory--><path codeLine="188" d="M1185.89,368.06 C1151.35,395.64 1112.37,426.76 1079.68,452.87 " fill="none" id="MedicalLabTechnician-ClinicalAnalysisLaboratory" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="1133.5928,417.2957,1142.4948,413.9483,1138.8271,409.3551,1133.5928,417.2957" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="52" x="1146.5" y="419.4951">works on</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1170.0155" y="389.2573">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1081.0504" y="442.2551">1</text><!--MD5=[c1a9c7f16ec55f9c4038f73c31b8becd]
-link Notification to Client--><path codeLine="189" d="M512.22,912.24 C522.89,936.02 537.14,967.76 550.23,996.93 " fill="none" id="Notification-Client" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="542.5473,962.7374,541.5249,953.282,536.1624,955.6887,542.5473,962.7374" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="65" x="549.5" y="963.4951">delivered to</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="507.3269" y="933.1588">1</text><!--MD5=[6cd0a3af2322bf46f6c633408da71c74]
-link Receptionist to ClinicalAnalysisLaboratory--><path codeLine="190" d="M752.13,364.76 C758,368.23 763.81,371.67 769.5,375 C818.61,403.8 873.86,435.31 918.75,460.69 " fill="none" id="Receptionist-ClinicalAnalysisLaboratory" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="857.8331,416.6706,851.4608,409.6105,848.528,414.7044,857.8331,416.6706" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="52" x="862.5" y="419.4951">works on</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="759.8653" y="366.3878">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="904.1105" y="453.322">1</text><!--MD5=[6a35157f4c730bda767e7c9f1b8b7f73]
-link Receptionist to Client--><path codeLine="191" d="M648.55,368.2 C653.04,409.69 657.5,462.96 657.5,510.5 C657.5,510.5 657.5,510.5 657.5,875 C657.5,916.79 643.47,960.76 627.8,996.83 " fill="none" id="Receptionist-Client" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="662.335,704.6731,665.5708,695.7299,659.6961,695.5359,662.335,704.6731" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="123" x="671.5" y="704.9951">register in application</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="642.079" y="389.4107">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="626.4691" y="986.2736">*</text><!--MD5=[e8b34c2e6517a986175307f5599f058a]
-link Receptionist to Test--><path codeLine="192" d="M670.1,368.05 C704.01,446.71 755.06,562.97 763.5,570 C837.47,631.65 1133.92,678.29 1240.28,693.33 " fill="none" id="Receptionist-Test" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="772.843,514.1534,766.4428,507.1186,763.5302,512.2241,772.843,514.1534" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="123" x="777.5" y="516.9951">register in application</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="665.683" y="389.2464">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1227.5178" y="688.2044">*</text><!--MD5=[cf17f001677a68e739882f8c35b05286]
-link Report to Notification--><path codeLine="193" d="M229.46,556.59 C260.46,605.94 314.12,687.32 368.5,751 C394.51,781.46 427.15,812.69 452.83,835.93 " fill="none" id="Report-Notification" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="376.6226,703.5808,373.2691,694.6811,368.6784,698.352,376.6226,703.5808" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="57" x="382.5" y="704.9951">is sent by</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="225.7591" y="577.6102">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="437.606" y="825.2794">1</text><!--MD5=[5738729188d9007b9fb2cf9548c51b6f]
-link Results to Notification--><path codeLine="194" d="M495.5,737.51 C495.5,766.51 495.5,806.69 495.5,835.76 " fill="none" id="Results-Notification" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="500.5,795.1758,503.4389,786.1307,497.5611,786.1307,500.5,795.1758" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="57" x="509.5" y="795.4951">is sent by</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="487.9203" y="758.6818">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="487.8766" y="825.0792">1</text><!--MD5=[7dcd581d20c87a53331ad083603da507]
-link Sample to ChemicalLaboratory--><path codeLine="195" d="M1527.67,549.56 C1553.13,571.61 1587.55,598.93 1621.5,618 C1667.21,643.68 1722.7,664.16 1765.99,678.03 " fill="none" id="Sample-ChemicalLaboratory" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="1630.9012,611.5483,1624.3339,604.6694,1621.5448,609.8433,1630.9012,611.5483" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="47" x="1635.5" y="614.4951">are sent</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1528.9091" y="570.7401">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1750.7858" y="672.3023">1</text><!--MD5=[04051b31133b0fb73b3485da462ad7f3]
-link Sample to BarcodeExternalAPI--><path codeLine="196" d="M1476.55,549.62 C1472.53,565.05 1468.48,583.24 1466.5,600 C1463.81,622.77 1464.75,648.69 1466.27,668.22 " fill="none" id="Sample-BarcodeExternalAPI" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="1471.0682,614.1571,1474.7773,605.3996,1468.9214,604.892,1471.0682,614.1571" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="100" x="1480.5" y="614.4951">is identified using</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1467.1567" y="570.81">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1457.8819" y="657.6668">1</text><!--MD5=[1ae83efc6d1967ce5bc17dfe294d00c2]
-link Sample to Test--><path codeLine="197" d="M1443.53,549.64 C1425.43,565.07 1404.33,583.26 1385.5,600 C1362.47,620.46 1337.09,643.79 1316.83,662.61 " fill="none" id="Sample-Test" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="1386.768,612.5033,1395.4751,608.6773,1391.5633,604.2902,1386.768,612.5033" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="56" x="1399.5" y="614.4951">is used in</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1428.9645" y="570.5428">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1324.5424" y="651.9063">1</text><!--MD5=[35c5d5b78cc27fdb07caaeeaa436e174]
-link SpecialistDoctor to Report--><path codeLine="198" d="M150.05,375.27 C161.98,406.02 175.2,440.12 185.39,466.38 " fill="none" id="SpecialistDoctor-Report" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="175.3082,418.8374,174.7772,409.3417,169.2971,411.4673,175.3082,418.8374" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="182.5" y="419.4951">writes</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="145.2901" y="396.0611">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="175.2341" y="455.8057">1</text><!--MD5=[30986eb9547a17a7d69613c4e4ec0900]
-link SpecialistDoctor to Results--><path codeLine="199" d="M199.68,375.23 C208.66,385.02 217.46,395.08 225.5,405 C241.64,424.92 243.8,431.33 257.5,453 C289.87,504.22 285.37,526.44 327.5,570 C371.98,615.99 399.44,606.93 448.5,648 C453.37,652.07 458.23,656.63 462.89,661.28 " fill="none" id="SpecialistDoctor-Results" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="335.8856,515.3552,331.9237,506.7091,327.5983,510.6891,335.8856,515.3552" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="45" x="341.5" y="516.9951">analyse</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="199.2697" y="396.2929">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="449.4579" y="650.6027">1</text><!--MD5=[e295ba549a28d1ab833344d4c7504807]
-link Test to Parameters--><path codeLine="200" d="M1278.5,744.92 C1278.5,775.67 1278.5,815.77 1278.5,842.85 " fill="none" id="Test-Parameters" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="1283.5,795.1758,1286.4389,786.1307,1280.5611,786.1307,1283.5,795.1758" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="21" x="1292.5" y="795.4951">has</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1271.0297" y="765.6501">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1272.9844" y="832.3236">*</text><!--MD5=[249944138e65f4bf40759a9aa9f3f5db]
-link TypeSample to Sample--><path codeLine="201" d="M1709.98,326.51 C1697.47,341.71 1681.41,360.07 1665.5,375 C1623.31,414.61 1569.93,454.01 1532.68,480.03 " fill="none" id="TypeSample-Sample" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="1637.2799,410.9028,1628.5182,414.6019,1632.3658,419.0454,1637.2799,410.9028" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="32" x="1642.5" y="419.4951">has a</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1697.6604" y="347.736">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1540.4384" y="471.2887">1</text><!--MD5=[921a940d1f21805a20a9bd8096adcacd]
-link TypeTest to Test--><path codeLine="202" d="M1289.58,542.83 C1284.17,559.46 1278.22,580.6 1275.5,600 C1273.03,617.62 1273.06,637.18 1273.97,654.2 " fill="none" id="TypeTest-Test" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#000000" points="1281.194,604.2242,1277.028,612.7738,1282.849,613.5897,1281.194,604.2242" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="25" x="1289.5" y="614.4951">as a</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1282.0218" y="563.8715">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1267.8935" y="643.5982">*</text><!--MD5=[9f75c29592c4b5713dcc51b0f105106a]
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     contentScriptType="application/ecmascript" contentStyleType="text/css" height="1351px" preserveAspectRatio="none"
+     style="width:2144px;height:1351px;" version="1.1" viewBox="0 0 2144 1351" width="2144px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="f88u4sc8wwupo" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix"
+                           values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+        </filter>
+    </defs>
+    <g><!--MD5=[8ccb22436dd277bde4e48928c0f3fb40]
+class Covid19Report-->
+        <rect codeLine="2" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="131.0156" id="Covid19Report"
+              style="stroke:#A80036;stroke-width:1.5;" width="193" x="1256" y="7"/>
+        <ellipse cx="1307.25" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1309.25,19.5 Q1309.4531,19 1309.6875,18.75 Q1309.9219,18.5 1310.1875,18.5 Q1310.6563,18.5 1310.9531,18.7813 Q1311.25,19.0625 1311.25,19.7188 L1311.25,21.2813 Q1311.25,21.9375 1310.9688,22.2188 Q1310.6875,22.5 1310.25,22.5 Q1309.8594,22.5 1309.6094,22.3281 Q1309.3594,22.1563 1309.25,21.7031 Q1309.2031,21.3906 1309.0313,21.2188 Q1308.7188,20.8906 1308.1563,20.7031 Q1307.5938,20.5 1307.0313,20.5 Q1306.3281,20.5 1305.7344,20.7813 Q1305.1563,21.0625 1304.7031,21.6875 Q1304.25,22.3125 1304.25,23.1719 L1304.25,24.0938 Q1304.25,25.125 1305.0938,25.8125 Q1305.9375,26.5 1307.4375,26.5 Q1308.3281,26.5 1308.9531,26.2969 Q1309.3125,26.1875 1309.7188,25.8281 Q1309.9844,25.625 1310.125,25.5625 Q1310.2656,25.5 1310.4375,25.5 Q1310.7656,25.5 1311,25.7656 Q1311.25,26.0156 1311.25,26.375 Q1311.25,26.7188 1310.9063,27.125 Q1310.4063,27.7188 1309.6094,28.0469 Q1308.5625,28.5 1307.2813,28.5 Q1305.7813,28.5 1304.5781,27.9063 Q1303.6094,27.4375 1302.9219,26.4219 Q1302.25,25.4063 1302.25,24.2031 L1302.25,23.1094 Q1302.25,21.8594 1302.8438,20.7656 Q1303.4531,19.6719 1304.5,19.0938 Q1305.5625,18.5 1306.75,18.5 Q1307.4688,18.5 1308.0938,18.75 Q1308.7188,19 1309.25,19.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="82" x="1327.75"
+              y="27.9102">Covid19Report
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1257" x2="1448" y1="39" y2="39"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="126" x="1262"
+              y="54.4189">Covid-19 tests performed;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="164" x="1262"
+              y="68.2549">Positive Results to Covid-19 Tests
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="171" x="1262"
+              y="82.0908">Number of Covid-19 Cases Per Day
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="179" x="1262"
+              y="95.9268">Number of Covid-19 Cases Per Week
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="181" x="1262"
+              y="109.7627">Number of Covid-19 Cases Per Month
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="176" x="1262"
+              y="123.5986">Number of Covid-19 Cases Per Year
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1257" x2="1448" y1="130.0156" y2="130.0156"/><!--MD5=[df38be88ccee13e832d6fafd6288a4ca]
+class Test-->
+        <rect codeLine="11" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="89.5078" id="Test"
+              style="stroke:#A80036;stroke-width:1.5;" width="76" x="1240.5" y="654.5"/>
+        <ellipse cx="1264.5" cy="670.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1266.5,667 Q1266.7031,666.5 1266.9375,666.25 Q1267.1719,666 1267.4375,666 Q1267.9063,666 1268.2031,666.2813 Q1268.5,666.5625 1268.5,667.2188 L1268.5,668.7813 Q1268.5,669.4375 1268.2188,669.7188 Q1267.9375,670 1267.5,670 Q1267.1094,670 1266.8594,669.8281 Q1266.6094,669.6563 1266.5,669.2031 Q1266.4531,668.8906 1266.2813,668.7188 Q1265.9688,668.3906 1265.4063,668.2031 Q1264.8438,668 1264.2813,668 Q1263.5781,668 1262.9844,668.2813 Q1262.4063,668.5625 1261.9531,669.1875 Q1261.5,669.8125 1261.5,670.6719 L1261.5,671.5938 Q1261.5,672.625 1262.3438,673.3125 Q1263.1875,674 1264.6875,674 Q1265.5781,674 1266.2031,673.7969 Q1266.5625,673.6875 1266.9688,673.3281 Q1267.2344,673.125 1267.375,673.0625 Q1267.5156,673 1267.6875,673 Q1268.0156,673 1268.25,673.2656 Q1268.5,673.5156 1268.5,673.875 Q1268.5,674.2188 1268.1563,674.625 Q1267.6563,675.2188 1266.8594,675.5469 Q1265.8125,676 1264.5313,676 Q1263.0313,676 1261.8281,675.4063 Q1260.8594,674.9375 1260.1719,673.9219 Q1259.5,672.9063 1259.5,671.7031 L1259.5,670.6094 Q1259.5,669.3594 1260.0938,668.2656 Q1260.7031,667.1719 1261.75,666.5938 Q1262.8125,666 1264,666 Q1264.7188,666 1265.3438,666.25 Q1265.9688,666.5 1266.5,667 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="24" x="1280.5"
+              y="675.4102">Test
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1241.5" x2="1315.5" y1="686.5" y2="686.5"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="29" x="1246.5"
+              y="701.9189">Client;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="1246.5"
+              y="715.7549">Test ID;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="64" x="1246.5"
+              y="729.5908">Type of Test;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1241.5" x2="1315.5" y1="736.0078" y2="736.0078"/><!--MD5=[9681492165142af2a4a3a169d90ee8d4]
+class Sample-->
+        <rect codeLine="17" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="75.6719" id="Sample"
+              style="stroke:#A80036;stroke-width:1.5;" width="90" x="1442.5" y="473.5"/>
+        <ellipse cx="1464.25" cy="489.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1466.25,486 Q1466.4531,485.5 1466.6875,485.25 Q1466.9219,485 1467.1875,485 Q1467.6563,485 1467.9531,485.2813 Q1468.25,485.5625 1468.25,486.2188 L1468.25,487.7813 Q1468.25,488.4375 1467.9688,488.7188 Q1467.6875,489 1467.25,489 Q1466.8594,489 1466.6094,488.8281 Q1466.3594,488.6563 1466.25,488.2031 Q1466.2031,487.8906 1466.0313,487.7188 Q1465.7188,487.3906 1465.1563,487.2031 Q1464.5938,487 1464.0313,487 Q1463.3281,487 1462.7344,487.2813 Q1462.1563,487.5625 1461.7031,488.1875 Q1461.25,488.8125 1461.25,489.6719 L1461.25,490.5938 Q1461.25,491.625 1462.0938,492.3125 Q1462.9375,493 1464.4375,493 Q1465.3281,493 1465.9531,492.7969 Q1466.3125,492.6875 1466.7188,492.3281 Q1466.9844,492.125 1467.125,492.0625 Q1467.2656,492 1467.4375,492 Q1467.7656,492 1468,492.2656 Q1468.25,492.5156 1468.25,492.875 Q1468.25,493.2188 1467.9063,493.625 Q1467.4063,494.2188 1466.6094,494.5469 Q1465.5625,495 1464.2813,495 Q1462.7813,495 1461.5781,494.4063 Q1460.6094,493.9375 1459.9219,492.9219 Q1459.25,491.9063 1459.25,490.7031 L1459.25,489.6094 Q1459.25,488.3594 1459.8438,487.2656 Q1460.4531,486.1719 1461.5,485.5938 Q1462.5625,485 1463.75,485 Q1464.4688,485 1465.0938,485.25 Q1465.7188,485.5 1466.25,486 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="43" x="1479.75"
+              y="494.4102">Sample
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1443.5" x2="1531.5" y1="505.5" y2="505.5"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="1448.5"
+              y="520.9189">Test ID;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="78" x="1448.5"
+              y="534.7549">Type of Sample;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1443.5" x2="1531.5" y1="541.1719" y2="541.1719"/><!--MD5=[fdca102e342db1d5733f5f3c41f4f0c8]
+class TypeTest-->
+        <rect codeLine="22" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="61.8359" id="TypeTest"
+              style="stroke:#A80036;stroke-width:1.5;" width="82" x="1259.5" y="480.5"/>
+        <ellipse cx="1274.5" cy="496.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1276.5,493 Q1276.7031,492.5 1276.9375,492.25 Q1277.1719,492 1277.4375,492 Q1277.9063,492 1278.2031,492.2813 Q1278.5,492.5625 1278.5,493.2188 L1278.5,494.7813 Q1278.5,495.4375 1278.2188,495.7188 Q1277.9375,496 1277.5,496 Q1277.1094,496 1276.8594,495.8281 Q1276.6094,495.6563 1276.5,495.2031 Q1276.4531,494.8906 1276.2813,494.7188 Q1275.9688,494.3906 1275.4063,494.2031 Q1274.8438,494 1274.2813,494 Q1273.5781,494 1272.9844,494.2813 Q1272.4063,494.5625 1271.9531,495.1875 Q1271.5,495.8125 1271.5,496.6719 L1271.5,497.5938 Q1271.5,498.625 1272.3438,499.3125 Q1273.1875,500 1274.6875,500 Q1275.5781,500 1276.2031,499.7969 Q1276.5625,499.6875 1276.9688,499.3281 Q1277.2344,499.125 1277.375,499.0625 Q1277.5156,499 1277.6875,499 Q1278.0156,499 1278.25,499.2656 Q1278.5,499.5156 1278.5,499.875 Q1278.5,500.2188 1278.1563,500.625 Q1277.6563,501.2188 1276.8594,501.5469 Q1275.8125,502 1274.5313,502 Q1273.0313,502 1271.8281,501.4063 Q1270.8594,500.9375 1270.1719,499.9219 Q1269.5,498.9063 1269.5,497.7031 L1269.5,496.6094 Q1269.5,495.3594 1270.0938,494.2656 Q1270.7031,493.1719 1271.75,492.5938 Q1272.8125,492 1274,492 Q1274.7188,492 1275.3438,492.25 Q1275.9688,492.5 1276.5,493 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="50" x="1288.5"
+              y="501.4102">TypeTest
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1260.5" x2="1340.5" y1="512.5" y2="512.5"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="1265.5"
+              y="527.9189">Test ID;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1260.5" x2="1340.5" y1="534.3359" y2="534.3359"/><!--MD5=[ed6624c6556d5e7b1bd23032162d20b7]
+class Client-->
+        <rect codeLine="27" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="158.6875" id="Client"
+              style="stroke:#A80036;stroke-width:1.5;" width="185" x="493" y="997"/>
+        <ellipse cx="565.25" cy="1013" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M567.25,1009.5 Q567.4531,1009 567.6875,1008.75 Q567.9219,1008.5 568.1875,1008.5 Q568.6563,1008.5 568.9531,1008.7813 Q569.25,1009.0625 569.25,1009.7188 L569.25,1011.2813 Q569.25,1011.9375 568.9688,1012.2188 Q568.6875,1012.5 568.25,1012.5 Q567.8594,1012.5 567.6094,1012.3281 Q567.3594,1012.1563 567.25,1011.7031 Q567.2031,1011.3906 567.0313,1011.2188 Q566.7188,1010.8906 566.1563,1010.7031 Q565.5938,1010.5 565.0313,1010.5 Q564.3281,1010.5 563.7344,1010.7813 Q563.1563,1011.0625 562.7031,1011.6875 Q562.25,1012.3125 562.25,1013.1719 L562.25,1014.0938 Q562.25,1015.125 563.0938,1015.8125 Q563.9375,1016.5 565.4375,1016.5 Q566.3281,1016.5 566.9531,1016.2969 Q567.3125,1016.1875 567.7188,1015.8281 Q567.9844,1015.625 568.125,1015.5625 Q568.2656,1015.5 568.4375,1015.5 Q568.7656,1015.5 569,1015.7656 Q569.25,1016.0156 569.25,1016.375 Q569.25,1016.7188 568.9063,1017.125 Q568.4063,1017.7188 567.6094,1018.0469 Q566.5625,1018.5 565.2813,1018.5 Q563.7813,1018.5 562.5781,1017.9063 Q561.6094,1017.4375 560.9219,1016.4219 Q560.25,1015.4063 560.25,1014.2031 L560.25,1013.1094 Q560.25,1011.8594 560.8438,1010.7656 Q561.4531,1009.6719 562.5,1009.0938 Q563.5625,1008.5 564.75,1008.5 Q565.4688,1008.5 566.0938,1008.75 Q566.7188,1009 567.25,1009.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="32" x="585.75"
+              y="1017.9102">Client
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="494" x2="677" y1="1029" y2="1029"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="499"
+              y="1044.4189">Name;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="100" x="499"
+              y="1058.2549">Citizen card Number;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="173" x="499"
+              y="1072.0908">National Healthcare Service Number
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="49" x="499"
+              y="1085.9268">Birth date;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="22" x="499"
+              y="1099.7627">Sex;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="124" x="499"
+              y="1113.5986">Tax Identification Number;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="33" x="499"
+              y="1127.4346">Phone;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="499"
+              y="1141.2705">E-mail;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="494" x2="677" y1="1147.6875" y2="1147.6875"/><!--MD5=[03960189e81aa2c066c762ffabbee709]
+class Receptionist-->
+        <rect codeLine="38" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="144.8516" id="Receptionist"
+              style="stroke:#A80036;stroke-width:1.5;" width="225" x="527" y="223"/>
+        <ellipse cx="600.75" cy="239" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M602.75,235.5 Q602.9531,235 603.1875,234.75 Q603.4219,234.5 603.6875,234.5 Q604.1563,234.5 604.4531,234.7813 Q604.75,235.0625 604.75,235.7188 L604.75,237.2813 Q604.75,237.9375 604.4688,238.2188 Q604.1875,238.5 603.75,238.5 Q603.3594,238.5 603.1094,238.3281 Q602.8594,238.1563 602.75,237.7031 Q602.7031,237.3906 602.5313,237.2188 Q602.2188,236.8906 601.6563,236.7031 Q601.0938,236.5 600.5313,236.5 Q599.8281,236.5 599.2344,236.7813 Q598.6563,237.0625 598.2031,237.6875 Q597.75,238.3125 597.75,239.1719 L597.75,240.0938 Q597.75,241.125 598.5938,241.8125 Q599.4375,242.5 600.9375,242.5 Q601.8281,242.5 602.4531,242.2969 Q602.8125,242.1875 603.2188,241.8281 Q603.4844,241.625 603.625,241.5625 Q603.7656,241.5 603.9375,241.5 Q604.2656,241.5 604.5,241.7656 Q604.75,242.0156 604.75,242.375 Q604.75,242.7188 604.4063,243.125 Q603.9063,243.7188 603.1094,244.0469 Q602.0625,244.5 600.7813,244.5 Q599.2813,244.5 598.0781,243.9063 Q597.1094,243.4375 596.4219,242.4219 Q595.75,241.4063 595.75,240.2031 L595.75,239.1094 Q595.75,237.8594 596.3438,236.7656 Q596.9531,235.6719 598,235.0938 Q599.0625,234.5 600.25,234.5 Q600.9688,234.5 601.5938,234.75 Q602.2188,235 602.75,235.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="69" x="621.25"
+              y="243.9102">Receptionist
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="528" x2="751" y1="255" y2="255"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="61" x="533"
+              y="270.4189">Employee ID;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="88" x="533"
+              y="284.2549">Organization Role;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="533"
+              y="298.0908">Name;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="533"
+              y="311.9268">Address;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="533"
+              y="325.7627">Phone Number;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="533"
+              y="339.5986">E-Mail;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="213" x="533"
+              y="353.4346">Standard Occupational Classification "soc";
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="528" x2="751" y1="359.8516" y2="359.8516"/><!--MD5=[01931d41e78f8996acd44f6f0fd8de28]
+class MedicalLabTechnician-->
+        <rect codeLine="48" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="144.8516" id="MedicalLabTechnician"
+              style="stroke:#A80036;stroke-width:1.5;" width="225" x="1163" y="223"/>
+        <ellipse cx="1209.75" cy="239" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1211.75,235.5 Q1211.9531,235 1212.1875,234.75 Q1212.4219,234.5 1212.6875,234.5 Q1213.1563,234.5 1213.4531,234.7813 Q1213.75,235.0625 1213.75,235.7188 L1213.75,237.2813 Q1213.75,237.9375 1213.4688,238.2188 Q1213.1875,238.5 1212.75,238.5 Q1212.3594,238.5 1212.1094,238.3281 Q1211.8594,238.1563 1211.75,237.7031 Q1211.7031,237.3906 1211.5313,237.2188 Q1211.2188,236.8906 1210.6563,236.7031 Q1210.0938,236.5 1209.5313,236.5 Q1208.8281,236.5 1208.2344,236.7813 Q1207.6563,237.0625 1207.2031,237.6875 Q1206.75,238.3125 1206.75,239.1719 L1206.75,240.0938 Q1206.75,241.125 1207.5938,241.8125 Q1208.4375,242.5 1209.9375,242.5 Q1210.8281,242.5 1211.4531,242.2969 Q1211.8125,242.1875 1212.2188,241.8281 Q1212.4844,241.625 1212.625,241.5625 Q1212.7656,241.5 1212.9375,241.5 Q1213.2656,241.5 1213.5,241.7656 Q1213.75,242.0156 1213.75,242.375 Q1213.75,242.7188 1213.4063,243.125 Q1212.9063,243.7188 1212.1094,244.0469 Q1211.0625,244.5 1209.7813,244.5 Q1208.2813,244.5 1207.0781,243.9063 Q1206.1094,243.4375 1205.4219,242.4219 Q1204.75,241.4063 1204.75,240.2031 L1204.75,239.1094 Q1204.75,237.8594 1205.3438,236.7656 Q1205.9531,235.6719 1207,235.0938 Q1208.0625,234.5 1209.25,234.5 Q1209.9688,234.5 1210.5938,234.75 Q1211.2188,235 1211.75,235.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="123" x="1230.25"
+              y="243.9102">MedicalLabTechnician
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1164" x2="1387" y1="255" y2="255"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="61" x="1169"
+              y="270.4189">Employee ID;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="88" x="1169"
+              y="284.2549">Organization Role;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="1169"
+              y="298.0908">Name;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="1169"
+              y="311.9268">Address;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="1169"
+              y="325.7627">Phone Number;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="1169"
+              y="339.5986">E-Mail;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="213" x="1169"
+              y="353.4346">Standard Occupational Classification "soc";
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1164" x2="1387" y1="359.8516" y2="359.8516"/><!--MD5=[7d96fd15f3014691d2fcaf89c5791e2a]
+class SpecialistDoctor-->
+        <rect codeLine="58" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="158.6875" id="SpecialistDoctor"
+              style="stroke:#A80036;stroke-width:1.5;" width="225" x="7" y="216"/>
+        <ellipse cx="70.25" cy="232" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M72.25,228.5 Q72.4531,228 72.6875,227.75 Q72.9219,227.5 73.1875,227.5 Q73.6563,227.5 73.9531,227.7813 Q74.25,228.0625 74.25,228.7188 L74.25,230.2813 Q74.25,230.9375 73.9688,231.2188 Q73.6875,231.5 73.25,231.5 Q72.8594,231.5 72.6094,231.3281 Q72.3594,231.1563 72.25,230.7031 Q72.2031,230.3906 72.0313,230.2188 Q71.7188,229.8906 71.1563,229.7031 Q70.5938,229.5 70.0313,229.5 Q69.3281,229.5 68.7344,229.7813 Q68.1563,230.0625 67.7031,230.6875 Q67.25,231.3125 67.25,232.1719 L67.25,233.0938 Q67.25,234.125 68.0938,234.8125 Q68.9375,235.5 70.4375,235.5 Q71.3281,235.5 71.9531,235.2969 Q72.3125,235.1875 72.7188,234.8281 Q72.9844,234.625 73.125,234.5625 Q73.2656,234.5 73.4375,234.5 Q73.7656,234.5 74,234.7656 Q74.25,235.0156 74.25,235.375 Q74.25,235.7188 73.9063,236.125 Q73.4063,236.7188 72.6094,237.0469 Q71.5625,237.5 70.2813,237.5 Q68.7813,237.5 67.5781,236.9063 Q66.6094,236.4375 65.9219,235.4219 Q65.25,234.4063 65.25,233.2031 L65.25,232.1094 Q65.25,230.8594 65.8438,229.7656 Q66.4531,228.6719 67.5,228.0938 Q68.5625,227.5 69.75,227.5 Q70.4688,227.5 71.0938,227.75 Q71.7188,228 72.25,228.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="90" x="90.75"
+              y="236.9102">SpecialistDoctor
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="231" y1="248" y2="248"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="61" x="13"
+              y="263.4189">Employee ID;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="88" x="13"
+              y="277.2549">Organization Role;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="13"
+              y="291.0908">Name;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="13"
+              y="304.9268">Address;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="13"
+              y="318.7627">Phone Number;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="13"
+              y="332.5986">E-Mail;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="213" x="13"
+              y="346.4346">Standard Occupational Classification "soc";
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="104" x="13"
+              y="360.2705">Doctor Index Number;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="231" y1="366.6875" y2="366.6875"/><!--MD5=[da547346deef918ea16944ba046651ef]
+class Administrator-->
+        <rect codeLine="69" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="144.8516" id="Administrator"
+              style="stroke:#A80036;stroke-width:1.5;" width="225" x="787" y="223"/>
+        <ellipse cx="858.75" cy="239" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M860.75,235.5 Q860.9531,235 861.1875,234.75 Q861.4219,234.5 861.6875,234.5 Q862.1563,234.5 862.4531,234.7813 Q862.75,235.0625 862.75,235.7188 L862.75,237.2813 Q862.75,237.9375 862.4688,238.2188 Q862.1875,238.5 861.75,238.5 Q861.3594,238.5 861.1094,238.3281 Q860.8594,238.1563 860.75,237.7031 Q860.7031,237.3906 860.5313,237.2188 Q860.2188,236.8906 859.6563,236.7031 Q859.0938,236.5 858.5313,236.5 Q857.8281,236.5 857.2344,236.7813 Q856.6563,237.0625 856.2031,237.6875 Q855.75,238.3125 855.75,239.1719 L855.75,240.0938 Q855.75,241.125 856.5938,241.8125 Q857.4375,242.5 858.9375,242.5 Q859.8281,242.5 860.4531,242.2969 Q860.8125,242.1875 861.2188,241.8281 Q861.4844,241.625 861.625,241.5625 Q861.7656,241.5 861.9375,241.5 Q862.2656,241.5 862.5,241.7656 Q862.75,242.0156 862.75,242.375 Q862.75,242.7188 862.4063,243.125 Q861.9063,243.7188 861.1094,244.0469 Q860.0625,244.5 858.7813,244.5 Q857.2813,244.5 856.0781,243.9063 Q855.1094,243.4375 854.4219,242.4219 Q853.75,241.4063 853.75,240.2031 L853.75,239.1094 Q853.75,237.8594 854.3438,236.7656 Q854.9531,235.6719 856,235.0938 Q857.0625,234.5 858.25,234.5 Q858.9688,234.5 859.5938,234.75 Q860.2188,235 860.75,235.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="73" x="879.25"
+              y="243.9102">Administrator
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="788" x2="1011" y1="255" y2="255"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="61" x="793"
+              y="270.4189">Employee ID;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="88" x="793"
+              y="284.2549">Organization Role;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="793"
+              y="298.0908">Name;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="793"
+              y="311.9268">Address;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="793"
+              y="325.7627">Phone Number;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="793"
+              y="339.5986">E-Mail;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="213" x="793"
+              y="353.4346">Standard Occupational Classification "soc";
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="788" x2="1011" y1="359.8516" y2="359.8516"/><!--MD5=[012ee2a8bf3ae2b319009b06f951c2e5]
+class ClinicalChemistryTechnologist-->
+        <rect codeLine="79" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="144.8516"
+              id="ClinicalChemistryTechnologist" style="stroke:#A80036;stroke-width:1.5;" width="225" x="1423" y="223"/>
+        <ellipse cx="1449.25" cy="239" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1451.25,235.5 Q1451.4531,235 1451.6875,234.75 Q1451.9219,234.5 1452.1875,234.5 Q1452.6563,234.5 1452.9531,234.7813 Q1453.25,235.0625 1453.25,235.7188 L1453.25,237.2813 Q1453.25,237.9375 1452.9688,238.2188 Q1452.6875,238.5 1452.25,238.5 Q1451.8594,238.5 1451.6094,238.3281 Q1451.3594,238.1563 1451.25,237.7031 Q1451.2031,237.3906 1451.0313,237.2188 Q1450.7188,236.8906 1450.1563,236.7031 Q1449.5938,236.5 1449.0313,236.5 Q1448.3281,236.5 1447.7344,236.7813 Q1447.1563,237.0625 1446.7031,237.6875 Q1446.25,238.3125 1446.25,239.1719 L1446.25,240.0938 Q1446.25,241.125 1447.0938,241.8125 Q1447.9375,242.5 1449.4375,242.5 Q1450.3281,242.5 1450.9531,242.2969 Q1451.3125,242.1875 1451.7188,241.8281 Q1451.9844,241.625 1452.125,241.5625 Q1452.2656,241.5 1452.4375,241.5 Q1452.7656,241.5 1453,241.7656 Q1453.25,242.0156 1453.25,242.375 Q1453.25,242.7188 1452.9063,243.125 Q1452.4063,243.7188 1451.6094,244.0469 Q1450.5625,244.5 1449.2813,244.5 Q1447.7813,244.5 1446.5781,243.9063 Q1445.6094,243.4375 1444.9219,242.4219 Q1444.25,241.4063 1444.25,240.2031 L1444.25,239.1094 Q1444.25,237.8594 1444.8438,236.7656 Q1445.4531,235.6719 1446.5,235.0938 Q1447.5625,234.5 1448.75,234.5 Q1449.4688,234.5 1450.0938,234.75 Q1450.7188,235 1451.25,235.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="168" x="1465.75"
+              y="243.9102">ClinicalChemistryTechnologist
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1424" x2="1647" y1="255" y2="255"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="61" x="1429"
+              y="270.4189">Employee ID;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="88" x="1429"
+              y="284.2549">Organization Role;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="1429"
+              y="298.0908">Name;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="1429"
+              y="311.9268">Address;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="1429"
+              y="325.7627">Phone Number;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="1429"
+              y="339.5986">E-Mail;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="213" x="1429"
+              y="353.4346">Standard Occupational Classification "soc";
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1424" x2="1647" y1="359.8516" y2="359.8516"/><!--MD5=[052425de1c0eb6cc1c1b48342b0bb88f]
+class LaboratoryCoordinator-->
+        <rect codeLine="89" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="144.8516" id="LaboratoryCoordinator"
+              style="stroke:#A80036;stroke-width:1.5;" width="225" x="267" y="223"/>
+        <ellipse cx="313.75" cy="239" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M315.75,235.5 Q315.9531,235 316.1875,234.75 Q316.4219,234.5 316.6875,234.5 Q317.1563,234.5 317.4531,234.7813 Q317.75,235.0625 317.75,235.7188 L317.75,237.2813 Q317.75,237.9375 317.4688,238.2188 Q317.1875,238.5 316.75,238.5 Q316.3594,238.5 316.1094,238.3281 Q315.8594,238.1563 315.75,237.7031 Q315.7031,237.3906 315.5313,237.2188 Q315.2188,236.8906 314.6563,236.7031 Q314.0938,236.5 313.5313,236.5 Q312.8281,236.5 312.2344,236.7813 Q311.6563,237.0625 311.2031,237.6875 Q310.75,238.3125 310.75,239.1719 L310.75,240.0938 Q310.75,241.125 311.5938,241.8125 Q312.4375,242.5 313.9375,242.5 Q314.8281,242.5 315.4531,242.2969 Q315.8125,242.1875 316.2188,241.8281 Q316.4844,241.625 316.625,241.5625 Q316.7656,241.5 316.9375,241.5 Q317.2656,241.5 317.5,241.7656 Q317.75,242.0156 317.75,242.375 Q317.75,242.7188 317.4063,243.125 Q316.9063,243.7188 316.1094,244.0469 Q315.0625,244.5 313.7813,244.5 Q312.2813,244.5 311.0781,243.9063 Q310.1094,243.4375 309.4219,242.4219 Q308.75,241.4063 308.75,240.2031 L308.75,239.1094 Q308.75,237.8594 309.3438,236.7656 Q309.9531,235.6719 311,235.0938 Q312.0625,234.5 313.25,234.5 Q313.9688,234.5 314.5938,234.75 Q315.2188,235 315.75,235.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="123" x="334.25"
+              y="243.9102">LaboratoryCoordinator
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="268" x2="491" y1="255" y2="255"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="61" x="273"
+              y="270.4189">Employee ID;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="88" x="273"
+              y="284.2549">Organization Role;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="273"
+              y="298.0908">Name;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="273"
+              y="311.9268">Address;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="273"
+              y="325.7627">Phone Number;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="273"
+              y="339.5986">E-Mail;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="213" x="273"
+              y="353.4346">Standard Occupational Classification "soc";
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="268" x2="491" y1="359.8516" y2="359.8516"/><!--MD5=[1934a092c0e7d4da7dc7075b6f4b6b03]
+class ClinicalAnalysisLaboratory-->
+        <rect codeLine="99" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="117.1797"
+              id="ClinicalAnalysisLaboratory" style="stroke:#A80036;stroke-width:1.5;" width="177" x="919" y="453"/>
+        <ellipse cx="934" cy="469" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M936,465.5 Q936.2031,465 936.4375,464.75 Q936.6719,464.5 936.9375,464.5 Q937.4063,464.5 937.7031,464.7813 Q938,465.0625 938,465.7188 L938,467.2813 Q938,467.9375 937.7188,468.2188 Q937.4375,468.5 937,468.5 Q936.6094,468.5 936.3594,468.3281 Q936.1094,468.1563 936,467.7031 Q935.9531,467.3906 935.7813,467.2188 Q935.4688,466.8906 934.9063,466.7031 Q934.3438,466.5 933.7813,466.5 Q933.0781,466.5 932.4844,466.7813 Q931.9063,467.0625 931.4531,467.6875 Q931,468.3125 931,469.1719 L931,470.0938 Q931,471.125 931.8438,471.8125 Q932.6875,472.5 934.1875,472.5 Q935.0781,472.5 935.7031,472.2969 Q936.0625,472.1875 936.4688,471.8281 Q936.7344,471.625 936.875,471.5625 Q937.0156,471.5 937.1875,471.5 Q937.5156,471.5 937.75,471.7656 Q938,472.0156 938,472.375 Q938,472.7188 937.6563,473.125 Q937.1563,473.7188 936.3594,474.0469 Q935.3125,474.5 934.0313,474.5 Q932.5313,474.5 931.3281,473.9063 Q930.3594,473.4375 929.6719,472.4219 Q929,471.4063 929,470.2031 L929,469.1094 Q929,467.8594 929.5938,466.7656 Q930.2031,465.6719 931.25,465.0938 Q932.3125,464.5 933.5,464.5 Q934.2188,464.5 934.8438,464.75 Q935.4688,465 936,465.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="145" x="948"
+              y="473.9102">ClinicalAnalysisLaboratory
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="920" x2="1095" y1="485" y2="485"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="68" x="925"
+              y="500.4189">Laboratory ID;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="925"
+              y="514.2549">Name;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="925"
+              y="528.0908">Address;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="925"
+              y="541.9268">Phone Number;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="57" x="925"
+              y="555.7627">TIN number;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="920" x2="1095" y1="562.1797" y2="562.1797"/><!--MD5=[a64badb107d3691f2dc6af242cdbeb21]
+class ChemicalLaboratory-->
+        <rect codeLine="107" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="103.3438" id="ChemicalLaboratory"
+              style="stroke:#A80036;stroke-width:1.5;" width="143" x="1766" y="648"/>
+        <ellipse cx="1781" cy="664" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1783,660.5 Q1783.2031,660 1783.4375,659.75 Q1783.6719,659.5 1783.9375,659.5 Q1784.4063,659.5 1784.7031,659.7813 Q1785,660.0625 1785,660.7188 L1785,662.2813 Q1785,662.9375 1784.7188,663.2188 Q1784.4375,663.5 1784,663.5 Q1783.6094,663.5 1783.3594,663.3281 Q1783.1094,663.1563 1783,662.7031 Q1782.9531,662.3906 1782.7813,662.2188 Q1782.4688,661.8906 1781.9063,661.7031 Q1781.3438,661.5 1780.7813,661.5 Q1780.0781,661.5 1779.4844,661.7813 Q1778.9063,662.0625 1778.4531,662.6875 Q1778,663.3125 1778,664.1719 L1778,665.0938 Q1778,666.125 1778.8438,666.8125 Q1779.6875,667.5 1781.1875,667.5 Q1782.0781,667.5 1782.7031,667.2969 Q1783.0625,667.1875 1783.4688,666.8281 Q1783.7344,666.625 1783.875,666.5625 Q1784.0156,666.5 1784.1875,666.5 Q1784.5156,666.5 1784.75,666.7656 Q1785,667.0156 1785,667.375 Q1785,667.7188 1784.6563,668.125 Q1784.1563,668.7188 1783.3594,669.0469 Q1782.3125,669.5 1781.0313,669.5 Q1779.5313,669.5 1778.3281,668.9063 Q1777.3594,668.4375 1776.6719,667.4219 Q1776,666.4063 1776,665.2031 L1776,664.1094 Q1776,662.8594 1776.5938,661.7656 Q1777.2031,660.6719 1778.25,660.0938 Q1779.3125,659.5 1780.5,659.5 Q1781.2188,659.5 1781.8438,659.75 Q1782.4688,660 1783,660.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="111" x="1795"
+              y="668.9102">ChemicalLaboratory
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1767" x2="1908" y1="680" y2="680"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="1772"
+              y="695.4189">Name;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="1772"
+              y="709.2549">Address;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="1772"
+              y="723.0908">Phone Number;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="57" x="1772"
+              y="736.9268">TIN number;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1767" x2="1908" y1="743.3438" y2="743.3438"/><!--MD5=[628c1010a7b084d4bd8091fdea3514d5]
+class CompanyHeadquarters-->
+        <rect codeLine="114" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="89.5078" id="CompanyHeadquarters"
+              style="stroke:#A80036;stroke-width:1.5;" width="161" x="1948" y="829"/>
+        <ellipse cx="1963" cy="845" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1965,841.5 Q1965.2031,841 1965.4375,840.75 Q1965.6719,840.5 1965.9375,840.5 Q1966.4063,840.5 1966.7031,840.7813 Q1967,841.0625 1967,841.7188 L1967,843.2813 Q1967,843.9375 1966.7188,844.2188 Q1966.4375,844.5 1966,844.5 Q1965.6094,844.5 1965.3594,844.3281 Q1965.1094,844.1563 1965,843.7031 Q1964.9531,843.3906 1964.7813,843.2188 Q1964.4688,842.8906 1963.9063,842.7031 Q1963.3438,842.5 1962.7813,842.5 Q1962.0781,842.5 1961.4844,842.7813 Q1960.9063,843.0625 1960.4531,843.6875 Q1960,844.3125 1960,845.1719 L1960,846.0938 Q1960,847.125 1960.8438,847.8125 Q1961.6875,848.5 1963.1875,848.5 Q1964.0781,848.5 1964.7031,848.2969 Q1965.0625,848.1875 1965.4688,847.8281 Q1965.7344,847.625 1965.875,847.5625 Q1966.0156,847.5 1966.1875,847.5 Q1966.5156,847.5 1966.75,847.7656 Q1967,848.0156 1967,848.375 Q1967,848.7188 1966.6563,849.125 Q1966.1563,849.7188 1965.3594,850.0469 Q1964.3125,850.5 1963.0313,850.5 Q1961.5313,850.5 1960.3281,849.9063 Q1959.3594,849.4375 1958.6719,848.4219 Q1958,847.4063 1958,846.2031 L1958,845.1094 Q1958,843.8594 1958.5938,842.7656 Q1959.2031,841.6719 1960.25,841.0938 Q1961.3125,840.5 1962.5,840.5 Q1963.2188,840.5 1963.8438,840.75 Q1964.4688,841 1965,841.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="129" x="1977"
+              y="849.9102">CompanyHeadquarters
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1949" x2="2108" y1="861" y2="861"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="1954"
+              y="876.4189">Address;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="1954"
+              y="890.2549">Phone Number;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="1954"
+              y="904.0908">E-Mail;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1949" x2="2108" y1="910.5078" y2="910.5078"/><!--MD5=[a05769ccb6ff68467d0f03d44782bb8a]
+class ChemicalAnalysis-->
+        <rect codeLine="120" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="61.8359" id="ChemicalAnalysis"
+              style="stroke:#A80036;stroke-width:1.5;" width="131" x="1891" y="480.5"/>
+        <ellipse cx="1906" cy="496.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1908,493 Q1908.2031,492.5 1908.4375,492.25 Q1908.6719,492 1908.9375,492 Q1909.4063,492 1909.7031,492.2813 Q1910,492.5625 1910,493.2188 L1910,494.7813 Q1910,495.4375 1909.7188,495.7188 Q1909.4375,496 1909,496 Q1908.6094,496 1908.3594,495.8281 Q1908.1094,495.6563 1908,495.2031 Q1907.9531,494.8906 1907.7813,494.7188 Q1907.4688,494.3906 1906.9063,494.2031 Q1906.3438,494 1905.7813,494 Q1905.0781,494 1904.4844,494.2813 Q1903.9063,494.5625 1903.4531,495.1875 Q1903,495.8125 1903,496.6719 L1903,497.5938 Q1903,498.625 1903.8438,499.3125 Q1904.6875,500 1906.1875,500 Q1907.0781,500 1907.7031,499.7969 Q1908.0625,499.6875 1908.4688,499.3281 Q1908.7344,499.125 1908.875,499.0625 Q1909.0156,499 1909.1875,499 Q1909.5156,499 1909.75,499.2656 Q1910,499.5156 1910,499.875 Q1910,500.2188 1909.6563,500.625 Q1909.1563,501.2188 1908.3594,501.5469 Q1907.3125,502 1906.0313,502 Q1904.5313,502 1903.3281,501.4063 Q1902.3594,500.9375 1901.6719,499.9219 Q1901,498.9063 1901,497.7031 L1901,496.6094 Q1901,495.3594 1901.5938,494.2656 Q1902.2031,493.1719 1903.25,492.5938 Q1904.3125,492 1905.5,492 Q1906.2188,492 1906.8438,492.25 Q1907.4688,492.5 1908,493 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="99" x="1920"
+              y="501.4102">ChemicalAnalysis
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1892" x2="2021" y1="512.5" y2="512.5"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="29" x="1897"
+              y="527.9189">Client;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1892" x2="2021" y1="534.3359" y2="534.3359"/><!--MD5=[72b025e65ce7277b694e85cc33e5a3e3]
+class TypeSample-->
+        <rect codeLine="125" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="61.8359" id="TypeSample"
+              style="stroke:#A80036;stroke-width:1.5;" width="101" x="1683" y="264.5"/>
+        <ellipse cx="1698" cy="280.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1700,277 Q1700.2031,276.5 1700.4375,276.25 Q1700.6719,276 1700.9375,276 Q1701.4063,276 1701.7031,276.2813 Q1702,276.5625 1702,277.2188 L1702,278.7813 Q1702,279.4375 1701.7188,279.7188 Q1701.4375,280 1701,280 Q1700.6094,280 1700.3594,279.8281 Q1700.1094,279.6563 1700,279.2031 Q1699.9531,278.8906 1699.7813,278.7188 Q1699.4688,278.3906 1698.9063,278.2031 Q1698.3438,278 1697.7813,278 Q1697.0781,278 1696.4844,278.2813 Q1695.9063,278.5625 1695.4531,279.1875 Q1695,279.8125 1695,280.6719 L1695,281.5938 Q1695,282.625 1695.8438,283.3125 Q1696.6875,284 1698.1875,284 Q1699.0781,284 1699.7031,283.7969 Q1700.0625,283.6875 1700.4688,283.3281 Q1700.7344,283.125 1700.875,283.0625 Q1701.0156,283 1701.1875,283 Q1701.5156,283 1701.75,283.2656 Q1702,283.5156 1702,283.875 Q1702,284.2188 1701.6563,284.625 Q1701.1563,285.2188 1700.3594,285.5469 Q1699.3125,286 1698.0313,286 Q1696.5313,286 1695.3281,285.4063 Q1694.3594,284.9375 1693.6719,283.9219 Q1693,282.9063 1693,281.7031 L1693,280.6094 Q1693,279.3594 1693.5938,278.2656 Q1694.2031,277.1719 1695.25,276.5938 Q1696.3125,276 1697.5,276 Q1698.2188,276 1698.8438,276.25 Q1699.4688,276.5 1700,277 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="69" x="1712"
+              y="285.4102">TypeSample
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1684" x2="1783" y1="296.5" y2="296.5"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="50" x="1689"
+              y="311.9189">Sample ID;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1684" x2="1783" y1="318.3359" y2="318.3359"/><!--MD5=[02e4b9b7573f1156f41e60aa5b4e25a4]
+class Company-->
+        <rect codeLine="129" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="61.8359" id="Company"
+              style="stroke:#A80036;stroke-width:1.5;" width="85" x="1040" y="41.5"/>
+        <ellipse cx="1055" cy="57.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1057,54 Q1057.2031,53.5 1057.4375,53.25 Q1057.6719,53 1057.9375,53 Q1058.4063,53 1058.7031,53.2813 Q1059,53.5625 1059,54.2188 L1059,55.7813 Q1059,56.4375 1058.7188,56.7188 Q1058.4375,57 1058,57 Q1057.6094,57 1057.3594,56.8281 Q1057.1094,56.6563 1057,56.2031 Q1056.9531,55.8906 1056.7813,55.7188 Q1056.4688,55.3906 1055.9063,55.2031 Q1055.3438,55 1054.7813,55 Q1054.0781,55 1053.4844,55.2813 Q1052.9063,55.5625 1052.4531,56.1875 Q1052,56.8125 1052,57.6719 L1052,58.5938 Q1052,59.625 1052.8438,60.3125 Q1053.6875,61 1055.1875,61 Q1056.0781,61 1056.7031,60.7969 Q1057.0625,60.6875 1057.4688,60.3281 Q1057.7344,60.125 1057.875,60.0625 Q1058.0156,60 1058.1875,60 Q1058.5156,60 1058.75,60.2656 Q1059,60.5156 1059,60.875 Q1059,61.2188 1058.6563,61.625 Q1058.1563,62.2188 1057.3594,62.5469 Q1056.3125,63 1055.0313,63 Q1053.5313,63 1052.3281,62.4063 Q1051.3594,61.9375 1050.6719,60.9219 Q1050,59.9063 1050,58.7031 L1050,57.6094 Q1050,56.3594 1050.5938,55.2656 Q1051.2031,54.1719 1052.25,53.5938 Q1053.3125,53 1054.5,53 Q1055.2188,53 1055.8438,53.25 Q1056.4688,53.5 1057,54 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53" x="1069"
+              y="62.4102">Company
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1041" x2="1124" y1="73.5" y2="73.5"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="27" x="1046"
+              y="88.9189">Name
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1041" x2="1124" y1="95.3359" y2="95.3359"/><!--MD5=[2a962ae93217d0020b2ed3696d7c22bf]
+class BarcodeExternalAPI-->
+        <rect codeLine="133" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="61.8359" id="BarcodeExternalAPI"
+              style="stroke:#A80036;stroke-width:1.5;" width="140" x="1399.5" y="668.5"/>
+        <ellipse cx="1414.5" cy="684.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1416.5,681 Q1416.7031,680.5 1416.9375,680.25 Q1417.1719,680 1417.4375,680 Q1417.9063,680 1418.2031,680.2813 Q1418.5,680.5625 1418.5,681.2188 L1418.5,682.7813 Q1418.5,683.4375 1418.2188,683.7188 Q1417.9375,684 1417.5,684 Q1417.1094,684 1416.8594,683.8281 Q1416.6094,683.6563 1416.5,683.2031 Q1416.4531,682.8906 1416.2813,682.7188 Q1415.9688,682.3906 1415.4063,682.2031 Q1414.8438,682 1414.2813,682 Q1413.5781,682 1412.9844,682.2813 Q1412.4063,682.5625 1411.9531,683.1875 Q1411.5,683.8125 1411.5,684.6719 L1411.5,685.5938 Q1411.5,686.625 1412.3438,687.3125 Q1413.1875,688 1414.6875,688 Q1415.5781,688 1416.2031,687.7969 Q1416.5625,687.6875 1416.9688,687.3281 Q1417.2344,687.125 1417.375,687.0625 Q1417.5156,687 1417.6875,687 Q1418.0156,687 1418.25,687.2656 Q1418.5,687.5156 1418.5,687.875 Q1418.5,688.2188 1418.1563,688.625 Q1417.6563,689.2188 1416.8594,689.5469 Q1415.8125,690 1414.5313,690 Q1413.0313,690 1411.8281,689.4063 Q1410.8594,688.9375 1410.1719,687.9219 Q1409.5,686.9063 1409.5,685.7031 L1409.5,684.6094 Q1409.5,683.3594 1410.0938,682.2656 Q1410.7031,681.1719 1411.75,680.5938 Q1412.8125,680 1414,680 Q1414.7188,680 1415.3438,680.25 Q1415.9688,680.5 1416.5,681 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="108" x="1428.5"
+              y="689.4102">BarcodeExternalAPI
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1400.5" x2="1538.5" y1="700.5" y2="700.5"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="84" x="1405.5"
+              y="715.9189">Barcode Number;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1400.5" x2="1538.5" y1="722.3359" y2="722.3359"/><!--MD5=[a999c1570c205a2156b04a15307bc1ff]
+class LabOrder-->
+        <rect codeLine="137" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="103.3438" id="LabOrder"
+              style="stroke:#A80036;stroke-width:1.5;" width="84" x="543.5" y="1234"/>
+        <ellipse cx="558.5" cy="1250" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M560.5,1246.5 Q560.7031,1246 560.9375,1245.75 Q561.1719,1245.5 561.4375,1245.5 Q561.9063,1245.5 562.2031,1245.7813 Q562.5,1246.0625 562.5,1246.7188 L562.5,1248.2813 Q562.5,1248.9375 562.2188,1249.2188 Q561.9375,1249.5 561.5,1249.5 Q561.1094,1249.5 560.8594,1249.3281 Q560.6094,1249.1563 560.5,1248.7031 Q560.4531,1248.3906 560.2813,1248.2188 Q559.9688,1247.8906 559.4063,1247.7031 Q558.8438,1247.5 558.2813,1247.5 Q557.5781,1247.5 556.9844,1247.7813 Q556.4063,1248.0625 555.9531,1248.6875 Q555.5,1249.3125 555.5,1250.1719 L555.5,1251.0938 Q555.5,1252.125 556.3438,1252.8125 Q557.1875,1253.5 558.6875,1253.5 Q559.5781,1253.5 560.2031,1253.2969 Q560.5625,1253.1875 560.9688,1252.8281 Q561.2344,1252.625 561.375,1252.5625 Q561.5156,1252.5 561.6875,1252.5 Q562.0156,1252.5 562.25,1252.7656 Q562.5,1253.0156 562.5,1253.375 Q562.5,1253.7188 562.1563,1254.125 Q561.6563,1254.7188 560.8594,1255.0469 Q559.8125,1255.5 558.5313,1255.5 Q557.0313,1255.5 555.8281,1254.9063 Q554.8594,1254.4375 554.1719,1253.4219 Q553.5,1252.4063 553.5,1251.2031 L553.5,1250.1094 Q553.5,1248.8594 554.0938,1247.7656 Q554.7031,1246.6719 555.75,1246.0938 Q556.8125,1245.5 558,1245.5 Q558.7188,1245.5 559.3438,1245.75 Q559.9688,1246 560.5,1246.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="52" x="572.5"
+              y="1254.9102">LabOrder
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="544.5" x2="626.5" y1="1266" y2="1266"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="29" x="549.5"
+              y="1281.4189">Client;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="35" x="549.5"
+              y="1295.2549">Doctor;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="64" x="549.5"
+              y="1309.0908">Type of Test;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="58" x="549.5"
+              y="1322.9268">Parameters;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="544.5" x2="626.5" y1="1329.3438" y2="1329.3438"/><!--MD5=[f856f85595ce4f8bf435bc42f531c692]
+class Results-->
+        <rect codeLine="144" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="75.6719" id="Results"
+              style="stroke:#A80036;stroke-width:1.5;" width="75" x="458" y="661.5"/>
+        <ellipse cx="473" cy="677.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M475,674 Q475.2031,673.5 475.4375,673.25 Q475.6719,673 475.9375,673 Q476.4063,673 476.7031,673.2813 Q477,673.5625 477,674.2188 L477,675.7813 Q477,676.4375 476.7188,676.7188 Q476.4375,677 476,677 Q475.6094,677 475.3594,676.8281 Q475.1094,676.6563 475,676.2031 Q474.9531,675.8906 474.7813,675.7188 Q474.4688,675.3906 473.9063,675.2031 Q473.3438,675 472.7813,675 Q472.0781,675 471.4844,675.2813 Q470.9063,675.5625 470.4531,676.1875 Q470,676.8125 470,677.6719 L470,678.5938 Q470,679.625 470.8438,680.3125 Q471.6875,681 473.1875,681 Q474.0781,681 474.7031,680.7969 Q475.0625,680.6875 475.4688,680.3281 Q475.7344,680.125 475.875,680.0625 Q476.0156,680 476.1875,680 Q476.5156,680 476.75,680.2656 Q477,680.5156 477,680.875 Q477,681.2188 476.6563,681.625 Q476.1563,682.2188 475.3594,682.5469 Q474.3125,683 473.0313,683 Q471.5313,683 470.3281,682.4063 Q469.3594,681.9375 468.6719,680.9219 Q468,679.9063 468,678.7031 L468,677.6094 Q468,676.3594 468.5938,675.2656 Q469.2031,674.1719 470.25,673.5938 Q471.3125,673 472.5,673 Q473.2188,673 473.8438,673.25 Q474.4688,673.5 475,674 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="43" x="487"
+              y="682.4102">Results
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="459" x2="532" y1="693.5" y2="693.5"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="33" x="464"
+              y="708.9189">TestID;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="29" x="464"
+              y="722.7549">Client;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="459" x2="532" y1="729.1719" y2="729.1719"/><!--MD5=[76b5e19c9337179d2d7ae334371d68c8]
+class Notification-->
+        <rect codeLine="149" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="75.6719" id="Notification"
+              style="stroke:#A80036;stroke-width:1.5;" width="93" x="449" y="836"/>
+        <ellipse cx="464" cy="852" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M466,848.5 Q466.2031,848 466.4375,847.75 Q466.6719,847.5 466.9375,847.5 Q467.4063,847.5 467.7031,847.7813 Q468,848.0625 468,848.7188 L468,850.2813 Q468,850.9375 467.7188,851.2188 Q467.4375,851.5 467,851.5 Q466.6094,851.5 466.3594,851.3281 Q466.1094,851.1563 466,850.7031 Q465.9531,850.3906 465.7813,850.2188 Q465.4688,849.8906 464.9063,849.7031 Q464.3438,849.5 463.7813,849.5 Q463.0781,849.5 462.4844,849.7813 Q461.9063,850.0625 461.4531,850.6875 Q461,851.3125 461,852.1719 L461,853.0938 Q461,854.125 461.8438,854.8125 Q462.6875,855.5 464.1875,855.5 Q465.0781,855.5 465.7031,855.2969 Q466.0625,855.1875 466.4688,854.8281 Q466.7344,854.625 466.875,854.5625 Q467.0156,854.5 467.1875,854.5 Q467.5156,854.5 467.75,854.7656 Q468,855.0156 468,855.375 Q468,855.7188 467.6563,856.125 Q467.1563,856.7188 466.3594,857.0469 Q465.3125,857.5 464.0313,857.5 Q462.5313,857.5 461.3281,856.9063 Q460.3594,856.4375 459.6719,855.4219 Q459,854.4063 459,853.2031 L459,852.1094 Q459,850.8594 459.5938,849.7656 Q460.2031,848.6719 461.25,848.0938 Q462.3125,847.5 463.5,847.5 Q464.2188,847.5 464.8438,847.75 Q465.4688,848 466,848.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="61" x="478"
+              y="856.9102">Notification
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="450" x2="541" y1="868" y2="868"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="25" x="455"
+              y="883.4189">SMS;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="455"
+              y="897.2549">E-mail;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="450" x2="541" y1="903.6719" y2="903.6719"/><!--MD5=[f00dbe8c0302c6aec2cb26b3c659c8fc]
+class Report-->
+        <rect codeLine="154" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="89.5078" id="Report"
+              style="stroke:#A80036;stroke-width:1.5;" width="76" x="164.5" y="466.5"/>
+        <ellipse cx="182.65" cy="482.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M184.65,479 Q184.8531,478.5 185.0875,478.25 Q185.3219,478 185.5875,478 Q186.0563,478 186.3531,478.2813 Q186.65,478.5625 186.65,479.2188 L186.65,480.7813 Q186.65,481.4375 186.3688,481.7188 Q186.0875,482 185.65,482 Q185.2594,482 185.0094,481.8281 Q184.7594,481.6563 184.65,481.2031 Q184.6031,480.8906 184.4313,480.7188 Q184.1188,480.3906 183.5563,480.2031 Q182.9938,480 182.4313,480 Q181.7281,480 181.1344,480.2813 Q180.5563,480.5625 180.1031,481.1875 Q179.65,481.8125 179.65,482.6719 L179.65,483.5938 Q179.65,484.625 180.4938,485.3125 Q181.3375,486 182.8375,486 Q183.7281,486 184.3531,485.7969 Q184.7125,485.6875 185.1188,485.3281 Q185.3844,485.125 185.525,485.0625 Q185.6656,485 185.8375,485 Q186.1656,485 186.4,485.2656 Q186.65,485.5156 186.65,485.875 Q186.65,486.2188 186.3063,486.625 Q185.8063,487.2188 185.0094,487.5469 Q183.9625,488 182.6813,488 Q181.1813,488 179.9781,487.4063 Q179.0094,486.9375 178.3219,485.9219 Q177.65,484.9063 177.65,483.7031 L177.65,482.6094 Q177.65,481.3594 178.2438,480.2656 Q178.8531,479.1719 179.9,478.5938 Q180.9625,478 182.15,478 Q182.8688,478 183.4938,478.25 Q184.1188,478.5 184.65,479 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="37" x="197.35"
+              y="487.4102">Report
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="165.5" x2="239.5" y1="498.5" y2="498.5"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="33" x="170.5"
+              y="513.9189">TestID;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="29" x="170.5"
+              y="527.7549">Client;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="64" x="170.5"
+              y="541.5908">Doctor's text;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="165.5" x2="239.5" y1="548.0078" y2="548.0078"/><!--MD5=[c0c1e006f407003ed2dd9da61480cafe]
+class AutomaticValidationModule-->
+        <rect codeLine="160" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="61.8359" id="AutomaticValidationModule"
+              style="stroke:#A80036;stroke-width:1.5;" width="180" x="405.5" y="480.5"/>
+        <ellipse cx="420.5" cy="496.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M422.5,493 Q422.7031,492.5 422.9375,492.25 Q423.1719,492 423.4375,492 Q423.9063,492 424.2031,492.2813 Q424.5,492.5625 424.5,493.2188 L424.5,494.7813 Q424.5,495.4375 424.2188,495.7188 Q423.9375,496 423.5,496 Q423.1094,496 422.8594,495.8281 Q422.6094,495.6563 422.5,495.2031 Q422.4531,494.8906 422.2813,494.7188 Q421.9688,494.3906 421.4063,494.2031 Q420.8438,494 420.2813,494 Q419.5781,494 418.9844,494.2813 Q418.4063,494.5625 417.9531,495.1875 Q417.5,495.8125 417.5,496.6719 L417.5,497.5938 Q417.5,498.625 418.3438,499.3125 Q419.1875,500 420.6875,500 Q421.5781,500 422.2031,499.7969 Q422.5625,499.6875 422.9688,499.3281 Q423.2344,499.125 423.375,499.0625 Q423.5156,499 423.6875,499 Q424.0156,499 424.25,499.2656 Q424.5,499.5156 424.5,499.875 Q424.5,500.2188 424.1563,500.625 Q423.6563,501.2188 422.8594,501.5469 Q421.8125,502 420.5313,502 Q419.0313,502 417.8281,501.4063 Q416.8594,500.9375 416.1719,499.9219 Q415.5,498.9063 415.5,497.7031 L415.5,496.6094 Q415.5,495.3594 416.0938,494.2656 Q416.7031,493.1719 417.75,492.5938 Q418.8125,492 420,492 Q420.7188,492 421.3438,492.25 Q421.9688,492.5 422.5,493 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="148" x="434.5"
+              y="501.4102">AutomaticValidationModule
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="406.5" x2="584.5" y1="512.5" y2="512.5"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="50" x="411.5"
+              y="527.9189">Validation;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="406.5" x2="584.5" y1="534.3359" y2="534.3359"/><!--MD5=[56f671791a7bc69038cb91d87520b796]
+class Parameters-->
+        <rect codeLine="164" fill="#FEFECE" filter="url(#f88u4sc8wwupo)" height="61.8359" id="Parameters"
+              style="stroke:#A80036;stroke-width:1.5;" width="97" x="1230" y="843"/>
+        <ellipse cx="1245" cy="859" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1247,855.5 Q1247.2031,855 1247.4375,854.75 Q1247.6719,854.5 1247.9375,854.5 Q1248.4063,854.5 1248.7031,854.7813 Q1249,855.0625 1249,855.7188 L1249,857.2813 Q1249,857.9375 1248.7188,858.2188 Q1248.4375,858.5 1248,858.5 Q1247.6094,858.5 1247.3594,858.3281 Q1247.1094,858.1563 1247,857.7031 Q1246.9531,857.3906 1246.7813,857.2188 Q1246.4688,856.8906 1245.9063,856.7031 Q1245.3438,856.5 1244.7813,856.5 Q1244.0781,856.5 1243.4844,856.7813 Q1242.9063,857.0625 1242.4531,857.6875 Q1242,858.3125 1242,859.1719 L1242,860.0938 Q1242,861.125 1242.8438,861.8125 Q1243.6875,862.5 1245.1875,862.5 Q1246.0781,862.5 1246.7031,862.2969 Q1247.0625,862.1875 1247.4688,861.8281 Q1247.7344,861.625 1247.875,861.5625 Q1248.0156,861.5 1248.1875,861.5 Q1248.5156,861.5 1248.75,861.7656 Q1249,862.0156 1249,862.375 Q1249,862.7188 1248.6563,863.125 Q1248.1563,863.7188 1247.3594,864.0469 Q1246.3125,864.5 1245.0313,864.5 Q1243.5313,864.5 1242.3281,863.9063 Q1241.3594,863.4375 1240.6719,862.4219 Q1240,861.4063 1240,860.2031 L1240,859.1094 Q1240,857.8594 1240.5938,856.7656 Q1241.2031,855.6719 1242.25,855.0938 Q1243.3125,854.5 1244.5,854.5 Q1245.2188,854.5 1245.8438,854.75 Q1246.4688,855 1247,855.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="65" x="1259"
+              y="863.9102">Parameters
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1231" x2="1326" y1="875" y2="875"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="1236"
+              y="890.4189">Value;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="1231" x2="1326" y1="896.8359" y2="896.8359"/><!--MD5=[c0fd25e36e68ccf134d8e46f2ca5189b]
+link AutomaticValidationModule to Results-->
+        <path codeLine="168" d="M495.5,542.8 C495.5,575.22 495.5,626.69 495.5,661.49 " fill="none"
+              id="AutomaticValidationModule-Results" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="500.5,614.1758,503.4389,605.1307,497.5611,605.1307,500.5,614.1758"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="47" x="509.5"
+              y="614.4951">Validate
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="487.8328"
+              y="563.8358">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="487.8547"
+              y="650.5647">1
+        </text><!--MD5=[97f0e67b6e351c541401326f382aebd9]
+link ChemicalAnalysis to ChemicalLaboratory-->
+        <path codeLine="169" d="M1937.12,542.8 C1918.94,571.21 1891.41,614.24 1869.9,647.86 " fill="none"
+              id="ChemicalAnalysis-ChemicalLaboratory" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="1898.8053,613.3875,1906.1557,607.3524,1901.2045,604.1845,1898.8053,613.3875"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="74" x="1910.5"
+              y="614.4951">take place in
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1927.9491"
+              y="563.8358">*
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1866.9641"
+              y="636.9688">1
+        </text><!--MD5=[e8dee32c8f22193c49a500f12de243cb]
+link ChemicalLaboratory to CompanyHeadquarters-->
+        <path codeLine="170" d="M1893.52,751.09 C1920.81,775.74 1953.34,805.12 1979.62,828.85 " fill="none"
+              id="ChemicalLaboratory-CompanyHeadquarters" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="1952.2107,793.527,1947.4678,785.2835,1943.5282,789.6456,1952.2107,793.527"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="70" x="1957.5"
+              y="795.4951">is located in
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1893.9056"
+              y="772.9655">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1964.5993"
+              y="818.2711">1
+        </text><!--MD5=[0bde84c484199f8c429a86e32cc6847f]
+link Client to LabOrder-->
+        <path codeLine="171" d="M585.5,1156.05 C585.5,1182.13 585.5,1210.45 585.5,1233.85 " fill="none"
+              id="Client-LabOrder" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="590.5,1200.1758,593.4389,1191.1307,587.5611,1191.1307,590.5,1200.1758"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="159" x="599.5"
+              y="1200.4951">to execute the test needs a
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="578.1992"
+              y="1177.0975">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="578.0078"
+              y="1222.9574">1
+        </text><!--MD5=[c3a86c626b5b742f72786125539e9227]
+link ClinicalChemistryTechnologist to ChemicalLaboratory-->
+        <path codeLine="172" d="M1589.49,368.37 C1649.98,448.88 1746.47,577.33 1799.5,647.92 " fill="none"
+              id="ClinicalChemistryTechnologist-ChemicalLaboratory" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="1748.5032,515.6734,1745.4201,506.6764,1740.7206,510.2069,1748.5032,515.6734"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="52" x="1754.5"
+              y="516.9951">works on
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1589.2367"
+              y="389.3434">*
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1786.6641"
+              y="637.0372">1
+        </text><!--MD5=[a30fd0de2ece51448e49a79ae7d6d462]
+link ClinicalChemistryTechnologist to Results-->
+        <path codeLine="173"
+              d="M1464.08,368.1 C1439.47,388.94 1410.5,409.67 1380.5,423 C1299.97,458.79 1257.79,404.07 1184.5,453 C1133.91,486.77 1164.04,536.15 1113.5,570 C927,694.93 830.34,586.36 614.5,648 C586.45,656.01 556.2,668.91 533.22,679.66 "
+              fill="none" id="ClinicalChemistryTechnologist-Results" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="1184.7585,513.2628,1194.2687,513.1789,1192.4031,507.6049,1184.7585,513.2628"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43" x="1198.5"
+              y="516.9951">records
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1449.9392"
+              y="389.3011">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="541.0776"
+              y="671.9129">1
+        </text><!--MD5=[98994e1502641fa381021dffe882d56a]
+link ClinicalChemistryTechnologist to Sample-->
+        <path codeLine="174" d="M1519.45,368.06 C1511.55,403.29 1502.35,444.31 1495.85,473.26 " fill="none"
+              id="ClinicalChemistryTechnologist-Sample" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="1513.4055,419.0545,1518.2531,410.8721,1512.5178,409.5855,1513.4055,419.0545"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="45" x="1523.5"
+              y="419.4951">analyse
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1510.5866"
+              y="389.2573">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1489.7139"
+              y="462.5792">1
+        </text><!--MD5=[7449b8cd0f46c95a2c65666eb7f038bd]
+link Company to Covid19Report-->
+        <path codeLine="175" d="M1125.28,72.5 C1160.3,72.5 1211.18,72.5 1255.91,72.5 " fill="none"
+              id="Company-Covid19Report" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="1152.5,60.6758,1143.4549,57.7369,1143.4549,63.6147,1152.5,60.6758"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="81" x="1156.5"
+              y="65.9951">sends to NHS
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1132.9451"
+              y="68.7128">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1240.9341"
+              y="69.371">1
+        </text><!--MD5=[eaea43e34e45c5b9d20b595fc78f1f20]
+link Company to Administrator-->
+        <path codeLine="176"
+              d="M1051.89,103.66 C1033.98,121.78 1011.27,145.6 992.5,168 C978.06,185.24 963.26,204.5 949.85,222.7 "
+              fill="none" id="Company-Administrator" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="994.2459,180.972,1002.3639,176.0173,997.9012,172.1919,994.2459,180.972"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="1006.5"
+              y="182.4951">employs
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1038.1746"
+              y="124.9155">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="949.5602"
+              y="212.266">*
+        </text><!--MD5=[aafc5d8a5829a6a8d6dc892cb1ff5d24]
+link Company to ClinicalAnalysisLaboratory-->
+        <path codeLine="177" d="M1077.34,103.54 C1065,175.46 1033.57,358.58 1017.42,452.71 " fill="none"
+              id="Company-ClinicalAnalysisLaboratory" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="1060.6543,300.6037,1065.0807,292.186,1059.2876,291.1919,1060.6543,300.6037"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="1070.5"
+              y="300.9951">owns
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1068.6351"
+              y="124.7719">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1013.3243"
+              y="442.0756">*
+        </text><!--MD5=[1ca3dfffd6d11e2dcc22d81a95bb4023]
+link Company to ClinicalChemistryTechnologist-->
+        <path codeLine="178"
+              d="M1125.24,91.55 C1200.54,123.49 1353.77,189.11 1405.5,216 C1411.23,218.98 1417.06,222.11 1422.9,225.33 "
+              fill="none" id="Company-ClinicalChemistryTechnologist" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="1347.0606,179.2255,1340.0152,172.8369,1337.6056,178.1982,1347.0606,179.2255"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="1351.5"
+              y="182.4951">employs
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1132.8985"
+              y="90.918">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1410.1667"
+              y="217.5899">*
+        </text><!--MD5=[baa6ff38ec20def42e063e01f85f91ae]
+link Company to LaboratoryCoordinator-->
+        <path codeLine="179"
+              d="M1039.79,79.63 C942.68,94.53 699.09,137.29 509.5,216 C503.78,218.38 498.01,220.98 492.25,223.74 "
+              fill="none" id="Company-LaboratoryCoordinator" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="631.6647,178.4484,641.1599,178.9883,639.6638,173.3041,631.6647,178.4484"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="645.5"
+              y="182.4951">employs
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1025.1365"
+              y="95.6737">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="499.9934"
+              y="215.893">*
+        </text><!--MD5=[b3ce5a6630a4618a8b0d497d766f4e5a]
+link Company to MedicalLabTechnician-->
+        <path codeLine="180" d="M1108.93,103.77 C1135.57,134.27 1177.65,182.46 1212.86,222.77 " fill="none"
+              id="Company-MedicalLabTechnician" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="1186.789,180.9417,1183.0527,172.1958,1178.6256,176.0623,1186.789,180.9417"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="1192.5"
+              y="182.4951">employs
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1106.301"
+              y="124.8001">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1201.1424"
+              y="211.9656">*
+        </text><!--MD5=[5448e79142bdfcbfebd9929e0faf45a6]
+link Company to Receptionist-->
+        <path codeLine="181"
+              d="M1039.99,91 C979.08,116.48 863.91,166.22 769.5,216 C763.79,219.01 757.98,222.17 752.14,225.41 "
+              fill="none" id="Company-Receptionist" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="863.9696,179.2912,873.4086,178.1273,870.9218,172.8014,863.9696,179.2912"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="877.5"
+              y="182.4951">employs
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1025.082"
+              y="109.0941">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="759.876"
+              y="217.6752">*
+        </text><!--MD5=[137816425ceb0c0d2300eee5a01b984a]
+link Company to SpecialistDoctor-->
+        <path codeLine="182"
+              d="M1039.89,75.2 C914.68,81.37 538.55,108.25 249.5,216 C243.69,218.16 237.86,220.59 232.05,223.22 "
+              fill="none" id="Company-SpecialistDoctor" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="381.5819,178.0769,391.0085,179.3375,389.9492,173.5559,381.5819,178.0769"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="395.5"
+              y="182.4951">employs
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1024.9648"
+              y="71.8285">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="240.1395"
+              y="215.0938">*
+        </text><!--MD5=[d6a5ae732362cd0f86c2003645f951b1]
+link Company to ChemicalLaboratory-->
+        <path codeLine="183"
+              d="M1125.17,94.61 C1155.96,108.98 1198.9,127.26 1238.5,138 C1360.4,171.06 1715.05,123.91 1801.5,216 C1858.92,277.17 1848.65,536.64 1841.37,647.71 "
+              fill="none" id="Company-ChemicalLaboratory" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="1854.4573,417.2319,1849.0948,409.3773,1845.5021,414.0294,1854.4573,417.2319"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="1859.5"
+              y="419.4951">owns
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1133.1055"
+              y="113.3246">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1834.4197"
+              y="637.1714">1
+        </text><!--MD5=[ad2296f8a7e01dc4a4d3518457849209]
+link Company to CompanyHeadquarters-->
+        <path codeLine="184"
+              d="M1125.26,95.73 C1155.91,110.52 1198.65,128.86 1238.5,138 C1426.55,181.15 2092.5,101.56 2092.5,294.5 C2092.5,294.5 2092.5,294.5 2092.5,700.5 C2092.5,746.34 2072.39,794.99 2054.72,828.9 "
+              fill="none" id="Company-CompanyHeadquarters" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="2101.4257,514.7724,2096.1442,506.8631,2092.5039,511.478,2101.4257,514.7724"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="30" x="2106.5"
+              y="516.9951">owns
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1133.2279"
+              y="121.2298">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="2051.341"
+              y="817.9995">1
+        </text><!--MD5=[848c8065b29fb9bba3c9b45c1c07083f]
+link LaboratoryCoordinator to Report-->
+        <path codeLine="185" d="M320.32,368.06 C293.38,400.62 262.36,438.12 238.92,466.47 " fill="none"
+              id="LaboratoryCoordinator-Report" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="288.3132,418.0286,296.3428,412.932,291.8136,409.1856,288.3132,418.0286"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="39" x="300.5"
+              y="419.4951">verifies
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="307.3458"
+              y="389.2573">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="239.326"
+              y="455.5807">*
+        </text><!--MD5=[35aee8b19f31a944c494919366488859]
+link LaboratoryCoordinator to AutomaticValidationModule-->
+        <path codeLine="186"
+              d="M418.56,368.27 C425.22,380.52 432.06,393.12 438.5,405 C452.29,430.44 467.91,459.36 479.31,480.47 "
+              fill="none" id="LaboratoryCoordinator-AutomaticValidationModule"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="455.8807,418.5727,454.1584,409.2193,448.9896,412.018,455.8807,418.5727"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="28" x="462.5"
+              y="419.4951">uses
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="414.8382"
+              y="389.2341">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="468.0028"
+              y="469.4837">1
+        </text><!--MD5=[0a29b4543c1af9e8341b856b8b8ec05c]
+link MedicalLabTechnician to Sample-->
+        <path codeLine="187"
+              d="M1321.09,368.3 C1334.59,387.08 1350.16,406.62 1366.5,423 C1389.2,445.76 1418.3,467 1442.27,482.85 "
+              fill="none" id="MedicalLabTechnician-Sample" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="1375.1335,417.6105,1370.5793,409.2613,1366.5415,413.5328,1375.1335,417.6105"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="117" x="1380.5"
+              y="419.4951">collects and records
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1317.9702"
+              y="389.2669">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1429.3647"
+              y="474.3312">*
+        </text><!--MD5=[738f0445d4a0804ca0738b44323ae22b]
+link MedicalLabTechnician to ClinicalAnalysisLaboratory-->
+        <path codeLine="188" d="M1185.89,368.06 C1151.35,395.64 1112.37,426.76 1079.68,452.87 " fill="none"
+              id="MedicalLabTechnician-ClinicalAnalysisLaboratory" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="1133.5928,417.2957,1142.4948,413.9483,1138.8271,409.3551,1133.5928,417.2957"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="52" x="1146.5"
+              y="419.4951">works on
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1170.0155"
+              y="389.2573">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1081.0504"
+              y="442.2551">1
+        </text><!--MD5=[c1a9c7f16ec55f9c4038f73c31b8becd]
+link Notification to Client-->
+        <path codeLine="189" d="M512.22,912.24 C522.89,936.02 537.14,967.76 550.23,996.93 " fill="none"
+              id="Notification-Client" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="542.5473,962.7374,541.5249,953.282,536.1624,955.6887,542.5473,962.7374"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="65" x="549.5"
+              y="963.4951">delivered to
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="507.3269"
+              y="933.1588">1
+        </text><!--MD5=[6cd0a3af2322bf46f6c633408da71c74]
+link Receptionist to ClinicalAnalysisLaboratory-->
+        <path codeLine="190"
+              d="M752.13,364.76 C758,368.23 763.81,371.67 769.5,375 C818.61,403.8 873.86,435.31 918.75,460.69 "
+              fill="none" id="Receptionist-ClinicalAnalysisLaboratory" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="857.8331,416.6706,851.4608,409.6105,848.528,414.7044,857.8331,416.6706"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="52" x="862.5"
+              y="419.4951">works on
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="759.8653"
+              y="366.3878">*
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="904.1105"
+              y="453.322">1
+        </text><!--MD5=[6a35157f4c730bda767e7c9f1b8b7f73]
+link Receptionist to Client-->
+        <path codeLine="191"
+              d="M648.55,368.2 C653.04,409.69 657.5,462.96 657.5,510.5 C657.5,510.5 657.5,510.5 657.5,875 C657.5,916.79 643.47,960.76 627.8,996.83 "
+              fill="none" id="Receptionist-Client" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="662.335,704.6731,665.5708,695.7299,659.6961,695.5359,662.335,704.6731"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="123" x="671.5"
+              y="704.9951">register in application
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="642.079"
+              y="389.4107">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="626.4691"
+              y="986.2736">*
+        </text><!--MD5=[e8b34c2e6517a986175307f5599f058a]
+link Receptionist to Test-->
+        <path codeLine="192"
+              d="M670.1,368.05 C704.01,446.71 755.06,562.97 763.5,570 C837.47,631.65 1133.92,678.29 1240.28,693.33 "
+              fill="none" id="Receptionist-Test" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="772.843,514.1534,766.4428,507.1186,763.5302,512.2241,772.843,514.1534"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="123" x="777.5"
+              y="516.9951">register in application
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="665.683"
+              y="389.2464">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1227.5178"
+              y="688.2044">*
+        </text><!--MD5=[cf17f001677a68e739882f8c35b05286]
+link Report to Notification-->
+        <path codeLine="193"
+              d="M229.46,556.59 C260.46,605.94 314.12,687.32 368.5,751 C394.51,781.46 427.15,812.69 452.83,835.93 "
+              fill="none" id="Report-Notification" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="376.6226,703.5808,373.2691,694.6811,368.6784,698.352,376.6226,703.5808"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="57" x="382.5"
+              y="704.9951">is sent by
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="225.7591"
+              y="577.6102">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="437.606"
+              y="825.2794">1
+        </text><!--MD5=[5738729188d9007b9fb2cf9548c51b6f]
+link Results to Notification-->
+        <path codeLine="194" d="M495.5,737.51 C495.5,766.51 495.5,806.69 495.5,835.76 " fill="none"
+              id="Results-Notification" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="500.5,795.1758,503.4389,786.1307,497.5611,786.1307,500.5,795.1758"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="57" x="509.5"
+              y="795.4951">is sent by
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="487.9203"
+              y="758.6818">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="487.8766"
+              y="825.0792">1
+        </text><!--MD5=[7dcd581d20c87a53331ad083603da507]
+link Sample to ChemicalLaboratory-->
+        <path codeLine="195"
+              d="M1527.67,549.56 C1553.13,571.61 1587.55,598.93 1621.5,618 C1667.21,643.68 1722.7,664.16 1765.99,678.03 "
+              fill="none" id="Sample-ChemicalLaboratory" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="1630.9012,611.5483,1624.3339,604.6694,1621.5448,609.8433,1630.9012,611.5483"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="47" x="1635.5"
+              y="614.4951">are sent
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1528.9091"
+              y="570.7401">*
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1750.7858"
+              y="672.3023">1
+        </text><!--MD5=[04051b31133b0fb73b3485da462ad7f3]
+link Sample to BarcodeExternalAPI-->
+        <path codeLine="196"
+              d="M1476.55,549.62 C1472.53,565.05 1468.48,583.24 1466.5,600 C1463.81,622.77 1464.75,648.69 1466.27,668.22 "
+              fill="none" id="Sample-BarcodeExternalAPI" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="1471.0682,614.1571,1474.7773,605.3996,1468.9214,604.892,1471.0682,614.1571"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="100" x="1480.5"
+              y="614.4951">is identified using
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1467.1567"
+              y="570.81">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1457.8819"
+              y="657.6668">1
+        </text><!--MD5=[1ae83efc6d1967ce5bc17dfe294d00c2]
+link Sample to Test-->
+        <path codeLine="197"
+              d="M1443.53,549.64 C1425.43,565.07 1404.33,583.26 1385.5,600 C1362.47,620.46 1337.09,643.79 1316.83,662.61 "
+              fill="none" id="Sample-Test" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="1386.768,612.5033,1395.4751,608.6773,1391.5633,604.2902,1386.768,612.5033"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="56" x="1399.5"
+              y="614.4951">is used in
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1428.9645"
+              y="570.5428">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1324.5424"
+              y="651.9063">1
+        </text><!--MD5=[35c5d5b78cc27fdb07caaeeaa436e174]
+link SpecialistDoctor to Report-->
+        <path codeLine="198" d="M150.05,375.27 C161.98,406.02 175.2,440.12 185.39,466.38 " fill="none"
+              id="SpecialistDoctor-Report" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="175.3082,418.8374,174.7772,409.3417,169.2971,411.4673,175.3082,418.8374"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="182.5"
+              y="419.4951">writes
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="145.2901"
+              y="396.0611">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="175.2341"
+              y="455.8057">1
+        </text><!--MD5=[30986eb9547a17a7d69613c4e4ec0900]
+link SpecialistDoctor to Results-->
+        <path codeLine="199"
+              d="M199.68,375.23 C208.66,385.02 217.46,395.08 225.5,405 C241.64,424.92 243.8,431.33 257.5,453 C289.87,504.22 285.37,526.44 327.5,570 C371.98,615.99 399.44,606.93 448.5,648 C453.37,652.07 458.23,656.63 462.89,661.28 "
+              fill="none" id="SpecialistDoctor-Results" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="335.8856,515.3552,331.9237,506.7091,327.5983,510.6891,335.8856,515.3552"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="45" x="341.5"
+              y="516.9951">analyse
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="199.2697"
+              y="396.2929">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="449.4579"
+              y="650.6027">1
+        </text><!--MD5=[e295ba549a28d1ab833344d4c7504807]
+link Test to Parameters-->
+        <path codeLine="200" d="M1278.5,744.92 C1278.5,775.67 1278.5,815.77 1278.5,842.85 " fill="none"
+              id="Test-Parameters" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="1283.5,795.1758,1286.4389,786.1307,1280.5611,786.1307,1283.5,795.1758"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="21" x="1292.5"
+              y="795.4951">has
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1271.0297"
+              y="765.6501">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1272.9844"
+              y="832.3236">*
+        </text><!--MD5=[249944138e65f4bf40759a9aa9f3f5db]
+link TypeSample to Sample-->
+        <path codeLine="201"
+              d="M1709.98,326.51 C1697.47,341.71 1681.41,360.07 1665.5,375 C1623.31,414.61 1569.93,454.01 1532.68,480.03 "
+              fill="none" id="TypeSample-Sample" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="1637.2799,410.9028,1628.5182,414.6019,1632.3658,419.0454,1637.2799,410.9028"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="32" x="1642.5"
+              y="419.4951">has a
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1697.6604"
+              y="347.736">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="1540.4384"
+              y="471.2887">1
+        </text><!--MD5=[921a940d1f21805a20a9bd8096adcacd]
+link TypeTest to Test-->
+        <path codeLine="202"
+              d="M1289.58,542.83 C1284.17,559.46 1278.22,580.6 1275.5,600 C1273.03,617.62 1273.06,637.18 1273.97,654.2 "
+              fill="none" id="TypeTest-Test" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#000000" points="1281.194,604.2242,1277.028,612.7738,1282.849,613.5897,1281.194,604.2242"
+                 style="stroke:#000000;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="25" x="1289.5"
+              y="614.4951">as a
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1282.0218"
+              y="563.8715">*
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="1267.8935"
+              y="643.5982">*
+        </text><!--MD5=[9f75c29592c4b5713dcc51b0f105106a]
 @startuml
 
 class Covid19Report{
@@ -273,4 +1275,6 @@ JVM: OpenJDK 64-Bit Server VM
 Default Encoding: Cp1252
 Language: pt
 Country: PT
---></g></svg>
+-->
+    </g>
+</svg>

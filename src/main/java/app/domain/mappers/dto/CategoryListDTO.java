@@ -19,6 +19,6 @@ public class CategoryListDTO {
 
     @Override
     public String toString() {
-        return "CategoryList: " + "code= " + code +", name= " + name;
+        return "CategoryList: " + "code= " + code + ", name= " + name;
     }
 }

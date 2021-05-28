@@ -9,15 +9,15 @@ import java.util.List;
 
 public class Test {
 
-    private State state;
     private final String testCode;
     private final String testNhsNumber;
     private final String clientTin;
     private final TestType testType;
     private final List<ParameterCategory> catList;
     private final List<Parameter> paList;
-    private List<TestParameter> testParam;
     private final LocalDate createdDate;
+    private State state;
+    private List<TestParameter> testParam;
     private LocalDate sampleCreatedDate;
     private LocalDate analysedData;
     private LocalDate diagnosticDate;
@@ -62,7 +62,7 @@ public class Test {
      * @param paList list of parameters that are measured in this test
      */
     private void checkPaList(List<Parameter> paList) {
-        if (paList.isEmpty() ) {
+        if (paList.isEmpty()) {
             throw new IllegalArgumentException("Parameter List must not be empty");
         }
 

@@ -63,7 +63,7 @@ public class ClientController {
     public boolean saveClient() {
         boolean saved = false;
         saved = store.saveClient();
-        store.addUser();
+        store.addUser(this.company);
         return saved;
     }
 

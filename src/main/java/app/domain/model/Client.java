@@ -24,9 +24,9 @@ public class Client {
     private final String nhs;
     private final String tinNumber;
     private final Date birthDate;
-    private String sex;
     private final String email;
     private final String name;
+    private String sex;
 
 
     /**
@@ -225,11 +225,11 @@ public class Client {
         if (StringUtils.isBlank(name))
             throw new IllegalArgumentException("Name cannot be blank.");
 
-        name = name.toLowerCase();
-        name = Normalizer.normalize(name, Normalizer.Form.NFD);
-        name = name.replace("[\\p{InCombiningDiacriticalMarks}]", "");
-        name = name.replace(" ", "");
-        if (name.matches("^[a-zA-Z]*$")) {
+        String nfdNormalizedString = Normalizer.normalize(name, Normalizer.Form.NFD);
+        Pattern pattern = Pattern.compile("\\p{InCombiningDiacriticalMarks}+");
+        name = pattern.matcher(nfdNormalizedString).replaceAll("");
+
+        if (!Pattern.matches(".*[a-zA-Z]+.*[a-zA-Z]", name)) {
             throw new IllegalArgumentException("Name only accepts letters");
         }
 
@@ -270,11 +270,11 @@ public class Client {
      * @return a boolean value representing the success of the operation
      */
 
-    public boolean addUser() {
+    public boolean addUser(Company company) {
         boolean success = false;
-        AuthFacade auth = new AuthFacade();
+        AuthFacade auth = company.getAuthFacade();
         String password = PasswordGenerator.getPassword();
-        success = auth.addUser(this.name, this.email, password);
+        success = auth.addUserWithRole(this.name, this.email, password, Constants.ROLE_CLIENT);
         if (success) {
             Email.sendPasswordNotification(this.name, this.email, password);
 

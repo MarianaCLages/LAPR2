@@ -1,23 +1,27 @@
 # Supplementary Specification (FURPS+)
 
 ## Functionality
+
 #### Auditing
 
-- _"... the application should implement a brute-force algorithm (an algorithm which examines each subsequence) to determine the contiguous subsequence with maximum sum, for any interval of time registered."_
+- _"... the application should implement a brute-force algorithm (an algorithm which examines each subsequence) to
+  determine the contiguous subsequence with maximum sum, for any interval of time registered."_
 
-- _"... the company needs to: identify the number of Covid-19 tests performed, identify all positive results to Covid-19 tests, report the total number of Covid-19 cases per day, per week and per month of the year, and send the forecasts for these same time horizons (the number of Covid-19 cases for the following day, next week and next month)."_
+- _"... the company needs to: identify the number of Covid-19 tests performed, identify all positive results to Covid-19
+  tests, report the total number of Covid-19 cases per day, per week and per month of the year, and send the forecasts
+  for these same time horizons (the number of Covid-19 cases for the following day, next week and next month)."_
 
 #### Authentication
 
- - _"...a receptionist asks the client’s citizen card number..."_
- - _"...the medical lab technician records the samples in the system,
-       associating the samples with the client/test, and identifying each sample with a barcode"_
+- _"...a receptionist asks the client’s citizen card number..."_
+- _"...the medical lab technician records the samples in the system, associating the samples with the client/test, and
+  identifying each sample with a barcode"_
 
 #### Persistence
-- _"The application should use object serialization to ensure data persistence between two runs of the
-    application.
-"_
-  
+
+- _"The application should use object serialization to ensure data persistence between two runs of the application.
+  "_
+
 #### Localization
 
 - _"The application must support the English language only"_
@@ -34,17 +38,13 @@
 
 ##### Accessibility
 
-- _"... the results are also available in the central application where the medical lab technicians
-  who collect the samples, the clinical chemistry technologist, the specialist doctor, and the laboratory
-  coordinator can check them."_
+- _"... the results are also available in the central application where the medical lab technicians who collect the
+  samples, the clinical chemistry technologist, the specialist doctor, and the laboratory coordinator can check them."_
 
-- _"To facilitate and simplify the validation work performed by the specialist doctor, the application
-    uses an external module that is responsible for doing an automatic validation using test reference
-    values. "_
-- _"To facilitate the access to the results, the application must allow ordering the clients by TIF and by
-    name."_
-- _"... at least two sorting algorithms should be evaluated and
-  documented in the application user manual"_
+- _"To facilitate and simplify the validation work performed by the specialist doctor, the application uses an external
+  module that is responsible for doing an automatic validation using test reference values. "_
+- _"To facilitate the access to the results, the application must allow ordering the clients by TIF and by name."_
+- _"... at least two sorting algorithms should be evaluated and documented in the application user manual"_
 
 ##### Aesthetics
 
@@ -52,34 +52,34 @@
 
 ##### Consistency
 
-- _"The samples are sent daily to the chemical laboratory... the medical lab technician records the samples in the system ..."_
+- _"The samples are sent daily to the chemical laboratory... the medical lab technician records the samples in the
+  system ..."_
 
-- _"... the medical lab technician records the samples in the system,
-  associating the samples with the client/test, and identifying each sample with a barcode that is
-  automatically generated using an external API."_
+- _"... the medical lab technician records the samples in the system, associating the samples with the client/test, and
+  identifying each sample with a barcode that is automatically generated using an external API."_
 
-- _"... the application uses an external module that is responsible for doing an automatic validation using test reference
-  values"_
-  - _"The user interface must be ... consistent"_
-
+- _"... the application uses an external module that is responsible for doing an automatic validation using test
+  reference values"_
+    - _"The user interface must be ... consistent"_
 
 ## Reliability
 
 #### Accuracy
 
-- _"... the application uses an external module that is responsible for doing an automatic validation using test reference
-  values."_
+- _"... the application uses an external module that is responsible for doing an automatic validation using test
+  reference values."_
 
 #### Throughput
 
-- _"... an internal code, an NHS code, a description that identifies the sample collection method, the date and time when the samples
-  were collected, the date and time of the chemical analysis, the date and time of the diagnosis made
-  by the specialist doctor, the date and time when the laboratory coordinator validated the test, and the
-  test type (whether it is blood test or Covid test)."_
-
+- _"... an internal code, an NHS code, a description that identifies the sample collection method, the date and time
+  when the samples were collected, the date and time of the chemical analysis, the date and time of the diagnosis made
+  by the specialist doctor, the date and time when the laboratory coordinator validated the test, and the test type (
+  whether it is blood test or Covid test)."_
 
 ## Performance
+
 #### Recovery time
+
 - _"- _"The system should not fail more than 5 days in one year"_
 
 #### Response time
@@ -91,17 +91,20 @@
 - _"The system should start up in less than 10 seconds "_
 
 ## Supportability
+
 #### Adaptability
-- _"Despite being out of scope, the system should be developed having in mind the need to
-    easily support other kinds of tests"_
+
+- _"Despite being out of scope, the system should be developed having in mind the need to easily support other kinds of
+  tests"_
+
 #### Compatibility
-- _"Moreover, Many Labs is a company that needs to be continuously evaluating and improving its
-    internal processes to achieve excellence and to beat the competition."_
+
+- _"Moreover, Many Labs is a company that needs to be continuously evaluating and improving its internal processes to
+  achieve excellence and to beat the competition."_
 
 #### Localizability
 
 - _"The application must support the English language only."_
-
 
 #### Testability
 
@@ -113,13 +116,13 @@
 
 - _"The application must be developed in Java language using the IntelliJ IDE or Netbeans"_
 - _"The application graphical interface is to be developed in JavaFX 11"_
-- _"During system development, the team must adopt best practices for identifying requirements
-  and for OO software analysis and design"_
-- _"The application should use object serialization to ensure data persistence between two runs of the
-  application."_
+- _"During system development, the team must adopt best practices for identifying requirements and for OO software
+  analysis and design"_
+- _"The application should use object serialization to ensure data persistence between two runs of the application."_
 - _"The JaCoCo plugin should be used to generate the coverage report."_
-- _"The development team must implement unit tests for all methods except methods that implement
-    Input/Output operations. The unit tests should be implemented using the JUnit 4 framework"_
+- _"The development team must implement unit tests for all methods except methods that implement Input/Output
+  operations. The unit tests should be implemented using the JUnit 4 framework"_
+
 ### Implementation languages
 
 - _Java language_
@@ -136,12 +139,10 @@
 
 #### External systems
 
-- _"... the medical lab technician records the samples in the system,
-  associating the samples with the client/test, and identifying each sample with a barcode that is
-  automatically generated using an external API."_
-- _"To facilitate and simplify the validation work performed by the specialist doctor, the application
-  uses an external module that is responsible for doing an automatic validation using test reference
-  values."_
+- _"... the medical lab technician records the samples in the system, associating the samples with the client/test, and
+  identifying each sample with a barcode that is automatically generated using an external API."_
+- _"To facilitate and simplify the validation work performed by the specialist doctor, the application uses an external
+  module that is responsible for doing an automatic validation using test reference values."_
 
 #### Interface formats
 

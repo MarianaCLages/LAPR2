@@ -9,21 +9,18 @@ public class ClinicalChemistryTechnologistUI implements Runnable {
     public ClinicalChemistryTechnologistUI() {
     }
 
-    public void run()
-    {
+    public void run() {
         List<MenuItem> options = new ArrayList<MenuItem>();
         options.add(new MenuItem("Record Results", new RecordResultsUI()));
 
         int option = 0;
-        do
-        {
+        do {
             option = Utils.showAndSelectIndex(options, "\n\nReceptionist Menu:");
 
-            if ( (option >= 0) && (option < options.size()))
-            {
+            if ((option >= 0) && (option < options.size())) {
                 options.get(option).run();
             }
         }
-        while (option != -1 );
+        while (option != -1);
     }
 }

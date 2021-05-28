@@ -8,14 +8,12 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 public class CategoryListMapperTest {
     @Test
-    public void validDto(){
+    public void validDto() {
         ParameterCategoryStore pStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("12345","name");
-        ParameterCategory pc1 = new ParameterCategory("12345","name");
+        ParameterCategory pc = new ParameterCategory("12345", "name");
+        ParameterCategory pc1 = new ParameterCategory("12345", "name");
         pStore.add(pc);
         pStore.add(pc1);
         CategoryListMapper mapper = new CategoryListMapper();
@@ -26,10 +24,10 @@ public class CategoryListMapperTest {
     }
 
     @Test
-    public void getCode(){
+    public void getCode() {
         ParameterCategoryStore pStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("12345","name");
-        ParameterCategory pc1 = new ParameterCategory("12345","name");
+        ParameterCategory pc = new ParameterCategory("12345", "name");
+        ParameterCategory pc1 = new ParameterCategory("12345", "name");
         pStore.add(pc);
         pStore.add(pc1);
         CategoryListMapper mapper = new CategoryListMapper();
@@ -38,14 +36,14 @@ public class CategoryListMapperTest {
         String actual = categoryListDTO.get(1).getCode();
         String expected = "12345";
 
-        Assert.assertEquals(actual,expected);
+        Assert.assertEquals(actual, expected);
     }
 
     @Test
-    public void getName(){
+    public void getName() {
         ParameterCategoryStore pStore = new ParameterCategoryStore();
-        ParameterCategory pc = new ParameterCategory("12345","name");
-        ParameterCategory pc1 = new ParameterCategory("12345","name");
+        ParameterCategory pc = new ParameterCategory("12345", "name");
+        ParameterCategory pc1 = new ParameterCategory("12345", "name");
         pStore.add(pc);
         pStore.add(pc1);
         CategoryListMapper mapper = new CategoryListMapper();
@@ -54,7 +52,7 @@ public class CategoryListMapperTest {
         String actual = categoryListDTO.get(1).getName();
         String expected = "name";
 
-        Assert.assertEquals(actual,expected);
+        Assert.assertEquals(actual, expected);
     }
 
 }

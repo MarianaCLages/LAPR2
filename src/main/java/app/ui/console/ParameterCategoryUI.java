@@ -38,12 +38,12 @@ public class ParameterCategoryUI implements Runnable {
                     System.out.println("An error occurred during the creation during the creation of the Parameter please try again");
                     exception = true;
                 }
-            }while (exception);
+            } while (exception);
 
             cont = Utils.confirm("The following Category was created do you want to save?" + ctrl.getpc());
             if (cont) {
 
-                if (ctrl.saveParameterCategory()){
+                if (ctrl.saveParameterCategory()) {
                     System.out.println("The Category was saved with success");
                 }
 

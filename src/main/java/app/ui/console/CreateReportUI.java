@@ -4,8 +4,6 @@ import app.controller.CreateReportController;
 import app.domain.mappers.dto.TestDTO;
 import app.ui.console.utils.Utils;
 
-import java.util.logging.Logger;
-
 public class CreateReportUI implements Runnable {
 
     private CreateReportController ctrl;

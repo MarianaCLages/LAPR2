@@ -15,14 +15,14 @@ public class Company {
     private final AuthFacade authFacade;
 
     private final ParameterCategoryStore parameterCategoryList;
-    private ParameterStore parameterList;
-    private TestTypeStore testTypeList;
     private final ClinicalAnalysisLabStore clinicalAnalysisLabList;
-    private RoleStore roleList;
     private final EmployeeStore employeeList;
     private final ClientStore clientList;
     private final TestStore testList;
     private final SampleStore sampleStore;
+    private ParameterStore parameterList;
+    private TestTypeStore testTypeList;
+    private RoleStore roleList;
 
     /**
      * Constructor of the Company Class, instances a new object of AuthFacade
@@ -157,19 +157,21 @@ public class Company {
         return this.clientList;
     }
 
-    public ClientStore clientList(){
+    public ClientStore clientList() {
         return this.clientList;
     }
 
 
     /**
      * creates a new empty list of Test objects
+     *
      * @return empty list of Test objects
      */
     public TestStore getTestList() {
         return this.testList;
     }
-    public TestStore testList(){
+
+    public TestStore testList() {
         return this.testList;
     }
 

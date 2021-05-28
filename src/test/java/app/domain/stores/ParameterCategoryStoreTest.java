@@ -1,7 +1,6 @@
 package app.domain.stores;
 
 import app.domain.model.ParameterCategory;
-import app.domain.stores.ParameterCategoryStore;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -40,12 +39,12 @@ public class ParameterCategoryStoreTest {
     }
 
     @Test
-    public void validateParameterCategoryAlreadyExistsCode(){
+    public void validateParameterCategoryAlreadyExistsCode() {
         //Arrange + act
         ParameterCategoryStore store = new ParameterCategoryStore();
-        ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
+        ParameterCategory pc1 = new ParameterCategory("AF687", "Hemogram");
         store.add(pc1);
-        ParameterCategory pc2 = new ParameterCategory("AF687","Hemograma");
+        ParameterCategory pc2 = new ParameterCategory("AF687", "Hemograma");
 
         Assert.assertFalse(store.ValidateParameterCategory(pc2));
 
@@ -55,34 +54,34 @@ public class ParameterCategoryStoreTest {
     public void getIDRight() {
         //Arrange
         ParameterCategoryStore store = new ParameterCategoryStore();
-        ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
-        ParameterCategory pc2 = new ParameterCategory("AF887","Hetogram");
+        ParameterCategory pc1 = new ParameterCategory("AF687", "Hemogram");
+        ParameterCategory pc2 = new ParameterCategory("AF887", "Hetogram");
         store.add(pc1);
         store.add(pc2);
         //act
         ParameterCategory expected = store.get(1);
         ParameterCategory actual = pc2;
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
     }
 
-    @Test (expected = IndexOutOfBoundsException.class )
-    public void getIDOutOfLimits()  {
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void getIDOutOfLimits() {
         //Arrange
         ParameterCategoryStore store = new ParameterCategoryStore();
-        ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
-        ParameterCategory pc2 = new ParameterCategory("AF887","Hetogram");
+        ParameterCategory pc1 = new ParameterCategory("AF687", "Hemogram");
+        ParameterCategory pc2 = new ParameterCategory("AF887", "Hetogram");
         store.add(pc1);
         store.add(pc2);
         //act
         ParameterCategory expected = store.get(2);
     }
 
-    @Test (expected = IndexOutOfBoundsException.class )
-    public void getIDNegative()  {
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void getIDNegative() {
         //Arrange
         ParameterCategoryStore store = new ParameterCategoryStore();
-        ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
-        ParameterCategory pc2 = new ParameterCategory("AF887","Hetogram");
+        ParameterCategory pc1 = new ParameterCategory("AF687", "Hemogram");
+        ParameterCategory pc2 = new ParameterCategory("AF887", "Hetogram");
         store.add(pc1);
         store.add(pc2);
         //act
@@ -94,8 +93,8 @@ public class ParameterCategoryStoreTest {
     public void getByCodeRight() {
         //Arrange
         ParameterCategoryStore store = new ParameterCategoryStore();
-        ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
-        ParameterCategory pc2 = new ParameterCategory("AF887","Hetogram");
+        ParameterCategory pc1 = new ParameterCategory("AF687", "Hemogram");
+        ParameterCategory pc2 = new ParameterCategory("AF887", "Hetogram");
         store.add(pc1);
         store.add(pc2);
 
@@ -104,7 +103,7 @@ public class ParameterCategoryStoreTest {
         ParameterCategory actual = store.getByCode("AF687");
 
         //Assert
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
     }
 
 
@@ -112,8 +111,8 @@ public class ParameterCategoryStoreTest {
     public void getByCodeNotExists() {
         //Arrange
         ParameterCategoryStore store = new ParameterCategoryStore();
-        ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
-        ParameterCategory pc2 = new ParameterCategory("AF887","Hetogram");
+        ParameterCategory pc1 = new ParameterCategory("AF687", "Hemogram");
+        ParameterCategory pc2 = new ParameterCategory("AF887", "Hetogram");
         store.add(pc1);
         store.add(pc2);
 
@@ -122,14 +121,14 @@ public class ParameterCategoryStoreTest {
         ParameterCategory actual = store.getByCode("AH687");
 
         //Assert
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void createValidParameterCategory() {
         ParameterCategoryStore store = new ParameterCategoryStore();
 
-        Assert.assertNotNull(store.CreateParameterCategory("AF784","Hemogram"));
+        Assert.assertNotNull(store.CreateParameterCategory("AF784", "Hemogram"));
 
     }
 
@@ -137,11 +136,11 @@ public class ParameterCategoryStoreTest {
     @Test
     public void getPcValid() {
         ParameterCategoryStore store = new ParameterCategoryStore();
-        ParameterCategory pc1 = store.CreateParameterCategory("AF687","Hemogram");
+        ParameterCategory pc1 = store.CreateParameterCategory("AF687", "Hemogram");
         ParameterCategory expected = pc1;
-        ParameterCategory actual= store.getPc();
+        ParameterCategory actual = store.getPc();
 
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
 
     }
 
@@ -150,7 +149,7 @@ public class ParameterCategoryStoreTest {
     public void containsTrue() {
         //Assert
         ParameterCategoryStore store = new ParameterCategoryStore();
-        ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
+        ParameterCategory pc1 = new ParameterCategory("AF687", "Hemogram");
 
         //Act
         store.add(pc1);
@@ -164,8 +163,8 @@ public class ParameterCategoryStoreTest {
     public void containsFalse() {
         //Assert
         ParameterCategoryStore store = new ParameterCategoryStore();
-        ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
-        ParameterCategory pc2 = new ParameterCategory("AF687","Hemogram");
+        ParameterCategory pc1 = new ParameterCategory("AF687", "Hemogram");
+        ParameterCategory pc2 = new ParameterCategory("AF687", "Hemogram");
         //Act
         store.add(pc1);
 
@@ -178,7 +177,7 @@ public class ParameterCategoryStoreTest {
     public void saveParameterCategoryValid() {
         //Arrange
         ParameterCategoryStore store = new ParameterCategoryStore();
-        ParameterCategory pc  = store.CreateParameterCategory("AE554", "Hemogram");
+        ParameterCategory pc = store.CreateParameterCategory("AE554", "Hemogram");
 
         //Assert
         Assert.assertTrue(store.saveParameterCategory());
@@ -189,9 +188,9 @@ public class ParameterCategoryStoreTest {
     public void saveParameterCategoryInvalid() {
         //Arrange
         ParameterCategoryStore store = new ParameterCategoryStore();
-        ParameterCategory pc  = store.CreateParameterCategory("AE554", "Hemogram");
+        ParameterCategory pc = store.CreateParameterCategory("AE554", "Hemogram");
         store.add(pc);
-        ParameterCategory pc1  = store.CreateParameterCategory("AE554", "Hemogram");
+        ParameterCategory pc1 = store.CreateParameterCategory("AE554", "Hemogram");
 
         //Assert
         Assert.assertFalse(store.saveParameterCategory());
@@ -201,13 +200,13 @@ public class ParameterCategoryStoreTest {
     @Test
     public void addValid() {
         ParameterCategoryStore store = new ParameterCategoryStore();
-        ParameterCategory pc  = store.CreateParameterCategory("AE554", "Hemogram");
+        ParameterCategory pc = store.CreateParameterCategory("AE554", "Hemogram");
         Assert.assertTrue(store.add(pc));
     }
 
-    @Test (expected = IllegalArgumentException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void addInvalid() {
         ParameterCategoryStore store = new ParameterCategoryStore();
-        ParameterCategory pc  = store.CreateParameterCategory(null, null);
+        ParameterCategory pc = store.CreateParameterCategory(null, null);
     }
 }

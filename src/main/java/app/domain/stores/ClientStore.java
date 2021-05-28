@@ -2,7 +2,6 @@ package app.domain.stores;
 
 import app.domain.model.Client;
 import app.domain.model.Company;
-import auth.AuthFacade;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -65,7 +64,7 @@ public class ClientStore {
         return false;
     }
 
-    public boolean exists(String tin){
+    public boolean exists(String tin) {
         for (Client c : array) {
             return c.getTinNumber().equals(tin);
         }
@@ -98,10 +97,11 @@ public class ClientStore {
 
     /**
      * Adds user to the system by calling the Client instance method
+     *
      * @return boolean value that represents the success of the operation
      */
-    public boolean addUser() {
-        return client.addUser();
+    public boolean addUser(Company company) {
+        return client.addUser(company);
     }
 
     /**

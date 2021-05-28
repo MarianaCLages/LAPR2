@@ -1,19 +1,241 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="912px" preserveAspectRatio="none" style="width:339px;height:912px;" version="1.1" viewBox="0 0 339 912" width="339px" zoomAndPan="magnify"><defs><filter height="300%" id="fzd8zp8qto4g3" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[36afb6bbd95a8ac778c4537c55a683d5]
-class ParameterCategory--><rect codeLine="2" fill="#FEFECE" filter="url(#fzd8zp8qto4g3)" height="75.6719" id="ParameterCategory" style="stroke:#A80036;stroke-width:1.5;" width="139" x="103.5" y="823"/><ellipse cx="118.5" cy="839" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M120.5,835.5 Q120.7031,835 120.9375,834.75 Q121.1719,834.5 121.4375,834.5 Q121.9063,834.5 122.2031,834.7813 Q122.5,835.0625 122.5,835.7188 L122.5,837.2813 Q122.5,837.9375 122.2188,838.2188 Q121.9375,838.5 121.5,838.5 Q121.1094,838.5 120.8594,838.3281 Q120.6094,838.1563 120.5,837.7031 Q120.4531,837.3906 120.2813,837.2188 Q119.9688,836.8906 119.4063,836.7031 Q118.8438,836.5 118.2813,836.5 Q117.5781,836.5 116.9844,836.7813 Q116.4063,837.0625 115.9531,837.6875 Q115.5,838.3125 115.5,839.1719 L115.5,840.0938 Q115.5,841.125 116.3438,841.8125 Q117.1875,842.5 118.6875,842.5 Q119.5781,842.5 120.2031,842.2969 Q120.5625,842.1875 120.9688,841.8281 Q121.2344,841.625 121.375,841.5625 Q121.5156,841.5 121.6875,841.5 Q122.0156,841.5 122.25,841.7656 Q122.5,842.0156 122.5,842.375 Q122.5,842.7188 122.1563,843.125 Q121.6563,843.7188 120.8594,844.0469 Q119.8125,844.5 118.5313,844.5 Q117.0313,844.5 115.8281,843.9063 Q114.8594,843.4375 114.1719,842.4219 Q113.5,841.4063 113.5,840.2031 L113.5,839.1094 Q113.5,837.8594 114.0938,836.7656 Q114.7031,835.6719 115.75,835.0938 Q116.8125,834.5 118,834.5 Q118.7188,834.5 119.3438,834.75 Q119.9688,835 120.5,835.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="107" x="132.5" y="843.9102">ParameterCategory</text><line style="stroke:#A80036;stroke-width:1.5;" x1="104.5" x2="241.5" y1="855" y2="855"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="111.5" y="863"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="102" x="123.5" y="870.4189">String CategoryName</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="111.5" y="876.8359"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="56" x="123.5" y="884.2549">String Code</text><line style="stroke:#A80036;stroke-width:1.5;" x1="104.5" x2="241.5" y1="890.6719" y2="890.6719"/><!--MD5=[02e4b9b7573f1156f41e60aa5b4e25a4]
-class Company--><rect codeLine="7" fill="#FEFECE" filter="url(#fzd8zp8qto4g3)" height="103.3438" id="Company" style="stroke:#A80036;stroke-width:1.5;" width="124" x="65" y="306"/><ellipse cx="97.55" cy="322" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M99.55,318.5 Q99.7531,318 99.9875,317.75 Q100.2219,317.5 100.4875,317.5 Q100.9563,317.5 101.2531,317.7813 Q101.55,318.0625 101.55,318.7188 L101.55,320.2813 Q101.55,320.9375 101.2688,321.2188 Q100.9875,321.5 100.55,321.5 Q100.1594,321.5 99.9094,321.3281 Q99.6594,321.1563 99.55,320.7031 Q99.5031,320.3906 99.3313,320.2188 Q99.0188,319.8906 98.4563,319.7031 Q97.8938,319.5 97.3313,319.5 Q96.6281,319.5 96.0344,319.7813 Q95.4563,320.0625 95.0031,320.6875 Q94.55,321.3125 94.55,322.1719 L94.55,323.0938 Q94.55,324.125 95.3938,324.8125 Q96.2375,325.5 97.7375,325.5 Q98.6281,325.5 99.2531,325.2969 Q99.6125,325.1875 100.0188,324.8281 Q100.2844,324.625 100.425,324.5625 Q100.5656,324.5 100.7375,324.5 Q101.0656,324.5 101.3,324.7656 Q101.55,325.0156 101.55,325.375 Q101.55,325.7188 101.2063,326.125 Q100.7063,326.7188 99.9094,327.0469 Q98.8625,327.5 97.5813,327.5 Q96.0813,327.5 94.8781,326.9063 Q93.9094,326.4375 93.2219,325.4219 Q92.55,324.4063 92.55,323.2031 L92.55,322.1094 Q92.55,320.8594 93.1438,319.7656 Q93.7531,318.6719 94.8,318.0938 Q95.8625,317.5 97.05,317.5 Q97.7688,317.5 98.3938,317.75 Q99.0188,318 99.55,318.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53" x="115.45" y="326.9102">Company</text><line style="stroke:#A80036;stroke-width:1.5;" x1="66" x2="188" y1="338" y2="338"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="73" y="346"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="66" x="85" y="353.4189">parameterList</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="73" y="359.8359"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="60" x="85" y="367.2549">categoryList</text><line style="stroke:#A80036;stroke-width:1.5;" x1="66" x2="188" y1="373.6719" y2="373.6719"/><ellipse cx="76" cy="384.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="84" x="85" y="389.0908">getCategoryList()</text><ellipse cx="76" cy="398.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="98" x="85" y="402.9268">getParameterStore()</text><!--MD5=[b9009a04d919d78a73c2eeec1e385786]
-class CreateParameterController--><rect codeLine="14" fill="#FEFECE" filter="url(#fzd8zp8qto4g3)" height="131.0156" id="CreateParameterController" style="stroke:#A80036;stroke-width:1.5;" width="282" x="43" y="115"/><ellipse cx="105.25" cy="131" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M107.25,127.5 Q107.4531,127 107.6875,126.75 Q107.9219,126.5 108.1875,126.5 Q108.6563,126.5 108.9531,126.7813 Q109.25,127.0625 109.25,127.7188 L109.25,129.2813 Q109.25,129.9375 108.9688,130.2188 Q108.6875,130.5 108.25,130.5 Q107.8594,130.5 107.6094,130.3281 Q107.3594,130.1563 107.25,129.7031 Q107.2031,129.3906 107.0313,129.2188 Q106.7188,128.8906 106.1563,128.7031 Q105.5938,128.5 105.0313,128.5 Q104.3281,128.5 103.7344,128.7813 Q103.1563,129.0625 102.7031,129.6875 Q102.25,130.3125 102.25,131.1719 L102.25,132.0938 Q102.25,133.125 103.0938,133.8125 Q103.9375,134.5 105.4375,134.5 Q106.3281,134.5 106.9531,134.2969 Q107.3125,134.1875 107.7188,133.8281 Q107.9844,133.625 108.125,133.5625 Q108.2656,133.5 108.4375,133.5 Q108.7656,133.5 109,133.7656 Q109.25,134.0156 109.25,134.375 Q109.25,134.7188 108.9063,135.125 Q108.4063,135.7188 107.6094,136.0469 Q106.5625,136.5 105.2813,136.5 Q103.7813,136.5 102.5781,135.9063 Q101.6094,135.4375 100.9219,134.4219 Q100.25,133.4063 100.25,132.2031 L100.25,131.1094 Q100.25,129.8594 100.8438,128.7656 Q101.4531,127.6719 102.5,127.0938 Q103.5625,126.5 104.75,126.5 Q105.4688,126.5 106.0938,126.75 Q106.7188,127 107.25,127.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="149" x="125.75" y="135.9102">CreateParameterController</text><line style="stroke:#A80036;stroke-width:1.5;" x1="44" x2="324" y1="147" y2="147"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="51" y="155"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="44" x="63" y="162.4189">company</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="51" y="168.8359"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="25" x="63" y="176.2549">store</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="51" y="182.6719"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="60" x="63" y="190.0908">categoryList</text><line style="stroke:#A80036;stroke-width:1.5;" x1="44" x2="324" y1="196.5078" y2="196.5078"/><ellipse cx="54" cy="207.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="256" x="63" y="211.9268">createParameter(code, description, NHSid, Category)</text><ellipse cx="54" cy="221.3438" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="84" x="63" y="225.7627">getCategoryList()</text><ellipse cx="54" cy="235.1797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="81" x="63" y="239.5986">saveParameter()</text><!--MD5=[5518e6815e09c51d4db6e17774f331d2]
-class CreateParameterUI--><rect codeLine="23" fill="#FEFECE" filter="url(#fzd8zp8qto4g3)" height="48" id="CreateParameterUI" style="stroke:#A80036;stroke-width:1.5;" width="139" x="114.5" y="7"/><ellipse cx="129.5" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M131.5,19.5 Q131.7031,19 131.9375,18.75 Q132.1719,18.5 132.4375,18.5 Q132.9063,18.5 133.2031,18.7813 Q133.5,19.0625 133.5,19.7188 L133.5,21.2813 Q133.5,21.9375 133.2188,22.2188 Q132.9375,22.5 132.5,22.5 Q132.1094,22.5 131.8594,22.3281 Q131.6094,22.1563 131.5,21.7031 Q131.4531,21.3906 131.2813,21.2188 Q130.9688,20.8906 130.4063,20.7031 Q129.8438,20.5 129.2813,20.5 Q128.5781,20.5 127.9844,20.7813 Q127.4063,21.0625 126.9531,21.6875 Q126.5,22.3125 126.5,23.1719 L126.5,24.0938 Q126.5,25.125 127.3438,25.8125 Q128.1875,26.5 129.6875,26.5 Q130.5781,26.5 131.2031,26.2969 Q131.5625,26.1875 131.9688,25.8281 Q132.2344,25.625 132.375,25.5625 Q132.5156,25.5 132.6875,25.5 Q133.0156,25.5 133.25,25.7656 Q133.5,26.0156 133.5,26.375 Q133.5,26.7188 133.1563,27.125 Q132.6563,27.7188 131.8594,28.0469 Q130.8125,28.5 129.5313,28.5 Q128.0313,28.5 126.8281,27.9063 Q125.8594,27.4375 125.1719,26.4219 Q124.5,25.4063 124.5,24.2031 L124.5,23.1094 Q124.5,21.8594 125.0938,20.7656 Q125.7031,19.6719 126.75,19.0938 Q127.8125,18.5 129,18.5 Q129.7188,18.5 130.3438,18.75 Q130.9688,19 131.5,19.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="107" x="143.5" y="27.9102">CreateParameterUI</text><line style="stroke:#A80036;stroke-width:1.5;" x1="115.5" x2="252.5" y1="39" y2="39"/><line style="stroke:#A80036;stroke-width:1.5;" x1="115.5" x2="252.5" y1="47" y2="47"/><!--MD5=[d802db621b5b215a6f0466f93cefcb42]
-class ParameterCategoryStore--><rect codeLine="26" fill="#FEFECE" filter="url(#fzd8zp8qto4g3)" height="89.5078" id="ParameterCategoryStore" style="stroke:#A80036;stroke-width:1.5;" width="168" x="7" y="659.5"/><ellipse cx="22" cy="675.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M24,672 Q24.2031,671.5 24.4375,671.25 Q24.6719,671 24.9375,671 Q25.4063,671 25.7031,671.2813 Q26,671.5625 26,672.2188 L26,673.7813 Q26,674.4375 25.7188,674.7188 Q25.4375,675 25,675 Q24.6094,675 24.3594,674.8281 Q24.1094,674.6563 24,674.2031 Q23.9531,673.8906 23.7813,673.7188 Q23.4688,673.3906 22.9063,673.2031 Q22.3438,673 21.7813,673 Q21.0781,673 20.4844,673.2813 Q19.9063,673.5625 19.4531,674.1875 Q19,674.8125 19,675.6719 L19,676.5938 Q19,677.625 19.8438,678.3125 Q20.6875,679 22.1875,679 Q23.0781,679 23.7031,678.7969 Q24.0625,678.6875 24.4688,678.3281 Q24.7344,678.125 24.875,678.0625 Q25.0156,678 25.1875,678 Q25.5156,678 25.75,678.2656 Q26,678.5156 26,678.875 Q26,679.2188 25.6563,679.625 Q25.1563,680.2188 24.3594,680.5469 Q23.3125,681 22.0313,681 Q20.5313,681 19.3281,680.4063 Q18.3594,679.9375 17.6719,678.9219 Q17,677.9063 17,676.7031 L17,675.6094 Q17,674.3594 17.5938,673.2656 Q18.2031,672.1719 19.25,671.5938 Q20.3125,671 21.5,671 Q22.2188,671 22.8438,671.25 Q23.4688,671.5 24,672 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="136" x="36" y="680.4102">ParameterCategoryStore</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="174" y1="691.5" y2="691.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="699.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="60" x="27" y="706.9189">categoryList</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="713.3359"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="27" y="720.7549">category</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="174" y1="727.1719" y2="727.1719"/><ellipse cx="18" cy="738.1719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="84" x="27" y="742.5908">getCategoryList()</text><!--MD5=[be7802b157a16874d39c59ca0e2b25be]
-class ParameterStore--><rect codeLine="32" fill="#FEFECE" filter="url(#fzd8zp8qto4g3)" height="117.1797" id="ParameterStore" style="stroke:#A80036;stroke-width:1.5;" width="120" x="182" y="469"/><ellipse cx="197.45" cy="485" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M199.45,481.5 Q199.6531,481 199.8875,480.75 Q200.1219,480.5 200.3875,480.5 Q200.8563,480.5 201.1531,480.7813 Q201.45,481.0625 201.45,481.7188 L201.45,483.2813 Q201.45,483.9375 201.1688,484.2188 Q200.8875,484.5 200.45,484.5 Q200.0594,484.5 199.8094,484.3281 Q199.5594,484.1563 199.45,483.7031 Q199.4031,483.3906 199.2313,483.2188 Q198.9188,482.8906 198.3563,482.7031 Q197.7938,482.5 197.2313,482.5 Q196.5281,482.5 195.9344,482.7813 Q195.3563,483.0625 194.9031,483.6875 Q194.45,484.3125 194.45,485.1719 L194.45,486.0938 Q194.45,487.125 195.2938,487.8125 Q196.1375,488.5 197.6375,488.5 Q198.5281,488.5 199.1531,488.2969 Q199.5125,488.1875 199.9188,487.8281 Q200.1844,487.625 200.325,487.5625 Q200.4656,487.5 200.6375,487.5 Q200.9656,487.5 201.2,487.7656 Q201.45,488.0156 201.45,488.375 Q201.45,488.7188 201.1063,489.125 Q200.6063,489.7188 199.8094,490.0469 Q198.7625,490.5 197.4813,490.5 Q195.9813,490.5 194.7781,489.9063 Q193.8094,489.4375 193.1219,488.4219 Q192.45,487.4063 192.45,486.2031 L192.45,485.1094 Q192.45,483.8594 193.0438,482.7656 Q193.6531,481.6719 194.7,481.0938 Q195.7625,480.5 196.95,480.5 Q197.6688,480.5 198.2938,480.75 Q198.9188,481 199.45,481.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="87" x="211.55" y="489.9102">ParameterStore</text><line style="stroke:#A80036;stroke-width:1.5;" x1="183" x2="301" y1="501" y2="501"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="190" y="509"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="66" x="202" y="516.4189">parameterList</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="190" y="522.8359"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="49" x="202" y="530.2549">parameter</text><line style="stroke:#A80036;stroke-width:1.5;" x1="183" x2="301" y1="536.6719" y2="536.6719"/><ellipse cx="193" cy="547.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="88" x="202" y="552.0908">createParameter()</text><ellipse cx="193" cy="561.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="94" x="202" y="565.9268">validateParameter()</text><ellipse cx="193" cy="575.3438" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="81" x="202" y="579.7627">saveParameter()</text><!--MD5=[1f6362a5c8f21d8d6a0fce68f3a92a4e]
-class Parameter--><rect codeLine="40" fill="#FEFECE" filter="url(#fzd8zp8qto4g3)" height="117.1797" id="Parameter" style="stroke:#A80036;stroke-width:1.5;" width="90" x="210" y="646"/><ellipse cx="225" cy="662" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M227,658.5 Q227.2031,658 227.4375,657.75 Q227.6719,657.5 227.9375,657.5 Q228.4063,657.5 228.7031,657.7813 Q229,658.0625 229,658.7188 L229,660.2813 Q229,660.9375 228.7188,661.2188 Q228.4375,661.5 228,661.5 Q227.6094,661.5 227.3594,661.3281 Q227.1094,661.1563 227,660.7031 Q226.9531,660.3906 226.7813,660.2188 Q226.4688,659.8906 225.9063,659.7031 Q225.3438,659.5 224.7813,659.5 Q224.0781,659.5 223.4844,659.7813 Q222.9063,660.0625 222.4531,660.6875 Q222,661.3125 222,662.1719 L222,663.0938 Q222,664.125 222.8438,664.8125 Q223.6875,665.5 225.1875,665.5 Q226.0781,665.5 226.7031,665.2969 Q227.0625,665.1875 227.4688,664.8281 Q227.7344,664.625 227.875,664.5625 Q228.0156,664.5 228.1875,664.5 Q228.5156,664.5 228.75,664.7656 Q229,665.0156 229,665.375 Q229,665.7188 228.6563,666.125 Q228.1563,666.7188 227.3594,667.0469 Q226.3125,667.5 225.0313,667.5 Q223.5313,667.5 222.3281,666.9063 Q221.3594,666.4375 220.6719,665.4219 Q220,664.4063 220,663.2031 L220,662.1094 Q220,660.8594 220.5938,659.7656 Q221.2031,658.6719 222.25,658.0938 Q223.3125,657.5 224.5,657.5 Q225.2188,657.5 225.8438,657.75 Q226.4688,658 227,658.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="58" x="239" y="666.9102">Parameter</text><line style="stroke:#A80036;stroke-width:1.5;" x1="211" x2="299" y1="678" y2="678"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="218" y="686"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="24" x="230" y="693.4189">code</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="218" y="699.8359"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="26" x="230" y="707.2549">name</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="218" y="713.6719"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="230" y="721.0908">description</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="218" y="727.5078"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="44" x="230" y="734.9268">Category</text><line style="stroke:#A80036;stroke-width:1.5;" x1="211" x2="299" y1="741.3438" y2="741.3438"/><ellipse cx="221" cy="752.3438" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="57" x="230" y="756.7627">Parameter()</text><!--MD5=[9d3dd688f78c4545f26622cd23f9dd25]
-link CreateParameterUI to CreateParameterController--><path codeLine="48" d="M184,55.05 C184,69.91 184,90.1 184,109.89 " fill="none" id="CreateParameterUI-to-CreateParameterController" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="184,114.91,188,105.91,184,109.91,180,105.91,184,114.91" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[6d585fb02c26694275539b4f1508918e]
-link CreateParameterController to Company--><path codeLine="50" d="M162.94,246.17 C157.08,264.14 150.78,283.5 145.11,300.91 " fill="none" id="CreateParameterController-to-Company" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="143.52,305.77,150.1014,298.443,145.0625,301.0139,142.4917,295.975,143.52,305.77" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[46706d5726812879537e05899d80bc9e]
-link CreateParameterController to ParameterStore--><path codeLine="51" d="M196.25,246.06 C199.82,265.33 203.65,286.5 207,306 C216.13,359.15 225.67,419.66 232.48,463.83 " fill="none" id="CreateParameterController-to-ParameterStore" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="233.26,468.86,235.8512,459.3581,232.5029,463.9176,227.9434,460.5694,233.26,468.86" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d53d7490e5836ca5709858d7326f212b]
-link Company to ParameterCategoryStore--><path codeLine="53" d="M121.73,409.04 C114.86,474.89 102.92,589.28 96.12,654.41 " fill="none" id="Company-to-ParameterCategoryStore" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="95.6,659.4,100.5049,650.8594,96.1145,654.4265,92.5473,650.0362,95.6,659.4" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[daf3d7412afa2c7651483be0b6e971d1]
-link Company to ParameterStore--><path codeLine="54" d="M161.82,409.36 C173.64,426.63 186.99,446.13 199.35,464.19 " fill="none" id="Company-to-ParameterStore" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="202.47,468.75,200.7059,459.0604,199.6538,464.6186,194.0956,463.5664,202.47,468.75" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a0992dda039fed1bb57aff5aacace800]
-link ParameterStore to Parameter--><path codeLine="56" d="M246.29,586.29 C247.58,603.61 249,622.7 250.31,640.35 " fill="none" id="ParameterStore-to-Parameter" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="250.71,645.77,254.0303,636.4977,250.3385,640.7838,246.0524,637.092,250.71,645.77" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d6274e3b73b5bc8f467c6cfbf5bf003e]
-link ParameterCategoryStore to ParameterCategory--><path codeLine="58" d="M114.5,749.77 C125.94,771.33 139.62,797.12 150.88,818.32 " fill="none" id="ParameterCategoryStore-to-ParameterCategory" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="153.24,822.77,152.5539,812.9451,150.896,818.3535,145.4875,816.6955,153.24,822.77" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[6df8849671cb880f6936e94aa30db6f9]
-link Parameter to ParameterCategory--><path codeLine="62" d="M224.47,763.03 C214.81,781.22 204.32,800.98 195.35,817.89 " fill="none" id="Parameter-to-ParameterCategory" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="192.86,822.58,200.6125,816.5055,195.204,818.1635,193.5461,812.7551,192.86,822.58" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[476d46dd061d78a35ccd915e8714db39]
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     contentScriptType="application/ecmascript" contentStyleType="text/css" height="912px" preserveAspectRatio="none"
+     style="width:339px;height:912px;" version="1.1" viewBox="0 0 339 912" width="339px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="fzd8zp8qto4g3" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix"
+                           values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+        </filter>
+    </defs>
+    <g><!--MD5=[36afb6bbd95a8ac778c4537c55a683d5]
+class ParameterCategory-->
+        <rect codeLine="2" fill="#FEFECE" filter="url(#fzd8zp8qto4g3)" height="75.6719" id="ParameterCategory"
+              style="stroke:#A80036;stroke-width:1.5;" width="139" x="103.5" y="823"/>
+        <ellipse cx="118.5" cy="839" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M120.5,835.5 Q120.7031,835 120.9375,834.75 Q121.1719,834.5 121.4375,834.5 Q121.9063,834.5 122.2031,834.7813 Q122.5,835.0625 122.5,835.7188 L122.5,837.2813 Q122.5,837.9375 122.2188,838.2188 Q121.9375,838.5 121.5,838.5 Q121.1094,838.5 120.8594,838.3281 Q120.6094,838.1563 120.5,837.7031 Q120.4531,837.3906 120.2813,837.2188 Q119.9688,836.8906 119.4063,836.7031 Q118.8438,836.5 118.2813,836.5 Q117.5781,836.5 116.9844,836.7813 Q116.4063,837.0625 115.9531,837.6875 Q115.5,838.3125 115.5,839.1719 L115.5,840.0938 Q115.5,841.125 116.3438,841.8125 Q117.1875,842.5 118.6875,842.5 Q119.5781,842.5 120.2031,842.2969 Q120.5625,842.1875 120.9688,841.8281 Q121.2344,841.625 121.375,841.5625 Q121.5156,841.5 121.6875,841.5 Q122.0156,841.5 122.25,841.7656 Q122.5,842.0156 122.5,842.375 Q122.5,842.7188 122.1563,843.125 Q121.6563,843.7188 120.8594,844.0469 Q119.8125,844.5 118.5313,844.5 Q117.0313,844.5 115.8281,843.9063 Q114.8594,843.4375 114.1719,842.4219 Q113.5,841.4063 113.5,840.2031 L113.5,839.1094 Q113.5,837.8594 114.0938,836.7656 Q114.7031,835.6719 115.75,835.0938 Q116.8125,834.5 118,834.5 Q118.7188,834.5 119.3438,834.75 Q119.9688,835 120.5,835.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="107" x="132.5"
+              y="843.9102">ParameterCategory
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="104.5" x2="241.5" y1="855" y2="855"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="111.5" y="863"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="102" x="123.5"
+              y="870.4189">String CategoryName
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="111.5" y="876.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="56" x="123.5"
+              y="884.2549">String Code
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="104.5" x2="241.5" y1="890.6719" y2="890.6719"/><!--MD5=[02e4b9b7573f1156f41e60aa5b4e25a4]
+class Company-->
+        <rect codeLine="7" fill="#FEFECE" filter="url(#fzd8zp8qto4g3)" height="103.3438" id="Company"
+              style="stroke:#A80036;stroke-width:1.5;" width="124" x="65" y="306"/>
+        <ellipse cx="97.55" cy="322" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M99.55,318.5 Q99.7531,318 99.9875,317.75 Q100.2219,317.5 100.4875,317.5 Q100.9563,317.5 101.2531,317.7813 Q101.55,318.0625 101.55,318.7188 L101.55,320.2813 Q101.55,320.9375 101.2688,321.2188 Q100.9875,321.5 100.55,321.5 Q100.1594,321.5 99.9094,321.3281 Q99.6594,321.1563 99.55,320.7031 Q99.5031,320.3906 99.3313,320.2188 Q99.0188,319.8906 98.4563,319.7031 Q97.8938,319.5 97.3313,319.5 Q96.6281,319.5 96.0344,319.7813 Q95.4563,320.0625 95.0031,320.6875 Q94.55,321.3125 94.55,322.1719 L94.55,323.0938 Q94.55,324.125 95.3938,324.8125 Q96.2375,325.5 97.7375,325.5 Q98.6281,325.5 99.2531,325.2969 Q99.6125,325.1875 100.0188,324.8281 Q100.2844,324.625 100.425,324.5625 Q100.5656,324.5 100.7375,324.5 Q101.0656,324.5 101.3,324.7656 Q101.55,325.0156 101.55,325.375 Q101.55,325.7188 101.2063,326.125 Q100.7063,326.7188 99.9094,327.0469 Q98.8625,327.5 97.5813,327.5 Q96.0813,327.5 94.8781,326.9063 Q93.9094,326.4375 93.2219,325.4219 Q92.55,324.4063 92.55,323.2031 L92.55,322.1094 Q92.55,320.8594 93.1438,319.7656 Q93.7531,318.6719 94.8,318.0938 Q95.8625,317.5 97.05,317.5 Q97.7688,317.5 98.3938,317.75 Q99.0188,318 99.55,318.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53" x="115.45"
+              y="326.9102">Company
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="66" x2="188" y1="338" y2="338"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="73" y="346"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="66" x="85"
+              y="353.4189">parameterList
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="73" y="359.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="60" x="85"
+              y="367.2549">categoryList
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="66" x2="188" y1="373.6719" y2="373.6719"/>
+        <ellipse cx="76" cy="384.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="84" x="85"
+              y="389.0908">getCategoryList()
+        </text>
+        <ellipse cx="76" cy="398.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="98" x="85"
+              y="402.9268">getParameterStore()
+        </text><!--MD5=[b9009a04d919d78a73c2eeec1e385786]
+class CreateParameterController-->
+        <rect codeLine="14" fill="#FEFECE" filter="url(#fzd8zp8qto4g3)" height="131.0156" id="CreateParameterController"
+              style="stroke:#A80036;stroke-width:1.5;" width="282" x="43" y="115"/>
+        <ellipse cx="105.25" cy="131" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M107.25,127.5 Q107.4531,127 107.6875,126.75 Q107.9219,126.5 108.1875,126.5 Q108.6563,126.5 108.9531,126.7813 Q109.25,127.0625 109.25,127.7188 L109.25,129.2813 Q109.25,129.9375 108.9688,130.2188 Q108.6875,130.5 108.25,130.5 Q107.8594,130.5 107.6094,130.3281 Q107.3594,130.1563 107.25,129.7031 Q107.2031,129.3906 107.0313,129.2188 Q106.7188,128.8906 106.1563,128.7031 Q105.5938,128.5 105.0313,128.5 Q104.3281,128.5 103.7344,128.7813 Q103.1563,129.0625 102.7031,129.6875 Q102.25,130.3125 102.25,131.1719 L102.25,132.0938 Q102.25,133.125 103.0938,133.8125 Q103.9375,134.5 105.4375,134.5 Q106.3281,134.5 106.9531,134.2969 Q107.3125,134.1875 107.7188,133.8281 Q107.9844,133.625 108.125,133.5625 Q108.2656,133.5 108.4375,133.5 Q108.7656,133.5 109,133.7656 Q109.25,134.0156 109.25,134.375 Q109.25,134.7188 108.9063,135.125 Q108.4063,135.7188 107.6094,136.0469 Q106.5625,136.5 105.2813,136.5 Q103.7813,136.5 102.5781,135.9063 Q101.6094,135.4375 100.9219,134.4219 Q100.25,133.4063 100.25,132.2031 L100.25,131.1094 Q100.25,129.8594 100.8438,128.7656 Q101.4531,127.6719 102.5,127.0938 Q103.5625,126.5 104.75,126.5 Q105.4688,126.5 106.0938,126.75 Q106.7188,127 107.25,127.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="149" x="125.75"
+              y="135.9102">CreateParameterController
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="44" x2="324" y1="147" y2="147"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="51" y="155"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="44" x="63"
+              y="162.4189">company
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="51" y="168.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="25" x="63"
+              y="176.2549">store
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="51" y="182.6719"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="60" x="63"
+              y="190.0908">categoryList
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="44" x2="324" y1="196.5078" y2="196.5078"/>
+        <ellipse cx="54" cy="207.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="256" x="63"
+              y="211.9268">createParameter(code, description, NHSid, Category)
+        </text>
+        <ellipse cx="54" cy="221.3438" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="84" x="63"
+              y="225.7627">getCategoryList()
+        </text>
+        <ellipse cx="54" cy="235.1797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="81" x="63"
+              y="239.5986">saveParameter()
+        </text><!--MD5=[5518e6815e09c51d4db6e17774f331d2]
+class CreateParameterUI-->
+        <rect codeLine="23" fill="#FEFECE" filter="url(#fzd8zp8qto4g3)" height="48" id="CreateParameterUI"
+              style="stroke:#A80036;stroke-width:1.5;" width="139" x="114.5" y="7"/>
+        <ellipse cx="129.5" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M131.5,19.5 Q131.7031,19 131.9375,18.75 Q132.1719,18.5 132.4375,18.5 Q132.9063,18.5 133.2031,18.7813 Q133.5,19.0625 133.5,19.7188 L133.5,21.2813 Q133.5,21.9375 133.2188,22.2188 Q132.9375,22.5 132.5,22.5 Q132.1094,22.5 131.8594,22.3281 Q131.6094,22.1563 131.5,21.7031 Q131.4531,21.3906 131.2813,21.2188 Q130.9688,20.8906 130.4063,20.7031 Q129.8438,20.5 129.2813,20.5 Q128.5781,20.5 127.9844,20.7813 Q127.4063,21.0625 126.9531,21.6875 Q126.5,22.3125 126.5,23.1719 L126.5,24.0938 Q126.5,25.125 127.3438,25.8125 Q128.1875,26.5 129.6875,26.5 Q130.5781,26.5 131.2031,26.2969 Q131.5625,26.1875 131.9688,25.8281 Q132.2344,25.625 132.375,25.5625 Q132.5156,25.5 132.6875,25.5 Q133.0156,25.5 133.25,25.7656 Q133.5,26.0156 133.5,26.375 Q133.5,26.7188 133.1563,27.125 Q132.6563,27.7188 131.8594,28.0469 Q130.8125,28.5 129.5313,28.5 Q128.0313,28.5 126.8281,27.9063 Q125.8594,27.4375 125.1719,26.4219 Q124.5,25.4063 124.5,24.2031 L124.5,23.1094 Q124.5,21.8594 125.0938,20.7656 Q125.7031,19.6719 126.75,19.0938 Q127.8125,18.5 129,18.5 Q129.7188,18.5 130.3438,18.75 Q130.9688,19 131.5,19.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="107" x="143.5"
+              y="27.9102">CreateParameterUI
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="115.5" x2="252.5" y1="39" y2="39"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="115.5" x2="252.5" y1="47" y2="47"/><!--MD5=[d802db621b5b215a6f0466f93cefcb42]
+class ParameterCategoryStore-->
+        <rect codeLine="26" fill="#FEFECE" filter="url(#fzd8zp8qto4g3)" height="89.5078" id="ParameterCategoryStore"
+              style="stroke:#A80036;stroke-width:1.5;" width="168" x="7" y="659.5"/>
+        <ellipse cx="22" cy="675.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M24,672 Q24.2031,671.5 24.4375,671.25 Q24.6719,671 24.9375,671 Q25.4063,671 25.7031,671.2813 Q26,671.5625 26,672.2188 L26,673.7813 Q26,674.4375 25.7188,674.7188 Q25.4375,675 25,675 Q24.6094,675 24.3594,674.8281 Q24.1094,674.6563 24,674.2031 Q23.9531,673.8906 23.7813,673.7188 Q23.4688,673.3906 22.9063,673.2031 Q22.3438,673 21.7813,673 Q21.0781,673 20.4844,673.2813 Q19.9063,673.5625 19.4531,674.1875 Q19,674.8125 19,675.6719 L19,676.5938 Q19,677.625 19.8438,678.3125 Q20.6875,679 22.1875,679 Q23.0781,679 23.7031,678.7969 Q24.0625,678.6875 24.4688,678.3281 Q24.7344,678.125 24.875,678.0625 Q25.0156,678 25.1875,678 Q25.5156,678 25.75,678.2656 Q26,678.5156 26,678.875 Q26,679.2188 25.6563,679.625 Q25.1563,680.2188 24.3594,680.5469 Q23.3125,681 22.0313,681 Q20.5313,681 19.3281,680.4063 Q18.3594,679.9375 17.6719,678.9219 Q17,677.9063 17,676.7031 L17,675.6094 Q17,674.3594 17.5938,673.2656 Q18.2031,672.1719 19.25,671.5938 Q20.3125,671 21.5,671 Q22.2188,671 22.8438,671.25 Q23.4688,671.5 24,672 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="136" x="36"
+              y="680.4102">ParameterCategoryStore
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="174" y1="691.5" y2="691.5"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="699.5"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="60" x="27"
+              y="706.9189">categoryList
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="713.3359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="27"
+              y="720.7549">category
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="174" y1="727.1719" y2="727.1719"/>
+        <ellipse cx="18" cy="738.1719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="84" x="27"
+              y="742.5908">getCategoryList()
+        </text><!--MD5=[be7802b157a16874d39c59ca0e2b25be]
+class ParameterStore-->
+        <rect codeLine="32" fill="#FEFECE" filter="url(#fzd8zp8qto4g3)" height="117.1797" id="ParameterStore"
+              style="stroke:#A80036;stroke-width:1.5;" width="120" x="182" y="469"/>
+        <ellipse cx="197.45" cy="485" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M199.45,481.5 Q199.6531,481 199.8875,480.75 Q200.1219,480.5 200.3875,480.5 Q200.8563,480.5 201.1531,480.7813 Q201.45,481.0625 201.45,481.7188 L201.45,483.2813 Q201.45,483.9375 201.1688,484.2188 Q200.8875,484.5 200.45,484.5 Q200.0594,484.5 199.8094,484.3281 Q199.5594,484.1563 199.45,483.7031 Q199.4031,483.3906 199.2313,483.2188 Q198.9188,482.8906 198.3563,482.7031 Q197.7938,482.5 197.2313,482.5 Q196.5281,482.5 195.9344,482.7813 Q195.3563,483.0625 194.9031,483.6875 Q194.45,484.3125 194.45,485.1719 L194.45,486.0938 Q194.45,487.125 195.2938,487.8125 Q196.1375,488.5 197.6375,488.5 Q198.5281,488.5 199.1531,488.2969 Q199.5125,488.1875 199.9188,487.8281 Q200.1844,487.625 200.325,487.5625 Q200.4656,487.5 200.6375,487.5 Q200.9656,487.5 201.2,487.7656 Q201.45,488.0156 201.45,488.375 Q201.45,488.7188 201.1063,489.125 Q200.6063,489.7188 199.8094,490.0469 Q198.7625,490.5 197.4813,490.5 Q195.9813,490.5 194.7781,489.9063 Q193.8094,489.4375 193.1219,488.4219 Q192.45,487.4063 192.45,486.2031 L192.45,485.1094 Q192.45,483.8594 193.0438,482.7656 Q193.6531,481.6719 194.7,481.0938 Q195.7625,480.5 196.95,480.5 Q197.6688,480.5 198.2938,480.75 Q198.9188,481 199.45,481.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="87" x="211.55"
+              y="489.9102">ParameterStore
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="183" x2="301" y1="501" y2="501"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="190" y="509"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="66" x="202"
+              y="516.4189">parameterList
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="190" y="522.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="49" x="202"
+              y="530.2549">parameter
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="183" x2="301" y1="536.6719" y2="536.6719"/>
+        <ellipse cx="193" cy="547.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="88" x="202"
+              y="552.0908">createParameter()
+        </text>
+        <ellipse cx="193" cy="561.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="94" x="202"
+              y="565.9268">validateParameter()
+        </text>
+        <ellipse cx="193" cy="575.3438" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="81" x="202"
+              y="579.7627">saveParameter()
+        </text><!--MD5=[1f6362a5c8f21d8d6a0fce68f3a92a4e]
+class Parameter-->
+        <rect codeLine="40" fill="#FEFECE" filter="url(#fzd8zp8qto4g3)" height="117.1797" id="Parameter"
+              style="stroke:#A80036;stroke-width:1.5;" width="90" x="210" y="646"/>
+        <ellipse cx="225" cy="662" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M227,658.5 Q227.2031,658 227.4375,657.75 Q227.6719,657.5 227.9375,657.5 Q228.4063,657.5 228.7031,657.7813 Q229,658.0625 229,658.7188 L229,660.2813 Q229,660.9375 228.7188,661.2188 Q228.4375,661.5 228,661.5 Q227.6094,661.5 227.3594,661.3281 Q227.1094,661.1563 227,660.7031 Q226.9531,660.3906 226.7813,660.2188 Q226.4688,659.8906 225.9063,659.7031 Q225.3438,659.5 224.7813,659.5 Q224.0781,659.5 223.4844,659.7813 Q222.9063,660.0625 222.4531,660.6875 Q222,661.3125 222,662.1719 L222,663.0938 Q222,664.125 222.8438,664.8125 Q223.6875,665.5 225.1875,665.5 Q226.0781,665.5 226.7031,665.2969 Q227.0625,665.1875 227.4688,664.8281 Q227.7344,664.625 227.875,664.5625 Q228.0156,664.5 228.1875,664.5 Q228.5156,664.5 228.75,664.7656 Q229,665.0156 229,665.375 Q229,665.7188 228.6563,666.125 Q228.1563,666.7188 227.3594,667.0469 Q226.3125,667.5 225.0313,667.5 Q223.5313,667.5 222.3281,666.9063 Q221.3594,666.4375 220.6719,665.4219 Q220,664.4063 220,663.2031 L220,662.1094 Q220,660.8594 220.5938,659.7656 Q221.2031,658.6719 222.25,658.0938 Q223.3125,657.5 224.5,657.5 Q225.2188,657.5 225.8438,657.75 Q226.4688,658 227,658.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="58" x="239"
+              y="666.9102">Parameter
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="211" x2="299" y1="678" y2="678"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="218" y="686"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="24" x="230"
+              y="693.4189">code
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="218" y="699.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="26" x="230"
+              y="707.2549">name
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="218" y="713.6719"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="230"
+              y="721.0908">description
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="218" y="727.5078"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="44" x="230"
+              y="734.9268">Category
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="211" x2="299" y1="741.3438" y2="741.3438"/>
+        <ellipse cx="221" cy="752.3438" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="57" x="230"
+              y="756.7627">Parameter()
+        </text><!--MD5=[9d3dd688f78c4545f26622cd23f9dd25]
+link CreateParameterUI to CreateParameterController-->
+        <path codeLine="48" d="M184,55.05 C184,69.91 184,90.1 184,109.89 " fill="none"
+              id="CreateParameterUI-to-CreateParameterController" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="184,114.91,188,105.91,184,109.91,180,105.91,184,114.91"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[6d585fb02c26694275539b4f1508918e]
+link CreateParameterController to Company-->
+        <path codeLine="50" d="M162.94,246.17 C157.08,264.14 150.78,283.5 145.11,300.91 " fill="none"
+              id="CreateParameterController-to-Company" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="143.52,305.77,150.1014,298.443,145.0625,301.0139,142.4917,295.975,143.52,305.77"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[46706d5726812879537e05899d80bc9e]
+link CreateParameterController to ParameterStore-->
+        <path codeLine="51"
+              d="M196.25,246.06 C199.82,265.33 203.65,286.5 207,306 C216.13,359.15 225.67,419.66 232.48,463.83 "
+              fill="none" id="CreateParameterController-to-ParameterStore"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="#A80036"
+                 points="233.26,468.86,235.8512,459.3581,232.5029,463.9176,227.9434,460.5694,233.26,468.86"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d53d7490e5836ca5709858d7326f212b]
+link Company to ParameterCategoryStore-->
+        <path codeLine="53" d="M121.73,409.04 C114.86,474.89 102.92,589.28 96.12,654.41 " fill="none"
+              id="Company-to-ParameterCategoryStore" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="95.6,659.4,100.5049,650.8594,96.1145,654.4265,92.5473,650.0362,95.6,659.4"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[daf3d7412afa2c7651483be0b6e971d1]
+link Company to ParameterStore-->
+        <path codeLine="54" d="M161.82,409.36 C173.64,426.63 186.99,446.13 199.35,464.19 " fill="none"
+              id="Company-to-ParameterStore" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036"
+                 points="202.47,468.75,200.7059,459.0604,199.6538,464.6186,194.0956,463.5664,202.47,468.75"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a0992dda039fed1bb57aff5aacace800]
+link ParameterStore to Parameter-->
+        <path codeLine="56" d="M246.29,586.29 C247.58,603.61 249,622.7 250.31,640.35 " fill="none"
+              id="ParameterStore-to-Parameter" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036"
+                 points="250.71,645.77,254.0303,636.4977,250.3385,640.7838,246.0524,637.092,250.71,645.77"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d6274e3b73b5bc8f467c6cfbf5bf003e]
+link ParameterCategoryStore to ParameterCategory-->
+        <path codeLine="58" d="M114.5,749.77 C125.94,771.33 139.62,797.12 150.88,818.32 " fill="none"
+              id="ParameterCategoryStore-to-ParameterCategory" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036"
+                 points="153.24,822.77,152.5539,812.9451,150.896,818.3535,145.4875,816.6955,153.24,822.77"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[6df8849671cb880f6936e94aa30db6f9]
+link Parameter to ParameterCategory-->
+        <path codeLine="62" d="M224.47,763.03 C214.81,781.22 204.32,800.98 195.35,817.89 " fill="none"
+              id="Parameter-to-ParameterCategory" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="#A80036"
+                 points="192.86,822.58,200.6125,816.5055,195.204,818.1635,193.5461,812.7551,192.86,822.58"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[476d46dd061d78a35ccd915e8714db39]
 @startuml
 
 class ParameterCategory {
@@ -86,4 +308,6 @@ JVM: Dynamic Code Evolution 64-Bit Server VM
 Default Encoding: Cp1252
 Language: pt
 Country: PT
---></g></svg>
+-->
+    </g>
+</svg>

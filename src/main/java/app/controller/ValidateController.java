@@ -14,7 +14,7 @@ public class ValidateController {
     private List<Test> tSt;
     private TestStoreDTO tListDTO;
 
-    public ValidateController(){
+    public ValidateController() {
         this(App.getInstance().getCompany());
     }
 

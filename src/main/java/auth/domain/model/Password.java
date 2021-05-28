@@ -6,15 +6,13 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.Objects;
 
 /**
- *
  * @author Paulo Maio <pam@isep.ipp.pt>
  */
 public class Password {
 
     private String password;
 
-    public Password(String password)
-    {
+    public Password(String password) {
         if (!validate(password))
             throw new IllegalArgumentException("Invalid Email Address.");
         this.password = createHash(password);
@@ -29,22 +27,19 @@ public class Password {
         return true;
     }
 
-    private String createHash(String password)
-    {
-        return BCrypt.withDefaults().hashToString(BCrypt.MIN_COST,password.toCharArray());
+    private String createHash(String password) {
+        return BCrypt.withDefaults().hashToString(BCrypt.MIN_COST, password.toCharArray());
     }
 
-    public boolean checkPassword(String pwd)
-    {
+    public boolean checkPassword(String pwd) {
         if (StringUtils.isBlank(pwd))
             return false;
-        BCrypt.Result result = BCrypt.verifyer().verify(pwd.toCharArray(),this.password.toCharArray());
+        BCrypt.Result result = BCrypt.verifyer().verify(pwd.toCharArray(), this.password.toCharArray());
         return result.verified;
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         int hash = 7;
         hash = 7 * hash + this.password.hashCode();
         return hash;

@@ -14,6 +14,6 @@ public class TestParameterResult {
 
     @Override
     public String toString() {
-        return "Parameter: "+paramId+" ->"+" Result: "+result+" "+refValue.getMetric()+" . Reference: Max: "+refValue.getMaxValue()+ "; Min: "+refValue.getMinValue();
+        return "Parameter: " + paramId + " ->" + " Result: " + result + " " + refValue.getMetric() + " . Reference: Max: " + refValue.getMaxValue() + "; Min: " + refValue.getMinValue();
     }
 }

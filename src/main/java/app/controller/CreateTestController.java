@@ -6,7 +6,10 @@ import app.domain.mappers.TestTypeListMapper;
 import app.domain.mappers.dto.CategoryListDTO;
 import app.domain.mappers.dto.ParameterDTO;
 import app.domain.mappers.dto.TestTypeDTO;
-import app.domain.model.*;
+import app.domain.model.Company;
+import app.domain.model.Parameter;
+import app.domain.model.ParameterCategory;
+import app.domain.model.TestType;
 import app.domain.stores.*;
 
 import java.util.ArrayList;
@@ -20,7 +23,6 @@ public class CreateTestController {
     private ParameterCategoryStore categoriesList;
     private List<ParameterCategory> caList;
     private List<Parameter> paList;
-
 
 
     public CreateTestController() {
@@ -81,11 +83,9 @@ public class CreateTestController {
         this.paList.add(pa);
     }
 
-    public String getTest(){
+    public String getTest() {
         return store.getTest();
     }
-
-
 
 
 }

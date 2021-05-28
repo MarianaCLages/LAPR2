@@ -1,16 +1,11 @@
 package app.domain.stores;
 
 import app.domain.model.BarcodeAdapter;
-import app.domain.model.ExternalApiBarcode;
 import app.domain.model.Sample;
 import app.domain.shared.Constants;
-import net.sourceforge.barbecue.Barcode;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
-import javax.imageio.ImageIO;
-import java.awt.image.RenderedImage;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,24 +18,23 @@ public class SampleStore {
     private BarcodeAdapter em;
 
 
-
     public SampleStore() {
         this.testSamples = new ArrayList<>();
     }
 
 
-
     public boolean createSample(String testID) throws ClassNotFoundException, IllegalAccessException, InstantiationException, BarcodeException {
         Class<?> oClass = Class.forName(Constants.BARCODE_API);
         this.em = (BarcodeAdapter) oClass.newInstance();
-        this.sample = new Sample(testID,em.createBarcode(createSampleID()));
+        this.sample = new Sample(testID, em.createBarcode(createSampleID()));
 
-        if (this.sample == null){
+        if (this.sample == null) {
             return false;
-        }else {
+        } else {
             return true;
         }
     }
+
     public boolean saveSample() throws IOException, OutputException {
         if (validateSample()) {
             testSamples.add(this.sample);
@@ -70,28 +64,28 @@ public class SampleStore {
         return testSamples.contains(sample);
     }
 
-    public String createSampleID(){
+    public String createSampleID() {
         int ID = testSamples.size() + 1;
         String SampleID = String.valueOf(ID);
         String empty;
-        empty = ""+SampleID;
-        while(empty.length() < 11){
+        empty = "" + SampleID;
+        while (empty.length() < 11) {
             empty = "0" + empty;
         }
 
         return empty;
     }
 
-    public Sample getSample(String sampleID){
-        for (Sample s: testSamples) {
-            if (s.getBarcode().equals(sampleID)){
+    public Sample getSample(String sampleID) {
+        for (Sample s : testSamples) {
+            if (s.getBarcode().equals(sampleID)) {
                 return s;
             }
         }
         return null;
     }
 
-    public String getSample(){
+    public String getSample() {
         return this.sample.toString();
     }
 

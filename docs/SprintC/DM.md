@@ -1,10 +1,13 @@
 # OO Analysis
 
-The construction process of the domain model is based on the client specifications, especially the nouns (for _concepts_) and verbs (for _relations_) used.
+The construction process of the domain model is based on the client specifications, especially the nouns (for _
+concepts_) and verbs (for _relations_) used.
 
 ## Rationale to identify domain conceptual classes
 
-To identify domain conceptual classes, start by making a list of candidate conceptual classes inspired by the list of categories suggested in the book "Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development".
+To identify domain conceptual classes, start by making a list of candidate conceptual classes inspired by the list of
+categories suggested in the book "Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and
+Iterative Development".
 
 ### _Conceptual Class Category List_
 
@@ -62,6 +65,7 @@ To identify domain conceptual classes, start by making a list of candidate conce
 **Descriptions of Things**
 
 -Parameter
+
 - Type of Test
 - Type of Sample
 
@@ -84,16 +88,14 @@ To identify domain conceptual classes, start by making a list of candidate conce
 **Documents mentioned/used to perform some work/**
 
 - Lab Order
-- Notification  
+- Notification
 - Organization Role
 - Results
 - Report
 
-
-
 ---
 
-###**Rationale to identify associations between conceptual classes**
+### **Rationale to identify associations between conceptual classes**
 
 | Concept (A)                     |         Association             |                                                                                                                                    Concept (B) |
 | ------------------------------- | :-------------------------:     | ---------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -155,7 +157,6 @@ To identify domain conceptual classes, start by making a list of candidate conce
 | Test                            |as a                             | TypeTest                                                                                                                                       |                     
 | Test                            |has                              | Parameter                                                                                                                                      |                     
 | TypeSample                      |has                              | Parameter                                                                                                                                      |                     
-
 
 ## Domain Model
 

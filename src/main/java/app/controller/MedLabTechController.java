@@ -3,10 +3,9 @@ package app.controller;
 import app.domain.mappers.TestListMapper;
 import app.domain.mappers.dto.TestDTO;
 import app.domain.model.Company;
-import app.domain.model.TestType;
 import app.domain.model.Test;
+import app.domain.model.TestType;
 import app.domain.stores.TestStore;
-
 
 import java.util.List;
 
@@ -25,10 +24,9 @@ public class MedLabTechController {
         return typeMapper.toDTO(tList);
     }
 
-    public String getTest(){
+    public String getTest() {
         return store.getTest();
     }
-
 
 
 }

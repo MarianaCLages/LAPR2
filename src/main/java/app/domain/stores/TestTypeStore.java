@@ -21,10 +21,11 @@ public class TestTypeStore {
 
     /**
      * This method creates a new TestType object by calling his constructor
-     * @param testID ID of Type if Test
-     * @param description simple description of the type of test
+     *
+     * @param testID           ID of Type if Test
+     * @param description      simple description of the type of test
      * @param collectingMethod collecting methods of the type of test
-     * @param catStore list of Parameter Categories associated with the test
+     * @param catStore         list of Parameter Categories associated with the test
      * @return Type of Test created
      */
     public TestType CreateTestType(String testID, String description, String collectingMethod, ParameterCategoryStore catStore) {
@@ -34,6 +35,7 @@ public class TestTypeStore {
 
     /**
      * this method checks if the Test Type object received is not null, if don't already exists.in the ArrayList and if the Test Type code dont already exist
+     *
      * @param t TestType that is going to be validate
      * @return boolean value that is true if the object is not null and dont already exists in the ArrayList
      */
@@ -43,6 +45,7 @@ public class TestTypeStore {
 
     /**
      * This method searches in the Array List if already exists a Parameter Category object with the same code
+     *
      * @param t TestType object in which we want to check the code
      * @return true if the code dont already exists, false if not
      */
@@ -58,6 +61,7 @@ public class TestTypeStore {
 
     /**
      * this method checks if the TestType object received already exits in the ArrayList
+     *
      * @param t TestType object that we want to check
      * @return boolean value that is true if the object already exists in the ArrayList
      */
@@ -67,6 +71,7 @@ public class TestTypeStore {
 
     /**
      * this method is used to save the TestType object in the arrayList already created, before adding the object the method validates it
+     *
      * @return a boolean value that indicates the success of the operation
      */
     public boolean saveTestType() {
@@ -77,6 +82,7 @@ public class TestTypeStore {
             return false;
         }
     }
+
     /**
      * this method adds the ParameterCategory object to the arrayList
      *
@@ -103,7 +109,7 @@ public class TestTypeStore {
     }
 
     /**
-     * @return  the list of Parameters Category
+     * @return the list of Parameters Category
      */
     public List<TestType> getList() {
         return this.array;
@@ -111,6 +117,7 @@ public class TestTypeStore {
 
     /**
      * Checks if the ArrayList of TestType are empty
+     *
      * @return a boolean value that represents if the ArrayList is empty
      */
     public boolean isEmpty() {

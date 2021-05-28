@@ -1,46 +1,670 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="1649px" preserveAspectRatio="none" style="width:931px;height:1649px;" version="1.1" viewBox="0 0 931 1649" width="931px" zoomAndPan="magnify"><defs><filter height="300%" id="foiqzbk7z9r2z" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[d1151b490b47c26d82d7d928d07b6146]
-class RecordResultUI--><rect codeLine="3" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="48" id="RecordResultUI" style="stroke:#A80036;stroke-width:1.5;" width="120" x="225" y="7"/><ellipse cx="240" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M242,19.5 Q242.2031,19 242.4375,18.75 Q242.6719,18.5 242.9375,18.5 Q243.4063,18.5 243.7031,18.7813 Q244,19.0625 244,19.7188 L244,21.2813 Q244,21.9375 243.7188,22.2188 Q243.4375,22.5 243,22.5 Q242.6094,22.5 242.3594,22.3281 Q242.1094,22.1563 242,21.7031 Q241.9531,21.3906 241.7813,21.2188 Q241.4688,20.8906 240.9063,20.7031 Q240.3438,20.5 239.7813,20.5 Q239.0781,20.5 238.4844,20.7813 Q237.9063,21.0625 237.4531,21.6875 Q237,22.3125 237,23.1719 L237,24.0938 Q237,25.125 237.8438,25.8125 Q238.6875,26.5 240.1875,26.5 Q241.0781,26.5 241.7031,26.2969 Q242.0625,26.1875 242.4688,25.8281 Q242.7344,25.625 242.875,25.5625 Q243.0156,25.5 243.1875,25.5 Q243.5156,25.5 243.75,25.7656 Q244,26.0156 244,26.375 Q244,26.7188 243.6563,27.125 Q243.1563,27.7188 242.3594,28.0469 Q241.3125,28.5 240.0313,28.5 Q238.5313,28.5 237.3281,27.9063 Q236.3594,27.4375 235.6719,26.4219 Q235,25.4063 235,24.2031 L235,23.1094 Q235,21.8594 235.5938,20.7656 Q236.2031,19.6719 237.25,19.0938 Q238.3125,18.5 239.5,18.5 Q240.2188,18.5 240.8438,18.75 Q241.4688,19 242,19.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="88" x="254" y="27.9102">RecordResultUI</text><line style="stroke:#A80036;stroke-width:1.5;" x1="226" x2="344" y1="39" y2="39"/><line style="stroke:#A80036;stroke-width:1.5;" x1="226" x2="344" y1="47" y2="47"/><!--MD5=[b7749eeb332e823be77fccb8e3a3d9bf]
-class RecordResultController--><rect codeLine="5" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="75.6719" id="RecordResultController" style="stroke:#A80036;stroke-width:1.5;" width="207" x="181.5" y="116"/><ellipse cx="216.75" cy="132" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M218.75,128.5 Q218.9531,128 219.1875,127.75 Q219.4219,127.5 219.6875,127.5 Q220.1563,127.5 220.4531,127.7813 Q220.75,128.0625 220.75,128.7188 L220.75,130.2813 Q220.75,130.9375 220.4688,131.2188 Q220.1875,131.5 219.75,131.5 Q219.3594,131.5 219.1094,131.3281 Q218.8594,131.1563 218.75,130.7031 Q218.7031,130.3906 218.5313,130.2188 Q218.2188,129.8906 217.6563,129.7031 Q217.0938,129.5 216.5313,129.5 Q215.8281,129.5 215.2344,129.7813 Q214.6563,130.0625 214.2031,130.6875 Q213.75,131.3125 213.75,132.1719 L213.75,133.0938 Q213.75,134.125 214.5938,134.8125 Q215.4375,135.5 216.9375,135.5 Q217.8281,135.5 218.4531,135.2969 Q218.8125,135.1875 219.2188,134.8281 Q219.4844,134.625 219.625,134.5625 Q219.7656,134.5 219.9375,134.5 Q220.2656,134.5 220.5,134.7656 Q220.75,135.0156 220.75,135.375 Q220.75,135.7188 220.4063,136.125 Q219.9063,136.7188 219.1094,137.0469 Q218.0625,137.5 216.7813,137.5 Q215.2813,137.5 214.0781,136.9063 Q213.1094,136.4375 212.4219,135.4219 Q211.75,134.4063 211.75,133.2031 L211.75,132.1094 Q211.75,130.8594 212.3438,129.7656 Q212.9531,128.6719 214,128.0938 Q215.0625,127.5 216.25,127.5 Q216.9688,127.5 217.5938,127.75 Q218.2188,128 218.75,128.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="130" x="235.25" y="136.9102">RecordResultController</text><line style="stroke:#A80036;stroke-width:1.5;" x1="182.5" x2="387.5" y1="148" y2="148"/><line style="stroke:#A80036;stroke-width:1.5;" x1="182.5" x2="387.5" y1="156" y2="156"/><ellipse cx="192.5" cy="167" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="152" x="201.5" y="171.4189">getTestParameterList(sampleId)</text><ellipse cx="192.5" cy="180.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="181" x="201.5" y="185.2549">addTestResult(parameterCode,result)</text><!--MD5=[02e4b9b7573f1156f41e60aa5b4e25a4]
-class Company--><rect codeLine="9" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="75.6719" id="Company" style="stroke:#A80036;stroke-width:1.5;" width="96" x="7" y="253"/><ellipse cx="26.95" cy="269" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M28.95,265.5 Q29.1531,265 29.3875,264.75 Q29.6219,264.5 29.8875,264.5 Q30.3563,264.5 30.6531,264.7813 Q30.95,265.0625 30.95,265.7188 L30.95,267.2813 Q30.95,267.9375 30.6688,268.2188 Q30.3875,268.5 29.95,268.5 Q29.5594,268.5 29.3094,268.3281 Q29.0594,268.1563 28.95,267.7031 Q28.9031,267.3906 28.7313,267.2188 Q28.4188,266.8906 27.8563,266.7031 Q27.2938,266.5 26.7313,266.5 Q26.0281,266.5 25.4344,266.7813 Q24.8563,267.0625 24.4031,267.6875 Q23.95,268.3125 23.95,269.1719 L23.95,270.0938 Q23.95,271.125 24.7938,271.8125 Q25.6375,272.5 27.1375,272.5 Q28.0281,272.5 28.6531,272.2969 Q29.0125,272.1875 29.4188,271.8281 Q29.6844,271.625 29.825,271.5625 Q29.9656,271.5 30.1375,271.5 Q30.4656,271.5 30.7,271.7656 Q30.95,272.0156 30.95,272.375 Q30.95,272.7188 30.6063,273.125 Q30.1063,273.7188 29.3094,274.0469 Q28.2625,274.5 26.9813,274.5 Q25.4813,274.5 24.2781,273.9063 Q23.3094,273.4375 22.6219,272.4219 Q21.95,271.4063 21.95,270.2031 L21.95,269.1094 Q21.95,267.8594 22.5438,266.7656 Q23.1531,265.6719 24.2,265.0938 Q25.2625,264.5 26.45,264.5 Q27.1688,264.5 27.7938,264.75 Q28.4188,265 28.95,265.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53" x="42.05" y="273.9102">Company</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="102" y1="285" y2="285"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="293"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="27" y="300.4189">designation</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="102" y1="306.8359" y2="306.8359"/><ellipse cx="18" cy="317.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="70" x="27" y="322.2549">getTestStore()</text><!--MD5=[df38be88ccee13e832d6fafd6288a4ca]
-class Test--><rect codeLine="13" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="186.3594" id="Test" style="stroke:#A80036;stroke-width:1.5;" width="207" x="239.5" y="407"/><ellipse cx="326.75" cy="423" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M328.75,419.5 Q328.9531,419 329.1875,418.75 Q329.4219,418.5 329.6875,418.5 Q330.1563,418.5 330.4531,418.7813 Q330.75,419.0625 330.75,419.7188 L330.75,421.2813 Q330.75,421.9375 330.4688,422.2188 Q330.1875,422.5 329.75,422.5 Q329.3594,422.5 329.1094,422.3281 Q328.8594,422.1563 328.75,421.7031 Q328.7031,421.3906 328.5313,421.2188 Q328.2188,420.8906 327.6563,420.7031 Q327.0938,420.5 326.5313,420.5 Q325.8281,420.5 325.2344,420.7813 Q324.6563,421.0625 324.2031,421.6875 Q323.75,422.3125 323.75,423.1719 L323.75,424.0938 Q323.75,425.125 324.5938,425.8125 Q325.4375,426.5 326.9375,426.5 Q327.8281,426.5 328.4531,426.2969 Q328.8125,426.1875 329.2188,425.8281 Q329.4844,425.625 329.625,425.5625 Q329.7656,425.5 329.9375,425.5 Q330.2656,425.5 330.5,425.7656 Q330.75,426.0156 330.75,426.375 Q330.75,426.7188 330.4063,427.125 Q329.9063,427.7188 329.1094,428.0469 Q328.0625,428.5 326.7813,428.5 Q325.2813,428.5 324.0781,427.9063 Q323.1094,427.4375 322.4219,426.4219 Q321.75,425.4063 321.75,424.2031 L321.75,423.1094 Q321.75,421.8594 322.3438,420.7656 Q322.9531,419.6719 324,419.0938 Q325.0625,418.5 326.25,418.5 Q326.9688,418.5 327.5938,418.75 Q328.2188,419 328.75,419.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="24" x="347.25" y="427.9102">Test</text><line style="stroke:#A80036;stroke-width:1.5;" x1="240.5" x2="445.5" y1="439" y2="439"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="247.5" y="447"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="27" x="259.5" y="454.4189">state;</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="247.5" y="460.8359"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="259.5" y="468.2549">testCode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="247.5" y="474.6719"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="259.5" y="482.0908">testNhsNumber</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="247.5" y="488.5078"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="39" x="259.5" y="495.9268">clientTin</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="247.5" y="502.3438"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="259.5" y="509.7627">testType</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="247.5" y="516.1797"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="48" x="259.5" y="523.5986">testParam</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="247.5" y="530.0156"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="259.5" y="537.4346">createdDate</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="247.5" y="543.8516"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="94" x="259.5" y="551.2705">sampleCreatedDate</text><line style="stroke:#A80036;stroke-width:1.5;" x1="240.5" x2="445.5" y1="557.6875" y2="557.6875"/><ellipse cx="250.5" cy="568.6875" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="110" x="259.5" y="573.1064">getTestParameterList()</text><ellipse cx="250.5" cy="582.5234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="181" x="259.5" y="586.9424">addTestResult(parameterCode,result)</text><!--MD5=[76b0da115d32a89fc61a2abda59b6b4b]
-class TestParameterList--><rect codeLine="25" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="61.8359" id="TestParameterList" style="stroke:#A80036;stroke-width:1.5;" width="188" x="599" y="469"/><ellipse cx="638.3" cy="485" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M640.3,481.5 Q640.5031,481 640.7375,480.75 Q640.9719,480.5 641.2375,480.5 Q641.7063,480.5 642.0031,480.7813 Q642.3,481.0625 642.3,481.7188 L642.3,483.2813 Q642.3,483.9375 642.0188,484.2188 Q641.7375,484.5 641.3,484.5 Q640.9094,484.5 640.6594,484.3281 Q640.4094,484.1563 640.3,483.7031 Q640.2531,483.3906 640.0813,483.2188 Q639.7688,482.8906 639.2063,482.7031 Q638.6438,482.5 638.0813,482.5 Q637.3781,482.5 636.7844,482.7813 Q636.2063,483.0625 635.7531,483.6875 Q635.3,484.3125 635.3,485.1719 L635.3,486.0938 Q635.3,487.125 636.1438,487.8125 Q636.9875,488.5 638.4875,488.5 Q639.3781,488.5 640.0031,488.2969 Q640.3625,488.1875 640.7688,487.8281 Q641.0344,487.625 641.175,487.5625 Q641.3156,487.5 641.4875,487.5 Q641.8156,487.5 642.05,487.7656 Q642.3,488.0156 642.3,488.375 Q642.3,488.7188 641.9563,489.125 Q641.4563,489.7188 640.6594,490.0469 Q639.6125,490.5 638.3313,490.5 Q636.8313,490.5 635.6281,489.9063 Q634.6594,489.4375 633.9719,488.4219 Q633.3,487.4063 633.3,486.2031 L633.3,485.1094 Q633.3,483.8594 633.8938,482.7656 Q634.5031,481.6719 635.55,481.0938 Q636.6125,480.5 637.8,480.5 Q638.5188,480.5 639.1438,480.75 Q639.7688,481 640.3,481.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="102" x="657.7" y="489.9102">TestParameterList</text><line style="stroke:#A80036;stroke-width:1.5;" x1="600" x2="786" y1="501" y2="501"/><line style="stroke:#A80036;stroke-width:1.5;" x1="600" x2="786" y1="509" y2="509"/><ellipse cx="610" cy="520" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="162" x="619" y="524.4189">getParameterFor(parameterCode)</text><!--MD5=[0f6f7964b844a64b0496af0dda7914bd]
-class TestStore--><rect codeLine="28" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="75.6719" id="TestStore" style="stroke:#A80036;stroke-width:1.5;" width="184" x="179" y="253"/><ellipse cx="240.25" cy="269" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M242.25,265.5 Q242.4531,265 242.6875,264.75 Q242.9219,264.5 243.1875,264.5 Q243.6563,264.5 243.9531,264.7813 Q244.25,265.0625 244.25,265.7188 L244.25,267.2813 Q244.25,267.9375 243.9688,268.2188 Q243.6875,268.5 243.25,268.5 Q242.8594,268.5 242.6094,268.3281 Q242.3594,268.1563 242.25,267.7031 Q242.2031,267.3906 242.0313,267.2188 Q241.7188,266.8906 241.1563,266.7031 Q240.5938,266.5 240.0313,266.5 Q239.3281,266.5 238.7344,266.7813 Q238.1563,267.0625 237.7031,267.6875 Q237.25,268.3125 237.25,269.1719 L237.25,270.0938 Q237.25,271.125 238.0938,271.8125 Q238.9375,272.5 240.4375,272.5 Q241.3281,272.5 241.9531,272.2969 Q242.3125,272.1875 242.7188,271.8281 Q242.9844,271.625 243.125,271.5625 Q243.2656,271.5 243.4375,271.5 Q243.7656,271.5 244,271.7656 Q244.25,272.0156 244.25,272.375 Q244.25,272.7188 243.9063,273.125 Q243.4063,273.7188 242.6094,274.0469 Q241.5625,274.5 240.2813,274.5 Q238.7813,274.5 237.5781,273.9063 Q236.6094,273.4375 235.9219,272.4219 Q235.25,271.4063 235.25,270.2031 L235.25,269.1094 Q235.25,267.8594 235.8438,266.7656 Q236.4531,265.6719 237.5,265.0938 Q238.5625,264.5 239.75,264.5 Q240.4688,264.5 241.0938,264.75 Q241.7188,265 242.25,265.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53" x="260.75" y="273.9102">TestStore</text><line style="stroke:#A80036;stroke-width:1.5;" x1="180" x2="362" y1="285" y2="285"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="187" y="293"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="35" x="199" y="300.4189">testList</text><line style="stroke:#A80036;stroke-width:1.5;" x1="180" x2="362" y1="306.8359" y2="306.8359"/><ellipse cx="190" cy="317.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="158" x="199" y="322.2549">getTestParametersList(sampleId)</text><!--MD5=[f00f90d115d6875ad2fc8ae1987d3643]
-class TestParameterStoreMapper--><rect codeLine="32" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="75.6719" id="TestParameterStoreMapper" style="stroke:#A80036;stroke-width:1.5;" width="184" x="442" y="116"/><ellipse cx="457" cy="132" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M459,128.5 Q459.2031,128 459.4375,127.75 Q459.6719,127.5 459.9375,127.5 Q460.4063,127.5 460.7031,127.7813 Q461,128.0625 461,128.7188 L461,130.2813 Q461,130.9375 460.7188,131.2188 Q460.4375,131.5 460,131.5 Q459.6094,131.5 459.3594,131.3281 Q459.1094,131.1563 459,130.7031 Q458.9531,130.3906 458.7813,130.2188 Q458.4688,129.8906 457.9063,129.7031 Q457.3438,129.5 456.7813,129.5 Q456.0781,129.5 455.4844,129.7813 Q454.9063,130.0625 454.4531,130.6875 Q454,131.3125 454,132.1719 L454,133.0938 Q454,134.125 454.8438,134.8125 Q455.6875,135.5 457.1875,135.5 Q458.0781,135.5 458.7031,135.2969 Q459.0625,135.1875 459.4688,134.8281 Q459.7344,134.625 459.875,134.5625 Q460.0156,134.5 460.1875,134.5 Q460.5156,134.5 460.75,134.7656 Q461,135.0156 461,135.375 Q461,135.7188 460.6563,136.125 Q460.1563,136.7188 459.3594,137.0469 Q458.3125,137.5 457.0313,137.5 Q455.5313,137.5 454.3281,136.9063 Q453.3594,136.4375 452.6719,135.4219 Q452,134.4063 452,133.2031 L452,132.1094 Q452,130.8594 452.5938,129.7656 Q453.2031,128.6719 454.25,128.0938 Q455.3125,127.5 456.5,127.5 Q457.2188,127.5 457.8438,127.75 Q458.4688,128 459,128.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="152" x="471" y="136.9102">TestParameterStoreMapper</text><line style="stroke:#A80036;stroke-width:1.5;" x1="443" x2="625" y1="148" y2="148"/><line style="stroke:#A80036;stroke-width:1.5;" x1="443" x2="625" y1="156" y2="156"/><ellipse cx="453" cy="167" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="61" x="462" y="171.4189">toDTO(pList)</text><rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="450" y="177.8359"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="105" x="462" y="185.2549">toDTO(testParameter)</text><!--MD5=[16358064a951ae5dfdda1035a51b763d]
-class TestParameterDTO--><rect codeLine="37" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="75.6719" id="TestParameterDTO" style="stroke:#A80036;stroke-width:1.5;" width="139" x="469.5" y="253"/><ellipse cx="484.5" cy="269" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M486.5,265.5 Q486.7031,265 486.9375,264.75 Q487.1719,264.5 487.4375,264.5 Q487.9063,264.5 488.2031,264.7813 Q488.5,265.0625 488.5,265.7188 L488.5,267.2813 Q488.5,267.9375 488.2188,268.2188 Q487.9375,268.5 487.5,268.5 Q487.1094,268.5 486.8594,268.3281 Q486.6094,268.1563 486.5,267.7031 Q486.4531,267.3906 486.2813,267.2188 Q485.9688,266.8906 485.4063,266.7031 Q484.8438,266.5 484.2813,266.5 Q483.5781,266.5 482.9844,266.7813 Q482.4063,267.0625 481.9531,267.6875 Q481.5,268.3125 481.5,269.1719 L481.5,270.0938 Q481.5,271.125 482.3438,271.8125 Q483.1875,272.5 484.6875,272.5 Q485.5781,272.5 486.2031,272.2969 Q486.5625,272.1875 486.9688,271.8281 Q487.2344,271.625 487.375,271.5625 Q487.5156,271.5 487.6875,271.5 Q488.0156,271.5 488.25,271.7656 Q488.5,272.0156 488.5,272.375 Q488.5,272.7188 488.1563,273.125 Q487.6563,273.7188 486.8594,274.0469 Q485.8125,274.5 484.5313,274.5 Q483.0313,274.5 481.8281,273.9063 Q480.8594,273.4375 480.1719,272.4219 Q479.5,271.4063 479.5,270.2031 L479.5,269.1094 Q479.5,267.8594 480.0938,266.7656 Q480.7031,265.6719 481.75,265.0938 Q482.8125,264.5 484,264.5 Q484.7188,264.5 485.3438,264.75 Q485.9688,265 486.5,265.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="107" x="498.5" y="273.9102">TestParameterDTO</text><line style="stroke:#A80036;stroke-width:1.5;" x1="470.5" x2="607.5" y1="285" y2="285"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="477.5" y="293"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="489.5" y="300.4189">pcode</text><line style="stroke:#A80036;stroke-width:1.5;" x1="470.5" x2="607.5" y1="306.8359" y2="306.8359"/><ellipse cx="480.5" cy="317.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="489.5" y="322.2549">getPcode()</text><!--MD5=[0f07739f46effee96e095e9c408da841]
-class TestParameter--><rect codeLine="41" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="89.5078" id="TestParameter" style="stroke:#A80036;stroke-width:1.5;" width="123" x="627.5" y="677.5"/><ellipse cx="646.55" cy="693.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M648.55,690 Q648.7531,689.5 648.9875,689.25 Q649.2219,689 649.4875,689 Q649.9563,689 650.2531,689.2813 Q650.55,689.5625 650.55,690.2188 L650.55,691.7813 Q650.55,692.4375 650.2688,692.7188 Q649.9875,693 649.55,693 Q649.1594,693 648.9094,692.8281 Q648.6594,692.6563 648.55,692.2031 Q648.5031,691.8906 648.3313,691.7188 Q648.0188,691.3906 647.4563,691.2031 Q646.8938,691 646.3313,691 Q645.6281,691 645.0344,691.2813 Q644.4563,691.5625 644.0031,692.1875 Q643.55,692.8125 643.55,693.6719 L643.55,694.5938 Q643.55,695.625 644.3938,696.3125 Q645.2375,697 646.7375,697 Q647.6281,697 648.2531,696.7969 Q648.6125,696.6875 649.0188,696.3281 Q649.2844,696.125 649.425,696.0625 Q649.5656,696 649.7375,696 Q650.0656,696 650.3,696.2656 Q650.55,696.5156 650.55,696.875 Q650.55,697.2188 650.2063,697.625 Q649.7063,698.2188 648.9094,698.5469 Q647.8625,699 646.5813,699 Q645.0813,699 643.8781,698.4063 Q642.9094,697.9375 642.2219,696.9219 Q641.55,695.9063 641.55,694.7031 L641.55,693.6094 Q641.55,692.3594 642.1438,691.2656 Q642.7531,690.1719 643.8,689.5938 Q644.8625,689 646.05,689 Q646.7688,689 647.3938,689.25 Q648.0188,689.5 648.55,690 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="82" x="661.45" y="698.4102">TestParameter</text><line style="stroke:#A80036;stroke-width:1.5;" x1="628.5" x2="749.5" y1="709.5" y2="709.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="635.5" y="717.5"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="647.5" y="724.9189">pCode</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="635.5" y="731.3359"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="97" x="647.5" y="738.7549">testParameterResult</text><line style="stroke:#A80036;stroke-width:1.5;" x1="628.5" x2="749.5" y1="745.1719" y2="745.1719"/><ellipse cx="638.5" cy="756.1719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="72" x="647.5" y="760.5908">getParameter()</text><!--MD5=[1f6362a5c8f21d8d6a0fce68f3a92a4e]
-class Parameter--><rect codeLine="46" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="103.3438" id="Parameter" style="stroke:#A80036;stroke-width:1.5;" width="90" x="827" y="671"/><ellipse cx="842" cy="687" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M844,683.5 Q844.2031,683 844.4375,682.75 Q844.6719,682.5 844.9375,682.5 Q845.4063,682.5 845.7031,682.7813 Q846,683.0625 846,683.7188 L846,685.2813 Q846,685.9375 845.7188,686.2188 Q845.4375,686.5 845,686.5 Q844.6094,686.5 844.3594,686.3281 Q844.1094,686.1563 844,685.7031 Q843.9531,685.3906 843.7813,685.2188 Q843.4688,684.8906 842.9063,684.7031 Q842.3438,684.5 841.7813,684.5 Q841.0781,684.5 840.4844,684.7813 Q839.9063,685.0625 839.4531,685.6875 Q839,686.3125 839,687.1719 L839,688.0938 Q839,689.125 839.8438,689.8125 Q840.6875,690.5 842.1875,690.5 Q843.0781,690.5 843.7031,690.2969 Q844.0625,690.1875 844.4688,689.8281 Q844.7344,689.625 844.875,689.5625 Q845.0156,689.5 845.1875,689.5 Q845.5156,689.5 845.75,689.7656 Q846,690.0156 846,690.375 Q846,690.7188 845.6563,691.125 Q845.1563,691.7188 844.3594,692.0469 Q843.3125,692.5 842.0313,692.5 Q840.5313,692.5 839.3281,691.9063 Q838.3594,691.4375 837.6719,690.4219 Q837,689.4063 837,688.2031 L837,687.1094 Q837,685.8594 837.5938,684.7656 Q838.2031,683.6719 839.25,683.0938 Q840.3125,682.5 841.5,682.5 Q842.2188,682.5 842.8438,682.75 Q843.4688,683 844,683.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="58" x="856" y="691.9102">Parameter</text><line style="stroke:#A80036;stroke-width:1.5;" x1="828" x2="916" y1="703" y2="703"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="835" y="711"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="26" x="847" y="718.4189">name</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="835" y="724.8359"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="24" x="847" y="732.2549">code</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="835" y="738.6719"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="847" y="746.0908">description</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="835" y="752.5078"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="15" x="847" y="759.9268">cat</text><line style="stroke:#A80036;stroke-width:1.5;" x1="828" x2="916" y1="766.3438" y2="766.3438"/><!--MD5=[aeb3272166074d8737a70b61b1e71682]
-class TestType--><rect codeLine="52" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="75.6719" id="TestType" style="stroke:#A80036;stroke-width:1.5;" width="122" x="427" y="804"/><ellipse cx="460" cy="820" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M462,816.5 Q462.2031,816 462.4375,815.75 Q462.6719,815.5 462.9375,815.5 Q463.4063,815.5 463.7031,815.7813 Q464,816.0625 464,816.7188 L464,818.2813 Q464,818.9375 463.7188,819.2188 Q463.4375,819.5 463,819.5 Q462.6094,819.5 462.3594,819.3281 Q462.1094,819.1563 462,818.7031 Q461.9531,818.3906 461.7813,818.2188 Q461.4688,817.8906 460.9063,817.7031 Q460.3438,817.5 459.7813,817.5 Q459.0781,817.5 458.4844,817.7813 Q457.9063,818.0625 457.4531,818.6875 Q457,819.3125 457,820.1719 L457,821.0938 Q457,822.125 457.8438,822.8125 Q458.6875,823.5 460.1875,823.5 Q461.0781,823.5 461.7031,823.2969 Q462.0625,823.1875 462.4688,822.8281 Q462.7344,822.625 462.875,822.5625 Q463.0156,822.5 463.1875,822.5 Q463.5156,822.5 463.75,822.7656 Q464,823.0156 464,823.375 Q464,823.7188 463.6563,824.125 Q463.1563,824.7188 462.3594,825.0469 Q461.3125,825.5 460.0313,825.5 Q458.5313,825.5 457.3281,824.9063 Q456.3594,824.4375 455.6719,823.4219 Q455,822.4063 455,821.2031 L455,820.1094 Q455,818.8594 455.5938,817.7656 Q456.2031,816.6719 457.25,816.0938 Q458.3125,815.5 459.5,815.5 Q460.2188,815.5 460.8438,815.75 Q461.4688,816 462,816.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="50" x="478" y="824.9102">TestType</text><line style="stroke:#A80036;stroke-width:1.5;" x1="428" x2="548" y1="836" y2="836"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="435" y="844"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="447" y="851.4189">externalModule</text><line style="stroke:#A80036;stroke-width:1.5;" x1="428" x2="548" y1="857.8359" y2="857.8359"/><ellipse cx="438" cy="868.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="96" x="447" y="873.2549">getExternalModule()</text><!--MD5=[8f188b89eff49accb0f38c057b38a9f2]
-class ExternalModule--><rect codeLine="56" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="103.3438" id="ExternalModule" style="stroke:#A80036;stroke-width:1.5;" width="158" x="462" y="1259"/><ellipse cx="495.45" cy="1275" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M496.45,1272 L496.45,1278 L498.45,1278 L498.9344,1278 L499.45,1278.625 L499.45,1279 L499.45,1279.375 L498.9344,1280 L498.45,1280 L492.45,1280 L491.9656,1280 L491.45,1279.375 L491.45,1279 L491.45,1278.625 L491.9656,1278 L492.45,1278 L494.45,1278 L494.45,1272 L492.45,1272 L491.9656,1272 L491.45,1271.375 L491.45,1271 L491.45,1270.625 L491.9656,1270 L492.45,1270 L498.45,1270 L498.9344,1270 L499.45,1270.625 L499.45,1271 L499.45,1271.375 L498.9344,1272 L498.45,1272 L496.45,1272 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="85" x="513.55" y="1279.9102">ExternalModule</text><line style="stroke:#A80036;stroke-width:1.5;" x1="463" x2="619" y1="1291" y2="1291"/><line style="stroke:#A80036;stroke-width:1.5;" x1="463" x2="619" y1="1299" y2="1299"/><ellipse cx="473" cy="1310" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="129" x="482" y="1314.4189">getRefValue(String param)</text><ellipse cx="473" cy="1323.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="482" y="1328.2549">getMinValue(String param)</text><ellipse cx="473" cy="1337.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="132" x="482" y="1342.0908">getMaxValue(String param)</text><ellipse cx="473" cy="1351.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="113" x="482" y="1355.9268">getMetric(String param)</text><!--MD5=[1c357e7e7fdba398bcadd6e61afe49f5]
-class ReferenceValue--><rect codeLine="62" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="89.5078" id="ReferenceValue" style="stroke:#A80036;stroke-width:1.5;" width="120" x="568" y="1091"/><ellipse cx="583" cy="1107" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M585,1103.5 Q585.2031,1103 585.4375,1102.75 Q585.6719,1102.5 585.9375,1102.5 Q586.4063,1102.5 586.7031,1102.7813 Q587,1103.0625 587,1103.7188 L587,1105.2813 Q587,1105.9375 586.7188,1106.2188 Q586.4375,1106.5 586,1106.5 Q585.6094,1106.5 585.3594,1106.3281 Q585.1094,1106.1563 585,1105.7031 Q584.9531,1105.3906 584.7813,1105.2188 Q584.4688,1104.8906 583.9063,1104.7031 Q583.3438,1104.5 582.7813,1104.5 Q582.0781,1104.5 581.4844,1104.7813 Q580.9063,1105.0625 580.4531,1105.6875 Q580,1106.3125 580,1107.1719 L580,1108.0938 Q580,1109.125 580.8438,1109.8125 Q581.6875,1110.5 583.1875,1110.5 Q584.0781,1110.5 584.7031,1110.2969 Q585.0625,1110.1875 585.4688,1109.8281 Q585.7344,1109.625 585.875,1109.5625 Q586.0156,1109.5 586.1875,1109.5 Q586.5156,1109.5 586.75,1109.7656 Q587,1110.0156 587,1110.375 Q587,1110.7188 586.6563,1111.125 Q586.1563,1111.7188 585.3594,1112.0469 Q584.3125,1112.5 583.0313,1112.5 Q581.5313,1112.5 580.3281,1111.9063 Q579.3594,1111.4375 578.6719,1110.4219 Q578,1109.4063 578,1108.2031 L578,1107.1094 Q578,1105.8594 578.5938,1104.7656 Q579.2031,1103.6719 580.25,1103.0938 Q581.3125,1102.5 582.5,1102.5 Q583.2188,1102.5 583.8438,1102.75 Q584.4688,1103 585,1103.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="88" x="597" y="1111.9102">ReferenceValue</text><line style="stroke:#A80036;stroke-width:1.5;" x1="569" x2="687" y1="1123" y2="1123"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="576" y="1131"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="44" x="588" y="1138.4189">minValue</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="576" y="1144.8359"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="48" x="588" y="1152.2549">maxValue</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="576" y="1158.6719"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="29" x="588" y="1166.0908">metric</text><line style="stroke:#A80036;stroke-width:1.5;" x1="569" x2="687" y1="1172.5078" y2="1172.5078"/><!--MD5=[4e608140b854dae633589343bce77383]
-class TestParameterResult--><rect codeLine="67" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="103.3438" id="TestParameterResult" style="stroke:#A80036;stroke-width:1.5;" width="206" x="577" y="910"/><ellipse cx="617.2" cy="926" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M619.2,922.5 Q619.4031,922 619.6375,921.75 Q619.8719,921.5 620.1375,921.5 Q620.6063,921.5 620.9031,921.7813 Q621.2,922.0625 621.2,922.7188 L621.2,924.2813 Q621.2,924.9375 620.9188,925.2188 Q620.6375,925.5 620.2,925.5 Q619.8094,925.5 619.5594,925.3281 Q619.3094,925.1563 619.2,924.7031 Q619.1531,924.3906 618.9813,924.2188 Q618.6688,923.8906 618.1063,923.7031 Q617.5438,923.5 616.9813,923.5 Q616.2781,923.5 615.6844,923.7813 Q615.1063,924.0625 614.6531,924.6875 Q614.2,925.3125 614.2,926.1719 L614.2,927.0938 Q614.2,928.125 615.0438,928.8125 Q615.8875,929.5 617.3875,929.5 Q618.2781,929.5 618.9031,929.2969 Q619.2625,929.1875 619.6688,928.8281 Q619.9344,928.625 620.075,928.5625 Q620.2156,928.5 620.3875,928.5 Q620.7156,928.5 620.95,928.7656 Q621.2,929.0156 621.2,929.375 Q621.2,929.7188 620.8563,930.125 Q620.3563,930.7188 619.5594,931.0469 Q618.5125,931.5 617.2313,931.5 Q615.7313,931.5 614.5281,930.9063 Q613.5594,930.4375 612.8719,929.4219 Q612.2,928.4063 612.2,927.2031 L612.2,926.1094 Q612.2,924.8594 612.7938,923.7656 Q613.4031,922.6719 614.45,922.0938 Q615.5125,921.5 616.7,921.5 Q617.4188,921.5 618.0438,921.75 Q618.6688,922 619.2,922.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="118" x="636.8" y="930.9102">TestParameterResult</text><line style="stroke:#A80036;stroke-width:1.5;" x1="578" x2="782" y1="942" y2="942"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="585" y="950"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="27" x="597" y="957.4189">result</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="585" y="963.8359"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="38" x="597" y="971.2549">paramId</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="585" y="977.6719"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="597" y="985.0908">refValue</text><line style="stroke:#A80036;stroke-width:1.5;" x1="578" x2="782" y1="991.5078" y2="991.5078"/><ellipse cx="588" cy="1002.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="180" x="597" y="1006.9268">TestParameterResult(result,refValue)</text><!--MD5=[5c34e247bdc718c2aaa7fe06d704a57f]
-class CovidReferenceValues1API--><rect codeLine="73" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="48" id="CovidReferenceValues1API" style="stroke:#A80036;stroke-width:1.5;" width="183" x="210.5" y="1587"/><ellipse cx="225.5" cy="1603" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M227.5,1599.5 Q227.7031,1599 227.9375,1598.75 Q228.1719,1598.5 228.4375,1598.5 Q228.9063,1598.5 229.2031,1598.7813 Q229.5,1599.0625 229.5,1599.7188 L229.5,1601.2813 Q229.5,1601.9375 229.2188,1602.2188 Q228.9375,1602.5 228.5,1602.5 Q228.1094,1602.5 227.8594,1602.3281 Q227.6094,1602.1563 227.5,1601.7031 Q227.4531,1601.3906 227.2813,1601.2188 Q226.9688,1600.8906 226.4063,1600.7031 Q225.8438,1600.5 225.2813,1600.5 Q224.5781,1600.5 223.9844,1600.7813 Q223.4063,1601.0625 222.9531,1601.6875 Q222.5,1602.3125 222.5,1603.1719 L222.5,1604.0938 Q222.5,1605.125 223.3438,1605.8125 Q224.1875,1606.5 225.6875,1606.5 Q226.5781,1606.5 227.2031,1606.2969 Q227.5625,1606.1875 227.9688,1605.8281 Q228.2344,1605.625 228.375,1605.5625 Q228.5156,1605.5 228.6875,1605.5 Q229.0156,1605.5 229.25,1605.7656 Q229.5,1606.0156 229.5,1606.375 Q229.5,1606.7188 229.1563,1607.125 Q228.6563,1607.7188 227.8594,1608.0469 Q226.8125,1608.5 225.5313,1608.5 Q224.0313,1608.5 222.8281,1607.9063 Q221.8594,1607.4375 221.1719,1606.4219 Q220.5,1605.4063 220.5,1604.2031 L220.5,1603.1094 Q220.5,1601.8594 221.0938,1600.7656 Q221.7031,1599.6719 222.75,1599.0938 Q223.8125,1598.5 225,1598.5 Q225.7188,1598.5 226.3438,1598.75 Q226.9688,1599 227.5,1599.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="151" x="239.5" y="1607.9102">CovidReferenceValues1API</text><line style="stroke:#A80036;stroke-width:1.5;" x1="211.5" x2="392.5" y1="1619" y2="1619"/><line style="stroke:#A80036;stroke-width:1.5;" x1="211.5" x2="392.5" y1="1627" y2="1627"/><!--MD5=[c2db872d8177dd5e15eeb53e86d83378]
-class ExternalModule2API--><rect codeLine="75" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="48" id="ExternalModule2API" style="stroke:#A80036;stroke-width:1.5;" width="141" x="470.5" y="1587"/><ellipse cx="485.5" cy="1603" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M487.5,1599.5 Q487.7031,1599 487.9375,1598.75 Q488.1719,1598.5 488.4375,1598.5 Q488.9063,1598.5 489.2031,1598.7813 Q489.5,1599.0625 489.5,1599.7188 L489.5,1601.2813 Q489.5,1601.9375 489.2188,1602.2188 Q488.9375,1602.5 488.5,1602.5 Q488.1094,1602.5 487.8594,1602.3281 Q487.6094,1602.1563 487.5,1601.7031 Q487.4531,1601.3906 487.2813,1601.2188 Q486.9688,1600.8906 486.4063,1600.7031 Q485.8438,1600.5 485.2813,1600.5 Q484.5781,1600.5 483.9844,1600.7813 Q483.4063,1601.0625 482.9531,1601.6875 Q482.5,1602.3125 482.5,1603.1719 L482.5,1604.0938 Q482.5,1605.125 483.3438,1605.8125 Q484.1875,1606.5 485.6875,1606.5 Q486.5781,1606.5 487.2031,1606.2969 Q487.5625,1606.1875 487.9688,1605.8281 Q488.2344,1605.625 488.375,1605.5625 Q488.5156,1605.5 488.6875,1605.5 Q489.0156,1605.5 489.25,1605.7656 Q489.5,1606.0156 489.5,1606.375 Q489.5,1606.7188 489.1563,1607.125 Q488.6563,1607.7188 487.8594,1608.0469 Q486.8125,1608.5 485.5313,1608.5 Q484.0313,1608.5 482.8281,1607.9063 Q481.8594,1607.4375 481.1719,1606.4219 Q480.5,1605.4063 480.5,1604.2031 L480.5,1603.1094 Q480.5,1601.8594 481.0938,1600.7656 Q481.7031,1599.6719 482.75,1599.0938 Q483.8125,1598.5 485,1598.5 Q485.7188,1598.5 486.3438,1598.75 Q486.9688,1599 487.5,1599.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="109" x="499.5" y="1607.9102">ExternalModule2API</text><line style="stroke:#A80036;stroke-width:1.5;" x1="471.5" x2="610.5" y1="1619" y2="1619"/><line style="stroke:#A80036;stroke-width:1.5;" x1="471.5" x2="610.5" y1="1627" y2="1627"/><!--MD5=[684eca265d68b7682ab3f1c4bd898418]
-class ExternalModule3API--><rect codeLine="77" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="48" id="ExternalModule3API" style="stroke:#A80036;stroke-width:1.5;" width="141" x="688.5" y="1587"/><ellipse cx="703.5" cy="1603" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M705.5,1599.5 Q705.7031,1599 705.9375,1598.75 Q706.1719,1598.5 706.4375,1598.5 Q706.9063,1598.5 707.2031,1598.7813 Q707.5,1599.0625 707.5,1599.7188 L707.5,1601.2813 Q707.5,1601.9375 707.2188,1602.2188 Q706.9375,1602.5 706.5,1602.5 Q706.1094,1602.5 705.8594,1602.3281 Q705.6094,1602.1563 705.5,1601.7031 Q705.4531,1601.3906 705.2813,1601.2188 Q704.9688,1600.8906 704.4063,1600.7031 Q703.8438,1600.5 703.2813,1600.5 Q702.5781,1600.5 701.9844,1600.7813 Q701.4063,1601.0625 700.9531,1601.6875 Q700.5,1602.3125 700.5,1603.1719 L700.5,1604.0938 Q700.5,1605.125 701.3438,1605.8125 Q702.1875,1606.5 703.6875,1606.5 Q704.5781,1606.5 705.2031,1606.2969 Q705.5625,1606.1875 705.9688,1605.8281 Q706.2344,1605.625 706.375,1605.5625 Q706.5156,1605.5 706.6875,1605.5 Q707.0156,1605.5 707.25,1605.7656 Q707.5,1606.0156 707.5,1606.375 Q707.5,1606.7188 707.1563,1607.125 Q706.6563,1607.7188 705.8594,1608.0469 Q704.8125,1608.5 703.5313,1608.5 Q702.0313,1608.5 700.8281,1607.9063 Q699.8594,1607.4375 699.1719,1606.4219 Q698.5,1605.4063 698.5,1604.2031 L698.5,1603.1094 Q698.5,1601.8594 699.0938,1600.7656 Q699.7031,1599.6719 700.75,1599.0938 Q701.8125,1598.5 703,1598.5 Q703.7188,1598.5 704.3438,1598.75 Q704.9688,1599 705.5,1599.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="109" x="717.5" y="1607.9102">ExternalModule3API</text><line style="stroke:#A80036;stroke-width:1.5;" x1="689.5" x2="828.5" y1="1619" y2="1619"/><line style="stroke:#A80036;stroke-width:1.5;" x1="689.5" x2="828.5" y1="1627" y2="1627"/><!--MD5=[9e79a15defc04663f36ad34442e5fa10]
-class CovidReferenceValues1APIAdapter--><rect codeLine="79" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="103.3438" id="CovidReferenceValues1APIAdapter" style="stroke:#A80036;stroke-width:1.5;" width="225" x="189.5" y="1423"/><ellipse cx="204.5" cy="1439" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M206.5,1435.5 Q206.7031,1435 206.9375,1434.75 Q207.1719,1434.5 207.4375,1434.5 Q207.9063,1434.5 208.2031,1434.7813 Q208.5,1435.0625 208.5,1435.7188 L208.5,1437.2813 Q208.5,1437.9375 208.2188,1438.2188 Q207.9375,1438.5 207.5,1438.5 Q207.1094,1438.5 206.8594,1438.3281 Q206.6094,1438.1563 206.5,1437.7031 Q206.4531,1437.3906 206.2813,1437.2188 Q205.9688,1436.8906 205.4063,1436.7031 Q204.8438,1436.5 204.2813,1436.5 Q203.5781,1436.5 202.9844,1436.7813 Q202.4063,1437.0625 201.9531,1437.6875 Q201.5,1438.3125 201.5,1439.1719 L201.5,1440.0938 Q201.5,1441.125 202.3438,1441.8125 Q203.1875,1442.5 204.6875,1442.5 Q205.5781,1442.5 206.2031,1442.2969 Q206.5625,1442.1875 206.9688,1441.8281 Q207.2344,1441.625 207.375,1441.5625 Q207.5156,1441.5 207.6875,1441.5 Q208.0156,1441.5 208.25,1441.7656 Q208.5,1442.0156 208.5,1442.375 Q208.5,1442.7188 208.1563,1443.125 Q207.6563,1443.7188 206.8594,1444.0469 Q205.8125,1444.5 204.5313,1444.5 Q203.0313,1444.5 201.8281,1443.9063 Q200.8594,1443.4375 200.1719,1442.4219 Q199.5,1441.4063 199.5,1440.2031 L199.5,1439.1094 Q199.5,1437.8594 200.0938,1436.7656 Q200.7031,1435.6719 201.75,1435.0938 Q202.8125,1434.5 204,1434.5 Q204.7188,1434.5 205.3438,1434.75 Q205.9688,1435 206.5,1435.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="193" x="218.5" y="1443.9102">CovidReferenceValues1APIAdapter</text><line style="stroke:#A80036;stroke-width:1.5;" x1="190.5" x2="413.5" y1="1455" y2="1455"/><line style="stroke:#A80036;stroke-width:1.5;" x1="190.5" x2="413.5" y1="1463" y2="1463"/><ellipse cx="200.5" cy="1474" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="129" x="209.5" y="1478.4189">getRefValue(String param)</text><ellipse cx="200.5" cy="1487.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="209.5" y="1492.2549">getMinValue(String param)</text><ellipse cx="200.5" cy="1501.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="132" x="209.5" y="1506.0908">getMaxValue(String param)</text><ellipse cx="200.5" cy="1515.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="113" x="209.5" y="1519.9268">getMetric(String param)</text><!--MD5=[bf202dd950ceaf4f26879676f3c29ba5]
-class ExternalModule2APIAdapter--><rect codeLine="85" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="103.3438" id="ExternalModule2APIAdapter" style="stroke:#A80036;stroke-width:1.5;" width="183" x="449.5" y="1423"/><ellipse cx="464.5" cy="1439" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M466.5,1435.5 Q466.7031,1435 466.9375,1434.75 Q467.1719,1434.5 467.4375,1434.5 Q467.9063,1434.5 468.2031,1434.7813 Q468.5,1435.0625 468.5,1435.7188 L468.5,1437.2813 Q468.5,1437.9375 468.2188,1438.2188 Q467.9375,1438.5 467.5,1438.5 Q467.1094,1438.5 466.8594,1438.3281 Q466.6094,1438.1563 466.5,1437.7031 Q466.4531,1437.3906 466.2813,1437.2188 Q465.9688,1436.8906 465.4063,1436.7031 Q464.8438,1436.5 464.2813,1436.5 Q463.5781,1436.5 462.9844,1436.7813 Q462.4063,1437.0625 461.9531,1437.6875 Q461.5,1438.3125 461.5,1439.1719 L461.5,1440.0938 Q461.5,1441.125 462.3438,1441.8125 Q463.1875,1442.5 464.6875,1442.5 Q465.5781,1442.5 466.2031,1442.2969 Q466.5625,1442.1875 466.9688,1441.8281 Q467.2344,1441.625 467.375,1441.5625 Q467.5156,1441.5 467.6875,1441.5 Q468.0156,1441.5 468.25,1441.7656 Q468.5,1442.0156 468.5,1442.375 Q468.5,1442.7188 468.1563,1443.125 Q467.6563,1443.7188 466.8594,1444.0469 Q465.8125,1444.5 464.5313,1444.5 Q463.0313,1444.5 461.8281,1443.9063 Q460.8594,1443.4375 460.1719,1442.4219 Q459.5,1441.4063 459.5,1440.2031 L459.5,1439.1094 Q459.5,1437.8594 460.0938,1436.7656 Q460.7031,1435.6719 461.75,1435.0938 Q462.8125,1434.5 464,1434.5 Q464.7188,1434.5 465.3438,1434.75 Q465.9688,1435 466.5,1435.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="151" x="478.5" y="1443.9102">ExternalModule2APIAdapter</text><line style="stroke:#A80036;stroke-width:1.5;" x1="450.5" x2="631.5" y1="1455" y2="1455"/><line style="stroke:#A80036;stroke-width:1.5;" x1="450.5" x2="631.5" y1="1463" y2="1463"/><ellipse cx="460.5" cy="1474" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="129" x="469.5" y="1478.4189">getRefValue(String param)</text><ellipse cx="460.5" cy="1487.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="469.5" y="1492.2549">getMinValue(String param)</text><ellipse cx="460.5" cy="1501.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="132" x="469.5" y="1506.0908">getMaxValue(String param)</text><ellipse cx="460.5" cy="1515.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="113" x="469.5" y="1519.9268">getMetric(String param)</text><!--MD5=[35c27d149b939a19a05414d761c02afa]
-class ExternalModule3APIAdapter--><rect codeLine="91" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="103.3438" id="ExternalModule3APIAdapter" style="stroke:#A80036;stroke-width:1.5;" width="183" x="667.5" y="1423"/><ellipse cx="682.5" cy="1439" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M684.5,1435.5 Q684.7031,1435 684.9375,1434.75 Q685.1719,1434.5 685.4375,1434.5 Q685.9063,1434.5 686.2031,1434.7813 Q686.5,1435.0625 686.5,1435.7188 L686.5,1437.2813 Q686.5,1437.9375 686.2188,1438.2188 Q685.9375,1438.5 685.5,1438.5 Q685.1094,1438.5 684.8594,1438.3281 Q684.6094,1438.1563 684.5,1437.7031 Q684.4531,1437.3906 684.2813,1437.2188 Q683.9688,1436.8906 683.4063,1436.7031 Q682.8438,1436.5 682.2813,1436.5 Q681.5781,1436.5 680.9844,1436.7813 Q680.4063,1437.0625 679.9531,1437.6875 Q679.5,1438.3125 679.5,1439.1719 L679.5,1440.0938 Q679.5,1441.125 680.3438,1441.8125 Q681.1875,1442.5 682.6875,1442.5 Q683.5781,1442.5 684.2031,1442.2969 Q684.5625,1442.1875 684.9688,1441.8281 Q685.2344,1441.625 685.375,1441.5625 Q685.5156,1441.5 685.6875,1441.5 Q686.0156,1441.5 686.25,1441.7656 Q686.5,1442.0156 686.5,1442.375 Q686.5,1442.7188 686.1563,1443.125 Q685.6563,1443.7188 684.8594,1444.0469 Q683.8125,1444.5 682.5313,1444.5 Q681.0313,1444.5 679.8281,1443.9063 Q678.8594,1443.4375 678.1719,1442.4219 Q677.5,1441.4063 677.5,1440.2031 L677.5,1439.1094 Q677.5,1437.8594 678.0938,1436.7656 Q678.7031,1435.6719 679.75,1435.0938 Q680.8125,1434.5 682,1434.5 Q682.7188,1434.5 683.3438,1434.75 Q683.9688,1435 684.5,1435.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="151" x="696.5" y="1443.9102">ExternalModule3APIAdapter</text><line style="stroke:#A80036;stroke-width:1.5;" x1="668.5" x2="849.5" y1="1455" y2="1455"/><line style="stroke:#A80036;stroke-width:1.5;" x1="668.5" x2="849.5" y1="1463" y2="1463"/><ellipse cx="678.5" cy="1474" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="129" x="687.5" y="1478.4189">getRefValue(String param)</text><ellipse cx="678.5" cy="1487.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="687.5" y="1492.2549">getMinValue(String param)</text><ellipse cx="678.5" cy="1501.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="132" x="687.5" y="1506.0908">getMaxValue(String param)</text><ellipse cx="678.5" cy="1515.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="113" x="687.5" y="1519.9268">getMetric(String param)</text><!--MD5=[f5428fd05aad57864ae2f1af42726350]
-link RecordResultUI to RecordResultController--><path codeLine="97" d="M285,55.04 C285,70.71 285,91.91 285,110.58 " fill="none" id="RecordResultUI-to-RecordResultController" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="285,115.77,289,106.77,285,110.77,281,106.77,285,115.77" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[ad94b30c163beda945d4742c60cadd9b]
-link RecordResultController to Company--><path codeLine="98" d="M221.85,192.07 C185.96,213.13 141.54,239.2 107.57,259.15 " fill="none" id="RecordResultController-to-Company" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="103.05,261.79,112.8373,260.6901,107.3637,259.2618,108.7921,253.7882,103.05,261.79" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[614914ea2818ba632179bffb6284c7a6]
-link RecordResultController to TestStore--><path codeLine="99" d="M281.14,192.25 C279.36,209.36 277.25,229.75 275.41,247.47 " fill="none" id="RecordResultController-to-TestStore" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="274.85,252.87,279.7549,244.3294,275.3645,247.8965,271.7973,243.5062,274.85,252.87" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a8c4228888174c409606ef1b96aaf4a1]
-link RecordResultController to Test--><path codeLine="100" d="M334.41,192.07 C352.32,208.53 370.48,229.5 380,253 C399.01,299.92 392.85,355.46 380.59,401.88 " fill="none" id="RecordResultController-to-Test" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="379.22,406.91,385.4222,399.2594,380.5199,402.0819,377.6973,397.1796,379.22,406.91" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d8cc87b52c5b0699dfa8eb2caca57b06]
-link RecordResultController to TestParameterStoreMapper--><path codeLine="101" d="M388.59,154 C404.72,154 420.85,154 436.98,154 " fill="none" id="RecordResultController-to-TestParameterStoreMapper" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="441.98,154,432.98,150,436.98,154,432.98,158,441.98,154" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[690cd618a239917bb74b829e84e618a3]
-link TestParameterStoreMapper to TestParameterDTO--><path codeLine="102" d="M535.38,192.25 C536.01,209.36 536.77,229.75 537.42,247.47 " fill="none" id="TestParameterStoreMapper-to-TestParameterDTO" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="537.62,252.87,541.2832,243.7277,537.4344,247.8734,533.2887,244.0247,537.62,252.87" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[7f6cf7f175eae0af66201860de5de971]
-link Company to TestStore--><path codeLine="104" d="M103.21,291 C123.98,291 149.07,291 173.45,291 " fill="none" id="Company-to-TestStore" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="178.64,291,169.64,287,173.64,291,169.64,295,178.64,291" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="39" x="121.5" y="284.4951">adopts</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="111.1281" y="287.3222">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="164.0012" y="287.8847">1</text><!--MD5=[1c597f054c4006c32127b5f2848e0497]
-link Test to TestParameterList--><path codeLine="106" d="M446.59,500 C493.08,500 547.68,500 593.65,500 " fill="none" id="Test-to-TestParameterList" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="598.93,500,589.93,496,593.93,500,589.93,504,598.93,500" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="116" x="464.75" y="493.4951">requests analysis of</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="454.4544" y="496.9073">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="583.85" y="496.854">1</text><!--MD5=[757d1b70759bcc84b2284ec30b17fea5]
-link TestParameterList to TestParameter--><path codeLine="107" d="M692.45,531.2 C691.79,567.47 690.68,628.81 689.9,672.03 " fill="none" id="TestParameterList-to-TestParameter" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="689.8,677.21,693.9537,668.2799,689.8857,672.2107,685.9549,668.1428,689.8,677.21" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="36" x="691" y="637.4951">stores</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="684.678" y="552.2168">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="684.5397" y="666.6097">*</text><!--MD5=[92e8e476cc9e9004a7125f53a120ec97]
-link TestParameter to Parameter--><path codeLine="108" d="M750.7,722.5 C773.76,722.5 799.64,722.5 821.56,722.5 " fill="none" id="TestParameter-to-Parameter" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="826.76,722.5,817.76,718.5,821.76,722.5,817.76,726.5,826.76,722.5" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="40" x="768.75" y="715.9951">refer to</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="758.5244" y="719.0715">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="811.9921" y="718.7207">1</text><!--MD5=[0e00e25ac6b8c14659aaff2cf7e5df08]
-link TestParameter to TestParameterResult--><path codeLine="109" d="M687.33,767.52 C685.86,806.24 683.71,862.8 682.12,904.69 " fill="none" id="TestParameter-to-TestParameterResult" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="681.93,909.72,686.2613,900.8747,682.1156,904.7234,678.2668,900.5777,681.93,909.72" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="686" y="847.4951">contains</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="679.603" y="788.5304">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="22" x="658.7112" y="899.1827">0..1</text><!--MD5=[52200cc2361fa0ac0481dd6ffcdb824b]
-link TestParameterResult to ReferenceValue--><path codeLine="110" d="M664.68,1013.32 C657.74,1036.33 649.58,1063.41 642.72,1086.18 " fill="none" id="TestParameterResult-to-ReferenceValue" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="641.27,1090.97,647.6977,1083.5077,642.7133,1086.1828,640.0382,1081.1985,641.27,1090.97" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43" x="656" y="1057.4951">records</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="655.1511" y="1034.854">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="635.8271" y="1080.0807">1</text><!--MD5=[5aaeaafb6efdd8cdea46c2d598bf11af]
-reverse link ReferenceValue to ExternalModule--><path codeLine="111" d="M603.33,1185.92 C591.83,1208.71 578.16,1235.81 566.56,1258.82 " fill="none" id="ReferenceValue-backto-ExternalModule" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="605.6,1181.42,597.9735,1187.6519,603.3468,1185.8835,605.1151,1191.2569,605.6,1181.42" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="36" x="590" y="1225.4951">create</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="595.1197" y="1202.1501">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="562.5243" y="1248.2961">1</text><!--MD5=[e981d4f96c4342412d1e68160b30cf70]
-link Test to TestType--><path codeLine="112" d="M382.24,593.01 C410.84,660.07 448.26,747.81 470.06,798.93 " fill="none" id="Test-to-TestType" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="472.12,803.76,472.2772,793.9124,470.1625,799.1591,464.9158,797.0444,472.12,803.76" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="402" y="637.4951">is of</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="380.2825" y="614.8697">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="461.6679" y="793.0792">1</text><!--MD5=[b0f4f6db8206580012ef9cd998ed01c5]
-link TestStore to Test--><path codeLine="113" d="M283.87,329.01 C290.99,349.48 300.21,375.97 309.23,401.92 " fill="none" id="TestStore-to-Test" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="310.92,406.76,311.7448,396.9457,309.2791,402.0369,304.1879,399.5712,310.92,406.76" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="36" x="302" y="373.4951">stores</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="278.4219" y="350.1818">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="303.1644" y="396.1872">*</text><!--MD5=[71e6920dcc27afae8f25537cd5357b5f]
-link TestType to ExternalModule--><path codeLine="114" d="M492.25,880.39 C501.54,962.16 523.71,1157.3 534.66,1253.68 " fill="none" id="TestType-to-ExternalModule" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="535.23,1258.76,538.1761,1249.3621,534.659,1253.7927,530.2284,1250.2756,535.23,1258.76" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="78" x="514" y="1057.4951">makes use of</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="487.518" y="901.0406">*</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="526.9843" y="1248.2281">1</text><!--MD5=[e27a48c1292f354810518bb9da08881d]
-link CovidReferenceValues1APIAdapter to CovidReferenceValues1API--><path codeLine="116" d="M302,1526.35 C302,1545.06 302,1565.58 302,1581.61 " fill="none" id="CovidReferenceValues1APIAdapter-to-CovidReferenceValues1API" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="302,1586.87,306,1577.87,302,1581.87,298,1577.87,302,1586.87" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[12a83c69fe6943f18de8c363e5459f01]
-link ExternalModule2APIAdapter to ExternalModule2API--><path codeLine="117" d="M541,1526.35 C541,1545.06 541,1565.58 541,1581.61 " fill="none" id="ExternalModule2APIAdapter-to-ExternalModule2API" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="541,1586.87,545,1577.87,541,1581.87,537,1577.87,541,1586.87" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[f4142d0c21ccdde895a2d8f73faf8794]
-link ExternalModule3APIAdapter to ExternalModule3API--><path codeLine="118" d="M759,1526.35 C759,1545.06 759,1565.58 759,1581.61 " fill="none" id="ExternalModule3APIAdapter-to-ExternalModule3API" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="759,1586.87,763,1577.87,759,1581.87,755,1577.87,759,1586.87" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b81b884e5db1bdffab121102aa52ff68]
-reverse link ExternalModule to CovidReferenceValues1APIAdapter--><path codeLine="120" d="M449.62,1373.44 C425.59,1389.73 399.95,1407.11 376.89,1422.74 " fill="none" id="ExternalModule-backto-CovidReferenceValues1APIAdapter" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="445.88,1367.52,466.36,1362.09,453.73,1379.11,445.88,1367.52" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d731d3369c422c6b52b8605e972633e6]
-reverse link ExternalModule to ExternalModule2APIAdapter--><path codeLine="121" d="M541,1382.47 C541,1396.07 541,1410.06 541,1422.87 " fill="none" id="ExternalModule-backto-ExternalModule2APIAdapter" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="534,1382.31,541,1362.31,548,1382.31,534,1382.31" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[507d8943818be77b508f93a8c6eb45ea]
-reverse link ExternalModule to ExternalModule3APIAdapter--><path codeLine="122" d="M625.3,1374.15 C646.95,1390.23 669.96,1407.33 690.69,1422.74 " fill="none" id="ExternalModule-backto-ExternalModule3APIAdapter" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="none" points="620.96,1379.64,609.08,1362.09,629.31,1368.4,620.96,1379.64" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9b2d1d59538af46df6a2d3f922847b40]
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     contentScriptType="application/ecmascript" contentStyleType="text/css" height="1649px" preserveAspectRatio="none"
+     style="width:931px;height:1649px;" version="1.1" viewBox="0 0 931 1649" width="931px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="foiqzbk7z9r2z" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix"
+                           values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+        </filter>
+    </defs>
+    <g><!--MD5=[d1151b490b47c26d82d7d928d07b6146]
+class RecordResultUI-->
+        <rect codeLine="3" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="48" id="RecordResultUI"
+              style="stroke:#A80036;stroke-width:1.5;" width="120" x="225" y="7"/>
+        <ellipse cx="240" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M242,19.5 Q242.2031,19 242.4375,18.75 Q242.6719,18.5 242.9375,18.5 Q243.4063,18.5 243.7031,18.7813 Q244,19.0625 244,19.7188 L244,21.2813 Q244,21.9375 243.7188,22.2188 Q243.4375,22.5 243,22.5 Q242.6094,22.5 242.3594,22.3281 Q242.1094,22.1563 242,21.7031 Q241.9531,21.3906 241.7813,21.2188 Q241.4688,20.8906 240.9063,20.7031 Q240.3438,20.5 239.7813,20.5 Q239.0781,20.5 238.4844,20.7813 Q237.9063,21.0625 237.4531,21.6875 Q237,22.3125 237,23.1719 L237,24.0938 Q237,25.125 237.8438,25.8125 Q238.6875,26.5 240.1875,26.5 Q241.0781,26.5 241.7031,26.2969 Q242.0625,26.1875 242.4688,25.8281 Q242.7344,25.625 242.875,25.5625 Q243.0156,25.5 243.1875,25.5 Q243.5156,25.5 243.75,25.7656 Q244,26.0156 244,26.375 Q244,26.7188 243.6563,27.125 Q243.1563,27.7188 242.3594,28.0469 Q241.3125,28.5 240.0313,28.5 Q238.5313,28.5 237.3281,27.9063 Q236.3594,27.4375 235.6719,26.4219 Q235,25.4063 235,24.2031 L235,23.1094 Q235,21.8594 235.5938,20.7656 Q236.2031,19.6719 237.25,19.0938 Q238.3125,18.5 239.5,18.5 Q240.2188,18.5 240.8438,18.75 Q241.4688,19 242,19.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="88" x="254"
+              y="27.9102">RecordResultUI
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="226" x2="344" y1="39" y2="39"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="226" x2="344" y1="47" y2="47"/><!--MD5=[b7749eeb332e823be77fccb8e3a3d9bf]
+class RecordResultController-->
+        <rect codeLine="5" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="75.6719" id="RecordResultController"
+              style="stroke:#A80036;stroke-width:1.5;" width="207" x="181.5" y="116"/>
+        <ellipse cx="216.75" cy="132" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M218.75,128.5 Q218.9531,128 219.1875,127.75 Q219.4219,127.5 219.6875,127.5 Q220.1563,127.5 220.4531,127.7813 Q220.75,128.0625 220.75,128.7188 L220.75,130.2813 Q220.75,130.9375 220.4688,131.2188 Q220.1875,131.5 219.75,131.5 Q219.3594,131.5 219.1094,131.3281 Q218.8594,131.1563 218.75,130.7031 Q218.7031,130.3906 218.5313,130.2188 Q218.2188,129.8906 217.6563,129.7031 Q217.0938,129.5 216.5313,129.5 Q215.8281,129.5 215.2344,129.7813 Q214.6563,130.0625 214.2031,130.6875 Q213.75,131.3125 213.75,132.1719 L213.75,133.0938 Q213.75,134.125 214.5938,134.8125 Q215.4375,135.5 216.9375,135.5 Q217.8281,135.5 218.4531,135.2969 Q218.8125,135.1875 219.2188,134.8281 Q219.4844,134.625 219.625,134.5625 Q219.7656,134.5 219.9375,134.5 Q220.2656,134.5 220.5,134.7656 Q220.75,135.0156 220.75,135.375 Q220.75,135.7188 220.4063,136.125 Q219.9063,136.7188 219.1094,137.0469 Q218.0625,137.5 216.7813,137.5 Q215.2813,137.5 214.0781,136.9063 Q213.1094,136.4375 212.4219,135.4219 Q211.75,134.4063 211.75,133.2031 L211.75,132.1094 Q211.75,130.8594 212.3438,129.7656 Q212.9531,128.6719 214,128.0938 Q215.0625,127.5 216.25,127.5 Q216.9688,127.5 217.5938,127.75 Q218.2188,128 218.75,128.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="130" x="235.25"
+              y="136.9102">RecordResultController
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="182.5" x2="387.5" y1="148" y2="148"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="182.5" x2="387.5" y1="156" y2="156"/>
+        <ellipse cx="192.5" cy="167" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="152" x="201.5"
+              y="171.4189">getTestParameterList(sampleId)
+        </text>
+        <ellipse cx="192.5" cy="180.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="181" x="201.5"
+              y="185.2549">addTestResult(parameterCode,result)
+        </text><!--MD5=[02e4b9b7573f1156f41e60aa5b4e25a4]
+class Company-->
+        <rect codeLine="9" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="75.6719" id="Company"
+              style="stroke:#A80036;stroke-width:1.5;" width="96" x="7" y="253"/>
+        <ellipse cx="26.95" cy="269" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M28.95,265.5 Q29.1531,265 29.3875,264.75 Q29.6219,264.5 29.8875,264.5 Q30.3563,264.5 30.6531,264.7813 Q30.95,265.0625 30.95,265.7188 L30.95,267.2813 Q30.95,267.9375 30.6688,268.2188 Q30.3875,268.5 29.95,268.5 Q29.5594,268.5 29.3094,268.3281 Q29.0594,268.1563 28.95,267.7031 Q28.9031,267.3906 28.7313,267.2188 Q28.4188,266.8906 27.8563,266.7031 Q27.2938,266.5 26.7313,266.5 Q26.0281,266.5 25.4344,266.7813 Q24.8563,267.0625 24.4031,267.6875 Q23.95,268.3125 23.95,269.1719 L23.95,270.0938 Q23.95,271.125 24.7938,271.8125 Q25.6375,272.5 27.1375,272.5 Q28.0281,272.5 28.6531,272.2969 Q29.0125,272.1875 29.4188,271.8281 Q29.6844,271.625 29.825,271.5625 Q29.9656,271.5 30.1375,271.5 Q30.4656,271.5 30.7,271.7656 Q30.95,272.0156 30.95,272.375 Q30.95,272.7188 30.6063,273.125 Q30.1063,273.7188 29.3094,274.0469 Q28.2625,274.5 26.9813,274.5 Q25.4813,274.5 24.2781,273.9063 Q23.3094,273.4375 22.6219,272.4219 Q21.95,271.4063 21.95,270.2031 L21.95,269.1094 Q21.95,267.8594 22.5438,266.7656 Q23.1531,265.6719 24.2,265.0938 Q25.2625,264.5 26.45,264.5 Q27.1688,264.5 27.7938,264.75 Q28.4188,265 28.95,265.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53" x="42.05"
+              y="273.9102">Company
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="102" y1="285" y2="285"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="293"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="27"
+              y="300.4189">designation
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="102" y1="306.8359" y2="306.8359"/>
+        <ellipse cx="18" cy="317.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="70" x="27"
+              y="322.2549">getTestStore()
+        </text><!--MD5=[df38be88ccee13e832d6fafd6288a4ca]
+class Test-->
+        <rect codeLine="13" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="186.3594" id="Test"
+              style="stroke:#A80036;stroke-width:1.5;" width="207" x="239.5" y="407"/>
+        <ellipse cx="326.75" cy="423" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M328.75,419.5 Q328.9531,419 329.1875,418.75 Q329.4219,418.5 329.6875,418.5 Q330.1563,418.5 330.4531,418.7813 Q330.75,419.0625 330.75,419.7188 L330.75,421.2813 Q330.75,421.9375 330.4688,422.2188 Q330.1875,422.5 329.75,422.5 Q329.3594,422.5 329.1094,422.3281 Q328.8594,422.1563 328.75,421.7031 Q328.7031,421.3906 328.5313,421.2188 Q328.2188,420.8906 327.6563,420.7031 Q327.0938,420.5 326.5313,420.5 Q325.8281,420.5 325.2344,420.7813 Q324.6563,421.0625 324.2031,421.6875 Q323.75,422.3125 323.75,423.1719 L323.75,424.0938 Q323.75,425.125 324.5938,425.8125 Q325.4375,426.5 326.9375,426.5 Q327.8281,426.5 328.4531,426.2969 Q328.8125,426.1875 329.2188,425.8281 Q329.4844,425.625 329.625,425.5625 Q329.7656,425.5 329.9375,425.5 Q330.2656,425.5 330.5,425.7656 Q330.75,426.0156 330.75,426.375 Q330.75,426.7188 330.4063,427.125 Q329.9063,427.7188 329.1094,428.0469 Q328.0625,428.5 326.7813,428.5 Q325.2813,428.5 324.0781,427.9063 Q323.1094,427.4375 322.4219,426.4219 Q321.75,425.4063 321.75,424.2031 L321.75,423.1094 Q321.75,421.8594 322.3438,420.7656 Q322.9531,419.6719 324,419.0938 Q325.0625,418.5 326.25,418.5 Q326.9688,418.5 327.5938,418.75 Q328.2188,419 328.75,419.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="24" x="347.25"
+              y="427.9102">Test
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="240.5" x2="445.5" y1="439" y2="439"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="247.5" y="447"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="27" x="259.5"
+              y="454.4189">state;
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="247.5" y="460.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="259.5"
+              y="468.2549">testCode
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="247.5" y="474.6719"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="74" x="259.5"
+              y="482.0908">testNhsNumber
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="247.5" y="488.5078"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="39" x="259.5"
+              y="495.9268">clientTin
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="247.5" y="502.3438"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="259.5"
+              y="509.7627">testType
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="247.5" y="516.1797"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="48" x="259.5"
+              y="523.5986">testParam
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="247.5" y="530.0156"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="259.5"
+              y="537.4346">createdDate
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="247.5" y="543.8516"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="94" x="259.5"
+              y="551.2705">sampleCreatedDate
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="240.5" x2="445.5" y1="557.6875" y2="557.6875"/>
+        <ellipse cx="250.5" cy="568.6875" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="110" x="259.5"
+              y="573.1064">getTestParameterList()
+        </text>
+        <ellipse cx="250.5" cy="582.5234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="181" x="259.5"
+              y="586.9424">addTestResult(parameterCode,result)
+        </text><!--MD5=[76b0da115d32a89fc61a2abda59b6b4b]
+class TestParameterList-->
+        <rect codeLine="25" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="61.8359" id="TestParameterList"
+              style="stroke:#A80036;stroke-width:1.5;" width="188" x="599" y="469"/>
+        <ellipse cx="638.3" cy="485" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M640.3,481.5 Q640.5031,481 640.7375,480.75 Q640.9719,480.5 641.2375,480.5 Q641.7063,480.5 642.0031,480.7813 Q642.3,481.0625 642.3,481.7188 L642.3,483.2813 Q642.3,483.9375 642.0188,484.2188 Q641.7375,484.5 641.3,484.5 Q640.9094,484.5 640.6594,484.3281 Q640.4094,484.1563 640.3,483.7031 Q640.2531,483.3906 640.0813,483.2188 Q639.7688,482.8906 639.2063,482.7031 Q638.6438,482.5 638.0813,482.5 Q637.3781,482.5 636.7844,482.7813 Q636.2063,483.0625 635.7531,483.6875 Q635.3,484.3125 635.3,485.1719 L635.3,486.0938 Q635.3,487.125 636.1438,487.8125 Q636.9875,488.5 638.4875,488.5 Q639.3781,488.5 640.0031,488.2969 Q640.3625,488.1875 640.7688,487.8281 Q641.0344,487.625 641.175,487.5625 Q641.3156,487.5 641.4875,487.5 Q641.8156,487.5 642.05,487.7656 Q642.3,488.0156 642.3,488.375 Q642.3,488.7188 641.9563,489.125 Q641.4563,489.7188 640.6594,490.0469 Q639.6125,490.5 638.3313,490.5 Q636.8313,490.5 635.6281,489.9063 Q634.6594,489.4375 633.9719,488.4219 Q633.3,487.4063 633.3,486.2031 L633.3,485.1094 Q633.3,483.8594 633.8938,482.7656 Q634.5031,481.6719 635.55,481.0938 Q636.6125,480.5 637.8,480.5 Q638.5188,480.5 639.1438,480.75 Q639.7688,481 640.3,481.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="102" x="657.7"
+              y="489.9102">TestParameterList
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="600" x2="786" y1="501" y2="501"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="600" x2="786" y1="509" y2="509"/>
+        <ellipse cx="610" cy="520" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="162" x="619"
+              y="524.4189">getParameterFor(parameterCode)
+        </text><!--MD5=[0f6f7964b844a64b0496af0dda7914bd]
+class TestStore-->
+        <rect codeLine="28" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="75.6719" id="TestStore"
+              style="stroke:#A80036;stroke-width:1.5;" width="184" x="179" y="253"/>
+        <ellipse cx="240.25" cy="269" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M242.25,265.5 Q242.4531,265 242.6875,264.75 Q242.9219,264.5 243.1875,264.5 Q243.6563,264.5 243.9531,264.7813 Q244.25,265.0625 244.25,265.7188 L244.25,267.2813 Q244.25,267.9375 243.9688,268.2188 Q243.6875,268.5 243.25,268.5 Q242.8594,268.5 242.6094,268.3281 Q242.3594,268.1563 242.25,267.7031 Q242.2031,267.3906 242.0313,267.2188 Q241.7188,266.8906 241.1563,266.7031 Q240.5938,266.5 240.0313,266.5 Q239.3281,266.5 238.7344,266.7813 Q238.1563,267.0625 237.7031,267.6875 Q237.25,268.3125 237.25,269.1719 L237.25,270.0938 Q237.25,271.125 238.0938,271.8125 Q238.9375,272.5 240.4375,272.5 Q241.3281,272.5 241.9531,272.2969 Q242.3125,272.1875 242.7188,271.8281 Q242.9844,271.625 243.125,271.5625 Q243.2656,271.5 243.4375,271.5 Q243.7656,271.5 244,271.7656 Q244.25,272.0156 244.25,272.375 Q244.25,272.7188 243.9063,273.125 Q243.4063,273.7188 242.6094,274.0469 Q241.5625,274.5 240.2813,274.5 Q238.7813,274.5 237.5781,273.9063 Q236.6094,273.4375 235.9219,272.4219 Q235.25,271.4063 235.25,270.2031 L235.25,269.1094 Q235.25,267.8594 235.8438,266.7656 Q236.4531,265.6719 237.5,265.0938 Q238.5625,264.5 239.75,264.5 Q240.4688,264.5 241.0938,264.75 Q241.7188,265 242.25,265.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53" x="260.75"
+              y="273.9102">TestStore
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="180" x2="362" y1="285" y2="285"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="187" y="293"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="35" x="199"
+              y="300.4189">testList
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="180" x2="362" y1="306.8359" y2="306.8359"/>
+        <ellipse cx="190" cy="317.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="158" x="199"
+              y="322.2549">getTestParametersList(sampleId)
+        </text><!--MD5=[f00f90d115d6875ad2fc8ae1987d3643]
+class TestParameterStoreMapper-->
+        <rect codeLine="32" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="75.6719" id="TestParameterStoreMapper"
+              style="stroke:#A80036;stroke-width:1.5;" width="184" x="442" y="116"/>
+        <ellipse cx="457" cy="132" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M459,128.5 Q459.2031,128 459.4375,127.75 Q459.6719,127.5 459.9375,127.5 Q460.4063,127.5 460.7031,127.7813 Q461,128.0625 461,128.7188 L461,130.2813 Q461,130.9375 460.7188,131.2188 Q460.4375,131.5 460,131.5 Q459.6094,131.5 459.3594,131.3281 Q459.1094,131.1563 459,130.7031 Q458.9531,130.3906 458.7813,130.2188 Q458.4688,129.8906 457.9063,129.7031 Q457.3438,129.5 456.7813,129.5 Q456.0781,129.5 455.4844,129.7813 Q454.9063,130.0625 454.4531,130.6875 Q454,131.3125 454,132.1719 L454,133.0938 Q454,134.125 454.8438,134.8125 Q455.6875,135.5 457.1875,135.5 Q458.0781,135.5 458.7031,135.2969 Q459.0625,135.1875 459.4688,134.8281 Q459.7344,134.625 459.875,134.5625 Q460.0156,134.5 460.1875,134.5 Q460.5156,134.5 460.75,134.7656 Q461,135.0156 461,135.375 Q461,135.7188 460.6563,136.125 Q460.1563,136.7188 459.3594,137.0469 Q458.3125,137.5 457.0313,137.5 Q455.5313,137.5 454.3281,136.9063 Q453.3594,136.4375 452.6719,135.4219 Q452,134.4063 452,133.2031 L452,132.1094 Q452,130.8594 452.5938,129.7656 Q453.2031,128.6719 454.25,128.0938 Q455.3125,127.5 456.5,127.5 Q457.2188,127.5 457.8438,127.75 Q458.4688,128 459,128.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="152" x="471"
+              y="136.9102">TestParameterStoreMapper
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="443" x2="625" y1="148" y2="148"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="443" x2="625" y1="156" y2="156"/>
+        <ellipse cx="453" cy="167" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="61" x="462"
+              y="171.4189">toDTO(pList)
+        </text>
+        <rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="450" y="177.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="105" x="462"
+              y="185.2549">toDTO(testParameter)
+        </text><!--MD5=[16358064a951ae5dfdda1035a51b763d]
+class TestParameterDTO-->
+        <rect codeLine="37" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="75.6719" id="TestParameterDTO"
+              style="stroke:#A80036;stroke-width:1.5;" width="139" x="469.5" y="253"/>
+        <ellipse cx="484.5" cy="269" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M486.5,265.5 Q486.7031,265 486.9375,264.75 Q487.1719,264.5 487.4375,264.5 Q487.9063,264.5 488.2031,264.7813 Q488.5,265.0625 488.5,265.7188 L488.5,267.2813 Q488.5,267.9375 488.2188,268.2188 Q487.9375,268.5 487.5,268.5 Q487.1094,268.5 486.8594,268.3281 Q486.6094,268.1563 486.5,267.7031 Q486.4531,267.3906 486.2813,267.2188 Q485.9688,266.8906 485.4063,266.7031 Q484.8438,266.5 484.2813,266.5 Q483.5781,266.5 482.9844,266.7813 Q482.4063,267.0625 481.9531,267.6875 Q481.5,268.3125 481.5,269.1719 L481.5,270.0938 Q481.5,271.125 482.3438,271.8125 Q483.1875,272.5 484.6875,272.5 Q485.5781,272.5 486.2031,272.2969 Q486.5625,272.1875 486.9688,271.8281 Q487.2344,271.625 487.375,271.5625 Q487.5156,271.5 487.6875,271.5 Q488.0156,271.5 488.25,271.7656 Q488.5,272.0156 488.5,272.375 Q488.5,272.7188 488.1563,273.125 Q487.6563,273.7188 486.8594,274.0469 Q485.8125,274.5 484.5313,274.5 Q483.0313,274.5 481.8281,273.9063 Q480.8594,273.4375 480.1719,272.4219 Q479.5,271.4063 479.5,270.2031 L479.5,269.1094 Q479.5,267.8594 480.0938,266.7656 Q480.7031,265.6719 481.75,265.0938 Q482.8125,264.5 484,264.5 Q484.7188,264.5 485.3438,264.75 Q485.9688,265 486.5,265.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="107" x="498.5"
+              y="273.9102">TestParameterDTO
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="470.5" x2="607.5" y1="285" y2="285"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="477.5" y="293"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="489.5"
+              y="300.4189">pcode
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="470.5" x2="607.5" y1="306.8359" y2="306.8359"/>
+        <ellipse cx="480.5" cy="317.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="489.5"
+              y="322.2549">getPcode()
+        </text><!--MD5=[0f07739f46effee96e095e9c408da841]
+class TestParameter-->
+        <rect codeLine="41" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="89.5078" id="TestParameter"
+              style="stroke:#A80036;stroke-width:1.5;" width="123" x="627.5" y="677.5"/>
+        <ellipse cx="646.55" cy="693.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M648.55,690 Q648.7531,689.5 648.9875,689.25 Q649.2219,689 649.4875,689 Q649.9563,689 650.2531,689.2813 Q650.55,689.5625 650.55,690.2188 L650.55,691.7813 Q650.55,692.4375 650.2688,692.7188 Q649.9875,693 649.55,693 Q649.1594,693 648.9094,692.8281 Q648.6594,692.6563 648.55,692.2031 Q648.5031,691.8906 648.3313,691.7188 Q648.0188,691.3906 647.4563,691.2031 Q646.8938,691 646.3313,691 Q645.6281,691 645.0344,691.2813 Q644.4563,691.5625 644.0031,692.1875 Q643.55,692.8125 643.55,693.6719 L643.55,694.5938 Q643.55,695.625 644.3938,696.3125 Q645.2375,697 646.7375,697 Q647.6281,697 648.2531,696.7969 Q648.6125,696.6875 649.0188,696.3281 Q649.2844,696.125 649.425,696.0625 Q649.5656,696 649.7375,696 Q650.0656,696 650.3,696.2656 Q650.55,696.5156 650.55,696.875 Q650.55,697.2188 650.2063,697.625 Q649.7063,698.2188 648.9094,698.5469 Q647.8625,699 646.5813,699 Q645.0813,699 643.8781,698.4063 Q642.9094,697.9375 642.2219,696.9219 Q641.55,695.9063 641.55,694.7031 L641.55,693.6094 Q641.55,692.3594 642.1438,691.2656 Q642.7531,690.1719 643.8,689.5938 Q644.8625,689 646.05,689 Q646.7688,689 647.3938,689.25 Q648.0188,689.5 648.55,690 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="82" x="661.45"
+              y="698.4102">TestParameter
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="628.5" x2="749.5" y1="709.5" y2="709.5"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="635.5" y="717.5"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="31" x="647.5"
+              y="724.9189">pCode
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="635.5" y="731.3359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="97" x="647.5"
+              y="738.7549">testParameterResult
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="628.5" x2="749.5" y1="745.1719" y2="745.1719"/>
+        <ellipse cx="638.5" cy="756.1719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="72" x="647.5"
+              y="760.5908">getParameter()
+        </text><!--MD5=[1f6362a5c8f21d8d6a0fce68f3a92a4e]
+class Parameter-->
+        <rect codeLine="46" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="103.3438" id="Parameter"
+              style="stroke:#A80036;stroke-width:1.5;" width="90" x="827" y="671"/>
+        <ellipse cx="842" cy="687" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M844,683.5 Q844.2031,683 844.4375,682.75 Q844.6719,682.5 844.9375,682.5 Q845.4063,682.5 845.7031,682.7813 Q846,683.0625 846,683.7188 L846,685.2813 Q846,685.9375 845.7188,686.2188 Q845.4375,686.5 845,686.5 Q844.6094,686.5 844.3594,686.3281 Q844.1094,686.1563 844,685.7031 Q843.9531,685.3906 843.7813,685.2188 Q843.4688,684.8906 842.9063,684.7031 Q842.3438,684.5 841.7813,684.5 Q841.0781,684.5 840.4844,684.7813 Q839.9063,685.0625 839.4531,685.6875 Q839,686.3125 839,687.1719 L839,688.0938 Q839,689.125 839.8438,689.8125 Q840.6875,690.5 842.1875,690.5 Q843.0781,690.5 843.7031,690.2969 Q844.0625,690.1875 844.4688,689.8281 Q844.7344,689.625 844.875,689.5625 Q845.0156,689.5 845.1875,689.5 Q845.5156,689.5 845.75,689.7656 Q846,690.0156 846,690.375 Q846,690.7188 845.6563,691.125 Q845.1563,691.7188 844.3594,692.0469 Q843.3125,692.5 842.0313,692.5 Q840.5313,692.5 839.3281,691.9063 Q838.3594,691.4375 837.6719,690.4219 Q837,689.4063 837,688.2031 L837,687.1094 Q837,685.8594 837.5938,684.7656 Q838.2031,683.6719 839.25,683.0938 Q840.3125,682.5 841.5,682.5 Q842.2188,682.5 842.8438,682.75 Q843.4688,683 844,683.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="58" x="856"
+              y="691.9102">Parameter
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="828" x2="916" y1="703" y2="703"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="835" y="711"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="26" x="847"
+              y="718.4189">name
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="835" y="724.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="24" x="847"
+              y="732.2549">code
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="835" y="738.6719"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="847"
+              y="746.0908">description
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="835" y="752.5078"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="15" x="847"
+              y="759.9268">cat
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="828" x2="916" y1="766.3438" y2="766.3438"/><!--MD5=[aeb3272166074d8737a70b61b1e71682]
+class TestType-->
+        <rect codeLine="52" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="75.6719" id="TestType"
+              style="stroke:#A80036;stroke-width:1.5;" width="122" x="427" y="804"/>
+        <ellipse cx="460" cy="820" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M462,816.5 Q462.2031,816 462.4375,815.75 Q462.6719,815.5 462.9375,815.5 Q463.4063,815.5 463.7031,815.7813 Q464,816.0625 464,816.7188 L464,818.2813 Q464,818.9375 463.7188,819.2188 Q463.4375,819.5 463,819.5 Q462.6094,819.5 462.3594,819.3281 Q462.1094,819.1563 462,818.7031 Q461.9531,818.3906 461.7813,818.2188 Q461.4688,817.8906 460.9063,817.7031 Q460.3438,817.5 459.7813,817.5 Q459.0781,817.5 458.4844,817.7813 Q457.9063,818.0625 457.4531,818.6875 Q457,819.3125 457,820.1719 L457,821.0938 Q457,822.125 457.8438,822.8125 Q458.6875,823.5 460.1875,823.5 Q461.0781,823.5 461.7031,823.2969 Q462.0625,823.1875 462.4688,822.8281 Q462.7344,822.625 462.875,822.5625 Q463.0156,822.5 463.1875,822.5 Q463.5156,822.5 463.75,822.7656 Q464,823.0156 464,823.375 Q464,823.7188 463.6563,824.125 Q463.1563,824.7188 462.3594,825.0469 Q461.3125,825.5 460.0313,825.5 Q458.5313,825.5 457.3281,824.9063 Q456.3594,824.4375 455.6719,823.4219 Q455,822.4063 455,821.2031 L455,820.1094 Q455,818.8594 455.5938,817.7656 Q456.2031,816.6719 457.25,816.0938 Q458.3125,815.5 459.5,815.5 Q460.2188,815.5 460.8438,815.75 Q461.4688,816 462,816.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="50" x="478"
+              y="824.9102">TestType
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="428" x2="548" y1="836" y2="836"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="435" y="844"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="447"
+              y="851.4189">externalModule
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="428" x2="548" y1="857.8359" y2="857.8359"/>
+        <ellipse cx="438" cy="868.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="96" x="447"
+              y="873.2549">getExternalModule()
+        </text><!--MD5=[8f188b89eff49accb0f38c057b38a9f2]
+class ExternalModule-->
+        <rect codeLine="56" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="103.3438" id="ExternalModule"
+              style="stroke:#A80036;stroke-width:1.5;" width="158" x="462" y="1259"/>
+        <ellipse cx="495.45" cy="1275" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M496.45,1272 L496.45,1278 L498.45,1278 L498.9344,1278 L499.45,1278.625 L499.45,1279 L499.45,1279.375 L498.9344,1280 L498.45,1280 L492.45,1280 L491.9656,1280 L491.45,1279.375 L491.45,1279 L491.45,1278.625 L491.9656,1278 L492.45,1278 L494.45,1278 L494.45,1272 L492.45,1272 L491.9656,1272 L491.45,1271.375 L491.45,1271 L491.45,1270.625 L491.9656,1270 L492.45,1270 L498.45,1270 L498.9344,1270 L499.45,1270.625 L499.45,1271 L499.45,1271.375 L498.9344,1272 L498.45,1272 L496.45,1272 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing"
+              textLength="85" x="513.55" y="1279.9102">ExternalModule
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="463" x2="619" y1="1291" y2="1291"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="463" x2="619" y1="1299" y2="1299"/>
+        <ellipse cx="473" cy="1310" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="129" x="482"
+              y="1314.4189">getRefValue(String param)
+        </text>
+        <ellipse cx="473" cy="1323.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="482"
+              y="1328.2549">getMinValue(String param)
+        </text>
+        <ellipse cx="473" cy="1337.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="132" x="482"
+              y="1342.0908">getMaxValue(String param)
+        </text>
+        <ellipse cx="473" cy="1351.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="113" x="482"
+              y="1355.9268">getMetric(String param)
+        </text><!--MD5=[1c357e7e7fdba398bcadd6e61afe49f5]
+class ReferenceValue-->
+        <rect codeLine="62" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="89.5078" id="ReferenceValue"
+              style="stroke:#A80036;stroke-width:1.5;" width="120" x="568" y="1091"/>
+        <ellipse cx="583" cy="1107" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M585,1103.5 Q585.2031,1103 585.4375,1102.75 Q585.6719,1102.5 585.9375,1102.5 Q586.4063,1102.5 586.7031,1102.7813 Q587,1103.0625 587,1103.7188 L587,1105.2813 Q587,1105.9375 586.7188,1106.2188 Q586.4375,1106.5 586,1106.5 Q585.6094,1106.5 585.3594,1106.3281 Q585.1094,1106.1563 585,1105.7031 Q584.9531,1105.3906 584.7813,1105.2188 Q584.4688,1104.8906 583.9063,1104.7031 Q583.3438,1104.5 582.7813,1104.5 Q582.0781,1104.5 581.4844,1104.7813 Q580.9063,1105.0625 580.4531,1105.6875 Q580,1106.3125 580,1107.1719 L580,1108.0938 Q580,1109.125 580.8438,1109.8125 Q581.6875,1110.5 583.1875,1110.5 Q584.0781,1110.5 584.7031,1110.2969 Q585.0625,1110.1875 585.4688,1109.8281 Q585.7344,1109.625 585.875,1109.5625 Q586.0156,1109.5 586.1875,1109.5 Q586.5156,1109.5 586.75,1109.7656 Q587,1110.0156 587,1110.375 Q587,1110.7188 586.6563,1111.125 Q586.1563,1111.7188 585.3594,1112.0469 Q584.3125,1112.5 583.0313,1112.5 Q581.5313,1112.5 580.3281,1111.9063 Q579.3594,1111.4375 578.6719,1110.4219 Q578,1109.4063 578,1108.2031 L578,1107.1094 Q578,1105.8594 578.5938,1104.7656 Q579.2031,1103.6719 580.25,1103.0938 Q581.3125,1102.5 582.5,1102.5 Q583.2188,1102.5 583.8438,1102.75 Q584.4688,1103 585,1103.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="88" x="597"
+              y="1111.9102">ReferenceValue
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="569" x2="687" y1="1123" y2="1123"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="576" y="1131"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="44" x="588"
+              y="1138.4189">minValue
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="576" y="1144.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="48" x="588"
+              y="1152.2549">maxValue
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="576" y="1158.6719"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="29" x="588"
+              y="1166.0908">metric
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="569" x2="687" y1="1172.5078" y2="1172.5078"/><!--MD5=[4e608140b854dae633589343bce77383]
+class TestParameterResult-->
+        <rect codeLine="67" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="103.3438" id="TestParameterResult"
+              style="stroke:#A80036;stroke-width:1.5;" width="206" x="577" y="910"/>
+        <ellipse cx="617.2" cy="926" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M619.2,922.5 Q619.4031,922 619.6375,921.75 Q619.8719,921.5 620.1375,921.5 Q620.6063,921.5 620.9031,921.7813 Q621.2,922.0625 621.2,922.7188 L621.2,924.2813 Q621.2,924.9375 620.9188,925.2188 Q620.6375,925.5 620.2,925.5 Q619.8094,925.5 619.5594,925.3281 Q619.3094,925.1563 619.2,924.7031 Q619.1531,924.3906 618.9813,924.2188 Q618.6688,923.8906 618.1063,923.7031 Q617.5438,923.5 616.9813,923.5 Q616.2781,923.5 615.6844,923.7813 Q615.1063,924.0625 614.6531,924.6875 Q614.2,925.3125 614.2,926.1719 L614.2,927.0938 Q614.2,928.125 615.0438,928.8125 Q615.8875,929.5 617.3875,929.5 Q618.2781,929.5 618.9031,929.2969 Q619.2625,929.1875 619.6688,928.8281 Q619.9344,928.625 620.075,928.5625 Q620.2156,928.5 620.3875,928.5 Q620.7156,928.5 620.95,928.7656 Q621.2,929.0156 621.2,929.375 Q621.2,929.7188 620.8563,930.125 Q620.3563,930.7188 619.5594,931.0469 Q618.5125,931.5 617.2313,931.5 Q615.7313,931.5 614.5281,930.9063 Q613.5594,930.4375 612.8719,929.4219 Q612.2,928.4063 612.2,927.2031 L612.2,926.1094 Q612.2,924.8594 612.7938,923.7656 Q613.4031,922.6719 614.45,922.0938 Q615.5125,921.5 616.7,921.5 Q617.4188,921.5 618.0438,921.75 Q618.6688,922 619.2,922.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="118" x="636.8"
+              y="930.9102">TestParameterResult
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="578" x2="782" y1="942" y2="942"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="585" y="950"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="27" x="597"
+              y="957.4189">result
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="585" y="963.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="38" x="597"
+              y="971.2549">paramId
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="585" y="977.6719"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="597"
+              y="985.0908">refValue
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="578" x2="782" y1="991.5078" y2="991.5078"/>
+        <ellipse cx="588" cy="1002.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="180" x="597"
+              y="1006.9268">TestParameterResult(result,refValue)
+        </text><!--MD5=[5c34e247bdc718c2aaa7fe06d704a57f]
+class CovidReferenceValues1API-->
+        <rect codeLine="73" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="48" id="CovidReferenceValues1API"
+              style="stroke:#A80036;stroke-width:1.5;" width="183" x="210.5" y="1587"/>
+        <ellipse cx="225.5" cy="1603" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M227.5,1599.5 Q227.7031,1599 227.9375,1598.75 Q228.1719,1598.5 228.4375,1598.5 Q228.9063,1598.5 229.2031,1598.7813 Q229.5,1599.0625 229.5,1599.7188 L229.5,1601.2813 Q229.5,1601.9375 229.2188,1602.2188 Q228.9375,1602.5 228.5,1602.5 Q228.1094,1602.5 227.8594,1602.3281 Q227.6094,1602.1563 227.5,1601.7031 Q227.4531,1601.3906 227.2813,1601.2188 Q226.9688,1600.8906 226.4063,1600.7031 Q225.8438,1600.5 225.2813,1600.5 Q224.5781,1600.5 223.9844,1600.7813 Q223.4063,1601.0625 222.9531,1601.6875 Q222.5,1602.3125 222.5,1603.1719 L222.5,1604.0938 Q222.5,1605.125 223.3438,1605.8125 Q224.1875,1606.5 225.6875,1606.5 Q226.5781,1606.5 227.2031,1606.2969 Q227.5625,1606.1875 227.9688,1605.8281 Q228.2344,1605.625 228.375,1605.5625 Q228.5156,1605.5 228.6875,1605.5 Q229.0156,1605.5 229.25,1605.7656 Q229.5,1606.0156 229.5,1606.375 Q229.5,1606.7188 229.1563,1607.125 Q228.6563,1607.7188 227.8594,1608.0469 Q226.8125,1608.5 225.5313,1608.5 Q224.0313,1608.5 222.8281,1607.9063 Q221.8594,1607.4375 221.1719,1606.4219 Q220.5,1605.4063 220.5,1604.2031 L220.5,1603.1094 Q220.5,1601.8594 221.0938,1600.7656 Q221.7031,1599.6719 222.75,1599.0938 Q223.8125,1598.5 225,1598.5 Q225.7188,1598.5 226.3438,1598.75 Q226.9688,1599 227.5,1599.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="151" x="239.5"
+              y="1607.9102">CovidReferenceValues1API
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="211.5" x2="392.5" y1="1619" y2="1619"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="211.5" x2="392.5" y1="1627" y2="1627"/><!--MD5=[c2db872d8177dd5e15eeb53e86d83378]
+class ExternalModule2API-->
+        <rect codeLine="75" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="48" id="ExternalModule2API"
+              style="stroke:#A80036;stroke-width:1.5;" width="141" x="470.5" y="1587"/>
+        <ellipse cx="485.5" cy="1603" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M487.5,1599.5 Q487.7031,1599 487.9375,1598.75 Q488.1719,1598.5 488.4375,1598.5 Q488.9063,1598.5 489.2031,1598.7813 Q489.5,1599.0625 489.5,1599.7188 L489.5,1601.2813 Q489.5,1601.9375 489.2188,1602.2188 Q488.9375,1602.5 488.5,1602.5 Q488.1094,1602.5 487.8594,1602.3281 Q487.6094,1602.1563 487.5,1601.7031 Q487.4531,1601.3906 487.2813,1601.2188 Q486.9688,1600.8906 486.4063,1600.7031 Q485.8438,1600.5 485.2813,1600.5 Q484.5781,1600.5 483.9844,1600.7813 Q483.4063,1601.0625 482.9531,1601.6875 Q482.5,1602.3125 482.5,1603.1719 L482.5,1604.0938 Q482.5,1605.125 483.3438,1605.8125 Q484.1875,1606.5 485.6875,1606.5 Q486.5781,1606.5 487.2031,1606.2969 Q487.5625,1606.1875 487.9688,1605.8281 Q488.2344,1605.625 488.375,1605.5625 Q488.5156,1605.5 488.6875,1605.5 Q489.0156,1605.5 489.25,1605.7656 Q489.5,1606.0156 489.5,1606.375 Q489.5,1606.7188 489.1563,1607.125 Q488.6563,1607.7188 487.8594,1608.0469 Q486.8125,1608.5 485.5313,1608.5 Q484.0313,1608.5 482.8281,1607.9063 Q481.8594,1607.4375 481.1719,1606.4219 Q480.5,1605.4063 480.5,1604.2031 L480.5,1603.1094 Q480.5,1601.8594 481.0938,1600.7656 Q481.7031,1599.6719 482.75,1599.0938 Q483.8125,1598.5 485,1598.5 Q485.7188,1598.5 486.3438,1598.75 Q486.9688,1599 487.5,1599.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="109" x="499.5"
+              y="1607.9102">ExternalModule2API
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="471.5" x2="610.5" y1="1619" y2="1619"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="471.5" x2="610.5" y1="1627" y2="1627"/><!--MD5=[684eca265d68b7682ab3f1c4bd898418]
+class ExternalModule3API-->
+        <rect codeLine="77" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="48" id="ExternalModule3API"
+              style="stroke:#A80036;stroke-width:1.5;" width="141" x="688.5" y="1587"/>
+        <ellipse cx="703.5" cy="1603" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M705.5,1599.5 Q705.7031,1599 705.9375,1598.75 Q706.1719,1598.5 706.4375,1598.5 Q706.9063,1598.5 707.2031,1598.7813 Q707.5,1599.0625 707.5,1599.7188 L707.5,1601.2813 Q707.5,1601.9375 707.2188,1602.2188 Q706.9375,1602.5 706.5,1602.5 Q706.1094,1602.5 705.8594,1602.3281 Q705.6094,1602.1563 705.5,1601.7031 Q705.4531,1601.3906 705.2813,1601.2188 Q704.9688,1600.8906 704.4063,1600.7031 Q703.8438,1600.5 703.2813,1600.5 Q702.5781,1600.5 701.9844,1600.7813 Q701.4063,1601.0625 700.9531,1601.6875 Q700.5,1602.3125 700.5,1603.1719 L700.5,1604.0938 Q700.5,1605.125 701.3438,1605.8125 Q702.1875,1606.5 703.6875,1606.5 Q704.5781,1606.5 705.2031,1606.2969 Q705.5625,1606.1875 705.9688,1605.8281 Q706.2344,1605.625 706.375,1605.5625 Q706.5156,1605.5 706.6875,1605.5 Q707.0156,1605.5 707.25,1605.7656 Q707.5,1606.0156 707.5,1606.375 Q707.5,1606.7188 707.1563,1607.125 Q706.6563,1607.7188 705.8594,1608.0469 Q704.8125,1608.5 703.5313,1608.5 Q702.0313,1608.5 700.8281,1607.9063 Q699.8594,1607.4375 699.1719,1606.4219 Q698.5,1605.4063 698.5,1604.2031 L698.5,1603.1094 Q698.5,1601.8594 699.0938,1600.7656 Q699.7031,1599.6719 700.75,1599.0938 Q701.8125,1598.5 703,1598.5 Q703.7188,1598.5 704.3438,1598.75 Q704.9688,1599 705.5,1599.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="109" x="717.5"
+              y="1607.9102">ExternalModule3API
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="689.5" x2="828.5" y1="1619" y2="1619"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="689.5" x2="828.5" y1="1627" y2="1627"/><!--MD5=[9e79a15defc04663f36ad34442e5fa10]
+class CovidReferenceValues1APIAdapter-->
+        <rect codeLine="79" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="103.3438"
+              id="CovidReferenceValues1APIAdapter" style="stroke:#A80036;stroke-width:1.5;" width="225" x="189.5"
+              y="1423"/>
+        <ellipse cx="204.5" cy="1439" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M206.5,1435.5 Q206.7031,1435 206.9375,1434.75 Q207.1719,1434.5 207.4375,1434.5 Q207.9063,1434.5 208.2031,1434.7813 Q208.5,1435.0625 208.5,1435.7188 L208.5,1437.2813 Q208.5,1437.9375 208.2188,1438.2188 Q207.9375,1438.5 207.5,1438.5 Q207.1094,1438.5 206.8594,1438.3281 Q206.6094,1438.1563 206.5,1437.7031 Q206.4531,1437.3906 206.2813,1437.2188 Q205.9688,1436.8906 205.4063,1436.7031 Q204.8438,1436.5 204.2813,1436.5 Q203.5781,1436.5 202.9844,1436.7813 Q202.4063,1437.0625 201.9531,1437.6875 Q201.5,1438.3125 201.5,1439.1719 L201.5,1440.0938 Q201.5,1441.125 202.3438,1441.8125 Q203.1875,1442.5 204.6875,1442.5 Q205.5781,1442.5 206.2031,1442.2969 Q206.5625,1442.1875 206.9688,1441.8281 Q207.2344,1441.625 207.375,1441.5625 Q207.5156,1441.5 207.6875,1441.5 Q208.0156,1441.5 208.25,1441.7656 Q208.5,1442.0156 208.5,1442.375 Q208.5,1442.7188 208.1563,1443.125 Q207.6563,1443.7188 206.8594,1444.0469 Q205.8125,1444.5 204.5313,1444.5 Q203.0313,1444.5 201.8281,1443.9063 Q200.8594,1443.4375 200.1719,1442.4219 Q199.5,1441.4063 199.5,1440.2031 L199.5,1439.1094 Q199.5,1437.8594 200.0938,1436.7656 Q200.7031,1435.6719 201.75,1435.0938 Q202.8125,1434.5 204,1434.5 Q204.7188,1434.5 205.3438,1434.75 Q205.9688,1435 206.5,1435.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="193" x="218.5"
+              y="1443.9102">CovidReferenceValues1APIAdapter
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="190.5" x2="413.5" y1="1455" y2="1455"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="190.5" x2="413.5" y1="1463" y2="1463"/>
+        <ellipse cx="200.5" cy="1474" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="129" x="209.5"
+              y="1478.4189">getRefValue(String param)
+        </text>
+        <ellipse cx="200.5" cy="1487.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="209.5"
+              y="1492.2549">getMinValue(String param)
+        </text>
+        <ellipse cx="200.5" cy="1501.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="132" x="209.5"
+              y="1506.0908">getMaxValue(String param)
+        </text>
+        <ellipse cx="200.5" cy="1515.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="113" x="209.5"
+              y="1519.9268">getMetric(String param)
+        </text><!--MD5=[bf202dd950ceaf4f26879676f3c29ba5]
+class ExternalModule2APIAdapter-->
+        <rect codeLine="85" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="103.3438" id="ExternalModule2APIAdapter"
+              style="stroke:#A80036;stroke-width:1.5;" width="183" x="449.5" y="1423"/>
+        <ellipse cx="464.5" cy="1439" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M466.5,1435.5 Q466.7031,1435 466.9375,1434.75 Q467.1719,1434.5 467.4375,1434.5 Q467.9063,1434.5 468.2031,1434.7813 Q468.5,1435.0625 468.5,1435.7188 L468.5,1437.2813 Q468.5,1437.9375 468.2188,1438.2188 Q467.9375,1438.5 467.5,1438.5 Q467.1094,1438.5 466.8594,1438.3281 Q466.6094,1438.1563 466.5,1437.7031 Q466.4531,1437.3906 466.2813,1437.2188 Q465.9688,1436.8906 465.4063,1436.7031 Q464.8438,1436.5 464.2813,1436.5 Q463.5781,1436.5 462.9844,1436.7813 Q462.4063,1437.0625 461.9531,1437.6875 Q461.5,1438.3125 461.5,1439.1719 L461.5,1440.0938 Q461.5,1441.125 462.3438,1441.8125 Q463.1875,1442.5 464.6875,1442.5 Q465.5781,1442.5 466.2031,1442.2969 Q466.5625,1442.1875 466.9688,1441.8281 Q467.2344,1441.625 467.375,1441.5625 Q467.5156,1441.5 467.6875,1441.5 Q468.0156,1441.5 468.25,1441.7656 Q468.5,1442.0156 468.5,1442.375 Q468.5,1442.7188 468.1563,1443.125 Q467.6563,1443.7188 466.8594,1444.0469 Q465.8125,1444.5 464.5313,1444.5 Q463.0313,1444.5 461.8281,1443.9063 Q460.8594,1443.4375 460.1719,1442.4219 Q459.5,1441.4063 459.5,1440.2031 L459.5,1439.1094 Q459.5,1437.8594 460.0938,1436.7656 Q460.7031,1435.6719 461.75,1435.0938 Q462.8125,1434.5 464,1434.5 Q464.7188,1434.5 465.3438,1434.75 Q465.9688,1435 466.5,1435.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="151" x="478.5"
+              y="1443.9102">ExternalModule2APIAdapter
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="450.5" x2="631.5" y1="1455" y2="1455"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="450.5" x2="631.5" y1="1463" y2="1463"/>
+        <ellipse cx="460.5" cy="1474" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="129" x="469.5"
+              y="1478.4189">getRefValue(String param)
+        </text>
+        <ellipse cx="460.5" cy="1487.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="469.5"
+              y="1492.2549">getMinValue(String param)
+        </text>
+        <ellipse cx="460.5" cy="1501.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="132" x="469.5"
+              y="1506.0908">getMaxValue(String param)
+        </text>
+        <ellipse cx="460.5" cy="1515.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="113" x="469.5"
+              y="1519.9268">getMetric(String param)
+        </text><!--MD5=[35c27d149b939a19a05414d761c02afa]
+class ExternalModule3APIAdapter-->
+        <rect codeLine="91" fill="#FEFECE" filter="url(#foiqzbk7z9r2z)" height="103.3438" id="ExternalModule3APIAdapter"
+              style="stroke:#A80036;stroke-width:1.5;" width="183" x="667.5" y="1423"/>
+        <ellipse cx="682.5" cy="1439" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M684.5,1435.5 Q684.7031,1435 684.9375,1434.75 Q685.1719,1434.5 685.4375,1434.5 Q685.9063,1434.5 686.2031,1434.7813 Q686.5,1435.0625 686.5,1435.7188 L686.5,1437.2813 Q686.5,1437.9375 686.2188,1438.2188 Q685.9375,1438.5 685.5,1438.5 Q685.1094,1438.5 684.8594,1438.3281 Q684.6094,1438.1563 684.5,1437.7031 Q684.4531,1437.3906 684.2813,1437.2188 Q683.9688,1436.8906 683.4063,1436.7031 Q682.8438,1436.5 682.2813,1436.5 Q681.5781,1436.5 680.9844,1436.7813 Q680.4063,1437.0625 679.9531,1437.6875 Q679.5,1438.3125 679.5,1439.1719 L679.5,1440.0938 Q679.5,1441.125 680.3438,1441.8125 Q681.1875,1442.5 682.6875,1442.5 Q683.5781,1442.5 684.2031,1442.2969 Q684.5625,1442.1875 684.9688,1441.8281 Q685.2344,1441.625 685.375,1441.5625 Q685.5156,1441.5 685.6875,1441.5 Q686.0156,1441.5 686.25,1441.7656 Q686.5,1442.0156 686.5,1442.375 Q686.5,1442.7188 686.1563,1443.125 Q685.6563,1443.7188 684.8594,1444.0469 Q683.8125,1444.5 682.5313,1444.5 Q681.0313,1444.5 679.8281,1443.9063 Q678.8594,1443.4375 678.1719,1442.4219 Q677.5,1441.4063 677.5,1440.2031 L677.5,1439.1094 Q677.5,1437.8594 678.0938,1436.7656 Q678.7031,1435.6719 679.75,1435.0938 Q680.8125,1434.5 682,1434.5 Q682.7188,1434.5 683.3438,1434.75 Q683.9688,1435 684.5,1435.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="151" x="696.5"
+              y="1443.9102">ExternalModule3APIAdapter
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="668.5" x2="849.5" y1="1455" y2="1455"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="668.5" x2="849.5" y1="1463" y2="1463"/>
+        <ellipse cx="678.5" cy="1474" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="129" x="687.5"
+              y="1478.4189">getRefValue(String param)
+        </text>
+        <ellipse cx="678.5" cy="1487.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="128" x="687.5"
+              y="1492.2549">getMinValue(String param)
+        </text>
+        <ellipse cx="678.5" cy="1501.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="132" x="687.5"
+              y="1506.0908">getMaxValue(String param)
+        </text>
+        <ellipse cx="678.5" cy="1515.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="113" x="687.5"
+              y="1519.9268">getMetric(String param)
+        </text><!--MD5=[f5428fd05aad57864ae2f1af42726350]
+link RecordResultUI to RecordResultController-->
+        <path codeLine="97" d="M285,55.04 C285,70.71 285,91.91 285,110.58 " fill="none"
+              id="RecordResultUI-to-RecordResultController"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="#A80036" points="285,115.77,289,106.77,285,110.77,281,106.77,285,115.77"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[ad94b30c163beda945d4742c60cadd9b]
+link RecordResultController to Company-->
+        <path codeLine="98" d="M221.85,192.07 C185.96,213.13 141.54,239.2 107.57,259.15 " fill="none"
+              id="RecordResultController-to-Company" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="#A80036"
+                 points="103.05,261.79,112.8373,260.6901,107.3637,259.2618,108.7921,253.7882,103.05,261.79"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[614914ea2818ba632179bffb6284c7a6]
+link RecordResultController to TestStore-->
+        <path codeLine="99" d="M281.14,192.25 C279.36,209.36 277.25,229.75 275.41,247.47 " fill="none"
+              id="RecordResultController-to-TestStore"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="#A80036"
+                 points="274.85,252.87,279.7549,244.3294,275.3645,247.8965,271.7973,243.5062,274.85,252.87"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a8c4228888174c409606ef1b96aaf4a1]
+link RecordResultController to Test-->
+        <path codeLine="100"
+              d="M334.41,192.07 C352.32,208.53 370.48,229.5 380,253 C399.01,299.92 392.85,355.46 380.59,401.88 "
+              fill="none" id="RecordResultController-to-Test"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="#A80036"
+                 points="379.22,406.91,385.4222,399.2594,380.5199,402.0819,377.6973,397.1796,379.22,406.91"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d8cc87b52c5b0699dfa8eb2caca57b06]
+link RecordResultController to TestParameterStoreMapper-->
+        <path codeLine="101" d="M388.59,154 C404.72,154 420.85,154 436.98,154 " fill="none"
+              id="RecordResultController-to-TestParameterStoreMapper"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="#A80036" points="441.98,154,432.98,150,436.98,154,432.98,158,441.98,154"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[690cd618a239917bb74b829e84e618a3]
+link TestParameterStoreMapper to TestParameterDTO-->
+        <path codeLine="102" d="M535.38,192.25 C536.01,209.36 536.77,229.75 537.42,247.47 " fill="none"
+              id="TestParameterStoreMapper-to-TestParameterDTO"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="#A80036"
+                 points="537.62,252.87,541.2832,243.7277,537.4344,247.8734,533.2887,244.0247,537.62,252.87"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[7f6cf7f175eae0af66201860de5de971]
+link Company to TestStore-->
+        <path codeLine="104" d="M103.21,291 C123.98,291 149.07,291 173.45,291 " fill="none" id="Company-to-TestStore"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="178.64,291,169.64,287,173.64,291,169.64,295,178.64,291"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="39" x="121.5"
+              y="284.4951">adopts
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="111.1281"
+              y="287.3222">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="164.0012"
+              y="287.8847">1
+        </text><!--MD5=[1c597f054c4006c32127b5f2848e0497]
+link Test to TestParameterList-->
+        <path codeLine="106" d="M446.59,500 C493.08,500 547.68,500 593.65,500 " fill="none"
+              id="Test-to-TestParameterList" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="598.93,500,589.93,496,593.93,500,589.93,504,598.93,500"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="116" x="464.75"
+              y="493.4951">requests analysis of
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="454.4544"
+              y="496.9073">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="583.85"
+              y="496.854">1
+        </text><!--MD5=[757d1b70759bcc84b2284ec30b17fea5]
+link TestParameterList to TestParameter-->
+        <path codeLine="107" d="M692.45,531.2 C691.79,567.47 690.68,628.81 689.9,672.03 " fill="none"
+              id="TestParameterList-to-TestParameter" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="689.8,677.21,693.9537,668.2799,689.8857,672.2107,685.9549,668.1428,689.8,677.21"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="36" x="691"
+              y="637.4951">stores
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="684.678"
+              y="552.2168">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="684.5397"
+              y="666.6097">*
+        </text><!--MD5=[92e8e476cc9e9004a7125f53a120ec97]
+link TestParameter to Parameter-->
+        <path codeLine="108" d="M750.7,722.5 C773.76,722.5 799.64,722.5 821.56,722.5 " fill="none"
+              id="TestParameter-to-Parameter" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="826.76,722.5,817.76,718.5,821.76,722.5,817.76,726.5,826.76,722.5"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="40" x="768.75"
+              y="715.9951">refer to
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="758.5244"
+              y="719.0715">*
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="811.9921"
+              y="718.7207">1
+        </text><!--MD5=[0e00e25ac6b8c14659aaff2cf7e5df08]
+link TestParameter to TestParameterResult-->
+        <path codeLine="109" d="M687.33,767.52 C685.86,806.24 683.71,862.8 682.12,904.69 " fill="none"
+              id="TestParameter-to-TestParameterResult" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036"
+                 points="681.93,909.72,686.2613,900.8747,682.1156,904.7234,678.2668,900.5777,681.93,909.72"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="686"
+              y="847.4951">contains
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="679.603"
+              y="788.5304">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="22" x="658.7112"
+              y="899.1827">0..1
+        </text><!--MD5=[52200cc2361fa0ac0481dd6ffcdb824b]
+link TestParameterResult to ReferenceValue-->
+        <path codeLine="110" d="M664.68,1013.32 C657.74,1036.33 649.58,1063.41 642.72,1086.18 " fill="none"
+              id="TestParameterResult-to-ReferenceValue" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036"
+                 points="641.27,1090.97,647.6977,1083.5077,642.7133,1086.1828,640.0382,1081.1985,641.27,1090.97"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="43" x="656"
+              y="1057.4951">records
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="655.1511"
+              y="1034.854">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="635.8271"
+              y="1080.0807">1
+        </text><!--MD5=[5aaeaafb6efdd8cdea46c2d598bf11af]
+reverse link ReferenceValue to ExternalModule-->
+        <path codeLine="111" d="M603.33,1185.92 C591.83,1208.71 578.16,1235.81 566.56,1258.82 " fill="none"
+              id="ReferenceValue-backto-ExternalModule" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036"
+                 points="605.6,1181.42,597.9735,1187.6519,603.3468,1185.8835,605.1151,1191.2569,605.6,1181.42"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="36" x="590"
+              y="1225.4951">create
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="595.1197"
+              y="1202.1501">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="562.5243"
+              y="1248.2961">1
+        </text><!--MD5=[e981d4f96c4342412d1e68160b30cf70]
+link Test to TestType-->
+        <path codeLine="112" d="M382.24,593.01 C410.84,660.07 448.26,747.81 470.06,798.93 " fill="none"
+              id="Test-to-TestType" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036"
+                 points="472.12,803.76,472.2772,793.9124,470.1625,799.1591,464.9158,797.0444,472.12,803.76"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="402"
+              y="637.4951">is of
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="380.2825"
+              y="614.8697">*
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="461.6679"
+              y="793.0792">1
+        </text><!--MD5=[b0f4f6db8206580012ef9cd998ed01c5]
+link TestStore to Test-->
+        <path codeLine="113" d="M283.87,329.01 C290.99,349.48 300.21,375.97 309.23,401.92 " fill="none"
+              id="TestStore-to-Test" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036"
+                 points="310.92,406.76,311.7448,396.9457,309.2791,402.0369,304.1879,399.5712,310.92,406.76"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="36" x="302"
+              y="373.4951">stores
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="278.4219"
+              y="350.1818">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="303.1644"
+              y="396.1872">*
+        </text><!--MD5=[71e6920dcc27afae8f25537cd5357b5f]
+link TestType to ExternalModule-->
+        <path codeLine="114" d="M492.25,880.39 C501.54,962.16 523.71,1157.3 534.66,1253.68 " fill="none"
+              id="TestType-to-ExternalModule" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036"
+                 points="535.23,1258.76,538.1761,1249.3621,534.659,1253.7927,530.2284,1250.2756,535.23,1258.76"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="78" x="514"
+              y="1057.4951">makes use of
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="487.518"
+              y="901.0406">*
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="526.9843"
+              y="1248.2281">1
+        </text><!--MD5=[e27a48c1292f354810518bb9da08881d]
+link CovidReferenceValues1APIAdapter to CovidReferenceValues1API-->
+        <path codeLine="116" d="M302,1526.35 C302,1545.06 302,1565.58 302,1581.61 " fill="none"
+              id="CovidReferenceValues1APIAdapter-to-CovidReferenceValues1API"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="302,1586.87,306,1577.87,302,1581.87,298,1577.87,302,1586.87"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[12a83c69fe6943f18de8c363e5459f01]
+link ExternalModule2APIAdapter to ExternalModule2API-->
+        <path codeLine="117" d="M541,1526.35 C541,1545.06 541,1565.58 541,1581.61 " fill="none"
+              id="ExternalModule2APIAdapter-to-ExternalModule2API" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="541,1586.87,545,1577.87,541,1581.87,537,1577.87,541,1586.87"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[f4142d0c21ccdde895a2d8f73faf8794]
+link ExternalModule3APIAdapter to ExternalModule3API-->
+        <path codeLine="118" d="M759,1526.35 C759,1545.06 759,1565.58 759,1581.61 " fill="none"
+              id="ExternalModule3APIAdapter-to-ExternalModule3API" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="759,1586.87,763,1577.87,759,1581.87,755,1577.87,759,1586.87"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b81b884e5db1bdffab121102aa52ff68]
+reverse link ExternalModule to CovidReferenceValues1APIAdapter-->
+        <path codeLine="120" d="M449.62,1373.44 C425.59,1389.73 399.95,1407.11 376.89,1422.74 " fill="none"
+              id="ExternalModule-backto-CovidReferenceValues1APIAdapter"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="445.88,1367.52,466.36,1362.09,453.73,1379.11,445.88,1367.52"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d731d3369c422c6b52b8605e972633e6]
+reverse link ExternalModule to ExternalModule2APIAdapter-->
+        <path codeLine="121" d="M541,1382.47 C541,1396.07 541,1410.06 541,1422.87 " fill="none"
+              id="ExternalModule-backto-ExternalModule2APIAdapter"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="534,1382.31,541,1362.31,548,1382.31,534,1382.31"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[507d8943818be77b508f93a8c6eb45ea]
+reverse link ExternalModule to ExternalModule3APIAdapter-->
+        <path codeLine="122" d="M625.3,1374.15 C646.95,1390.23 669.96,1407.33 690.69,1422.74 " fill="none"
+              id="ExternalModule-backto-ExternalModule3APIAdapter"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="620.96,1379.64,609.08,1362.09,629.31,1368.4,620.96,1379.64"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9b2d1d59538af46df6a2d3f922847b40]
 @startuml
 'https://plantuml.com/class-diagram
 
@@ -305,4 +929,6 @@ JVM: Dynamic Code Evolution 64-Bit Server VM
 Default Encoding: Cp1252
 Language: pt
 Country: PT
---></g></svg>
+-->
+    </g>
+</svg>

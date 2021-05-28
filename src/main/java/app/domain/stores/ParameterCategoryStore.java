@@ -140,6 +140,7 @@ public class ParameterCategoryStore {
 
     /**
      * Go through all the objects in the ArrayList and appends the String of the method toString to a new String creating a new line for object
+     *
      * @return String with all the objects in the ArrayList
      */
     public String toString() {
@@ -160,6 +161,7 @@ public class ParameterCategoryStore {
 
     /**
      * Checks if the ArrayList of Parameter Categories are empty
+     *
      * @return a boolean value that represents if the ArrayList is empty
      */
     public boolean isEmpty() {

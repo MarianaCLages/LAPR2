@@ -6,9 +6,8 @@ import net.sourceforge.barbecue.BarcodeFactory;
 import net.sourceforge.barbecue.BarcodeImageHandler;
 import net.sourceforge.barbecue.output.OutputException;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 
 
 public class ExternalApiBarcode implements BarcodeAdapter {
@@ -29,7 +28,7 @@ public class ExternalApiBarcode implements BarcodeAdapter {
         File outputFile = new File("Barcode\\" + fileName + ".jpg");
 
         try {
-            BarcodeImageHandler.saveJPEG(barcode,outputFile);
+            BarcodeImageHandler.saveJPEG(barcode, outputFile);
         } catch (IOException e) {
             e.printStackTrace();
         }

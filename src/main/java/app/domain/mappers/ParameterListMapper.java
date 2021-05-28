@@ -9,7 +9,7 @@ import java.util.List;
 public class ParameterListMapper {
 
     private ParameterDTO toDTO(Parameter pa) {
-        return new ParameterDTO(pa.getName(),pa.getCode());
+        return new ParameterDTO(pa.getName(), pa.getCode());
     }
 
     public List<ParameterDTO> toDTO(List<Parameter> paList) {

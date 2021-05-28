@@ -19,6 +19,6 @@ public class TestDTO {
 
     @Override
     public String toString() {
-        return "Test: " + "testNhsNumber= " + testNhsNumber+", testCode= " + testCode;
+        return "Test: " + "testNhsNumber= " + testNhsNumber + ", testCode= " + testCode;
     }
 }

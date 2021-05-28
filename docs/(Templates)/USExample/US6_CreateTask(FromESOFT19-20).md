@@ -1,70 +1,60 @@
-# US 006 - To create a Task 
+# US 006 - To create a Task
 
 ## 1. Requirements Engineering
 
-
 ### 1.1. User Story Description
-
 
 As an organization employee, I want to create a new task in order to be further published.
 
-
-
-### 1.2. Customer Specifications and Clarifications 
-
+### 1.2. Customer Specifications and Clarifications
 
 **From the specifications document:**
 
->	Each task is characterized by having a unique reference per organization, a designation, an informal and a technical description, an estimated duration and cost as well as the its classifying task category. 
+> Each task is characterized by having a unique reference per organization, a designation, an informal and a technical description, an estimated duration and cost as well as the its classifying task category.
 
 
->	As long as it is not published, access to the task is exclusive to the employees of the respective organization. 
+> As long as it is not published, access to the task is exclusive to the employees of the respective organization.
 
 
 
 **From the client clarifications:**
 
 > **Question:** Which is the unit of measurement used to estimate duration?
->  
+>
 > **Answer:** Duration is estimated in days.
 
 -
 
 > **Question:** Monetary data is expressed in any particular currency?
->  
+>
 > **Answer:** Monetary data (e.g. estimated cost of a task) is indicated in POTs (virtual currency internal to the platform).
-
 
 ### 1.3. Acceptance Criteria
 
-
 * **AC1:** All required fiels must be filled in.
 * **AC2:** Task reference must have at least 5 alphanumeric chars.
-* **AC3:** When creating a task with an already existing reference, the system must reject such operation and the user must have the change to modify the typed reference.
-
+* **AC3:** When creating a task with an already existing reference, the system must reject such operation and the user
+  must have the change to modify the typed reference.
 
 ### 1.4. Found out Dependencies
 
-
-* There is a dependency to "US003 Create a task category" since at least a task category must exist to classify the task being created.
-
+* There is a dependency to "US003 Create a task category" since at least a task category must exist to classify the task
+  being created.
 
 ### 1.5 Input and Output Data
-
 
 **Input Data:**
 
 * Typed data:
-	* a reference, 
-	* a designation, 
-	* an informal description
-	* a technical description
-	* an estimated duration
-	* an estimated cost
-	
-* Selected data:
-	* Classifying task category 
+    * a reference,
+    * a designation,
+    * an informal description
+    * a technical description
+    * an estimated duration
+    * an estimated cost
 
+* Selected data:
+    * Classifying task category
 
 **Output Data:**
 
@@ -77,11 +67,9 @@ As an organization employee, I want to create a new task in order to be further 
 
 ![US006_SSD](US006_SSD.svg)
 
-
 **Alternative 2**
 
 ![US006_SSD_v2](US006_SSD_v2.svg)
-
 
 **Other alternatives might exist.**
 
@@ -89,10 +77,9 @@ As an organization employee, I want to create a new task in order to be further 
 
 * The created task stays in a "not published" state in order to distinguish from "published" tasks.
 
-
 ## 2. OO Analysis
 
-### 2.1. Relevant Domain Model Excerpt 
+### 2.1. Relevant Domain Model Excerpt
 
 ![US006_MD](US006_MD.svg)
 
@@ -100,8 +87,7 @@ As an organization employee, I want to create a new task in order to be further 
 
 n/a
 
-
-## 3. Design - User Story Realization 
+## 3. Design - User Story Realization
 
 ### 3.1. Rationale
 
@@ -128,17 +114,16 @@ n/a
 
 ### Systematization ##
 
-According to the taken rationale, the conceptual classes promoted to software classes are: 
+According to the taken rationale, the conceptual classes promoted to software classes are:
 
- * Organization
- * Platform
- * Task
+* Organization
+* Platform
+* Task
 
-Other software classes (i.e. Pure Fabrication) identified: 
+Other software classes (i.e. Pure Fabrication) identified:
 
- * CreateTaskUI  
- * CreateTaskController
-
+* CreateTaskUI
+* CreateTaskController
 
 ## 3.2. Sequence Diagram (SD)
 
@@ -156,17 +141,17 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ![US006_CD](US006_CD.svg)
 
-# 4. Tests 
+# 4. Tests
 
-**Test 1:** Check that it is not possible to create an instance of the Task class with null values. 
+**Test 1:** Check that it is not possible to create an instance of the Task class with null values.
 
 	@Test(expected = IllegalArgumentException.class)
 		public void ensureNullIsNotAllowed() {
 		Task instance = new Task(null, null, null, null, null, null, null);
 	}
-	
 
-**Test 2:** Check that it is not possible to create an instance of the Task class with a reference containing less than five chars - AC2. 
+**Test 2:** Check that it is not possible to create an instance of the Task class with a reference containing less than
+five chars - AC2.
 
 	@Test(expected = IllegalArgumentException.class)
 		public void ensureReferenceMeetsAC2() {
@@ -175,13 +160,11 @@ Other software classes (i.e. Pure Fabrication) identified:
 		Task instance = new Task("Ab1", "Task Description", "Informal Data", "Technical Data", 3, 3780, cat);
 	}
 
-
-*It is also recommended to organize this content by subsections.* 
+*It is also recommended to organize this content by subsections.*
 
 # 5. Construction (Implementation)
 
-
-## Class CreateTaskController 
+## Class CreateTaskController
 
 		public boolean createTask(String ref, String designation, String informalDesc, 
 			String technicalDesc, Integer duration, Double cost, Integer catId)() {
@@ -196,9 +179,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 			return (this.task != null);
 		}
 
-
 ## Class Organization
-
 
 		public Task createTask(String ref, String designation, String informalDesc, 
 			String technicalDesc, Integer duration, Double cost, Category cat)() {
@@ -210,18 +191,16 @@ Other software classes (i.e. Pure Fabrication) identified:
 			return null;
 		}
 
-
-
-# 6. Integration and Demo 
+# 6. Integration and Demo
 
 * A new option on the Employee menu options was added.
 
 * Some demo purposes some tasks are bootstrapped while system starts.
 
-
 # 7. Observations
 
-Platform and Organization classes are getting too many responsibilities due to IE pattern and, therefore, they are becoming huge and harder to maintain. 
+Platform and Organization classes are getting too many responsibilities due to IE pattern and, therefore, they are
+becoming huge and harder to maintain.
 
 Is there any way to avoid this to happen?
 

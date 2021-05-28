@@ -6,15 +6,13 @@ import java.util.Objects;
 import java.util.regex.Pattern;
 
 /**
- *
  * @author Paulo Maio <pam@isep.ipp.pt>
  */
 public class Email {
 
     private String email;
 
-    public Email(String email)
-    {
+    public Email(String email) {
         if (!validate(email))
             throw new IllegalArgumentException("Invalid Email Address.");
         this.email = email;
@@ -30,9 +28,8 @@ public class Email {
     }
 
     // Extracted from https://www.geeksforgeeks.org/check-email-address-valid-not-java/
-    private boolean checkFormat(String email)
-    {
-        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
+    private boolean checkFormat(String email) {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." +
                 "[a-zA-Z0-9_+&*-]+)*@" +
                 "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
                 "A-Z]{2,7}$";
@@ -41,13 +38,12 @@ public class Email {
         return pat.matcher(email).matches();
     }
 
-    public String getEmail(){
+    public String getEmail() {
         return email;
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         int hash = 7;
         hash = 17 * hash + this.email.hashCode();
         return hash;
@@ -72,8 +68,7 @@ public class Email {
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return String.format("%s", this.email);
     }
 }
