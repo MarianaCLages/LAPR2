@@ -1,64 +1,58 @@
 @startuml
 
-class ParameterCategory {
-  -String CategoryName
-  -String Code
+class CreateReportUI {
+
 }
 
-class Company{
--parameterList
--categoryList
-+getCategoryList()
-+getParameterStore()
+class CreateReportController{
+getTestList(testID)
+getResult()
+createReport()
+saveReport(report)
+
 }
 
-class CreateParameterController {
--company
--store
--categoryList
-+createParameter(code, description, NHSid, Category)
-+getCategoryList()
-+saveParameter()
+class TestListMapper{
+toDTO(t)
+toDTO(tList)
 }
 
-class CreateParameterUI{
+class TestDTO{
+getTestNhsNumber()
+getTestCode()
 }
 
-class ParameterCategoryStore{
--categoryList
--category
-+getCategoryList()
+class Test{
+-state;
+-testCode
+-testNhsNumber
+-clientTin
+-testType
+-testParam
+-createdDate
+-sampleCreatedDate
+
+createReport(TestID, diagnosis)
+saveReport(report)
+ }
+
+class TestStore{
+-testList
+createReport(TestID, diagnosis)
 }
 
-class ParameterStore{
--parameterList
--parameter
-+createParameter()
-+validateParameter()
-+saveParameter()
+class Report{
+-TestID
+-diagnosis
+
 }
 
-class Parameter{
--code
--name
--description
--Category
-+Parameter()
-}
+CreateReportUI ..> CreateReportController
+CreateReportController .> TestListMapper
+TestListMapper .> TestDTO
+CreateReportController ..> Test
+CreateReportController ..> TestStore
+TestStore --> Test
+Test --> Report
 
-CreateParameterUI --> CreateParameterController
-
-CreateParameterController --> Company
-CreateParameterController ..> ParameterStore
-
-Company --> ParameterCategoryStore
-Company --> ParameterStore
-
-ParameterStore --> Parameter
-
-ParameterCategoryStore --> ParameterCategory
-
-
-
-Parameter  ..>  ParameterCategory
 @enduml
