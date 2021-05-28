@@ -248,10 +248,6 @@ public class Test {
 
 
 
-    public String getID() {
-        return testCode;
-    }
-
     public String getState() {
         return state.toString();
     }

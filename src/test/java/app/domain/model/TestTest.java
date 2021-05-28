@@ -269,7 +269,7 @@ public class TestTest {
 
         app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
 
-        String actual = test.getID();
+        String actual = test.getTestCode();
         String expected = "1234s";
         Assert.assertEquals(actual, expected);
     }
