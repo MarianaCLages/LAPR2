@@ -30,7 +30,7 @@ public class ValidateController {
 
 
     public boolean addTest(String testID) {
-        return tSt.add(store.getTestWithID(testID));
+        return tSt.add(store.getTestByCode(testID));
     }
 
     //public boolean validateTestList(){}

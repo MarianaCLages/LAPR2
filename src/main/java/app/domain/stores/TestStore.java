@@ -103,14 +103,6 @@ public class TestStore {
         return t.getState();
     }
 
-    public Test getTestWithID(String testID) {
-        for (Test t : this.array) {
-            if (t.getID().equals(testID)) {
-                return t;
-            }
-        }
-        return null;
-    }
 
     public boolean addTest(Test t) {
         return array.add(t);

@@ -71,6 +71,7 @@ public class App {
             props.load(in);
             in.close();
         } catch (IOException ex) {
+            System.out.println(ex.getMessage());
 
         }
         return props;
@@ -87,15 +88,16 @@ public class App {
 
 
         ParameterCategoryStore parameterCategoryStore = company.getParameterCategoryList();
-        ParameterCategory pc1 = parameterCategoryStore.CreateParameterCategory("12345", "categoria");
+        ParameterCategory pc1 = parameterCategoryStore.CreateParameterCategory("12345", "Haemoglobin");
         parameterCategoryStore.saveParameterCategory();
-        ParameterCategory pc2 = parameterCategoryStore.CreateParameterCategory("12346", "cat");
+        ParameterCategory pc2 = parameterCategoryStore.CreateParameterCategory("12346", "Erythrocyte Rate");
         parameterCategoryStore.saveParameterCategory();
-
+        ParameterCategory pc3 = parameterCategoryStore.CreateParameterCategory("12347", "Covid");
+        parameterCategoryStore.saveParameterCategory();
 
         TestTypeStore ttStore = company.getTestTypeList();
         TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", parameterCategoryStore);
-        TestType covidTest = new TestType("COV19", "Covid Test", "Swap", parameterCategoryStore);
+        TestType covidTest = new TestType("COV19", "Covid Test", "Swab", parameterCategoryStore);
 
         ttStore.add(bloodTest);
 
@@ -109,7 +111,7 @@ public class App {
         parameterStore.add(p3);
 
 
-        Parameter p4 = new  Parameter("IgGAN", "COVID", "000", pc1);
+        Parameter p4 = new  Parameter("IgGAN", "COVID", "000", pc3);
         parameterStore.add(p4);
 
         ClientStore store = company.clientList();
@@ -145,10 +147,11 @@ public class App {
         testStore.createTest("100000000001", "1234567890", covidTest, testCategories, testParameters1);
         testStore.saveTest();
 
-        this.authFacade.addUserWithRole("Clinical Chemistry Technologist ", "clichetec@lei.sem2.pt", "123456", Constants.ROLE_CLINICALCHEMISTRYTECHNOLOGIST);
-        this.authFacade.addUserWithRole("Medical Lab Technician ", "melate@lei.sem2.pt", "123456", Constants.ROLE_MEDICALLABTECHNICIIAN);
-        this.authFacade.addUserWithRole("Receptionist", "recep@lei.sem2.pt", "123456", Constants.ROLE_RECEPTIONIST);
-        this.authFacade.addUserWithRole("Main Administrator", "admin@lei.sem2.pt", "123456", Constants.ROLE_ADMIN);
-        this.authFacade.addUserWithRole("Specialist Doctor","specdoc@lei.sem2.pt","123456",Constants.ROLE_SPECIALISTDOCTOR);
+        final String pass="123456";
+        this.authFacade.addUserWithRole("Clinical Chemistry Technologist ", "clichetec@lei.sem2.pt", pass, Constants.ROLE_CLINICALCHEMISTRYTECHNOLOGIST);
+        this.authFacade.addUserWithRole("Medical Lab Technician ", "melate@lei.sem2.pt", pass, Constants.ROLE_MEDICALLABTECHNICIIAN);
+        this.authFacade.addUserWithRole("Receptionist", "recep@lei.sem2.pt", pass, Constants.ROLE_RECEPTIONIST);
+        this.authFacade.addUserWithRole("Main Administrator", "admin@lei.sem2.pt", pass, Constants.ROLE_ADMIN);
+        this.authFacade.addUserWithRole("Specialist Doctor","specdoc@lei.sem2.pt",pass,Constants.ROLE_SPECIALISTDOCTOR);
     }
 }
