@@ -308,7 +308,6 @@ public class TestTest {
 
         app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
 
-        test.addTestParameter();
         test.changeState("CREATED");
 
         String actual = test.getState();
@@ -384,6 +383,25 @@ public class TestTest {
         String expected = "VALIDATED";
 
         Assert.assertEquals(actual, expected);
+
+    }
+    @Test(expected = NullPointerException.class)
+    public void changeStateNotValid() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
+
+        test.changeState("");
+
+        String actual = test.getState();
 
     }
 
@@ -472,6 +490,32 @@ public class TestTest {
         TestType testType = new TestType("BL000", "description", "sei lá", cat);
 
         app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, null, pa);
+    }
+
+
+    @Test
+    public void getTestparamTest(){
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
+        test.addTestParameter();
+
+        List<TestParameter> actual = test.getTestParam();
+
+        List<TestParameter> expected = new ArrayList<>();
+        TestParameter tp = new TestParameter("AH000");
+        expected.add(tp);
+
+        Assert.assertEquals(actual.toString(),expected.toString());
+
     }
 
 }

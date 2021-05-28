@@ -5,7 +5,6 @@ import app.domain.shared.Constants;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.logging.Logger;
 
 /**
  * Class that represents the email that should be sent to the user when he is registered.
@@ -20,7 +19,7 @@ public class Email {
         try (FileWriter writer = new FileWriter(passFile)) {
             writer.write("MR/MS " + name + " you were registered with the email " + email + " and your password is " + password);
         } catch (IOException e) {
-            Logger.getLogger(e.getMessage());
+            System.out.println(e.getMessage());
         }
 
     }

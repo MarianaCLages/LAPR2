@@ -178,7 +178,63 @@ public class TestTypeTest {
     }
 
 
+    @Test
+    public void getCollectingMethod(){
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("A8554", "Hemograma");
+        cat.add(pc1);
 
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
+
+        String actual = t.getCollectingMethod();
+        String expected = "metodo 1";
+        Assert.assertEquals(actual,expected);
+
+    }
+
+    @Test
+    public void getDescription(){
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("A8554", "Hemograma");
+        cat.add(pc1);
+
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
+
+        String actual = t.getDescription();
+        String expected = "descrição";
+        Assert.assertEquals(actual,expected);
+
+    }
+
+    @Test
+    public void toStringTest(){
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("A8554", "Hemograma");
+        cat.add(pc1);
+
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
+
+        String actual = t.toString();
+        String expected ="TestType: " + "testID=" + "BL000" + ", description=" + "descrição" + ", collectingMethod=" + "metodo 1" + ", categories: " + cat.toString();
+
+        Assert.assertEquals(actual,expected);
+
+    }
+
+    @Test
+    public void toStringTest1(){
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("A8554", "Hemograma");
+        cat.add(pc1);
+
+        TestType t = new TestType("COV19", "descrição", "metodo 1", cat);
+
+        String actual = t.toString();
+        String expected ="TestType: " + "testID=" + "COV19" + ", description=" + "descrição" + ", collectingMethod=" + "metodo 1" + ", categories: " + cat.toString();
+
+        Assert.assertEquals(actual,expected);
+
+    }
 
 
 }

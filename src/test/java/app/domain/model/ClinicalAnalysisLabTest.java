@@ -249,5 +249,28 @@ public class ClinicalAnalysisLabTest {
         Assert.assertEquals(actual, expected);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void RegisterLabWrongNumber() {
+        ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
+        cat.add(pc1);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
+        //Arrange + Act
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45", "6357896543", "123456789801", store);
+
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void RegisterLabWrongId() {
+        ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
+        cat.add(pc1);
+        TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
+        //Arrange + Act
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gis45", "6357896543", "12345678901", store);
+    }
+
 
 }

@@ -23,4 +23,12 @@ public class TestParameter {
     public String getTestParameterResult() {
         return this.testParameterResult.toString();
     }
+
+    @Override
+    public String toString() {
+        return "TestParameter{" +
+                "pCode='" + pCode + '\'' +
+                ", testParameterResult=" + testParameterResult +
+                '}';
+    }
 }
