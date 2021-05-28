@@ -38,10 +38,7 @@ public class TestTypeStore {
      * @return boolean value that is true if the object is not null and dont already exists in the ArrayList
      */
     public boolean ValidateTestType(TestType t) {
-        if (t == null || contains(t) || !uniqueID(t)) {
-            return false;
-        }
-        return true;
+        return t != null && !contains(t) && uniqueID(t);
     }
 
     /**
@@ -65,11 +62,7 @@ public class TestTypeStore {
      * @return boolean value that is true if the object already exists in the ArrayList
      */
     public boolean contains(TestType t) {
-        if (this.array.contains(t)) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.array.contains(t);
     }
 
     /**
@@ -101,9 +94,9 @@ public class TestTypeStore {
      * @return if the object is found it returns the object, if not it returns null
      */
     public TestType getByID(String id) {
-        for (TestType t : array) {
-            if (t.getTestID().equals(id)) {
-                return t;
+        for (TestType t1 : array) {
+            if (t1.getTestID().equals(id)) {
+                return t1;
             }
         }
         return null;

@@ -13,7 +13,7 @@ public class ClinicalAnalysisLab {
     private String id;
     private String tin;
     private String phoneNumber;
-    private TestTypeStore tType;
+    private final TestTypeStore tType;
 
     /**
      * Constructor of the ClinicalAnalysisLab, it calls methods in order to validate the parameters

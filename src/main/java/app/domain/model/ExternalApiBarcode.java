@@ -8,18 +8,14 @@ import net.sourceforge.barbecue.output.OutputException;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 
-public class ExternalApiBarcode implements BarcodeAdapter{
+public class ExternalApiBarcode implements BarcodeAdapter {
 
     Barcode barcode;
-    BufferedImage barcodeimage;
 
-
-    public ExternalApiBarcode(){
-
+    public ExternalApiBarcode() {
     }
 
 
@@ -28,20 +24,24 @@ public class ExternalApiBarcode implements BarcodeAdapter{
         return barcode.getData();
     }
 
-    public BufferedImage createBarcodeImage(Barcode barcode) throws OutputException {
-        this.barcodeimage = BarcodeImageHandler.getImage(barcode);
-        return this.barcodeimage;
+    public void createBarcodeImage(Barcode barcode) throws OutputException {
+        String fileName = "Barcode_" + getBarcode();
+        File outputFile = new File("Barcode\\" + fileName + ".jpg");
+
+        try {
+            BarcodeImageHandler.saveJPEG(barcode,outputFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public String getBarcode(){
+    public String getBarcode() {
         return this.barcode.getData();
     }
 
-    public void barcodeImage() throws IOException, OutputException {
+    public void barcodeImage() throws OutputException {
+        createBarcodeImage(this.barcode);
 
-        String fileName= "Barcode_"+ getBarcode();
-        File outputFile= new File("Barcode\\"+ fileName+ ".jpg" );
-        ImageIO.write(createBarcodeImage(this.barcode) ,"jpg", outputFile);
 
     }
 

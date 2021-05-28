@@ -355,8 +355,9 @@ public class ClientTest {
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         Date date = df.parse(strDate);
 
-        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zoseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "José Manuel Avelino Faria Guimarães");
     }
+
     @Test (expected = IllegalArgumentException.class)
     public void ClientNamenull() throws ParseException {
         String strDate = "25-06-1950";
@@ -364,16 +365,6 @@ public class ClientTest {
         Date date = df.parse(strDate);
 
         Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", null);
-    }
-
-    @Test
-    public void addUserSendEmail() throws ParseException {
-        String strDate = "25-06-1950";
-        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-        Date date = df.parse(strDate);
-
-        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Manuel");
-
     }
 
 

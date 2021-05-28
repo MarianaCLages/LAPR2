@@ -3,14 +3,14 @@ package app.domain.model;
 
 public class Sample {
 
-    private String barcode;
-    private String TestID;
+    private final String barcode;
+    private final String testID;
 
 
-    public Sample(String TestID, String barcode){
+    public Sample(String testID, String barcode){
         checkBarcodeRules(barcode);
-        checkTestIDRules(TestID);
-        this.TestID = TestID;
+        checkTestIDRules(testID);
+        this.testID = testID;
         this.barcode = barcode;
 
     }
@@ -32,12 +32,12 @@ public class Sample {
     }
 
     public String getTestID() {
-        return TestID;
+        return testID;
     }
 
 
     @Override
     public String toString() {
-        return "Sample: testID=" +TestID +", barcode=" +barcode;
+        return "Sample: testID=" +testID +", barcode=" +barcode;
     }
 }

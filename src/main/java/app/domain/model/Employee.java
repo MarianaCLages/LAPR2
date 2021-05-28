@@ -2,7 +2,6 @@ package app.domain.model;
 
 import app.domain.shared.Constants;
 import auth.AuthFacade;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.text.Normalizer;
@@ -16,7 +15,7 @@ public class Employee {
     private String address;
     private String phonenumber;
     private String email;
-    private String SOC;
+    private String soc;
     private Role role;
     private String employeeID;
 
@@ -27,20 +26,20 @@ public class Employee {
      * @param address address of the Employee
      * @param phonenumber Phone number of the Employee
      * @param email email of the Employee
-     * @param SOC standard occupation code of the Employee
+     * @param soc standard occupation code of the Employee
      * @param role role of the employee
      */
-    public Employee(String employeeID, String name, String address, String phonenumber, String email, String SOC, Role role) {
+    public Employee(String employeeID, String name, String address, String phonenumber, String email, String soc, Role role) {
         checkNameRules(name);
         checkAddressRules(address);
         checkPhoneNumberRules(phonenumber);
         checkEmailRules(email);
-        checkSOCRules(SOC);
+        checkSOCRules(soc);
         this.name = name;
         this.address = address;
         this.phonenumber = phonenumber;
         this.email = email;
-        this.SOC = SOC;
+        this.soc = soc;
         this.role = role;
         this.employeeID = employeeID;
 
@@ -60,8 +59,8 @@ public class Employee {
         name = name.toLowerCase();
 
         name = Normalizer.normalize(name, Normalizer.Form.NFD);
-        name = name.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
-        name = name.replaceAll(" ", "");
+        name = name.replace("[\\p{InCombiningDiacriticalMarks}]", "");
+        name = name.replace(" ", "");
 
         char[] charArray = name.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
@@ -134,13 +133,13 @@ public class Employee {
      */
     private void checkSOCRules(String SOC) {
         if (StringUtils.isBlank(SOC))
-            throw new IllegalArgumentException("SOC cannot be blank.");
+            throw new IllegalArgumentException("soc cannot be blank.");
 
         char[] charArray = SOC.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
             char c = charArray[i];
             if (!(c >= '0' && c <= '9')) {
-                throw new IllegalArgumentException("SOC only accepts numbers");
+                throw new IllegalArgumentException("soc only accepts numbers");
             }
         }
     }
@@ -158,18 +157,18 @@ public class Employee {
         String password = PasswordGenerator.getPassword();
         AuthFacade authFacade = new AuthFacade();
 
-        if (role.equals("Clinical Chemistry Technologist")) {
+        if (role.toString().equals("Clinical Chemistry Technologist")) {
             success = authFacade.addUserWithRole(this.name, this.email, password, Constants.ROLE_CLINICALCHEMISTRYTECHNOLOGIST);
         }
 
-        if (role.equals("Medical Lab Technician")) {
+        if (role.toString().equals("Medical Lab Technician")) {
             success = authFacade.addUserWithRole(this.name, this.email, password, Constants.ROLE_MEDICALLABTECHNICIIAN);
         }
 
-        if (role.equals("LaboratoryCoordinator"))
+        if (role.toString().equals("LaboratoryCoordinator"))
             success = authFacade.addUserWithRole(this.name, this.email, password, Constants.ROLE_LABORATORYCOORDINATOR);
 
-        if (role.equals("Receptionist")) {
+        if (role.toString().equals("Receptionist")) {
             success = authFacade.addUserWithRole(this.name, this.email, password, Constants.ROLE_RECEPTIONIST);
         }
 
@@ -182,7 +181,7 @@ public class Employee {
 
 
     /**
-     * @return A string with the format "Employee: ID=  employeeID, name= name, address=  address, phonenumber= phonenumber, email= email, SOC= SOC, Role=  role"
+     * @return A string with the format "Employee: ID=  employeeID, name= name, address=  address, phonenumber= phonenumber, email= email, soc= soc, Role=  role"
      */
     @Override
     public String toString() {
@@ -192,7 +191,7 @@ public class Employee {
                 ", address=" + address +
                 ", phonenumber=" + phonenumber +
                 ", email=" + email +
-                ", SOC=" + SOC +
+                ", soc=" + soc +
                 ", Role="+ role ;
 
     }

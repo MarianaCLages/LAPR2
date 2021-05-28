@@ -7,6 +7,7 @@ import app.domain.stores.SampleStore;
 import app.ui.console.utils.Utils;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class RecordSampleUI implements Runnable {
 

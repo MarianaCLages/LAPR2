@@ -7,10 +7,10 @@ import org.apache.commons.lang3.StringUtils;
  * Class that represents an Parameter
  */
 public class Parameter {
-    private String name;
-    private String code;
-    private String description;
-    private ParameterCategory cat;
+    private final String name;
+    private final String code;
+    private final String description;
+    private final ParameterCategory cat;
 
 
     /**

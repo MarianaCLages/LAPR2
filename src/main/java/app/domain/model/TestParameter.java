@@ -1,7 +1,7 @@
 package app.domain.model;
 
 public class TestParameter {
-    private String pCode;
+    private final String pCode;
     private TestParameterResult testParameterResult;
 
     /**
