@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SpecDocUI implements Runnable {
+
     public SpecDocUI() {
+        //UI constructor
     }
 
     /**
