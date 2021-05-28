@@ -88,9 +88,9 @@ public class App {
 
 
         ParameterCategoryStore parameterCategoryStore = company.getParameterCategoryList();
-        ParameterCategory pc1 = parameterCategoryStore.CreateParameterCategory("12345", "Haemoglobin");
+        ParameterCategory pc1 = parameterCategoryStore.CreateParameterCategory("12345", "Haemoglobi");
         parameterCategoryStore.saveParameterCategory();
-        ParameterCategory pc2 = parameterCategoryStore.CreateParameterCategory("12346", "Erythrocyte Rate");
+        ParameterCategory pc2 = parameterCategoryStore.CreateParameterCategory("12346", "EryRate");
         parameterCategoryStore.saveParameterCategory();
         ParameterCategory pc3 = parameterCategoryStore.CreateParameterCategory("12347", "Covid");
         parameterCategoryStore.saveParameterCategory();

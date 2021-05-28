@@ -114,6 +114,7 @@ public class TestTest {
         app.domain.model.Test test = new app.domain.model.Test("000000000000001", "123456789187", "1234567890123456", testType, cat1, pa);
 
         test.addTestParameter();
+        Assert.assertNotNull(test);
     }
 
     @Test
@@ -416,4 +417,61 @@ public class TestTest {
         Assert.assertEquals(expected, actual);
 
     }
+
+    @Test
+    public void getResults() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("ESR00", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("ESR00", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
+
+        test.addTestParameter();
+        test.changeState("SAMPLE_COLLECTED");
+
+        test.addTestResult("ESR00", 5);
+
+        String expected = "Parameter: ESR00 -> Result: 5.0 mm/hr . Reference: Max: 10.0; Min: 1.0\n";
+
+        String actual = test.getResults();
+
+        Assert.assertEquals(expected, actual);
+
+
+    }
+
+    @Test(expected = Exception.class)
+    public void createInvalidTestParameterNull() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+
+
+        app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, null);
+    }
+
+    @Test(expected = Exception.class)
+    public void createInvalidTestCategoryNull() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, null, pa);
+    }
+
 }

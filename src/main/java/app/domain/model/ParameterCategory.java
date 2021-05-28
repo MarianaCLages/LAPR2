@@ -3,14 +3,12 @@ package app.domain.model;
 import app.domain.shared.Constants;
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.List;
-
 /**
  * Class that represents an Category of Parameters
  */
 public class ParameterCategory {
-    private String code;
-    private String name;
+    private final String code;
+    private final String name;
 
 
     /**

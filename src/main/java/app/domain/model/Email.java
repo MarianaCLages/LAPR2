@@ -11,6 +11,9 @@ import java.io.IOException;
  * It will not be implemented any external API
  */
 public class Email {
+    private Email() {
+    }
+
     public static void sendPasswordNotification(String name, String email, String password) {
         File passFile = new File(Constants.FILE);
         try (FileWriter writer = new FileWriter(passFile)) {

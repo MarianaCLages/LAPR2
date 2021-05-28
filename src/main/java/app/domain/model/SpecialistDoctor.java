@@ -17,7 +17,7 @@ public class SpecialistDoctor extends Employee {
     private String phonenumber;
     private String email;
     private String SOC;
-    private String EmployeeID;
+    private String employeeID;
 
     /**
      * Constructor of the Employee which is an subclass of Employee , it calls methods in order to validate the parameters
@@ -31,8 +31,8 @@ public class SpecialistDoctor extends Employee {
      * @param DoctorIndexNumber Doctor Index Number of the Specialist Doctor
      * @param role              role of the Specialist Doctor
      */
-    public SpecialistDoctor(String EmployeeID, String name, String address, String phonenumber, String email, String SOC, String DoctorIndexNumber, Role role) {
-        super(EmployeeID, name, address, phonenumber, email, SOC, role);
+    public SpecialistDoctor(String employeeID, String name, String address, String phonenumber, String email, String SOC, String DoctorIndexNumber, Role role) {
+        super(employeeID, name, address, phonenumber, email, SOC, role);
 
         checkDoctorIndexNumberRules(DoctorIndexNumber);
 
@@ -67,6 +67,7 @@ public class SpecialistDoctor extends Employee {
      * @return a boolean value representing the success of the operation
      */
 
+    @Override
     public boolean addUserWithRole(Company company) {
         boolean success = false;
         String password = PasswordGenerator.getPassword();

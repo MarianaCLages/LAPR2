@@ -5,8 +5,8 @@ package app.domain.model;
  */
 public class Role {
 
-    private String roleID;
-    private String roleName;
+    private final String roleID;
+    private final String roleName;
 
     /**
      * Constructor of the Role Class

@@ -15,12 +15,11 @@ public class ExternalApiBarcode implements BarcodeAdapter{
 
 
     public ExternalApiBarcode(){
-
     }
 
 
     public String createBarcode(String ID) throws BarcodeException {
-        Barcode barcode = BarcodeFactory.createUPCA(ID);
+        this.barcode = BarcodeFactory.createUPCA(ID);
         return barcode.getData();
     }
 

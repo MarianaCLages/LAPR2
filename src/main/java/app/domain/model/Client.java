@@ -14,8 +14,6 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.regex.Pattern;
 
-import static app.domain.model.PasswordGenerator.getPassword;
-
 /**
  * Class that represents an Client
  */
@@ -229,14 +227,10 @@ public class Client {
 
         name = name.toLowerCase();
         name = Normalizer.normalize(name, Normalizer.Form.NFD);
-        name = name.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
-        name = name.replaceAll(" ", "");
-        char[] charArray = name.toCharArray();
-        for (int i = 0; i < charArray.length; i++) {
-            char c = charArray[i];
-            if (!(c >= 'a' && c <= 'z')) {
-                throw new IllegalArgumentException("Name only accepts letters");
-            }
+        name = name.replace("[\\p{InCombiningDiacriticalMarks}]", "");
+        name = name.replace(" ", "");
+        if (name.matches("^[a-zA-Z]*$")) {
+            throw new IllegalArgumentException("Name only accepts letters");
         }
 
         if (name.length() > Constants.MAX_CLIENT_NAME) {
@@ -270,9 +264,9 @@ public class Client {
     }
 
 
-
     /**
      * Adds a new user to the system with the role of the client using the getPassword method to create the user's password
+     *
      * @return a boolean value representing the success of the operation
      */
 
@@ -282,7 +276,7 @@ public class Client {
         String password = PasswordGenerator.getPassword();
         success = auth.addUser(this.name, this.email, password);
         if (success) {
-             Email.sendPasswordNotification(this.name,this.email, password);
+            Email.sendPasswordNotification(this.name, this.email, password);
 
         }
         return success;

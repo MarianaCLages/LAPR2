@@ -3,8 +3,6 @@ package app.domain.model;
 import com.example2.EMRefValue;
 import com.example2.ExternalModule2API;
 
-import java.time.Instant;
-import java.util.Date;
 
 public class RefValueAdapter2 implements RefValueAdapter {
     ExternalModule2API api;

@@ -6,8 +6,8 @@ import org.apache.commons.lang3.StringUtils;
 
 public class Report {
 
-    private String testID;
-    private String diagnosis;
+    private final String testID;
+    private final String diagnosis;
 
     @Override
     public String toString() {

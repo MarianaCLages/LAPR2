@@ -31,7 +31,7 @@ public class SpecialistDoctorTest {
     @Test
     public void toStringTest(){
         SpecialistDoctor employee = new SpecialistDoctor("B00001","Bino","AtuaTerra", "91234567811","something@isep.com","111111111111111111","1111111111111111",role);
-        String expected = "Employee: ID=B00001, name=Bino, address=AtuaTerra, phonenumber=91234567811, email=something@isep.com, SOC=111111111111111111, Role="+ role.toString()+ ", DoctorIndexNumber=1111111111111111";
+        String expected = "Employee: ID=B00001, name=Bino, address=AtuaTerra, phonenumber=91234567811, email=something@isep.com, soc=111111111111111111, Role="+ role.toString()+ ", DoctorIndexNumber=1111111111111111";
         String actual = employee.toString();
         Assert.assertEquals(expected,actual);
     }

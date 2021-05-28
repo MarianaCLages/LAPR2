@@ -1,7 +1,6 @@
 package app.domain.model;
 
 import app.domain.shared.Constants;
-
 import org.apache.commons.lang3.StringUtils;
 
 import java.time.LocalDate;
@@ -11,20 +10,18 @@ import java.util.List;
 public class Test {
 
     private State state;
-    private String testCode;
-    private String testNhsNumber;
-    private String clientTin;
-    private TestType testType;
-    private List<ParameterCategory> catList;
-    private List<Parameter> paList;
+    private final String testCode;
+    private final String testNhsNumber;
+    private final String clientTin;
+    private final TestType testType;
+    private final List<ParameterCategory> catList;
+    private final List<Parameter> paList;
     private List<TestParameter> testParam;
-    private LocalDate createdDate;
+    private final LocalDate createdDate;
     private LocalDate sampleCreatedDate;
     private LocalDate analysedData;
     private LocalDate diagnosticDate;
     private LocalDate validatedDate;
-    private List<Sample> testSamples;
-    private Sample sample;
     private Report rep;
 
     /**
@@ -32,7 +29,7 @@ public class Test {
      *
      * @param testCode      unique code generated automatically
      * @param testNhsNumber unique code that identifies the test
-     * @param clientTin      unique code that identifies the client associated with the test
+     * @param clientTin     unique code that identifies the client associated with the test
      * @param testType      type of this test
      * @param catList       list of parameters categories that are measured in this test
      * @param paList        list of parameters that are measured in this test
@@ -53,7 +50,7 @@ public class Test {
 
     }
 
-    private void checkTestCodeRules(String testCode){
+    private void checkTestCodeRules(String testCode) {
         if (testCode == null) {
             throw new IllegalArgumentException("The Test Code must exist");
         }
@@ -65,7 +62,7 @@ public class Test {
      * @param paList list of parameters that are measured in this test
      */
     private void checkPaList(List<Parameter> paList) {
-        if (paList.isEmpty() || paList == null) {
+        if (paList.isEmpty() ) {
             throw new IllegalArgumentException("Parameter List must not be empty");
         }
 
@@ -77,7 +74,7 @@ public class Test {
      * @param catList list of parameters categories that are measured in this test
      */
     private void checkCatList(List<ParameterCategory> catList) {
-        if (catList.isEmpty() || catList == null) {
+        if (catList.isEmpty()) {
             throw new IllegalArgumentException("Category List must not be empty");
         }
     }
@@ -152,12 +149,16 @@ public class Test {
         }
     }
 
-    public String getDates(){
+    public String getDates() {
         StringBuilder listString = new StringBuilder();
-        listString.append("Created at:"); listString.append(this.createdDate.toString()).append("\n");
-        listString.append("Samples collected at:"); listString.append(this.sampleCreatedDate.toString()).append("\n");
-        listString.append("Analysed at:"); listString.append(this.analysedData.toString()).append("\n");
-        listString.append("Diagnosed at:"); listString.append(this.diagnosticDate.toString()).append("\n");
+        listString.append("Created at:");
+        listString.append(this.createdDate.toString()).append("\n");
+        listString.append("Samples collected at:");
+        listString.append(this.sampleCreatedDate.toString()).append("\n");
+        listString.append("Analysed at:");
+        listString.append(this.analysedData.toString()).append("\n");
+        listString.append("Diagnosed at:");
+        listString.append(this.diagnosticDate.toString()).append("\n");
 
         return String.valueOf(listString);
     }
@@ -170,13 +171,16 @@ public class Test {
         return testNhsNumber;
     }
 
-    public String getTestCode() { return testCode; }
+    public String getTestCode() {
+        return testCode;
+    }
 
     @Override
     public String toString() {
         return "Test: testCode=" + testCode + ", testNhsNumber=" + testNhsNumber + ", clientCc=" + clientTin + ", testType=" + testType + ", catList=" + catList + ", paList=" + paList;
     }
-    public String getResults(){
+
+    public String getResults() {
         StringBuilder listString = new StringBuilder();
 
         for (TestParameter s : this.testParam) {
@@ -213,9 +217,22 @@ public class Test {
     }
 
 
-
     public List<TestParameter> getTestParam() {
         return testParam;
+    }
+
+    public boolean createReport(String diagnosis) {
+        this.rep = new Report(this.testCode, diagnosis);
+
+        return this.rep != null;
+    }
+
+    public void saveReport() {
+        changeState(State.DIAGNOSTIC_MADE);
+    }
+
+    public String getState() {
+        return state.toString();
     }
 
 
@@ -230,26 +247,6 @@ public class Test {
         VALIDATED;
 
 
-
-    }
-    public boolean createReport(String diagnosis){
-        this.rep = new Report(this.testCode,diagnosis);
-
-        if (this.rep == null){
-            return false;
-        }else {
-            return true;
-        }
-    }
-
-    public void saveReport(){
-        changeState(State.DIAGNOSTIC_MADE);
-    }
-
-
-
-    public String getState() {
-        return state.toString();
     }
 
 

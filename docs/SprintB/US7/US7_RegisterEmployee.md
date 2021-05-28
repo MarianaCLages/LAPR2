@@ -31,7 +31,7 @@
 
 ##### Question 3
 > **Question:**
-> How should we generate the SOC number, employee ID and the doctor index number ?
+> How should we generate the soc number, employee ID and the doctor index number ?
 
 > **Answer:**
 > The employee ID should be generated from the initials of the employee name and should include a number. The number should have 5 digits and it increases automatically when a new employee is registered in the system. For instance, if the company has 20 employees and the administrator wants to register a specialist doctor with the name Ana Maria Santos Moura, then the the employee ID for this specialist doctor should be AMSM00021.
@@ -102,7 +102,7 @@
   * Address;
   * Phone Number;
   * E-Mail;
-  * Standard Occupational Classification "SOC";
+  * Standard Occupational Classification "soc";
   * Doctor Index Number
 
 - Selected data:
@@ -144,7 +144,7 @@
 |                                                                             | ... instantiating a employee?                                         | EmployeeStore              | Creator <br> LC & HC: we look to decrease the responsibilities assign to the the Company class                |
 | Step 2: show role list                                                      | ... knowing the roles to show?                                        | RoleStore                  | IE: the roles are defined by the RoleStore.                                                                   |
 | Step 3: select a role                                                       | ...saving the selected role?                                          | Employee                   | IE: employee registered in step 1 is classified in one role.                                                  |
-| Step 4: asks for employee data(Name,Address,  Phone Number, E-Mail,  "SOC") | ...requesting employee data?                                          |                            |                                                                                                               |
+| Step 4: asks for employee data(Name,Address,  Phone Number, E-Mail,  "soc") | ...requesting employee data?                                          |                            |                                                                                                               |
 | Step 5: type employee data                                                  | ...saving the inputted data?                                          | Employee                   | IE: object created has its own data.                                                                          |
 |                                                                             | ...local validation?                                                  | Employee                   | IE: knows its own data.                                                                                       |
 | Step 6: Shows data and requests confirmation                                | ...informing operation that shows all data and requests confirmation? | RegisterEmployeeUI         | IE: is responsible for user interactions.                                                                     |
@@ -209,7 +209,7 @@ Other software classes (i.e. Pure Fabrication) identified:
     @Test
     public void EmployeeIDcheck() {
         //Arrange + Act
-        String expected = "Employee: ID=B00001, name=Bino, address=AtuaTerra, phonenumber=91234567811, email=something@isep.com, SOC=111111111111111111, Role=Medical Lab Technician";
+        String expected = "Employee: ID=B00001, name=Bino, address=AtuaTerra, phonenumber=91234567811, email=something@isep.com, soc=111111111111111111, Role=Medical Lab Technician";
         EmployeeStore store = new EmployeeStore();
         store.CreateEmployee("Bino","AtuaTerra", "91234567811","something@isep.com","111111111111111111","",1);
 
@@ -271,22 +271,22 @@ public class Employee {
     private String address;
     private String phonenumber;
     private String email;
-    private String SOC;
+    private String soc;
     private Role role;
     private String employeeID;
 
 
-    public Employee(String employeeID, String name, String address, String phonenumber, String email, String SOC, Role role) {
+    public Employee(String employeeID, String name, String address, String phonenumber, String email, String soc, Role role) {
         checkNameRules(name);
         checkAddressRules(address);
         checkPhoneNumberRules(phonenumber);
         checkEmailRules(email);
-        checkSOCRules(SOC);
+        checkSOCRules(soc);
         this.name = name;
         this.address = address;
         this.phonenumber = phonenumber;
         this.email = email;
-        this.SOC = SOC;
+        this.soc = soc;
         this.role = role;
         this.employeeID = employeeID;
 
@@ -361,15 +361,15 @@ public class Employee {
 
 
 
-    private void checkSOCRules(String SOC) {
-        if (StringUtils.isBlank(SOC))
-            throw new IllegalArgumentException("SOC cannot be blank.");
+    private void checkSOCRules(String soc) {
+        if (StringUtils.isBlank(soc))
+            throw new IllegalArgumentException("soc cannot be blank.");
 
-        char[] charArray = SOC.toCharArray();
+        char[] charArray = soc.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
             char c = charArray[i];
             if (!(c >= '0' && c <= '9')) {
-                throw new IllegalArgumentException("SOC only accepts numbers");
+                throw new IllegalArgumentException("soc only accepts numbers");
             }
         }
     }
@@ -418,7 +418,7 @@ public class Employee {
                 ", address=" + address +
                 ", phonenumber=" + phonenumber +
                 ", email=" + email +
-                ", SOC=" + SOC +
+                ", soc=" + soc +
                 ", Role="+ role ;
 
     }
@@ -445,14 +445,14 @@ public class EmployeeStore {
 
 
 
-    public Employee CreateEmployee(String name, String address, String phonenumber, String email, String SOC,String DoctorIndexNumber, int role) {
+    public Employee CreateEmployee(String name, String address, String phonenumber, String email, String soc,String DoctorIndexNumber, int role) {
 
         RoleStore roles = new RoleStore();
 
         if (role == 5){
-            this.em = new SpecialistDoctor(CreateEmployeeID(name),name, address, phonenumber, email,SOC,DoctorIndexNumber ,roles.get(role));
+            this.em = new SpecialistDoctor(CreateEmployeeID(name),name, address, phonenumber, email,soc,DoctorIndexNumber ,roles.get(role));
         }else{
-            this.em = new Employee(CreateEmployeeID(name), name, address, phonenumber, email, SOC, roles.get(role));
+            this.em = new Employee(CreateEmployeeID(name), name, address, phonenumber, email, soc, roles.get(role));
         }
         return this.em;
     }
@@ -655,12 +655,12 @@ public class SpecialistDoctor extends Employee{
     private String address;
     private String phonenumber;
     private String email;
-    private String SOC;
+    private String soc;
     private String EmployeeID;
 
 
-    public SpecialistDoctor(String EmployeeID,String name, String address, String phonenumber, String email, String SOC, String DoctorIndexNumber, Role role) {
-        super(EmployeeID ,name, address, phonenumber, email, SOC, role);
+    public SpecialistDoctor(String EmployeeID,String name, String address, String phonenumber, String email, String soc, String DoctorIndexNumber, Role role) {
+        super(EmployeeID ,name, address, phonenumber, email, soc, role);
 
         checkDoctorIndexNumberRules(DoctorIndexNumber);
 
