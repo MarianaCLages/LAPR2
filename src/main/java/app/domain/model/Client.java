@@ -19,14 +19,14 @@ import java.util.regex.Pattern;
  */
 public class Client {
 
-    private String phoneNumber;
-    private String cc;
-    private String nhs;
-    private String tinNumber;
-    private Date birthDate;
+    private final String phoneNumber;
+    private final String cc;
+    private final String nhs;
+    private final String tinNumber;
+    private final Date birthDate;
     private String sex;
-    private String email;
-    private String name;
+    private final String email;
+    private final String name;
 
 
     /**
@@ -105,7 +105,7 @@ public class Client {
      * @return boolean value that is positive if the parameter is only numerical
      */
     private boolean checkIfIsNumerical(String i) {
-        return NumberUtils.isCreatable(i);
+        return !NumberUtils.isCreatable(i);
     }
 
     /**
@@ -114,7 +114,7 @@ public class Client {
      * @param phoneNumber unique phone number that belongs to client
      */
     private void checkPhoneNumber(String phoneNumber) {
-        if (!checkIfIsNumerical(phoneNumber)) {
+        if (checkIfIsNumerical(phoneNumber)) {
             throw new IllegalArgumentException("Phone Number must be a number");
         }
         if (phoneNumber.length() != Constants.PHONE_NUMBER_DIGITS) {
@@ -128,7 +128,7 @@ public class Client {
      * @param cc citizen card number of the client
      */
     private void checkCc(String cc) {
-        if (!checkIfIsNumerical(cc)) {
+        if (checkIfIsNumerical(cc)) {
             throw new IllegalArgumentException("Citizen Card must be a number");
         }
         if (cc.length() != Constants.CC_LENGTH) {
@@ -142,7 +142,7 @@ public class Client {
      * @param nhs national health system number of the client
      */
     private void checkNhs(String nhs) {
-        if (!checkIfIsNumerical(nhs)) {
+        if (checkIfIsNumerical(nhs)) {
             throw new IllegalArgumentException("National Health System must be a number");
         }
         if (nhs.length() != Constants.NHS_LENGTH) {
@@ -156,7 +156,7 @@ public class Client {
      * @param tin tax identification number of the client
      */
     private void checkTin(String tin) {
-        if (!checkIfIsNumerical(tin)) {
+        if (checkIfIsNumerical(tin)) {
             throw new IllegalArgumentException("Tax Identification Number must be a number");
         }
         if (tin.length() != Constants.TIN_LENGTH) {
