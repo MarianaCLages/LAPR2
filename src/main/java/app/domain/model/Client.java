@@ -281,10 +281,18 @@ public class Client {
         return success;
     }
 
+    /**
+     *
+     * @return string that represents cc of the client
+     */
     public String getCc() {
         return cc;
     }
 
+    /**
+     *
+     * @return string that represents cc number of the client
+     */
     public String getTinNumber() {
         return tinNumber;
     }

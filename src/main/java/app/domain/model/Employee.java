@@ -195,10 +195,18 @@ public class Employee {
 
     }
 
+    /**
+     *
+     * @return email of the Employee
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     *
+     * @return Phone number of the Employee
+     */
     public String getPhonenumber() {
         return phonenumber;
     }

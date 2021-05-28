@@ -14,6 +14,12 @@ public class Email {
     private Email() {
     }
 
+    /**
+     * writes the user's email and the password in a file defined in the constants class
+     * @param name name of the user
+     * @param email email of the user
+     * @param password password of the user
+     */
     public static void sendPasswordNotification(String name, String email, String password) {
         File passFile = new File(Constants.FILE);
         try (FileWriter writer = new FileWriter(passFile)) {

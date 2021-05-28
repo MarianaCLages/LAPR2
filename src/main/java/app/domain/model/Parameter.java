@@ -95,10 +95,18 @@ public class Parameter {
         return code;
     }
 
+    /**
+     *
+     * @return short name that characterize the Parameter
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @return category associated with the Parameter
+     */
     public ParameterCategory getCat() {
         return cat;
     }
