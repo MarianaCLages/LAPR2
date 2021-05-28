@@ -9,6 +9,8 @@ import java.util.List;
 
 public class ParameterStoreTest {
     ParameterCategory cat = new ParameterCategory("AE554", "Hemogram");
+    ParameterCategory cat1 = new ParameterCategory("AR554", "Hemogram");
+
 
     @Test
     public void validateValidParameter() {
@@ -197,6 +199,25 @@ public class ParameterStoreTest {
         Assert.assertEquals(actual, expected);
 
     }
+    @Test
+    public void getParameterListNull() {
+        ParameterStore store = new ParameterStore();
+        Parameter pc1 = store.createParameter("A1234", "PLT", "description", cat);
+        Parameter pc2 = store.createParameter("A1284", "PLT", "description", cat);
+        Parameter pc3 = store.createParameter("A1284", "PLT", "description", cat1);
+
+
+        store.add(pc1);
+        store.add(pc2);
+
+        List<Parameter> parameterList = store.getParameterList("AE554");
+
+        String actual = parameterList.toString();
+        String expected = store.toString();
+        Assert.assertEquals(actual, expected);
+
+    }
+
 
 
     @Test
@@ -212,4 +233,38 @@ public class ParameterStoreTest {
 
         Assert.assertEquals(p,pc2);
     }
+
+    @Test
+    public void getParameterTestNull(){
+        ParameterStore store = new ParameterStore();
+        Parameter pc1 = store.createParameter("A1234", "PLT", "description", cat);
+        Parameter pc2 = store.createParameter("A1284", "PLT", "description", cat);
+
+        store.add(pc1);
+        store.add(pc2);
+
+        Parameter p = store.getParameter("A1288");
+
+        Assert.assertNull(p);
+    }
+
+    @Test
+    public void isNullTest(){
+        ParameterStore store = new ParameterStore();
+        Assert.assertTrue(store.isEmpty());
+    }
+
+    @Test
+    public void getList(){
+        ParameterStore store = new ParameterStore();
+        Parameter pc1 = store.createParameter("A1234", "PLT", "description", cat);
+        Parameter pc2 = store.createParameter("A1284", "PLT", "description", cat);
+
+        store.add(pc1);
+        store.add(pc2);
+
+        Assert.assertNotNull(store.getList());
+    }
+    
+    
 }
