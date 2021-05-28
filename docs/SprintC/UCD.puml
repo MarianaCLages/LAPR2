@@ -8,9 +8,9 @@ actor "Administrator" as admin
 actor "Specialist Doctor" as SD
 actor "Clinical Chemistry Technologist" as CCT
 actor "Laboratory Coordinator" as LC
-actor "Company" as com
+actor "Time" as com
 rectangle "System" {
-  usecase "Checks the results of the test" as UC1
+  usecase "Consults the results of the test" as UC1
   usecase "Register a new employee" as UC7
   usecase "Register a new clinical analysis lab and choose the which kind of test it operates" as UC8
   usecase "Specify a new type of test and its collecting methods" as UC9

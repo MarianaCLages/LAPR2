@@ -171,6 +171,7 @@ public class Employee {
         }
 
         if (success) {
+            System.out.println("Email:" + this.email+", password:" + password);
             Email.sendPasswordNotification(this.name, this.email, password);
 
         }

@@ -55,7 +55,7 @@ public class Client {
         this.nhs = nhs;
         this.tinNumber = tinNumber;
         this.birthDate = birthDate;
-
+        this.name = name;
         if (sex == 'M') {
             this.sex = "Male";
         } else {
@@ -65,9 +65,8 @@ public class Client {
                 throw new IllegalArgumentException("Sex must be 'M' or 'F' ");
             }
         }
-
         this.email = email;
-        this.name = name;
+
     }
 
     /**
@@ -82,18 +81,18 @@ public class Client {
      * @param name        name of the client
      */
     public Client(String phoneNumber, String cc, String nhs, String tinNumber, Date birthDate, String email, String name) {
-        checkPhoneNumber(phoneNumber);
         checkCc(cc);
-        checkNhs(nhs);
+        checkPhoneNumber(phoneNumber);
         checkTin(tinNumber);
-        checkBirthDate(birthDate, checkAge(birthDate));
+        checkNhs(nhs);
         checkEmailRules(email);
+        checkBirthDate(birthDate, checkAge(birthDate));
         checkNameRules(name);
+        this.birthDate = birthDate;
         this.phoneNumber = phoneNumber;
         this.cc = cc;
-        this.nhs = nhs;
         this.tinNumber = tinNumber;
-        this.birthDate = birthDate;
+        this.nhs = nhs;
         this.email = email;
         this.name = name;
     }
