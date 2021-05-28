@@ -6,6 +6,7 @@ import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 
 public interface BarcodeAdapter {
 
@@ -14,4 +15,6 @@ public interface BarcodeAdapter {
     BufferedImage createBarcodeImage(Barcode barcode) throws OutputException;
 
     String getBarcode();
+
+    void barcodeImage() throws IOException, OutputException;
 }

@@ -7,7 +7,9 @@ import app.domain.model.Test;
 import app.domain.stores.SampleStore;
 import app.domain.stores.TestStore;
 import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 
+import java.io.IOException;
 import java.util.List;
 
 public class RecordSampleController {
@@ -52,7 +54,7 @@ public class RecordSampleController {
         return sampleList.getSample();
     }
 
-    public boolean saveSample() {
+    public boolean saveSample() throws IOException, OutputException {
         return sampleList.saveSample();
     }
 

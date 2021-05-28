@@ -1,10 +1,17 @@
 package app.domain.stores;
 
 import app.domain.model.BarcodeAdapter;
+import app.domain.model.ExternalApiBarcode;
 import app.domain.model.Sample;
 import app.domain.shared.Constants;
+import net.sourceforge.barbecue.Barcode;
 import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 
+import javax.imageio.ImageIO;
+import java.awt.image.RenderedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +20,8 @@ public class SampleStore {
 
     private Sample sample;
     private List<Sample> testSamples;
+    private BarcodeAdapter em;
+
 
 
     public SampleStore() {
@@ -23,7 +32,7 @@ public class SampleStore {
 
     public boolean createSample(String testID) throws ClassNotFoundException, IllegalAccessException, InstantiationException, BarcodeException {
         Class<?> oClass = Class.forName(Constants.BARCODE_API);
-        BarcodeAdapter em = (BarcodeAdapter) oClass.newInstance();
+        this.em = (BarcodeAdapter) oClass.newInstance();
         this.sample = new Sample(testID,em.createBarcode(createSampleID()));
 
         if (this.sample == null){
@@ -32,10 +41,11 @@ public class SampleStore {
             return true;
         }
     }
-    public boolean saveSample() {
+    public boolean saveSample() throws IOException, OutputException {
         if (validateSample()) {
             testSamples.add(this.sample);
             System.out.println(this.sample.toString());
+            em.barcodeImage();
             return true;
         } else {
             return false;
