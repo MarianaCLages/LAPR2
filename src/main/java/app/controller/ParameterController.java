@@ -50,7 +50,8 @@ public class ParameterController {
      * @return the list with all the Type if Tests in the system
      */
     public ParameterCategoryStore getParameterCategoryList() {
-        return this.catStore = company.parameterCategoryList();
+        this.catStore = company.getParameterCategoryList();
+        return this.catStore;
     }
 
     /**

@@ -19,7 +19,7 @@ public class MedLabTechController {
 
 
     public List<TestDTO> tList() {
-        this.tList = company.testList();
+        this.tList = company.getTestList();
         TestListMapper typeMapper = new TestListMapper();
         return typeMapper.toDTO(tList);
     }

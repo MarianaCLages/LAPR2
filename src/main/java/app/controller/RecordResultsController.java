@@ -24,7 +24,7 @@ public class RecordResultsController {
 
     public RecordResultsController(Company company) {
         this.company = company;
-        this.tStore = company.testList();
+        this.tStore = company.getTestList();
         this.sampleStore = company.getSampleStore();
 
     }

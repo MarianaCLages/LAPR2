@@ -4,8 +4,6 @@ import app.domain.stores.*;
 import auth.AuthFacade;
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.List;
-
 /**
  * @author Paulo Maio <pam@isep.ipp.pt>
  */
@@ -36,6 +34,9 @@ public class Company {
         this.designation = designation;
         this.authFacade = new AuthFacade();
 
+        this.parameterList = new ParameterStore();
+        this.roleList = new RoleStore();
+        this.testTypeList = new TestTypeStore();
         this.parameterCategoryList = new ParameterCategoryStore();
         this.employeeList = new EmployeeStore();
         this.clinicalAnalysisLabList = new ClinicalAnalysisLabStore();
@@ -70,15 +71,6 @@ public class Company {
     }
 
     /**
-     * creates a list with all the Parameter objects in the system
-     *
-     * @return list of Parameter objects
-     */
-    public ParameterCategoryStore parameterCategoryList() {
-        return this.parameterCategoryList;
-    }
-
-    /**
      * creates a new empty list of Employee objects
      *
      * @return empty list of Employee objects
@@ -99,17 +91,6 @@ public class Company {
         return this.parameterList;
     }
 
-
-    /**
-     * creates a list with all the Roles objects in the system
-     *
-     * @return list of Roles objects
-     */
-    public List<Role> roleList() {
-        return roleList.getRoleList();
-    }
-
-
     /**
      * creates a new empty list of TestType objects
      *
@@ -117,15 +98,6 @@ public class Company {
      */
     public TestTypeStore getTestTypeList() {
         this.testTypeList = new TestTypeStore();
-        return this.testTypeList;
-    }
-
-    /**
-     * creates a  list with all the TestType objects in the system
-     *
-     * @return list of TestType objects
-     */
-    public TestTypeStore testTypeList() {
         return this.testTypeList;
     }
 
@@ -157,10 +129,6 @@ public class Company {
         return this.clientList;
     }
 
-    public ClientStore clientList() {
-        return this.clientList;
-    }
-
 
     /**
      * creates a new empty list of Test objects
@@ -171,13 +139,6 @@ public class Company {
         return this.testList;
     }
 
-    public TestStore testList() {
-        return this.testList;
-    }
-
-    public ParameterStore parameterList() {
-        return this.parameterList;
-    }
 
     public SampleStore getSampleStore() {
         return sampleStore;

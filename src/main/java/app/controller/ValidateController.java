@@ -20,7 +20,7 @@ public class ValidateController {
 
     public ValidateController(Company company) {
         this.company = company;
-        this.store = company.testList();
+        this.store = company.getTestList();
     }
 
     public List<TestStoreDTO> getListOfTests() {

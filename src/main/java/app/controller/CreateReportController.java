@@ -26,7 +26,7 @@ public class CreateReportController {
 
 
     public List<TestDTO> tList() {
-        this.tList = company.testList().getListOfTestsAnalysed();
+        this.tList = company.getTestList().getListOfTestsAnalysed();
         TestListMapper typeMapper = new TestListMapper();
         return typeMapper.toDTO(tList);
     }

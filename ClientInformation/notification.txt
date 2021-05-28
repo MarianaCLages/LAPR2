@@ -1,1 +1,1 @@
-MR/MS Eduardo you were registered with the email ze@ze.com and your password is lFLmfYxwci
+MR/MS name you were registered with the email String email and your password is String password

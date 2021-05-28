@@ -117,7 +117,7 @@ public class App {
         Parameter p4 = new Parameter("IgGAN", "COVID", "000", pc3);
         parameterStore.add(p4);
 
-        ClientStore store = company.clientList();
+        ClientStore store = company.getClientList();
 
         String strDate = "07-08-2002";
 
