@@ -147,7 +147,6 @@ public class EmployeeStore {
 
     /**
      * Adds user to the system by calling the Employee instance method
-     * @param company instance of company class in order to be able to get the AuthFacade class that is associated with the system
      * @return boolean value that represents the success of the operation
      */
     public boolean addUserWithRole(Company company) {

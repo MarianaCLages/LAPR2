@@ -155,7 +155,7 @@ public class Employee {
 
         boolean success = false;
         String password = PasswordGenerator.getPassword();
-        AuthFacade authFacade = new AuthFacade();
+        AuthFacade authFacade = company.getAuthFacade();
 
         if (role.toString().equals("Clinical Chemistry Technologist")) {
             success = authFacade.addUserWithRole(this.name, this.email, password, Constants.ROLE_CLINICALCHEMISTRYTECHNOLOGIST);
