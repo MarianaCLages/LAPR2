@@ -244,7 +244,16 @@ public class ClientTest {
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         Date date = df.parse(strDate);
 
-        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "emailgamil.com", "José Manuel Avelino Faria Guimarães de Sousa Andrade de Melo");
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "José Manuel Avelino Faria Guimarães de Sousa Andrade de Melo");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void CreateClientInvalidNameTooBigWithoutSex() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date,  "email@gamil.com", "José Manuel Avelino Faria Guimarães de Sousa Andrade de Melo");
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -364,6 +373,67 @@ public class ClientTest {
         Date date = df.parse(strDate);
 
         Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Manuel");
+
+    }
+
+
+
+    @Test
+    public void getPhoneNumberTest() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zé");
+
+        String expected = "12345678910" ;
+        String actual = client.getPhoneNumber();
+
+        Assert.assertEquals(expected,actual);
+
+    }
+    @Test
+    public void getEmailTest() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zé");
+
+        String expected = "ze@email.com" ;
+        String actual = client.getEmail();
+
+        Assert.assertEquals(expected,actual);
+
+    }
+
+    @Test
+    public void getTinTest() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zé");
+
+        String expected = "1234567891" ;
+        String actual = client.getTinNumber();
+
+        Assert.assertEquals(expected,actual);
+
+    }
+
+    @Test
+    public void getCc() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zé");
+
+        String expected = "1234567890123456" ;
+        String actual = client.getCc();
+
+        Assert.assertEquals(expected,actual);
 
     }
 }

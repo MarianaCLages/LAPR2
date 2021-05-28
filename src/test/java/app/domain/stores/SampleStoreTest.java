@@ -1,4 +1,4 @@
-package app.domain;
+package app.domain.stores;
 
 import org.junit.Assert;
 import org.junit.Test;

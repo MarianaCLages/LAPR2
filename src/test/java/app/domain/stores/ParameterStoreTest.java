@@ -1,4 +1,4 @@
-package app.domain;
+package app.domain.stores;
 
 import app.domain.model.Parameter;
 import app.domain.model.ParameterCategory;

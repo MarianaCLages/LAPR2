@@ -1,6 +1,9 @@
 package app.domain.stores;
 
-import app.domain.model.*;
+import app.domain.model.Parameter;
+import app.domain.model.ParameterCategory;
+import app.domain.model.Test;
+import app.domain.model.TestType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,8 +45,7 @@ public class TestStore {
             if (t.getTestNhsNumber().equals(t1.getTestNhsNumber())) {
                 return true;
             }
-        }
-        return false;
+        } return false;
     }
 
     private boolean contains(Test t) {
@@ -62,43 +64,46 @@ public class TestStore {
         return this.array;
     }
 
+
     public String getTest() {
         return this.t.toString();
     }
-    public Test getTestByCode(String testId){
-        for (Test t : this.array) {
-            if (t.getTestNhsNumber().equals(testId)) {
-                return t;
+
+    public Test getTestByCode(String testId) {
+        for (Test t1 : this.array) {
+            if (t1.getTestNhsNumber().equals(testId)) {
+                return t1;
             }
         }
         return null;
     }
 
 
-
-    public List<Test> getListOfTestsToValidate(){
+    public List<Test> getListOfTestsToValidate() {
         List<Test> listToValidate = new ArrayList<Test>();
         for (Test t : this.array) {
-            if (t.getState().equals("DIAGNOSTIC_MADE")){
+            if (t.getState().equals("DIAGNOSTIC_MADE")) {
                 listToValidate.add(t);
             }
         }
         return listToValidate;
     }
 
-    public TestStore getListOfTestsAnalysed(){
+    public TestStore getListOfTestsAnalysed() {
         TestStore listToReport = new TestStore();
         for (Test t : this.array) {
-            if (t.getState().equals("SAMPLE_ANALYSED")){
+            if (t.getState().equals("SAMPLE_ANALYSED")) {
                 listToReport.addTest(t);
             }
         }
         return listToReport;
     }
 
-    public String getState(Test t){ return t.getState();}
+    public String getState(Test t) {
+        return t.getState();
+    }
 
-    public Test getTestWithID(String testID){
+    public Test getTestWithID(String testID) {
         for (Test t : this.array) {
             if (t.getID().equals(testID)) {
                 return t;
