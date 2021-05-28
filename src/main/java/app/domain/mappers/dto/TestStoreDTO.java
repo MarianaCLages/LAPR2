@@ -1,16 +1,16 @@
 package app.domain.mappers.dto;
-
 import app.domain.model.Test;
-import app.domain.stores.TestStore;
-
 public class TestStoreDTO {
-    private String code;
-    private String id;
+    private Test test;
 
-    public TestStoreDTO(Test test) {
-        this.code = test.getTestCode();
-        this.id = test.getID();
+    public TestStoreDTO(Test test){
+        this.test=test;
     }
 
-
+    @Override
+    public String toString() {
+        return "TestStoreDTO{" +
+                "test=" + test +
+                '}';
+    }
 }

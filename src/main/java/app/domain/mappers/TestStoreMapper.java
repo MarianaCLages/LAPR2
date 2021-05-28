@@ -9,18 +9,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestStoreMapper {
-/*
-    private TestDTO toDTO(Test tSt) {return new TestDTO(tSt);}
 
-    public List<TestStoreDTO> toDTO(List<Test> testS) {
-        List<TestDTO> tListDto = new ArrayList<>();
-        for (Test test : testS) {
+    private TestStoreDTO toDTO(Test t) {return new TestStoreDTO(t);}
+
+    public List<TestStoreDTO> toDTO(TestStore store) {
+        List<Test> testList = store.getListOfTestsToValidate();
+        List<TestStoreDTO> tListDto = new ArrayList<>();
+        for (Test test : testList) {
             tListDto.add(this.toDTO(test));
         }
-        return tListDto ;
+        return tListDto;
     }
-
-
- */
-
 }

@@ -2,13 +2,13 @@
 'https://plantuml.com/sequence-diagram
 
 autonumber
-participant ":RecordResultsController" as ctrl
+participant ":ValidateController" as ctrl
 participant ":TestStore" as tStore
 participant ":Test" as Test
 participant ":TestStoreMapper" as tpStoreMapper
 participant "tListDto : TestStoreDTO" as tpStoreDTO
 participant ":TestDTO" as tpDTO
-participant "tst:TestStore" as tSt
+participant "tst:TestList" as tSt
 
 [o-> ctrl: getListOfTests()
 activate ctrl

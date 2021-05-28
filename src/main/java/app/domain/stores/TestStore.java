@@ -76,11 +76,11 @@ public class TestStore {
 
 
 
-    public TestStore getListOfTestsToValidate(){
-        TestStore listToValidate = new TestStore();
+    public List<Test> getListOfTestsToValidate(){
+        List<Test> listToValidate = new ArrayList<Test>();
         for (Test t : this.array) {
             if (t.getState().equals("DIAGNOSTIC_MADE")){
-                listToValidate.addTest(t);
+                listToValidate.add(t);
             }
         }
         return listToValidate;
