@@ -1,10 +1,10 @@
 package auth.domain.model;
 
 import org.apache.commons.lang3.StringUtils;
+
 import java.util.Objects;
 
 /**
- *
  * @author Paulo Maio <pam@isep.ipp.pt>
  */
 public class UserRole {
@@ -12,8 +12,7 @@ public class UserRole {
     private String id;
     private String description;
 
-    public UserRole(String id, String description)
-    {
+    public UserRole(String id, String description) {
         if (StringUtils.isBlank(id) || StringUtils.isBlank(description))
             throw new IllegalArgumentException("UserRole id and/or description cannot be blank.");
 
@@ -21,8 +20,7 @@ public class UserRole {
         this.description = description;
     }
 
-    private String extractId(String id)
-    {
+    private String extractId(String id) {
         return id.trim().toUpperCase();
     }
 
@@ -34,16 +32,14 @@ public class UserRole {
         return description;
     }
 
-    public boolean hasId(String id)
-    {
+    public boolean hasId(String id) {
         if (StringUtils.isBlank(id))
             return false;
         return this.id.equals(extractId(id));
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         int hash = 7;
         hash = 23 * hash + this.id.hashCode();
         return hash;
@@ -68,8 +64,7 @@ public class UserRole {
     }
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return String.format("%s - %s", this.id, this.description);
     }
 }

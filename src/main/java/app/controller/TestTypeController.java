@@ -58,7 +58,7 @@ public class TestTypeController {
      * @return the list with all the Parameter Categories in the system
      */
     public ParameterCategoryStore getParameterCategoryList() {
-        return company.parameterCategoryList();
+        return company.getParameterCategoryList();
     }
 
     /**

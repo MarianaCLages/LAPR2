@@ -45,7 +45,8 @@ public class TestStore {
             if (t.getTestNhsNumber().equals(t1.getTestNhsNumber())) {
                 return true;
             }
-        } return false;
+        }
+        return false;
     }
 
     private boolean contains(Test t) {

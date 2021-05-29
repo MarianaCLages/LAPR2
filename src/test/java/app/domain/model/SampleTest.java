@@ -1,7 +1,6 @@
 package app.domain.model;
 
 import app.domain.stores.ParameterCategoryStore;
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -17,11 +16,11 @@ public class SampleTest {
         List<ParameterCategory> cat1 = new ArrayList<>();
         cat1.add(pc1);
         List<Parameter> pa = new ArrayList<>();
-        Parameter p1 = new Parameter("AH000","Nome","description",pc1);
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
         pa.add(p1);
-        TestType testType = new TestType("BL000","description","sei lá",cat);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
 
-        app.domain.model.Test t = new app.domain.model.Test("123456789012","123456789012","1234567890123456",testType,cat1,pa);
+        app.domain.model.Test t = new app.domain.model.Test("123456789012", "123456789012", "1234567890123456", testType, cat1, pa);
         Sample s = new Sample(t.getTestCode(), "12345678901");
     }
 
@@ -33,11 +32,11 @@ public class SampleTest {
         List<ParameterCategory> cat1 = new ArrayList<>();
         cat1.add(pc1);
         List<Parameter> pa = new ArrayList<>();
-        Parameter p1 = new Parameter("AH000","Nome","description",pc1);
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
         pa.add(p1);
-        TestType testType = new TestType("BL000","description","sei lá",cat);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
 
-        app.domain.model.Test t = new app.domain.model.Test(null,"123456789012","1234567890123456",testType,cat1,pa);
+        app.domain.model.Test t = new app.domain.model.Test(null, "123456789012", "1234567890123456", testType, cat1, pa);
         Sample s = new Sample(t.getTestCode(), null);
     }
 
@@ -49,11 +48,11 @@ public class SampleTest {
         List<ParameterCategory> cat1 = new ArrayList<>();
         cat1.add(pc1);
         List<Parameter> pa = new ArrayList<>();
-        Parameter p1 = new Parameter("AH000","Nome","description",pc1);
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
         pa.add(p1);
-        TestType testType = new TestType("BL000","description","sei lá",cat);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
 
-        app.domain.model.Test t = new app.domain.model.Test(null,"123456789012","1234567890123456",testType,cat1,pa);
+        app.domain.model.Test t = new app.domain.model.Test(null, "123456789012", "1234567890123456", testType, cat1, pa);
         Sample s = new Sample(t.getTestCode(), "12345678901");
     }
 
@@ -65,11 +64,11 @@ public class SampleTest {
         List<ParameterCategory> cat1 = new ArrayList<>();
         cat1.add(pc1);
         List<Parameter> pa = new ArrayList<>();
-        Parameter p1 = new Parameter("AH000","Nome","description",pc1);
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
         pa.add(p1);
-        TestType testType = new TestType("BL000","description","sei lá",cat);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
 
-        app.domain.model.Test t = new app.domain.model.Test("123456789012","123456789012","1234567890123456",testType,cat1,pa);
+        app.domain.model.Test t = new app.domain.model.Test("123456789012", "123456789012", "1234567890123456", testType, cat1, pa);
         Sample s = new Sample(t.getTestCode(), null);
     }
 }

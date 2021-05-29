@@ -32,6 +32,7 @@ public class ParameterCategoryController {
 
     /**
      * Creates a new Parameter Category instance, firstly creates a instance of ParameterCategoryStore and then call the method of this instance that creates the Parameter Category instance
+     *
      * @param code unique code needed to identify the Parameter Category
      * @param name short name that characterize the Parameter Category
      */

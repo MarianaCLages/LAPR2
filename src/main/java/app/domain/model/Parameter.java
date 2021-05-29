@@ -16,10 +16,10 @@ public class Parameter {
     /**
      * Constructor of the Parameter, it calls 2 methods in order to validate the parameters
      *
-     * @param code unique code needed to identify the Parameter
+     * @param code        unique code needed to identify the Parameter
      * @param description description that characterize the Parameter
-     * @param name short name that characterize the Parameter
-     * @param cat  category associated with the Parameter
+     * @param name        short name that characterize the Parameter
+     * @param cat         category associated with the Parameter
      */
     public Parameter(String code, String name, String description, ParameterCategory cat) {
         checkCodeRules(code);
@@ -66,6 +66,7 @@ public class Parameter {
 
     /**
      * This method checks if the description provided meets the requirements, if not it throws a exception making the execution to stop
+     *
      * @param description description that characterize the Parameter
      */
     private void checkDescriptionRules(String description) {
@@ -94,10 +95,18 @@ public class Parameter {
         return code;
     }
 
+    /**
+     *
+     * @return short name that characterize the Parameter
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @return category associated with the Parameter
+     */
     public ParameterCategory getCat() {
         return cat;
     }

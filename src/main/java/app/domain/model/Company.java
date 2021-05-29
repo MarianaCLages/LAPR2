@@ -4,8 +4,6 @@ import app.domain.stores.*;
 import auth.AuthFacade;
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.List;
-
 /**
  * @author Paulo Maio <pam@isep.ipp.pt>
  */
@@ -15,17 +13,17 @@ public class Company {
     private final AuthFacade authFacade;
 
     private final ParameterCategoryStore parameterCategoryList;
-    private ParameterStore parameterList;
-    private TestTypeStore testTypeList;
     private final ClinicalAnalysisLabStore clinicalAnalysisLabList;
-    private RoleStore roleList;
     private final EmployeeStore employeeList;
     private final ClientStore clientList;
     private final TestStore testList;
     private final SampleStore sampleStore;
+    private ParameterStore parameterList;
+    private TestTypeStore testTypeList;
+    private RoleStore roleList;
 
     /**
-     * Constructor of the Company Class, instances a new object of AuthFacade
+     * Constructor of the Company Class, instances a new object of AuthFacade and new empty stores
      *
      * @param designation Designation of Company
      */
@@ -35,7 +33,9 @@ public class Company {
 
         this.designation = designation;
         this.authFacade = new AuthFacade();
-
+        this.parameterList = new ParameterStore();
+        this.roleList = new RoleStore();
+        this.testTypeList = new TestTypeStore();
         this.parameterCategoryList = new ParameterCategoryStore();
         this.employeeList = new EmployeeStore();
         this.clinicalAnalysisLabList = new ClinicalAnalysisLabStore();
@@ -60,9 +60,7 @@ public class Company {
     }
 
     /**
-     * creates a new empty list of Parameter Categories objects
-     *
-     * @return empty list of Parameter Categories objects
+     * @return the list of Parameters Categories in the System
      */
 
     public ParameterCategoryStore getParameterCategoryList() {
@@ -70,18 +68,7 @@ public class Company {
     }
 
     /**
-     * creates a list with all the Parameter objects in the system
-     *
-     * @return list of Parameter objects
-     */
-    public ParameterCategoryStore parameterCategoryList() {
-        return this.parameterCategoryList;
-    }
-
-    /**
-     * creates a new empty list of Employee objects
-     *
-     * @return empty list of Employee objects
+     * @return the list of Employees in the System
      */
 
     public EmployeeStore getEmployeeList() {
@@ -90,30 +77,15 @@ public class Company {
     }
 
     /**
-     * creates a new empty list of Parameter objects
-     *
-     * @return empty list of Parameter objects
+     * @return the list of Parameters in the System
      */
     public ParameterStore getParameterList() {
         this.parameterList = new ParameterStore();
         return this.parameterList;
     }
 
-
     /**
-     * creates a list with all the Roles objects in the system
-     *
-     * @return list of Roles objects
-     */
-    public List<Role> roleList() {
-        return roleList.getRoleList();
-    }
-
-
-    /**
-     * creates a new empty list of TestType objects
-     *
-     * @return empty list of TestType objects
+     * @return the list of Types of Tests in the System
      */
     public TestTypeStore getTestTypeList() {
         this.testTypeList = new TestTypeStore();
@@ -121,18 +93,7 @@ public class Company {
     }
 
     /**
-     * creates a  list with all the TestType objects in the system
-     *
-     * @return list of TestType objects
-     */
-    public TestTypeStore testTypeList() {
-        return this.testTypeList;
-    }
-
-    /**
-     * creates a list of Role objects
-     *
-     * @return list of Role objects
+     * @return the list of Roles in the System
      */
     public RoleStore getRoleList() {
         this.roleList = new RoleStore();
@@ -140,43 +101,30 @@ public class Company {
     }
 
     /**
-     * creates a new empty list of ClinicalAnalysisLab objects
-     *
-     * @return empty list of ClinicalAnalysisLab objects
+     * @return the list of Clinical Analysis Labs in the System
      */
     public ClinicalAnalysisLabStore getClinicalAnalysisLabList() {
         return this.clinicalAnalysisLabList;
     }
 
     /**
-     * creates a new empty list of Client objects
-     *
-     * @return empty list of Client objects
+     * @return the list of Clients in the System
      */
     public ClientStore getClientList() {
         return this.clientList;
     }
 
-    public ClientStore clientList(){
-        return this.clientList;
-    }
-
-
     /**
-     * creates a new empty list of Test objects
-     * @return empty list of Test objects
+     * @return the list of Tests in the System
      */
     public TestStore getTestList() {
         return this.testList;
     }
-    public TestStore testList(){
-        return this.testList;
-    }
 
-    public ParameterStore parameterList() {
-        return this.parameterList;
-    }
-
+    /**
+     *
+     * @return the list of Samples in the System
+     */
     public SampleStore getSampleStore() {
         return sampleStore;
     }

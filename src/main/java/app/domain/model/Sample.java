@@ -7,7 +7,7 @@ public class Sample {
     private final String testID;
 
 
-    public Sample(String testID, String barcode){
+    public Sample(String testID, String barcode) {
         checkBarcodeRules(barcode);
         checkTestIDRules(testID);
         this.testID = testID;
@@ -15,7 +15,7 @@ public class Sample {
 
     }
 
-    private void checkTestIDRules(String testID){
+    private void checkTestIDRules(String testID) {
         if (testID == null) {
             throw new IllegalArgumentException("The Test ID must exist");
         }
@@ -38,6 +38,6 @@ public class Sample {
 
     @Override
     public String toString() {
-        return "Sample: testID=" +testID +", barcode=" +barcode;
+        return "Sample: testID=" + testID + ", barcode=" + barcode;
     }
 }

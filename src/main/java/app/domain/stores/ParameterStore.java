@@ -6,6 +6,8 @@ import app.domain.model.ParameterCategory;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.String.valueOf;
+
 
 /**
  * Class that represents an List of all the Parameters in the system
@@ -106,11 +108,16 @@ public class ParameterStore {
      */
     public String toString() {
         StringBuilder listString = new StringBuilder();
+        listString.append("[");
 
         for (Parameter s : array) {
-            listString.append(s.toString()).append("\n");
+            listString.append(s.toString()).append(", ");
         }
-        return String.valueOf(listString);
+        listString.deleteCharAt(listString.length()-1);
+        listString.deleteCharAt(listString.length()-1);
+        listString.append("]");
+
+        return valueOf(listString);
     }
 
     /**

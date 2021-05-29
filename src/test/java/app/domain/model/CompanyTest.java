@@ -1,14 +1,14 @@
 package app.domain.model;
 
 import app.domain.shared.Constants;
-import app.domain.stores.ClientStore;
 import app.domain.stores.ParameterCategoryStore;
-import app.domain.stores.TestTypeStore;
 import auth.AuthFacade;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class CompanyTest {
+    Company company = new Company(Constants.PARAMS_COMPANY_DESIGNATION);
+
 
     @Test(expected = IllegalArgumentException.class)
     public void GetDesignationBlank() {
@@ -17,14 +17,13 @@ public class CompanyTest {
 
     @Test
     public void getAuthFacadeTest() {
-        Company company = new Company(Constants.PARAMS_COMPANY_DESIGNATION);
         AuthFacade auth = company.getAuthFacade();
+        Assert.assertNotNull(auth);
     }
 
 
     @Test
     public void getDesignationTest() {
-        Company company = new Company(Constants.PARAMS_COMPANY_DESIGNATION);
         String actual = company.getDesignation();
         String expected = Constants.PARAMS_COMPANY_DESIGNATION;
 
@@ -34,20 +33,48 @@ public class CompanyTest {
 
     @Test
     public void getParameterCategoryList() {
-        Company company = new Company(Constants.PARAMS_COMPANY_DESIGNATION);
-        ParameterCategoryStore store = company.getParameterCategoryList();
+        Assert.assertNotNull(company.getParameterCategoryList());
     }
 
 
     @Test
     public void getTestTypeList() {
-        Company company = new Company(Constants.PARAMS_COMPANY_DESIGNATION);
-        TestTypeStore store = company.getTestTypeList();
+        Assert.assertNotNull(company.getTestTypeList());
     }
 
     @Test
     public void getClientList() {
-        Company company = new Company(Constants.PARAMS_COMPANY_DESIGNATION);
-        ClientStore store = company.getClientList();
+        Assert.assertNotNull(company.getClientList());
     }
+
+    @Test
+    public void getEmployeeStore(){
+        Assert.assertNotNull(company.getEmployeeList());
+    }
+
+    @Test
+    public void getParameterStore(){
+        Assert.assertNotNull(company.getParameterList());
+    }
+
+    @Test
+    public void getRoleList(){
+        Assert.assertNotNull(company.getRoleList());
+    }
+
+    @Test
+    public void getClinicalAnalysisLabList(){
+        Assert.assertNotNull(company.getClinicalAnalysisLabList());
+    }
+
+    @Test
+    public void getTestList(){
+        Assert.assertNotNull(company.getTestList());
+    }
+
+    @Test
+    public void getSampleStore(){
+        Assert.assertNotNull(company.getSampleStore());
+    }
+
 }

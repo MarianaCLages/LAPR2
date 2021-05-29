@@ -63,7 +63,7 @@ public class CreateClientUI implements Runnable {
             } while (exception);
 
             cont = Utils.confirm("The following Client was created do you want to save? (s/n) \n" + ctrl.getClient());
-            if (cont){
+            if (cont) {
                 ctrl.saveClient();
             }
 

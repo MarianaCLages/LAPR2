@@ -8,21 +8,22 @@ import org.apache.commons.lang3.StringUtils;
  * Class that represents an Clinical Analysis Lab
  */
 public class ClinicalAnalysisLab {
+    private final TestTypeStore tType;
     private String name;
     private String address;
     private String id;
     private String tin;
     private String phoneNumber;
-    private final TestTypeStore tType;
 
     /**
      * Constructor of the ClinicalAnalysisLab, it calls methods in order to validate the parameters
-     * @param name name of the Clinical Analysis Lab
-     * @param address address of the Clinical Analysis Lab
-     * @param id id of Clinical Analysis Lab
-     * @param tin TIN of Clinical Analysis Lab
+     *
+     * @param name        name of the Clinical Analysis Lab
+     * @param address     address of the Clinical Analysis Lab
+     * @param id          id of Clinical Analysis Lab
+     * @param tin         TIN of Clinical Analysis Lab
      * @param phoneNumber Phone Number Clinical Analysis Lab
-     * @param tType list of Test Types associated with the test
+     * @param tType       list of Test Types associated with the test
      */
     public ClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber, TestTypeStore tType) {
         checkNameRules(name);
@@ -39,8 +40,13 @@ public class ClinicalAnalysisLab {
         this.tType = tType;
     }
 
+    public ClinicalAnalysisLab(TestTypeStore testType) {
+        this.tType = testType;
+    }
+
     /**
      * This method checks if the list of Types of tests provided meets the requirements, if not it throws a exception making the execution to stop
+     *
      * @param tType list of Test Types associated with the test
      */
     private void checkTestTypeRules(TestTypeStore tType) {
@@ -58,11 +64,6 @@ public class ClinicalAnalysisLab {
             throw new IllegalArgumentException("Laboratory ID cannot be blank.");
         if (id.length() != Constants.MAX_CODE)
             throw new IllegalArgumentException("Laboratory ID must have 5 chars.");
-    }
-
-
-    public ClinicalAnalysisLab(TestTypeStore testType) {
-        this.tType = testType;
     }
 
     /**

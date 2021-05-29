@@ -2,7 +2,10 @@ package app.controller;
 
 import app.domain.mappers.TestParameterListMapper;
 import app.domain.mappers.dto.TestParameterDTO;
-import app.domain.model.*;
+import app.domain.model.Company;
+import app.domain.model.Sample;
+import app.domain.model.Test;
+import app.domain.model.TestParameter;
 import app.domain.stores.SampleStore;
 import app.domain.stores.TestStore;
 
@@ -21,7 +24,7 @@ public class RecordResultsController {
 
     public RecordResultsController(Company company) {
         this.company = company;
-        this.tStore = company.testList();
+        this.tStore = company.getTestList();
         this.sampleStore = company.getSampleStore();
 
     }
@@ -47,9 +50,10 @@ public class RecordResultsController {
 
     public String getResults() {
 
-        t.changeState("SAMPLE_ANALYSED");
         return this.t.getResults();
 
-
+    }
+    public void saveTest(){
+        t.changeState("SAMPLE_ANALYSED");
     }
 }

@@ -44,7 +44,7 @@ public class TestTypeTest {
 
 
     @Test(expected = IllegalArgumentException.class)
-    public void CreateInvalidTestTypeBlankID(){
+    public void CreateInvalidTestTypeBlankID() {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
         ParameterCategory pc2 = new ParameterCategory("A8554", "Hemograma");
@@ -179,7 +179,7 @@ public class TestTypeTest {
 
 
     @Test
-    public void getCollectingMethod(){
+    public void getCollectingMethod() {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("A8554", "Hemograma");
         cat.add(pc1);
@@ -188,12 +188,12 @@ public class TestTypeTest {
 
         String actual = t.getCollectingMethod();
         String expected = "metodo 1";
-        Assert.assertEquals(actual,expected);
+        Assert.assertEquals(actual, expected);
 
     }
 
     @Test
-    public void getDescription(){
+    public void getDescription() {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("A8554", "Hemograma");
         cat.add(pc1);
@@ -202,12 +202,12 @@ public class TestTypeTest {
 
         String actual = t.getDescription();
         String expected = "descrição";
-        Assert.assertEquals(actual,expected);
+        Assert.assertEquals(actual, expected);
 
     }
 
     @Test
-    public void toStringTest(){
+    public void toStringTest() {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("A8554", "Hemograma");
         cat.add(pc1);
@@ -215,14 +215,14 @@ public class TestTypeTest {
         TestType t = new TestType("BL000", "descrição", "metodo 1", cat);
 
         String actual = t.toString();
-        String expected ="TestType: " + "testID=" + "BL000" + ", description=" + "descrição" + ", collectingMethod=" + "metodo 1" + ", categories: " + cat.toString();
+        String expected = "TestType: " + "testID=" + "BL000" + ", description=" + "descrição" + ", collectingMethod=" + "metodo 1" + ", categories: " + cat.toString();
 
-        Assert.assertEquals(actual,expected);
+        Assert.assertEquals(actual, expected);
 
     }
 
     @Test
-    public void toStringTest1(){
+    public void toStringTest1() {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("A8554", "Hemograma");
         cat.add(pc1);
@@ -230,9 +230,9 @@ public class TestTypeTest {
         TestType t = new TestType("COV19", "descrição", "metodo 1", cat);
 
         String actual = t.toString();
-        String expected ="TestType: " + "testID=" + "COV19" + ", description=" + "descrição" + ", collectingMethod=" + "metodo 1" + ", categories: " + cat.toString();
+        String expected = "TestType: " + "testID=" + "COV19" + ", description=" + "descrição" + ", collectingMethod=" + "metodo 1" + ", categories: " + cat.toString();
 
-        Assert.assertEquals(actual,expected);
+        Assert.assertEquals(actual, expected);
 
     }
 

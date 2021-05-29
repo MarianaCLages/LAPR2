@@ -2,7 +2,6 @@ package app.domain.model;
 
 import app.domain.shared.Constants;
 import auth.AuthFacade;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -73,7 +72,7 @@ public class SpecialistDoctor extends Employee {
         AuthFacade authFacade = company.getAuthFacade();
         success = authFacade.addUserWithRole(this.name, this.email, password, Constants.ROLE_SPECIALISTDOCTOR);
         if (success) {
-            Email.sendPasswordNotification(this.name,this.email, password);
+            Email.sendPasswordNotification(this.name, this.email, password);
 
         }
         return success;

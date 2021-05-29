@@ -6,9 +6,6 @@ import app.domain.mappers.dto.TestDTO;
 import app.domain.stores.SampleStore;
 import app.ui.console.utils.Utils;
 
-import java.util.Scanner;
-import java.util.logging.Logger;
-
 public class RecordSampleUI implements Runnable {
 
 
@@ -63,8 +60,8 @@ public class RecordSampleUI implements Runnable {
                 }
             } while (exception);
 
-            cont = Utils.confirm("The Sample(s) was(were) recorded. Do you want to save? (s/n) \n" );
-            if (cont){
+            cont = Utils.confirm("The Sample(s) was(were) recorded. Do you want to save? (s/n) \n");
+            if (cont) {
                 ctrl.confirm(this.test.getTestCode());
             }
 

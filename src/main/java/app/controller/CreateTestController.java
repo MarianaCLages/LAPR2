@@ -6,7 +6,10 @@ import app.domain.mappers.TestTypeListMapper;
 import app.domain.mappers.dto.CategoryListDTO;
 import app.domain.mappers.dto.ParameterDTO;
 import app.domain.mappers.dto.TestTypeDTO;
-import app.domain.model.*;
+import app.domain.model.Company;
+import app.domain.model.Parameter;
+import app.domain.model.ParameterCategory;
+import app.domain.model.TestType;
 import app.domain.stores.*;
 
 import java.util.ArrayList;
@@ -20,7 +23,6 @@ public class CreateTestController {
     private ParameterCategoryStore categoriesList;
     private List<ParameterCategory> caList;
     private List<Parameter> paList;
-
 
 
     public CreateTestController() {
@@ -40,7 +42,7 @@ public class CreateTestController {
     }
 
     public boolean existClient(String clientTin) {
-        ClientStore cList = company.clientList();
+        ClientStore cList = company.getClientList();
         return cList.exists(clientTin);
     }
 
@@ -53,7 +55,7 @@ public class CreateTestController {
     }
 
     public List<TestTypeDTO> getTestTypeList() {
-        this.ttList = company.testTypeList();
+        this.ttList = company.getTestTypeList();
         TestTypeListMapper typeMapper = new TestTypeListMapper();
         return typeMapper.toDTO(ttList);
     }
@@ -66,7 +68,7 @@ public class CreateTestController {
     }
 
     public List<ParameterDTO> getParameters(String categoryCode) {
-        ParameterStore paStore = company.parameterList();
+        ParameterStore paStore = company.getParameterList();
 
         ParameterCategory category = this.categoriesList.getByCode(categoryCode);
         this.caList.add(category);
@@ -76,16 +78,14 @@ public class CreateTestController {
     }
 
     public void addParameter(String parameterCode) {
-        ParameterStore paStore = company.parameterList();
+        ParameterStore paStore = company.getParameterList();
         Parameter pa = paStore.getParameter(parameterCode);
         this.paList.add(pa);
     }
 
-    public String getTest(){
+    public String getTest() {
         return store.getTest();
     }
-
-
 
 
 }

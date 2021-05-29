@@ -74,8 +74,8 @@ NHS code: 12 alphanumeric characters.
 
 ### 1.3. Acceptance Criteria
 
-- **AC1:** The receptionist must select the Categories and Parameters to be analysed from all possible Categories and Parameters in accordance with
-  the test type.
+- **AC1:** The receptionist must select the Categories and Parameters to be analysed from all possible Categories and
+  Parameters in accordance with the test type.
 - **AC2:** Client's Tax Identification Number must have 10 digits.
 - **AC3:** Test Code must be a sequential number with 12 digits that is generated automatically
 - **AC4:** Each test can have more than one category.
@@ -83,15 +83,18 @@ NHS code: 12 alphanumeric characters.
 - **AC6:** NHS code have 12 alphanumeric characters
 - **AC7:** A test is unique in the system
 - **AC8:** The receptionist should use the TIN number to find the client
+
 ### 1.4. Found out Dependencies
 
 * There is a dependency to "US3- To register a client." since the client must be registered in the application to
   register their test.
 
-* There is a dependency to "US7- To register an employee." since at least one receptionist must be registered in the application to
-  register the test.  
+* There is a dependency to "US7- To register an employee." since at least one receptionist must be registered in the
+  application to register the test.
 
-* There is a dependency to "US11 - To register a Parameter Category", to "US10 - To register a Parameter " and to "US - To specify a new type of test" since at least a type of test must be registered and consequently there must be registered ate least one parameter and one parameter category. 
+* There is a dependency to "US11 - To register a Parameter Category", to "US10 - To register a Parameter " and to "US -
+  To specify a new type of test" since at least a type of test must be registered and consequently there must be
+  registered ate least one parameter and one parameter category.
 
 ### 1.5 Input and Output Data
 
@@ -119,7 +122,8 @@ NHS code: 12 alphanumeric characters.
 *Insert here a SSD depicting the envisioned Actor-System interactions and throughout which data is inputted and
 outputted to fulfill the requirement. All interactions must be numbered.*
 
-![US4_SSD](US4_SSD.svg) 
+![US4_SSD](US4_SSD.svg)
+
 ### 1.7 Other Relevant Remarks
 
 *Use this section to capture other relevant information that is related with this US such as (i) special requirements
@@ -168,7 +172,8 @@ activity. In some case, it might be usefull to add other analysis artifacts (e.g
 | Step 10: confirms all data and asks to confirm          |                                                          |                      |                                                                                                                                                                                                                                                                                                                                 |
 | Step 11: confirms data                                  | ... saving the Test object                               | TestStore            | IE: knows all                                                                                                                                                                                                                                                                                                                   |
 |                                                         |                                                          |                      |                                                                                                                                                                                                                                                                                                                                 |
-| Step 12: informs operation success                      | ...informing operation success                           | CreateTestUI         | **IE:** is responsible for user interactions                                                                                                                                                                                                                                                                                    |
+| Step 12: informs operation success                      | ...informing operation success                           | CreateTestUI         | **
+IE:** is responsible for user interactions                                                                                                                                                                                                                                                                                    |
 
 ### Systematization ##
 
@@ -191,22 +196,25 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ## 3.2. Sequence Diagram (SD)
 
-
 ### Main Sequence Diagram
+
 ![US4_SD](US4_SD.svg)
 
 ### createTest() Sequence Diagram
+
 ![SD_createTest](SD_createTest().svg)
 
 ### getCategories(TestTypeCode) Sequence Diagram
+
 ![SD_getCategories(TestTypeCode)](SD_getCategories(TestTypeCode).svg)
 
 ### getParameters(categoryCode) Sequence Diagram
+
 ![SD_getParameters(categoryCode)](SD_getParameters(categoryCode).svg)
 
 ### getTestTypeList() Sequence Diagram
-![SD_getTestTypeList()](SD_getTestTypeList().svg)
 
+![SD_getTestTypeList()](SD_getTestTypeList().svg)
 
 ## 3.3. Class Diagram (CD)
 

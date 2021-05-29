@@ -4,8 +4,6 @@ import app.controller.ParameterController;
 import app.domain.model.ParameterCategory;
 import app.ui.console.utils.Utils;
 
-import java.util.List;
-
 public class ParameterUI implements Runnable {
 
     private ParameterController ctrl;

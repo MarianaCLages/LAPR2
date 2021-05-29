@@ -31,14 +31,14 @@ public class RecordSampleController {
 
 
     public List<TestDTO> tList() {
-        this.tList = company.testList();
+        this.tList = company.getTestList();
         TestListMapper typeMapper = new TestListMapper();
         return typeMapper.toDTO(tList);
     }
 
     public void getLists() {
         this.sampleList = company.getSampleStore();
-        this.tList = company.testList();
+        this.tList = company.getTestList();
     }
 
     public String getTest() {

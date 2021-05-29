@@ -14,13 +14,13 @@ public class ValidateController {
     private List<Test> tSt;
     private TestStoreDTO tListDTO;
 
-    public ValidateController(){
+    public ValidateController() {
         this(App.getInstance().getCompany());
     }
 
     public ValidateController(Company company) {
         this.company = company;
-        this.store = company.testList();
+        this.store = company.getTestList();
     }
 
     public List<TestStoreDTO> getListOfTests() {
@@ -33,7 +33,12 @@ public class ValidateController {
         return tSt.add(store.getTestByCode(testID));
     }
 
-    //public boolean validateTestList(){}
+    public void validateListOfTests(List<Test> tSt){
+        for (Test test : tSt){
+            test.changeState("VALIDATED");
+        }
+    }
+
 
 
 }

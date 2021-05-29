@@ -4,6 +4,7 @@ package app.controller;
 import app.domain.model.Company;
 import app.domain.model.Employee;
 import app.domain.stores.EmployeeStore;
+
 import java.util.List;
 
 /**
@@ -40,13 +41,14 @@ public class RegisterEmployeeController {
 
     /**
      * Creates a new Employee  instance, firstly creates a instance of EmployeeStore and then call the method of this instance that creates the Employee instance
-     * @param name name of the Employee
-     * @param address address of the Employee
-     * @param phonenumber Phone number of the Employee
-     * @param email email of the Employee
-     * @param SOC standard occupation code of the Employee
+     *
+     * @param name              name of the Employee
+     * @param address           address of the Employee
+     * @param phonenumber       Phone number of the Employee
+     * @param email             email of the Employee
+     * @param SOC               standard occupation code of the Employee
      * @param DoctorIndexNumber Doctor Index Number of the Specialist Doctor
-     * @param Role integer that indicates the role of the employee
+     * @param Role              integer that indicates the role of the employee
      */
     public void createEmployee(String name, String address, String phonenumber, String email, String SOC, String DoctorIndexNumber, int Role) {
         store.CreateEmployee(name, address, phonenumber, email, SOC, DoctorIndexNumber, Role);

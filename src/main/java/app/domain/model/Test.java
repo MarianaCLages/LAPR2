@@ -9,15 +9,15 @@ import java.util.List;
 
 public class Test {
 
-    private State state;
     private final String testCode;
     private final String testNhsNumber;
     private final String clientTin;
     private final TestType testType;
     private final List<ParameterCategory> catList;
     private final List<Parameter> paList;
-    private List<TestParameter> testParam;
     private final LocalDate createdDate;
+    private State state;
+    private List<TestParameter> testParam;
     private LocalDate sampleCreatedDate;
     private LocalDate analysedData;
     private LocalDate diagnosticDate;
@@ -50,6 +50,11 @@ public class Test {
 
     }
 
+    /**
+     * This method checks if the test code meets the requirements, if not it throws a exception making the execution to stop
+     *
+     * @param testCode unique code generated automatically
+     */
     private void checkTestCodeRules(String testCode) {
         if (testCode == null) {
             throw new IllegalArgumentException("The Test Code must exist");
@@ -62,7 +67,7 @@ public class Test {
      * @param paList list of parameters that are measured in this test
      */
     private void checkPaList(List<Parameter> paList) {
-        if (paList.isEmpty() ) {
+        if (paList.isEmpty()) {
             throw new IllegalArgumentException("Parameter List must not be empty");
         }
 
@@ -123,6 +128,10 @@ public class Test {
         this.state = s;
     }
 
+    /**
+     * Changes the state of the object test by changing the variable state with a value from the enum "State
+     * @param s a value of the enum "State"
+     */
     public void changeState(String s) {
         switch (s) {
             case "CREATED":
@@ -149,18 +158,19 @@ public class Test {
         }
     }
 
+    /**
+     * @return a string with all dates of the test
+     */
     public String getDates() {
-        StringBuilder listString = new StringBuilder();
-        listString.append("Created at:");
-        listString.append(this.createdDate.toString()).append("\n");
-        listString.append("Samples collected at:");
-        listString.append(this.sampleCreatedDate.toString()).append("\n");
-        listString.append("Analysed at:");
-        listString.append(this.analysedData.toString()).append("\n");
-        listString.append("Diagnosed at:");
-        listString.append(this.diagnosticDate.toString()).append("\n");
 
-        return String.valueOf(listString);
+        return "Created at:" +
+                this.createdDate.toString() + "\n" +
+                "Samples collected at:" +
+                this.sampleCreatedDate.toString() + "\n" +
+                "Analysed at:" +
+                this.analysedData.toString() + "\n" +
+                "Diagnosed at:" +
+                this.diagnosticDate.toString() + "\n";
     }
 
 
@@ -171,15 +181,26 @@ public class Test {
         return testNhsNumber;
     }
 
+    /**
+     * @return unique code generated automatically
+     */
     public String getTestCode() {
         return testCode;
     }
 
+    /**
+     * Method that represents the object in a string
+     *
+     * @return a string that represents the object
+     */
     @Override
     public String toString() {
         return "Test: testCode=" + testCode + ", testNhsNumber=" + testNhsNumber + ", clientCc=" + clientTin + ", testType=" + testType + ", catList=" + catList + ", paList=" + paList;
     }
 
+    /**
+     * @return a string with all the results associated with the test
+     */
     public String getResults() {
         StringBuilder listString = new StringBuilder();
 
@@ -190,8 +211,12 @@ public class Test {
 
     }
 
-
-    public boolean addTestResult(String parameterCode, double result) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    /**
+     * @param parameterCode the code of the parameter that will be associated with a result
+     * @param result double that represents numerical the result of the analysis of the test parameters
+     * @return boolean represents the success of the operation
+     */
+    public boolean addTestResult(String parameterCode, double result) {
 
         if (!state.equals(State.SAMPLE_COLLECTED)) {
             return false;
@@ -208,29 +233,44 @@ public class Test {
         }
 
         String externalModule = testType.getExternalModule();
-        Class<?> oClass = Class.forName(externalModule);
-        RefValueAdapter em = (RefValueAdapter) oClass.newInstance();
-
-        pa.addResult(result, em.getRefValue(pa.getpCode()));
-
-        return true;
+        try {
+            Class<?> oClass = Class.forName(externalModule);
+            RefValueAdapter em = (RefValueAdapter) oClass.newInstance();
+            pa.addResult(result, em.getRefValue(pa.getpCode()));
+            return true;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return false;
+        }
     }
 
-
+    /**
+     * @return this list of Test Parameters associated with the test
+     */
     public List<TestParameter> getTestParam() {
         return testParam;
     }
 
+    /**
+     * @param diagnosis string that represents the diagnosis made by the Specialist Doctor
+     * @return boolean represents the success of the operation
+     */
     public boolean createReport(String diagnosis) {
         this.rep = new Report(this.testCode, diagnosis);
 
         return this.rep != null;
     }
 
+    /**
+     * changes the state of the test to "DIAGNOSTIC_MADE"
+     */
     public void saveReport() {
         changeState(State.DIAGNOSTIC_MADE);
     }
 
+    /**
+     * @return a string with the current state of the test
+     */
     public String getState() {
         return state.toString();
     }

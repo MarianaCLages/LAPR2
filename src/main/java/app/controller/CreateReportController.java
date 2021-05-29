@@ -7,7 +7,6 @@ import app.domain.model.Company;
 import app.domain.model.Test;
 import app.domain.stores.TestStore;
 
-
 import java.util.List;
 
 public class CreateReportController {
@@ -15,8 +14,6 @@ public class CreateReportController {
     private Company company;
     private TestStore tList;
     private Test t;
-
-
 
 
     public CreateReportController(Company company) {
@@ -28,27 +25,24 @@ public class CreateReportController {
     }
 
 
-
     public List<TestDTO> tList() {
-        this.tList = company.testList().getListOfTestsAnalysed();
+        this.tList = company.getTestList().getListOfTestsAnalysed();
         TestListMapper typeMapper = new TestListMapper();
         return typeMapper.toDTO(tList);
     }
 
-    public String getResults(String testId ) {
+    public String getResults(String testId) {
         this.t = tList.getTestByCode(testId);
         return t.getResults();
     }
 
-    public void createReport(String diagnosis){
+    public void createReport(String diagnosis) {
         t.createReport(diagnosis);
     }
 
-    public void saveReport(){
+    public void saveReport() {
         t.saveReport();
     }
-
-
 
 
 }

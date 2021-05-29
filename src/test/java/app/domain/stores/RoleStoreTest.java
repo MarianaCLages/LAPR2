@@ -1,7 +1,6 @@
 package app.domain.stores;
 
 import app.domain.model.Role;
-import app.domain.stores.RoleStore;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -27,7 +26,7 @@ public class RoleStoreTest {
 
 
     @Test
-    public void getRoleListRight(){
+    public void getRoleListRight() {
         RoleStore roleList = new RoleStore();
 
         List<Role> actual = roleList.getRoleList();
@@ -35,12 +34,11 @@ public class RoleStoreTest {
         List<Role> array = new ArrayList<>();
 
 
-        Role ClinicalChemistryTechnologist = new Role("0","Clinical Chemistry Technologist");
+        Role ClinicalChemistryTechnologist = new Role("0", "Clinical Chemistry Technologist");
         Role MedicalLabTechnician = new Role("1", "Medical Lab Technician");
         Role LaboratoryCoordinator = new Role("2", "LaboratoryCoordinator");
-        Role Receptionist = new Role("3","Receptionist");
-        Role SpecialistDoctor = new Role("4","SpecialistDoctor");
-
+        Role Receptionist = new Role("3", "Receptionist");
+        Role SpecialistDoctor = new Role("4", "SpecialistDoctor");
 
 
         array.add(ClinicalChemistryTechnologist);

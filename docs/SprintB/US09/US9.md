@@ -1,35 +1,35 @@
-# US 09 -  To specify a new type of test and its collecting methods.
+# US 09 - To specify a new type of test and its collecting methods.
 
 ## 1. Requirements Engineering
+
 ### 1.1. User Story Description
 
 As an administrator, I want to specify a new type of test and its collecting methods.
+
 ### 1.2. Customer Specifications and Clarifications
- 
+
 **From the specifications document:**
->	"Despite being out of scope, the system should be developed having in mind the need to
-    easily support other kinds of tests (e.g., urine). Regardless, such tests rely on measuring one
-    or more parameters that can be grouped/organized by categories."
-	
+> "Despite being out of scope, the system should be developed having in mind the need to easily support other kinds of tests (e.g., urine). Regardless, such tests rely on measuring one or more parameters that can be grouped/organized by categories."
+
 
 
 **From the client clarifications:**
- 
+
 
 > **Question:** Does a type of test holds any attribute besides its name and collecting methods?
->  
-> **Answer:** The attributes for a new test type are:            
->   . Code: five alphanumeric characters. The code is not automatically generated.          
 >
->   . Description: a string with no more than 15 characters.              
+> **Answer:** The attributes for a new test type are:            
+> . Code: five alphanumeric characters. The code is not automatically generated.
+>
+>   . Description: a string with no more than 15 characters.
 >
 >   . Collecting Method: a string with no more than 20 characters.
->             
->   Each test type should have a set of categories. 
 >
->   Each category should be chosen from a list of categories. 
->             
->   Each category has a name and a unique code. There are no subcategories.            
+>   Each test type should have a set of categories.
+>
+>   Each category should be chosen from a list of categories.
+>
+>   Each category has a name and a unique code. There are no subcategories.
 >
 >   There exists only one collection method per test type.
 >
@@ -39,37 +39,34 @@ As an administrator, I want to specify a new type of test and its collecting met
 
 > **Question:** What does the client mean by the collecting methods and  what collecting methods  are available?
 > Are the collecting methods stored simpled as a word or a sentence, or does it also must contain its description, and/or another attributes?
->  
-> **Answer:** To make a Covid test you need a swab to collect a sample. To make a blood test you need sample tubes and a syringe.
-              When the administrator specifies a new type of test, the administrator also specifies the method to collect a sample. The administrator introduces a brief description for specifying the collecting method. 
+>
+> **Answer:** To make a Covid test you need a swab to collect a sample. To make a blood test you need sample tubes and a syringe. When the administrator specifies a new type of test, the administrator also specifies the method to collect a sample. The administrator introduces a brief description for specifying the collecting method.
 >
 > **Link:** https://moodle.isep.ipp.pt/mod/forum/discuss.php?d=7752#p10102
 
-
 ### 1.3. Acceptance Criteria
+
 - **AC1:** Collecting Method cannot be empty and has a string of 20 characters, at maximum.
 - **AC2:** Description cannot be empty and has, at maximum, 15 chars.
 - **AC3:** Code is a string with 5 alphanumeric characters.
 - **AC4** Category has a name and a unique code.
+
 ### 1.4. Found out Dependencies
 
-There is a dependecy to "US10: As an administrator, I want to specify a new parameter and categorize it." 
+There is a dependecy to "US10: As an administrator, I want to specify a new parameter and categorize it."
 since each test type should have a set of categories.
 
-
-
-
 ### 1.5 Input and Output Data
+
 **Input Data:**
 
 * Typed data:
     * Code
-	* Collecting method
-	* Description 
-	
+    * Collecting method
+    * Description
+
 * Selected data:
     * Category list
-	
 
 **Output Data:**
 
@@ -77,25 +74,22 @@ since each test type should have a set of categories.
 
 ### 1.6. System Sequence Diagram (SSD)
 
-
 ![US9_SSD](US9_SSD.svg)
-
 
 ### 1.7 Other Relevant Remarks
 
-The number of times this US will be used is very low. Many Labs does Covid-19 and Blood tests so, we expect to use this US twice.
-It might be used more times when Many Labs starts to make other types of test (Urine tests, for example). 
+The number of times this US will be used is very low. Many Labs does Covid-19 and Blood tests so, we expect to use this
+US twice. It might be used more times when Many Labs starts to make other types of test (Urine tests, for example).
+
 ## 2. OO Analysis
 
-### 2.1. Relevant Domain Model Excerpt 
+### 2.1. Relevant Domain Model Excerpt
 
 ![US9_MD](US9_MD.svg)
 
 ### 2.2. Other Remarks
 
-
-
-## 3. Design - User Story Realization 
+## 3. Design - User Story Realization
 
 ### 3.1. Rationale
 
@@ -107,25 +101,25 @@ It might be used more times when Many Labs starts to make other types of test (U
 | | ... coordinating the US? | CreateParameterController | Controller  |
 | | ... instantiating a new Parameter Category Store List? | Company | Creator: R1/2: we look to decrease the responsibilities assign to the the Company class in order to go accordingly to GRASP|
 |   | ... getting the list of Parameter Categories? |Company| Creator: R1/2 |
-| Step 2: confirms the category|... adding the chose Parameter Categories to the Category List associated to the test type?	|   ParameterCategoryStore  |  IE: responsible for saving all parameter categories |                                                                               |
-| Step 3: types requested data  |	... create a Test Type Store List?|  Company | Creator: R1/2  |
+| Step 2: confirms the category|... adding the chose Parameter Categories to the Category List associated to the test type?    |   ParameterCategoryStore  |  IE: responsible for saving all parameter categories |                                                                               |
+| Step 3: types requested data  |    ... create a Test Type Store List?|  Company | Creator: R1/2  |
 | |... create a Test Type? | TestTypeStore|IE: responsible for saving all Test Types|
 | |... validate the Test Type? | TestTypeStore | IE: knows/has all the TestType objects|
-| Step 4: confirms the data |	...   saving the Test Type? | TestTypeStore |IE: responsible for saving all Test Types|                          |                                                                                        |
+| Step 4: confirms the data |    ... saving the Test Type? | TestTypeStore |IE: responsible for saving all Test Types|                          |                                                                                        |
 
 ### Systematization ##
 
-According to the taken rationale, the conceptual classes promoted to software classes are: 
+According to the taken rationale, the conceptual classes promoted to software classes are:
 
- * Company
- * TestType
+* Company
+* TestType
 
-Other software classes (i.e. Pure Fabrication) identified: 
- 
- * CreateTestTypeUI
- * CreateTestTypeController
- * TestTypeStore
- * ParameterCategoryStore
+Other software classes (i.e. Pure Fabrication) identified:
+
+* CreateTestTypeUI
+* CreateTestTypeController
+* TestTypeStore
+* ParameterCategoryStore
 
 ## 3.2. Sequence Diagram (SD)
 
@@ -135,20 +129,20 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ![US9_CD](US9_CD.svg)
 
-# 4. Tests 
+# 4. Tests
 
-
-
-**Test 1:** Checks that it is not possible to create an instance of the TestType class with null values. 
+**Test 1:** Checks that it is not possible to create an instance of the TestType class with null values.
 
 	@Test(expected = IllegalArgumentException.class)
 		public void ensureNullIsNotAllowed() {
 		TestType instance = new Exemplo(null, null, null, null);
 	}
+
 **Tests AC1**
 
-***Test AC1.1:*** Checks that it is not possible to create an instance of the TestType class with a long collecting method containing more than 20 chars.
-   
+***Test AC1.1:*** Checks that it is not possible to create an instance of the TestType class with a long collecting
+method containing more than 20 chars.
+
     @Test(expected = IllegalArgumentException.class)
         public void CreateInvalidTestTypeCollectingMethodOver20Chars() {
     
@@ -159,9 +153,10 @@ Other software classes (i.e. Pure Fabrication) identified:
             cat.add(pc2);
             TestType t = new TestType("283h3", "descrição", "metodo 1 metodo 2 metodo 3", cat);
         }
-        
-***Test AC1.2:*** Checks that it is not possible to create an instance of the TestType class without a collecting method.
-    
+
+***Test AC1.2:*** Checks that it is not possible to create an instance of the TestType class without a collecting
+method.
+
     @Test(expected = IllegalArgumentException.class)
         public void CreateInvalidTestTypeBlankCollectingMethod() {
             ParameterCategoryStore cat = new ParameterCategoryStore();
@@ -171,11 +166,12 @@ Other software classes (i.e. Pure Fabrication) identified:
             cat.add(pc2);
             TestType t = new TestType("283h3", "descrição", "", cat);
         }                        
-            	
-**Tests AC2:** 
 
-   ***Test AC2.1*** Checks that it is not possible to create an instance of the TestType class with a long description containing more than 15 chars.
-	 
+**Tests AC2:**
+
+***Test AC2.1*** Checks that it is not possible to create an instance of the TestType class with a long description
+containing more than 15 chars.
+
 	 @Test(expected = IllegalArgumentException.class)
          public void CreateInvalidTestTypeDescriptionOver15Chars() {
      
@@ -186,9 +182,9 @@ Other software classes (i.e. Pure Fabrication) identified:
              cat.add(pc2);
              TestType t = new TestType("2ed45", "descrição descrição descrição", "metodo 1", cat);
          }
-	
+
 ***Test AC2.2:*** Checks that it is not possible to create an instance of the TestType class without a description.
-    
+
       @Test(expected = IllegalArgumentException.class)
         public void CreateInvalidTestTypeBlankDescription() {
     
@@ -200,11 +196,11 @@ Other software classes (i.e. Pure Fabrication) identified:
             TestType t = new TestType("2ed45", "", "metodo 1", cat);
         }
 
+**Tests AC3**
 
-**Tests AC3**   
-   
-***Test AC3.1:*** Checks that it is not possible to create an instance of the TestType class with an ID number containing other than 5 chars.
-    
+***Test AC3.1:*** Checks that it is not possible to create an instance of the TestType class with an ID number
+containing other than 5 chars.
+
     @Test(expected = IllegalArgumentException.class)
         public void CreateInvalidTestTypeID() {
             ParameterCategoryStore cat = new ParameterCategoryStore();
@@ -214,10 +210,9 @@ Other software classes (i.e. Pure Fabrication) identified:
             cat.add(pc2);
             TestType t = new TestType("wwl11ww", "descrição", "metodo 1", cat);
         }
-  
-      
+
 ***Test AC3.2:*** Checks that it is not possible to create an instance of the TestType class without an ID number.
-           
+
     @Test(expected = IllegalArgumentException.class)
         public void CreateInvalidTestTypeBlankID(){
             ParameterCategoryStore cat = new ParameterCategoryStore();
@@ -227,12 +222,10 @@ Other software classes (i.e. Pure Fabrication) identified:
             cat.add(pc2);
             TestType t = new TestType("", "descrição", "metodo 1", cat);
         }
- 
 
 # 5. Construction (Implementation)
 
-##Class TestTypeController
-
+## Class TestTypeController
 
     public class TestTypeController {
 
@@ -259,7 +252,7 @@ Other software classes (i.e. Pure Fabrication) identified:
         }
     }
 
-##Class TestTypeStore
+## Class TestTypeStore
 
     public class TestTypeStore {
         List<TestType> array;
@@ -331,8 +324,7 @@ Other software classes (i.e. Pure Fabrication) identified:
         public boolean isEmpty(){return array.isEmpty();}
     }
 
-
-##Class TestType
+## Class TestType
 
     public class TestType {
         private String testID;
@@ -415,7 +407,9 @@ Other software classes (i.e. Pure Fabrication) identified:
             return catStore;
         }
     }
-##Class TestTypeUI
+
+## Class TestTypeUI
+
     package app.ui.console;
     
     import app.controller.TestTypeController;
@@ -477,18 +471,15 @@ Other software classes (i.e. Pure Fabrication) identified:
             }
         }
     }
-    
 
-    
-
-# 6. Integration and Demo 
+# 6. Integration and Demo
 
 - A new option on the admin menu was added
 
-
 # 7. Observations
 
-Although DTO's could be used in this US, we opted by not use it in this sprint. In the next one there should be implemented DTO's with the purpose of reducing coupling. 
+Although DTO's could be used in this US, we opted by not use it in this sprint. In the next one there should be
+implemented DTO's with the purpose of reducing coupling. 
 
 
 

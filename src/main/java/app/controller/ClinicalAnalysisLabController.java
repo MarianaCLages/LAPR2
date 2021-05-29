@@ -55,7 +55,7 @@ public class ClinicalAnalysisLabController {
      * @return the list with all the Type if Tests in the system
      */
     public TestTypeStore getTypetestList() {
-        return this.typeTStore = company.testTypeList();
+        return this.typeTStore = company.getTestTypeList();
     }
 
     /**

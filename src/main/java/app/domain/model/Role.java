@@ -10,7 +10,8 @@ public class Role {
 
     /**
      * Constructor of the Role Class
-     * @param roleID Unique ID of the Organization Role
+     *
+     * @param roleID   Unique ID of the Organization Role
      * @param roleName Name of the Organization Role
      */
     public Role(String roleID, String roleName) {
@@ -21,7 +22,6 @@ public class Role {
     }
 
     /**
-     *
      * @return Unique ID of the Organization Role
      */
     public String getRoleID() {

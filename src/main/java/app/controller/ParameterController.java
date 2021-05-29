@@ -36,10 +36,11 @@ public class ParameterController {
 
     /**
      * Creates a new Parameter instance, firstly creates a instance of ParameterStore and then call the method of this instance that creates the Parameter instance
-     * @param code unique code needed to identify the Parameter
+     *
+     * @param code        unique code needed to identify the Parameter
      * @param description description that characterize the Parameter
-     * @param name short name that characterize the Parameter
-     * @param cat  category associated with the Parameter
+     * @param name        short name that characterize the Parameter
+     * @param cat         category associated with the Parameter
      */
     public void createParameter(String code, String name, String description, ParameterCategory cat) {
         store.createParameter(code, name, description, cat);
@@ -49,7 +50,8 @@ public class ParameterController {
      * @return the list with all the Type if Tests in the system
      */
     public ParameterCategoryStore getParameterCategoryList() {
-        return this.catStore = company.parameterCategoryList();
+        this.catStore = company.getParameterCategoryList();
+        return this.catStore;
     }
 
     /**

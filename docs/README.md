@@ -1,8 +1,8 @@
-# Integrating Project for the 2nd Semester of LEI-ISEP 2020-21 
+# Integrating Project for the 2nd Semester of LEI-ISEP 2020-21
 
 # 1. Team Members
 
-The teams consists of students identified in the following table. 
+The teams consists of students identified in the following table.
 
 | Student Number   | Name                        |
 | :--------------- | :-------------------------- |
@@ -11,13 +11,10 @@ The teams consists of students identified in the following table.
 | **1201600**      | Joana Lima                  |
 | **1201614**      | Júlia Conceição             |
 
-
-
-
 # 2. Task Distribution ###
 
-
-Throughout the project's development period, the distribution of _tasks / requirements / features_ by the team members was carried out as described in the following table. 
+Throughout the project's development period, the distribution of _tasks / requirements / features_ by the team members
+was carried out as described in the following table.
 
 **Keep this table must always up-to-date.**
 

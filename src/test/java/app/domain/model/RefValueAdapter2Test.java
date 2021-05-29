@@ -3,12 +3,10 @@ package app.domain.model;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class RefValueAdapter2Test {
 
     @Test
-    public void getRefValueNotNull(){
+    public void getRefValueNotNull() {
         RefValueAdapter2 ref = new RefValueAdapter2();
         TestParameter tp = new TestParameter("HB000");
 
@@ -17,7 +15,7 @@ public class RefValueAdapter2Test {
     }
 
     @Test
-    public void getRefValueMaxRight(){
+    public void getRefValueMaxRight() {
         RefValueAdapter2 ref = new RefValueAdapter2();
         TestParameter tp = new TestParameter("HB000");
 
@@ -26,11 +24,11 @@ public class RefValueAdapter2Test {
         double actual = refValue.getMaxValue();
         double expected = 180.0D;
 
-        Assert.assertEquals(actual,expected,0);
+        Assert.assertEquals(actual, expected, 0);
     }
 
     @Test
-    public void getRefValueMinRight(){
+    public void getRefValueMinRight() {
         RefValueAdapter2 ref = new RefValueAdapter2();
         TestParameter tp = new TestParameter("HB000");
 
@@ -39,12 +37,12 @@ public class RefValueAdapter2Test {
         double actual = refValue.getMinValue();
         double expected = 130.0D;
 
-        Assert.assertEquals(actual,expected,0);
+        Assert.assertEquals(actual, expected, 0);
     }
 
 
     @Test
-    public void getRefValueMetricRight(){
+    public void getRefValueMetricRight() {
         RefValueAdapter2 ref = new RefValueAdapter2();
         TestParameter tp = new TestParameter("HB000");
 
@@ -53,7 +51,7 @@ public class RefValueAdapter2Test {
         String actual = refValue.getMetric();
         String expected = "g/L";
 
-        Assert.assertEquals(actual,expected);
+        Assert.assertEquals(actual, expected);
     }
 
 }

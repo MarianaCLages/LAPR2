@@ -2,8 +2,6 @@ package app.domain.stores;
 
 import app.domain.model.ParameterCategory;
 import app.domain.model.TestType;
-import app.domain.stores.ParameterCategoryStore;
-import app.domain.stores.TestTypeStore;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -33,14 +31,15 @@ public class TestTypeStoreTest {
     }
 
     @Test
-    public void isEmptyTest(){ Assert.assertTrue(store.isEmpty());}
-
+    public void isEmptyTest() {
+        Assert.assertTrue(store.isEmpty());
+    }
 
 
     @Test
-    public void alreadyUsedID(){
+    public void alreadyUsedID() {
         //Arrange + act
-        ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
+        ParameterCategory pc1 = new ParameterCategory("AF687", "Hemogram");
         cat.add(pc1);
         //Arrange
         TestType t1 = new TestType("COV19", "descrição", "metodo 1", cat);
@@ -54,7 +53,7 @@ public class TestTypeStoreTest {
 
     @Test
     public void getByIDTest() {
-        ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
+        ParameterCategory pc1 = new ParameterCategory("AF687", "Hemogram");
         cat.add(pc1);
 
         TestType t1 = new TestType("COV19", "descrição", "metodo 1", cat);
@@ -71,7 +70,7 @@ public class TestTypeStoreTest {
 
     @Test
     public void getByIDTestNull() {
-        ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
+        ParameterCategory pc1 = new ParameterCategory("AF687", "Hemogram");
         cat.add(pc1);
 
         TestType t1 = new TestType("COV19", "descrição", "metodo 1", cat);
@@ -89,7 +88,7 @@ public class TestTypeStoreTest {
     @Test
     public void saveTestTypeInvalid() {
         //Arrange
-        ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
+        ParameterCategory pc1 = new ParameterCategory("AF687", "Hemogram");
         cat.add(pc1);
         TestType t1 = new TestType("COV19", "descrição", "metodo 1", cat);
         store.add(t1);
@@ -102,14 +101,11 @@ public class TestTypeStoreTest {
     @Test
     public void createValidTestType() {
         TestTypeStore store = new TestTypeStore();
-        ParameterCategory pc1 = new ParameterCategory("AF687","Hemogram");
+        ParameterCategory pc1 = new ParameterCategory("AF687", "Hemogram");
         cat.add(pc1);
-        Assert.assertNotNull(store.CreateTestType("COV19","descrição", "metodo 1", cat));
+        Assert.assertNotNull(store.CreateTestType("COV19", "descrição", "metodo 1", cat));
 
     }
-
-
-
 
 
 }
