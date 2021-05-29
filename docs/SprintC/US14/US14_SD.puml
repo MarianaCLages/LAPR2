@@ -68,12 +68,13 @@ activate CTRL
 
 
 
-CTRL -> TESTSTORE : report = createReport(TestID, diagnosis)
+CTRL -> TESTSTORE : getListOfTestsAnalysed()
 activate TESTSTORE
-
-
-TESTSTORE -> TEST : report = createReport(TestID, diagnosis)
 deactivate TESTSTORE
+
+
+CTRL -> TEST : report = createReport(TestID, diagnosis)
+
 activate TEST
 TEST -> REPORT ** :  Report(TestID,diagnosis)
 

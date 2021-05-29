@@ -51,7 +51,7 @@ public class CreateReportUI implements Runnable {
                         exception = false;
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
-                        System.out.println("An error occurred during the creation during the creation of the Sample please try again");
+                        System.out.println("An error occurred during the creation during the creation of the Report please try again");
                         exception = true;
                     }
                 }

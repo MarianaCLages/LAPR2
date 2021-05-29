@@ -5,21 +5,21 @@ class CreateReportUI {
 }
 
 class CreateReportController{
-getTestList(testID)
-getResult()
-createReport()
-saveReport(report)
++getTestList(testID)
++getResult()
++createReport()
++saveReport(report)
 
 }
 
 class TestListMapper{
-toDTO(t)
-toDTO(tList)
+-toDTO(t)
++toDTO(tList)
 }
 
 class TestDTO{
-getTestNhsNumber()
-getTestCode()
++getTestNhsNumber()
++getTestCode()
 }
 
 class Test{
@@ -32,13 +32,13 @@ class Test{
 -createdDate
 -sampleCreatedDate
 
-createReport(TestID, diagnosis)
-saveReport(report)
++createReport(TestID, diagnosis)
++saveReport(report)
  }
 
 class TestStore{
 -testList
-createReport(TestID, diagnosis)
++getListOfTestsAnalysed()
 }
 
 class Report{
@@ -52,7 +52,6 @@ CreateReportController .> TestListMapper
 TestListMapper .> TestDTO
 CreateReportController ..> Test
 CreateReportController ..> TestStore
-TestStore --> Test
 Test --> Report
 
 @enduml
