@@ -69,10 +69,21 @@ public class SampleStoreTest {
         store.createSample("BL000");
         String b = store.getSample();
 
-        Assert.assertEquals(a,b);
+        Assert.assertEquals(a,store.getSample());
 
     }
 
+    @Test
+    public void getSampleTestID() throws ClassNotFoundException, InstantiationException, BarcodeException, IllegalAccessException {
+        //Arrange + act
+
+        SampleStore store = new SampleStore();
+        Sample b = new Sample("BL000","000000001");
+        store.createSample("BL000");
+        Sample a = store.getSample("00000000001");
+        Assert.assertEquals(a,b);
+
+    }
 
 
 
