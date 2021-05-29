@@ -9,12 +9,20 @@ import app.domain.stores.TestStore;
 
 import java.util.List;
 
+/**
+ * Controller of the UserStory : Create a Report
+ */
+
 public class CreateReportController {
 
     private Company company;
     private TestStore tList;
     private Test t;
 
+    /**
+     * Constructor of the class
+     * @param company instance of Company
+     */
 
     public CreateReportController(Company company) {
         this.company = company;
@@ -24,6 +32,10 @@ public class CreateReportController {
         this(App.getInstance().getCompany());
     }
 
+    /**
+     * This method aims to 
+     * @return the test list
+     */
 
     public List<TestDTO> tList() {
         this.tList = company.getTestList().getListOfTestsAnalysed();
