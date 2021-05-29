@@ -54,38 +54,38 @@ public class ExternalApiBarcodeTest {
 
             }
         };
-        ExternalApiBarcode e = new ExternalApiBarcode();
-        Barcode b = new Barcode("12345678901") {
-            @Override
-            protected Module[] encodeData() {
-                return new Module[0];
-            }
+        em.barcodeImage();
+    }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void createBarcodeImageErrorTest() throws OutputException, IOException {
+        SampleStore store = new SampleStore();
+        Sample rep = new Sample("123456789012", null);
+
+        store.saveSample();
+        BarcodeAdapter em = new BarcodeAdapter() {
             @Override
-            protected Module calculateChecksum() {
+            public String createBarcode(String ID) throws BarcodeException {
                 return null;
             }
 
             @Override
-            protected Module getPreAmble() {
+            public void createBarcodeImage(Barcode barcode) throws OutputException {
+
+            }
+
+            @Override
+            public String getBarcode() {
                 return null;
             }
 
             @Override
-            protected Module getPostAmble() {
-                return null;
-            }
+            public void barcodeImage() throws IOException, OutputException {
 
-            @Override
-            protected Dimension draw(Output output, int i, int i1, int i2, int i3) throws OutputException {
-                return null;
             }
         };
         em.barcodeImage();
-
-
     }
-
     @Test
     public void getBarcodeTest() throws IOException, OutputException {
         //Arrange + Act
