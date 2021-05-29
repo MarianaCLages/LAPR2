@@ -1,6 +1,7 @@
 package app.domain.model;
 
 import app.domain.stores.ParameterCategoryStore;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -39,6 +40,40 @@ public class SampleTest {
         app.domain.model.Test t = new app.domain.model.Test(null, "123456789012", "1234567890123456", testType, cat1, pa);
         Sample s = new Sample(t.getTestCode(), null);
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void SampleNullTest() {
+        Sample s = new Sample(null,"12345678901");
+    }
+    @Test
+    public void SampleNameTest() {
+        Sample s = new Sample("BL000","12345678901");
+    }
+
+    @Test
+    public void getBarcodeTest() {
+        Sample s = new Sample("BL000","12345678901");
+        String a = s.getBarcode();
+        String b = "12345678901";
+        Assert.assertEquals(a,b);
+    }
+    @Test
+    public void getTestIDTest() {
+        Sample s = new Sample("BL000","12345678901");
+        String a = s.getTestID();
+        String b = "BL000";
+        Assert.assertEquals(a,b);
+    }
+    @Test
+    public void toStringTest() {
+        Sample s = new Sample("BL000","12345678901");
+        String a = s.toString();
+        String b = "Sample: testID=BL000, barcode=12345678901";
+        Assert.assertEquals(a,b);
+    }
+
+
+
 
     @Test(expected = IllegalArgumentException.class)
     public void TestCodeNull() {

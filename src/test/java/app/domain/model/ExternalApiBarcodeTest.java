@@ -54,7 +54,36 @@ public class ExternalApiBarcodeTest {
 
             }
         };
+        ExternalApiBarcode e = new ExternalApiBarcode();
+        Barcode b = new Barcode("12345678901") {
+            @Override
+            protected Module[] encodeData() {
+                return new Module[0];
+            }
+
+            @Override
+            protected Module calculateChecksum() {
+                return null;
+            }
+
+            @Override
+            protected Module getPreAmble() {
+                return null;
+            }
+
+            @Override
+            protected Module getPostAmble() {
+                return null;
+            }
+
+            @Override
+            protected Dimension draw(Output output, int i, int i1, int i2, int i3) throws OutputException {
+                return null;
+            }
+        };
         em.barcodeImage();
+
+
     }
 
     @Test
