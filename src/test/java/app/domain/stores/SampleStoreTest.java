@@ -1,13 +1,17 @@
 package app.domain.stores;
 
 
+import app.domain.model.Parameter;
+import app.domain.model.ParameterCategory;
 import app.domain.model.Sample;
+import app.domain.model.TestType;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SampleStoreTest {
@@ -74,14 +78,15 @@ public class SampleStoreTest {
     }
 
     @Test
-    public void getSampleTestID() throws ClassNotFoundException, InstantiationException, BarcodeException, IllegalAccessException {
+    public void getSampleTestID() throws ClassNotFoundException, InstantiationException, BarcodeException, IllegalAccessException, IOException, OutputException {
         //Arrange + act
-
         SampleStore store = new SampleStore();
-        Sample b = new Sample("BL000","000000001");
         store.createSample("BL000");
+        Assert.assertTrue(store.saveSample());
         Sample a = store.getSample("00000000001");
-        Assert.assertEquals(a,b);
+        Sample b = new Sample("BL000","00000000001");
+        //Assert
+        Assert.assertEquals(a.toString(),b.toString());
 
     }
 
