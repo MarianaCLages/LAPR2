@@ -232,22 +232,64 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 # 4. Tests
 
-**Test 1:**
+**Test 1: Check that it is not possible to create an instance of the Sample class with null values.**
 
 ````
-    
+@Test(expected = IllegalArgumentException.class)
+    public void SampleNull() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+
+        app.domain.model.Test t = new app.domain.model.Test(null, "123456789012", "1234567890123456", testType, cat1, pa);
+        Sample s = new Sample(t.getTestCode(), null);
+    }    
 ````
 
-**Test2**
+**Test 2: Check that it is not possible to create an instance of the Sample class with the Test Code null.**
 
 ````
-    
+@Test(expected = IllegalArgumentException.class)
+    public void TestCodeNull() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+
+        app.domain.model.Test t = new app.domain.model.Test(null, "123456789012", "1234567890123456", testType, cat1, pa);
+        Sample s = new Sample(t.getTestCode(), "12345678901");
+    }
 ````
 
-**Test3**
+**Test 3: Check that it is not possible to create an instance of the Sample class with the Barcode null.**
 
 ````
+@Test(expected = IllegalArgumentException.class)
+    public void BarcodeNull() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
 
+        app.domain.model.Test t = new app.domain.model.Test("123456789012", "123456789012", "1234567890123456", testType, cat1, pa);
+        Sample s = new Sample(t.getTestCode(), null);
+    }
 ````
 
 # 5. Construction (Implementation)
@@ -255,37 +297,289 @@ Other software classes (i.e. Pure Fabrication) identified:
 ## Class Sample
 
 ```
+package app.domain.model;
+
+public class Sample {
+
+    private final String barcode;
+    private final String testID;
+
+
+    public Sample(String testID, String barcode) {
+        checkBarcodeRules(barcode);
+        checkTestIDRules(testID);
+        this.testID = testID;
+        this.barcode = barcode;
+
+    }
+
+    private void checkTestIDRules(String testID) {
+        if (testID == null) {
+            throw new IllegalArgumentException("The Test ID must exist");
+        }
+    }
+
+    private void checkBarcodeRules(String barcode) {
+        if (barcode == null) {
+            throw new IllegalArgumentException("The Test Code must exist");
+        }
+    }
+
+    public String getBarcode() {
+        return barcode;
+    }
+
+    public String getTestID() {
+        return testID;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Sample: testID=" + testID + ", barcode=" + barcode;
+    }
+}
 
 ```
 
 ## Class SampleStore
 
 ````
-````
+package app.domain.stores;
 
-## Class Test
+import app.domain.model.BarcodeAdapter;
+import app.domain.model.Sample;
+import app.domain.shared.Constants;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
 
-````
-````
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-## Class TestStore
+public class SampleStore {
 
-````
+
+    private Sample sample;
+    private List<Sample> testSamples;
+    private BarcodeAdapter em;
+
+
+    public SampleStore() {
+        this.testSamples = new ArrayList<>();
+    }
+
+
+    public boolean createSample(String testID) throws ClassNotFoundException, IllegalAccessException, InstantiationException, BarcodeException {
+        Class<?> oClass = Class.forName(Constants.BARCODE_API);
+        this.em = (BarcodeAdapter) oClass.newInstance();
+        this.sample = new Sample(testID, em.createBarcode(createSampleID()));
+
+        if (this.sample == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public boolean saveSample() throws IOException, OutputException {
+        if (validateSample()) {
+            testSamples.add(this.sample);
+            System.out.println(this.sample.toString());
+            em.barcodeImage();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    public boolean validateSample() {
+        return this.sample != null && !contains(this.sample) && !exists(this.sample);
+    }
+
+    private boolean exists(Sample sample) {
+        for (Sample sample1 : this.testSamples) {
+            if (sample.getBarcode().equals(sample1.getBarcode())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean contains(Sample sample) {
+        return testSamples.contains(sample);
+    }
+
+    public String createSampleID() {
+        int ID = testSamples.size() + 1;
+        String SampleID = String.valueOf(ID);
+        String empty;
+        empty = "" + SampleID;
+        while (empty.length() < 11) {
+            empty = "0" + empty;
+        }
+
+        return empty;
+    }
+
+    public Sample getSample(String sampleID) {
+        for (Sample s : testSamples) {
+            if (s.getBarcode().equals(sampleID)) {
+                return s;
+            }
+        }
+        return null;
+    }
+
+    public String getSample() {
+        return this.sample.toString();
+    }
+
+}
 ````
 
 ## Class RecordSampleController
 
 ````
+package app.controller;
+
+import app.domain.mappers.TestListMapper;
+import app.domain.mappers.dto.TestDTO;
+import app.domain.model.Company;
+import app.domain.model.Test;
+import app.domain.stores.SampleStore;
+import app.domain.stores.TestStore;
+import net.sourceforge.barbecue.BarcodeException;
+import net.sourceforge.barbecue.output.OutputException;
+
+import java.io.IOException;
+import java.util.List;
+
+public class RecordSampleController {
+
+    private Company company;
+    private TestStore store;
+    private TestStore tList;
+    private SampleStore sampleList;
+    private Test test;
+
+
+    public RecordSampleController(Company company) {
+        this.company = company;
+    }
+
+    public RecordSampleController() {
+        this(App.getInstance().getCompany());
+    }
+
+
+    public List<TestDTO> tList() {
+        this.tList = company.getTestList();
+        TestListMapper typeMapper = new TestListMapper();
+        return typeMapper.toDTO(tList);
+    }
+
+    public void getLists() {
+        this.sampleList = company.getSampleStore();
+        this.tList = company.getTestList();
+    }
+
+    public String getTest() {
+        return store.getTest();
+    }
+
+    public void createSample(String testID) throws ClassNotFoundException, InstantiationException, BarcodeException, IllegalAccessException {
+        sampleList.createSample(testID);
+
+    }
+
+    public String getSample() {
+        return sampleList.getSample();
+    }
+
+    public boolean saveSample() throws IOException, OutputException {
+        return sampleList.saveSample();
+    }
+
+    public void confirm(String testID) {
+
+        this.test = tList.getTestByCode(testID);
+        this.test.changeState("SAMPLE_COLLECTED");
+
+    }
+}
 
 ````
 
 ## Class RecordSampleUI
 
 ```` 
+package app.ui.console;
+
+
+import app.controller.RecordSampleController;
+import app.domain.mappers.dto.TestDTO;
+import app.domain.stores.SampleStore;
+import app.ui.console.utils.Utils;
+
+public class RecordSampleUI implements Runnable {
+
+
+    private RecordSampleController ctrl;
+    private TestDTO test;
+    private SampleStore SampleList;
+
+
+    public RecordSampleUI() {
+        this.ctrl = new RecordSampleController();
+    }
+
+    @Override
+    public void run() {
+        boolean cont = true;
+        do {
+            ctrl.getLists();
+            boolean exception = true;
+            do {
+
+                this.test = (TestDTO) Utils.showAndSelectOne(ctrl.tList(), "Please select one Test");
+                if (this.test == null) {
+                    System.out.println("You must select one!");
+
+                } else {
+                    try {
+                        int i = Utils.readIntegerFromConsole("How many samples do you want to record?");
+
+                        for (int x = 0; x < i; x++) {
+                            ctrl.createSample(this.test.getTestCode());
+                            ctrl.saveSample();
+
+                        }
+                        exception = false;
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                        System.out.println("An error occurred during the creation during the creation of the Sample please try again");
+                        exception = true;
+                    }
+                }
+            } while (exception);
+
+            cont = Utils.confirm("The Sample(s) was(were) recorded. Do you want to save? (s/n) \n");
+            if (cont) {
+                ctrl.confirm(this.test.getTestCode());
+            }
+
+        } while (!cont);
+
+    }
+}
 
 ````
 
 # 6. Integration and Demo
+
+- A new option was added in the Admin Menu
 
 # 7. Observations
 

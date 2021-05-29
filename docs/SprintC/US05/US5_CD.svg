@@ -1,141 +1,72 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg"
-     contentScriptType="application/ecmascript" contentStyleType="text/css" height="462px" preserveAspectRatio="none"
-     style="width:245px;height:462px;" version="1.1" viewBox="0 0 245 462" width="245px" zoomAndPan="magnify">
-    <defs>
-        <filter height="300%" id="f7v7i3bxs0xw4" width="300%" x="-1" y="-1">
-            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
-            <feColorMatrix in="blurOut" result="blurOut2" type="matrix"
-                           values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
-            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
-            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
-        </filter>
-    </defs>
-    <g><!--MD5=[05ffea613565d111e9c4a041147710d4]
-class RecordSampleUI-->
-        <rect codeLine="2" fill="#FEFECE" filter="url(#f7v7i3bxs0xw4)" height="48" id="RecordSampleUI"
-              style="stroke:#A80036;stroke-width:1.5;" width="127" x="51" y="7"/>
-        <ellipse cx="66" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
-        <path d="M68,19.5 Q68.2031,19 68.4375,18.75 Q68.6719,18.5 68.9375,18.5 Q69.4063,18.5 69.7031,18.7813 Q70,19.0625 70,19.7188 L70,21.2813 Q70,21.9375 69.7188,22.2188 Q69.4375,22.5 69,22.5 Q68.6094,22.5 68.3594,22.3281 Q68.1094,22.1563 68,21.7031 Q67.9531,21.3906 67.7813,21.2188 Q67.4688,20.8906 66.9063,20.7031 Q66.3438,20.5 65.7813,20.5 Q65.0781,20.5 64.4844,20.7813 Q63.9063,21.0625 63.4531,21.6875 Q63,22.3125 63,23.1719 L63,24.0938 Q63,25.125 63.8438,25.8125 Q64.6875,26.5 66.1875,26.5 Q67.0781,26.5 67.7031,26.2969 Q68.0625,26.1875 68.4688,25.8281 Q68.7344,25.625 68.875,25.5625 Q69.0156,25.5 69.1875,25.5 Q69.5156,25.5 69.75,25.7656 Q70,26.0156 70,26.375 Q70,26.7188 69.6563,27.125 Q69.1563,27.7188 68.3594,28.0469 Q67.3125,28.5 66.0313,28.5 Q64.5313,28.5 63.3281,27.9063 Q62.3594,27.4375 61.6719,26.4219 Q61,25.4063 61,24.2031 L61,23.1094 Q61,21.8594 61.5938,20.7656 Q62.2031,19.6719 63.25,19.0938 Q64.3125,18.5 65.5,18.5 Q66.2188,18.5 66.8438,18.75 Q67.4688,19 68,19.5 Z "
-              fill="#000000"/>
-        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="95" x="80"
-              y="27.9102">RecordSampleUI
-        </text>
-        <line style="stroke:#A80036;stroke-width:1.5;" x1="52" x2="177" y1="39" y2="39"/>
-        <line style="stroke:#A80036;stroke-width:1.5;" x1="52" x2="177" y1="47" y2="47"/><!--MD5=[ecb4b8913618184ce1e3f8e48e5e993f]
-class RecordSampleController-->
-        <rect codeLine="5" fill="#FEFECE" filter="url(#f7v7i3bxs0xw4)" height="75.6719" id="RecordSampleController"
-              style="stroke:#A80036;stroke-width:1.5;" width="169" x="30" y="115"/>
-        <ellipse cx="45" cy="131" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
-        <path d="M47,127.5 Q47.2031,127 47.4375,126.75 Q47.6719,126.5 47.9375,126.5 Q48.4063,126.5 48.7031,126.7813 Q49,127.0625 49,127.7188 L49,129.2813 Q49,129.9375 48.7188,130.2188 Q48.4375,130.5 48,130.5 Q47.6094,130.5 47.3594,130.3281 Q47.1094,130.1563 47,129.7031 Q46.9531,129.3906 46.7813,129.2188 Q46.4688,128.8906 45.9063,128.7031 Q45.3438,128.5 44.7813,128.5 Q44.0781,128.5 43.4844,128.7813 Q42.9063,129.0625 42.4531,129.6875 Q42,130.3125 42,131.1719 L42,132.0938 Q42,133.125 42.8438,133.8125 Q43.6875,134.5 45.1875,134.5 Q46.0781,134.5 46.7031,134.2969 Q47.0625,134.1875 47.4688,133.8281 Q47.7344,133.625 47.875,133.5625 Q48.0156,133.5 48.1875,133.5 Q48.5156,133.5 48.75,133.7656 Q49,134.0156 49,134.375 Q49,134.7188 48.6563,135.125 Q48.1563,135.7188 47.3594,136.0469 Q46.3125,136.5 45.0313,136.5 Q43.5313,136.5 42.3281,135.9063 Q41.3594,135.4375 40.6719,134.4219 Q40,133.4063 40,132.2031 L40,131.1094 Q40,129.8594 40.5938,128.7656 Q41.2031,127.6719 42.25,127.0938 Q43.3125,126.5 44.5,126.5 Q45.2188,126.5 45.8438,126.75 Q46.4688,127 47,127.5 Z "
-              fill="#000000"/>
-        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="137" x="59"
-              y="135.9102">RecordSampleController
-        </text>
-        <line style="stroke:#A80036;stroke-width:1.5;" x1="31" x2="198" y1="147" y2="147"/>
-        <line style="stroke:#A80036;stroke-width:1.5;" x1="31" x2="198" y1="155" y2="155"/>
-        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="64" x="36"
-              y="170.4189">getTestList();
-        </text>
-        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="67" x="36"
-              y="184.2549">saveSample()
-        </text><!--MD5=[0f6f7964b844a64b0496af0dda7914bd]
-class TestStore-->
-        <rect codeLine="10" fill="#FEFECE" filter="url(#f7v7i3bxs0xw4)" height="61.8359" id="TestStore"
-              style="stroke:#A80036;stroke-width:1.5;" width="85" x="7" y="258"/>
-        <ellipse cx="22" cy="274" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
-        <path d="M24,270.5 Q24.2031,270 24.4375,269.75 Q24.6719,269.5 24.9375,269.5 Q25.4063,269.5 25.7031,269.7813 Q26,270.0625 26,270.7188 L26,272.2813 Q26,272.9375 25.7188,273.2188 Q25.4375,273.5 25,273.5 Q24.6094,273.5 24.3594,273.3281 Q24.1094,273.1563 24,272.7031 Q23.9531,272.3906 23.7813,272.2188 Q23.4688,271.8906 22.9063,271.7031 Q22.3438,271.5 21.7813,271.5 Q21.0781,271.5 20.4844,271.7813 Q19.9063,272.0625 19.4531,272.6875 Q19,273.3125 19,274.1719 L19,275.0938 Q19,276.125 19.8438,276.8125 Q20.6875,277.5 22.1875,277.5 Q23.0781,277.5 23.7031,277.2969 Q24.0625,277.1875 24.4688,276.8281 Q24.7344,276.625 24.875,276.5625 Q25.0156,276.5 25.1875,276.5 Q25.5156,276.5 25.75,276.7656 Q26,277.0156 26,277.375 Q26,277.7188 25.6563,278.125 Q25.1563,278.7188 24.3594,279.0469 Q23.3125,279.5 22.0313,279.5 Q20.5313,279.5 19.3281,278.9063 Q18.3594,278.4375 17.6719,277.4219 Q17,276.4063 17,275.2031 L17,274.1094 Q17,272.8594 17.5938,271.7656 Q18.2031,270.6719 19.25,270.0938 Q20.3125,269.5 21.5,269.5 Q22.2188,269.5 22.8438,269.75 Q23.4688,270 24,270.5 Z "
-              fill="#000000"/>
-        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53" x="36"
-              y="278.9102">TestStore
-        </text>
-        <line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="91" y1="290" y2="290"/>
-        <line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="91" y1="298" y2="298"/>
-        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="64" x="13"
-              y="313.4189">getTestList();
-        </text><!--MD5=[fcd6df96e169c9fc6403c4dc9bdb4d83]
-class SampleStore-->
-        <rect codeLine="14" fill="#FEFECE" filter="url(#f7v7i3bxs0xw4)" height="75.6719" id="SampleStore"
-              style="stroke:#A80036;stroke-width:1.5;" width="104" x="127.5" y="251"/>
-        <ellipse cx="142.5" cy="267" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
-        <path d="M144.5,263.5 Q144.7031,263 144.9375,262.75 Q145.1719,262.5 145.4375,262.5 Q145.9063,262.5 146.2031,262.7813 Q146.5,263.0625 146.5,263.7188 L146.5,265.2813 Q146.5,265.9375 146.2188,266.2188 Q145.9375,266.5 145.5,266.5 Q145.1094,266.5 144.8594,266.3281 Q144.6094,266.1563 144.5,265.7031 Q144.4531,265.3906 144.2813,265.2188 Q143.9688,264.8906 143.4063,264.7031 Q142.8438,264.5 142.2813,264.5 Q141.5781,264.5 140.9844,264.7813 Q140.4063,265.0625 139.9531,265.6875 Q139.5,266.3125 139.5,267.1719 L139.5,268.0938 Q139.5,269.125 140.3438,269.8125 Q141.1875,270.5 142.6875,270.5 Q143.5781,270.5 144.2031,270.2969 Q144.5625,270.1875 144.9688,269.8281 Q145.2344,269.625 145.375,269.5625 Q145.5156,269.5 145.6875,269.5 Q146.0156,269.5 146.25,269.7656 Q146.5,270.0156 146.5,270.375 Q146.5,270.7188 146.1563,271.125 Q145.6563,271.7188 144.8594,272.0469 Q143.8125,272.5 142.5313,272.5 Q141.0313,272.5 139.8281,271.9063 Q138.8594,271.4375 138.1719,270.4219 Q137.5,269.4063 137.5,268.2031 L137.5,267.1094 Q137.5,265.8594 138.0938,264.7656 Q138.7031,263.6719 139.75,263.0938 Q140.8125,262.5 142,262.5 Q142.7188,262.5 143.3438,262.75 Q143.9688,263 144.5,263.5 Z "
-              fill="#000000"/>
-        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="72" x="156.5"
-              y="271.9102">SampleStore
-        </text>
-        <line style="stroke:#A80036;stroke-width:1.5;" x1="128.5" x2="230.5" y1="283" y2="283"/>
-        <line style="stroke:#A80036;stroke-width:1.5;" x1="128.5" x2="230.5" y1="291" y2="291"/>
-        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="70" x="133.5"
-              y="306.4189">saveSample();
-        </text>
-        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="83" x="133.5"
-              y="320.2549">validateSample();
-        </text><!--MD5=[9681492165142af2a4a3a169d90ee8d4]
-class Sample-->
-        <rect codeLine="19" fill="#FEFECE" filter="url(#f7v7i3bxs0xw4)" height="61.8359" id="Sample"
-              style="stroke:#A80036;stroke-width:1.5;" width="82" x="138.5" y="387"/>
-        <ellipse cx="156.65" cy="403" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
-        <path d="M158.65,399.5 Q158.8531,399 159.0875,398.75 Q159.3219,398.5 159.5875,398.5 Q160.0563,398.5 160.3531,398.7813 Q160.65,399.0625 160.65,399.7188 L160.65,401.2813 Q160.65,401.9375 160.3688,402.2188 Q160.0875,402.5 159.65,402.5 Q159.2594,402.5 159.0094,402.3281 Q158.7594,402.1563 158.65,401.7031 Q158.6031,401.3906 158.4313,401.2188 Q158.1188,400.8906 157.5563,400.7031 Q156.9938,400.5 156.4313,400.5 Q155.7281,400.5 155.1344,400.7813 Q154.5563,401.0625 154.1031,401.6875 Q153.65,402.3125 153.65,403.1719 L153.65,404.0938 Q153.65,405.125 154.4938,405.8125 Q155.3375,406.5 156.8375,406.5 Q157.7281,406.5 158.3531,406.2969 Q158.7125,406.1875 159.1188,405.8281 Q159.3844,405.625 159.525,405.5625 Q159.6656,405.5 159.8375,405.5 Q160.1656,405.5 160.4,405.7656 Q160.65,406.0156 160.65,406.375 Q160.65,406.7188 160.3063,407.125 Q159.8063,407.7188 159.0094,408.0469 Q157.9625,408.5 156.6813,408.5 Q155.1813,408.5 153.9781,407.9063 Q153.0094,407.4375 152.3219,406.4219 Q151.65,405.4063 151.65,404.2031 L151.65,403.1094 Q151.65,401.8594 152.2438,400.7656 Q152.8531,399.6719 153.9,399.0938 Q154.9625,398.5 156.15,398.5 Q156.8688,398.5 157.4938,398.75 Q158.1188,399 158.65,399.5 Z "
-              fill="#000000"/>
-        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="43" x="171.35"
-              y="407.9102">Sample
-        </text>
-        <line style="stroke:#A80036;stroke-width:1.5;" x1="139.5" x2="219.5" y1="419" y2="419"/>
-        <line style="stroke:#A80036;stroke-width:1.5;" x1="139.5" x2="219.5" y1="427" y2="427"/>
-        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="70" x="144.5"
-              y="442.4189">saveSample();
-        </text><!--MD5=[b07fc2b2aa91da2436cc249a96980d64]
-link RecordSampleUI to RecordSampleController-->
-        <path codeLine="23" d="M114.5,55.14 C114.5,70.58 114.5,91.33 114.5,109.67 " fill="none"
-              id="RecordSampleUI-to-RecordSampleController"
-              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
-        <polygon fill="#A80036" points="114.5,114.77,118.5,105.77,114.5,109.77,110.5,105.77,114.5,114.77"
-                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[5bb931d09ab0aebfaada3d823529a93c]
-link RecordSampleController to TestStore-->
-        <path codeLine="24" d="M96.39,191.33 C87.04,210.6 75.7,233.98 66.51,252.92 " fill="none"
-              id="RecordSampleController-to-TestStore"
-              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
-        <polygon fill="#A80036" points="64.23,257.64,71.7517,251.2821,66.4086,253.1396,64.5511,247.7964,64.23,257.64"
-                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9510bf5b380887b573b83b1f9ca3e028]
-link RecordSampleController to SampleStore-->
-        <path codeLine="25" d="M132.61,191.33 C140.85,208.31 150.63,228.49 159.13,246.01 " fill="none"
-              id="RecordSampleController-to-SampleStore"
-              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
-        <polygon fill="#A80036"
-                 points="161.49,250.87,161.1559,241.0268,159.3055,246.3725,153.9598,244.522,161.49,250.87"
-                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[24da80e03bf7ae3160485df7795f9e59]
-link SampleStore to Sample-->
-        <path codeLine="26" d="M179.5,327.08 C179.5,344.33 179.5,364.74 179.5,381.76 " fill="none"
-              id="SampleStore-to-Sample" style="stroke:#A80036;stroke-width:1.0;"/>
-        <polygon fill="#A80036" points="179.5,386.93,183.5,377.93,179.5,381.93,175.5,377.93,179.5,386.93"
-                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[39cc9816489d8adffe0cf0596eb04e9b]
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="457.6px" preserveAspectRatio="none" style="width:507px;height:457px;" version="1.1" viewBox="0 0 507 457" width="507.2px" zoomAndPan="magnify"><defs><filter height="300%" id="f161g1qc703yg3" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="1.6"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="3.2" dy="3.2" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[05ffea613565d111e9c4a041147710d4]
+class RecordSampleUI--><rect codeLine="2" fill="#FEFECE" filter="url(#f161g1qc703yg3)" height="38.4" id="RecordSampleUI" style="stroke:#A80036;stroke-width:1.2000000000000002;" width="101.6" x="22.4" y="5.6"/><ellipse cx="34.4" cy="18.4" fill="#ADD1B2" rx="8.8" ry="8.8" style="stroke:#A80036;stroke-width:0.8;"/><path d="M36,15.6 Q36.1625,15.2 36.35,15 Q36.5375,14.8 36.75,14.8 Q37.125,14.8 37.3625,15.025 Q37.6,15.25 37.6,15.775 L37.6,17.025 Q37.6,17.55 37.375,17.775 Q37.15,18 36.8,18 Q36.4875,18 36.2875,17.8625 Q36.0875,17.725 36,17.3625 Q35.9625,17.1125 35.825,16.975 Q35.575,16.7125 35.125,16.5625 Q34.675,16.4 34.225,16.4 Q33.6625,16.4 33.1875,16.625 Q32.725,16.85 32.3625,17.35 Q32,17.85 32,18.5375 L32,19.275 Q32,20.1 32.675,20.65 Q33.35,21.2 34.55,21.2 Q35.2625,21.2 35.7625,21.0375 Q36.05,20.95 36.375,20.6625 Q36.5875,20.5 36.7,20.45 Q36.8125,20.4 36.95,20.4 Q37.2125,20.4 37.4,20.6125 Q37.6,20.8125 37.6,21.1 Q37.6,21.375 37.325,21.7 Q36.925,22.175 36.2875,22.4375 Q35.45,22.8 34.425,22.8 Q33.225,22.8 32.2625,22.325 Q31.4875,21.95 30.9375,21.1375 Q30.4,20.325 30.4,19.3625 L30.4,18.4875 Q30.4,17.4875 30.875,16.6125 Q31.3625,15.7375 32.2,15.275 Q33.05,14.8 34,14.8 Q34.575,14.8 35.075,15 Q35.575,15.2 36,15.6 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="9.6" lengthAdjust="spacing" textLength="76" x="45.6" y="22.3281">RecordSampleUI</text><line style="stroke:#A80036;stroke-width:1.2000000000000002;" x1="23.2" x2="123.2" y1="31.2" y2="31.2"/><line style="stroke:#A80036;stroke-width:1.2000000000000002;" x1="23.2" x2="123.2" y1="37.6" y2="37.6"/><!--MD5=[ecb4b8913618184ce1e3f8e48e5e993f]
+class RecordSampleController--><rect codeLine="5" fill="#FEFECE" filter="url(#f161g1qc703yg3)" height="82.675" id="RecordSampleController" style="stroke:#A80036;stroke-width:1.2000000000000002;" width="135.2" x="5.6" y="130.8"/><ellipse cx="17.6" cy="143.6" fill="#ADD1B2" rx="8.8" ry="8.8" style="stroke:#A80036;stroke-width:0.8;"/><path d="M19.2,140.8 Q19.3625,140.4 19.55,140.2 Q19.7375,140 19.95,140 Q20.325,140 20.5625,140.225 Q20.8,140.45 20.8,140.975 L20.8,142.225 Q20.8,142.75 20.575,142.975 Q20.35,143.2 20,143.2 Q19.6875,143.2 19.4875,143.0625 Q19.2875,142.925 19.2,142.5625 Q19.1625,142.3125 19.025,142.175 Q18.775,141.9125 18.325,141.7625 Q17.875,141.6 17.425,141.6 Q16.8625,141.6 16.3875,141.825 Q15.925,142.05 15.5625,142.55 Q15.2,143.05 15.2,143.7375 L15.2,144.475 Q15.2,145.3 15.875,145.85 Q16.55,146.4 17.75,146.4 Q18.4625,146.4 18.9625,146.2375 Q19.25,146.15 19.575,145.8625 Q19.7875,145.7 19.9,145.65 Q20.0125,145.6 20.15,145.6 Q20.4125,145.6 20.6,145.8125 Q20.8,146.0125 20.8,146.3 Q20.8,146.575 20.525,146.9 Q20.125,147.375 19.4875,147.6375 Q18.65,148 17.625,148 Q16.425,148 15.4625,147.525 Q14.6875,147.15 14.1375,146.3375 Q13.6,145.525 13.6,144.5625 L13.6,143.6875 Q13.6,142.6875 14.075,141.8125 Q14.5625,140.9375 15.4,140.475 Q16.25,140 17.2,140 Q17.775,140 18.275,140.2 Q18.775,140.4 19.2,140.8 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="9.6" lengthAdjust="spacing" textLength="109.6" x="28.8" y="147.5281">RecordSampleController</text><line style="stroke:#A80036;stroke-width:1.2000000000000002;" x1="6.4" x2="140" y1="156.4" y2="156.4"/><line style="stroke:#A80036;stroke-width:1.2000000000000002;" x1="6.4" x2="140" y1="162.8" y2="162.8"/><ellipse cx="14.4" cy="171.6" fill="#84BE84" rx="2.4" ry="2.4" style="stroke:#038048;stroke-width:0.8;"/><text fill="#000000" font-family="sans-serif" font-size="8.8" lengthAdjust="spacing" textLength="88.8" x="21.6" y="175.1352">SD_getTestList(testID);</text><ellipse cx="14.4" cy="182.6688" fill="#84BE84" rx="2.4" ry="2.4" style="stroke:#038048;stroke-width:0.8;"/><text fill="#000000" font-family="sans-serif" font-size="8.8" lengthAdjust="spacing" textLength="73.6" x="21.6" y="186.2039">selectTest((testID);</text><ellipse cx="14.4" cy="193.7375" fill="#84BE84" rx="2.4" ry="2.4" style="stroke:#038048;stroke-width:0.8;"/><text fill="#000000" font-family="sans-serif" font-size="8.8" lengthAdjust="spacing" textLength="94.4" x="21.6" y="197.2727">createSampleBarcode();</text><ellipse cx="14.4" cy="204.8063" fill="#84BE84" rx="2.4" ry="2.4" style="stroke:#038048;stroke-width:0.8;"/><text fill="#000000" font-family="sans-serif" font-size="8.8" lengthAdjust="spacing" textLength="56" x="21.6" y="208.3414">saveSample();</text><!--MD5=[0f6f7964b844a64b0496af0dda7914bd]
+class TestStore--><rect codeLine="12" fill="#FEFECE" filter="url(#f161g1qc703yg3)" height="49.4688" id="TestStore" style="stroke:#A80036;stroke-width:1.2000000000000002;" width="80" x="33.2" y="300"/><ellipse cx="50.6" cy="312.8" fill="#ADD1B2" rx="8.8" ry="8.8" style="stroke:#A80036;stroke-width:0.8;"/><path d="M52.2,310 Q52.3625,309.6 52.55,309.4 Q52.7375,309.2 52.95,309.2 Q53.325,309.2 53.5625,309.425 Q53.8,309.65 53.8,310.175 L53.8,311.425 Q53.8,311.95 53.575,312.175 Q53.35,312.4 53,312.4 Q52.6875,312.4 52.4875,312.2625 Q52.2875,312.125 52.2,311.7625 Q52.1625,311.5125 52.025,311.375 Q51.775,311.1125 51.325,310.9625 Q50.875,310.8 50.425,310.8 Q49.8625,310.8 49.3875,311.025 Q48.925,311.25 48.5625,311.75 Q48.2,312.25 48.2,312.9375 L48.2,313.675 Q48.2,314.5 48.875,315.05 Q49.55,315.6 50.75,315.6 Q51.4625,315.6 51.9625,315.4375 Q52.25,315.35 52.575,315.0625 Q52.7875,314.9 52.9,314.85 Q53.0125,314.8 53.15,314.8 Q53.4125,314.8 53.6,315.0125 Q53.8,315.2125 53.8,315.5 Q53.8,315.775 53.525,316.1 Q53.125,316.575 52.4875,316.8375 Q51.65,317.2 50.625,317.2 Q49.425,317.2 48.4625,316.725 Q47.6875,316.35 47.1375,315.5375 Q46.6,314.725 46.6,313.7625 L46.6,312.8875 Q46.6,311.8875 47.075,311.0125 Q47.5625,310.1375 48.4,309.675 Q49.25,309.2 50.2,309.2 Q50.775,309.2 51.275,309.4 Q51.775,309.6 52.2,310 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="9.6" lengthAdjust="spacing" textLength="42.4" x="63" y="316.7281">TestStore</text><line style="stroke:#A80036;stroke-width:1.2000000000000002;" x1="34" x2="112.4" y1="325.6" y2="325.6"/><line style="stroke:#A80036;stroke-width:1.2000000000000002;" x1="34" x2="112.4" y1="332" y2="332"/><ellipse cx="42" cy="340.8" fill="#84BE84" rx="2.4" ry="2.4" style="stroke:#038048;stroke-width:0.8;"/><text fill="#000000" font-family="sans-serif" font-size="8.8" lengthAdjust="spacing" textLength="59.2" x="49.2" y="344.3352">getTest(testID);</text><!--MD5=[df38be88ccee13e832d6fafd6288a4ca]
+class Test--><rect codeLine="16" fill="#FEFECE" filter="url(#f161g1qc703yg3)" height="160.1563" id="Test" style="stroke:#A80036;stroke-width:1.2000000000000002;" width="115.2" x="169.2" y="92"/><ellipse cx="213.8" cy="104.8" fill="#ADD1B2" rx="8.8" ry="8.8" style="stroke:#A80036;stroke-width:0.8;"/><path d="M215.4,102 Q215.5625,101.6 215.75,101.4 Q215.9375,101.2 216.15,101.2 Q216.525,101.2 216.7625,101.425 Q217,101.65 217,102.175 L217,103.425 Q217,103.95 216.775,104.175 Q216.55,104.4 216.2,104.4 Q215.8875,104.4 215.6875,104.2625 Q215.4875,104.125 215.4,103.7625 Q215.3625,103.5125 215.225,103.375 Q214.975,103.1125 214.525,102.9625 Q214.075,102.8 213.625,102.8 Q213.0625,102.8 212.5875,103.025 Q212.125,103.25 211.7625,103.75 Q211.4,104.25 211.4,104.9375 L211.4,105.675 Q211.4,106.5 212.075,107.05 Q212.75,107.6 213.95,107.6 Q214.6625,107.6 215.1625,107.4375 Q215.45,107.35 215.775,107.0625 Q215.9875,106.9 216.1,106.85 Q216.2125,106.8 216.35,106.8 Q216.6125,106.8 216.8,107.0125 Q217,107.2125 217,107.5 Q217,107.775 216.725,108.1 Q216.325,108.575 215.6875,108.8375 Q214.85,109.2 213.825,109.2 Q212.625,109.2 211.6625,108.725 Q210.8875,108.35 210.3375,107.5375 Q209.8,106.725 209.8,105.7625 L209.8,104.8875 Q209.8,103.8875 210.275,103.0125 Q210.7625,102.1375 211.6,101.675 Q212.45,101.2 213.4,101.2 Q213.975,101.2 214.475,101.4 Q214.975,101.6 215.4,102 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="9.6" lengthAdjust="spacing" textLength="19.2" x="230.2" y="108.7281">Test</text><line style="stroke:#A80036;stroke-width:1.2000000000000002;" x1="170" x2="283.6" y1="117.6" y2="117.6"/><rect fill="none" height="4.8" style="stroke:#C82930;stroke-width:0.8;" width="4.8" x="175.6" y="124"/><text fill="#000000" font-family="sans-serif" font-size="8.8" lengthAdjust="spacing" textLength="21.6" x="185.2" y="129.9352">state;</text><rect fill="none" height="4.8" style="stroke:#C82930;stroke-width:0.8;" width="4.8" x="175.6" y="135.0688"/><text fill="#000000" font-family="sans-serif" font-size="8.8" lengthAdjust="spacing" textLength="36.8" x="185.2" y="141.0039">testCode;</text><rect fill="none" height="4.8" style="stroke:#C82930;stroke-width:0.8;" width="4.8" x="175.6" y="146.1375"/><text fill="#000000" font-family="sans-serif" font-size="8.8" lengthAdjust="spacing" textLength="61.6" x="185.2" y="152.0727">testNhsNumber;</text><rect fill="none" height="4.8" style="stroke:#C82930;stroke-width:0.8;" width="4.8" x="175.6" y="157.2063"/><text fill="#000000" font-family="sans-serif" font-size="8.8" lengthAdjust="spacing" textLength="33.6" x="185.2" y="163.1414">clientTin;</text><rect fill="none" height="4.8" style="stroke:#C82930;stroke-width:0.8;" width="4.8" x="175.6" y="168.275"/><text fill="#000000" font-family="sans-serif" font-size="8.8" lengthAdjust="spacing" textLength="36" x="185.2" y="174.2102">testType;</text><rect fill="none" height="4.8" style="stroke:#C82930;stroke-width:0.8;" width="4.8" x="175.6" y="179.3438"/><text fill="#000000" font-family="sans-serif" font-size="8.8" lengthAdjust="spacing" textLength="40.8" x="185.2" y="185.2789">testParam;</text><rect fill="none" height="4.8" style="stroke:#C82930;stroke-width:0.8;" width="4.8" x="175.6" y="190.4125"/><text fill="#000000" font-family="sans-serif" font-size="8.8" lengthAdjust="spacing" textLength="49.6" x="185.2" y="196.3477">createdDate;</text><rect fill="none" height="4.8" style="stroke:#C82930;stroke-width:0.8;" width="4.8" x="175.6" y="201.4813"/><text fill="#000000" font-family="sans-serif" font-size="8.8" lengthAdjust="spacing" textLength="77.6" x="185.2" y="207.4164">sampleCreatedDate;</text><line style="stroke:#A80036;stroke-width:1.2000000000000002;" x1="170" x2="283.6" y1="212.55" y2="212.55"/><ellipse cx="178" cy="221.35" fill="#84BE84" rx="2.4" ry="2.4" style="stroke:#038048;stroke-width:0.8;"/><text fill="#000000" font-family="sans-serif" font-size="8.8" lengthAdjust="spacing" textLength="94.4" x="185.2" y="224.8852">createSampleBarcode();</text><ellipse cx="178" cy="232.4188" fill="#84BE84" rx="2.4" ry="2.4" style="stroke:#038048;stroke-width:0.8;"/><text fill="#000000" font-family="sans-serif" font-size="8.8" lengthAdjust="spacing" textLength="56" x="185.2" y="235.9539">saveSample();</text><ellipse cx="178" cy="243.4875" fill="#84BE84" rx="2.4" ry="2.4" style="stroke:#038048;stroke-width:0.8;"/><text fill="#000000" font-family="sans-serif" font-size="8.8" lengthAdjust="spacing" textLength="66.4" x="185.2" y="247.0227">validateSample();</text><!--MD5=[9681492165142af2a4a3a169d90ee8d4]
+class Sample--><rect codeLine="30" fill="#FEFECE" filter="url(#f161g1qc703yg3)" height="49.4688" id="Sample" style="stroke:#A80036;stroke-width:1.2000000000000002;" width="60" x="312.8" y="147.2"/><ellipse cx="324.8" cy="160" fill="#ADD1B2" rx="8.8" ry="8.8" style="stroke:#A80036;stroke-width:0.8;"/><path d="M326.4,157.2 Q326.5625,156.8 326.75,156.6 Q326.9375,156.4 327.15,156.4 Q327.525,156.4 327.7625,156.625 Q328,156.85 328,157.375 L328,158.625 Q328,159.15 327.775,159.375 Q327.55,159.6 327.2,159.6 Q326.8875,159.6 326.6875,159.4625 Q326.4875,159.325 326.4,158.9625 Q326.3625,158.7125 326.225,158.575 Q325.975,158.3125 325.525,158.1625 Q325.075,158 324.625,158 Q324.0625,158 323.5875,158.225 Q323.125,158.45 322.7625,158.95 Q322.4,159.45 322.4,160.1375 L322.4,160.875 Q322.4,161.7 323.075,162.25 Q323.75,162.8 324.95,162.8 Q325.6625,162.8 326.1625,162.6375 Q326.45,162.55 326.775,162.2625 Q326.9875,162.1 327.1,162.05 Q327.2125,162 327.35,162 Q327.6125,162 327.8,162.2125 Q328,162.4125 328,162.7 Q328,162.975 327.725,163.3 Q327.325,163.775 326.6875,164.0375 Q325.85,164.4 324.825,164.4 Q323.625,164.4 322.6625,163.925 Q321.8875,163.55 321.3375,162.7375 Q320.8,161.925 320.8,160.9625 L320.8,160.0875 Q320.8,159.0875 321.275,158.2125 Q321.7625,157.3375 322.6,156.875 Q323.45,156.4 324.4,156.4 Q324.975,156.4 325.475,156.6 Q325.975,156.8 326.4,157.2 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="9.6" lengthAdjust="spacing" textLength="34.4" x="336" y="163.9281">Sample</text><line style="stroke:#A80036;stroke-width:1.2000000000000002;" x1="313.6" x2="372" y1="172.8" y2="172.8"/><line style="stroke:#A80036;stroke-width:1.2000000000000002;" x1="313.6" x2="372" y1="179.2" y2="179.2"/><ellipse cx="321.6" cy="188" fill="#84BE84" rx="2.4" ry="2.4" style="stroke:#038048;stroke-width:0.8;"/><text fill="#000000" font-family="sans-serif" font-size="8.8" lengthAdjust="spacing" textLength="36.8" x="328.8" y="191.5352">Sample();</text><!--MD5=[09699c8b762f7fa74b7dc251f2258f54]
+class BarcodeAdapter--><rect codeLine="34" fill="#FEFECE" filter="url(#f161g1qc703yg3)" height="49.4688" id="BarcodeAdapter" style="stroke:#A80036;stroke-width:1.2000000000000002;" width="96" x="294.8" y="300"/><ellipse cx="306.8" cy="312.8" fill="#ADD1B2" rx="8.8" ry="8.8" style="stroke:#A80036;stroke-width:0.8;"/><path d="M308.4,310 Q308.5625,309.6 308.75,309.4 Q308.9375,309.2 309.15,309.2 Q309.525,309.2 309.7625,309.425 Q310,309.65 310,310.175 L310,311.425 Q310,311.95 309.775,312.175 Q309.55,312.4 309.2,312.4 Q308.8875,312.4 308.6875,312.2625 Q308.4875,312.125 308.4,311.7625 Q308.3625,311.5125 308.225,311.375 Q307.975,311.1125 307.525,310.9625 Q307.075,310.8 306.625,310.8 Q306.0625,310.8 305.5875,311.025 Q305.125,311.25 304.7625,311.75 Q304.4,312.25 304.4,312.9375 L304.4,313.675 Q304.4,314.5 305.075,315.05 Q305.75,315.6 306.95,315.6 Q307.6625,315.6 308.1625,315.4375 Q308.45,315.35 308.775,315.0625 Q308.9875,314.9 309.1,314.85 Q309.2125,314.8 309.35,314.8 Q309.6125,314.8 309.8,315.0125 Q310,315.2125 310,315.5 Q310,315.775 309.725,316.1 Q309.325,316.575 308.6875,316.8375 Q307.85,317.2 306.825,317.2 Q305.625,317.2 304.6625,316.725 Q303.8875,316.35 303.3375,315.5375 Q302.8,314.725 302.8,313.7625 L302.8,312.8875 Q302.8,311.8875 303.275,311.0125 Q303.7625,310.1375 304.6,309.675 Q305.45,309.2 306.4,309.2 Q306.975,309.2 307.475,309.4 Q307.975,309.6 308.4,310 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="9.6" lengthAdjust="spacing" textLength="70.4" x="318" y="316.7281">BarcodeAdapter</text><line style="stroke:#A80036;stroke-width:1.2000000000000002;" x1="295.6" x2="390" y1="325.6" y2="325.6"/><line style="stroke:#A80036;stroke-width:1.2000000000000002;" x1="295.6" x2="390" y1="332" y2="332"/><ellipse cx="303.6" cy="340.8" fill="#84BE84" rx="2.4" ry="2.4" style="stroke:#038048;stroke-width:0.8;"/><text fill="#000000" font-family="sans-serif" font-size="8.8" lengthAdjust="spacing" textLength="53.6" x="310.8" y="344.3352">getBarcode();</text><!--MD5=[2c3d06ea16abba5fb0e6626b718769d1]
+class ExternalAPI--><rect codeLine="38" fill="#FEFECE" filter="url(#f161g1qc703yg3)" height="49.4688" id="ExternalAPI" style="stroke:#A80036;stroke-width:1.2000000000000002;" width="75.2" x="305.2" y="397.6"/><ellipse cx="317.2" cy="410.4" fill="#ADD1B2" rx="8.8" ry="8.8" style="stroke:#A80036;stroke-width:0.8;"/><path d="M318.8,407.6 Q318.9625,407.2 319.15,407 Q319.3375,406.8 319.55,406.8 Q319.925,406.8 320.1625,407.025 Q320.4,407.25 320.4,407.775 L320.4,409.025 Q320.4,409.55 320.175,409.775 Q319.95,410 319.6,410 Q319.2875,410 319.0875,409.8625 Q318.8875,409.725 318.8,409.3625 Q318.7625,409.1125 318.625,408.975 Q318.375,408.7125 317.925,408.5625 Q317.475,408.4 317.025,408.4 Q316.4625,408.4 315.9875,408.625 Q315.525,408.85 315.1625,409.35 Q314.8,409.85 314.8,410.5375 L314.8,411.275 Q314.8,412.1 315.475,412.65 Q316.15,413.2 317.35,413.2 Q318.0625,413.2 318.5625,413.0375 Q318.85,412.95 319.175,412.6625 Q319.3875,412.5 319.5,412.45 Q319.6125,412.4 319.75,412.4 Q320.0125,412.4 320.2,412.6125 Q320.4,412.8125 320.4,413.1 Q320.4,413.375 320.125,413.7 Q319.725,414.175 319.0875,414.4375 Q318.25,414.8 317.225,414.8 Q316.025,414.8 315.0625,414.325 Q314.2875,413.95 313.7375,413.1375 Q313.2,412.325 313.2,411.3625 L313.2,410.4875 Q313.2,409.4875 313.675,408.6125 Q314.1625,407.7375 315,407.275 Q315.85,406.8 316.8,406.8 Q317.375,406.8 317.875,407 Q318.375,407.2 318.8,407.6 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="9.6" lengthAdjust="spacing" textLength="49.6" x="328.4" y="414.3281">ExternalAPI</text><line style="stroke:#A80036;stroke-width:1.2000000000000002;" x1="306" x2="379.6" y1="423.2" y2="423.2"/><line style="stroke:#A80036;stroke-width:1.2000000000000002;" x1="306" x2="379.6" y1="429.6" y2="429.6"/><ellipse cx="314" cy="438.4" fill="#84BE84" rx="2.4" ry="2.4" style="stroke:#038048;stroke-width:0.8;"/><text fill="#000000" font-family="sans-serif" font-size="8.8" lengthAdjust="spacing" textLength="43.2" x="321.2" y="441.9352">generate();</text><!--MD5=[e59bda2572a266093cda22ac34510ea0]
+class Barcode--><rect codeLine="42" fill="#FEFECE" filter="url(#f161g1qc703yg3)" height="49.4688" id="Barcode" style="stroke:#A80036;stroke-width:1.2000000000000002;" width="87.2" x="408.8" y="397.6"/><ellipse cx="431.96" cy="410.4" fill="#ADD1B2" rx="8.8" ry="8.8" style="stroke:#A80036;stroke-width:0.8;"/><path d="M433.56,407.6 Q433.7225,407.2 433.91,407 Q434.0975,406.8 434.31,406.8 Q434.685,406.8 434.9225,407.025 Q435.16,407.25 435.16,407.775 L435.16,409.025 Q435.16,409.55 434.935,409.775 Q434.71,410 434.36,410 Q434.0475,410 433.8475,409.8625 Q433.6475,409.725 433.56,409.3625 Q433.5225,409.1125 433.385,408.975 Q433.135,408.7125 432.685,408.5625 Q432.235,408.4 431.785,408.4 Q431.2225,408.4 430.7475,408.625 Q430.285,408.85 429.9225,409.35 Q429.56,409.85 429.56,410.5375 L429.56,411.275 Q429.56,412.1 430.235,412.65 Q430.91,413.2 432.11,413.2 Q432.8225,413.2 433.3225,413.0375 Q433.61,412.95 433.935,412.6625 Q434.1475,412.5 434.26,412.45 Q434.3725,412.4 434.51,412.4 Q434.7725,412.4 434.96,412.6125 Q435.16,412.8125 435.16,413.1 Q435.16,413.375 434.885,413.7 Q434.485,414.175 433.8475,414.4375 Q433.01,414.8 431.985,414.8 Q430.785,414.8 429.8225,414.325 Q429.0475,413.95 428.4975,413.1375 Q427.96,412.325 427.96,411.3625 L427.96,410.4875 Q427.96,409.4875 428.435,408.6125 Q428.9225,407.7375 429.76,407.275 Q430.61,406.8 431.56,406.8 Q432.135,406.8 432.635,407 Q433.135,407.2 433.56,407.6 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="9.6" lengthAdjust="spacing" textLength="36.8" x="445.64" y="414.3281">Barcode</text><line style="stroke:#A80036;stroke-width:1.2000000000000002;" x1="409.6" x2="495.2" y1="423.2" y2="423.2"/><line style="stroke:#A80036;stroke-width:1.2000000000000002;" x1="409.6" x2="495.2" y1="429.6" y2="429.6"/><ellipse cx="417.6" cy="438.4" fill="#84BE84" rx="2.4" ry="2.4" style="stroke:#038048;stroke-width:0.8;"/><text fill="#000000" font-family="sans-serif" font-size="8.8" lengthAdjust="spacing" textLength="66.4" x="424.8" y="441.9352">createBarcode();</text><!--MD5=[b07fc2b2aa91da2436cc249a96980d64]
+link RecordSampleUI to RecordSampleController--><path codeLine="46" d="M73.2,44.04 C73.2,64.68 73.2,98.864 73.2,126.592 " fill="none" id="RecordSampleUI-to-RecordSampleController" style="stroke:#A80036;stroke-width:0.8;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="73.2,130.64,76.4,123.44,73.2,126.64,70,123.44,73.2,130.64" style="stroke:#A80036;stroke-width:0.8;"/><!--MD5=[5bb931d09ab0aebfaada3d823529a93c]
+link RecordSampleController to TestStore--><path codeLine="47" d="M73.2,213.32 C73.2,239.344 73.2,272.488 73.2,295.696 " fill="none" id="RecordSampleController-to-TestStore" style="stroke:#A80036;stroke-width:0.8;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="73.2,299.912,76.4,292.712,73.2,295.912,70,292.712,73.2,299.912" style="stroke:#A80036;stroke-width:0.8;"/><!--MD5=[1b994d31a4480b28023ddd683493aaaf]
+link RecordSampleController to Test--><path codeLine="48" d="M141,172 C148.992,172 156.984,172 164.976,172 " fill="none" id="RecordSampleController-to-Test" style="stroke:#A80036;stroke-width:0.8;"/><polygon fill="#A80036" points="169.152,172,161.952,168.8,165.152,172,161.952,175.2,169.152,172" style="stroke:#A80036;stroke-width:0.8;"/><!--MD5=[b72ac8ab7fb5921fceb5036a3902baea]
+link Test to Sample--><path codeLine="49" d="M284.576,172 C292.576,172 300.584,172 308.592,172 " fill="none" id="Test-to-Sample" style="stroke:#A80036;stroke-width:0.8;"/><polygon fill="#A80036" points="312.776,172,305.576,168.8,308.776,172,305.576,175.2,312.776,172" style="stroke:#A80036;stroke-width:0.8;"/><!--MD5=[2301e5886bb61320a7cc64338654fdfb]
+link Sample to BarcodeAdapter--><path codeLine="50" d="M342.8,197.096 C342.8,223.984 342.8,267.28 342.8,295.688 " fill="none" id="Sample-to-BarcodeAdapter" style="stroke:#A80036;stroke-width:0.8;"/><polygon fill="#A80036" points="342.8,299.768,346,292.568,342.8,295.768,339.6,292.568,342.8,299.768" style="stroke:#A80036;stroke-width:0.8;"/><!--MD5=[b82f6619e5362d6a65138c7429cc4628]
+link BarcodeAdapter to ExternalAPI--><path codeLine="51" d="M342.8,349.824 C342.8,363.016 342.8,379.408 342.8,393.192 " fill="none" id="BarcodeAdapter-to-ExternalAPI" style="stroke:#A80036;stroke-width:0.8;"/><polygon fill="#A80036" points="342.8,397.384,346,390.184,342.8,393.384,339.6,390.184,342.8,397.384" style="stroke:#A80036;stroke-width:0.8;"/><!--MD5=[09bb52f83b03edf85cf8b8a5170b02d4]
+link ExternalAPI to Barcode--><path codeLine="52" d="M380.472,422.4 C388.448,422.4 396.424,422.4 404.4,422.4 " fill="none" id="ExternalAPI-to-Barcode" style="stroke:#A80036;stroke-width:0.8;"/><polygon fill="#A80036" points="408.568,422.4,401.368,419.2,404.568,422.4,401.368,425.6,408.568,422.4" style="stroke:#A80036;stroke-width:0.8;"/><!--MD5=[ba11d17aaba040015b39fa3acd7d2339]
 @startuml
 
 class RecordSampleUI{
 }
 
 class RecordSampleController{
-getTestList();
-saveSample()
++ SD_getTestList(testID);
++ selectTest((testID);
++ createSampleBarcode();
++ saveSample();
 }
 
 class TestStore{
-getTestList();
++ getTest(testID);
 }
 
-class SampleStore{
-saveSample();
-validateSample();
+class Test{
+-state;
+-testCode;
+-testNhsNumber;
+-clientTin;
+-testType;
+-testParam;
+-createdDate;
+-sampleCreatedDate;
++ createSampleBarcode();
++ saveSample();
++ validateSample();
 }
 
 class Sample{
-saveSample();
++ Sample();
+}
+
+class BarcodeAdapter{
++ getBarcode();
+}
+
+class ExternalAPI{
++ generate();
+}
+
+class Barcode{
++ createBarcode();
 }
 
 RecordSampleUI ..> RecordSampleController
 RecordSampleController ..> TestStore
-RecordSampleController ..> SampleStore
-SampleStore - -> Sample
+RecordSampleController -> Test
+Test -> Sample
+Sample - -> BarcodeAdapter
+BarcodeAdapter - -> ExternalAPI
+ExternalAPI -> Barcode
 
 @enduml
 
@@ -146,6 +77,4 @@ JVM: OpenJDK 64-Bit Server VM
 Default Encoding: Cp1252
 Language: pt
 Country: PT
--->
-    </g>
-</svg>
+--></g></svg>

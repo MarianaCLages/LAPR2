@@ -4,26 +4,52 @@ class RecordSampleUI{
 }
 
 class RecordSampleController{
-getTestList();
-saveSample()
++ SD_getTestList(testID);
++ selectTest((testID);
++ createSampleBarcode();
++ saveSample();
 }
 
 class TestStore{
-getTestList();
++ getTest(testID);
 }
 
-class SampleStore{
-saveSample();
-validateSample();
+class Test{
+-state;
+-testCode;
+-testNhsNumber;
+-clientTin;
+-testType;
+-testParam;
+-createdDate;
+-sampleCreatedDate;
++ createSampleBarcode();
++ saveSample();
++ validateSample();
 }
 
 class Sample{
-saveSample();
++ Sample();
+}
+
+class BarcodeAdapter{
++ getBarcode();
+}
+
+class ExternalAPI{
++ generate();
+}
+
+class Barcode{
++ createBarcode();
 }
 
 RecordSampleUI ..> RecordSampleController
 RecordSampleController ..> TestStore
-RecordSampleController ..> SampleStore
-SampleStore --> Sample
+RecordSampleController -> Test
+Test -> Sample
+Sample --> BarcodeAdapter
+BarcodeAdapter --> ExternalAPI
+ExternalAPI -> Barcode
 
 @enduml
