@@ -13,6 +13,11 @@ public class TestTypeListMapper {
         return new TestTypeDTO(testType.getTestID(), testType.getDescription());
     }
 
+    /**
+     * creates a list of data transfer objects
+     * @param testTypes
+     * @return
+     */
     public List<TestTypeDTO> toDTO(TestTypeStore testTypes) {
         List<TestType> typesList = testTypes.getList();
 

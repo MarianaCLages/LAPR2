@@ -270,10 +270,9 @@ public class Client {
      */
 
     public boolean addUser(Company company) {
-        boolean success = false;
         AuthFacade auth = company.getAuthFacade();
         String password = PasswordGenerator.getPassword();
-        success = auth.addUserWithRole(this.name, this.email, password, Constants.ROLE_CLIENT);
+        boolean success = auth.addUserWithRole(this.name, this.email, password, Constants.ROLE_CLIENT);
         if (success) {
             Email.sendPasswordNotification(this.name, this.email, password);
 

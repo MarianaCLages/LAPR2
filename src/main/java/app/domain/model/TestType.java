@@ -117,14 +117,26 @@ public class TestType {
         return catStore;
     }
 
+    /**
+     *
+     * @return String with the name of the description associated with the testType
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     *
+     * @return String with the collecting method associated with the testType
+     */
     public String getCollectingMethod() {
         return collectingMethod;
     }
 
+    /**
+     *
+     * @return String with the name of the external module associated with the testType
+     */
     public String getExternalModule() {
         return externalModule;
     }
