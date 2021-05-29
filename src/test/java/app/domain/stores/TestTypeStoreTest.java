@@ -97,6 +97,17 @@ public class TestTypeStoreTest {
         //Assert
         Assert.assertFalse(store.saveTestType());
     }
+    @Test
+    public void saveTestTypeValid() {
+        //Arrange
+        ParameterCategory pc1 = new ParameterCategory("AF687", "Hemogram");
+        cat.add(pc1);
+        TestType t1 = new TestType("COV19", "descrição", "metodo 1", cat);
+        store.add(t1);
+        store.CreateTestType("BL000", "descrição", "metodo 1", cat);
+        //Assert
+        Assert.assertTrue(store.saveTestType());
+    }
 
     @Test
     public void createValidTestType() {
@@ -106,6 +117,19 @@ public class TestTypeStoreTest {
         Assert.assertNotNull(store.CreateTestType("COV19", "descrição", "metodo 1", cat));
 
     }
+
+    @Test
+    public void getTestType(){
+        //Arrange
+        ParameterCategory pc1 = new ParameterCategory("AF687", "Hemogram");
+        cat.add(pc1);
+        TestType t1 = new TestType("COV19", "descrição", "metodo 1", cat);
+        store.add(t1);
+        store.CreateTestType("BL000", "descrição", "metodo 1", cat);
+        //Assert
+        Assert.assertNotNull(store.getTestT());
+    }
+
 
 
 }

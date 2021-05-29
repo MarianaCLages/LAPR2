@@ -15,6 +15,7 @@ public class ExternalApiBarcode implements BarcodeAdapter {
     Barcode barcode;
 
     public ExternalApiBarcode() {
+        // constructor
     }
 
 

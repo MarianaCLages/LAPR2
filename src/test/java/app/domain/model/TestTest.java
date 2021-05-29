@@ -4,10 +4,13 @@ import app.domain.stores.ParameterCategoryStore;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TestTest {
+
+    LocalDate date = LocalDate.now();
 
     @Test
     public void createValidTest() {
@@ -426,10 +429,10 @@ public class TestTest {
         test.changeState("VALIDATED");
 
 
-        String expected = "Created at:" + "2021-05-28" + "\n" +
-                "Samples collected at:" + "2021-05-28" + "\n" +
-                "Analysed at:" + "2021-05-28" + "\n" +
-                "Diagnosed at:" + "2021-05-28" + "\n";
+        String expected = "Created at:" + date + "\n" +
+                "Samples collected at:" + date + "\n" +
+                "Analysed at:" + date + "\n" +
+                "Diagnosed at:" + date + "\n";
 
         String actual = test.getDates();
 

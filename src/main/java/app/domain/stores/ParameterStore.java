@@ -134,10 +134,19 @@ public class ParameterStore {
         return array.isEmpty();
     }
 
+    /**
+     *
+     * @return the list of all the parameters in the system
+     */
     public List<Parameter> getList() {
         return array;
     }
 
+    /**
+     * returns a list of parameters associated with a category
+     * @param categoryCode the code of a category
+     * @return list of parameters
+     */
     public List<Parameter> getParameterList(String categoryCode) {
 
         List<Parameter> parameters = new ArrayList<>();
@@ -150,6 +159,10 @@ public class ParameterStore {
         return parameters;
     }
 
+    /**
+     * @param parameterCode the code of the parameter
+     * @return parameter object with the given code
+     */
     public Parameter getParameter(String parameterCode) {
         for (Parameter p : array) {
             if (p.getCode().equals(parameterCode)) {
