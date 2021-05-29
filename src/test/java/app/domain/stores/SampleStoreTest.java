@@ -20,6 +20,14 @@ public class SampleStoreTest {
         //Assert
         Assert.assertTrue(store.createSample("BL000"));
     }
+    @Test(expected = IllegalArgumentException.class)
+    public void createSampleErrorTest() throws ClassNotFoundException, InstantiationException, BarcodeException, IllegalAccessException {
+        //Arrange + act
+        SampleStore store = new SampleStore();
+
+        //Assert
+        Assert.assertTrue(store.createSample(null));
+    }
 
     @Test
     public void saveSampleTest() throws ClassNotFoundException, InstantiationException, BarcodeException, IllegalAccessException, IOException, OutputException {
@@ -64,6 +72,8 @@ public class SampleStoreTest {
         Assert.assertEquals(a,b);
 
     }
+
+
 
 
 
