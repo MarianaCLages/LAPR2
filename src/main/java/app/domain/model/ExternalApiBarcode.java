@@ -25,6 +25,7 @@ public class ExternalApiBarcode implements BarcodeAdapter {
     }
 
     public void createBarcodeImage(Barcode barcode) throws OutputException {
+        barcode.setPreferredBarHeight(100);
         String fileName = "Barcode_" + getBarcode();
         File outputFile = new File("Barcode\\" + fileName + ".jpg");
 
