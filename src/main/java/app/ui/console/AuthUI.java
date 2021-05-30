@@ -49,6 +49,8 @@ public class AuthUI implements Runnable {
         rolesUI.add(new MenuItem(Constants.ROLE_CLINICALCHEMISTRYTECHNOLOGIST, new ClinicalChemistryTechnologistUI()));
         rolesUI.add(new MenuItem(Constants.ROLE_MEDICALLABTECHNICIIAN, new MedLabTechUI()));
         rolesUI.add(new MenuItem(Constants.ROLE_SPECIALISTDOCTOR, new SpecDocUI()));
+        rolesUI.add(new MenuItem(Constants.ROLE_LABORATORYCOORDINATOR, new LabCoordinatorUI()));
+
         return rolesUI;
     }
 

@@ -9,7 +9,17 @@ class RecordResultController{
 }
 class Company{
 -designation
++getSampleStore()
 +getTestStore()
+}
+class SampleStore{
+-sampleList
++getSample(sampleId)
+}
+class Sample{
+-sampleId
+-testId
++getTestID()
 }
 class Test{
 -state;
@@ -28,13 +38,12 @@ class TestParameterList{
 }
 class TestStore{
 -testList
-+getTestParametersList(sampleId)
++getTestByCode(sampleId)
 }
 class TestParameterStoreMapper{
 +toDTO(pList)
 -toDTO(testParameter)
 }
-
 class TestParameterDTO{
 -pcode
 +getPcode()
@@ -54,7 +63,7 @@ class TestType{
 -externalModule
 +getExternalModule()
 }
-interface ExternalModule{
+interface RefValueAdapter{
 +getRefValue(String param)
 +getMinValue(String param)
 +getMaxValue(String param)
@@ -103,24 +112,26 @@ RecordResultController .> TestParameterStoreMapper
 TestParameterStoreMapper ..> TestParameterDTO
 
 Company "1" -> "1" TestStore: adopts
+Company "1" --> "1" SampleStore: adopts
 
+SampleStore "1" -> "*" Sample: stores
 Test "1"  -> "1" TestParameterList: requests analysis of
 TestParameterList "1" --> "*" TestParameter: stores
 TestParameter "*" -> "1" Parameter: refer to
 TestParameter "1" --> "0..1" TestParameterResult:contains
 TestParameterResult "1" --> "1" ReferenceValue: records
-ReferenceValue "1" <-- "1"ExternalModule: create
+ReferenceValue "1" <-- "1"RefValueAdapter: create
 Test "*" --> "1"TestType: is of
 TestStore "1" --> "*" Test: stores
-TestType "*" --> "1" ExternalModule: makes use of
+TestType "*" --> "1" RefValueAdapter: makes use of
 
 CovidReferenceValues1APIAdapter --> CovidReferenceValues1API
 ExternalModule2APIAdapter --> ExternalModule2API
 ExternalModule3APIAdapter  --> ExternalModule3API
 
-ExternalModule <|.. CovidReferenceValues1APIAdapter
-ExternalModule <|.. ExternalModule2APIAdapter
-ExternalModule <|.. ExternalModule3APIAdapter
+RefValueAdapter <|.. CovidReferenceValues1APIAdapter
+RefValueAdapter <|.. ExternalModule2APIAdapter
+RefValueAdapter <|.. ExternalModule3APIAdapter
 
 
 

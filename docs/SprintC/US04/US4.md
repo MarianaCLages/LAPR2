@@ -173,7 +173,8 @@ activity. In some case, it might be usefull to add other analysis artifacts (e.g
 | Step 11: confirms data                                  | ... saving the Test object                               | TestStore            | IE: knows all                                                                                                                                                                                                                                                                                                                   |
 |                                                         |                                                          |                      |                                                                                                                                                                                                                                                                                                                                 |
 | Step 12: informs operation success                      | ...informing operation success                           | CreateTestUI         | **
-IE:** is responsible for user interactions                                                                                                                                                                                                                                                                                    |
+IE:** is responsible for user interactions
+|
 
 ### Systematization ##
 
@@ -193,6 +194,9 @@ Other software classes (i.e. Pure Fabrication) identified:
 * ParameterStore
 * CategoryStore
 * TestTypeStore
+* TestTypeMapper
+* CategoryMapper
+* ParameterMapper
 
 ## 3.2. Sequence Diagram (SD)
 
@@ -230,27 +234,926 @@ requirements fulfilling.*
 
 **_DO NOT COPY ALL DEVELOPED TESTS HERE_**
 
-**Test 1:** Check that it is not possible to create an instance of the Example class with null values.
+**Test 1:** Check that it is possible to create an instance of the Test class .
 
-	@Test(expected = IllegalArgumentException.class)
-		public void ensureNullIsNotAllowed() {
-		Exemplo instance = new Exemplo(null, null);
-	}
+````
+    @Test
+    public void createValidTest() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
 
-*It is also recommended to organize this content by subsections.*
+        app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
+        Assert.assertNotNull(test);
+    }
+````
+
+**Test 2:** Check that it is not possible to create an instance of the Test class with null arguments .
+
+````
+    @Test(expected = IllegalArgumentException.class)
+    public void createInvalidTestNhsNumberNull() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+
+        app.domain.model.Test test = new app.domain.model.Test("000000000000001", null, "1234567890123456", testType, cat1, pa);
+    }
+    
+````
+
+**Test 3:** Check that it is not possible to save a repeated Test object (AC7) .
+
+````
+    @Test
+    public void addInvalidTest() {
+
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+        TestStore store = new TestStore();
+
+        store.createTest("123456789187", "1234567890123456", testType, cat1, pa);
+        store.saveTest();
+
+        store.createTest("123456789187", "1234567890123456", testType, cat1, pa);
+
+        Assert.assertFalse(store.saveTest());
+
+    }
+    
+````
+
 
 # 5. Construction (Implementation)
 
-*In this section, it is suggested to provide, if necessary, some evidence that the construction/implementation is in
-accordance with the previously carried out design. Furthermore, it is recommeded to mention/describe the existence of
-other relevant (e.g. configuration) files and highlight relevant commits.*
+## RegisterTestUI
+
+```java
+public class RegisterTestUI implements Runnable {
+    private CreateTestController ctrl;
+    private TestTypeDTO testType;
+    private List<CategoryListDTO> categories;
+    private CategoryListDTO category;
+    private List<ParameterDTO> parameters;
+    private ParameterDTO parameter;
+
+    public RegisterTestUI() {
+        this.ctrl = new CreateTestController();
+    }
+
+    /**
+     * When an object implementing interface {@code Runnable} is used
+     * to create a thread, starting the thread causes the object's
+     * {@code run} method to be called in that separately executing
+     * thread.
+     * <p>
+     * The general contract of the method {@code run} is that it may
+     * take any action whatsoever.
+     *
+     * @see Thread#run()
+     */
+    @Override
+    public void run() {
+        ctrl.getLists();
+        boolean cont = true;
+        boolean cat = true;
+        boolean pa = true;
+
+        do {
+            String tin = Utils.readLineFromConsole("Please enter the Tin of the Client ()");
+            ctrl.getLists();
+            if (ctrl.existClient(tin)) {
+                boolean exception = false;
+                do {
+                    String testNhsCode = Utils.readLineFromConsole("Please enter the Test NHS Code (12 characters)");
+                    try {
+                        this.testType = (TestTypeDTO) Utils.showAndSelectOne(ctrl.getTestTypeList(), "Please select one Type of Test");
+
+                        this.categories = ctrl.getCategories(testType.getTestID());
+                        do {
+                            this.category = (CategoryListDTO) Utils.showAndSelectOne(categories, "Please select one Category\n");
+                            do {
+                                this.parameters = ctrl.getParameters(this.category.getCode());
+                                this.parameter = (ParameterDTO) Utils.showAndSelectOne(parameters, "Please select one Parameter");
+
+                                ctrl.addParameter(parameter.getCode());
+                                pa = Utils.confirm("Do you want to select other parameter");
+                            } while (pa);
+                            cat = Utils.confirm("Do you want to select other category");
+                        } while (cat);
+                    } catch (Exception e) {
+                        System.out.println("There must exist Types of Tests, Parameter Categories and Parameters in the system \n");
+                    }
+                    try {
+                        ctrl.createTest(testNhsCode, tin);
+                        exception = false;
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                        System.out.println("An error occurred during the creation during the creation of the Test please try again\n");
+                        exception = true;
+
+                    }
+                } while (exception);
+
+                cont = Utils.confirm("The following Test was created do you want to save? (s/n) \n" + ctrl.getTest());
+                if (cont) {
+                    ctrl.saveTest();
+                }
+            } else {
+                System.out.println("The client does not exists please register the client before registering the test");
+                cont = true;
+            }
+        } while (!cont);
+
+
+    }
+}
+```
+
+## CreateTestController
+
+````java
+public class CreateTestController {
+    private Company company;
+    private TestStore store;
+    private TestTypeStore ttList;
+    private TestType testType;
+    private ParameterCategoryStore categoriesList;
+    private List<ParameterCategory> caList;
+    private List<Parameter> paList;
+
+
+    public CreateTestController() {
+        this(App.getInstance().getCompany());
+    }
+
+    public CreateTestController(Company company) {
+        this.company = company;
+        store = company.getTestList();
+    }
+
+    public void getLists() {
+
+        this.caList = new ArrayList<ParameterCategory>();
+        this.paList = new ArrayList<Parameter>();
+
+    }
+
+    public boolean existClient(String clientTin) {
+        ClientStore cList = company.getClientList();
+        return cList.exists(clientTin);
+    }
+
+    public void createTest(String testNhsNumber, String clientCc) {
+        store.createTest(testNhsNumber, clientCc, this.testType, this.caList, this.paList);
+    }
+
+    public boolean saveTest() {
+        return store.saveTest();
+    }
+
+    public List<TestTypeDTO> getTestTypeList() {
+        this.ttList = company.getTestTypeList();
+        TestTypeListMapper typeMapper = new TestTypeListMapper();
+        return typeMapper.toDTO(ttList);
+    }
+
+    public List<CategoryListDTO> getCategories(String testTypeCode) {
+        this.testType = ttList.getByID(testTypeCode);
+        this.categoriesList = company.getParameterCategoryList();
+        CategoryListMapper catMapper = new CategoryListMapper();
+        return catMapper.toDTO(categoriesList);
+    }
+
+    public List<ParameterDTO> getParameters(String categoryCode) {
+        ParameterStore paStore = company.getParameterList();
+
+        ParameterCategory category = this.categoriesList.getByCode(categoryCode);
+        this.caList.add(category);
+        List<Parameter> plist = paStore.getParameterList(categoryCode);
+        ParameterListMapper pMapper = new ParameterListMapper();
+        return pMapper.toDTO(plist);
+    }
+
+    public void addParameter(String parameterCode) {
+        ParameterStore paStore = company.getParameterList();
+        Parameter pa = paStore.getParameter(parameterCode);
+        this.paList.add(pa);
+    }
+
+    public String getTest() {
+        return store.getTest();
+    }
+}
+````
+
+## Company
+
+````java
+public class Company {
+
+    private final String designation;
+    private final AuthFacade authFacade;
+
+    private final ParameterCategoryStore parameterCategoryList;
+    private final ClientStore clientList;
+    private final TestStore testList;
+    private ParameterStore parameterList;
+    private TestTypeStore testTypeList;
+
+    /**
+     * Constructor of the Company Class, instances a new object of AuthFacade and new empty stores
+     *
+     * @param designation Designation of Company
+     */
+    public Company(String designation) {
+
+        this.designation = designation;
+        this.authFacade = new AuthFacade();
+        this.parameterList = new ParameterStore();
+        this.testTypeList = new TestTypeStore();
+        this.parameterCategoryList = new ParameterCategoryStore();
+        this.clientList = new ClientStore();
+        this.testList = new TestStore();
+
+    }
+
+    /**
+     * @return designation of the Company
+     */
+    public String getDesignation() {
+        return designation;
+    }
+
+    /**
+     * @return Object of AuthFacade instantiated by the Company Controller
+     */
+    public AuthFacade getAuthFacade() {
+        return authFacade;
+    }
+
+    /**
+     * @return the list of Parameters Categories in the System
+     */
+
+    public ParameterCategoryStore getParameterCategoryList() {
+        return this.parameterCategoryList;
+    }
+
+
+    /**
+     * @return the list of Parameters in the System
+     */
+    public ParameterStore getParameterList() {
+        this.parameterList = new ParameterStore();
+        return this.parameterList;
+    }
+
+    /**
+     * @return the list of Types of Tests in the System
+     */
+    public TestTypeStore getTestTypeList() {
+        this.testTypeList = new TestTypeStore();
+        return this.testTypeList;
+    }
+
+}
+````
+
+## ClientStore
+
+````java
+public class ClientStore {
+    private final List<Client> array;
+    private Client client;
+
+    public boolean exists(String tin) {
+        for (Client c : array) {
+            return c.getTinNumber().equals(tin);
+        }
+        return false;
+    }
+}
+
+````
+
+## ParameterStore
+
+````java
+
+/**
+ * Class that represents an List of all the Parameters in the system
+ */
+public class ParameterStore {
+    private List<Parameter> array;
+    private Parameter pc;
+
+    /**
+     * Constructor of the class it creates an empty list to be filled with objects of Parameter
+     */
+    public ParameterStore() {
+        this.array = new ArrayList<Parameter>();
+    }
+
+    /**
+     * this method adds the Parameter object to the arrayList
+     *
+     * @param pc Parameter object
+     * @return a boolean value that indicates the success of the operation
+     */
+
+    public boolean add(Parameter pc) {
+        array.add(pc);
+        return true;
+    }
+
+
+    /**
+     * @param parameterCode the code of the parameter
+     * @return parameter object with the given code
+     */
+    public Parameter getParameter(String parameterCode) {
+        for (Parameter p : array) {
+            if (p.getCode().equals(parameterCode)) {
+                return p;
+            }
+        }
+        return null;
+    }
+
+}
+````
+
+## CategoryStore
+
+````java
+
+/**
+ * Class that represents an List of all the Category of Parameters in the system
+ */
+public class ParameterCategoryStore {
+    List<ParameterCategory> array;
+
+    /**
+     * Constructor of the class it creates an empty list to be filled with objects of ParameterCategory
+     */
+    public ParameterCategoryStore() {
+        this.array = new ArrayList<>();
+    }
+
+    public boolean add(ParameterCategory pc) {
+        return array.add(pc);
+    }
+
+
+    /**
+     * This method search for an Parameter Category object by the code of that object in the ArrayList
+     *
+     * @param code code that characterize the Parameter Category object
+     * @return if the object is found it returns the object, if not it returns null
+     */
+
+    public ParameterCategory getByCode(String code) {
+        for (ParameterCategory pc : array) {
+            if (pc.getCode().equals(code)) {
+                return pc;
+            }
+        }
+        return null;
+    }
+}
+````
+
+## TestStore
+
+````java
+/**
+ * Class that represents an List of Tests in the system
+ */
+public class TestStore {
+    private List<Test> array;
+    private Test t;
+
+    /**
+     * Constructor of the class it creates an empty list to be filled with objects of Test
+     */
+    public TestStore() {
+        this.array = new ArrayList<>();
+    }
+
+    /**
+     * This method creates a new Test object by calling his constructor
+     *
+     * @param testNhsNumber unique code that identifies the test
+     * @param clientTin     unique code that identifies the client associated with the test
+     * @param testType      type of this test
+     * @param catList       list of parameters categories that are measured in this test
+     * @param paList        list of parameters that are measured in this test
+     * @return boolean value representing the test validity within the system requirements
+     */
+    public boolean createTest(String testNhsNumber, String clientTin, TestType testType, List<ParameterCategory> catList, List<Parameter> paList) {
+
+        this.t = new Test(getTestId(), testNhsNumber, clientTin, testType, catList, paList);
+        this.t.addTestParameter();
+
+        return validateTest();
+    }
+
+    /**
+     * method creates the unique id of a test, the unique id is a number with 15 digits and increases conforming the number of tests in the system, for example if there are 5 tests in the system the id created will be "000000000000006"
+     *
+     * @return string that represents the id of the test
+     */
+    private String getTestId() {
+        int ID = this.array.size() + 1;
+        StringBuilder testNumber = new StringBuilder(String.valueOf(ID));
+
+        while (testNumber.length() < 15) {
+            testNumber.insert(0, "0");
+        }
+
+        return testNumber.toString();
+    }
+
+    /**
+     * checks if the test is valid, in order to be valid the test must not be null, the object cannot already be stored in the list and the object cannot be equal to an object already existent in the list
+     *
+     * @return boolean value representing the test validity
+     */
+    public boolean validateTest() {
+        return this.t != null && !contains(this.t) && !exists(this.t);
+    }
+
+    /**
+     * checks if the test exists in the list by comparing the nhs number of each test
+     *
+     * @param t test object to be compared
+     * @return boolean value that represents the existence of the test
+     */
+    private boolean exists(Test t) {
+        for (Test t1 : this.array) {
+            if (t.getTestNhsNumber().equals(t1.getTestNhsNumber())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * checks if the test object already exits in the list
+     *
+     * @param t test object to be tested
+     * @return boolean value that represents the existence of the object
+     */
+    private boolean contains(Test t) {
+        return array.contains(t);
+    }
+
+    /**
+     * this methods adds the test object to the list
+     *
+     * @return boolean value that represents the success of the operation
+     */
+    public boolean saveTest() {
+        if (validateTest()) {
+            array.add(this.t);
+            return true;
+        }
+        return false;
+    }
+
+
+    /**
+     * adds the test to the list without validation
+     *
+     * @param t test instance that is going to be saved to the list
+     * @return boolean value that represents the success of the operation
+     */
+    private boolean addTest(Test t) {
+        return array.add(t);
+    }
+
+}
+````
+
+## TestTypeStore
+
+````java
+public class TestTypeStore {
+    List<TestType> array;
+    TestType t;
+
+    /**
+     * Constructor of the class it creates an empty list to be filled with objects of Parameter
+     */
+    public TestTypeStore() {
+        this.array = new ArrayList<>();
+    }
+
+    /**
+     * This method creates a new TestType object by calling his constructor
+     *
+     * @param testID           ID of Type if Test
+     * @param description      simple description of the type of test
+     * @param collectingMethod collecting methods of the type of test
+     * @param catStore         list of Parameter Categories associated with the test
+     * @return Type of Test created
+     */
+    public TestType CreateTestType(String testID, String description, String collectingMethod, ParameterCategoryStore catStore) {
+        this.t = new TestType(testID, description, collectingMethod, catStore);
+        return this.t;
+    }
+
+    /**
+     * This method search for an TestType object by the code of that object in the ArrayList
+     *
+     * @param id ID that characterize the TestType object
+     * @return if the object is found it returns the object, if not it returns null
+     */
+    public TestType getByCode(String id) {
+        for (TestType t1 : array) {
+            if (t1.getTestID().equals(id)) {
+                return t1;
+            }
+        }
+        return null;
+    }
+}
+
+````
+
+## Test
+
+````java
+
+public class Test {
+
+    private final String testCode;
+    private final String testNhsNumber;
+    private final String clientTin;
+    private final TestType testType;
+    private final List<ParameterCategory> catList;
+    private final List<Parameter> paList;
+    private final LocalDate createdDate;
+
+    /**
+     * Constructor of the Test object, it call methods on order to validate the NhsNumber, the list of categories and the list of parameters
+     *
+     * @param testCode      unique code generated automatically
+     * @param testNhsNumber unique code that identifies the test
+     * @param clientTin     unique code that identifies the client associated with the test
+     * @param testType      type of this test
+     * @param catList       list of parameters categories that are measured in this test
+     * @param paList        list of parameters that are measured in this test
+     */
+    public Test(String testCode, String testNhsNumber, String clientTin, TestType testType, List<ParameterCategory> catList, List<Parameter> paList) {
+
+        checkTestNhsNumberRules(testNhsNumber);
+        checkTestCodeRules(testCode);
+        checkCatList(catList);
+        checkPaList(paList);
+        this.testCode = testCode;
+        this.testNhsNumber = testNhsNumber;
+        this.clientTin = clientTin;
+        this.testType = testType;
+        this.catList = catList;
+        this.paList = paList;
+        this.createdDate = LocalDate.now();
+
+    }
+
+    /**
+     * This method checks if the test code meets the requirements, if not it throws a exception making the execution to stop
+     *
+     * @param testCode unique code generated automatically
+     */
+    private void checkTestCodeRules(String testCode) {
+        if (testCode == null) {
+            throw new IllegalArgumentException("The Test Code must exist");
+        }
+    }
+
+    /**
+     * This method checks if the list of parameters meets the requirements, if not it throws a exception making the execution to stop
+     *
+     * @param paList list of parameters that are measured in this test
+     */
+    private void checkPaList(List<Parameter> paList) {
+        if (paList.isEmpty()) {
+            throw new IllegalArgumentException("Parameter List must not be empty");
+        }
+
+    }
+
+    /**
+     * This method checks if the list of parameters categories meets the requirements, if not it throws a exception making the execution to stop
+     *
+     * @param catList list of parameters categories that are measured in this test
+     */
+    private void checkCatList(List<ParameterCategory> catList) {
+        if (catList.isEmpty()) {
+            throw new IllegalArgumentException("Category List must not be empty");
+        }
+    }
+
+    /**
+     * This method checks if the list of parameters categories meets the requirements, if not it throws a exception making the execution to stop
+     *
+     * @param testNhsNumber unique code that identifies the test
+     */
+    private void checkTestNhsNumberRules(String testNhsNumber) {
+        if (testNhsNumber == null) {
+            throw new IllegalArgumentException("The NHS Number must exist");
+        }
+
+        if (!StringUtils.isAlphanumeric(testNhsNumber)) {
+            throw new IllegalArgumentException("The NHS Number must have just alphanumeric characters");
+        }
+
+        if (testNhsNumber.length() > Constants.TEST_NHS_CODE) {
+            throw new IllegalArgumentException("The NHS Number must have a maximum of 12 characters");
+        }
+
+    }
+
+    /**
+     * Creates a new TestParameter object for each Parameter in the Parameter list received in the constructor and saves it in a new TestParameter List
+     */
+    public void addTestParameter() {
+        this.testParam = new ArrayList<>();
+        for (Parameter p : this.paList) {
+            String code = p.getCode();
+            TestParameter tp = new TestParameter(code);
+
+            this.testParam.add(tp);
+
+        }
+        changeState(State.CREATED);
+    }
+
+    /**
+     * Changes the state of the object test by changing the variable state with a value from the enum "State"
+     *
+     * @param s a value of the enum "State"
+     */
+    private void changeState(State s) {
+        this.state = s;
+    }
+
+    /**
+     * Changes the state of the object test by changing the variable state with a value from the enum "State
+     * @param s a value of the enum "State"
+     */
+    public void changeState(String s) {
+        switch (s) {
+            case "CREATED":
+                changeState(State.CREATED);
+                break;
+            case "SAMPLE_COLLECTED":
+                changeState(State.SAMPLE_COLLECTED);
+                this.sampleCreatedDate = LocalDate.now();
+                break;
+            case "SAMPLE_ANALYSED":
+                changeState(State.SAMPLE_ANALYSED);
+                this.analysedData = LocalDate.now();
+                break;
+            case "DIAGNOSTIC_MADE":
+                changeState(State.DIAGNOSTIC_MADE);
+                this.diagnosticDate = LocalDate.now();
+                break;
+            case "VALIDATED":
+                changeState(State.VALIDATED);
+                this.validatedDate = LocalDate.now();
+                break;
+            default:
+                break;
+        }
+    }
+
+
+    /**
+     * @return a string with the current state of the test
+     */
+    public String getState() {
+        return state.toString();
+    }
+
+
+    /**
+     * This enum represents all the states that the Test object can assume
+     */
+    enum State {
+        CREATED,
+        SAMPLE_COLLECTED,
+        SAMPLE_ANALYSED,
+        DIAGNOSTIC_MADE,
+        VALIDATED;
+
+
+    }
+
+}
+````
+
+## Parameter
+
+````java
+
+/**
+ * Class that represents an Parameter
+ */
+public class Parameter {
+    private final String name;
+    private final String code;
+    private final String description;
+    private final ParameterCategory cat;
+
+
+    /**
+     * Constructor of the Parameter, it calls 2 methods in order to validate the parameters
+     *
+     * @param code        unique code needed to identify the Parameter
+     * @param description description that characterize the Parameter
+     * @param name        short name that characterize the Parameter
+     * @param cat         category associated with the Parameter
+     */
+    public Parameter(String code, String name, String description, ParameterCategory cat) {
+        checkCodeRules(code);
+        checkNameRules(name);
+        checkDescriptionRules(description);
+        this.code = code;
+        this.name = name;
+        this.description = description;
+        this.cat = cat;
+    }
+
+    /**
+     * This method checks if the code provided meets the requirements, if not it throws a exception making the execution to stop
+     *
+     * @param code unique code needed to identify the Parameter
+     */
+    private void checkCodeRules(String code) {
+        //
+    }
+
+    /**
+     * This method checks if the code provided meets the requirements, if not it throws a exception making the execution to stop
+     *
+     * @param name name tha identifies the Parameter
+     */
+    private void checkNameRules(String name) {
+        //
+    }
+
+    /**
+     * This method checks if the description provided meets the requirements, if not it throws a exception making the execution to stop
+     *
+     * @param description description that characterize the Parameter
+     */
+    private void checkDescriptionRules(String description) {
+        //
+    }
+
+
+    /**
+     * @return unique code needed to identify the Parameter
+     */
+    public String getCode() {
+        return code;
+    }
+
+}
+
+````
+
+## TestParameter
+
+````java
+
+/**
+ * Class that represents a parameter associated with a test
+ */
+public class TestParameter {
+    private final String pCode;
+
+    /**
+     * @param pCode Parameter Code
+     */
+    public TestParameter(String pCode) {
+        this.pCode = pCode;
+    }
+
+}
+````
 
 *It is also recommended to organize this content by subsections.*
 
+## TestType
+
+````java
+
+/**
+ * Class that represents an Type of Test
+ */
+public class TestType {
+    private String testID;
+    private String description;
+    private String collectingMethod;
+    private ParameterCategoryStore catStore;
+    private String externalModule;
+
+    /**
+     * Constructor of TestType, it calls methods in order to validate the parameters
+     *
+     * @param testID           ID of Type if test
+     * @param description      simple description of the type of test
+     * @param collectingMethod collecting methods of the type of test
+     * @param catStore         list of Parameter Categories associated with the test
+     */
+    public TestType(String testID, String description, String collectingMethod, ParameterCategoryStore catStore) {
+        checkCodeRules(testID);
+        checkCollectingMethodRules(collectingMethod);
+        checkDescriptionRules(description);
+        checkCategoriesList(catStore);
+        this.testID = testID;
+        this.description = description;
+        this.collectingMethod = collectingMethod;
+        this.catStore = catStore;
+        this.externalModule = setExternalModule(testID);
+
+    }
+
+
+    /**
+     * This method checks if the code provided meets the requirements, if not it throws a exception making the execution to stop
+     *
+     * @param testID identification code of the test
+     */
+    private void checkCodeRules(String testID) {
+        //
+    }
+
+    /**
+     * This method checks if the code provided meets the requirements, if not it throws a exception making the execution to stop
+     *
+     * @param description description of the test
+     */
+    private void checkDescriptionRules(String description) {
+        //
+    }
+
+
+    /**
+     * This method checks if the code provided meets the requirements, if not it throws a exception making the execution to stop
+     *
+     * @param collectingMethod collecting method of the test
+     */
+    private void checkCollectingMethodRules(String collectingMethod) {
+        //
+    }
+
+    /**
+     * This method checks if the code provided meets the requirements, if not it throws a exception making the execution to stop
+     *
+     * @param catStore the list of categories of the test
+     */
+    private void checkCategoriesList(ParameterCategoryStore catStore) {
+        //
+    }
+
+
+    /**
+     * @return List of categories associated with the test
+     */
+    public ParameterCategoryStore getCatStore() {
+        return catStore;
+    }
+}
+
+````
+
 # 6. Integration and Demo
 
-*In this section, it is suggested to describe the efforts made to integrate this functionality with the other features
-of the system.*
+- A new option on the receptionist menu was added.
 
 # 7. Observations
 

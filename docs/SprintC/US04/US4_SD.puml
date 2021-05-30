@@ -8,7 +8,6 @@ participant ":RegisterTestController" as ctrl
 participant ":Company" as comp
 participant ":ClientStore" as cStore
 participant ":TestTypeListMapper" as mapper
-participant "catList:CategoryStore" as catList
 participant "paList:ParameterList" as paList
 participant ":ParameterStore" as paStore
 participant ":TestStore" as tStore

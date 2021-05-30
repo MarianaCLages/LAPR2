@@ -2,22 +2,32 @@
 'https://plantuml.com/class-diagram
 
 class ClientStore{
+-array
+-client
 +existClient(clientTin)
 }
 class TestStore{
+- array
+- test
++createTest(testNhsNumber,clientTin,testType, catList, paList)
 +saveTest()
 -validateTest(t)
 -addTest(t)
 }
 class TestTypeStore{
+-array
+-testType
 +getByCode(testTypeCode)
 }
 class ParameterStore{
+-array
+-pc
 +ParameterStore()
 +getParameter(parameterCode)
 +addParameter(parameter)
 }
 class CategoryStore{
+-array
 +getCategory(categoryCode)
 +addCategory(category)
 }
@@ -55,6 +65,12 @@ class ParameterDTO{
 }
 
 class Company{
+-designation
+-parameterCategoryList
+-clientList
+-testList
+-parameterList
+-testTypeList
 +getTestTypeList()
 +categoryStore()
 +parameterStore()
@@ -73,15 +89,28 @@ class RegisterTestUI{
 }
 
 class TestType{
+-testID
+-description
+-collectingMethod
+-catStore
+-externalModule
 +getCategories()
 }
 
 class Test{
+-testCode
+-testNhsNumber
+-clientTin
+-testType
+-catList
+-paList
+-createdDate
 +Test(testNhsNumber,testCode,testType,catList,paList,ClientCc)
 +addTestParameters()
 -changeState(state)
 }
 class TestParameterStore{
+-pCode
 +TestParameterStore()
 +createParameterTest(pCode)
 +add()
@@ -92,6 +121,10 @@ class TestParameter{
 }
 
 class Parameter{
+-name
+-code
+-description
+-cat
 +getParameterCode()
 }
 

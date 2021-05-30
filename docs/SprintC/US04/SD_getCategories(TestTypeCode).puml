@@ -9,7 +9,7 @@ participant "testType : TestType" as tt
 autonumber
 [o-> ctrl: getCategories(TestTypeCode)
 activate ctrl
-ctrl -> comp:
+ctrl -> comp: getCategoryList()
 ctrl -> ttStore:testType = getByCode(TestTypeCode)
 activate ttStore
 deactivate ttStore

@@ -158,7 +158,6 @@ public class TestTest {
         String actual = test.toString();
 
         Assert.assertEquals(expected, actual);
-
     }
 
 
@@ -183,7 +182,7 @@ public class TestTest {
     }
 
     @Test
-    public void addTestResultNotAnalysedSample() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void addTestResultNotAnalysedSample() {
 
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
@@ -202,7 +201,7 @@ public class TestTest {
     }
 
     @Test
-    public void addTestResultNullTestParameters() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public void addTestResultNullTestParameters() {
 
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");

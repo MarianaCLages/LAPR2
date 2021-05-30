@@ -156,5 +156,7 @@ public class App {
         this.authFacade.addUserWithRole("Receptionist", "recep@lei.sem2.pt", pass, Constants.ROLE_RECEPTIONIST);
         this.authFacade.addUserWithRole("Main Administrator", "admin@lei.sem2.pt", pass, Constants.ROLE_ADMIN);
         this.authFacade.addUserWithRole("Specialist Doctor", "specdoc@lei.sem2.pt", pass, Constants.ROLE_SPECIALISTDOCTOR);
+        this.authFacade.addUserWithRole("Laboratory Coordinator", "labcord@lei.sem2.pt", pass, Constants.ROLE_LABORATORYCOORDINATOR);
+
     }
 }

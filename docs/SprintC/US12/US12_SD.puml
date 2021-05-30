@@ -4,6 +4,8 @@ actor "Clinical Chemistry Technologist" as cct
 participant ":RecordResultsUI" as UI
 participant "RecordResultsController" as ctrl
 participant ":Company" as Comp
+participant ":SampleStore" as sStore
+participant "s :Sample" as samp
 participant ":TestStore" as tStore
 participant ":Test" as Test
 participant ":TestParameterStoreMapper" as tpStoreMapper
@@ -17,8 +19,19 @@ cct -> UI: Inserts the sample ID
 activate UI
 UI -> ctrl: getTestParameterList(sampleId)
       activate ctrl
+      ctrl -> Comp: getSampleStore()
+      activate Comp
+      deactivate
+      ctrl -> sStore: getSample(sampleId)
+      activate sStore
+      deactivate
+      ctrl -> samp: testId = getTestID()
+      activate samp
+      deactivate
       ctrl -> Comp: getTestStore()
-      ctrl -> tStore: pList = getTestParametersList(sampleId)
+      activate Comp
+      deactivate
+      ctrl -> tStore: pList = getTestParametersList(testId)
       activate tStore
       tStore -> Test: pList = getTestParameterList()
       activate Test
