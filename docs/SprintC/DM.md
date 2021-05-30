@@ -68,6 +68,8 @@ Iterative Development".
 
 - Type of Test
 - Type of Sample
+- Reference Value
+- Test Parameter
 
 --- 
 
@@ -99,15 +101,13 @@ Iterative Development".
 
 | Concept (A)                     | Association                 | Concept (B)                                                                                                                                    |
 | ------------------------------- | :-------------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------: |
-| Administrator                   | create                      | Parameter                                                                                                                                      |
 | Administrator                   | choose for Parameter        | ParameterCategory                                                                                                                              |
 | Administrator                   | register a new              | ClinicalAnalysisLaboratory                                                                                                                     |
 | Administrator                   | register                    | Employee                                                                                                                                       |
 | Administrator                   | creates                     | Parameter                                                                                                                                      |
-| Administrator                   | creates                     | TypeTest                                                                                                                                       |
 | Administrator                   | creates                     | ParameterCategory                                                                                                                              |
+| Administrator                   | creates                     | TypeTest                                                                                                                                       |
 | Administrator                   | is a                        | Employee                                                                                                                                       |
-| AutomaticValidationModule       | validate                    | Results                                                                                                                                        |
 | ChemicalAnalysis                | take place in               | ChemicalLaboratory                                                                                                                             |
 | ChemicalLaboratory              | is located in               | CompanyHeadquarters                                                                                                                            |
 | Client                          | is a                        | User                                                                                                                                           |
@@ -123,11 +123,15 @@ Iterative Development".
 | Company                         | knows                       | Client                                                                                                                                         |
 | Company                         | owns                        | ClinicalAnalysisLaboratory                                                                                                                     |
 | Company                         | employs                     | Employee                                                                                                                                       |
+| Company                         | capable of analysing        | Parameter                                                                                                                                      |
 | Company                         | adopts                      | ParameterCategory                                                                                                                              |
 | Company                         | employs                     | Receptionist                                                                                                                                   |
+| Company                         | performs                    | Test                                                                                                                                           |
+| Company                         | conducts                    | TypeTest                                                                                                                                       |
 | Company                         | knows                       | User                                                                                                                                           |
 | Company                         | owns                        | ChemicalLaboratory                                                                                                                             |
 | Company                         | owns                        | CompanyHeadquarters                                                                                                                            |
+| Employee                        | is a                        | User                                                                                                                                           |
 | Employee                        | is characterized by a       | OrganizationRole                                                                                                                               |
 | Employee                        | can be a                    | Administrator                                                                                                                                  |
 | Employee                        | can be a                    | ClinicalChemistryTechnologist                                                                                                                  |
@@ -135,10 +139,7 @@ Iterative Development".
 | Employee                        | can be a                    | MedicalLabTechnician                                                                                                                           |
 | Employee                        | can be a                    | Receptionist                                                                                                                                   |
 | Employee                        | can be a                    | SpecialistDoctor                                                                                                                               |
-| Employee                        | can be a                    | SpecialistDoctor                                                                                                                               |
-| Employee                        | is a                        | User                                                                                                                                           |
 | LaboratoryCoordinator           | verifies                    | Report                                                                                                                                         |
-| LaboratoryCoordinator           | uses                        | AutomaticValidationModule                                                                                                                      |
 | MedicalLabTechnician            | collects and records        | Sample                                                                                                                                         |
 | MedicalLabTechnician            | works on                    | ClinicalAnalysisLaboratory                                                                                                                     |
 | Notification                    | delivered to                | Client                                                                                                                                         |
@@ -147,16 +148,20 @@ Iterative Development".
 | Receptionist                    | is a                        | User                                                                                                                                           |
 | Receptionist                    | register in application     | Client                                                                                                                                         |
 | Receptionist                    | register in application     | Test                                                                                                                                           |
+| ReferenceValue                  | provided by                 | ExternalModule                                                                                                                                 |
 | Report                          | is sent by                  | Notification                                                                                                                                   |
-| Results                         | is sent by                  | Notification                                                                                                                                   |
 | Sample                          | is identified using         | BarcodeExternalAPI                                                                                                                             |
-| Sample                          | has a                       | TypeSample                                                                                                                                     |
-| Sample                          | used in                     | Test                                                                                                                                           |
+| Sample                          | is used in                  | Test                                                                                                                                           |
 | SpecialistDoctor                | writes                      | Report                                                                                                                                         |
 | SpecialistDoctor                | analyse                     | Results                                                                                                                                        |
-| Test                            | as a                        | TypeTest                                                                                                                                       |
+| Test                            | is of                       | TestType                                                                                                                                       |
+| Test                            | requests analysis of        | Parameter                                                                                                                                      |
 | Test                            | has                         | Parameter                                                                                                                                      |
-| TypeSample                      | has                         | Parameter                                                                                                                                      |
+| TestParameter                   | contains                    | TestParameterResult                                                                                                                            |
+| TestParameterResult             | record                      | ReferenceValue                                                                                                                                 |
+| TypeTest                        | makes use of                | ExternalModule                                                                                                                                 |
+| TypeTest                        | has                         | ParameterCategory                                                                                                                              |
+| TypeTest                        | as a                        | Test                                                                                                                                           |
 
 ## Domain Model
 

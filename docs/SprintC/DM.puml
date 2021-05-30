@@ -231,7 +231,7 @@ Test "*" -- "1..*" Parameter: requests analysis of >
 Test "1" -- "*" Parameter : has >
 TestParameter "1" -- "0..1" TestParameterResult: contains >
 TestParameterResult "1" -- "1" ReferenceValue: record >
-TestType "*" - "1" ExternalModule: makes use of >
+TypeTest "*" - "1" ExternalModule: makes use of >
 TypeTest "1" -- "*" ParameterCategory : has >
 TypeTest "1" -- "*" Test : as a <
 @enduml
