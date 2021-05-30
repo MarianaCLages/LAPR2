@@ -80,7 +80,6 @@ public class Company {
      * @return the list of Parameters in the System
      */
     public ParameterStore getParameterList() {
-        this.parameterList = new ParameterStore();
         return this.parameterList;
     }
 
@@ -88,7 +87,6 @@ public class Company {
      * @return the list of Types of Tests in the System
      */
     public TestTypeStore getTestTypeList() {
-        this.testTypeList = new TestTypeStore();
         return this.testTypeList;
     }
 
@@ -96,7 +94,6 @@ public class Company {
      * @return the list of Roles in the System
      */
     public RoleStore getRoleList() {
-        this.roleList = new RoleStore();
         return this.roleList;
     }
 

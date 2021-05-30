@@ -16,13 +16,15 @@ public class Email {
 
     /**
      * writes the user's email and the password in a file defined in the constants class
-     * @param name name of the user
-     * @param email email of the user
+     *
+     * @param name     name of the user
+     * @param email    email of the user
      * @param password password of the user
      */
     public static void sendPasswordNotification(String name, String email, String password) {
         File passFile = new File(Constants.FILE);
-        try (FileWriter writer = new FileWriter(passFile)) {
+        passFile.mkdir();
+        try (FileWriter writer = new FileWriter(passFile + "\\notification.txt")) {
             writer.write("MR/MS " + name + " you were registered with the email " + email + " and your password is " + password);
         } catch (IOException e) {
             System.out.println(e.getMessage());

@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Main-Class: app.ui.Main
+Class-Path: ExternalModule3API-1.0.0.jar ExternalModule2API-1.0.0.jar ba
+ rbecue-2.0-dev.jar hamcrest-core-1.3.jar barbecue-2.0-dev.jar ExternalM
+ odule2API-1.0.0.jar ExternalModule3API-1.0.0.jar CovidReferenceValues1A
+ PI-1.0.0.jar junit-4.12.jar commons-lang3-3.5.jar bcrypt-0.9.0.jar byte
+ s-1.3.0.jar barbecue-2.0-dev.jar CovidReferenceValues1API-1.0.0.jar
+
