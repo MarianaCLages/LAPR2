@@ -2,6 +2,7 @@ package app.domain.model;
 
 import app.domain.stores.*;
 import auth.AuthFacade;
+import auth.UserSession;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -21,6 +22,7 @@ public class Company {
     private ParameterStore parameterList;
     private TestTypeStore testTypeList;
     private RoleStore roleList;
+    private UserSession user;
 
     /**
      * Constructor of the Company Class, instances a new object of AuthFacade and new empty stores
@@ -125,4 +127,17 @@ public class Company {
     public SampleStore getSampleStore() {
         return sampleStore;
     }
+
+    public String getClientEmail(Client client){
+        return getClientList().getEmail(client);
+    }
+
+    public String getUserID(){
+        return user.getUserId().toString();
+    }
+
+    public String getClientTin(){
+        return this.clientList.getClientTin();
+    }
+
 }

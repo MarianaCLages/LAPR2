@@ -110,4 +110,12 @@ public class ClientStore {
     public Client getClient() {
         return client;
     }
+
+    public String getEmail(Client client){
+        return this.client.getEmail();
+    }
+
+    public String getClientTin(){
+        return this.client.getTinNumber();
+    }
 }

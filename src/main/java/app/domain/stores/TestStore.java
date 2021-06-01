@@ -1,12 +1,14 @@
 package app.domain.stores;
 
-import app.domain.model.Parameter;
-import app.domain.model.ParameterCategory;
-import app.domain.model.Test;
-import app.domain.model.TestType;
+import app.domain.model.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.xml.crypto.Data;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 /**
  * Class that represents an List of Tests in the system
@@ -166,4 +168,40 @@ public class TestStore {
         return array.add(t);
     }
 
+
+    public List<Test> sortDate(String clientTin, List<Test> array) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        Comparator<Test> comparator1 = new Comparator<Test>() {
+            @Override
+            public int compare(Test o1, Test o2) {
+                LocalDate d1 = o1.getData();
+                Date date1 = java.util.Date.from(d1.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
+                LocalDate d2 = o2.getData();
+                Date date2 = java.util.Date.from(d2.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
+
+                if (date1.before(date2)) {
+                    return 1;
+                } else if (date1.after(date2)) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+
+            }
+
+        };
+        Collections.sort(array, comparator1);
+        return array;
+    }
+
+    public Test getTestByTin(String clientTin) {
+
+        for (Test tinlist : this.array) {
+
+            if (tinlist.getClientTin().equals(clientTin)) {
+                return tinlist;
+            }
+        }
+        return null;
+    }
 }

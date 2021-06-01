@@ -288,6 +288,12 @@ public class Test {
 
 
     }
+    public String getClientTin(){
+        return clientTin;
+    }
+    public LocalDate getData(){
+        return this.createdDate;
+    }
 
 
 }
