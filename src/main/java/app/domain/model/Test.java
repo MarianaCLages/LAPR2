@@ -291,7 +291,7 @@ public class Test {
     public String getClientTin(){
         return clientTin;
     }
-    public LocalDate getData(){
+    public LocalDate getDate(){
         return this.createdDate;
     }
 

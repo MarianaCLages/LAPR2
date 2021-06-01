@@ -169,14 +169,14 @@ public class TestStore {
     }
 
 
-    public List<Test> sortDate(String clientTin, List<Test> array) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    public List<Test> sortDate(String clientTin) {
+        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         Comparator<Test> comparator1 = new Comparator<Test>() {
             @Override
             public int compare(Test o1, Test o2) {
-                LocalDate d1 = o1.getData();
+                LocalDate d1 = o1.getDate();
                 Date date1 = java.util.Date.from(d1.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
-                LocalDate d2 = o2.getData();
+                LocalDate d2 = o2.getDate();
                 Date date2 = java.util.Date.from(d2.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
 
                 if (date1.before(date2)) {
@@ -190,18 +190,19 @@ public class TestStore {
             }
 
         };
-        Collections.sort(array, comparator1);
-        return array;
+        List<Test> sup = getTestByTin(clientTin);
+        Collections.sort(sup, comparator1);
+        return sup;
     }
 
-    public Test getTestByTin(String clientTin) {
+    public List<Test> getTestByTin(String clientTin) {
+        List<Test> tinList = new ArrayList<>();
+        for (Test tinTests : this.array) {
 
-        for (Test tinlist : this.array) {
-
-            if (tinlist.getClientTin().equals(clientTin)) {
-                return tinlist;
+            if (tinTests.getClientTin().equals(clientTin)) {
+                tinList.add(tinTests);
             }
         }
-        return null;
+        return tinList;
     }
 }

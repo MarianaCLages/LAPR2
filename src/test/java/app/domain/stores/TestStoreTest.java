@@ -137,4 +137,27 @@ public class TestStoreTest {
 
         Assert.assertNull(actualTest);
     }
+
+    @Test
+    public void sortDateTest(){
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+        TestStore store = new TestStore();
+        app.domain.model.Test t1 = new app.domain.model.Test("12345","123456789187","1234567890123456",testType,cat1,pa);
+        app.domain.model.Test t2 = new app.domain.model.Test("12342","123456789185","1234567890123456",testType,cat1,pa);
+        app.domain.model.Test t3 = new app.domain.model.Test("12343","123456782187","1234567890123455",testType,cat1,pa);
+        store.addTest(t3);
+        store.addTest(t2);
+        store.addTest(t1);
+
+
+
+    }
 }
