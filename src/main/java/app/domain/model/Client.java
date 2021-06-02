@@ -293,6 +293,6 @@ public class Client {
      * @return string that represents cc number of the client
      */
     public String getTinNumber() {
-        return tinNumber;
+        return this.tinNumber;
     }
 }
