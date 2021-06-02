@@ -1,0 +1,55 @@
+@startuml
+
+class RecordSampleUI{
+}
+
+class RecordSampleController{
++ SD_getTestList(testID);
++ selectTest((testID);
++ createSampleBarcode();
++ saveSample();
+}
+
+class TestStore{
++ getTest(testID);
+}
+
+class Test{
+-state;
+-testCode;
+-testNhsNumber;
+-clientTin;
+-testType;
+-testParam;
+-createdDate;
+-sampleCreatedDate;
++ createSampleBarcode();
++ saveSample();
++ validateSample();
+}
+
+class Sample{
++ Sample();
+}
+
+class BarcodeAdapter{
++ getBarcode();
+}
+
+class ExternalAPI{
++ generate();
+}
+
+class Barcode{
++ createBarcode();
+}
+
+RecordSampleUI ..> RecordSampleController
+RecordSampleController ..> TestStore
+RecordSampleController -> Test
+Test -> Sample
+Sample --> BarcodeAdapter
+BarcodeAdapter --> ExternalAPI
+ExternalAPI -> Barcode
+
+@enduml

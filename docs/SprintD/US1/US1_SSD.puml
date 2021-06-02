@@ -1,0 +1,21 @@
+@startuml
+
+autonumber
+actor MedicalLabTechnician as MLT
+participant ":System" as S
+activate MLT
+MLT -> S: wants to view the results of a test
+activate S
+S --> MLT: shows test list assossiated to the client
+deactivate S
+MLT -> S: selects a test from the list
+activate S
+S --> MLT: show the results
+deactivate S
+
+MLT -> S: view the results
+activate S
+S --> MLT: informs operation success
+deactivate S
+deactivate MLT
+@enduml

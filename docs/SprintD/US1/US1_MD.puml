@@ -1,0 +1,18 @@
+@startuml
+
+class Test{
+
+}
+
+
+class Client{
+
+}
+
+class Company{
+
+}
+
+Company -- Test
+Company -- Client
+@enduml
