@@ -1,21 +1,17 @@
 @startuml
 
 autonumber
-actor MedicalLabTechnician as MLT
+actor Client as C
 participant ":System" as S
-activate MLT
-MLT -> S: wants to view the results of a test
+activate C
+C -> S: wants to view the results of a test
 activate S
-S --> MLT: shows test list assossiated to the client
+S --> C: shows test list associated to the client
 deactivate S
-MLT -> S: selects a test from the list
+C -> S: selects a test from the list
 activate S
-S --> MLT: show the results
+S --> C: show the results
 deactivate S
 
-MLT -> S: view the results
-activate S
-S --> MLT: informs operation success
-deactivate S
-deactivate MLT
+deactivate C
 @enduml

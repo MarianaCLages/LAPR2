@@ -1,18 +1,28 @@
 @startuml
 
 class Test{
-
+Test code
+Nhs Number
+Client Tin
+Test Type
+Categories
+Parameters
 }
 
 
 class Client{
-
+Tin Number
 }
 
 class Company{
 
 }
 
+class Results{
+Result
+}
+
 Company -- Test
 Company -- Client
+Test -- Results
 @enduml

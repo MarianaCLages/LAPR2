@@ -1,78 +1,76 @@
 @startuml
 autonumber
-actor MedLabTech as MLT
-participant ":RecordSampleUI" as UI
-participant ":RecordSampleController" as CTRL
-participant "ts:TestStore" as TT
+actor Client as C
+participant ":ViewResultsUI" as UI
+participant ":ViewResultsController" as CTRL
+participant ":Company" as company
+participant ":UserSession" as US
+participant ":User" as U
+participant "ts:TestStore" as tt
 participant "test:Test" as t
-participant "s: Sample" as S
-participant ":BarcodeAdapter" as Bc
-participant ":ExternalAPI" as Ea
-participant ":Barcode" as Bar
+participant "cs:ClientStore" as cc
+participant "client:Client" as c
 
-activate MLT
-MLT -> UI: wants to record the samples
+
+
+activate C
+C -> UI: wants to view the results of a test
+
 activate UI
-UI -> CTRL : SD_getTestList(testID)
-ref over CTRL: SD_TestIDDTO(testID)
+UI -> CTRL :sortedList()
 activate CTRL
-CTRL --> UI: tStoreDTO
+
+activate company
+
+
+
+CTRL -> company: getUserID()
+deactivate c
+company -> US: getUserId()
+activate US
+US -> U: getId()
+activate U
+deactivate U
+deactivate US
+deactivate company
+CTRL -> cc: getClientByEmail()
+
+activate cc
+cc -> c: getTinNumber()
+deactivate cc
+
+activate c
+
+CTRL -> tt: sortedDateList(clientTin)
+deactivate c
+
+activate tt
+
+
+
 deactivate CTRL
+UI -> C: show the test list associated with the client
+deactivate tt
 
-UI --> MLT: shows test list
+
 deactivate UI
-MLT -> UI: selects a test from the list
+
+C -> UI: select a test from the list
 activate UI
-UI -> CTRL: selectTest(testID)
+UI -> CTRL: getResults()
 activate CTRL
-CTRL -> TT:test = getTest(testID)
-activate TT
-deactivate
-deactivate
-UI --> MLT: asks how many samples
-loop for each sample
-UI -> CTRL: createSampleBarcode()
-activate CTRL
-CTRL -> t: createSampleBarcode()
+CTRL -> t: getResults()
+deactivate CTRL
 activate t
-t --> S**: Sample()
-activate S
-S -> Bc: barcode = getBarcode()
-activate Bc
-Bc -> Ea: generate()
-activate Ea
-Ea --> Bar** :create
-deactivate Ea
-deactivate Bc
-return barcode
-return barcode
-return barcode
-deactivate S
 deactivate t
-deactivate CTRL
 
-UI --> MLT: shows sample barcode and requests confirmation
+UI -> C: show the results
 deactivate UI
 
+
+
+
+
 deactivate UI
-deactivate CTRL
-deactivate CTRL
-MLT -> UI: confirms barcode
-activate UI
-UI -> CTRL: saveSample()
-activate CTRL
-CTRL -> t: saveSample()
-activate t
-t -> t: validateSample()
-activate t
-deactivate
-t -> t: saveSample()
-activate t
-deactivate
-deactivate t
-deactivate CTRL
-end
-UI --> MLT: informs operation success
-deactivate UI
-deactivate MLT
+deactivate C
 @enduml

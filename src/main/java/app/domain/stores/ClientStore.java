@@ -2,6 +2,7 @@ package app.domain.stores;
 
 import app.domain.model.Client;
 import app.domain.model.Company;
+import app.domain.model.Test;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -115,7 +116,14 @@ public class ClientStore {
         return this.client.getEmail();
     }
 
-    public String getClientTin(){
-        return this.client.getTinNumber();
+
+
+    public Client getClientByEmail(String Email) {
+        for (Client c1 : this.array) {
+            if (c1.getEmail().equals(Email)) {
+                return c1;
+            }
+        }
+        return null;
     }
 }

@@ -5,6 +5,8 @@ import auth.AuthFacade;
 import auth.UserSession;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.List;
+
 /**
  * @author Paulo Maio <pam@isep.ipp.pt>
  */
@@ -128,16 +130,15 @@ public class Company {
         return sampleStore;
     }
 
-    public String getClientEmail(Client client){
-        return getClientList().getEmail(client);
-    }
+
 
     public String getUserID(){
         return user.getUserId().toString();
     }
 
-    public String getClientTin(){
-        return this.clientList.getClientTin();
-    }
+
+
+
+
 
 }
