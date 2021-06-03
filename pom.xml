@@ -59,6 +59,7 @@
                     </execution>
                 </executions>
             </plugin>
+
             <!-- Required for generating PIT Mutation reports -->
             <plugin>
                 <groupId>org.pitest</groupId>
@@ -103,8 +104,19 @@
     <properties>
         <maven.compiler.source>1.11</maven.compiler.source>
         <maven.compiler.target>1.11</maven.compiler.target>
+        <javafx.version>13</javafx.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.example1</groupId>
             <artifactId>ExternalModule3API</artifactId>
