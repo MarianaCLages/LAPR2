@@ -7,16 +7,16 @@ public class Serialize {
     private Serialize() {
     }
 
-    public static Object readFile(String stringFile) {
+    public static Object readFile(String stringFile) throws IOException {
         Object read = null;
-        try {
-            try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(stringFile))) {
-                read = in.read();
-            }
+
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(stringFile))) {
+            read = in.read();
             return read;
         } catch (IOException ex) {
-            return read;
+            throw new IOException("File dont exists");
         }
+
     }
 
     public static boolean writeObject(String stringFile, Object savedObject) {
