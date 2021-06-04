@@ -20,7 +20,7 @@ public class MainController {
     private Button btnCredits;
 
     public void login(ActionEvent e) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Login.fxml"));
         Parent root = loader.load();
         Stage stage = (Stage)((Node) e.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -29,8 +29,8 @@ public class MainController {
 
     }
 
-    public void Credits(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Credits.fxml"));
+    public void credits(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Credits.fxml"));
         Parent root = loader.load();
         Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

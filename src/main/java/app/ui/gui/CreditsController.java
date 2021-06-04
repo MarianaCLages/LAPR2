@@ -16,7 +16,7 @@ public class CreditsController {
     public Button btnBack;
 
     public void Back(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/MainScreen.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/MainScreen.fxml"));
         Parent root = loader.load();
         Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

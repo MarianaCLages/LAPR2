@@ -4,6 +4,11 @@ import app.domain.shared.Constants;
 import app.domain.stores.ParameterCategoryStore;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
 /**
  * Class that represents an Type of Test
  */
@@ -35,12 +40,22 @@ public class TestType {
 
     }
 
-    private String setExternalModule(String testID) {
+    private String setExternalModule(String testID) {        Properties props = new Properties();
+        try {
+            InputStream in = new FileInputStream(Constants.PARAMS_FILENAME);
+            props.load(in);
+            in.close();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+
+        }
+
+
         if (testID.equals("BL000")) {
-            externalModule = Constants.RESULTS_REFERENCE_API;
+            externalModule = props.getProperty("blood.API");
         } else {
             if (testID.equals("COV19")) {
-                externalModule = Constants.COVID_REFERENCE_API;
+                externalModule = props.getProperty("covid.API");
             } else {
                 throw new IllegalArgumentException("There is no external module in the System associated with this type of test");
             }

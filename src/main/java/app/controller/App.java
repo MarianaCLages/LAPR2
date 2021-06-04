@@ -63,7 +63,6 @@ public class App {
 
     private Properties getProperties() {
         Properties props = new Properties();
-
         // Add default properties and values
         props.setProperty(Constants.PARAMS_COMPANY_DESIGNATION, "Many Labs");
 

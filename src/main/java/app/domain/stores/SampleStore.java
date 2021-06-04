@@ -6,9 +6,12 @@ import app.domain.shared.Constants;
 import net.sourceforge.barbecue.BarcodeException;
 import net.sourceforge.barbecue.output.OutputException;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 
 /**
@@ -35,11 +38,21 @@ public class SampleStore {
      * @throws ClassNotFoundException stops the execution of the program if the class isn't found
      * @throws IllegalAccessException stops the execution of the program if the current method doesn't have access to the definitions of the specified requirements
      * @throws InstantiationException stops the execution of the program if the specified class object cannot be instantiated
-     * @throws BarcodeException stops the execution of the program if the requirements are not met
+     * @throws BarcodeException       stops the execution of the program if the requirements are not met
      */
 
     public boolean createSample(String testID) throws ClassNotFoundException, IllegalAccessException, InstantiationException, BarcodeException {
-        Class<?> oClass = Class.forName(Constants.BARCODE_API);
+        Properties props = new Properties();
+        try {
+            InputStream in = new FileInputStream(Constants.PARAMS_FILENAME);
+            props.load(in);
+            in.close();
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+
+        }
+
+        Class<?> oClass = Class.forName(props.getProperty("barcode.API"));
         this.em = (BarcodeAdapter) oClass.newInstance();
         this.sample = new Sample(testID, em.createBarcode(createSampleID()));
 
@@ -54,7 +67,7 @@ public class SampleStore {
      * This method is used to save the Sample object in the Array List already created, before adding the object the method validates it
      *
      * @return a boolean value that indicates the success of the operation
-     * @throws IOException stops the execution of the program if the I/O operations fail or are interrupted
+     * @throws IOException     stops the execution of the program if the I/O operations fail or are interrupted
      * @throws OutputException stops the execution of the program if the Output operation fails or is interrupted
      */
     public boolean saveSample() throws IOException, OutputException {
