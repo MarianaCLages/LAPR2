@@ -35,10 +35,11 @@ public class Constants {
 
     public static final int ACCESS_KEY = 12345;
 
-    public static final String BARCODE_API = "app.domain.model.ExternalApiBarcode";
     public static final String PARAMS_FILENAME = "src/main/resources/config.properties";
     public static final String PARAMS_COMPANY_DESIGNATION = "Company.Designation";
     public static final String FILE = "ClientInformation\\";
+
+    public static final String COMPANY_SER="Ser\\Company.ser";
 
 
 }

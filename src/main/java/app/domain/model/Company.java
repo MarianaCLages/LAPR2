@@ -1,16 +1,20 @@
 package app.domain.model;
 
+import app.domain.shared.Constants;
+import app.domain.shared.Serialize;
 import app.domain.stores.*;
 import auth.AuthFacade;
 import auth.UserSession;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * @author Paulo Maio <pam@isep.ipp.pt>
  */
-public class Company {
+public class Company implements Serializable {
 
     private final String designation;
     private final AuthFacade authFacade;
@@ -47,6 +51,7 @@ public class Company {
         this.clientList = new ClientStore();
         this.testList = new TestStore();
         this.sampleStore = new SampleStore();
+
 
     }
 
@@ -138,8 +143,20 @@ public class Company {
     }
 
 
+    public void saveCompany(){
 
+        Serialize.writeObject(Constants.COMPANY_SER,this);
 
+    }
 
+    public void readCompany(){
+
+        try {
+            Serialize.readFile(Constants.COMPANY_SER);
+        } catch (IOException e){
+            System.out.println(e.getMessage());
+        }
+
+    }
 
 }
