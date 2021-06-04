@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     contentScriptType="application/ecmascript" contentStyleType="text/css" height="927px" preserveAspectRatio="none"
+     style="width:502px;height:927px;" version="1.1" viewBox="0 0 502 927" width="502px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="f1kgjnnlxfonys" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix"
+                           values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+        </filter>
+    </defs>
+    <g><!--MD5=[bebdcc43ebcb1534ee764d1f430c03ae]
+class CreateTestTypeUI-->
+        <rect codeLine="4" fill="#FEFECE" filter="url(#f1kgjnnlxfonys)" height="48" id="CreateTestTypeUI"
+              style="stroke:#A80036;stroke-width:1.5;" width="131" x="113.86" y="7"/>
+        <ellipse cx="128.86" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M130.86,19.5 Q131.0631,19 131.2975,18.75 Q131.5319,18.5 131.7975,18.5 Q132.2663,18.5 132.5631,18.7813 Q132.86,19.0625 132.86,19.7188 L132.86,21.2813 Q132.86,21.9375 132.5788,22.2188 Q132.2975,22.5 131.86,22.5 Q131.4694,22.5 131.2194,22.3281 Q130.9694,22.1563 130.86,21.7031 Q130.8131,21.3906 130.6413,21.2188 Q130.3288,20.8906 129.7663,20.7031 Q129.2038,20.5 128.6413,20.5 Q127.9381,20.5 127.3444,20.7813 Q126.7663,21.0625 126.3131,21.6875 Q125.86,22.3125 125.86,23.1719 L125.86,24.0938 Q125.86,25.125 126.7038,25.8125 Q127.5475,26.5 129.0475,26.5 Q129.9381,26.5 130.5631,26.2969 Q130.9225,26.1875 131.3288,25.8281 Q131.5944,25.625 131.735,25.5625 Q131.8756,25.5 132.0475,25.5 Q132.3756,25.5 132.61,25.7656 Q132.86,26.0156 132.86,26.375 Q132.86,26.7188 132.5163,27.125 Q132.0163,27.7188 131.2194,28.0469 Q130.1725,28.5 128.8913,28.5 Q127.3913,28.5 126.1881,27.9063 Q125.2194,27.4375 124.5319,26.4219 Q123.86,25.4063 123.86,24.2031 L123.86,23.1094 Q123.86,21.8594 124.4538,20.7656 Q125.0631,19.6719 126.11,19.0938 Q127.1725,18.5 128.36,18.5 Q129.0788,18.5 129.7038,18.75 Q130.3288,19 130.86,19.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="99" x="142.86"
+              y="27.9102">CreateTestTypeUI
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="114.86" x2="243.86" y1="39" y2="39"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="114.86" x2="243.86" y1="47" y2="47"/><!--MD5=[2c845ebea24388d268f5a9acbeca4fd9]
+class CreateTestTypeController-->
+        <rect codeLine="7" fill="#FEFECE" filter="url(#f1kgjnnlxfonys)" height="144.8516" id="CreateTestTypeController"
+              style="stroke:#A80036;stroke-width:1.5;" width="330" x="14.36" y="115"/>
+        <ellipse cx="104.61" cy="131" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M106.61,127.5 Q106.8131,127 107.0475,126.75 Q107.2819,126.5 107.5475,126.5 Q108.0163,126.5 108.3131,126.7813 Q108.61,127.0625 108.61,127.7188 L108.61,129.2813 Q108.61,129.9375 108.3288,130.2188 Q108.0475,130.5 107.61,130.5 Q107.2194,130.5 106.9694,130.3281 Q106.7194,130.1563 106.61,129.7031 Q106.5631,129.3906 106.3913,129.2188 Q106.0788,128.8906 105.5163,128.7031 Q104.9538,128.5 104.3913,128.5 Q103.6881,128.5 103.0944,128.7813 Q102.5163,129.0625 102.0631,129.6875 Q101.61,130.3125 101.61,131.1719 L101.61,132.0938 Q101.61,133.125 102.4538,133.8125 Q103.2975,134.5 104.7975,134.5 Q105.6881,134.5 106.3131,134.2969 Q106.6725,134.1875 107.0788,133.8281 Q107.3444,133.625 107.485,133.5625 Q107.6256,133.5 107.7975,133.5 Q108.1256,133.5 108.36,133.7656 Q108.61,134.0156 108.61,134.375 Q108.61,134.7188 108.2663,135.125 Q107.7663,135.7188 106.9694,136.0469 Q105.9225,136.5 104.6413,136.5 Q103.1413,136.5 101.9381,135.9063 Q100.9694,135.4375 100.2819,134.4219 Q99.61,133.4063 99.61,132.2031 L99.61,131.1094 Q99.61,129.8594 100.2038,128.7656 Q100.8131,127.6719 101.86,127.0938 Q102.9225,126.5 104.11,126.5 Q104.8288,126.5 105.4538,126.75 Q106.0788,127 106.61,127.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="141" x="125.11"
+              y="135.9102">CreateTestTypeController
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="15.36" x2="343.36" y1="147" y2="147"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="22.36" y="155"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="44" x="34.36"
+              y="162.4189">company
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="22.36" y="168.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="25" x="34.36"
+              y="176.2549">store
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="22.36" y="182.6719"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="69" x="34.36"
+              y="190.0908">categoryStore
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="15.36" x2="343.36" y1="196.5078" y2="196.5078"/>
+        <ellipse cx="25.36" cy="207.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="304" x="34.36"
+              y="211.9268">CreateTestType(testID, collectingMethod, description, catStore)
+        </text>
+        <ellipse cx="25.36" cy="221.3438" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="142" x="34.36"
+              y="225.7627">getParameterCategoryStore()
+        </text>
+        <ellipse cx="25.36" cy="235.1797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="77" x="34.36"
+              y="239.5986">saveTestType()
+        </text>
+        <ellipse cx="25.36" cy="249.0156" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="67" x="34.36"
+              y="253.4346">add(catStore)
+        </text><!--MD5=[02e4b9b7573f1156f41e60aa5b4e25a4]
+class Company-->
+        <rect codeLine="17" fill="#FEFECE" filter="url(#f1kgjnnlxfonys)" height="89.5078" id="Company"
+              style="stroke:#A80036;stroke-width:1.5;" width="184" x="87.36" y="320"/>
+        <ellipse cx="148.61" cy="336" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M150.61,332.5 Q150.8131,332 151.0475,331.75 Q151.2819,331.5 151.5475,331.5 Q152.0163,331.5 152.3131,331.7813 Q152.61,332.0625 152.61,332.7188 L152.61,334.2813 Q152.61,334.9375 152.3288,335.2188 Q152.0475,335.5 151.61,335.5 Q151.2194,335.5 150.9694,335.3281 Q150.7194,335.1563 150.61,334.7031 Q150.5631,334.3906 150.3913,334.2188 Q150.0788,333.8906 149.5163,333.7031 Q148.9538,333.5 148.3913,333.5 Q147.6881,333.5 147.0944,333.7813 Q146.5163,334.0625 146.0631,334.6875 Q145.61,335.3125 145.61,336.1719 L145.61,337.0938 Q145.61,338.125 146.4538,338.8125 Q147.2975,339.5 148.7975,339.5 Q149.6881,339.5 150.3131,339.2969 Q150.6725,339.1875 151.0788,338.8281 Q151.3444,338.625 151.485,338.5625 Q151.6256,338.5 151.7975,338.5 Q152.1256,338.5 152.36,338.7656 Q152.61,339.0156 152.61,339.375 Q152.61,339.7188 152.2663,340.125 Q151.7663,340.7188 150.9694,341.0469 Q149.9225,341.5 148.6413,341.5 Q147.1413,341.5 145.9381,340.9063 Q144.9694,340.4375 144.2819,339.4219 Q143.61,338.4063 143.61,337.2031 L143.61,336.1094 Q143.61,334.8594 144.2038,333.7656 Q144.8131,332.6719 145.86,332.0938 Q146.9225,331.5 148.11,331.5 Q148.8288,331.5 149.4538,331.75 Q150.0788,332 150.61,332.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53" x="169.11"
+              y="340.9102">Company
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="88.36" x2="270.36" y1="352" y2="352"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="95.36" y="360"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="107.36"
+              y="367.4189">designation
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="88.36" x2="270.36" y1="373.8359" y2="373.8359"/>
+        <ellipse cx="98.36" cy="384.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="158" x="107.36"
+              y="389.2549">createParameterCategoryStore()
+        </text>
+        <ellipse cx="98.36" cy="398.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="110" x="107.36"
+              y="403.0908">createTestTypeStore()
+        </text><!--MD5=[6ba72ddf03822b91e8d41ca71de58ed3]
+class TestTypeStore-->
+        <rect codeLine="23" fill="#FEFECE" filter="url(#f1kgjnnlxfonys)" height="117.1797" id="TestTypeStore"
+              style="stroke:#A80036;stroke-width:1.5;" width="330" x="158.36" y="470"/>
+        <ellipse cx="279.61" cy="486" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M281.61,482.5 Q281.8131,482 282.0475,481.75 Q282.2819,481.5 282.5475,481.5 Q283.0163,481.5 283.3131,481.7813 Q283.61,482.0625 283.61,482.7188 L283.61,484.2813 Q283.61,484.9375 283.3288,485.2188 Q283.0475,485.5 282.61,485.5 Q282.2194,485.5 281.9694,485.3281 Q281.7194,485.1563 281.61,484.7031 Q281.5631,484.3906 281.3913,484.2188 Q281.0788,483.8906 280.5163,483.7031 Q279.9538,483.5 279.3913,483.5 Q278.6881,483.5 278.0944,483.7813 Q277.5163,484.0625 277.0631,484.6875 Q276.61,485.3125 276.61,486.1719 L276.61,487.0938 Q276.61,488.125 277.4538,488.8125 Q278.2975,489.5 279.7975,489.5 Q280.6881,489.5 281.3131,489.2969 Q281.6725,489.1875 282.0788,488.8281 Q282.3444,488.625 282.485,488.5625 Q282.6256,488.5 282.7975,488.5 Q283.1256,488.5 283.36,488.7656 Q283.61,489.0156 283.61,489.375 Q283.61,489.7188 283.2663,490.125 Q282.7663,490.7188 281.9694,491.0469 Q280.9225,491.5 279.6413,491.5 Q278.1413,491.5 276.9381,490.9063 Q275.9694,490.4375 275.2819,489.4219 Q274.61,488.4063 274.61,487.2031 L274.61,486.1094 Q274.61,484.8594 275.2038,483.7656 Q275.8131,482.6719 276.86,482.0938 Q277.9225,481.5 279.11,481.5 Q279.8288,481.5 280.4538,481.75 Q281.0788,482 281.61,482.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="79" x="300.11"
+              y="490.9102">TestTypeStore
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="159.36" x2="487.36" y1="502" y2="502"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="166.36" y="510"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="62" x="178.36"
+              y="517.4189">TestTypeList
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="166.36" y="523.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="178.36"
+              y="531.2549">testType
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="159.36" x2="487.36" y1="537.6719" y2="537.6719"/>
+        <ellipse cx="169.36" cy="548.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="304" x="178.36"
+              y="553.0908">CreateTestType(testID, collectingMethod, description, catStore)
+        </text>
+        <ellipse cx="169.36" cy="562.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="95" x="178.36"
+              y="566.9268">ValidateTestType(t)
+        </text>
+        <ellipse cx="169.36" cy="576.3438" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="80" x="178.36"
+              y="580.7627">saveTestType(t)
+        </text><!--MD5=[aeb3272166074d8737a70b61b1e71682]
+class TestType-->
+        <rect codeLine="31" fill="#FEFECE" filter="url(#f1kgjnnlxfonys)" height="117.1797" id="TestType"
+              style="stroke:#A80036;stroke-width:1.5;" width="298" x="166.36" y="647"/>
+        <ellipse cx="286.11" cy="663" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M288.11,659.5 Q288.3131,659 288.5475,658.75 Q288.7819,658.5 289.0475,658.5 Q289.5163,658.5 289.8131,658.7813 Q290.11,659.0625 290.11,659.7188 L290.11,661.2813 Q290.11,661.9375 289.8288,662.2188 Q289.5475,662.5 289.11,662.5 Q288.7194,662.5 288.4694,662.3281 Q288.2194,662.1563 288.11,661.7031 Q288.0631,661.3906 287.8913,661.2188 Q287.5788,660.8906 287.0163,660.7031 Q286.4538,660.5 285.8913,660.5 Q285.1881,660.5 284.5944,660.7813 Q284.0163,661.0625 283.5631,661.6875 Q283.11,662.3125 283.11,663.1719 L283.11,664.0938 Q283.11,665.125 283.9538,665.8125 Q284.7975,666.5 286.2975,666.5 Q287.1881,666.5 287.8131,666.2969 Q288.1725,666.1875 288.5788,665.8281 Q288.8444,665.625 288.985,665.5625 Q289.1256,665.5 289.2975,665.5 Q289.6256,665.5 289.86,665.7656 Q290.11,666.0156 290.11,666.375 Q290.11,666.7188 289.7663,667.125 Q289.2663,667.7188 288.4694,668.0469 Q287.4225,668.5 286.1413,668.5 Q284.6413,668.5 283.4381,667.9063 Q282.4694,667.4375 281.7819,666.4219 Q281.11,665.4063 281.11,664.2031 L281.11,663.1094 Q281.11,661.8594 281.7038,660.7656 Q282.3131,659.6719 283.36,659.0938 Q284.4225,658.5 285.61,658.5 Q286.3288,658.5 286.9538,658.75 Q287.5788,659 288.11,659.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="50" x="306.61"
+              y="667.9102">TestType
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="167.36" x2="463.36" y1="679" y2="679"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="174.36" y="687"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="33" x="186.36"
+              y="694.4189">testeID
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="174.36" y="700.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="80" x="186.36"
+              y="708.2549">collectingMethod
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="174.36" y="714.6719"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="53" x="186.36"
+              y="722.0908">description
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="174.36" y="728.5078"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="61" x="186.36"
+              y="735.9268">CategoryList
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="167.36" x2="463.36" y1="742.3438" y2="742.3438"/>
+        <ellipse cx="177.36" cy="753.3438" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="272" x="186.36"
+              y="757.7627">TestType(testID, collectingMethod, description, catStore)
+        </text><!--MD5=[d802db621b5b215a6f0466f93cefcb42]
+class ParameterCategoryStore-->
+        <rect codeLine="39" fill="#FEFECE" filter="url(#f1kgjnnlxfonys)" height="89.5078" id="ParameterCategoryStore"
+              style="stroke:#A80036;stroke-width:1.5;" width="168" x="21.36" y="824"/>
+        <ellipse cx="36.36" cy="840" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M38.36,836.5 Q38.5631,836 38.7975,835.75 Q39.0319,835.5 39.2975,835.5 Q39.7663,835.5 40.0631,835.7813 Q40.36,836.0625 40.36,836.7188 L40.36,838.2813 Q40.36,838.9375 40.0788,839.2188 Q39.7975,839.5 39.36,839.5 Q38.9694,839.5 38.7194,839.3281 Q38.4694,839.1563 38.36,838.7031 Q38.3131,838.3906 38.1413,838.2188 Q37.8288,837.8906 37.2663,837.7031 Q36.7038,837.5 36.1413,837.5 Q35.4381,837.5 34.8444,837.7813 Q34.2663,838.0625 33.8131,838.6875 Q33.36,839.3125 33.36,840.1719 L33.36,841.0938 Q33.36,842.125 34.2038,842.8125 Q35.0475,843.5 36.5475,843.5 Q37.4381,843.5 38.0631,843.2969 Q38.4225,843.1875 38.8288,842.8281 Q39.0944,842.625 39.235,842.5625 Q39.3756,842.5 39.5475,842.5 Q39.8756,842.5 40.11,842.7656 Q40.36,843.0156 40.36,843.375 Q40.36,843.7188 40.0163,844.125 Q39.5163,844.7188 38.7194,845.0469 Q37.6725,845.5 36.3913,845.5 Q34.8913,845.5 33.6881,844.9063 Q32.7194,844.4375 32.0319,843.4219 Q31.36,842.4063 31.36,841.2031 L31.36,840.1094 Q31.36,838.8594 31.9538,837.7656 Q32.5631,836.6719 33.61,836.0938 Q34.6725,835.5 35.86,835.5 Q36.5788,835.5 37.2038,835.75 Q37.8288,836 38.36,836.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="136" x="50.36"
+              y="844.9102">ParameterCategoryStore
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="22.36" x2="188.36" y1="856" y2="856"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="29.36" y="864"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="61" x="41.36"
+              y="871.4189">CategoryList
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="29.36" y="877.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="44" x="41.36"
+              y="885.2549">Category
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="22.36" x2="188.36" y1="891.6719" y2="891.6719"/>
+        <ellipse cx="32.36" cy="902.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="142" x="41.36"
+              y="907.0908">getParameterCategoryStore()
+        </text><!--MD5=[69134a8957932d955e1f822b15ec4b1c]
+link CreateTestTypeUI to CreateTestTypeController-->
+        <path codeLine="45" d="M179.36,55.13 C179.36,69.87 179.36,89.91 179.36,109.88 " fill="none"
+              id="CreateTestTypeUI-to-CreateTestTypeController" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="179.36,114.95,183.36,105.95,179.36,109.95,175.36,105.95,179.36,114.95"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[812ef8251b528d1a64980212cceda9f5]
+link CreateTestTypeController to Company-->
+        <path codeLine="46" d="M179.36,260.14 C179.36,278.43 179.36,297.69 179.36,314.6 " fill="none"
+              id="CreateTestTypeController-to-Company" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="179.36,319.76,183.36,310.76,179.36,314.76,175.36,310.76,179.36,319.76"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[141c3afa12b2b3c0a39ffce56dbd5f19]
+link Company to TestTypeStore-->
+        <path codeLine="47" d="M218.71,410.13 C233.96,427.24 251.69,447.12 268.18,465.61 " fill="none"
+              id="Company-to-TestTypeStore" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036"
+                 points="271.89,469.78,268.8803,460.4023,268.5602,466.0501,262.9124,465.7299,271.89,469.78"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d53d7490e5836ca5709858d7326f212b]
+link Company to ParameterCategoryStore-->
+        <path codeLine="48"
+              d="M159.75,410.23 C152.49,428.41 144.93,449.88 140.36,470 C112.39,593.2 106.5,742.55 105.43,818.48 "
+              fill="none" id="Company-to-ParameterCategoryStore" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036"
+                 points="105.37,823.82,109.4726,814.8663,105.4271,818.8203,101.4731,814.7749,105.37,823.82"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[97f86ea091f10acfb6befc2251259947]
+link CreateTestTypeController to TestTypeStore-->
+        <path codeLine="49"
+              d="M250.93,260.2 C265.7,278.44 279.69,298.89 289.36,320 C310.25,365.61 318.51,422.04 321.68,464.53 "
+              fill="none" id="CreateTestTypeController-to-TestTypeStore"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="#A80036"
+                 points="322.04,469.65,325.3867,460.3872,321.6827,464.6628,317.4072,460.9588,322.04,469.65"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[f4bf28669fe4ba1101395c8fda9b28f2]
+link CreateTestTypeController to ParameterCategoryStore-->
+        <path codeLine="50" d="M104.42,260.22 C90.08,278.24 77.13,298.6 69.36,320 C6,494.5 59.85,720.57 89.26,818.82 "
+              fill="none" id="CreateTestTypeController-to-ParameterCategoryStore"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="#A80036" points="90.73,823.68,91.9618,813.9085,89.2867,818.8928,84.3023,816.2177,90.73,823.68"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[3eebf0e5f359806b77b30e9524c37676]
+link TestTypeStore to TestType-->
+        <path codeLine="51" d="M320.72,587.29 C319.93,604.61 319.05,623.7 318.25,641.35 " fill="none"
+              id="TestTypeStore-to-TestType" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="318,646.77,322.4068,637.9621,318.2283,641.7752,314.4152,637.5967,318,646.77"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="313.0101"
+              y="608.5176">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="313.0171"
+              y="636.1429">*
+        </text><!--MD5=[4d378ee605b952282abc6e28dfadf68f]
+link TestType to ParameterCategoryStore-->
+        <path codeLine="52" d="M240.43,764.12 C216.27,782.7 189.79,803.07 166.72,820.81 " fill="none"
+              id="TestType-to-ParameterCategoryStore" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036"
+                 points="162.75,823.86,172.3176,821.5231,166.7067,820.8032,167.4267,815.1923,162.75,823.86"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="223.8713"
+              y="785.7449">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="164.0019"
+              y="813.2827">1
+        </text><!--MD5=[e79d6f89e4b83a7c4b35f50ad8951374]
+@startuml
+
+
+
+class CreateTestTypeUI{
+}
+
+class CreateTestTypeController{
+    - company
+    - store
+    - categoryStore
+    + CreateTestType(testID, collectingMethod, description, catStore)
+    + getParameterCategoryStore()
+    + saveTestType()
+    + add(catStore)
+}
+
+class Company{
+    -designation
+    + createParameterCategoryStore()
+    + createTestTypeStore()
+}
+
+class TestTypeStore{
+    - TestTypeList
+    - testType
+    + CreateTestType(testID, collectingMethod, description, catStore)
+    + ValidateTestType(t)
+    + saveTestType(t)
+}
+
+class TestType{
+    - testeID
+    - collectingMethod
+    - description
+    - CategoryList
+    + TestType(testID, collectingMethod, description, catStore)
+}
+
+class ParameterCategoryStore{
+    - CategoryList
+    - Category
+    + getParameterCategoryStore()
+}
+
+CreateTestTypeUI - -> CreateTestTypeController
+CreateTestTypeController - -> Company
+Company - -> TestTypeStore
+Company - -> ParameterCategoryStore
+CreateTestTypeController ..> TestTypeStore
+CreateTestTypeController .> ParameterCategoryStore
+TestTypeStore "1" - -> "*" TestType
+TestType "1" - -> "1" ParameterCategoryStore
+@enduml
+
+PlantUML version 1.2021.5(Sun Apr 25 12:20:28 BST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+-->
+    </g>
+</svg>

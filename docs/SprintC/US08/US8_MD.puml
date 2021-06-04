@@ -1,0 +1,29 @@
+@startuml
+class Company{
+Name
+}
+
+class ClinicalAnalysisLaboratory{
+Laboratory ID;
+Name;
+Address;
+Phone Number;
+TIN number;
+Type of Tests;
+}
+
+class Administrator{
+}
+
+class TypeTest{
+Test ID;
+Collecting Method;
+Parameter Categories;
+}
+
+Administrator "1" -- "1" ClinicalAnalysisLaboratory : register a new >
+Company "1" -- "*" ClinicalAnalysisLaboratory: owns >
+ClinicalAnalysisLaboratory "1" -- "*" TypeTest : operates >
+Company "1" -- "*" TypeTest: knows >
+
+@enduml

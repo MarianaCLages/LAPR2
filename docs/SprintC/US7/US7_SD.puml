@@ -1,0 +1,151 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+autonumber
+actor Administrator as A
+participant ":RegisterEmployeeUI" as UI
+participant ":RegisterEmployeeController" as CTRL
+'participant ":AuthFacade" as Auth
+'participant ":UserSession" as User
+participant ":UserStore" as UserStore
+participant ":Company" as COMPANY
+participant ":EmployeeStore" as EmployeeStore
+participant "em:Employee" as Employee
+participant ":RoleStore" as RoleStore
+
+
+
+activate A
+
+A -> UI: ask to register a new employee
+activate UI
+
+/' -------- Login --------
+
+UI -> CTRL : doLogin(email,password)
+activate CTRL
+CTRL -> Auth: doLogin(email,password)
+activate Auth
+CTRL -> Auth: getCurrentSession()
+deactivate Auth
+CTRL -> User: UserSession(User user)
+activate User
+deactivate User
+deactivate CTRL
+'/
+
+
+
+deactivate CTRL
+
+UI -> CTRL : getRoleList()
+
+activate CTRL
+CTRL -> COMPANY : catList = getRoleList()
+deactivate CTRL
+activate COMPANY
+
+
+
+
+COMPANY -> RoleStore  : catList = getRoleList()
+
+activate RoleStore
+deactivate RoleStore
+deactivate COMPANY
+
+UI --> A: show role list
+deactivate UI
+A -> UI: select a role
+activate UI
+
+UI --> A :requests employee data(Name,Address,  Phone Number, E-Mail,  "SOC")
+
+A -> UI : types requested data
+activate CTRL
+
+
+
+
+
+UI -> CTRL : CreateEmployee(Name, Address, Phone Number, E-Mail,  "SOC", Role)
+CTRL -> COMPANY : eStore = getEmployeeStore()
+
+activate COMPANY
+deactivate COMPANY
+
+CTRL -> EmployeeStore: CreateEmployee(Name, Address, Phone Number, E-Mail,  "SOC", Role)
+
+activate EmployeeStore
+
+EmployeeStore -> Employee **: emp = Employee(ID,Name, Address, Phone Number, E-Mail,  "SOC", Role)
+
+
+deactivate EmployeeStore
+
+
+
+
+
+CTRL -> EmployeeStore: validateEmployee(em)
+
+activate EmployeeStore
+deactivate EmployeeStore
+
+
+
+UI --> A : shows all data and requests confirmation
+
+A -> UI : confirms the data
+
+UI-> CTRL : saveEmployee(em)
+
+CTRL -> EmployeeStore : saveEmployee(em)
+activate EmployeeStore
+EmployeeStore -> EmployeeStore : validateEmployee(em)
+activate EmployeeStore
+deactivate EmployeeStore
+
+EmployeeStore -> EmployeeStore : saveEmployee(em)
+activate EmployeeStore
+deactivate EmployeeStore
+
+
+
+
+
+' -------- Register --------
+
+UI -> CTRL : addUserWithRole(name, email, password)
+
+
+
+CTRL -> UserStore: existsUser(email)
+activate UserStore
+CTRL -> UserStore: addUserWithRole(name, email, password)
+
+
+
+
+
+
+
+
+' -------- Register --------
+
+deactivate EmployeeStore
+
+
+
+
+
+deactivate CTRL
+UI --> A : Informs operation success
+
+
+
+deactivate UserStore
+
+
+
+
+@enduml

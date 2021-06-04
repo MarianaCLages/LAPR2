@@ -1,0 +1,80 @@
+@startuml
+autonumber
+actor "Clinical Chemistry Technologist" as cct
+participant ":RecordResultsUI" as UI
+participant "RecordResultsController" as ctrl
+participant ":Company" as Comp
+participant ":SampleStore" as sStore
+participant "s :Sample" as samp
+participant ":TestStore" as tStore
+participant ":Test" as Test
+participant ":TestParameterStoreMapper" as tpStoreMapper
+
+activate cct
+cct -> UI: Asks for record the results of a given test
+activate UI
+UI --> cct: Asks for the code of the sample
+deactivate UI
+cct -> UI: Inserts the sample ID
+activate UI
+UI -> ctrl: getTestParameterList(sampleId)
+      activate ctrl
+      ctrl -> Comp: getSampleStore()
+      activate Comp
+      deactivate
+      ctrl -> sStore: getSample(sampleId)
+      activate sStore
+      deactivate
+      ctrl -> samp: testId = getTestID()
+      activate samp
+      deactivate
+      ctrl -> Comp: getTestStore()
+      activate Comp
+      deactivate
+      ctrl -> tStore: pList = getTestParametersList(testId)
+      activate tStore
+      tStore -> Test: pList = getTestParameterList()
+      activate Test
+      deactivate
+      deactivate tStore
+
+      ctrl -> tpStoreMapper: toDTO(pList)
+      activate tpStoreMapper
+
+      tpStoreMapper --> ctrl: tpStoreDTO
+      deactivate tpStoreMapper
+      return tpStoreDTO
+      deactivate ctrl
+      deactivate tStore
+loop for all the parameters
+    UI --> cct: Show parameters and asks to choose one
+    deactivate UI
+    cct -> UI: Choose parameter
+    activate UI
+    UI --> cct: Asks for results value
+    deactivate UI
+    cct -> UI: Types results value
+    activate UI
+
+    UI -> ctrl: addTestResult(parameterCode,result)
+    activate ctrl
+   ref over ctrl: addTestResult(parameterCode,result)
+ctrl -> Test: changeState()
+activate Test
+Test -> Test: changeState()
+activate Test
+deactivate
+
+Test --> ctrl: ok
+deactivate
+ctrl --> UI : ok
+deactivate ctrl
+
+
+UI --> cct: Show all data and show success
+deactivate UI
+
+
+
+
+@enduml

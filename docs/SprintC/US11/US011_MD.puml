@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Administrator{
+Employee ID;
+Organization Role;
+Name;
+Address;
+Phone Number;
+E-Mail;
+Standard Occupational Classification "SOC";
+}
+
+class Company{
+Name
+}
+
+class Parameter{
+name;
+code;
+description;
+}
+
+class ParameterCategory{
+name;
+code;
+}
+
+Company "1" -- "*" Administrator: employs >
+Company "1" -- "*" ParameterCategory : adopts >
+Parameter "1" -- "1" ParameterCategory : has a >
+Administrator "1" -- "1" ParameterCategory : creates >
+
+@enduml

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     contentScriptType="application/ecmascript" contentStyleType="text/css" height="626.4px" preserveAspectRatio="none"
+     style="width:414px;height:626px;" version="1.1" viewBox="0 0 414 626" width="414px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="fdrywrnhrqwwy" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="1.8"/>
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix"
+                           values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+            <feOffset dx="3.6" dy="3.6" in="blurOut2" result="blurOut3"/>
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+        </filter>
+    </defs>
+    <g><!--MD5=[02e4b9b7573f1156f41e60aa5b4e25a4]
+class Company-->
+        <rect codeLine="2" fill="#FEFECE" filter="url(#fdrywrnhrqwwy)" height="43.2" id="Company"
+              style="stroke:#A80036;stroke-width:1.35;" width="76.5" x="234" y="6.3"/>
+        <ellipse cx="247.5" cy="20.7" fill="#ADD1B2" rx="9.9" ry="9.9" style="stroke:#A80036;stroke-width:0.9;"/>
+        <path d="M249.3,17.55 Q249.4828,17.1 249.6938,16.875 Q249.9047,16.65 250.1438,16.65 Q250.5656,16.65 250.8328,16.9031 Q251.1,17.1563 251.1,17.7469 L251.1,19.1531 Q251.1,19.7438 250.8469,19.9969 Q250.5938,20.25 250.2,20.25 Q249.8484,20.25 249.6234,20.0953 Q249.3984,19.9406 249.3,19.5328 Q249.2578,19.2516 249.1031,19.0969 Q248.8219,18.8016 248.3156,18.6328 Q247.8094,18.45 247.3031,18.45 Q246.6703,18.45 246.1359,18.7031 Q245.6156,18.9563 245.2078,19.5188 Q244.8,20.0813 244.8,20.8547 L244.8,21.6844 Q244.8,22.6125 245.5594,23.2313 Q246.3188,23.85 247.6688,23.85 Q248.4703,23.85 249.0328,23.6672 Q249.3563,23.5688 249.7219,23.2453 Q249.9609,23.0625 250.0875,23.0063 Q250.2141,22.95 250.3688,22.95 Q250.6641,22.95 250.875,23.1891 Q251.1,23.4141 251.1,23.7375 Q251.1,24.0469 250.7906,24.4125 Q250.3406,24.9469 249.6234,25.2422 Q248.6813,25.65 247.5281,25.65 Q246.1781,25.65 245.0953,25.1156 Q244.2234,24.6938 243.6047,23.7797 Q243,22.8656 243,21.7828 L243,20.7984 Q243,19.6734 243.5344,18.6891 Q244.0828,17.7047 245.025,17.1844 Q245.9813,16.65 247.05,16.65 Q247.6969,16.65 248.2594,16.875 Q248.8219,17.1 249.3,17.55 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="10.8" lengthAdjust="spacing" textLength="47.7"
+              x="260.1" y="25.1191">Company
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.35;" x1="234.9" x2="309.6" y1="35.1" y2="35.1"/>
+        <line style="stroke:#A80036;stroke-width:1.35;" x1="234.9" x2="309.6" y1="42.3" y2="42.3"/><!--MD5=[03960189e81aa2c066c762ffabbee709]
+class Receptionist-->
+        <rect codeLine="5" fill="#FEFECE" filter="url(#fdrywrnhrqwwy)" height="130.3664" id="Receptionist"
+              style="stroke:#A80036;stroke-width:1.35;" width="202.5" x="6.3" y="119.7"/>
+        <ellipse cx="72.675" cy="134.1" fill="#ADD1B2" rx="9.9" ry="9.9" style="stroke:#A80036;stroke-width:0.9;"/>
+        <path d="M74.475,130.95 Q74.6578,130.5 74.8688,130.275 Q75.0797,130.05 75.3188,130.05 Q75.7406,130.05 76.0078,130.3031 Q76.275,130.5563 76.275,131.1469 L76.275,132.5531 Q76.275,133.1438 76.0219,133.3969 Q75.7688,133.65 75.375,133.65 Q75.0234,133.65 74.7984,133.4953 Q74.5734,133.3406 74.475,132.9328 Q74.4328,132.6516 74.2781,132.4969 Q73.9969,132.2016 73.4906,132.0328 Q72.9844,131.85 72.4781,131.85 Q71.8453,131.85 71.3109,132.1031 Q70.7906,132.3563 70.3828,132.9188 Q69.975,133.4813 69.975,134.2547 L69.975,135.0844 Q69.975,136.0125 70.7344,136.6313 Q71.4938,137.25 72.8438,137.25 Q73.6453,137.25 74.2078,137.0672 Q74.5313,136.9688 74.8969,136.6453 Q75.1359,136.4625 75.2625,136.4063 Q75.3891,136.35 75.5438,136.35 Q75.8391,136.35 76.05,136.5891 Q76.275,136.8141 76.275,137.1375 Q76.275,137.4469 75.9656,137.8125 Q75.5156,138.3469 74.7984,138.6422 Q73.8563,139.05 72.7031,139.05 Q71.3531,139.05 70.2703,138.5156 Q69.3984,138.0938 68.7797,137.1797 Q68.175,136.2656 68.175,135.1828 L68.175,134.1984 Q68.175,133.0734 68.7094,132.0891 Q69.2578,131.1047 70.2,130.5844 Q71.1563,130.05 72.225,130.05 Q72.8719,130.05 73.4344,130.275 Q73.9969,130.5 74.475,130.95 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="10.8" lengthAdjust="spacing" textLength="62.1"
+              x="91.125" y="138.5191">Receptionist
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.35;" x1="7.2" x2="207.9" y1="148.5" y2="148.5"/>
+        <text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="54.9" x="11.7"
+              y="162.3771">Employee ID;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="79.2" x="11.7"
+              y="174.8294">Organization Role;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="27" x="11.7"
+              y="187.2817">Name;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="40.5" x="11.7"
+              y="199.7341">Address;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="65.7" x="11.7"
+              y="212.1864">Phone Number;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="27.9" x="11.7"
+              y="224.6388">E-Mail;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="191.7" x="11.7"
+              y="237.0911">Standard Occupational Classification "soc".
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.35;" x1="7.2" x2="207.9" y1="242.8664" y2="242.8664"/><!--MD5=[ed6624c6556d5e7b1bd23032162d20b7]
+class Client-->
+        <rect codeLine="15" fill="#FEFECE" filter="url(#fdrywrnhrqwwy)" height="142.8188" id="Client"
+              style="stroke:#A80036;stroke-width:1.35;" width="166.5" x="145.8" y="320.4"/>
+        <ellipse cx="210.825" cy="334.8" fill="#ADD1B2" rx="9.9" ry="9.9" style="stroke:#A80036;stroke-width:0.9;"/>
+        <path d="M212.625,331.65 Q212.8078,331.2 213.0188,330.975 Q213.2297,330.75 213.4688,330.75 Q213.8906,330.75 214.1578,331.0031 Q214.425,331.2563 214.425,331.8469 L214.425,333.2531 Q214.425,333.8438 214.1719,334.0969 Q213.9188,334.35 213.525,334.35 Q213.1734,334.35 212.9484,334.1953 Q212.7234,334.0406 212.625,333.6328 Q212.5828,333.3516 212.4281,333.1969 Q212.1469,332.9016 211.6406,332.7328 Q211.1344,332.55 210.6281,332.55 Q209.9953,332.55 209.4609,332.8031 Q208.9406,333.0563 208.5328,333.6188 Q208.125,334.1813 208.125,334.9547 L208.125,335.7844 Q208.125,336.7125 208.8844,337.3313 Q209.6438,337.95 210.9938,337.95 Q211.7953,337.95 212.3578,337.7672 Q212.6813,337.6688 213.0469,337.3453 Q213.2859,337.1625 213.4125,337.1063 Q213.5391,337.05 213.6938,337.05 Q213.9891,337.05 214.2,337.2891 Q214.425,337.5141 214.425,337.8375 Q214.425,338.1469 214.1156,338.5125 Q213.6656,339.0469 212.9484,339.3422 Q212.0063,339.75 210.8531,339.75 Q209.5031,339.75 208.4203,339.2156 Q207.5484,338.7938 206.9297,337.8797 Q206.325,336.9656 206.325,335.8828 L206.325,334.8984 Q206.325,333.7734 206.8594,332.7891 Q207.4078,331.8047 208.35,331.2844 Q209.3063,330.75 210.375,330.75 Q211.0219,330.75 211.5844,330.975 Q212.1469,331.2 212.625,331.65 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="10.8" lengthAdjust="spacing" textLength="28.8"
+              x="229.275" y="339.2191">Client
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.35;" x1="146.7" x2="311.4" y1="349.2" y2="349.2"/>
+        <text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="27" x="151.2"
+              y="363.0771">Name;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="90" x="151.2"
+              y="375.5294">Citizen card Number;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="155.7"
+              x="151.2" y="387.9817">National Healthcare Service Number
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="44.1" x="151.2"
+              y="400.4341">Birth date;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="19.8" x="151.2"
+              y="412.8864">Sex;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="111.6"
+              x="151.2" y="425.3388">Tax Identification Number;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="29.7" x="151.2"
+              y="437.7911">Phone;
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="27.9" x="151.2"
+              y="450.2435">E-mail.
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.35;" x1="146.7" x2="311.4" y1="456.0188" y2="456.0188"/><!--MD5=[3fd616f346a44cd59a91eb10b19e157c]
+class User-->
+        <rect codeLine="26" fill="#FEFECE" filter="url(#fdrywrnhrqwwy)" height="80.557" id="User"
+              style="stroke:#A80036;stroke-width:1.35;" width="55.8" x="201.15" y="533.7"/>
+        <ellipse cx="215.865" cy="548.1" fill="#ADD1B2" rx="9.9" ry="9.9" style="stroke:#A80036;stroke-width:0.9;"/>
+        <path d="M217.665,544.95 Q217.8478,544.5 218.0588,544.275 Q218.2697,544.05 218.5088,544.05 Q218.9306,544.05 219.1978,544.3031 Q219.465,544.5563 219.465,545.1469 L219.465,546.5531 Q219.465,547.1438 219.2119,547.3969 Q218.9588,547.65 218.565,547.65 Q218.2134,547.65 217.9884,547.4953 Q217.7634,547.3406 217.665,546.9328 Q217.6228,546.6516 217.4681,546.4969 Q217.1869,546.2016 216.6806,546.0328 Q216.1744,545.85 215.6681,545.85 Q215.0353,545.85 214.5009,546.1031 Q213.9806,546.3563 213.5728,546.9188 Q213.165,547.4813 213.165,548.2547 L213.165,549.0844 Q213.165,550.0125 213.9244,550.6313 Q214.6838,551.25 216.0338,551.25 Q216.8353,551.25 217.3978,551.0672 Q217.7213,550.9688 218.0869,550.6453 Q218.3259,550.4625 218.4525,550.4063 Q218.5791,550.35 218.7338,550.35 Q219.0291,550.35 219.24,550.5891 Q219.465,550.8141 219.465,551.1375 Q219.465,551.4469 219.1556,551.8125 Q218.7056,552.3469 217.9884,552.6422 Q217.0463,553.05 215.8931,553.05 Q214.5431,553.05 213.4603,552.5156 Q212.5884,552.0938 211.9697,551.1797 Q211.365,550.2656 211.365,549.1828 L211.365,548.1984 Q211.365,547.0734 211.8994,546.0891 Q212.4478,545.1047 213.39,544.5844 Q214.3463,544.05 215.415,544.05 Q216.0619,544.05 216.6244,544.275 Q217.1869,544.5 217.665,544.95 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="10.8" lengthAdjust="spacing" textLength="24.3"
+              x="228.735" y="552.5191">User
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.35;" x1="202.05" x2="256.05" y1="562.5" y2="562.5"/>
+        <text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="23.4"
+              x="206.55" y="576.3771">name
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="21.6"
+              x="206.55" y="588.8294">email
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="9.9" lengthAdjust="spacing" textLength="45" x="206.55"
+              y="601.2817">password
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.35;" x1="202.05" x2="256.05" y1="607.057" y2="607.057"/><!--MD5=[6eee883fdf517d3604e8bd0f2058e9aa]
+link Company to Client-->
+        <path codeLine="32"
+              d="M271.827,49.518 C270.675,94.284 266.526,203.283 252.45,293.4 C251.082,302.184 249.327,311.346 247.392,320.382 "
+              fill="none" id="Company-Client" style="stroke:#A80036;stroke-width:0.9;"/>
+        <polygon fill="#000000" points="273.6457,189.59,277.0114,181.72,271.7428,181.2447,273.6457,189.59"
+                 style="stroke:#000000;stroke-width:0.9;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="33.3"
+              x="282.15" y="189.8956">knows
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="6.3"
+              x="264.6561" y="68.7266">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="4.5"
+              x="244.4258" y="310.6485">*
+        </text><!--MD5=[e6529539d61e4fceb49a82d3c9677c38]
+link Company to User-->
+        <path codeLine="33"
+              d="M287.892,49.518 C300.195,67.14 316.395,93.663 323.55,119.7 C364.032,267.057 382.86,320.859 328.05,463.5 C313.92,500.274 281.142,532.431 257.157,552.276 "
+              fill="none" id="Company-User" style="stroke:#A80036;stroke-width:0.9;"/>
+        <polygon fill="#000000" points="365.5754,289.9498,368.7122,281.9858,363.432,281.663,365.5754,289.9498"
+                 style="stroke:#000000;stroke-width:0.9;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="33.3"
+              x="373.95" y="290.2456">knows
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="6.3"
+              x="284.6369" y="68.7266">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="4.5"
+              x="264.1771" y="543.3745">*
+        </text><!--MD5=[48f96e9c089f040dd80ac101b182393e]
+link Receptionist to User-->
+        <path codeLine="34"
+              d="M89.226,250.344 C76.23,308.844 66.087,395.991 97.65,463.5 C118.863,508.878 169.083,542.088 200.925,559.494 "
+              fill="none" id="Receptionist-User" style="stroke:#A80036;stroke-width:0.9;"/>
+        <polygon fill="#000000" points="103.6791,396.3404,103.4005,387.7855,98.4253,389.5831,103.6791,396.3404"
+                 style="stroke:#000000;stroke-width:0.9;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="18.9"
+              x="110.25" y="396.8956">is a
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="19.8"
+              x="66.7359" y="269.4302">0..1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="6.3"
+              x="187.7836" y="552.5307">1
+        </text><!--MD5=[9a8dc34b38f85b9f3fcdb440f4bffc6a]
+link Client to User-->
+        <path codeLine="35" d="M229.05,463.653 C229.05,487.449 229.05,513.135 229.05,533.664 " fill="none"
+              id="Client-User" style="stroke:#A80036;stroke-width:0.9;"/>
+        <polygon fill="#000000" points="233.55,503.2582,236.195,495.1176,230.905,495.1176,233.55,503.2582"
+                 style="stroke:#000000;stroke-width:0.9;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="18.9"
+              x="241.65" y="503.5456">is a
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="19.8"
+              x="208.3992" y="482.605">0..1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="6.3"
+              x="222.248" y="523.8622">1
+        </text><!--MD5=[5448e79142bdfcbfebd9929e0faf45a6]
+link Company to Receptionist-->
+        <path codeLine="36"
+              d="M233.982,47.43 C219.762,55.323 204.003,65.295 191.25,76.5 C176.94,89.073 163.359,104.373 151.452,119.439 "
+              fill="none" id="Company-Receptionist" style="stroke:#A80036;stroke-width:0.9;"/>
+        <polygon fill="#000000" points="192.3592,87.7167,200.2321,84.3578,196.7542,80.3717,192.3592,87.7167"
+                 style="stroke:#000000;stroke-width:0.9;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="44.1"
+              x="203.85" y="89.5456">employs
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="6.3"
+              x="220.5633" y="47.322">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="4.5"
+              x="151.2474" y="109.7095">*
+        </text><!--MD5=[6a35157f4c730bda767e7c9f1b8b7f73]
+link Receptionist to Client-->
+        <path codeLine="37"
+              d="M110.772,250.362 C113.391,265.113 117.684,280.296 124.65,293.4 C130.293,304.029 137.547,314.136 145.602,323.541 "
+              fill="none" id="Receptionist-Client" style="stroke:#A80036;stroke-width:0.9;"/>
+        <polygon fill="#000000" points="131.0839,289.5214,129.9737,281.0342,125.1971,283.3077,131.0839,289.5214"
+                 style="stroke:#000000;stroke-width:0.9;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="110.7"
+              x="137.25" y="290.2456">register in application
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="6.3"
+              x="104.4789" y="269.4499">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="11.7" lengthAdjust="spacing" textLength="4.5"
+              x="134.0051" y="315.05">*
+        </text><!--MD5=[6a0040ec13c73cc9947ca1d287549bb2]
+@startuml
+
+class Company{
+}
+
+class Receptionist{
+Employee ID;
+Organization Role;
+Name;
+Address;
+Phone Number;
+E-Mail;
+Standard Occupational Classification "soc".
+}
+
+class Client{
+Name;
+Citizen card Number;
+National Healthcare Service Number
+Birth date;
+Sex;
+Tax Identification Number;
+Phone;
+E-mail.
+}
+
+class User{
+name
+email
+password
+}
+
+Company "1" - - "*" Client: knows >
+Company "1" - - "*" User: knows >
+Receptionist "0..1" - - "1" User: is a >
+Client "0..1" - - "1" User: is a >
+Company "1" - - "*" Receptionist: employs >
+Receptionist "1" - - "*" Client: register in application >
+
+
+
+
+
+
+
+
+
+
+@enduml
+
+PlantUML version 1.2021.5(Sun Apr 25 12:20:28 BST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+-->
+    </g>
+</svg>

@@ -1,0 +1,57 @@
+@startuml
+
+class CreateReportUI {
+
+}
+
+class CreateReportController{
++getTestList(testID)
++getResult()
++createReport()
++saveReport(report)
+
+}
+
+class TestListMapper{
+-toDTO(t)
++toDTO(tList)
+}
+
+class TestDTO{
++getTestNhsNumber()
++getTestCode()
+}
+
+class Test{
+-state;
+-testCode
+-testNhsNumber
+-clientTin
+-testType
+-testParam
+-createdDate
+-sampleCreatedDate
+
++createReport(TestID, diagnosis)
++saveReport(report)
+ }
+
+class TestStore{
+-testList
++getListOfTestsAnalysed()
+}
+
+class Report{
+-TestID
+-diagnosis
+
+}
+
+CreateReportUI ..> CreateReportController
+CreateReportController .> TestListMapper
+TestListMapper .> TestDTO
+CreateReportController ..> Test
+CreateReportController ..> TestStore
+Test --> Report
+
+@enduml

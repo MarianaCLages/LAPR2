@@ -1,0 +1,139 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class RecordResultUI{
+}
+class RecordResultController{
++ getTestParameterList(sampleId)
++ addTestResult(parameterCode,result)
+}
+class Company{
+-designation
++getSampleStore()
++getTestStore()
+}
+class SampleStore{
+-sampleList
++getSample(sampleId)
+}
+class Sample{
+-sampleId
+-testId
++getTestID()
+}
+class Test{
+-state;
+-testCode
+-testNhsNumber
+-clientTin
+-testType
+-testParam
+-createdDate
+-sampleCreatedDate
++getTestParameterList()
++addTestResult(parameterCode,result)
+}
+class TestParameterList{
++getParameterFor(parameterCode)
+}
+class TestStore{
+-testList
++getTestByCode(sampleId)
+}
+class TestParameterStoreMapper{
++toDTO(pList)
+-toDTO(testParameter)
+}
+class TestParameterDTO{
+-pcode
++getPcode()
+}
+class TestParameter{
+- pCode
+- testParameterResult
++getParameter()
+}
+class Parameter{
+-name
+-code
+-description
+-cat
+}
+class TestType{
+-externalModule
++getExternalModule()
+}
+interface RefValueAdapter{
++getRefValue(String param)
++getMinValue(String param)
++getMaxValue(String param)
++getMetric(String param)
+}
+class ReferenceValue{
+-minValue
+-maxValue
+-metric
+}
+class TestParameterResult{
+-result
+-paramId
+-refValue
++TestParameterResult(result,refValue)
+}
+class CovidReferenceValues1API{
+}
+class ExternalModule2API{
+}
+class ExternalModule3API{
+}
+class CovidReferenceValues1APIAdapter{
++getRefValue(String param)
++getMinValue(String param)
++getMaxValue(String param)
++getMetric(String param)
+}
+class ExternalModule2APIAdapter{
++getRefValue(String param)
++getMinValue(String param)
++getMaxValue(String param)
++getMetric(String param)
+}
+class ExternalModule3APIAdapter{
++getRefValue(String param)
++getMinValue(String param)
++getMaxValue(String param)
++getMetric(String param)
+}
+RecordResultUI ..> RecordResultController
+RecordResultController ..> Company
+RecordResultController ..> TestStore
+RecordResultController ..> Test
+RecordResultController .> TestParameterStoreMapper
+TestParameterStoreMapper ..> TestParameterDTO
+
+Company "1" -> "1" TestStore: adopts
+Company "1" --> "1" SampleStore: adopts
+
+SampleStore "1" -> "*" Sample: stores
+Test "1"  -> "1" TestParameterList: requests analysis of
+TestParameterList "1" --> "*" TestParameter: stores
+TestParameter "*" -> "1" Parameter: refer to
+TestParameter "1" --> "0..1" TestParameterResult:contains
+TestParameterResult "1" --> "1" ReferenceValue: records
+ReferenceValue "1" <-- "1"RefValueAdapter: create
+Test "*" --> "1"TestType: is of
+TestStore "1" --> "*" Test: stores
+TestType "*" --> "1" RefValueAdapter: makes use of
+
+CovidReferenceValues1APIAdapter --> CovidReferenceValues1API
+ExternalModule2APIAdapter --> ExternalModule2API
+ExternalModule3APIAdapter  --> ExternalModule3API
+
+RefValueAdapter <|.. CovidReferenceValues1APIAdapter
+RefValueAdapter <|.. ExternalModule2APIAdapter
+RefValueAdapter <|.. ExternalModule3APIAdapter
+
+
+
+
+@enduml

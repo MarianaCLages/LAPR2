@@ -1,0 +1,76 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class RegisterEmployeeUI{
+}
+
+class RegisterEmployeeController{
+-company
+-store
++getRoleList()
++CreateEmployee(name,addresses,phoneNumber,email,soc,role)
++CreateEmployee(name,addresses,phoneNumber,email,soc,role,docInNum)
++saveEmployee(em)
+}
+
+class AuthFacade{
++addUserWithRole(name,email,password,roleID)
+}
+
+class Company{
+-roleList
+-employeeList
++getRoleList()
++getEmployeeStore()
+}
+
+class EmployeeStore{
+-EmployeeList
+-Employee
++CreateEmployee(name,addresses,phoneNumber,email,soc,role)
++CreateEmployee(name,addresses,phoneNumber,email,soc,role,docInNum)
++validateEmployee(em)
++saveEmployee(em)
+-validateEmployee(em)
+}
+
+class Employee{
+-name
+-address
+-phoneNumber
+-email
+-soc
++Employee(name,addresses,phoneNumber,email,soc,role)
++Employee(name,addresses,phoneNumber,email,soc,role,docInNum)
+}
+
+class RoleStore{
+-ClinicalChemistryTechnologist: Role
+-MedicalLabTechnician: Role
+-LaboratoryCoordinator: Role
+-Receptionist: Role
+-SpecialistDoctor: Role
++getRoleList()
+}
+
+class SpecialistDoctor{
+-docInNum: int
+}
+class Role{
+-roleId
+-roleName
+}
+EmployeeStore --> SpecialistDoctor
+RegisterEmployeeController ..> EmployeeStore
+RegisterEmployeeUI --> RegisterEmployeeController
+RegisterEmployeeController --> Company
+Company --> RoleStore
+EmployeeStore ..> AuthFacade
+Company --> EmployeeStore
+EmployeeStore --> Employee
+SpecialistDoctor --|> Employee
+RoleStore --> Role
+SpecialistDoctor ..> Role
+Employee ..> Role
+
+@enduml

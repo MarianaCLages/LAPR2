@@ -1,0 +1,34 @@
+@startuml
+autonumber
+actor Administrator as A
+participant "System" as S
+
+activate A
+A -> S: wants to specify a new type of test
+activate S
+loop "More categories"
+S --> A: shows parameter category list and asks to choose parameter category
+
+deactivate S
+A -> S: confirms the category
+activate S
+
+end
+
+S --> A: requests data (testID, collectingMethod, description)
+deactivate S
+A -> S: types requested data
+activate S
+
+S --> A: shows all data and requestes confirmation
+deactivate S
+
+A -> S: confirms the data
+activate S
+
+S --> A: informs operation success
+deactivate S
+deactivate A
+
+
+@enduml

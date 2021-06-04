@@ -1,0 +1,78 @@
+@startuml
+autonumber
+
+actor Receptionist as R
+participant ":RegisterClientUI" as UI
+participant ":RegisterClientController" as CTRL
+participant ":Company" as COMPANY
+participant "store:ClientStore" as S
+participant ": Client" as C
+participant ":AuthFacade" as AUTH
+participant "mail:email" as mail
+
+activate R
+R -> UI: asks to register a new client
+activate UI
+
+
+UI --> R: requests Client's registration data (citizen card number, NHS number,\n birth date, sex, TIF number, phone number, e-mail, name)
+
+deactivate UI
+R -> UI: types data
+activate UI
+UI -> CTRL : getStore()
+activate CTRL
+CTRL -> COMPANY: store = getStore()
+activate COMPANY
+COMPANY --> S**: store = ClientStore()
+deactivate COMPANY
+CTRL <- UI: CreateClient(citizen card number, NHS number, birth date, sex,\n TIF number, phone number, e-mail, name)
+CTRL -> S:CreateClient(citizen card number, NHS number, birth date, sex,\n TIF number, phone number, e-mail, name)
+activate S
+S --> C**: c =Client(citizen card number, NHS number, birth date, sex,\n TIF number, phone number, e-mail, name)
+
+deactivate S
+
+
+deactivate CTRL
+
+R <-- UI: Shows data and requests confirmation
+deactivate UI
+R -> UI: confirms data
+activate UI
+UI-> CTRL : saveClient()
+activate CTRL
+CTRL -> S: saveClient()
+activate S
+S -> S : validateClient(c)
+activate S
+deactivate S
+S -> S : saveClient(c)
+activate S
+deactivate S
+deactivate S
+
+CTRL -> S : addUser(company)
+deactivate CTRL
+
+activate S
+S -> C :addUserWithRole(company)
+activate C
+deactivate S
+
+C -> C : getPassword();
+activate C
+deactivate C
+C -> AUTH :addUserWithRole(name, email, password, RoleId)
+activate AUTH
+deactivate AUTH
+C -> mail : email(email, password)
+activate mail
+deactivate mail
+deactivate C
+
+UI --> R : Informs operation success
+deactivate UI
+deactivate R
+
+@enduml

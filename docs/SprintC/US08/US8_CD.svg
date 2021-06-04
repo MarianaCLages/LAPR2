@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     contentScriptType="application/ecmascript" contentStyleType="text/css" height="997px" preserveAspectRatio="none"
+     style="width:739px;height:997px;" version="1.1" viewBox="0 0 739 997" width="739px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="fvueo57qevfu9" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix"
+                           values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+        </filter>
+    </defs>
+    <g><!--MD5=[02e4b9b7573f1156f41e60aa5b4e25a4]
+class Company-->
+        <rect codeLine="2" fill="#FEFECE" filter="url(#fvueo57qevfu9)" height="75.6719" id="Company"
+              style="stroke:#A80036;stroke-width:1.5;" width="85" x="438" y="334"/>
+        <ellipse cx="453" cy="350" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M455,346.5 Q455.2031,346 455.4375,345.75 Q455.6719,345.5 455.9375,345.5 Q456.4063,345.5 456.7031,345.7813 Q457,346.0625 457,346.7188 L457,348.2813 Q457,348.9375 456.7188,349.2188 Q456.4375,349.5 456,349.5 Q455.6094,349.5 455.3594,349.3281 Q455.1094,349.1563 455,348.7031 Q454.9531,348.3906 454.7813,348.2188 Q454.4688,347.8906 453.9063,347.7031 Q453.3438,347.5 452.7813,347.5 Q452.0781,347.5 451.4844,347.7813 Q450.9063,348.0625 450.4531,348.6875 Q450,349.3125 450,350.1719 L450,351.0938 Q450,352.125 450.8438,352.8125 Q451.6875,353.5 453.1875,353.5 Q454.0781,353.5 454.7031,353.2969 Q455.0625,353.1875 455.4688,352.8281 Q455.7344,352.625 455.875,352.5625 Q456.0156,352.5 456.1875,352.5 Q456.5156,352.5 456.75,352.7656 Q457,353.0156 457,353.375 Q457,353.7188 456.6563,354.125 Q456.1563,354.7188 455.3594,355.0469 Q454.3125,355.5 453.0313,355.5 Q451.5313,355.5 450.3281,354.9063 Q449.3594,354.4375 448.6719,353.4219 Q448,352.4063 448,351.2031 L448,350.1094 Q448,348.8594 448.5938,347.7656 Q449.2031,346.6719 450.25,346.0938 Q451.3125,345.5 452.5,345.5 Q453.2188,345.5 453.8438,345.75 Q454.4688,346 455,346.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53" x="467"
+              y="354.9102">Company
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="439" x2="522" y1="366" y2="366"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="446" y="374"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="55" x="458"
+              y="381.4189">designation
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="439" x2="522" y1="387.8359" y2="387.8359"/>
+        <ellipse cx="449" cy="398.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="49" x="458"
+              y="403.2549">getStore()
+        </text><!--MD5=[def482e8b0344725162b79e692602bfb]
+class CreateClinicalAnalysisLabUI-->
+        <rect codeLine="8" fill="#FEFECE" filter="url(#fvueo57qevfu9)" height="48" id="CreateClinicalAnalysisLabUI"
+              style="stroke:#A80036;stroke-width:1.5;" width="189" x="386" y="7"/>
+        <ellipse cx="401" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M403,19.5 Q403.2031,19 403.4375,18.75 Q403.6719,18.5 403.9375,18.5 Q404.4063,18.5 404.7031,18.7813 Q405,19.0625 405,19.7188 L405,21.2813 Q405,21.9375 404.7188,22.2188 Q404.4375,22.5 404,22.5 Q403.6094,22.5 403.3594,22.3281 Q403.1094,22.1563 403,21.7031 Q402.9531,21.3906 402.7813,21.2188 Q402.4688,20.8906 401.9063,20.7031 Q401.3438,20.5 400.7813,20.5 Q400.0781,20.5 399.4844,20.7813 Q398.9063,21.0625 398.4531,21.6875 Q398,22.3125 398,23.1719 L398,24.0938 Q398,25.125 398.8438,25.8125 Q399.6875,26.5 401.1875,26.5 Q402.0781,26.5 402.7031,26.2969 Q403.0625,26.1875 403.4688,25.8281 Q403.7344,25.625 403.875,25.5625 Q404.0156,25.5 404.1875,25.5 Q404.5156,25.5 404.75,25.7656 Q405,26.0156 405,26.375 Q405,26.7188 404.6563,27.125 Q404.1563,27.7188 403.3594,28.0469 Q402.3125,28.5 401.0313,28.5 Q399.5313,28.5 398.3281,27.9063 Q397.3594,27.4375 396.6719,26.4219 Q396,25.4063 396,24.2031 L396,23.1094 Q396,21.8594 396.5938,20.7656 Q397.2031,19.6719 398.25,19.0938 Q399.3125,18.5 400.5,18.5 Q401.2188,18.5 401.8438,18.75 Q402.4688,19 403,19.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="157" x="415"
+              y="27.9102">CreateClinicalAnalysisLabUI
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="387" x2="574" y1="39" y2="39"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="387" x2="574" y1="47" y2="47"/><!--MD5=[c71b0d3bba606bf414de3222409dc860]
+class CreateClinicalAnalysisLabController-->
+        <rect codeLine="11" fill="#FEFECE" filter="url(#fvueo57qevfu9)" height="158.6875"
+              id="CreateClinicalAnalysisLabController" style="stroke:#A80036;stroke-width:1.5;" width="489" x="236"
+              y="115"/>
+        <ellipse cx="376.75" cy="131" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M378.75,127.5 Q378.9531,127 379.1875,126.75 Q379.4219,126.5 379.6875,126.5 Q380.1563,126.5 380.4531,126.7813 Q380.75,127.0625 380.75,127.7188 L380.75,129.2813 Q380.75,129.9375 380.4688,130.2188 Q380.1875,130.5 379.75,130.5 Q379.3594,130.5 379.1094,130.3281 Q378.8594,130.1563 378.75,129.7031 Q378.7031,129.3906 378.5313,129.2188 Q378.2188,128.8906 377.6563,128.7031 Q377.0938,128.5 376.5313,128.5 Q375.8281,128.5 375.2344,128.7813 Q374.6563,129.0625 374.2031,129.6875 Q373.75,130.3125 373.75,131.1719 L373.75,132.0938 Q373.75,133.125 374.5938,133.8125 Q375.4375,134.5 376.9375,134.5 Q377.8281,134.5 378.4531,134.2969 Q378.8125,134.1875 379.2188,133.8281 Q379.4844,133.625 379.625,133.5625 Q379.7656,133.5 379.9375,133.5 Q380.2656,133.5 380.5,133.7656 Q380.75,134.0156 380.75,134.375 Q380.75,134.7188 380.4063,135.125 Q379.9063,135.7188 379.1094,136.0469 Q378.0625,136.5 376.7813,136.5 Q375.2813,136.5 374.0781,135.9063 Q373.1094,135.4375 372.4219,134.4219 Q371.75,133.4063 371.75,132.2031 L371.75,131.1094 Q371.75,129.8594 372.3438,128.7656 Q372.9531,127.6719 374,127.0938 Q375.0625,126.5 376.25,126.5 Q376.9688,126.5 377.5938,126.75 Q378.2188,127 378.75,127.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="199" x="397.25"
+              y="135.9102">CreateClinicalAnalysisLabController
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="237" x2="724" y1="147" y2="147"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="244" y="155"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="44" x="256"
+              y="162.4189">company
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="244" y="168.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="25" x="256"
+              y="176.2549">store
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="244" y="182.6719"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="68" x="256"
+              y="190.0908">testTypeStore
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="237" x2="724" y1="196.5078" y2="196.5078"/>
+        <ellipse cx="247" cy="207.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="49" x="256"
+              y="211.9268">getStore()
+        </text>
+        <ellipse cx="247" cy="221.3438" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="463" x="256"
+              y="225.7627">CreateClinicalAnalysisLab(int labID, string name, string address, int phoneNumber, int
+            tinNumber)
+        </text>
+        <ellipse cx="247" cy="235.1797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="85" x="256"
+              y="239.5986">getTestTypeList()
+        </text>
+        <ellipse cx="247" cy="249.0156" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="256"
+              y="253.4346">setData()
+        </text>
+        <ellipse cx="247" cy="262.8516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="125" x="256"
+              y="267.2705">saveClinicalAnalysisLab()
+        </text><!--MD5=[1934a092c0e7d4da7dc7075b6f4b6b03]
+class ClinicalAnalysisLaboratory-->
+        <rect codeLine="22" fill="#FEFECE" filter="url(#fvueo57qevfu9)" height="144.8516"
+              id="ClinicalAnalysisLaboratory" style="stroke:#A80036;stroke-width:1.5;" width="177" x="185" y="689"/>
+        <ellipse cx="200" cy="705" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M202,701.5 Q202.2031,701 202.4375,700.75 Q202.6719,700.5 202.9375,700.5 Q203.4063,700.5 203.7031,700.7813 Q204,701.0625 204,701.7188 L204,703.2813 Q204,703.9375 203.7188,704.2188 Q203.4375,704.5 203,704.5 Q202.6094,704.5 202.3594,704.3281 Q202.1094,704.1563 202,703.7031 Q201.9531,703.3906 201.7813,703.2188 Q201.4688,702.8906 200.9063,702.7031 Q200.3438,702.5 199.7813,702.5 Q199.0781,702.5 198.4844,702.7813 Q197.9063,703.0625 197.4531,703.6875 Q197,704.3125 197,705.1719 L197,706.0938 Q197,707.125 197.8438,707.8125 Q198.6875,708.5 200.1875,708.5 Q201.0781,708.5 201.7031,708.2969 Q202.0625,708.1875 202.4688,707.8281 Q202.7344,707.625 202.875,707.5625 Q203.0156,707.5 203.1875,707.5 Q203.5156,707.5 203.75,707.7656 Q204,708.0156 204,708.375 Q204,708.7188 203.6563,709.125 Q203.1563,709.7188 202.3594,710.0469 Q201.3125,710.5 200.0313,710.5 Q198.5313,710.5 197.3281,709.9063 Q196.3594,709.4375 195.6719,708.4219 Q195,707.4063 195,706.2031 L195,705.1094 Q195,703.8594 195.5938,702.7656 Q196.2031,701.6719 197.25,701.0938 Q198.3125,700.5 199.5,700.5 Q200.2188,700.5 200.8438,700.75 Q201.4688,701 202,701.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="145" x="214"
+              y="709.9102">ClinicalAnalysisLaboratory
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="186" x2="361" y1="721" y2="721"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="193" y="729"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="23" x="205"
+              y="736.4189">labID
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="193" y="742.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="26" x="205"
+              y="750.2549">name
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="193" y="756.6719"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="40" x="205"
+              y="764.0908">address
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="193" y="770.5078"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="67" x="205"
+              y="777.9268">phoneNumber
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="193" y="784.3438"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="48" x="205"
+              y="791.7627">tinNumber
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="186" x2="361" y1="798.1797" y2="798.1797"/>
+        <ellipse cx="196" cy="809.1797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="68" x="205"
+              y="813.5986">setTypeTest()
+        </text>
+        <ellipse cx="196" cy="823.0156" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="45" x="205"
+              y="827.4346">validate()
+        </text><!--MD5=[438281daef332c5ccec4fb6cf3747e9a]
+class ClinicalAnalysisLaboratoryStore-->
+        <rect codeLine="32" fill="#FEFECE" filter="url(#fvueo57qevfu9)" height="158.6875"
+              id="ClinicalAnalysisLaboratoryStore" style="stroke:#A80036;stroke-width:1.5;" width="489" x="7" y="470"/>
+        <ellipse cx="160.25" cy="486" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M162.25,482.5 Q162.4531,482 162.6875,481.75 Q162.9219,481.5 163.1875,481.5 Q163.6563,481.5 163.9531,481.7813 Q164.25,482.0625 164.25,482.7188 L164.25,484.2813 Q164.25,484.9375 163.9688,485.2188 Q163.6875,485.5 163.25,485.5 Q162.8594,485.5 162.6094,485.3281 Q162.3594,485.1563 162.25,484.7031 Q162.2031,484.3906 162.0313,484.2188 Q161.7188,483.8906 161.1563,483.7031 Q160.5938,483.5 160.0313,483.5 Q159.3281,483.5 158.7344,483.7813 Q158.1563,484.0625 157.7031,484.6875 Q157.25,485.3125 157.25,486.1719 L157.25,487.0938 Q157.25,488.125 158.0938,488.8125 Q158.9375,489.5 160.4375,489.5 Q161.3281,489.5 161.9531,489.2969 Q162.3125,489.1875 162.7188,488.8281 Q162.9844,488.625 163.125,488.5625 Q163.2656,488.5 163.4375,488.5 Q163.7656,488.5 164,488.7656 Q164.25,489.0156 164.25,489.375 Q164.25,489.7188 163.9063,490.125 Q163.4063,490.7188 162.6094,491.0469 Q161.5625,491.5 160.2813,491.5 Q158.7813,491.5 157.5781,490.9063 Q156.6094,490.4375 155.9219,489.4219 Q155.25,488.4063 155.25,487.2031 L155.25,486.1094 Q155.25,484.8594 155.8438,483.7656 Q156.4531,482.6719 157.5,482.0938 Q158.5625,481.5 159.75,481.5 Q160.4688,481.5 161.0938,481.75 Q161.7188,482 162.25,482.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="174" x="180.75"
+              y="490.9102">ClinicalAnalysisLaboratoryStore
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="495" y1="502" y2="502"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="510"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="144" x="27"
+              y="517.4189">clinicalAnalysisLaboratoryList
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="523.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="92" x="27"
+              y="531.2549">clinicalAnalysisLab
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="495" y1="537.6719" y2="537.6719"/>
+        <ellipse cx="18" cy="548.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="463" x="27"
+              y="553.0908">CreateClinicalAnalysisLab(int labID, string name, string address, int phoneNumber, int
+            tinNumber)
+        </text>
+        <ellipse cx="18" cy="562.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="138" x="27"
+              y="566.9268">validateClinicalAnalysisLab()
+        </text>
+        <ellipse cx="18" cy="576.3438" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="85" x="27"
+              y="580.7627">getTestTypeList()
+        </text>
+        <ellipse cx="18" cy="590.1797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="68" x="27"
+              y="594.5986">setTypeTest()
+        </text>
+        <ellipse cx="18" cy="604.0156" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="138" x="27"
+              y="608.4346">validateClinicalAnalysisLab()
+        </text>
+        <ellipse cx="18" cy="617.8516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="125" x="27"
+              y="622.2705">saveClinicalAnalysisLac()
+        </text><!--MD5=[6ba72ddf03822b91e8d41ca71de58ed3]
+class TestTypeStore-->
+        <rect codeLine="43" fill="#FEFECE" filter="url(#fvueo57qevfu9)" height="89.5078" id="TestTypeStore"
+              style="stroke:#A80036;stroke-width:1.5;" width="111" x="437" y="894"/>
+        <ellipse cx="452" cy="910" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M454,906.5 Q454.2031,906 454.4375,905.75 Q454.6719,905.5 454.9375,905.5 Q455.4063,905.5 455.7031,905.7813 Q456,906.0625 456,906.7188 L456,908.2813 Q456,908.9375 455.7188,909.2188 Q455.4375,909.5 455,909.5 Q454.6094,909.5 454.3594,909.3281 Q454.1094,909.1563 454,908.7031 Q453.9531,908.3906 453.7813,908.2188 Q453.4688,907.8906 452.9063,907.7031 Q452.3438,907.5 451.7813,907.5 Q451.0781,907.5 450.4844,907.7813 Q449.9063,908.0625 449.4531,908.6875 Q449,909.3125 449,910.1719 L449,911.0938 Q449,912.125 449.8438,912.8125 Q450.6875,913.5 452.1875,913.5 Q453.0781,913.5 453.7031,913.2969 Q454.0625,913.1875 454.4688,912.8281 Q454.7344,912.625 454.875,912.5625 Q455.0156,912.5 455.1875,912.5 Q455.5156,912.5 455.75,912.7656 Q456,913.0156 456,913.375 Q456,913.7188 455.6563,914.125 Q455.1563,914.7188 454.3594,915.0469 Q453.3125,915.5 452.0313,915.5 Q450.5313,915.5 449.3281,914.9063 Q448.3594,914.4375 447.6719,913.4219 Q447,912.4063 447,911.2031 L447,910.1094 Q447,908.8594 447.5938,907.7656 Q448.2031,906.6719 449.25,906.0938 Q450.3125,905.5 451.5,905.5 Q452.2188,905.5 452.8438,905.75 Q453.4688,906 454,906.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="79" x="466"
+              y="914.9102">TestTypeStore
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="438" x2="547" y1="926" y2="926"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="445" y="934"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="59" x="457"
+              y="941.4189">testTypeList
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="445" y="947.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="457"
+              y="955.2549">testType
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="438" x2="547" y1="961.6719" y2="961.6719"/>
+        <ellipse cx="448" cy="972.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="85" x="457"
+              y="977.0908">getTestTypeList()
+        </text><!--MD5=[b367d5761613b2ad5daf445514867c76]
+link CreateClinicalAnalysisLabUI to CreateClinicalAnalysisLabController-->
+        <path codeLine="49" d="M480.5,55.14 C480.5,69.77 480.5,89.67 480.5,109.82 " fill="none"
+              id="CreateClinicalAnalysisLabUI-to-CreateClinicalAnalysisLabController"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="480.5,114.94,484.5,105.94,480.5,109.94,476.5,105.94,480.5,114.94"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[538ad5c949872612f94e85033e7995c8]
+link CreateClinicalAnalysisLabController to Company-->
+        <path codeLine="50" d="M480.5,274.01 C480.5,292.87 480.5,312.3 480.5,328.77 " fill="none"
+              id="CreateClinicalAnalysisLabController-to-Company" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="480.5,333.79,484.5,324.79,480.5,328.79,476.5,324.79,480.5,333.79"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9a522ab679d781bc522a6d6b1d952bd2]
+link CreateClinicalAnalysisLabController to ClinicalAnalysisLaboratoryStore-->
+        <path codeLine="51" d="M429.39,274.28 C392.52,331.12 342.84,407.7 305.36,465.48 " fill="none"
+              id="CreateClinicalAnalysisLabController-to-ClinicalAnalysisLaboratoryStore"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="#A80036"
+                 points="302.45,469.96,310.7074,464.592,305.1739,465.7671,303.9988,460.2337,302.45,469.96"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[f379172a0573607dd0ae1a4ea50b9294]
+link Company to ClinicalAnalysisLaboratoryStore-->
+        <path codeLine="52" d="M437.96,405.6 C415.4,422.89 386.57,444.98 358.37,466.6 " fill="none"
+              id="Company-to-ClinicalAnalysisLaboratoryStore" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036"
+                 points="354.21,469.79,363.7829,467.4748,358.1737,466.7421,358.9063,461.1329,354.21,469.79"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[2dad08ae384f93453eb1ba4eb26732f1]
+link ClinicalAnalysisLaboratoryStore to ClinicalAnalysisLaboratory-->
+        <path codeLine="53" d="M259.75,629.29 C261.63,647.17 263.61,666.12 265.48,683.9 " fill="none"
+              id="ClinicalAnalysisLaboratoryStore-to-ClinicalAnalysisLaboratory"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="266,688.88,269.0527,679.5162,265.4855,683.9065,261.0951,680.3394,266,688.88"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e0c74da7971ad49ccb99dd30d5717ca3]
+link ClinicalAnalysisLaboratoryStore to TestTypeStore-->
+        <path codeLine="54"
+              d="M332.28,629.25 C349.09,647.91 365.83,668.4 379.5,689 C422.36,753.56 456.5,837.03 475.62,889.04 "
+              fill="none" id="ClinicalAnalysisLaboratoryStore-to-TestTypeStore"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="#A80036"
+                 points="477.43,893.97,478.0943,884.1436,475.7121,889.2744,470.5813,886.8922,477.43,893.97"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[141c3afa12b2b3c0a39ffce56dbd5f19]
+link Company to TestTypeStore-->
+        <path codeLine="55"
+              d="M496.29,410.04 C503.04,427.82 510.13,449.64 513.5,470 C538.49,621.05 515.37,803.02 501.39,888.75 "
+              fill="none" id="Company-to-TestTypeStore" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036"
+                 points="500.56,893.76,505.9736,885.5324,501.375,888.8269,498.0806,884.2283,500.56,893.76"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[71e9c665f84f665d9f2519244e9936b4]
+link CreateClinicalAnalysisLabController to TestTypeStore-->
+        <path codeLine="56"
+              d="M520.63,274.35 C528.65,293.42 535.98,314.07 540.5,334 C589.6,550.73 593.46,617.7 542.5,834 C538.07,852.8 529.88,872.2 521.4,889.07 "
+              fill="none" id="CreateClinicalAnalysisLabController-to-TestTypeStore"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="#A80036" points="519,893.76,526.6742,887.5869,521.2874,889.3139,519.5604,883.9271,519,893.76"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[ed833403b75ae1fb2df0844a9c032fc9]
+link ClinicalAnalysisLaboratory to TestTypeStore-->
+        <path codeLine="57" d="M362.26,833.63 C386.15,852.77 411.4,873.01 433.25,890.52 " fill="none"
+              id="ClinicalAnalysisLaboratory-to-TestTypeStore"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="#A80036"
+                 points="437.28,893.75,432.7627,884.9982,433.3798,890.6213,427.7568,891.2385,437.28,893.75"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="7" x="364.0524"
+              y="855.4143">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="5" x="424.1631"
+              y="883.8162">*
+        </text><!--MD5=[1e407ea169a6a4d68daa782ba11e3530]
+@startuml
+
+class Company
+{
+  - designation
+  + getStore()
+}
+
+class CreateClinicalAnalysisLabUI {
+}
+
+class CreateClinicalAnalysisLabController {
+    - company
+    - store
+    - testTypeStore
+    + getStore()
+    + CreateClinicalAnalysisLab(int labID, string name, string address, int phoneNumber, int tinNumber)
+    + getTestTypeList()
+    + setData()
+    + saveClinicalAnalysisLab()
+}
+
+class ClinicalAnalysisLaboratory{
+    - labID
+    - name
+    - address
+    - phoneNumber
+    - tinNumber
+    + setTypeTest()
+    + validate()
+}
+
+class ClinicalAnalysisLaboratoryStore{
+    - clinicalAnalysisLaboratoryList
+    - clinicalAnalysisLab
+    + CreateClinicalAnalysisLab(int labID, string name, string address, int phoneNumber, int tinNumber)
+    + validateClinicalAnalysisLab()
+    + getTestTypeList()
+    + setTypeTest()
+    + validateClinicalAnalysisLab()
+    + saveClinicalAnalysisLac()
+}
+
+class TestTypeStore{
+    - testTypeList
+    - testType
+    + getTestTypeList()
+}
+
+CreateClinicalAnalysisLabUI - -> CreateClinicalAnalysisLabController
+CreateClinicalAnalysisLabController - -> Company
+CreateClinicalAnalysisLabController ..> ClinicalAnalysisLaboratoryStore
+Company - -> ClinicalAnalysisLaboratoryStore
+ClinicalAnalysisLaboratoryStore - -> ClinicalAnalysisLaboratory
+ClinicalAnalysisLaboratoryStore ..> TestTypeStore
+Company - -> TestTypeStore
+CreateClinicalAnalysisLabController ..> TestTypeStore
+ClinicalAnalysisLaboratory "1" ..> "*" TestTypeStore
+
+@enduml
+
+PlantUML version 1.2021.5(Sun Apr 25 12:20:28 BST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+-->
+    </g>
+</svg>

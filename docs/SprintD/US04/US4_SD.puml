@@ -1,0 +1,117 @@
+@startuml
+
+autonumber
+
+actor Receptionist as R
+participant ":RegisterTestUI" as UI
+participant ":RegisterTestController" as ctrl
+participant ":Company" as comp
+participant ":ClientStore" as cStore
+participant ":TestTypeListMapper" as mapper
+participant "paList:ParameterList" as paList
+participant ":ParameterStore" as paStore
+participant ":TestStore" as tStore
+
+
+
+activate R
+R -> UI: wants to register a test
+activate UI
+UI --> R: requests data (clientCc, testNhsNumber)
+
+deactivate UI
+R -> UI: types the requested data
+activate UI
+UI -> ctrl: existClient(clientTin)
+activate ctrl
+ctrl -> comp: getClientStore()
+activate comp
+deactivate
+ctrl -> cStore: existClient(clientTin)
+activate cStore
+cStore -> cStore: existsClient(clientTin)
+activate cStore
+return exists
+return exists
+return exists
+deactivate cStore
+deactivate cStore
+
+UI -> ctrl: getTestTypeList()
+activate ctrl
+ctrl -> comp: ttList = getTestTypeList()
+activate comp
+deactivate
+ctrl -> mapper: toDto(ttList)
+activate mapper
+return ttListDTO
+return ttListDTO
+deactivate mapper
+deactivate ctrl
+
+deactivate ctrl
+UI --> R: Show TestType list and asks to choose one
+deactivate UI
+R -> UI: Choose one TestType
+activate UI
+UI -> ctrl: getCategories(TestTypeCode)
+activate ctrl
+ref over ctrl: SD_getCategories(TestTypeCode)
+return categoriesListDTO
+deactivate ctrl
+
+loop "More categories"
+UI --> R: shows the list of categories and asks to select
+deactivate UI
+R -> UI: selects category
+activate UI
+UI -> ctrl: getParameters(categoryCode)
+activate ctrl
+ref over ctrl: SD_getParameters(categoryCode)
+return paListDTO
+
+deactivate ctrl
+loop "More parameters"
+UI --> R: shows the list of parameters and asks to select
+deactivate UI
+R -> UI: selects parameter
+activate UI
+UI -> ctrl: addParameter(parameterCode)
+activate ctrl
+ctrl -> paStore: parameter = getParameter(parameterCode)
+activate paStore
+deactivate
+ctrl -> paList: addParameter(parameter)
+activate paList
+deactivate
+deactivate
+end
+end
+UI -> ctrl: createTest()
+activate ctrl
+ref over ctrl: SD_createTest()
+ctrl --> UI: success
+deactivate ctrl
+
+UI --> R: confirms all data and asks to confirm
+deactivate UI
+R -> UI: confirms data
+activate UI
+UI -> ctrl: saveTest()
+activate ctrl
+ctrl -> tStore: saveTest()
+activate tStore
+tStore -> tStore: validateTest(t)
+activate tStore
+deactivate
+tStore -> tStore: addTest(t)
+activate tStore
+deactivate
+deactivate
+return success
+
+deactivate ctrl
+UI --> R: informs operation success
+deactivate UI
+deactivate R
+@enduml

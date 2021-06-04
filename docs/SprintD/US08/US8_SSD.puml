@@ -1,0 +1,26 @@
+@startuml
+
+autonumber
+actor Administrator as A
+participant ":System" as S
+activate A
+A -> S: wants to register a new clinical analysis laboratory
+activate S
+S --> A: requests data (labID, name, address,\n phoneNumber, tinNumber)
+deactivate S
+A -> S: types requested data
+activate S
+loop
+S --> A: shows types of test list
+deactivate S
+A -> S: selects types of tests
+activate S
+end
+S --> A: shows all data and requests confirmation
+deactivate S
+A -> S: confirms the data
+activate S
+S --> A: informs operation success
+deactivate S
+deactivate A
+@enduml

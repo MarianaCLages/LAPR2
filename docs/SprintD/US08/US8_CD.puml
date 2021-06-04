@@ -1,0 +1,60 @@
+@startuml
+
+class Company
+{
+  - designation
+  + getStore()
+}
+
+class CreateClinicalAnalysisLabUI {
+}
+
+class CreateClinicalAnalysisLabController {
+    - company
+    - store
+    - testTypeStore
+    + getStore()
+    + CreateClinicalAnalysisLab(int labID, string name, string address, int phoneNumber, int tinNumber)
+    + getTestTypeList()
+    + setData()
+    + saveClinicalAnalysisLab()
+}
+
+class ClinicalAnalysisLaboratory{
+    - labID
+    - name
+    - address
+    - phoneNumber
+    - tinNumber
+    + setTypeTest()
+    + validate()
+}
+
+class ClinicalAnalysisLaboratoryStore{
+    - clinicalAnalysisLaboratoryList
+    - clinicalAnalysisLab
+    + CreateClinicalAnalysisLab(int labID, string name, string address, int phoneNumber, int tinNumber)
+    + validateClinicalAnalysisLab()
+    + getTestTypeList()
+    + setTypeTest()
+    + validateClinicalAnalysisLab()
+    + saveClinicalAnalysisLac()
+}
+
+class TestTypeStore{
+    - testTypeList
+    - testType
+    + getTestTypeList()
+}
+
+CreateClinicalAnalysisLabUI --> CreateClinicalAnalysisLabController
+CreateClinicalAnalysisLabController --> Company
+CreateClinicalAnalysisLabController ..> ClinicalAnalysisLaboratoryStore
+Company --> ClinicalAnalysisLaboratoryStore
+ClinicalAnalysisLaboratoryStore --> ClinicalAnalysisLaboratory
+ClinicalAnalysisLaboratoryStore ..> TestTypeStore
+Company --> TestTypeStore
+CreateClinicalAnalysisLabController ..> TestTypeStore
+ClinicalAnalysisLaboratory "1" ..> "*" TestTypeStore
+
+@enduml

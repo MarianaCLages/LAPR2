@@ -1,0 +1,62 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Laboratory Coordinator" as lc
+participant ":ValidateUI" as UI
+participant ":ValidateController" as ctrl
+participant ":TestStore" as tStore
+participant "t:Test" as t
+participant "tst:TestList" as tSt
+participant ":Mail" as email
+activate lc
+lc -> UI: Asks the list of tests waiting to validation
+activate UI
+UI -> ctrl: getListOfTests()
+activate ctrl
+ref over ctrl: SD_getListOfTests()
+return tListDTO
+deactivate ctrl
+loop for any other intended Test
+    UI --> lc: Shows all the tests pending validation and asks to choose
+    deactivate UI
+    lc -> UI: Chose the tests that will be validated
+    activate UI
+    UI-> ctrl:addTest(testId)
+    activate ctrl
+    ctrl -> tStore: t = getTest(testId)
+    activate tStore
+    deactivate
+    ctrl->tSt: addTest(t)
+    activate tSt
+    deactivate
+    deactivate ctrl
+    end
+    UI --> lc: Asks for confirmation
+deactivate UI
+lc -> UI : Confirms
+activate UI
+UI -> ctrl : validateTestList()
+activate ctrl
+ctrl -> tStore: validateTestList(tSt)
+activate tStore
+loop for t in TestList
+tStore -> t: ValidateTest()
+activate t
+t-> t: validate
+activate t
+t -> email: sendNotification()
+deactivate t
+t --> tStore: ok
+deactivate t
+end
+tStore --> ctrl :ok
+deactivate tStore
+ctrl --> UI: ok
+deactivate ctrl
+
+UI --> lc: Shows success
+deactivate lc
+
+@enduml

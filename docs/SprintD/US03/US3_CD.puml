@@ -1,0 +1,62 @@
+@startuml
+
+class RegisterClientUI{
+}
+
+class RegisterClientController{
+    - company
+    - store
+    + getStore()
+    + createClient(int cc, int nhs, string birthDate, string sex, int tinNumber, int phoneNumber, string email, string name)
+    + saveClient()
+}
+
+class AuthFacade{
+    + addUserWithRole(name, email, password, roleId)
+}
+
+
+class Company{
+    - clientList
+    + getStore()
+}
+
+class Client{
+    -phoneNumber
+    -String cc
+    -nhs;
+    -tinNumber;
+    -birthDate;
+    -sex;
+    -email;
+    -name;
+    + Client(int cc, int nhs, string birthDate, string sex, int tinNumber, int phoneNumber, string email, string name)
+    + addUserWithRole(company)
+    - getPassword()
+
+}
+
+class ClientStore{
+    - ClientList
+    - Client
+    + createClient(int cc, int nhs, string birthDate, string sex, int tinNumber, int phoneNumber, string email, string name)
+    + saveClient()
+    + validateClient(c)
+    + addUser(company)
+}
+
+class email{
+    -address
+    -password
+    +email(password, email)
+}
+
+Client --> email
+RegisterClientUI --> RegisterClientController
+RegisterClientController --> Company
+RegisterClientController ..> ClientStore
+Company --> ClientStore
+
+ClientStore --> Client
+Client ..> AuthFacade
+@enduml

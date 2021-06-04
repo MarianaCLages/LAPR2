@@ -1,0 +1,49 @@
+@startuml
+
+class Company{
+}
+
+class Receptionist{
+Employee ID;
+Organization Role;
+Name;
+Address;
+Phone Number;
+E-Mail;
+Standard Occupational Classification "SOC".
+}
+
+class Client{
+Name;
+Citizen card Number;
+National Healthcare Service Number
+Birth date;
+Sex;
+Tax Identification Number;
+Phone;
+E-mail.
+}
+
+class User{
+name
+email
+password
+}
+
+Company "1" -- "*" Client: knows >
+Company "1" -- "*" User: knows >
+Receptionist "0..1" -- "1" User: is a >
+Client "0..1" -- "1" User: is a >
+Company "1" -- "*" Receptionist: employs >
+Receptionist "1" -- "*" Client: register in application >
+
+
+
+
+
+
+
+
+
+
+@enduml

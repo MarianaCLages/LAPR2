@@ -1,0 +1,49 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class ValidateUI{
+}
+class ValidateController{
+-Teststore
++getListOfTests()
++addTest()
++validateTestList()
+}
+class TestStore{
+-Test
++getListOfTestsToValidate()
++add()
++getTest()
++addTest()
++validateTestList()
+}
+class Test {
+-String testCode
+-String testType
+-String testNhsNumber
+-ParameterCategoryStore catList
+-ParemeterTestStore paList
+- String clientCc
++ValidateTest()
+}
+class Mail{
++sendNotification()
+}
+class TestStoreMapper{
++toDTO()
+}
+
+class TestStoreDTO{
++create()
++add()
+}
+
+ValidateUI ..> ValidateController
+ValidateController --> TestStore
+ValidateController ..> Test
+TestStore --> Test
+Test -> Mail
+ValidateController ..> TestStoreMapper
+TestStoreMapper ..> TestStoreDTO
+TestStore .> TestStoreMapper
+@enduml

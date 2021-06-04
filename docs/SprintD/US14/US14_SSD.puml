@@ -1,0 +1,33 @@
+
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Specialist Doctor" as SD
+
+activate SD
+
+SD -> ":System" : asks for a Report
+activate ":System"
+
+SD <-- ":System": show test list
+deactivate ":System"
+
+SD -> ":System": select a test
+activate ":System"
+SD <-- ":System": show test data and asks for the diagnosis of the test
+deactivate ":System"
+
+SD -> ":System": type diagnosis data
+activate ":System"
+SD <-- ":System": Shows data and requests confirmation
+deactivate ":System"
+
+SD -> ":System": confirms data
+activate ":System"
+
+SD <-- ":System": shows operation success
+deactivate ":System"
+
+@enduml

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     contentScriptType="application/ecmascript" contentStyleType="text/css" height="440px" preserveAspectRatio="none"
+     style="width:477px;height:440px;" version="1.1" viewBox="0 0 477 440" width="477px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="f1f168dkoq7u5l" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix"
+                           values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+        </filter>
+    </defs>
+    <g>
+        <rect fill="#FFFFFF" filter="url(#f1f168dkoq7u5l)" height="236.8125" style="stroke:#A80036;stroke-width:1.0;"
+              width="10" x="88.5" y="99.6094"/>
+        <rect fill="#FFFFFF" filter="url(#f1f168dkoq7u5l)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;"
+              width="10" x="414.5" y="121.9609"/>
+        <rect fill="#FFFFFF" filter="url(#f1f168dkoq7u5l)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;"
+              width="10" x="414.5" y="182.6641"/>
+        <rect fill="#FFFFFF" filter="url(#f1f168dkoq7u5l)" height="67.7031" style="stroke:#A80036;stroke-width:1.0;"
+              width="10" x="414.5" y="268.7188"/>
+        <rect fill="#FFFFFF" filter="url(#f1f168dkoq7u5l)" height="79.0547" style="stroke:#000000;stroke-width:2.0;"
+              width="453.5" x="10" y="228.0156"/>
+        <line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="93" x2="93" y1="89.6094"
+              y2="354.4219"/>
+        <line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="419.5" x2="419.5" y1="89.6094"
+              y2="354.4219"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="20"
+              y="86.5332">MedicalLabTechnician
+        </text>
+        <ellipse cx="93.5" cy="15" fill="#FEFECE" filter="url(#f1f168dkoq7u5l)" rx="8" ry="8"
+                 style="stroke:#A80036;stroke-width:2.0;"/>
+        <path d="M93.5,23 L93.5,50 M80.5,31 L106.5,31 M93.5,50 L80.5,65 M93.5,50 L106.5,65 " fill="none"
+              filter="url(#f1f168dkoq7u5l)" style="stroke:#A80036;stroke-width:2.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="20"
+              y="367.9551">MedicalLabTechnician
+        </text>
+        <ellipse cx="93.5" cy="381.0313" fill="#FEFECE" filter="url(#f1f168dkoq7u5l)" rx="8" ry="8"
+                 style="stroke:#A80036;stroke-width:2.0;"/>
+        <path d="M93.5,389.0313 L93.5,416.0313 M80.5,397.0313 L106.5,397.0313 M93.5,416.0313 L80.5,431.0313 M93.5,416.0313 L106.5,431.0313 "
+              fill="none" filter="url(#f1f168dkoq7u5l)" style="stroke:#A80036;stroke-width:2.0;"/>
+        <rect fill="#FEFECE" filter="url(#f1f168dkoq7u5l)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;"
+              width="64" x="385.5" y="53"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="392.5"
+              y="74.5332">:System
+        </text>
+        <rect fill="#FEFECE" filter="url(#f1f168dkoq7u5l)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;"
+              width="64" x="385.5" y="353.4219"/>
+        <text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="392.5"
+              y="374.9551">:System
+        </text>
+        <rect fill="#FFFFFF" filter="url(#f1f168dkoq7u5l)" height="236.8125" style="stroke:#A80036;stroke-width:1.0;"
+              width="10" x="88.5" y="99.6094"/>
+        <rect fill="#FFFFFF" filter="url(#f1f168dkoq7u5l)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;"
+              width="10" x="414.5" y="121.9609"/>
+        <rect fill="#FFFFFF" filter="url(#f1f168dkoq7u5l)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;"
+              width="10" x="414.5" y="182.6641"/>
+        <rect fill="#FFFFFF" filter="url(#f1f168dkoq7u5l)" height="67.7031" style="stroke:#A80036;stroke-width:1.0;"
+              width="10" x="414.5" y="268.7188"/>
+        <polygon fill="#A80036" points="402.5,117.9609,412.5,121.9609,402.5,125.9609,406.5,121.9609"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;" x1="98.5" x2="408.5" y1="121.9609" y2="121.9609"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="7" x="105.5" y="117.1045">1
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="164" x="116.5"
+              y="117.1045">wants to record the samples
+        </text>
+        <polygon fill="#A80036" points="109.5,148.3125,99.5,152.3125,109.5,156.3125,105.5,152.3125"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="103.5" x2="418.5" y1="152.3125"
+              y2="152.3125"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="7" x="115.5" y="147.4561">2
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="84" x="126.5"
+              y="147.4561">shows test list
+        </text>
+        <polygon fill="#A80036" points="402.5,178.6641,412.5,182.6641,402.5,186.6641,406.5,182.6641"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;" x1="98.5" x2="408.5" y1="182.6641" y2="182.6641"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="7" x="105.5" y="177.8076">3
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="151" x="116.5"
+              y="177.8076">selects a test from the list
+        </text>
+        <polygon fill="#A80036" points="109.5,209.0156,99.5,213.0156,109.5,217.0156,105.5,213.0156"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="103.5" x2="418.5" y1="213.0156"
+              y2="213.0156"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="7" x="115.5" y="208.1592">4
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="144" x="126.5"
+              y="208.1592">asks how many samples
+        </text>
+        <path d="M10,228.0156 L83,228.0156 L83,236.0156 L73,246.0156 L10,246.0156 L10,228.0156 " fill="#EEEEEE"
+              style="stroke:#000000;stroke-width:1.0;"/>
+        <rect fill="none" height="79.0547" style="stroke:#000000;stroke-width:2.0;" width="453.5" x="10" y="228.0156"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="28" x="25" y="242.5107">loop
+        </text>
+        <polygon fill="#A80036" points="109.5,264.7188,99.5,268.7188,109.5,272.7188,105.5,268.7188"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="103.5" x2="413.5" y1="268.7188"
+              y2="268.7188"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="7" x="115.5" y="263.8623">5
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="286" x="126.5"
+              y="263.8623">shows sample barcode and requests confirmation
+        </text>
+        <polygon fill="#A80036" points="402.5,295.0703,412.5,299.0703,402.5,303.0703,406.5,299.0703"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;" x1="98.5" x2="408.5" y1="299.0703" y2="299.0703"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="7" x="105.5" y="294.2139">6
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="99" x="116.5"
+              y="294.2139">confirms barcode
+        </text>
+        <polygon fill="#A80036" points="104.5,332.4219,94.5,336.4219,104.5,340.4219,100.5,336.4219"
+                 style="stroke:#A80036;stroke-width:1.0;"/>
+        <line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="98.5" x2="418.5" y1="336.4219"
+              y2="336.4219"/>
+        <text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing"
+              textLength="7" x="110.5" y="331.5654">7
+        </text>
+        <text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="152" x="121.5"
+              y="331.5654">informs operation success
+        </text><!--MD5=[306aa15dde5e8b8c417410b8314ca89b]
+@startuml
+
+autonumber
+actor MedicalLabTechnician as MLT
+participant ":System" as S
+activate MLT
+MLT -> S: wants to record the samples
+activate S
+S - -> MLT: shows test list
+deactivate S
+MLT -> S: selects a test from the list
+activate S
+S - -> MLT: asks how many samples
+deactivate S
+loop
+S - -> MLT: shows sample barcode and requests confirmation
+activate S
+MLT -> S: confirms barcode
+end
+S - -> MLT: informs operation success
+deactivate S
+deactivate MLT
+@enduml
+
+PlantUML version 1.2021.00(Sun Jan 10 10:25:05 GMT 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+-->
+    </g>
+</svg>

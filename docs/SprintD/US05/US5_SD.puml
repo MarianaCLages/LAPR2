@@ -1,0 +1,78 @@
+@startuml
+autonumber
+actor MedLabTech as MLT
+participant ":RecordSampleUI" as UI
+participant ":RecordSampleController" as CTRL
+participant "ts:TestStore" as TT
+participant "test:Test" as t
+participant "s: Sample" as S
+participant ":BarcodeAdapter" as Bc
+participant ":ExternalAPI" as Ea
+participant ":Barcode" as Bar
+
+activate MLT
+MLT -> UI: wants to record the samples
+activate UI
+UI -> CTRL : SD_getTestList(testID)
+ref over CTRL: SD_TestIDDTO(testID)
+activate CTRL
+CTRL --> UI: tStoreDTO
+deactivate CTRL
+
+UI --> MLT: shows test list
+deactivate UI
+MLT -> UI: selects a test from the list
+activate UI
+UI -> CTRL: selectTest(testID)
+activate CTRL
+CTRL -> TT:test = getTest(testID)
+activate TT
+deactivate
+deactivate
+UI --> MLT: asks how many samples
+loop for each sample
+UI -> CTRL: createSampleBarcode()
+activate CTRL
+CTRL -> t: createSampleBarcode()
+activate t
+t --> S**: Sample()
+activate S
+S -> Bc: barcode = getBarcode()
+activate Bc
+Bc -> Ea: generate()
+activate Ea
+Ea --> Bar** :create
+deactivate Ea
+deactivate Bc
+return barcode
+return barcode
+return barcode
+deactivate S
+deactivate t
+deactivate CTRL
+
+UI --> MLT: shows sample barcode and requests confirmation
+deactivate UI
+
+deactivate UI
+deactivate CTRL
+deactivate CTRL
+MLT -> UI: confirms barcode
+activate UI
+UI -> CTRL: saveSample()
+activate CTRL
+CTRL -> t: saveSample()
+activate t
+t -> t: validateSample()
+activate t
+deactivate
+t -> t: saveSample()
+activate t
+deactivate
+deactivate t
+deactivate CTRL
+end
+UI --> MLT: informs operation success
+deactivate UI
+deactivate MLT
+@enduml

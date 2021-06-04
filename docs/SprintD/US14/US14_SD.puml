@@ -1,0 +1,120 @@
+@startuml
+autonumber
+
+actor "Administrator" as Administrator
+
+participant ":CreateReportUI" as UI
+participant ":CreateReportController" as CTRL
+participant "tStore: TestStore:" as TESTSTORE
+participant ":Test" as TEST
+participant ":Report" as REPORT
+
+
+activate Administrator
+Administrator -> UI: asks for a Report
+activate UI
+
+UI -> CTRL : SD_getTestList(testID)
+ref over CTRL: SD_TestIDDTO(testID)
+activate CTRL
+
+CTRL --> UI: tStoreDTO
+
+
+
+
+
+
+
+
+
+UI --> Administrator :shows the test list
+deactivate UI
+deactivate CTRL
+
+Administrator -> UI : select a test
+activate UI
+
+UI -> CTRL : getResult()
+
+
+
+activate CTRL
+
+CTRL -> TEST : getResult()
+
+deactivate CTRL
+
+
+activate TEST
+
+
+UI --> Administrator : shows Test data list and ask for a diagnosis of the test
+deactivate UI
+
+
+deactivate TEST
+
+
+Administrator -> UI : type diagnosis data
+activate UI
+
+
+
+
+UI-> CTRL : createReport()
+activate CTRL
+
+
+
+
+
+
+
+
+
+CTRL -> TEST : report = createReport(TestID, diagnosis)
+
+activate TEST
+TEST -> REPORT ** :  Report(TestID,diagnosis)
+
+
+
+
+
+deactivate CTRL
+
+
+
+UI --> Administrator : shows all data and requests confirmation
+deactivate UI
+deactivate TEST
+
+Administrator -> UI : confirms the data
+activate UI
+
+UI-> CTRL : saveReport(report)
+activate CTRL
+
+CTRL -> TEST : saveReport(report)
+deactivate CTRL
+activate TEST
+TEST -> TEST : validateReport(report)
+activate TEST
+deactivate TEST
+TEST -> TEST : saveReport(report)
+activate TEST
+deactivate TEST
+
+UI --> Administrator : informs operation success
+deactivate UI
+
+deactivate TEST
+
+
+
+
+
+
+
+@enduml

@@ -1,0 +1,64 @@
+@startuml
+
+class ParameterCategory {
+  -String CategoryName
+  -String Code
+}
+
+class Company{
+-parameterList
+-categoryList
++getCategoryList()
++getParameterStore()
+}
+
+class CreateParameterController {
+-company
+-store
+-categoryList
++createParameter(code, description, NHSid, Category)
++getCategoryList()
++saveParameter()
+}
+
+class CreateParameterUI{
+}
+
+class ParameterCategoryStore{
+-categoryList
+-category
++getCategoryList()
+}
+
+class ParameterStore{
+-parameterList
+-parameter
++createParameter()
++validateParameter()
++saveParameter()
+}
+
+class Parameter{
+-code
+-name
+-description
+-Category
++Parameter()
+}
+
+CreateParameterUI --> CreateParameterController
+
+CreateParameterController --> Company
+CreateParameterController ..> ParameterStore
+
+Company --> ParameterCategoryStore
+Company --> ParameterStore
+
+ParameterStore --> Parameter
+
+ParameterCategoryStore --> ParameterCategory
+
+
+
+Parameter  ..>  ParameterCategory
+@enduml

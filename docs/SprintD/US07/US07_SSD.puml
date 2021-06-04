@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "Administrator" as ADM
+
+activate ADM
+
+ADM -> ":System" : asks to create a new employee
+activate ":System"
+
+ADM <-- ":System": show role list
+deactivate ":System"
+
+ADM -> ":System": select a role
+activate ":System"
+ADM <-- ":System": asks for employee data(Name,Address,\n Phone Number, E-Mail,  "SOC")
+deactivate ":System"
+
+ADM -> ":System": type employee data
+activate ":System"
+ADM <-- ":System": Shows data and requests confirmation
+deactivate ":System"
+
+ADM -> ":System": confirms data
+activate ":System"
+ADM <-- ":System": shows operation success
+deactivate ":System"
+
+@enduml

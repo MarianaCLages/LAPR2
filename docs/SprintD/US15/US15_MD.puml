@@ -1,0 +1,32 @@
+@startuml
+hide methods
+
+
+class Test{
+-createdAt
+}
+
+class TestParameterResult{
+-createdAt
+-value
+-metric
+}
+
+
+class TestReport{
+-createdAt
+}
+
+
+
+class Sample{
+-createdAt
+}
+
+Test "1" -- "*" Sample: associated with <
+Test "1" -- "*" TestParameterResult: associated with <
+Test "1" -- "1" TestReport: associated with <
+
+
+
+@enduml

@@ -1,0 +1,36 @@
+@startuml
+
+class Administrator{
+}
+class Employee {
+Employee ID;
+Organization Role;
+Name;
+Address;
+Phone Number;
+E-Mail;
+Standard Occupational Classification "SOC";}
+class TypeTest{
+Test ID;
+Collecting Method;
+Parameter Categories
+}
+
+class ParameterCategory{
+Designation;
+Code;
+
+}
+class Company{
+Name
+}
+Employee "1" -- "1"Administrator: can be a >
+Company "1" -- "*" Employee: employs >
+Company "1" -- "*" ParameterCategory : adopts >
+Administrator "1" -- "*" ParameterCategory : creates >
+Administrator "1" -- "*" TypeTest: creates >
+TypeTest "1" -- "*" ParameterCategory: has >
+
+
+
+@enduml

@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+participant "RecordResultsController" as ctrl
+participant ":Company" as Comp
+participant "TestStore" as tStore
+participant "Test" as Test
+participant "TestParameterStoreMapper" as tpStoreMapper
+
+
+autonumber
+
+[o-> ctrl: getTestParameterList(sampleId)
+
+activate ctrl
+ctrl -> Comp: getTestStore()
+activate Comp
+deactivate
+ctrl -> tStore: pList = getTestParametersList(sampleId)
+activate tStore
+tStore -> Test: pList = getTestParameterList()
+activate Test
+deactivate Test
+deactivate tStore
+
+ctrl -> tpStoreMapper: toDTO(pList)
+activate tpStoreMapper
+
+tpStoreMapper --> ctrl: tpStoreDTO
+deactivate tpStoreMapper
+return tpStoreDTO
+deactivate ctrl
+deactivate tStore
+@enduml

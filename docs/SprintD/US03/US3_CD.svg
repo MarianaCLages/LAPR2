@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     contentScriptType="application/ecmascript" contentStyleType="text/css" height="982px" preserveAspectRatio="none"
+     style="width:586px;height:982px;" version="1.1" viewBox="0 0 586 982" width="586px" zoomAndPan="magnify">
+    <defs>
+        <filter height="300%" id="fhhsn3o4ghwp1" width="300%" x="-1" y="-1">
+            <feGaussianBlur result="blurOut" stdDeviation="2.0"/>
+            <feColorMatrix in="blurOut" result="blurOut2" type="matrix"
+                           values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/>
+            <feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/>
+            <feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/>
+        </filter>
+    </defs>
+    <g><!--MD5=[71152100d89f377ebd8dc97f1c2b0d02]
+class RegisterClientUI-->
+        <rect codeLine="2" fill="#FEFECE" filter="url(#fhhsn3o4ghwp1)" height="48" id="RegisterClientUI"
+              style="stroke:#A80036;stroke-width:1.5;" width="123" x="228" y="7"/>
+        <ellipse cx="243" cy="23" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M245,19.5 Q245.2031,19 245.4375,18.75 Q245.6719,18.5 245.9375,18.5 Q246.4063,18.5 246.7031,18.7813 Q247,19.0625 247,19.7188 L247,21.2813 Q247,21.9375 246.7188,22.2188 Q246.4375,22.5 246,22.5 Q245.6094,22.5 245.3594,22.3281 Q245.1094,22.1563 245,21.7031 Q244.9531,21.3906 244.7813,21.2188 Q244.4688,20.8906 243.9063,20.7031 Q243.3438,20.5 242.7813,20.5 Q242.0781,20.5 241.4844,20.7813 Q240.9063,21.0625 240.4531,21.6875 Q240,22.3125 240,23.1719 L240,24.0938 Q240,25.125 240.8438,25.8125 Q241.6875,26.5 243.1875,26.5 Q244.0781,26.5 244.7031,26.2969 Q245.0625,26.1875 245.4688,25.8281 Q245.7344,25.625 245.875,25.5625 Q246.0156,25.5 246.1875,25.5 Q246.5156,25.5 246.75,25.7656 Q247,26.0156 247,26.375 Q247,26.7188 246.6563,27.125 Q246.1563,27.7188 245.3594,28.0469 Q244.3125,28.5 243.0313,28.5 Q241.5313,28.5 240.3281,27.9063 Q239.3594,27.4375 238.6719,26.4219 Q238,25.4063 238,24.2031 L238,23.1094 Q238,21.8594 238.5938,20.7656 Q239.2031,19.6719 240.25,19.0938 Q241.3125,18.5 242.5,18.5 Q243.2188,18.5 243.8438,18.75 Q244.4688,19 245,19.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="91" x="257"
+              y="27.9102">RegisterClientUI
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="229" x2="350" y1="39" y2="39"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="229" x2="350" y1="47" y2="47"/><!--MD5=[1a7fda4a36185bcd740bdf14b2b3a45e]
+class RegisterClientController-->
+        <rect codeLine="5" fill="#FEFECE" filter="url(#fhhsn3o4ghwp1)" height="117.1797" id="RegisterClientController"
+              style="stroke:#A80036;stroke-width:1.5;" width="565" x="7" y="115"/>
+        <ellipse cx="218.75" cy="131" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M220.75,127.5 Q220.9531,127 221.1875,126.75 Q221.4219,126.5 221.6875,126.5 Q222.1563,126.5 222.4531,126.7813 Q222.75,127.0625 222.75,127.7188 L222.75,129.2813 Q222.75,129.9375 222.4688,130.2188 Q222.1875,130.5 221.75,130.5 Q221.3594,130.5 221.1094,130.3281 Q220.8594,130.1563 220.75,129.7031 Q220.7031,129.3906 220.5313,129.2188 Q220.2188,128.8906 219.6563,128.7031 Q219.0938,128.5 218.5313,128.5 Q217.8281,128.5 217.2344,128.7813 Q216.6563,129.0625 216.2031,129.6875 Q215.75,130.3125 215.75,131.1719 L215.75,132.0938 Q215.75,133.125 216.5938,133.8125 Q217.4375,134.5 218.9375,134.5 Q219.8281,134.5 220.4531,134.2969 Q220.8125,134.1875 221.2188,133.8281 Q221.4844,133.625 221.625,133.5625 Q221.7656,133.5 221.9375,133.5 Q222.2656,133.5 222.5,133.7656 Q222.75,134.0156 222.75,134.375 Q222.75,134.7188 222.4063,135.125 Q221.9063,135.7188 221.1094,136.0469 Q220.0625,136.5 218.7813,136.5 Q217.2813,136.5 216.0781,135.9063 Q215.1094,135.4375 214.4219,134.4219 Q213.75,133.4063 213.75,132.2031 L213.75,131.1094 Q213.75,129.8594 214.3438,128.7656 Q214.9531,127.6719 216,127.0938 Q217.0625,126.5 218.25,126.5 Q218.9688,126.5 219.5938,126.75 Q220.2188,127 220.75,127.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="133" x="239.25"
+              y="135.9102">RegisterClientController
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="571" y1="147" y2="147"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="155"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="44" x="27"
+              y="162.4189">company
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="168.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="25" x="27"
+              y="176.2549">store
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="571" y1="182.6719" y2="182.6719"/>
+        <ellipse cx="18" cy="193.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="49" x="27"
+              y="198.0908">getStore()
+        </text>
+        <ellipse cx="18" cy="207.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="539" x="27"
+              y="211.9268">createClient(int cc, int nhs, string birthDate, string sex, int tinNumber, int phoneNumber,
+            string email, string name)
+        </text>
+        <ellipse cx="18" cy="221.3438" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="58" x="27"
+              y="225.7627">saveClient()
+        </text><!--MD5=[8ae808d068a8995f06b9b3ec51357f0b]
+class AuthFacade-->
+        <rect codeLine="13" fill="#FEFECE" filter="url(#fhhsn3o4ghwp1)" height="61.8359" id="AuthFacade"
+              style="stroke:#A80036;stroke-width:1.5;" width="261" x="42" y="893"/>
+        <ellipse cx="135.75" cy="909" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M137.75,905.5 Q137.9531,905 138.1875,904.75 Q138.4219,904.5 138.6875,904.5 Q139.1563,904.5 139.4531,904.7813 Q139.75,905.0625 139.75,905.7188 L139.75,907.2813 Q139.75,907.9375 139.4688,908.2188 Q139.1875,908.5 138.75,908.5 Q138.3594,908.5 138.1094,908.3281 Q137.8594,908.1563 137.75,907.7031 Q137.7031,907.3906 137.5313,907.2188 Q137.2188,906.8906 136.6563,906.7031 Q136.0938,906.5 135.5313,906.5 Q134.8281,906.5 134.2344,906.7813 Q133.6563,907.0625 133.2031,907.6875 Q132.75,908.3125 132.75,909.1719 L132.75,910.0938 Q132.75,911.125 133.5938,911.8125 Q134.4375,912.5 135.9375,912.5 Q136.8281,912.5 137.4531,912.2969 Q137.8125,912.1875 138.2188,911.8281 Q138.4844,911.625 138.625,911.5625 Q138.7656,911.5 138.9375,911.5 Q139.2656,911.5 139.5,911.7656 Q139.75,912.0156 139.75,912.375 Q139.75,912.7188 139.4063,913.125 Q138.9063,913.7188 138.1094,914.0469 Q137.0625,914.5 135.7813,914.5 Q134.2813,914.5 133.0781,913.9063 Q132.1094,913.4375 131.4219,912.4219 Q130.75,911.4063 130.75,910.2031 L130.75,909.1094 Q130.75,907.8594 131.3438,906.7656 Q131.9531,905.6719 133,905.0938 Q134.0625,904.5 135.25,904.5 Q135.9688,904.5 136.5938,904.75 Q137.2188,905 137.75,905.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="65" x="156.25"
+              y="913.9102">AuthFacade
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="43" x2="302" y1="925" y2="925"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="43" x2="302" y1="933" y2="933"/>
+        <ellipse cx="53" cy="944" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="235" x="62"
+              y="948.4189">addUserWithRole(name, email, password, roleId)
+        </text><!--MD5=[02e4b9b7573f1156f41e60aa5b4e25a4]
+class Company-->
+        <rect codeLine="18" fill="#FEFECE" filter="url(#fhhsn3o4ghwp1)" height="75.6719" id="Company"
+              style="stroke:#A80036;stroke-width:1.5;" width="85" x="199" y="292"/>
+        <ellipse cx="214" cy="308" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M216,304.5 Q216.2031,304 216.4375,303.75 Q216.6719,303.5 216.9375,303.5 Q217.4063,303.5 217.7031,303.7813 Q218,304.0625 218,304.7188 L218,306.2813 Q218,306.9375 217.7188,307.2188 Q217.4375,307.5 217,307.5 Q216.6094,307.5 216.3594,307.3281 Q216.1094,307.1563 216,306.7031 Q215.9531,306.3906 215.7813,306.2188 Q215.4688,305.8906 214.9063,305.7031 Q214.3438,305.5 213.7813,305.5 Q213.0781,305.5 212.4844,305.7813 Q211.9063,306.0625 211.4531,306.6875 Q211,307.3125 211,308.1719 L211,309.0938 Q211,310.125 211.8438,310.8125 Q212.6875,311.5 214.1875,311.5 Q215.0781,311.5 215.7031,311.2969 Q216.0625,311.1875 216.4688,310.8281 Q216.7344,310.625 216.875,310.5625 Q217.0156,310.5 217.1875,310.5 Q217.5156,310.5 217.75,310.7656 Q218,311.0156 218,311.375 Q218,311.7188 217.6563,312.125 Q217.1563,312.7188 216.3594,313.0469 Q215.3125,313.5 214.0313,313.5 Q212.5313,313.5 211.3281,312.9063 Q210.3594,312.4375 209.6719,311.4219 Q209,310.4063 209,309.2031 L209,308.1094 Q209,306.8594 209.5938,305.7656 Q210.2031,304.6719 211.25,304.0938 Q212.3125,303.5 213.5,303.5 Q214.2188,303.5 214.8438,303.75 Q215.4688,304 216,304.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53" x="228"
+              y="312.9102">Company
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="200" x2="283" y1="324" y2="324"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="207" y="332"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="42" x="219"
+              y="339.4189">clientList
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="200" x2="283" y1="345.8359" y2="345.8359"/>
+        <ellipse cx="210" cy="356.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="49" x="219"
+              y="361.2549">getStore()
+        </text><!--MD5=[ed6624c6556d5e7b1bd23032162d20b7]
+class Client-->
+        <rect codeLine="23" fill="#FEFECE" filter="url(#fhhsn3o4ghwp1)" height="200.1953" id="Client"
+              style="stroke:#A80036;stroke-width:1.5;" width="534" x="22.5" y="619"/>
+        <ellipse cx="269.25" cy="635" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M271.25,631.5 Q271.4531,631 271.6875,630.75 Q271.9219,630.5 272.1875,630.5 Q272.6563,630.5 272.9531,630.7813 Q273.25,631.0625 273.25,631.7188 L273.25,633.2813 Q273.25,633.9375 272.9688,634.2188 Q272.6875,634.5 272.25,634.5 Q271.8594,634.5 271.6094,634.3281 Q271.3594,634.1563 271.25,633.7031 Q271.2031,633.3906 271.0313,633.2188 Q270.7188,632.8906 270.1563,632.7031 Q269.5938,632.5 269.0313,632.5 Q268.3281,632.5 267.7344,632.7813 Q267.1563,633.0625 266.7031,633.6875 Q266.25,634.3125 266.25,635.1719 L266.25,636.0938 Q266.25,637.125 267.0938,637.8125 Q267.9375,638.5 269.4375,638.5 Q270.3281,638.5 270.9531,638.2969 Q271.3125,638.1875 271.7188,637.8281 Q271.9844,637.625 272.125,637.5625 Q272.2656,637.5 272.4375,637.5 Q272.7656,637.5 273,637.7656 Q273.25,638.0156 273.25,638.375 Q273.25,638.7188 272.9063,639.125 Q272.4063,639.7188 271.6094,640.0469 Q270.5625,640.5 269.2813,640.5 Q267.7813,640.5 266.5781,639.9063 Q265.6094,639.4375 264.9219,638.4219 Q264.25,637.4063 264.25,636.2031 L264.25,635.1094 Q264.25,633.8594 264.8438,632.7656 Q265.4531,631.6719 266.5,631.0938 Q267.5625,630.5 268.75,630.5 Q269.4688,630.5 270.0938,630.75 Q270.7188,631 271.25,631.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="32" x="289.75"
+              y="639.9102">Client
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="23.5" x2="555.5" y1="651" y2="651"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="30.5" y="659"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="67" x="42.5"
+              y="666.4189">phoneNumber
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="30.5" y="672.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="42.5"
+              y="680.2549">String cc
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="30.5" y="686.6719"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="21" x="42.5"
+              y="694.0908">nhs;
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="30.5" y="700.5078"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="51" x="42.5"
+              y="707.9268">tinNumber;
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="30.5" y="714.3438"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="46" x="42.5"
+              y="721.7627">birthDate;
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="30.5" y="728.1797"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="21" x="42.5"
+              y="735.5986">sex;
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="30.5" y="742.0156"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="27" x="42.5"
+              y="749.4346">email;
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="30.5" y="755.8516"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="29" x="42.5"
+              y="763.2705">name;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="23.5" x2="555.5" y1="769.6875" y2="769.6875"/>
+        <ellipse cx="33.5" cy="780.6875" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="508" x="42.5"
+              y="785.1064">Client(int cc, int nhs, string birthDate, string sex, int tinNumber, int phoneNumber, string
+            email, string name)
+        </text>
+        <ellipse cx="33.5" cy="794.5234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="135" x="42.5"
+              y="798.9424">addUserWithRole(company)
+        </text>
+        <rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="30.5" y="805.3594"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="73" x="42.5"
+              y="812.7783">getPassword()
+        </text><!--MD5=[55cb992be19579b505cea3c5691093cb]
+class ClientStore-->
+        <rect codeLine="38" fill="#FEFECE" filter="url(#fhhsn3o4ghwp1)" height="131.0156" id="ClientStore"
+              style="stroke:#A80036;stroke-width:1.5;" width="565" x="7" y="428"/>
+        <ellipse cx="254.75" cy="444" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M256.75,440.5 Q256.9531,440 257.1875,439.75 Q257.4219,439.5 257.6875,439.5 Q258.1563,439.5 258.4531,439.7813 Q258.75,440.0625 258.75,440.7188 L258.75,442.2813 Q258.75,442.9375 258.4688,443.2188 Q258.1875,443.5 257.75,443.5 Q257.3594,443.5 257.1094,443.3281 Q256.8594,443.1563 256.75,442.7031 Q256.7031,442.3906 256.5313,442.2188 Q256.2188,441.8906 255.6563,441.7031 Q255.0938,441.5 254.5313,441.5 Q253.8281,441.5 253.2344,441.7813 Q252.6563,442.0625 252.2031,442.6875 Q251.75,443.3125 251.75,444.1719 L251.75,445.0938 Q251.75,446.125 252.5938,446.8125 Q253.4375,447.5 254.9375,447.5 Q255.8281,447.5 256.4531,447.2969 Q256.8125,447.1875 257.2188,446.8281 Q257.4844,446.625 257.625,446.5625 Q257.7656,446.5 257.9375,446.5 Q258.2656,446.5 258.5,446.7656 Q258.75,447.0156 258.75,447.375 Q258.75,447.7188 258.4063,448.125 Q257.9063,448.7188 257.1094,449.0469 Q256.0625,449.5 254.7813,449.5 Q253.2813,449.5 252.0781,448.9063 Q251.1094,448.4375 250.4219,447.4219 Q249.75,446.4063 249.75,445.2031 L249.75,444.1094 Q249.75,442.8594 250.3438,441.7656 Q250.9531,440.6719 252,440.0938 Q253.0625,439.5 254.25,439.5 Q254.9688,439.5 255.5938,439.75 Q256.2188,440 256.75,440.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="61" x="275.25"
+              y="448.9102">ClientStore
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="571" y1="460" y2="460"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="468"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="43" x="27"
+              y="475.4189">ClientList
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="15" y="481.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="26" x="27"
+              y="489.2549">Client
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="571" y1="495.6719" y2="495.6719"/>
+        <ellipse cx="18" cy="506.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="539" x="27"
+              y="511.0908">createClient(int cc, int nhs, string birthDate, string sex, int tinNumber, int phoneNumber,
+            string email, string name)
+        </text>
+        <ellipse cx="18" cy="520.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="58" x="27"
+              y="524.9268">saveClient()
+        </text>
+        <ellipse cx="18" cy="534.3438" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="77" x="27"
+              y="538.7627">validateClient(c)
+        </text>
+        <ellipse cx="18" cy="548.1797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="93" x="27"
+              y="552.5986">addUser(company)
+        </text><!--MD5=[b90084bcacc18e454bff8c773e52026f]
+class email-->
+        <rect codeLine="47" fill="#FEFECE" filter="url(#fhhsn3o4ghwp1)" height="89.5078" id="email"
+              style="stroke:#A80036;stroke-width:1.5;" width="138" x="338.5" y="879"/>
+        <ellipse cx="387.75" cy="895" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M389.75,891.5 Q389.9531,891 390.1875,890.75 Q390.4219,890.5 390.6875,890.5 Q391.1563,890.5 391.4531,890.7813 Q391.75,891.0625 391.75,891.7188 L391.75,893.2813 Q391.75,893.9375 391.4688,894.2188 Q391.1875,894.5 390.75,894.5 Q390.3594,894.5 390.1094,894.3281 Q389.8594,894.1563 389.75,893.7031 Q389.7031,893.3906 389.5313,893.2188 Q389.2188,892.8906 388.6563,892.7031 Q388.0938,892.5 387.5313,892.5 Q386.8281,892.5 386.2344,892.7813 Q385.6563,893.0625 385.2031,893.6875 Q384.75,894.3125 384.75,895.1719 L384.75,896.0938 Q384.75,897.125 385.5938,897.8125 Q386.4375,898.5 387.9375,898.5 Q388.8281,898.5 389.4531,898.2969 Q389.8125,898.1875 390.2188,897.8281 Q390.4844,897.625 390.625,897.5625 Q390.7656,897.5 390.9375,897.5 Q391.2656,897.5 391.5,897.7656 Q391.75,898.0156 391.75,898.375 Q391.75,898.7188 391.4063,899.125 Q390.9063,899.7188 390.1094,900.0469 Q389.0625,900.5 387.7813,900.5 Q386.2813,900.5 385.0781,899.9063 Q384.1094,899.4375 383.4219,898.4219 Q382.75,897.4063 382.75,896.2031 L382.75,895.1094 Q382.75,893.8594 383.3438,892.7656 Q383.9531,891.6719 385,891.0938 Q386.0625,890.5 387.25,890.5 Q387.9688,890.5 388.5938,890.75 Q389.2188,891 389.75,891.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="31" x="408.25"
+              y="899.9102">email
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="339.5" x2="475.5" y1="911" y2="911"/>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="346.5" y="919"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="40" x="358.5"
+              y="926.4189">address
+        </text>
+        <rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="346.5" y="932.8359"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="50" x="358.5"
+              y="940.2549">password
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="339.5" x2="475.5" y1="946.6719" y2="946.6719"/>
+        <ellipse cx="349.5" cy="957.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="358.5"
+              y="962.0908">email(password, email)
+        </text><!--MD5=[3388e80e66703edb167e8878a849e399]
+link Client to email-->
+        <path codeLine="53" d="M347.12,819.12 C358.24,838.26 369.43,857.5 379.1,874.14 " fill="none"
+              id="Client-to-email" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036"
+                 points="381.79,878.76,380.7284,868.9685,379.2786,874.4365,373.8107,872.9867,381.79,878.76"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[98d2d934d445daef8d5bcbeea20c1f70]
+link RegisterClientUI to RegisterClientController-->
+        <path codeLine="54" d="M289.5,55.2 C289.5,70.09 289.5,90.2 289.5,109.56 " fill="none"
+              id="RegisterClientUI-to-RegisterClientController" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="289.5,115,293.5,106,289.5,110,285.5,106,289.5,115"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[198be3749d42ca56b2a20022cdc44bdd]
+link RegisterClientController to Company-->
+        <path codeLine="55" d="M271.63,232.03 C266.02,250.07 259.94,269.64 254.72,286.45 " fill="none"
+              id="RegisterClientController-to-Company" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036"
+                 points="253.13,291.58,259.6248,284.1761,254.6165,286.8061,251.9865,281.7977,253.13,291.58"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d17ba2de69bcbdc84560ba08c091bb6c]
+link RegisterClientController to ClientStore-->
+        <path codeLine="56"
+              d="M296.56,232.08 C298.58,251.13 300.5,272.44 301.5,292 C303.22,325.73 303.12,334.26 301.5,368 C300.64,385.84 299.1,405.08 297.39,422.96 "
+              fill="none" id="RegisterClientController-to-ClientStore"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="#A80036"
+                 points="296.91,427.97,301.7662,419.4016,297.3962,422.9937,293.8041,418.6237,296.91,427.97"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a11230341c8e65219708844feaa40162]
+link Company to ClientStore-->
+        <path codeLine="57" d="M252.51,368.05 C257.32,384.22 263.12,403.74 268.69,422.48 " fill="none"
+              id="Company-to-ClientStore" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036"
+                 points="270.25,427.74,271.5165,417.9729,268.8237,422.9477,263.8489,420.2549,270.25,427.74"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[1d934105a045dbf126514c6917bd5072]
+link ClientStore to Client-->
+        <path codeLine="59" d="M289.5,559.15 C289.5,576.23 289.5,595.12 289.5,613.73 " fill="none"
+              id="ClientStore-to-Client" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="289.5,618.97,293.5,609.97,289.5,613.97,285.5,609.97,289.5,618.97"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9250d73f0fb2df684fbc76a1ebd6cb56]
+link Client to AuthFacade-->
+        <path codeLine="60" d="M232.37,819.12 C218.15,843.8 203.81,868.67 192.74,887.88 " fill="none"
+              id="Client-to-AuthFacade" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="#A80036" points="190,892.64,197.965,886.847,192.5007,888.3103,191.0374,882.8459,190,892.64"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[7791206a7c9c85faf4ca4fe409b5a740]
+@startuml
+
+class RegisterClientUI{
+}
+
+class RegisterClientController{
+    - company
+    - store
+    + getStore()
+    + createClient(int cc, int nhs, string birthDate, string sex, int tinNumber, int phoneNumber, string email, string name)
+    + saveClient()
+}
+
+class AuthFacade{
+    + addUserWithRole(name, email, password, roleId)
+}
+
+
+class Company{
+    - clientList
+    + getStore()
+}
+
+class Client{
+    -phoneNumber
+    -String cc
+    -nhs;
+    -tinNumber;
+    -birthDate;
+    -sex;
+    -email;
+    -name;
+    + Client(int cc, int nhs, string birthDate, string sex, int tinNumber, int phoneNumber, string email, string name)
+    + addUserWithRole(company)
+    - getPassword()
+
+}
+
+class ClientStore{
+    - ClientList
+    - Client
+    + createClient(int cc, int nhs, string birthDate, string sex, int tinNumber, int phoneNumber, string email, string name)
+    + saveClient()
+    + validateClient(c)
+    + addUser(company)
+}
+
+class email{
+    -address
+    -password
+    +email(password, email)
+}
+
+Client - -> email
+RegisterClientUI - -> RegisterClientController
+RegisterClientController - -> Company
+RegisterClientController ..> ClientStore
+Company - -> ClientStore
+
+ClientStore - -> Client
+Client ..> AuthFacade
+@enduml
+
+PlantUML version 1.2021.5(Sun Apr 25 12:20:28 BST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+-->
+    </g>
+</svg>

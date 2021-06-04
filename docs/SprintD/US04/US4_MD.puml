@@ -1,0 +1,33 @@
+@startuml
+
+class Test{
+Client;
+Test ID;
+Test NHS Number
+}
+class TypeTest{
+Test ID;
+Collecting Method;
+Parameter Categories;
+}
+
+class Parameter{
+name;
+code;
+description;
+}
+class ParameterCategory{
+name;
+code;
+}
+
+Company "1" -- "*" Parameter: capable of analysing >
+Company "1" -- "*" Test: performs >
+Company "1" -- "*" TypeTest: conducts >
+Parameter "1" -- "1" ParameterCategory : has a >
+Test "1" -- "*" Parameter : has >
+TypeTest "1" -- "*" Test : as a <
+TypeTest "1" -- "*" ParameterCategory : has >
+
+@enduml
+@enduml

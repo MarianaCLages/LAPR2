@@ -1,0 +1,30 @@
+@startuml
+autonumber
+actor "Clinical Chemistry Technologist" as cct
+actor "System" as SYS
+activate cct
+cct -> SYS: Asks for record the results of a given test
+activate SYS
+SYS --> cct: Asks for the code of the sample
+deactivate SYS
+cct -> SYS: Inserts the sample barcode number
+activate SYS
+
+loop for all the parameters
+    SYS --> cct: Show parameters and asks to choose one
+    deactivate SYS
+    cct -> SYS: Choose parameter
+    activate SYS
+    SYS -> cct: Asks for results value and metric
+    deactivate SYS
+    cct -> SYS: Types results value and metric
+    activate SYS
+end
+
+SYS --> cct: Show all data and request confirmation
+deactivate SYS
+cct -> SYS: confirms the operation
+activate SYS
+SYS --> cct: Show success
+
+@enduml

@@ -1,0 +1,55 @@
+@startuml
+
+
+
+class CreateTestTypeUI{
+}
+
+class CreateTestTypeController{
+    - company
+    - store
+    - categoryStore
+    + CreateTestType(testID, collectingMethod, description, catStore)
+    + getParameterCategoryStore()
+    + saveTestType()
+    + add(catStore)
+}
+
+class Company{
+    -designation
+    + createParameterCategoryStore()
+    + createTestTypeStore()
+}
+
+class TestTypeStore{
+    - TestTypeList
+    - testType
+    + CreateTestType(testID, collectingMethod, description, catStore)
+    + ValidateTestType(t)
+    + saveTestType(t)
+}
+
+class TestType{
+    - testeID
+    - collectingMethod
+    - description
+    - CategoryList
+    + TestType(testID, collectingMethod, description, catStore)
+}
+
+class ParameterCategoryStore{
+    - CategoryList
+    - Category
+    + getParameterCategoryStore()
+}
+
+CreateTestTypeUI --> CreateTestTypeController
+CreateTestTypeController --> Company
+Company --> TestTypeStore
+Company --> ParameterCategoryStore
+CreateTestTypeController ..> TestTypeStore
+CreateTestTypeController .> ParameterCategoryStore
+TestTypeStore "1" --> "*" TestType
+TestType "1" --> "1" ParameterCategoryStore
+@enduml
+

@@ -1,0 +1,22 @@
+@startuml
+autonumber
+
+actor Receptionist as R
+participant ":System" as S
+
+activate R
+R -> S: asks to register a new client
+activate S
+S --> R: requests Client's registration data (citizen card number, NHS number,\n birth date, sex, TIF number, phone number, e-mail, name)
+deactivate S
+R -> S: types data
+activate S
+R <-- S: shows data and requests confirmation
+deactivate S
+R -> S: confirms data
+activate S
+S --> R : informs operation success
+deactivate S
+deactivate R
+
+@enduml
