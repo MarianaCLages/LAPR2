@@ -1,20 +1,14 @@
 
-`
-0src/main/java/app/controller/AuthController.java,4\0\40778ef1d8f18e9634da9485a353d2b842458731
 b
 2src/main/java/app/controller/ClientController.java,5\a\5a87feaf6f42c59d6fb9b1b9dfbc7e3301510ae2
 o
 ?src/main/java/app/controller/ClinicalAnalysisLabController.java,9\9\99d9976c4ac34e1567bbe535e4dd5d6ff6d7017b
 h
 8src/main/java/app/controller/CreateReportController.java,9\5\954d5db3391dc8b57d290338d9603b874969bfe6
-X
-(src/main/java/app/ui/console/AuthUI.java,a\c\ac569ed985938d514a4808da16cd4fbc88fa6036
 b
 2src/main/java/app/ui/console/LabCoordinatorUI.java,6\e\6ec64a9683594148c3fad2c0650a65c947677758
 c
 3src/main/java/app/domain/stores/ParameterStore.java,7\d\7df0384a20bdaebe6b51963547bbdd812dd751a8
-`
-0src/main/java/app/domain/stores/SampleStore.java,7\8\78123e69cbd69ba5f5327a1347d1b0be7f44af9d
 b
 2src/main/java/app/domain/stores/TestTypeStore.java,6\9\69abcc76976e9f417dc01351473c7f46aba03ee9
 ^
@@ -83,11 +77,3 @@ h
 8src/main/java/app/controller/RecordSampleController.java,d\d\dd80a1497acffafe28094da8362c395f56b62a36
 `
 0src/main/java/app/ui/console/RecordSampleUI.java,c\4\c47fc00542260444261c62b97d7e948aefb765b6
-U
-%src/main/java/app/controller/App.java,4\7\47cfbdc47faac4c1edcb93d1b6968a5d5bdad509
-^
-.src/main/java/app/domain/shared/Constants.java,f\e\fecb2f10414ac5d80f9e492ba88044c5911e8e84
-^
-.src/main/java/app/domain/shared/Serialize.java,3\f\3fe7ffce209e4112cfdc3ef138eaedb338af6089
-[
-+src/main/java/app/domain/model/Company.java,e\6\e66f0f8e51b44df23f2004467961976fbec241aa

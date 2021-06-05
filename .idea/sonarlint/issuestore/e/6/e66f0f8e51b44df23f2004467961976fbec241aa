@@ -1,27 +1,0 @@
-
-F
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
-I
-java:S1948",Make "authFacade" transient or serializable.(©Úş8Ëê¦Ç/
-Y
-java:S1948"7Make "parameterCategoryList" transient or serializable.(…¥×ìşÿÿÿÿ8Ëê¦Ç/
-[
-java:S1948"9Make "clinicalAnalysisLabList" transient or serializable.(«¥Û‹øÿÿÿÿ8Ìê¦Ç/
-P
-java:S1948".Make "employeeList" transient or serializable.(ÓÔÜâşÿÿÿÿ8Ìê¦Ç/
-N
-java:S1948",Make "clientList" transient or serializable.(‡¦á›ùÿÿÿÿ8Ìê¦Ç/
-L
-java:S1948"*Make "testList" transient or serializable.(˜ú¿Ãùÿÿÿÿ8Ìê¦Ç/
-J
-java:S1948"-Make "sampleStore" transient or serializable.(ğµÕš8Ìê¦Ç/
-Q
-java:S1948"/Make "parameterList" transient or serializable.(÷³¾£ÿÿÿÿÿ8Íê¦Ç/
-K
-java:S1948".Make "testTypeList" transient or serializable.(áĞêÁ8Íê¦Ç/
-G
-java:S1948"*Make "roleList" transient or serializable.(€ÿ’à8Íê¦Ç/
-H
-java:S1948"&Make "user" transient or serializable.(Èš°Ûÿÿÿÿÿ8Íê¦Ç/
-S	java:S106'"9Replace this use of System.out or System.err by a logger.(ÂÖ»ùÿÿÿÿ
-T	java:S106"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ

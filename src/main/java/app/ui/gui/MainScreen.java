@@ -22,7 +22,12 @@ public class MainScreen extends Application {
 
         Scene scene = new Scene(root);
 
+        //String css = this.getClass().getResource("/Styles/Styles.css").toExternalForm();
+        //scene.getStylesheets().add(css);
+
         primaryStage.setScene(scene);
+
+        primaryStage.setTitle("Many Labs APP");
 
         primaryStage.show();
 
