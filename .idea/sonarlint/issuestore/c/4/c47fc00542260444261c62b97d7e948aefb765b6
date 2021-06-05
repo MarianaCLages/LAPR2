@@ -1,0 +1,11 @@
+
+p
+java:S1450"SRemove the "test" field and declare it as a local variable in the relevant methods.(βΒξ8κη‚Η/
+q	java:S116"URename this field "SampleList" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§ΐβγ8λη‚Η/
+o
+java:S3776""RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(“–ύώ8νη‚Η/
+Z	java:S106+"9Replace this use of System.out or System.err by a logger.(κΈϊÿÿÿÿ8ξη‚Η/
+Z	java:S1068"9Replace this use of System.out or System.err by a logger.(©ώκάϊÿÿÿÿ8οη‚Η/
+Z	java:S1069"9Replace this use of System.out or System.err by a logger.(Γ›ε­ÿÿÿÿÿ8οη‚Η/
+K
+java:S1068".Remove this unused "SampleList" private field.(§ΐβγ8πη‚Η/

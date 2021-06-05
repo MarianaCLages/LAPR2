@@ -1,0 +1,33 @@
+
+f
+java:S2095"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(³ˆ•ùÿÿÿÿ
+0
+java:S1643"Use a StringBuilder instead.(€Ÿ¡²
+N
+java:S1141"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+d	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Å±­¢
+i	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ôÓÕıøÿÿÿÿ
+j
+java:S1450"VRemove the "barcode" field and declare it as a local variable in the relevant methods.(Ìİ·
+j
+java:S1450"QRemove the "em" field and declare it as a local variable in the relevant methods.(Ú¸Í•ÿÿÿÿÿ
+]
+java:S2147"DCombine this catch with the one at line 81, which has the same body.(Â–şºıÿÿÿÿ
+X
+java:S2147"DCombine this catch with the one at line 81, which has the same body.(•¶ĞÜ
+Q	java:S106"9Replace this use of System.out or System.err by a logger.(ı™øøÿÿÿÿ
+L
+java:S1874"3Remove this use of "newInstance"; it is deprecated.(İ¥Ö–ÿÿÿÿÿ
+A	java:S108")Either remove or fill this block of code.(àöÆœøÿÿÿÿ
+A	java:S108")Either remove or fill this block of code.(Â–şºıÿÿÿÿ
+<	java:S108")Either remove or fill this block of code.(•¶ĞÜ
+U
+java:S1126"AReplace this if-then-else statement by a single return statement.(Ùøƒ”
+U
+java:S1126"AReplace this if-then-else statement by a single return statement.(«—¢
+V
+java:S4275"BRefactor this getter so that it actually refers to the field "sm".(ˆƒÌ®
+?
+java:S1144"+Remove this unused private "exists" method.(¢¹¡£
+A
+java:S1144"-Remove this unused private "contains" method.(ëÔå¦
