@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.AdministratorUI">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.Employees.AdministratorUI">
+   <children>
+      <Label layoutX="120.0" layoutY="59.0" prefHeight="25.0" prefWidth="231.0" text="Create a new Parameter Category" />
+      <Button fx:id="myParameterCategoryButton" layoutX="349.0" layoutY="59.0" mnemonicParsing="false" text="Here" />
+      <Label layoutX="120.0" layoutY="106.0" prefHeight="25.0" prefWidth="231.0" text="Create a new Parameter" />
+      <Button fx:id="myParameterButton" layoutX="349.0" layoutY="106.0" mnemonicParsing="false" text="Here" />
+      <Label layoutX="120.0" layoutY="163.0" prefHeight="25.0" prefWidth="231.0" text="Create a new TestType" />
+      <Button fx:id="myTestTypeButton" layoutX="349.0" layoutY="163.0" mnemonicParsing="false" text="Here" />
+      <Label layoutX="120.0" layoutY="213.0" prefHeight="25.0" prefWidth="231.0" text="Create a new Clinical Analysis Laboratory" />
+      <Button fx:id="myClinicalButton" layoutX="349.0" layoutY="213.0" mnemonicParsing="false" text="Here" />
+      <Label layoutX="120.0" layoutY="269.0" prefHeight="25.0" prefWidth="231.0" text="Register a new Emplyoee" />
+      <Button fx:id="myEmployeeButton" layoutX="349.0" layoutY="269.0" mnemonicParsing="false" text="Here" />
+      <Button layoutX="14.0" layoutY="339.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="113.0" text="Return" />
+   </children>
 </AnchorPane>

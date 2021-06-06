@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.MainController">
+<AnchorPane prefHeight="492.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.Controllers.MainController">
    <children>
-      <Button fx:id="btnCredits" layoutX="228.0" layoutY="255.0" mnemonicParsing="false" onAction="#credits" text="Know the team">
+      <Button fx:id="btnCredits" layoutX="228.0" layoutY="258.0" mnemonicParsing="false" onAction="#credits" text="Know the team">
          <font>
             <Font size="18.0" />
          </font>
@@ -21,5 +22,9 @@
             <Font size="81.0" />
          </font>
       </Label>
+      <ImageView fx:id="imageID" fitHeight="137.0" fitWidth="178.0" layoutX="211.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Logo/Logo1.png" />
+         </image></ImageView>
    </children>
 </AnchorPane>
