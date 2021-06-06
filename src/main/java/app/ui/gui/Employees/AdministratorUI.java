@@ -3,19 +3,27 @@ package app.ui.gui.Employees;
 
 import app.ui.gui.Controllers.SceneController;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 import java.io.IOException;
 
 public class AdministratorUI {
 
+    @FXML
+    private Button myReturnButton;
+    @FXML
+    private Button myParameterCategoryButton;
+    @FXML
+    private Button myParameterButton;
+    @FXML
+    private Button myTestTypeButton;
+    @FXML
+    private Button myClinicalButton;
+    @FXML
+    private Button myEmployeeButton;
 
-    public Button myReturnButton;
-    public Button myParameterCategoryButton;
-    public Button myParameterButton;
-    public Button myTestTypeButton;
-    public Button myClinicalButton;
-    public Button myEmployeeButton;
+
     private SceneController sceneController = SceneController.getInstance();
 
 

@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -34,6 +35,8 @@ public class MainScreen extends Application {
         });
 
         primaryStage.setResizable(false);
+
+       // primaryStage.getIcons().add(new Image("Logo1.png"));
 
     }
 

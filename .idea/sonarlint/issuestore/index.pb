@@ -109,22 +109,8 @@ R
 0src/main/java/app/controller/AuthController.java,4\0\40778ef1d8f18e9634da9485a353d2b842458731
 X
 (src/main/java/app/ui/console/AuthUI.java,a\c\ac569ed985938d514a4808da16cd4fbc88fa6036
-o
-?src/main/java/app/ui/gui/Employees/LaboratoryCoordinatorUI.java,f\0\f0dcd2ecb1f4dc1967021933902b9f81bc8d9741
-o
-?src/main/java/app/ui/gui/Employees/MedicalLabTechinicianUI.java,8\b\8bf2f884732e5cff5991432e95481ac6023bd892
-f
-6src/main/java/app/ui/gui/Employees/ReceptionistUI.java,d\a\da67d25a7dca0a7d505bb21f219183aaa2298f15
-U
-%src/main/java/app/controller/App.java,4\7\47cfbdc47faac4c1edcb93d1b6968a5d5bdad509
 ^
 .src/main/java/app/domain/shared/Constants.java,f\e\fecb2f10414ac5d80f9e492ba88044c5911e8e84
-w
-Gsrc/main/java/app/ui/gui/Employees/ClinicalChemistryTechnologistUI.java,c\1\c1c612b2c581df2091008b3fc9f095265d6ac7db
-j
-:src/main/java/app/ui/gui/Employees/SpecialistDoctorUI.java,8\2\820ca6af026777079f392c2bffc2e3085145e0d1
-]
--src/main/java/app/ui/gui/Client/ClientUI.java,0\a\0add3291fbac6cb4616a2b340bdbd6e0bede8949
 N
 src/main/java/app/ui/Main.java,7\7\774d0aff326a0164e53c11cda4e3afaaa607428f
 c
