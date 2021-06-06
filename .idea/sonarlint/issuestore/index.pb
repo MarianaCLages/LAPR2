@@ -119,3 +119,13 @@ U
 %src/main/java/app/controller/App.java,4\7\47cfbdc47faac4c1edcb93d1b6968a5d5bdad509
 ^
 .src/main/java/app/domain/shared/Constants.java,f\e\fecb2f10414ac5d80f9e492ba88044c5911e8e84
+w
+Gsrc/main/java/app/ui/gui/Employees/ClinicalChemistryTechnologistUI.java,c\1\c1c612b2c581df2091008b3fc9f095265d6ac7db
+j
+:src/main/java/app/ui/gui/Employees/SpecialistDoctorUI.java,8\2\820ca6af026777079f392c2bffc2e3085145e0d1
+]
+-src/main/java/app/ui/gui/Client/ClientUI.java,0\a\0add3291fbac6cb4616a2b340bdbd6e0bede8949
+N
+src/main/java/app/ui/Main.java,7\7\774d0aff326a0164e53c11cda4e3afaaa607428f
+c
+3src/main/java/app/ui/gui/ClientUIs/ViewTestsUI.java,1\5\15b646c0027398f877dd80fe3ec4c1ebfcc49d9e
