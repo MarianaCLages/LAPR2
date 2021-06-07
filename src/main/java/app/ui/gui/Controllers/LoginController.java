@@ -4,6 +4,7 @@ import app.controller.AuthController;
 import app.ui.console.utils.Utils;
 import auth.mappers.dto.UserRoleDTO;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -12,17 +13,21 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
 public class LoginController {
-    public Button btnCancel;
-    public Button btnLogin;
-    public PasswordField passfield;
-    public TextField emailfield;
+    @FXML
+    private Button btnCancel;
+    @FXML
+    private Button btnLogin;
+    @FXML
+    private PasswordField passfield;
+    @FXML
+    private TextField emailfield;
+
     private AuthController ctrl = new AuthController();
     private SceneController sceneController = SceneController.getInstance();
 
@@ -44,14 +49,13 @@ public class LoginController {
         }
     }
 
-    public void cancel(ActionEvent actionEvent) throws IOException {
+    public void cancel(ActionEvent actionEvent) {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/MainScreen.fxml"));
-        Parent root = loader.load();
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        try {
+            sceneController.switchMenu(actionEvent, "/FXML/MainScreen.fxml");
+        } catch (Exception e) {
+
+        }
 
     }
 
@@ -96,6 +100,8 @@ public class LoginController {
                 switch (role.getDescription()) {
                     case "ADMINISTRATOR":
                         try {
+                            passfield.clear();
+                            emailfield.clear();
                             sceneController.switchMenu(actionEvent, "/FXML/AdministratorUI.fxml");
                         } catch (IOException e) {
 
@@ -103,6 +109,8 @@ public class LoginController {
                         break;
                     case "SPECIALISTDOCTOR":
                         try {
+                            passfield.clear();
+                            emailfield.clear();
                             sceneController.switchMenu(actionEvent, "/FXML/SpecialistDoctorUI.fxml");
                         } catch (IOException e) {
 
@@ -110,6 +118,8 @@ public class LoginController {
                         break;
                     case "ClIENT":
                         try {
+                            passfield.clear();
+                            emailfield.clear();
                             sceneController.switchMenu(actionEvent, "/FXML/ClientUI.fxml");
                         } catch (IOException e) {
 
@@ -117,6 +127,8 @@ public class LoginController {
                         break;
                     case "RECEPTIONIST":
                         try {
+                            passfield.clear();
+                            emailfield.clear();
                             sceneController.switchMenu(actionEvent, "/FXML/ReceptionistUI.fxml");
                         } catch (IOException e) {
 
@@ -124,6 +136,8 @@ public class LoginController {
                         break;
                     case "LABORATORYCOORDINATOR":
                         try {
+                            passfield.clear();
+                            emailfield.clear();
                             sceneController.switchMenu(actionEvent, "/FXML/LaboratoryCoordinatorUI.fxml");
                         } catch (IOException e) {
 
@@ -131,6 +145,8 @@ public class LoginController {
                         break;
                     case "MEDICALLABTECHNICIIAN":
                         try {
+                            passfield.clear();
+                            emailfield.clear();
                             sceneController.switchMenu(actionEvent, "/FXML/MedicalLabTechnicianUI.fxml");
                         } catch (IOException e) {
 
@@ -138,6 +154,8 @@ public class LoginController {
                         break;
                     case "CLINICALCHEMISTRYTECHNOLOGIST":
                         try {
+                            passfield.clear();
+                            emailfield.clear();
                             sceneController.switchMenu(actionEvent, "/FXML/ClinicalChemistryTechnologistUI.fxml");
                         } catch (IOException e) {
 
