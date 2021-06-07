@@ -2,7 +2,9 @@ package app.domain.mappers.dto;
 
 import app.domain.model.Test;
 
-public class TestStoreDTO {
+import java.io.Serializable;
+
+public class TestStoreDTO implements Serializable {
     private Test test;
 
     public TestStoreDTO(Test test){

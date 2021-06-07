@@ -4,10 +4,11 @@ import app.domain.mappers.dto.CategoryListDTO;
 import app.domain.model.ParameterCategory;
 import app.domain.stores.ParameterCategoryStore;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CategoryListMapper {
+public class CategoryListMapper implements Serializable {
     private CategoryListDTO toDTO(ParameterCategory cat) {
         return new CategoryListDTO(cat.getCode(), cat.getName());
     }

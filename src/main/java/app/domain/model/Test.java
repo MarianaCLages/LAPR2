@@ -3,12 +3,13 @@ package app.domain.model;
 import app.domain.shared.Constants;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-public class Test {
+public class Test implements Serializable {
 
     private final String testCode;
     private final String testNhsNumber;

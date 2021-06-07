@@ -1,9 +1,11 @@
 package app.domain.model;
 
+import java.io.Serializable;
+
 /**
  * Class that represents a parameter associated with a test
  */
-public class TestParameter {
+public class TestParameter implements Serializable {
     private final String pCode;
     private TestParameterResult testParameterResult;
 

@@ -68,6 +68,7 @@ public class CreateReportController {
      */
     public void saveReport() {
         t.saveReport();
+        company.saveCompany();
     }
 
 

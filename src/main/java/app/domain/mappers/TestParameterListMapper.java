@@ -3,10 +3,11 @@ package app.domain.mappers;
 import app.domain.mappers.dto.TestParameterDTO;
 import app.domain.model.TestParameter;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestParameterListMapper {
+public class TestParameterListMapper implements Serializable {
 
     private TestParameterDTO toDTO(TestParameter t) {
         return new TestParameterDTO(t.getpCode());

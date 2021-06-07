@@ -2,13 +2,14 @@ package app.domain.stores;
 
 import app.domain.model.TestType;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Class that represents an List of all the Types of Tests in the system
  */
-public class TestTypeStore {
+public class TestTypeStore implements Serializable {
     List<TestType> array;
     TestType t;
 

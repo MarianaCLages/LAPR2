@@ -9,6 +9,7 @@ import app.domain.stores.*;
 import auth.AuthFacade;
 import auth.UserSession;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,11 +32,19 @@ public class App {
 
     private App() {
         Properties props = getProperties();
-        this.company = new Company(props.getProperty(Constants.PARAMS_COMPANY_DESIGNATION));
-        this.authFacade = this.company.getAuthFacade();
-        company.readCompany();
-        bootstrap();
+        File f = new File(Constants.COMPANY_SER);
+        if (f.exists() && !f.isDirectory()) {
+            this.company = new Company();
+        } else {
+            this.company = new Company(props.getProperty(Constants.PARAMS_COMPANY_DESIGNATION));
+            this.authFacade = this.company.getAuthFacade();
+            bootstrap();
+        }
         company.saveCompany();
+
+        this.authFacade = this.company.getAuthFacade();
+
+
     }
 
     public static App getInstance() {

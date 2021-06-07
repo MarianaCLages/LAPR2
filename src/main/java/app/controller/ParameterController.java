@@ -67,6 +67,8 @@ public class ParameterController {
      * @return success of the operation
      */
     public boolean saveParameter() {
-        return this.store.saveParameter();
+        this.store.saveParameter();
+        return company.saveCompany();
+
     }
 }

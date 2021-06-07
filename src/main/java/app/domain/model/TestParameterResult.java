@@ -1,9 +1,11 @@
 package app.domain.model;
 
+import java.io.Serializable;
+
 /**
  * Class that represents the result of a parameter associated with a test
  */
-public class TestParameterResult {
+public class TestParameterResult implements Serializable {
     double result;
     String paramId;
     RefValue refValue;

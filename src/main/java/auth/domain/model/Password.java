@@ -3,12 +3,13 @@ package auth.domain.model;
 import at.favre.lib.crypto.bcrypt.BCrypt;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * @author Paulo Maio <pam@isep.ipp.pt>
  */
-public class Password {
+public class Password implements Serializable {
 
     private String password;
 

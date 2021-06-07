@@ -51,7 +51,9 @@ public class TestTypeController {
      * @return success of the operation
      */
     public boolean saveTestType() {
-        return this.store.saveTestType();
+        this.store.saveTestType();
+        return company.saveCompany();
+
     }
 
     /**

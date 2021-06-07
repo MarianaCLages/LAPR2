@@ -3,10 +3,12 @@ package app.domain.model;
 import app.domain.shared.Constants;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.Serializable;
+
 /**
  * Class that represents an Category of Parameters
  */
-public class ParameterCategory {
+public class ParameterCategory implements Serializable {
     private final String code;
     private final String name;
 

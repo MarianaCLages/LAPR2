@@ -1,6 +1,8 @@
 package app.domain.mappers.dto;
 
-public class CategoryListDTO {
+import java.io.Serializable;
+
+public class CategoryListDTO implements Serializable {
     private String code;
     private String name;
 

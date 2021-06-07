@@ -4,10 +4,12 @@ import app.domain.shared.Constants;
 import auth.AuthFacade;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.Serializable;
+
 /**
  * Class that represents an Specialist Doctor
  */
-public class SpecialistDoctor extends Employee {
+public class SpecialistDoctor extends Employee implements Serializable {
 
     private String DoctorIndexNumber;
     private Role role;

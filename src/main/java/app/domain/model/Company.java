@@ -9,22 +9,22 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
 import java.io.Serializable;
-import java.util.List;
+import java.util.Objects;
 
 /**
  * @author Paulo Maio <pam@isep.ipp.pt>
  */
 public class Company implements Serializable {
 
-    private final String designation;
-    private final AuthFacade authFacade;
+    private String designation;
+    private AuthFacade authFacade;
 
-    private final ParameterCategoryStore parameterCategoryList;
-    private final ClinicalAnalysisLabStore clinicalAnalysisLabList;
-    private final EmployeeStore employeeList;
-    private final ClientStore clientList;
-    private final TestStore testList;
-    private final SampleStore sampleStore;
+    private ParameterCategoryStore parameterCategoryList;
+    private ClinicalAnalysisLabStore clinicalAnalysisLabList;
+    private EmployeeStore employeeList;
+    private ClientStore clientList;
+    private TestStore testList;
+    private SampleStore sampleStore;
     private ParameterStore parameterList;
     private TestTypeStore testTypeList;
     private RoleStore roleList;
@@ -52,8 +52,25 @@ public class Company implements Serializable {
         this.testList = new TestStore();
         this.sampleStore = new SampleStore();
 
+    }
+
+    public Company() {
+        Company temp = (Company) readCompany();
+
+        this.designation = Objects.requireNonNull(temp).getDesignation();
+        this.authFacade = temp.getAuthFacade();
+        this.parameterList = temp.getParameterList();
+        this.roleList = temp.getRoleList();
+        this.testTypeList = temp.getTestTypeList();
+        this.parameterCategoryList = temp.getParameterCategoryList();
+        this.employeeList = temp.getEmployeeList();
+        this.clinicalAnalysisLabList = temp.getClinicalAnalysisLabList();
+        this.clientList = temp.getClientList();
+        this.testList = temp.getTestList();
+        this.sampleStore = temp.getSampleStore();
 
     }
+
 
     /**
      * @return designation of the Company
@@ -129,7 +146,6 @@ public class Company implements Serializable {
     }
 
     /**
-     *
      * @return the list of Samples in the System
      */
     public SampleStore getSampleStore() {
@@ -137,24 +153,24 @@ public class Company implements Serializable {
     }
 
 
-
-    public String getUserID(){
+    public String getUserID() {
         return user.getUserId().toString();
     }
 
 
-    public void saveCompany(){
+    public boolean saveCompany() {
 
-        Serialize.writeObject(Constants.COMPANY_SER,this);
 
+        return Serialize.writeObject(Constants.COMPANY_SER, this);
     }
 
-    public void readCompany(){
+    private Object readCompany() {
 
         try {
-            Serialize.readFile(Constants.COMPANY_SER);
-        } catch (IOException e){
-            System.out.println(e.getMessage());
+            return Serialize.readFile(Constants.COMPANY_SER);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
         }
 
     }

@@ -4,10 +4,12 @@ import app.domain.shared.Constants;
 import app.domain.stores.TestTypeStore;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.Serializable;
+
 /**
  * Class that represents an Clinical Analysis Lab
  */
-public class ClinicalAnalysisLab {
+public class ClinicalAnalysisLab implements Serializable {
     private final TestTypeStore tType;
     private String name;
     private String address;

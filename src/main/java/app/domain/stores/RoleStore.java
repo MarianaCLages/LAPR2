@@ -2,13 +2,14 @@ package app.domain.stores;
 
 import app.domain.model.Role;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Class that represent the list of all the roles of the system
  */
-public class RoleStore {
+public class RoleStore implements Serializable {
 
     private final Role ClinicalChemistryTechnologist = new Role("0", "Clinical Chemistry Technologist");
     private final Role MedicalLabTechnician = new Role("1", "Medical Lab Technician");

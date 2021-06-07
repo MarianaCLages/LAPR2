@@ -53,6 +53,7 @@ public class ParameterCategoryController {
      * @return success of the operation
      */
     public boolean saveParameterCategory() {
-        return this.store.saveParameterCategory();
+        this.store.saveParameterCategory();
+        return company.saveCompany();
     }
 }

@@ -5,12 +5,13 @@ import app.domain.shared.Constants;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Serializable;
 
 /**
  * Class that represents the email that should be sent to the user when he is registered.
  * It will not be implemented any external API
  */
-public class Email {
+public class Email implements Serializable {
     private Email() {
     }
 

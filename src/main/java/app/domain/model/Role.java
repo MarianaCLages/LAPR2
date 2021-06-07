@@ -1,9 +1,11 @@
 package app.domain.model;
 
+import java.io.Serializable;
+
 /**
  * Class that represents an Organization Role
  */
-public class Role {
+public class Role implements Serializable {
 
     private final String roleID;
     private final String roleName;

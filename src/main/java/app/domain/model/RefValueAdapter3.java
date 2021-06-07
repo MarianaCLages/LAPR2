@@ -3,7 +3,9 @@ package app.domain.model;
 import app.domain.shared.Constants;
 import com.example1.ExternalModule3API;
 
-public class RefValueAdapter3 implements RefValueAdapter {
+import java.io.Serializable;
+
+public class RefValueAdapter3 implements RefValueAdapter , Serializable {
     ExternalModule3API api;
 
     /**

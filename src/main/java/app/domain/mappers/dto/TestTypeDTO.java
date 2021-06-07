@@ -1,6 +1,8 @@
 package app.domain.mappers.dto;
 
-public class TestTypeDTO {
+import java.io.Serializable;
+
+public class TestTypeDTO implements Serializable {
     private String testID;
     private String description;
 

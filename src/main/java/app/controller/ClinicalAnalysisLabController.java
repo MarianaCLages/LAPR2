@@ -82,7 +82,8 @@ public class ClinicalAnalysisLabController {
      * @return success of the operation
      */
     public boolean saveClinicalAnalysisLab() {
-        return this.store.saveClinicalAnalysisLab();
+        this.store.saveClinicalAnalysisLab();
+        return company.saveCompany();
     }
 
 }

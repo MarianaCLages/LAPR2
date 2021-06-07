@@ -55,5 +55,7 @@ public class RecordResultsController {
     }
     public void saveTest(){
         t.changeState("SAMPLE_ANALYSED");
+        company.saveCompany();
+
     }
 }

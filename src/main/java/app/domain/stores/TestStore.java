@@ -3,6 +3,7 @@ package app.domain.stores;
 import app.domain.model.*;
 
 import javax.xml.crypto.Data;
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -13,7 +14,7 @@ import java.util.*;
 /**
  * Class that represents an List of Tests in the system
  */
-public class TestStore {
+public class TestStore implements Serializable {
     private List<Test> array;
     private Test t;
 

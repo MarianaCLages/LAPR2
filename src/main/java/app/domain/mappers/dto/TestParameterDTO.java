@@ -1,6 +1,8 @@
 package app.domain.mappers.dto;
 
-public class TestParameterDTO {
+import java.io.Serializable;
+
+public class TestParameterDTO implements Serializable {
     private String pcode;
 
     public TestParameterDTO(String pcode) {

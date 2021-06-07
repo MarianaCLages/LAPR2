@@ -3,8 +3,10 @@ package app.domain.model;
 import com.example2.EMRefValue;
 import com.example2.ExternalModule2API;
 
+import java.io.Serializable;
 
-public class RefValueAdapter2 implements RefValueAdapter {
+
+public class RefValueAdapter2 implements RefValueAdapter , Serializable {
     ExternalModule2API api;
 
     /**

@@ -1,6 +1,8 @@
 package app.domain.mappers.dto;
 
-public class ParameterDTO {
+import java.io.Serializable;
+
+public class ParameterDTO implements Serializable {
     private String name;
     private String code;
 

@@ -1,9 +1,11 @@
 package app.domain.model;
 
+import java.io.Serializable;
+
 /**
  * Class that represents a Sample
  */
-public class Sample {
+public class Sample implements Serializable {
 
     private final String barcode;
     private final String testID;

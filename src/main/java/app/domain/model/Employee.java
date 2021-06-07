@@ -4,13 +4,14 @@ import app.domain.shared.Constants;
 import auth.AuthFacade;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.Serializable;
 import java.text.Normalizer;
 import java.util.regex.Pattern;
 
 /**
  * Class that represents an Employee
  */
-public class Employee {
+public class Employee implements Serializable {
     private String name;
     private String address;
     private String phonenumber;

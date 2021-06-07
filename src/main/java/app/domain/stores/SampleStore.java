@@ -9,6 +9,7 @@ import net.sourceforge.barbecue.output.OutputException;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -17,7 +18,7 @@ import java.util.Properties;
 /**
  * Class that represents a List of all the Test Samples in the system
  */
-public class SampleStore {
+public class SampleStore implements Serializable {
 
     private Sample sample;
     private List<Sample> testSamples;

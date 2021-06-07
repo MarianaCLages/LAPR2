@@ -3,10 +3,12 @@ package app.domain.model;
 import app.domain.shared.Constants;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.Serializable;
+
 /**
  * Class that represents a Report
  */
-public class Report {
+public class Report implements Serializable {
 
     private final String testID;
     private final String diagnosis;

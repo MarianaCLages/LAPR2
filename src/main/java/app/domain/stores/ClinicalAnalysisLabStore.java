@@ -2,13 +2,14 @@ package app.domain.stores;
 
 import app.domain.model.ClinicalAnalysisLab;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Class that represents an List of all the Clinical Analysis Lab in the system
  */
-public class ClinicalAnalysisLabStore {
+public class ClinicalAnalysisLabStore implements Serializable {
     List<ClinicalAnalysisLab> array;
     ClinicalAnalysisLab cal;
 

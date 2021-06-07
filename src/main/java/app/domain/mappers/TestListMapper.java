@@ -4,10 +4,11 @@ import app.domain.mappers.dto.TestDTO;
 import app.domain.model.Test;
 import app.domain.stores.TestStore;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestListMapper {
+public class TestListMapper implements Serializable {
 
     private TestDTO toDTO(Test t) {
         return new TestDTO(t.getTestCode(), t.getTestNhsNumber());

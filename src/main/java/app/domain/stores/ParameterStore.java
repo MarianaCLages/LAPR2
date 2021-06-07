@@ -3,6 +3,7 @@ package app.domain.stores;
 import app.domain.model.Parameter;
 import app.domain.model.ParameterCategory;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ import static java.lang.String.valueOf;
 /**
  * Class that represents an List of all the Parameters in the system
  */
-public class ParameterStore {
+public class ParameterStore implements Serializable {
     private List<Parameter> array;
     private Parameter pc;
 

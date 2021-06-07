@@ -1,5 +1,7 @@
 package app.domain.shared;
 
+import app.domain.model.Company;
+
 import java.io.*;
 
 public class Serialize {
@@ -11,15 +13,15 @@ public class Serialize {
         Object read = null;
 
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(stringFile))) {
-            read = in.read();
+            read = in.readObject();
             return read;
-        } catch (IOException ex) {
+        } catch (IOException | ClassNotFoundException ex) {
             throw new IOException("File dont exists");
         }
 
     }
 
-    public static boolean writeObject(String stringFile, Object savedObject) {
+    public static boolean writeObject(String stringFile, Company savedObject) {
         try {
             ObjectOutputStream out = new ObjectOutputStream(
                     new FileOutputStream(stringFile));
@@ -30,6 +32,7 @@ public class Serialize {
             }
             return true;
         } catch (IOException ex) {
+            System.out.println(ex.getMessage());
             return false;
         }
     }

@@ -37,6 +37,7 @@ public class ValidateController {
         for (Test test : tSt){
             test.changeState("VALIDATED");
         }
+        company.saveCompany();
     }
 
 

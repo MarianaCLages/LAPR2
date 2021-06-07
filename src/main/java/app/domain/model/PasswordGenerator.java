@@ -3,7 +3,9 @@ package app.domain.model;
 import app.domain.shared.Constants;
 import org.apache.commons.lang3.RandomStringUtils;
 
-public class PasswordGenerator {
+import java.io.Serializable;
+
+public class PasswordGenerator implements Serializable {
     private PasswordGenerator() {
     }
 

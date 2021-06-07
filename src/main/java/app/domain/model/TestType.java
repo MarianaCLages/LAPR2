@@ -7,12 +7,13 @@ import org.apache.commons.lang3.StringUtils;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.util.Properties;
 
 /**
  * Class that represents an Type of Test
  */
-public class TestType {
+public class TestType implements Serializable {
     private String testID;
     private String description;
     private String collectingMethod;

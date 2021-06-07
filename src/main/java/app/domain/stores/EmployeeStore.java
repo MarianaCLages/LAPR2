@@ -4,13 +4,14 @@ import app.domain.model.Company;
 import app.domain.model.Employee;
 import app.domain.model.SpecialistDoctor;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Class that represents an List of all the Category of Parameters in the system
  */
-public class EmployeeStore {
+public class EmployeeStore implements Serializable {
     private List<Employee> array;
     private Employee em;
 

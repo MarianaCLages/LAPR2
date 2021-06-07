@@ -3,7 +3,9 @@ package app.domain.model;
 import app.domain.shared.Constants;
 import com.example3.CovidReferenceValues1API;
 
-public class RefValueAdapter1 implements RefValueAdapter {
+import java.io.Serializable;
+
+public class RefValueAdapter1 implements RefValueAdapter , Serializable {
     CovidReferenceValues1API api;
 
     /**

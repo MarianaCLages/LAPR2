@@ -71,6 +71,7 @@ public class RegisterEmployeeController {
 
         saved = store.saveEmployee();
         store.addUserWithRole(this.company);
+        company.saveCompany();
 
         return saved;
     }

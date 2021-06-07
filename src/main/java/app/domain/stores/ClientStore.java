@@ -4,6 +4,7 @@ import app.domain.model.Client;
 import app.domain.model.Company;
 import app.domain.model.Test;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
 /**
  * Class that represents an List of all the clients in the system
  */
-public class ClientStore {
+public class ClientStore implements Serializable {
     private final List<Client> array;
     private Client client;
 

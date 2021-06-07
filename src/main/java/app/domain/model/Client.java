@@ -5,6 +5,7 @@ import auth.AuthFacade;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.Normalizer;
 import java.text.SimpleDateFormat;
@@ -17,7 +18,7 @@ import java.util.regex.Pattern;
 /**
  * Class that represents an Client
  */
-public class Client {
+public class Client implements Serializable {
 
     private final String phoneNumber;
     private final String cc;

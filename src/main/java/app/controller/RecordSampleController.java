@@ -59,7 +59,6 @@ public class RecordSampleController {
     }
 
     /**
-     *
      * @return String that represents the Test instance
      */
     public String getTest() {
@@ -72,7 +71,7 @@ public class RecordSampleController {
      * @param testID code of the test
      * @throws ClassNotFoundException stops the execution of the program if the class isn't found
      * @throws InstantiationException stops the execution of the program if the current method doesn't have access to the definitions of the specified requirements
-     * @throws BarcodeException stops the execution of the program if the specified class object cannot be instantiated
+     * @throws BarcodeException       stops the execution of the program if the specified class object cannot be instantiated
      * @throws IllegalAccessException stops the execution of the program if the requirements are not met
      */
     public void createSample(String testID) throws ClassNotFoundException, InstantiationException, BarcodeException, IllegalAccessException {
@@ -91,7 +90,7 @@ public class RecordSampleController {
      * This method calls the method of the instance of SampleStore that saves the object Sample in the Sample List
      *
      * @return a boolean value that indicates the success of the operation
-     * @throws IOException stops the execution of the program if the I/O operations fail or are interrupted
+     * @throws IOException     stops the execution of the program if the I/O operations fail or are interrupted
      * @throws OutputException stops the execution of the program if the Output operation fails or is interrupted
      */
     public boolean saveSample() throws IOException, OutputException {
@@ -107,6 +106,8 @@ public class RecordSampleController {
 
         this.test = tList.getTestByCode(testID);
         this.test.changeState("SAMPLE_COLLECTED");
+        company.saveCompany();
+
 
     }
 }

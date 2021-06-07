@@ -1,6 +1,0 @@
-
-h
-java:S2095J"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(³ˆ•ùÿÿÿÿ
-b
-java:S1192‘"KDefine a constant instead of duplicating this literal "1234567890" 4 times.(ìúÍ
-S	java:S106N"9Replace this use of System.out or System.err by a logger.(ı™øøÿÿÿÿ

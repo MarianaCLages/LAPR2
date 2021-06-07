@@ -51,7 +51,8 @@ public class CreateTestController {
     }
 
     public boolean saveTest() {
-        return store.saveTest();
+        store.saveTest();
+        return company.saveCompany();
     }
 
     public List<TestTypeDTO> getTestTypeList() {

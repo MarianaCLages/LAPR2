@@ -1,9 +1,11 @@
 package app.domain.model;
 
+import java.io.Serializable;
+
 /**
  * Class that represents the reference value of a given parameter
  */
-public class RefValue {
+public class RefValue implements Serializable {
     private final double minValue;
     private final double maxValue;
     private final String metric;

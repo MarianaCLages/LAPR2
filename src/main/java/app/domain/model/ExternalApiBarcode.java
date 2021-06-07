@@ -8,9 +8,10 @@ import net.sourceforge.barbecue.output.OutputException;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 
 
-public class ExternalApiBarcode implements BarcodeAdapter {
+public class ExternalApiBarcode implements BarcodeAdapter, Serializable {
 
     Barcode barcode;
 
