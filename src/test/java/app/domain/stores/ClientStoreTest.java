@@ -164,5 +164,5 @@ public class ClientStoreTest {
         Company company = App.getInstance().getCompany();
         Assert.assertTrue(store.addUser(company));
     }*/
-    
+
 }
