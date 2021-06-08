@@ -1,13 +1,13 @@
-package app.ui.gui.AdminMenuUIs;
+package app.ui.gui.adminMenuUIs;
 
 import app.controller.App;
-import app.ui.gui.Controllers.SceneController;
+import app.ui.gui.controllers.SceneController;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 
-public class ParameterUI {
+public class ParameterCategoryUI {
 
-    public Button myReturnButtonParameter;
+    public Button myReturnButtonParameterCategory;
     private SceneController sceneController = SceneController.getInstance();
 
 

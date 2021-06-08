@@ -1,19 +1,17 @@
-package app.ui.gui.Employees;
+package app.ui.gui.employees;
 
 import app.controller.App;
-import app.ui.gui.Controllers.SceneController;
+import app.ui.gui.controllers.SceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-import java.io.IOException;
-
-public class ReceptionistUI {
+public class ClinicalChemistryTechnologistUI {
 
     private SceneController sceneController = SceneController.getInstance();
 
     @FXML
-    private Button myReturnButtonReceptionist;
+    private Button myReturnButtonCht;
 
     public void returnToMenu(ActionEvent event) {
         App app = sceneController.getApp();

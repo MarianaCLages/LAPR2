@@ -1,7 +1,8 @@
-package app.ui.gui.Controllers;
+package app.ui.gui.controllers;
 
 import app.controller.App;
 import app.controller.AuthController;
+import app.domain.exceptions.MenuNotFoundException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -38,9 +39,13 @@ public class SceneController {
 
     public void switchMenu(ActionEvent event, String path) {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
-
         try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+
+            if (loader == null) {
+                throw new MenuNotFoundException();
+            }
 
             Parent root = loader.load();
             Scene scene = new Scene(root);
@@ -51,7 +56,9 @@ public class SceneController {
             stage.show();
 
         } catch (IOException error) {
-
+            System.out.println(error.getMessage());
+        } catch (MenuNotFoundException e) {
+            System.out.println(e.getMessage());
         }
 
     }

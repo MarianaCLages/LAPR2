@@ -1,4 +1,4 @@
-package app.ui.gui.ClientUIs;
+package app.ui.gui.clientUIs;
 
 public class ViewTestsUI {
 }

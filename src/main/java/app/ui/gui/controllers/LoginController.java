@@ -1,20 +1,15 @@
-package app.ui.gui.Controllers;
+package app.ui.gui.controllers;
 
 import app.controller.AuthController;
 import app.ui.console.utils.Utils;
 import auth.mappers.dto.UserRoleDTO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 
@@ -120,23 +115,3 @@ public class LoginController {
         }
     }
 }
-
-   /* private Properties getProperties() {
-        Properties props = new Properties();
-        // Add default properties and values
-        props.setProperty(Constants.PARAMS_COMPANY_DESIGNATION, "Many Labs");
-
-
-        // Read configured values
-        try {
-            InputStream in = new FileInputStream(Constants.PARAMS_FILENAME);
-            props.load(in);
-            in.close();
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-
-        }
-        return props;
-    }*/
-
-

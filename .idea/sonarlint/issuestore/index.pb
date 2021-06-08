@@ -83,12 +83,8 @@ b
 2src/main/java/app/domain/model/BarcodeAdapter.java,5\7\572c72cede0b54c6aa265bd8ca31dfceabbe6d68
 f
 6src/main/java/app/domain/model/ExternalApiBarcode.java,0\a\0a9e9a167e43840c0cf92bc5100f4bd26cc695cb
-]
--src/main/java/auth/domain/model/UserRole.java,6\3\639cf76ca49099e750980547155bf7fdc9841238
 b
 2src/main/java/auth/domain/store/UserRoleStore.java,d\f\df87a76751166dc90bf2d9baaa17c0f9f9f052bc
-R
-"src/main/java/auth/AuthFacade.java,4\5\45cf31993ccced1bef92d8901777893aaf80a7bb
 \
 ,src/main/java/app/ui/console/MainMenuUI.java,0\0\00b6c6e5c167fbd22e7d83c003815158143e9f8b
 `
@@ -111,8 +107,6 @@ f
 6src/main/java/app/controller/CreateTestController.java,f\5\f54f6fb19e03f0fa13b00dc9c6f082f28f52680c
 Y
 )src/main/java/app/domain/model/Email.java,e\5\e5b9d6aa410958c18970d8f4c9e19a4c38e62e32
-Z
-*src/main/java/auth/domain/model/Email.java,e\d\edb6b3c21ef668b316815c4e848363ea45df2a59
 \
 ,src/main/java/app/domain/model/Employee.java,1\7\172c090ab1c754bae4d9ce2efae5056312661a20
 b
@@ -131,8 +125,6 @@ f
 6src/main/java/app/domain/mappers/dto/ParameterDTO.java,7\a\7aca6e7922a574f79fb4a6ff1e4205a35f34f3b9
 i
 9src/main/java/app/domain/mappers/ParameterListMapper.java,d\3\d33a1a9d71c83a91270e60ce260917ebbf57829c
-]
--src/main/java/auth/domain/model/Password.java,b\7\b773d5fdb119e743004c97f14b9a7c8e06d2f0a3
 e
 5src/main/java/app/domain/model/PasswordGenerator.java,6\7\6705402122199c116945958d1eaead60ce41746c
 i
@@ -181,10 +173,6 @@ e
 5src/main/java/app/domain/mappers/dto/TestTypeDTO.java,3\d\3d048c73bee7915677a10076245a2e9e5a27d45d
 h
 8src/main/java/app/domain/mappers/TestTypeListMapper.java,9\2\92df252ef206a36226a1aade804a510e8f8f2a4e
-Y
-)src/main/java/auth/domain/model/User.java,e\e\ee3bcce07cd647f0548220bfff8bca37998f437f
-S
-#src/main/java/auth/UserSession.java,2\2\2237c94a7e643f378d31b665a583d8292b8db30c
 ^
 .src/main/java/auth/domain/store/UserStore.java,a\c\ac431a8dc7c0964faa242a2423914d9509138884
 d
