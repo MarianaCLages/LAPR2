@@ -60,6 +60,24 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: com.isep.mdis:Sum:1.0.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/Sum-1.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: com.nhs.report:Report2NHS:1.0.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/Report2NHS-1.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.5" level="project" />
     <orderEntry type="library" name="Maven: at.favre.lib:bcrypt:0.9.0" level="project" />
     <orderEntry type="library" name="Maven: at.favre.lib:bytes:1.3.0" level="project" />

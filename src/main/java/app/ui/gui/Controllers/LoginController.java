@@ -28,24 +28,25 @@ public class LoginController {
     @FXML
     private TextField emailfield;
 
-    private AuthController ctrl = new AuthController();
     private SceneController sceneController = SceneController.getInstance();
+    private AuthController ctrl = sceneController.getAuthController();
 
     private int maxAttempts = 3;
 
+    private boolean sucess = false;
+
     public void login(ActionEvent actionEvent) {
 
+        sucess = doLogin();
 
-        boolean sucess = doLogin();
-
-        if (maxAttempts == 0) {
+        if (sucess) {
+            switchM(actionEvent);
+        } else if (maxAttempts == 0) {
             try {
                 sceneController.switchMenu(actionEvent, "/FXML/MainScreen.fxml");
             } catch (Exception e) {
 
             }
-        } else if (sucess) {
-            switchM(actionEvent);
         }
     }
 
@@ -100,8 +101,6 @@ public class LoginController {
                 switch (role.getDescription()) {
                     case "ADMINISTRATOR":
                         try {
-                            passfield.clear();
-                            emailfield.clear();
                             sceneController.switchMenu(actionEvent, "/FXML/AdministratorUI.fxml");
                         } catch (IOException e) {
 
@@ -109,8 +108,6 @@ public class LoginController {
                         break;
                     case "SPECIALISTDOCTOR":
                         try {
-                            passfield.clear();
-                            emailfield.clear();
                             sceneController.switchMenu(actionEvent, "/FXML/SpecialistDoctorUI.fxml");
                         } catch (IOException e) {
 
@@ -118,8 +115,6 @@ public class LoginController {
                         break;
                     case "ClIENT":
                         try {
-                            passfield.clear();
-                            emailfield.clear();
                             sceneController.switchMenu(actionEvent, "/FXML/ClientUI.fxml");
                         } catch (IOException e) {
 
@@ -127,8 +122,6 @@ public class LoginController {
                         break;
                     case "RECEPTIONIST":
                         try {
-                            passfield.clear();
-                            emailfield.clear();
                             sceneController.switchMenu(actionEvent, "/FXML/ReceptionistUI.fxml");
                         } catch (IOException e) {
 
@@ -136,8 +129,6 @@ public class LoginController {
                         break;
                     case "LABORATORYCOORDINATOR":
                         try {
-                            passfield.clear();
-                            emailfield.clear();
                             sceneController.switchMenu(actionEvent, "/FXML/LaboratoryCoordinatorUI.fxml");
                         } catch (IOException e) {
 
@@ -145,8 +136,6 @@ public class LoginController {
                         break;
                     case "MEDICALLABTECHNICIIAN":
                         try {
-                            passfield.clear();
-                            emailfield.clear();
                             sceneController.switchMenu(actionEvent, "/FXML/MedicalLabTechnicianUI.fxml");
                         } catch (IOException e) {
 
@@ -154,8 +143,6 @@ public class LoginController {
                         break;
                     case "CLINICALCHEMISTRYTECHNOLOGIST":
                         try {
-                            passfield.clear();
-                            emailfield.clear();
                             sceneController.switchMenu(actionEvent, "/FXML/ClinicalChemistryTechnologistUI.fxml");
                         } catch (IOException e) {
 

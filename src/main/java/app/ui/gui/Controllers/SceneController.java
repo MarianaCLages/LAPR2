@@ -1,6 +1,7 @@
 package app.ui.gui.Controllers;
 
 import app.controller.App;
+import app.controller.AuthController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -14,6 +15,7 @@ import java.io.IOException;
 public class SceneController {
 
     private static SceneController singleton = null;
+    private AuthController authController = new AuthController();
 
     public static SceneController getInstance() {
         if (singleton == null) {
@@ -24,7 +26,11 @@ public class SceneController {
         return singleton;
     }
 
-     public void switchMenu(ActionEvent event, String path) throws IOException {
+    public AuthController getAuthController() {
+        return authController;
+    }
+
+    public void switchMenu(ActionEvent event, String path) throws IOException {
 
          FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
          Parent root = loader.load();

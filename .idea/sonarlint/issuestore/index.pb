@@ -73,8 +73,6 @@ h
 8src/main/java/app/controller/RecordSampleController.java,d\d\dd80a1497acffafe28094da8362c395f56b62a36
 `
 0src/main/java/app/ui/console/RecordSampleUI.java,c\4\c47fc00542260444261c62b97d7e948aefb765b6
-9
-	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 H
 docs/SprintD/US01/US1.md,f\1\f1d873b3c221c77a469df54aa9f14f55e55b0cb8
 >
