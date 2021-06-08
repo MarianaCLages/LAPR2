@@ -12,7 +12,7 @@ public class ClinicalAnalysisLaboratoryUI {
 
 
     public void returnToAdminMenu(ActionEvent event) {
-        App app = App.getInstance();
+        App app = sceneController.getApp();
         app.doLogout();
         sceneController.switchMenu(event, "/FXML/AdministratorUI.fxml");
     }

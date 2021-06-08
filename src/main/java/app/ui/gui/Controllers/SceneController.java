@@ -16,8 +16,10 @@ public class SceneController {
 
     private static SceneController singleton = null;
     private AuthController authController = new AuthController();
+    private App app = App.getInstance();
 
     public static SceneController getInstance() {
+
         if (singleton == null) {
             synchronized (App.class) {
                 singleton = new SceneController();
@@ -30,10 +32,16 @@ public class SceneController {
         return authController;
     }
 
+    public App getApp() {
+        return app;
+    }
+
     public void switchMenu(ActionEvent event, String path) {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+
         try {
+
             Parent root = loader.load();
             Scene scene = new Scene(root);
             //String css = this.getClass().getResource("/Styles/Styles.css").toExternalForm();
@@ -41,6 +49,7 @@ public class SceneController {
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();
+
         } catch (IOException error) {
 
         }

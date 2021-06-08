@@ -1,109 +1,98 @@
-# US 12 - RecordTheResultsOfAGivenTest
+# US 18 - As_An_Administrator_I_Want_To_Send_The_Covid-19_Report_To_The_NHS_At_Any_Time
 
 ## 1. Requirements Engineering
 
-*In this section, it is suggested to capture the requirement description and specifications as provided by the client as well as any further clarification on it. It is also suggested capturing the requirements' acceptance criteria and existing dependencies to other requirements. At last, identify the involved input and output data and depicted an Actor-System interaction in order to fulfill the requirement.*
-
-
 ### 1.1. User Story Description
 
-*As a clinical chemistry technologist, I intend to record the results of a given test.*
+*As an Administrator I want to send the Covid-19 report to the NHS at any time. I want to define the interval of dates
+to fit the regression model, the number of historical points (number of days or number of weeks) that must be sent to
+the NHS, the regression model to use and select the independent variables to use.*
 
-### 1.2. Customer Specifications and Clarifications 
+### 1.2. Customer Specifications and Clarifications
 
 **From the specifications document:**
 
-> “At the company's headquarters, the clinical chemistry technologist receives the samples (delivered by a courier) and performs the chemical analysis, recording the results in the software application.”
+> “Considering that M any Labs has the exclusivity to perform Covid 19 tests, and that the contract with the NHS in England requires Many Labs to summarize and report Covid 19 data, the company needs to: identify the number of Covid 19 tests performed, identify all positive results to C ovid 19 tests, report the total number of Covid 19 cases per day, per week and per month of the year, and send the forecasts for these same time horizons the number of Covid 19 cases for the following day, next week and next month).”
 
-> “… the application uses an external module that is responsible for doing an automatic validation using test reference values.”
+> "...should send them to the NHS using their API."
 
-> “At the same time, the results are also available in the central application where the medical lab technicians who collect the samples, the clinical chemistry technologist, the specialist doctor, and the laboratory coordinator can check them.”
+> “To make the predictions , the NHS contract defines that a linear regression algorithm should be used . The NHS required that both simple linear and multiple linear regression algorithms should be evaluated to select the best model . The accuracy of the prediction models should be analysed and documented in the application user manual (in the that must be delivered with the application The algorithm to be used by the application must be defined through a configuration file.”
 
 **From the client clarifications:**
 
-> **Question:** When the Clinical Chemistry Technologist wants to record the results of a test, how does he have access to that test? By an internal code, NHS code…?
-> 
-> **Answer:** Each sample has a unique barcode. The Clinical Chemistry Technologist should use the sample barcode number to find the test for which the sample was collected.
+> **Question:** Which significance level should we use for the hypothesis tests?
+>
+> **Answer:** The application should allow the user to choose the significance level.
 
-> **Question:** Should the system present a result for each test parameter or a single result for the test to be recorded?
-> 
-> **Answer:** The Clinical Chemistry Technologist should register a value/result for each parameter of the test.
+> **Question:** Regarding US18 and US19, it is only one report containing all the tests performed by Many Labs to be sent each time, correct? Or is it one report per laboratory, for example? Or other option?
+>
+> **Answer:** The report should contain all the tests made by Many Labs.
 
-> **Question:** Are the reference values, for each parameter, going to be delivered to the groups? If so, when and how?
+> **Question:** Should the report contain the data of all the tests with results (with or without report, with or without validation) or contain only the validated tests? (Or other option?)
+>
+> **Answer:** The NHS Covid report should include statistics computed only from validated tests.
+
+> **Question:** From the project description it is known "send the forecasts for these same time horizons (the number of Covid-19 cases for the following day, next week and next month)." In the example report we have in moodle, there is a line that says "// Prediction values". Does this mean that after this line we should put our predictions or it refers to the following table?
 > 
-> **Answer:** You should use the APIs available in moodle to obtain the reference values.
+> **Answer:** Yes, the prediction values are the ones available in the table that we include in the example.
+
+> **Question:** From Sprint D requirements we get "I want to define... the number of historical points (number of days or number of weeks) that must be sent to the NHS". Is the Administrator who must choose between days or weeks? If so, how should he make this choice? 
+> 
+> **Answer** Yes. The Administrator should select between days and weeks using the user interface.
 
 ### 1.3. Acceptance Criteria
 
-* **AC1:** The application should use an external module that is responsible for providing the test reference values. The application can use an external module for each type of test. For instance, when the results are for blood tests parameters, the external module BloodReferenceValues1API can be used. When the results are for Covid-19 tests parameters, the external module CovidReferenceValues1API can be used. In any case, the API request should include, at most:
-  * (i) a key to access the module (e.g.: “KEY1234”);
-  * (ii) a parameter identifier;
-  * (iii) the reference date;
-  * (iv) reference measurement unit (e.g.: "mg").
-* **AC2:** Each test result is characterized by a parameter code, a result and metric.
-* **AC3:** Each test parameter is characterized by a test result.
-* **AC4:** The Clinical Chemistry Technologist should use the sample barcode number to find the test for which the sample was collected.
-* **AC5:** The Clinical Chemistry Technologist should register a value/result for each parameter of the test.
+  * **AC1:** The system should allow the Administrator to select between a simple linear and multilinear regression model to fit the data. Moreover, the Administrator should be able to choose the independent variable to use with the simple linear regression model (either the number of tests realized or the mean age). The system should send the report using the NHS API (available in moodle).
+  * **AC2:** 
+  * **AC3:** 
+  * **AC4:** 
+  * **AC5:** 
 
 ### 1.4. Found out Dependencies
 
 **From Sprint B:**
 
 There is a dependency to:
-* **"US07 Register a new employee"** since at least a Clinical Chemistry Technologist must be registered in the system.
-* **“US09 Specify a new type of test and its collecting methods”** since at least a type of test must exist to record its results.
-* **“US10 Specify a new parameter and categorize it”** since at least a parameter must exist to record its results.
+
+* **"US07 Register a new employee"** since at least a Administrator must be registered in the system.
 
 **From Sprint C:**
 
 There is a dependency to:
-* **"US04 Register a test to be performed to a registered client"** since at least one test must be registered in the system.
-* **"US05 Record the samples collected in the scope of a given test"** since each test must have an associated sample recorded in the system.
 
 ### 1.5 Input and Output Data
 
 **Input Data:**
 
 * Typed data:
-  * Sample barcode number
-  * Value/result (for each parameter)
-
 
 * Selected data:
-  * Test parameter
-
 
 **Output Data:**
 
-* List of test parameters
 * (In)Success of the operation
 
 ### 1.6. System Sequence Diagram (SSD)
 
-*Insert here a SSD depicting the envisioned Actor-System interactions and throughout which data is inputted and outputted to fulfill the requirement. All interactions must be numbered.*
-
 ![US12_SSD](US12_SSD.svg)
-
 
 ### 1.7 Other Relevant Remarks
 
-*Use this section to capture other relevant information that is related with this US such as (i) special requirements ; (ii) data and/or technology variations; (iii) how often this US is held.* 
-
+*Use this section to capture other relevant information that is related with this US such as (i) special requirements
+; (ii) data and/or technology variations; (iii) how often this US is held.*
 
 ## 2. OO Analysis
 
-### 2.1. Relevant Domain Model Excerpt 
-*In this section, it is suggested to present an excerpt of the domain model that is seen as relevant to fulfill this requirement.* 
+### 2.1. Relevant Domain Model Excerpt
 
 ![US12_DM](US12_DM.svg)
 
 ### 2.2. Other Remarks
 
-*Use this section to capture some additional notes/remarks that must be taken into consideration into the design activity. In some case, it might be useful to add other analysis artifacts (e.g. activity or state diagrams).* 
+*Use this section to capture some additional notes/remarks that must be taken into consideration into the design
+activity. In some case, it might be useful to add other analysis artifacts (e.g. activity or state diagrams).*
 
-
-
-## 3. Design - User Story Realization 
+## 3. Design - User Story Realization
 
 ### 3.1. Rationale
 
@@ -111,50 +100,59 @@ There is a dependency to:
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| **Step/Msg 1:** asks to record the results of a given test | ... interacting with the actor? | TestResultUI | **Pure Fabrication:** there is no reason to assign this responsibility to any existing class in the Domain Model |
+| **Step/Msg 1:** asks to record the results of a given test | ... interacting with the actor? | TestResultUI | **Pure
+Fabrication:** there is no reason to assign this responsibility to any existing class in the Domain Model |
 |                                                        | ... coordinating the US? | TestResultController | Controller |
 | **Step/Msg 2:** request sample barcode number | n/a | | |
-| **Step/Msg 3:** types the sample barcode number | ... knowing TestStore? | Company | **IE:** TestStore is initialized in Company |
-|                                             | ... knowing all the existent test? | TestStore | **IE:** knows its own tests |
-|                                             | ... transferring the data typed in the UI to the domain? | TestParameterDTO | **DTO:** When there is so much data to transfer, it is better to opt by using a DTO in order to reduce coupling between UI and domain |
+| **Step/Msg 3:** types the sample barcode number | ... knowing TestStore? | Company | **
+IE:** TestStore is initialized in Company |
+|                                             | ... knowing all the existent test? | TestStore | **
+IE:** knows its own tests |
+|                                             | ... transferring the data typed in the UI to the domain? | TestParameterDTO | **
+DTO:** When there is so much data to transfer, it is better to opt by using a DTO in order to reduce coupling between UI and domain |
 | **Step/Msg 4:** shows one parameter at a time and requests each value/result | n/a | | |
-| **Step/Msg 5:** types the value/result | ... knowing and getting the reference values? | ExternalModule | **Protected Variation:** It is necessary to know which adapter to use in order to get the reference values for the correct API |
-|                                    | ... getting the ExternalModule? | TestType | **IE:** knows what API to get depending on the type of test |
-|                                    | ... creating the TestParameterResult object? | TestParameter | **Creator:** TestParameterResult is an attribute of TestParameter |
-|                                    | ... validating and saving the typed data? | ReferenceValue | **IE:** knows its own data |
-|                                    | ... changing the test state? | Test | **IE:** After the tests being recorded, Test must change its state |
-| **Step/Msg 6:** informs operation success | ... informing operation success? | RecordTestResultUI | **IE:** responsible for user interaction |
-
+| **Step/Msg 5:** types the value/result | ... knowing and getting the reference values? | ExternalModule | **Protected
+Variation:** It is necessary to know which adapter to use in order to get the reference values for the correct API |
+|                                    | ... getting the ExternalModule? | TestType | **
+IE:** knows what API to get depending on the type of test |
+|                                    | ... creating the TestParameterResult object? | TestParameter | **
+Creator:** TestParameterResult is an attribute of TestParameter |
+|                                    | ... validating and saving the typed data? | ReferenceValue | **
+IE:** knows its own data |
+|                                    | ... changing the test state? | Test | **
+IE:** After the tests being recorded, Test must change its state |
+| **Step/Msg 6:** informs operation success | ... informing operation success? | RecordTestResultUI | **
+IE:** responsible for user interaction |
 
 ### Systematization ##
 
-According to the taken rationale, the conceptual classes promoted to software classes are: 
+According to the taken rationale, the conceptual classes promoted to software classes are:
 
- * Company
- * TestParameter
- * TestParameterResult
+* Company
+* TestParameter
+* TestParameterResult
 
-Other software classes (i.e. Pure Fabrication) identified: 
- * RecordTestResultUI  
- * RecordTestResultController
- * ExternalModule
- * RefValue
- * RefValueAdapter (1 for each API)
- * TestParameterDTO
- * TestParameterMapper
+Other software classes (i.e. Pure Fabrication) identified:
+
+* RecordTestResultUI
+* RecordTestResultController
+* ExternalModule
+* RefValue
+* RefValueAdapter (1 for each API)
+* TestParameterDTO
+* TestParameterMapper
 
 ## 3.2. Sequence Diagram (SD)
 
 ![US12_SD](US12_SD.svg)
-  
 
 * SD_AddTestResult(parameterCode, result, metric)
-![SD_AddTestResult(parameterCode, result, metric)](SD_AddTestResult.svg)
-
+  ![SD_AddTestResult(parameterCode, result, metric)](SD_AddTestResult.svg)
 
 ## 3.3. Class Diagram (CD)
 
-*In this section, it is suggested to present an UML static view representing the main domain related software classes that are involved in fulfilling the requirement as well as and their relations, attributes and methods.*
+*In this section, it is suggested to present an UML static view representing the main domain related software classes
+that are involved in fulfilling the requirement as well as and their relations, attributes and methods.*
 
 ![US12_CD](US12_CD.svg)
 
@@ -283,9 +281,8 @@ Other software classes (i.e. Pure Fabrication) identified:
         }
         return false;
     }
-	
 
-*It is also recommended organizing this content by subsections.* 
+*It is also recommended organizing this content by subsections.*
 
 # 5. Construction (Implementation)
 
@@ -346,7 +343,6 @@ Other software classes (i.e. Pure Fabrication) identified:
             }
         }
     }
-
 
 ### Class RecordTestResultController
 
@@ -426,7 +422,6 @@ Other software classes (i.e. Pure Fabrication) identified:
         }
     }
 
-
 ### Class TestParameter
 
     public class TestParameter {
@@ -458,7 +453,6 @@ Other software classes (i.e. Pure Fabrication) identified:
         }
     }
 
-
 ### Class TestParameterResult
 
     public class TestParameterResult {
@@ -489,7 +483,6 @@ Other software classes (i.e. Pure Fabrication) identified:
         }
     }
 
-
 ### Class RefValue
 
     public class RefValue {
@@ -517,7 +510,6 @@ Other software classes (i.e. Pure Fabrication) identified:
         }
     }
 
-
 ### Interface RefValueAdapter
 
     public interface RefValueAdapter {
@@ -530,7 +522,6 @@ Other software classes (i.e. Pure Fabrication) identified:
 
         String getMetric(String param);
     }
-
 
 ### Class RefValueAdapter1
 
@@ -557,7 +548,6 @@ Other software classes (i.e. Pure Fabrication) identified:
             return api.usedMetric(paramID, Constants.ACCESS_KEY);
         }
     }
-
 
 ### Class RefValueAdapter2
 
@@ -587,7 +577,6 @@ Other software classes (i.e. Pure Fabrication) identified:
         }
     }
 
-
 ### Class RefValueAdapter3
 
     public class RefValueAdapter3 implements RefValueAdapter{
@@ -614,7 +603,6 @@ Other software classes (i.e. Pure Fabrication) identified:
         }
     }
 
-
 # 6. Integration and Demo
 
 ### Integration in the Company class
@@ -624,7 +612,6 @@ Other software classes (i.e. Pure Fabrication) identified:
     public TestStore getTestStore() {
         return testStore;
     }
-
 
 ### Integration in the Test class
 
@@ -675,7 +662,6 @@ Other software classes (i.e. Pure Fabrication) identified:
         return true;
     }
 
-
 ### Integration in the TestType class
 
     public String getExternalModule() {
@@ -694,13 +680,11 @@ Other software classes (i.e. Pure Fabrication) identified:
         return null;
     }
 
-
 ### Constants class
 
     public static final int ACCESS_KEY = 12345;
     public static final String COVID_REFERENCE_API = "app.domain.model.RefValueAdapter1";
     public static final String EM_REFERENCE_API = "app.domain.model.RefValueAdapter2";
     public static final String BC_REFERENCE_API = "app.domain.model.BarcodeAdapter1";
-
 
 # 7. Observations

@@ -29,7 +29,7 @@ public class AdministratorUI {
 
 
     public void returnToMenu(ActionEvent event) {
-        App app = App.getInstance();
+        App app = sceneController.getApp();
         app.doLogout();
         sceneController.switchMenu(event, "/FXML/MainScreen.fxml");
     }
@@ -52,8 +52,5 @@ public class AdministratorUI {
 
     public void goToClinicalAnalysisLaboratoryUI(ActionEvent event) {
         sceneController.switchMenu(event, "/FXML/ClinicalAnalysisLaboratoryUI.fxml");
-
     }
-
 }
-

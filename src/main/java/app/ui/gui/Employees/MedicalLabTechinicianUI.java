@@ -16,7 +16,7 @@ public class MedicalLabTechinicianUI {
     private Button myReturnButtonMlt;
 
     public void returnToMenu(ActionEvent event) {
-        App app = App.getInstance();
+        App app = sceneController.getApp();
         app.doLogout();
         sceneController.switchMenu(event, "/FXML/MainScreen.fxml");
     }

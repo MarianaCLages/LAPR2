@@ -17,8 +17,8 @@ public class CreditsController {
     public Button btnBack;
     private SceneController sceneController = SceneController.getInstance();
 
-    public void Back(ActionEvent actionEvent) throws IOException {
-        App app = App.getInstance();
+    public void Back(ActionEvent actionEvent) {
+        App app = sceneController.getApp();
         app.doLogout();
         sceneController.switchMenu(actionEvent, "/FXML/MainScreen.fxml");
     }

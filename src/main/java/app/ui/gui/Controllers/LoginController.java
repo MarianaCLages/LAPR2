@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class LoginController {
+
     @FXML
     private Button btnCancel;
     @FXML
@@ -32,7 +33,6 @@ public class LoginController {
     private AuthController ctrl = sceneController.getAuthController();
 
     private int maxAttempts = 3;
-
     private boolean sucess = false;
 
     public void login(ActionEvent actionEvent) {
@@ -42,22 +42,12 @@ public class LoginController {
         if (sucess) {
             switchM(actionEvent);
         } else if (maxAttempts == 0) {
-            try {
-                sceneController.switchMenu(actionEvent, "/FXML/MainScreen.fxml");
-            } catch (Exception e) {
-
-            }
+            sceneController.switchMenu(actionEvent, "/FXML/MainScreen.fxml");
         }
     }
 
     public void cancel(ActionEvent actionEvent) {
-
-        try {
-            sceneController.switchMenu(actionEvent, "/FXML/MainScreen.fxml");
-        } catch (Exception e) {
-
-        }
-
+        sceneController.switchMenu(actionEvent, "/FXML/MainScreen.fxml");
     }
 
     private boolean doLogin() {
@@ -69,7 +59,7 @@ public class LoginController {
 
         maxAttempts--;
         success = ctrl.doLogin(id, pwd);
-        if (!success) {
+        if (!success && maxAttempts!=0) {
             informationAlert(maxAttempts);
         }
 

@@ -79,8 +79,6 @@ H
 docs/README.md,9\f\9f7cbce127b94a94ee14460050fbff2ce58417d0
 E
 docs/SprintD/FURPS.md,0\3\032f8636e3b4043400bcf021aa2b0682e24e0bca
-I
-docs/SprintD/US18/US18.md,a\c\ac63a266dc826f9d07d22d8de2443487194282a8
 b
 2src/main/java/app/domain/model/BarcodeAdapter.java,5\7\572c72cede0b54c6aa265bd8ca31dfceabbe6d68
 f
@@ -199,3 +197,7 @@ t
 Ddocs/SprintD/US12/SD_AddTestResult(parameterCode,result,metric).puml,8\1\81ee0809097b86e7048052c9d4f6e7650cf41a30
 l
 <docs/SprintD/US12/SD_AddTestResult(parameterCode,result).svg,8\6\86ebd43a5a95c8d4ebe77a158f9ad2d022620afd
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
