@@ -1,5 +1,6 @@
 package app.ui.gui.Controllers;
 
+import app.controller.App;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -17,6 +18,8 @@ public class CreditsController {
     private SceneController sceneController = SceneController.getInstance();
 
     public void Back(ActionEvent actionEvent) throws IOException {
+        App app = App.getInstance();
+        app.getCurrentUserSession().doLogout();
         sceneController.switchMenu(actionEvent, "/FXML/MainScreen.fxml");
     }
 }

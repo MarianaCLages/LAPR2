@@ -1,5 +1,6 @@
 package app.ui.gui.Client;
 
+import app.controller.App;
 import app.ui.gui.Controllers.SceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,6 +17,8 @@ public class ClientUI {
     private Button myReturnButtonClient;
 
     public void returnToMenu(ActionEvent event) {
+        App app = App.getInstance();
+        app.getCurrentUserSession().doLogout();
         sceneController.switchMenu(event, "/FXML/MainScreen.fxml");
     }
 

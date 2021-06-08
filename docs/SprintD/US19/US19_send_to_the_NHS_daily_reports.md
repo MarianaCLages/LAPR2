@@ -9,6 +9,7 @@ As an organization employee, I want to create a new task in order to be further 
 ### 1.2. Customer Specifications and Clarifications
 
 **From the specifications document:**
+> The Many Labs company wants to send to the NHS daily reports of Covid-19 data, including the number of observed values and estimated values. Reports should be generated automatically with historical data and must be sent every day at 6:00 am
 
 > The contract with the NHS in England requires Many Labs to summarize and report Covid-19 data, the company needs to: identify the number of Covid-19 tests performed, identify all positive results to Covid-19 tests, report the total number of Covid-19 cases per day, per week and per month of the year, and send the forecasts for these same time horizons (the number of Covid-19 cases for the following day, next week and next month)
 
@@ -31,7 +32,6 @@ insert client clarifications
   values that will be send to NHS. The interval of dates to fit the regression model and the number of historical
   points (number of days and number of weeks) must be defined through a configuration file. The system should send the
   report using the NHS API (available in moodle).
-  
 
 ### 1.4. Found out Dependencies
 
@@ -43,7 +43,7 @@ insert client clarifications
 **Input Data:**
 
 * Typed data:
-    * a reference, 
+    * a reference,
     * a designation,
     * an informal description
     * a technical description

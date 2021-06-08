@@ -1,10 +1,9 @@
 package app.ui.gui.AdminMenuUIs;
 
+import app.controller.App;
 import app.ui.gui.Controllers.SceneController;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
-
-import java.io.IOException;
 
 public class ParameterUI {
 
@@ -12,8 +11,10 @@ public class ParameterUI {
     private SceneController sceneController = SceneController.getInstance();
 
 
-    public void returnToAdminMenu(ActionEvent event){
-            sceneController.switchMenu(event, "/FXML/AdministratorUI.fxml");
+    public void returnToAdminMenu(ActionEvent event) {
+        App app = App.getInstance();
+        app.getCurrentUserSession().doLogout();
+        sceneController.switchMenu(event, "/FXML/AdministratorUI.fxml");
     }
 
 }
