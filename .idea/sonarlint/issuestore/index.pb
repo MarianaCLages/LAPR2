@@ -99,8 +99,6 @@ X
 (src/main/java/app/ui/console/AuthUI.java,a\c\ac569ed985938d514a4808da16cd4fbc88fa6036
 N
 src/main/java/app/ui/Main.java,7\7\774d0aff326a0164e53c11cda4e3afaaa607428f
-c
-3src/main/java/app/ui/gui/ClientUIs/ViewTestsUI.java,1\5\15b646c0027398f877dd80fe3ec4c1ebfcc49d9e
 i
 9src/main/java/app/domain/mappers/dto/CategoryListDTO.java,5\f\5f086cda3cbb8f8bcce87c4638f3e55c2aee8c9d
 h

@@ -30,18 +30,21 @@ public class SceneController {
         return authController;
     }
 
-    public void switchMenu(ActionEvent event, String path) throws IOException {
+    public void switchMenu(ActionEvent event, String path) {
 
-         FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
-         Parent root = loader.load();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(path));
+        try {
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            //String css = this.getClass().getResource("/Styles/Styles.css").toExternalForm();
+            //scene.getStylesheets().add(css);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException error) {
 
-         Scene scene = new Scene(root);
-         //String css = this.getClass().getResource("/Styles/Styles.css").toExternalForm();
-         //scene.getStylesheets().add(css);
-         Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
-         stage.setScene(scene);
-         stage.show();
+        }
 
-     }
+    }
 
 }

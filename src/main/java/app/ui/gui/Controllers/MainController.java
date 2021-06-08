@@ -21,25 +21,13 @@ public class MainController {
     @FXML
     private Button btnCredits;
 
-    public void login(ActionEvent e) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Login.fxml"));
-        Parent root = loader.load();
-        Stage stage = (Stage)((Node) e.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+    private SceneController sceneController = SceneController.getInstance();
 
+    public void login(ActionEvent e) throws IOException {
+        sceneController.switchMenu(e, "/FXML/Login.fxml");
     }
 
     public void credits(ActionEvent actionEvent) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Credits.fxml"));
-        Parent root = loader.load();
-        Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        sceneController.switchMenu(actionEvent, "/FXML/Credits.fxml");
     }
-
-
-
 }

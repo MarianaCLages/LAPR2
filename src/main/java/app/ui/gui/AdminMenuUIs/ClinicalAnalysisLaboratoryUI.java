@@ -12,11 +12,7 @@ public class ClinicalAnalysisLaboratoryUI {
     private SceneController sceneController = SceneController.getInstance();
 
 
-    public void returnToAdminMenu(ActionEvent event){
-        try {
-            sceneController.switchMenu(event, "/FXML/AdministratorUI.fxml");
-        }catch (IOException e ){
-
-        }
+    public void returnToAdminMenu(ActionEvent event) {
+        sceneController.switchMenu(event, "/FXML/AdministratorUI.fxml");
     }
 }

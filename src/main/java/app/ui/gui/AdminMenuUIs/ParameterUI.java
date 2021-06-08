@@ -13,11 +13,7 @@ public class ParameterUI {
 
 
     public void returnToAdminMenu(ActionEvent event){
-        try {
             sceneController.switchMenu(event, "/FXML/AdministratorUI.fxml");
-        }catch (IOException e ){
-
-        }
     }
 
 }

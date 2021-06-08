@@ -28,51 +28,28 @@ public class AdministratorUI {
 
 
     public void returnToMenu(ActionEvent event) {
-        try {
-            sceneController.switchMenu(event, "/FXML/MainScreen.fxml");
-        } catch (IOException e) {
-
-        }
+        sceneController.switchMenu(event, "/FXML/MainScreen.fxml");
     }
 
     public void goToTestTypeUI(ActionEvent event) {
-        try {
-            sceneController.switchMenu(event, "/FXML/TestTypeUI.fxml");
-        } catch (IOException e) {
-
-        }
+        sceneController.switchMenu(event, "/FXML/TestTypeUI.fxml");
     }
 
     public void goToParameterCategoryUI(ActionEvent event) {
-        try {
-            sceneController.switchMenu(event, "/FXML/ParameterCategoryUI.fxml");
-        } catch (IOException e) {
-
-        }
+        sceneController.switchMenu(event, "/FXML/ParameterCategoryUI.fxml");
     }
 
     public void goToParameterUI(ActionEvent event) {
-        try {
-            sceneController.switchMenu(event, "/FXML/ParameterUI.fxml");
-        } catch (IOException e) {
-
-        }
+        sceneController.switchMenu(event, "/FXML/ParameterUI.fxml");
     }
 
     public void goToEmployeeUI(ActionEvent event) {
-        try {
-            sceneController.switchMenu(event, "/FXML/EmployeeUI.fxml");
-        } catch (IOException e) {
-
-        }
+        sceneController.switchMenu(event, "/FXML/EmployeeUI.fxml");
     }
 
     public void goToClinicalAnalysisLaboratoryUI(ActionEvent event) {
-        try {
-            sceneController.switchMenu(event, "/FXML/ClinicalAnalysisLaboratoryUI.fxml");
-        } catch (IOException e) {
+        sceneController.switchMenu(event, "/FXML/ClinicalAnalysisLaboratoryUI.fxml");
 
-        }
     }
 
 }

@@ -9,17 +9,13 @@ import java.io.IOException;
 
 public class SpecialistDoctorUI {
 
-    private SceneController sceneController=SceneController.getInstance();
+    private SceneController sceneController = SceneController.getInstance();
 
     @FXML
     private Button myReturnButtonSpecialistDoctor;
 
     public void returnToMenu(ActionEvent event) {
-        try {
-            sceneController.switchMenu(event, "/FXML/MainScreen.fxml");
-        } catch (IOException e) {
-
-        }
+        sceneController.switchMenu(event, "/FXML/MainScreen.fxml");
     }
 
 }

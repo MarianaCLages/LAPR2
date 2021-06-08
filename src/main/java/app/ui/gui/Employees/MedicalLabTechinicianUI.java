@@ -9,17 +9,13 @@ import java.io.IOException;
 
 public class MedicalLabTechinicianUI {
 
-    private SceneController sceneController=SceneController.getInstance();
+    private SceneController sceneController = SceneController.getInstance();
 
     @FXML
     private Button myReturnButtonMlt;
 
     public void returnToMenu(ActionEvent event) {
-        try {
-            sceneController.switchMenu(event, "/FXML/MainScreen.fxml");
-        } catch (IOException e) {
-
-        }
+        sceneController.switchMenu(event, "/FXML/MainScreen.fxml");
     }
 
 }

@@ -100,53 +100,25 @@ public class LoginController {
             if (!Objects.isNull(role)) {
                 switch (role.getDescription()) {
                     case "ADMINISTRATOR":
-                        try {
-                            sceneController.switchMenu(actionEvent, "/FXML/AdministratorUI.fxml");
-                        } catch (IOException e) {
-
-                        }
+                        sceneController.switchMenu(actionEvent, "/FXML/AdministratorUI.fxml");
                         break;
                     case "SPECIALISTDOCTOR":
-                        try {
-                            sceneController.switchMenu(actionEvent, "/FXML/SpecialistDoctorUI.fxml");
-                        } catch (IOException e) {
-
-                        }
+                        sceneController.switchMenu(actionEvent, "/FXML/SpecialistDoctorUI.fxml");
                         break;
                     case "ClIENT":
-                        try {
-                            sceneController.switchMenu(actionEvent, "/FXML/ClientUI.fxml");
-                        } catch (IOException e) {
-
-                        }
+                        sceneController.switchMenu(actionEvent, "/FXML/ClientUI.fxml");
                         break;
                     case "RECEPTIONIST":
-                        try {
-                            sceneController.switchMenu(actionEvent, "/FXML/ReceptionistUI.fxml");
-                        } catch (IOException e) {
-
-                        }
+                        sceneController.switchMenu(actionEvent, "/FXML/ReceptionistUI.fxml");
                         break;
                     case "LABORATORYCOORDINATOR":
-                        try {
-                            sceneController.switchMenu(actionEvent, "/FXML/LaboratoryCoordinatorUI.fxml");
-                        } catch (IOException e) {
-
-                        }
+                        sceneController.switchMenu(actionEvent, "/FXML/LaboratoryCoordinatorUI.fxml");
                         break;
                     case "MEDICALLABTECHNICIIAN":
-                        try {
-                            sceneController.switchMenu(actionEvent, "/FXML/MedicalLabTechnicianUI.fxml");
-                        } catch (IOException e) {
-
-                        }
+                        sceneController.switchMenu(actionEvent, "/FXML/MedicalLabTechnicianUI.fxml");
                         break;
                     case "CLINICALCHEMISTRYTECHNOLOGIST":
-                        try {
-                            sceneController.switchMenu(actionEvent, "/FXML/ClinicalChemistryTechnologistUI.fxml");
-                        } catch (IOException e) {
-
-                        }
+                        sceneController.switchMenu(actionEvent, "/FXML/ClinicalChemistryTechnologistUI.fxml");
                         break;
                     default:
                         break;

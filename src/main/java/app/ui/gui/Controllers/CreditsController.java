@@ -14,13 +14,9 @@ import java.io.IOException;
 public class CreditsController {
     public Label credits;
     public Button btnBack;
-    private SceneController sceneController=SceneController.getInstance();
+    private SceneController sceneController = SceneController.getInstance();
 
     public void Back(ActionEvent actionEvent) throws IOException {
-        try {
-            sceneController.switchMenu(actionEvent, "/FXML/MainScreen.fxml");
-        } catch (Exception e) {
-
-        }
+        sceneController.switchMenu(actionEvent, "/FXML/MainScreen.fxml");
     }
 }
