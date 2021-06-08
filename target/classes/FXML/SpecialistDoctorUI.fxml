@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.Employees.SpecialistDoctorUI">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.employees.SpecialistDoctorUI">
    <children>
       <Label alignment="CENTER" layoutX="136.0" layoutY="29.0" prefHeight="26.0" prefWidth="329.0" text="Specialist Doctor Menu" textAlignment="CENTER">
          <font>

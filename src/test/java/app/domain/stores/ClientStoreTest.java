@@ -152,6 +152,7 @@ public class ClientStoreTest {
 
     }
 
+    /*
     @Test
     public void addUser() throws ParseException {
         ClientStore store = new ClientStore();
@@ -162,7 +163,6 @@ public class ClientStoreTest {
         store.saveClient();
         Company company = App.getInstance().getCompany();
         Assert.assertTrue(store.addUser(company));
-    }
-
-
+    }*/
+    
 }
