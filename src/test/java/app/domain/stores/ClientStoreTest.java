@@ -151,18 +151,5 @@ public class ClientStoreTest {
         Assert.assertFalse(store.exists("1234567791"));
 
     }
-
-    /*
-    @Test
-    public void addUser() throws ParseException {
-        ClientStore store = new ClientStore();
-        String strDate = "25-06-1950";
-        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-        Date date = df.parse(strDate);
-        store.CreateClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
-        store.saveClient();
-        Company company = App.getInstance().getCompany();
-        Assert.assertTrue(store.addUser(company));
-    }*/
-
+    
 }
