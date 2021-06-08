@@ -19,7 +19,7 @@ public class CreditsController {
 
     public void Back(ActionEvent actionEvent) throws IOException {
         App app = App.getInstance();
-        app.getCurrentUserSession().doLogout();
+        app.doLogout();
         sceneController.switchMenu(actionEvent, "/FXML/MainScreen.fxml");
     }
 }

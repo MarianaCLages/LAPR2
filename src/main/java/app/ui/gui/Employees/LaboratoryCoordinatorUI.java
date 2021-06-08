@@ -17,7 +17,7 @@ public class LaboratoryCoordinatorUI {
 
     public void returnToMenu(ActionEvent event) {
         App app = App.getInstance();
-        app.getCurrentUserSession().doLogout();
+        app.doLogout();
         sceneController.switchMenu(event, "/FXML/MainScreen.fxml");
     }
 
