@@ -43,7 +43,7 @@ insert client clarifications
 **Input Data:**
 
 * Typed data:
-    * a reference,
+    * a reference, 
     * a designation,
     * an informal description
     * a technical description

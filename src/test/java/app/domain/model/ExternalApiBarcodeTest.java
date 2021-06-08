@@ -28,7 +28,7 @@ public class ExternalApiBarcodeTest {
     }
 
     @Test
-    public void createBarcodeImageTest() throws BarcodeException, OutputException, IOException {
+    public void createBarcodeImageTest() throws OutputException, IOException {
         SampleStore store = new SampleStore();
         Sample rep = new Sample("123456789012", "12345678901");
 

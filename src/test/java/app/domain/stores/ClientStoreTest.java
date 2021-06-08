@@ -2,7 +2,6 @@ package app.domain.stores;
 
 import app.controller.App;
 import app.domain.model.Company;
-import app.domain.shared.Constants;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -33,6 +32,7 @@ public class ClientStoreTest {
         store.CreateClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
         Assert.assertNotNull(store.getClient());
     }
+
     @Test
     public void CreateClientNotNull1() throws ParseException {
         ClientStore store = new ClientStore();
@@ -140,6 +140,7 @@ public class ClientStoreTest {
         Assert.assertFalse(store.exists("1234567791"));
 
     }
+
     @Test
     public void existTestFalse2() throws ParseException {
         ClientStore store = new ClientStore();
@@ -161,8 +162,6 @@ public class ClientStoreTest {
         store.saveClient();
         Company company = App.getInstance().getCompany();
         Assert.assertTrue(store.addUser(company));
-
-
     }
 
 

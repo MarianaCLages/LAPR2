@@ -74,7 +74,6 @@ public class SampleStore implements Serializable {
     public boolean saveSample() throws IOException, OutputException {
         if (validateSample()) {
             testSamples.add(this.sample);
-            System.out.println(this.sample.toString());
             em.barcodeImage();
             return true;
         } else {

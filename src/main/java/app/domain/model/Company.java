@@ -36,7 +36,6 @@ public class Company implements Serializable {
      * @param designation Designation of Company
      */
     public Company(String designation) {
-        System.out.println(designation);
         if (StringUtils.isBlank(designation))
             throw new IllegalArgumentException("Designation cannot be blank.");
 

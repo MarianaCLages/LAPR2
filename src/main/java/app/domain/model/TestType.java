@@ -41,7 +41,8 @@ public class TestType implements Serializable {
 
     }
 
-    private String setExternalModule(String testID) {        Properties props = new Properties();
+    private String setExternalModule(String testID) {
+        Properties props = new Properties();
         try {
             InputStream in = new FileInputStream(Constants.PARAMS_FILENAME);
             props.load(in);
@@ -134,7 +135,6 @@ public class TestType implements Serializable {
     }
 
     /**
-     *
      * @return String with the name of the description associated with the testType
      */
     public String getDescription() {
@@ -142,7 +142,6 @@ public class TestType implements Serializable {
     }
 
     /**
-     *
      * @return String with the collecting method associated with the testType
      */
     public String getCollectingMethod() {
@@ -150,7 +149,6 @@ public class TestType implements Serializable {
     }
 
     /**
-     *
      * @return String with the name of the external module associated with the testType
      */
     public String getExternalModule() {
