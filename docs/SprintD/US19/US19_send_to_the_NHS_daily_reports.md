@@ -19,7 +19,29 @@ As an organization employee, I want to create a new task in order to be further 
 
 **From the client clarifications:**
 
-insert client clarifications
+> **Question:** Regarding US18 and US19, it is only one report containing all the tests performed by Many Labs to be sent each time, correct? Or is it one report per laboratory, for example? Or other option?
+>
+> **Answer:** The report should contain all the tests made by Many Labs.
+
+> **Question:** As the report is generated automatically, should the system generate a notication that the report was sent?
+>
+> **Answer:** The application should write the event into a log file.
+
+> **Question:** In US19, in Sprint D Requirements, it says "The report should include day and week (observed and estimated) values..." and also "Reports...must be sent every day at 6:00 am". As the Report is to be automatically sent very early in the morning, do you wish the report to have the data concerning the day before and the last week starting at the day before?
+>
+> **Answer:** The format of the report should follow the report example that is available in moodle.
+
+> **Question:** Should the report contain the data of all the tests with results (with or without report, with or without validation) or contain only the validated tests? (Or other option?)
+>
+> **Answer:** The NHS Covid report should include statistics computed only from validated tests.
+
+> **Question:** Are we going to be able to use more math libraries in order to facilitate the calculus (for example, for confidence intervals) or is the rest of the calculus to be developed by each team?
+>
+> **Answer:** Each team should implement the classes and methods needed.
+
+> **Question:** which significance level should we use for the hypothesis tests?
+>
+> **Answer:** The application should allow the user to choose the significance level.
 
 ### 1.3. Acceptance Criteria
 
@@ -33,32 +55,31 @@ insert client clarifications
   points (number of days and number of weeks) must be defined through a configuration file. The system should send the
   report using the NHS API (available in moodle).
 
+* **AC2:** The report should contain all the tests made by Many Labs.
+
+* **AC3:** The application should write the event into a log file.
+
+* **AC4:** The NHS Covid report should include statistics computed only from validated tests.
+
+* **AC5:** The application should allow the user to choose the significance level.
+
 ### 1.4. Found out Dependencies
 
-* There is a dependency to "US003 Create a task category" since at least a task category must exist to classify the task
-  being created.
+* There is a dependency to "US4", "US5", "US12","US14","US15" since the test needs to be on **last state** in order to
+  be able to be mentioned in report.
+
 
 ### 1.5 Input and Output Data
 
 **Input Data:**
 
-* Typed data:
-    * a reference,
-    * a designation,
-    * an informal description
-    * a technical description
-    * an estimated duration
-    * an estimated cost
-
-* Selected data:
-    * Classifying task category
+*nothing*
 
 **Output Data:**
 
-* List of existing task categories
-* (In)Success of the operation
+* Report sent to the NHS
 
-### 1.6. System Sequence Diagram (SSD)
+ ### 1.6. System Sequence Diagram (SSD)
 
 **Alternative 1**
 
@@ -72,7 +93,7 @@ insert client clarifications
 
 ### 1.7 Other Relevant Remarks
 
-* The created task stays in a "not published" state in order to distinguish from "published" tasks.
+
 
 ## 2. OO Analysis
 
