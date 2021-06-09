@@ -1,0 +1,17 @@
+@startuml
+
+autonumber
+actor LaboratoryCoordinator as C
+participant ":System" as S
+activate C
+C -> S: wants to import clinical tests
+activate S
+S --> C:show the list of files
+deactivate S
+C -> S:choose the file
+activate S
+S --> C: comfirms that the tests were imported
+deactivate S
+
+deactivate C
+@enduml
