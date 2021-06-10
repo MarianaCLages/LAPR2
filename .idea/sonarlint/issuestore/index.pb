@@ -15,8 +15,6 @@ b
 .src/test/java/app/domain/model/ClientTest.java,1\d\1ded02609d9819f819b2a83507b751b1338f4e87
 k
 ;src/test/java/app/domain/model/ClinicalAnalysisLabTest.java,c\7\c7fe46810f305ec0a466c483bc03cfd82615959c
-_
-/src/test/java/app/domain/model/CompanyTest.java,f\f\ff6dd89f0cd7857a07c771f5cf78d0af203b0511
 ]
 -src/test/java/app/domain/model/EmailTest.java,1\3\135feb5d30f995563cc1a82564df68b69ac6c930
 `
@@ -161,8 +159,6 @@ m
 =src/main/java/app/domain/mappers/TestParameterListMapper.java,0\6\062cd32e6a0b9407759b54987eb6ed84ebf8c74a
 g
 7src/main/java/app/domain/model/TestParameterResult.java,8\9\89c14902f91af9f5afc1e3afe73a166ab424f39c
-^
-.src/main/java/app/domain/stores/TestStore.java,9\d\9d7c93dfb2abbc9f3e33ac38ae37e345fc6eea94
 f
 6src/main/java/app/domain/mappers/dto/TestStoreDTO.java,1\0\104c57003351d0b7e5c8b9b04d7c656259c3db6b
 e
