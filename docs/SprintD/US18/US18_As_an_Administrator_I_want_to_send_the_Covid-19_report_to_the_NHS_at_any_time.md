@@ -108,7 +108,7 @@ There is a dependency to :
 
 ### 1.6. System Sequence Diagram (SSD)
 
-![US18_SSD](US18_SSD.svg)
+![US18_SSD](US018_SSD.svg)
 
 ### 1.7 Other Relevant Remarks
 
