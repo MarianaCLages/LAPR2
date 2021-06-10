@@ -12,11 +12,11 @@ the NHS, the regression model to use and select the independent variables to use
 
 **From the specifications document:**
 
-> “Considering that M any Labs has the exclusivity to perform Covid 19 tests, and that the contract with the NHS in England requires Many Labs to summarize and report Covid 19 data, the company needs to: identify the number of Covid 19 tests performed, identify all positive results to C ovid 19 tests, report the total number of Covid 19 cases per day, per week and per month of the year, and send the forecasts for these same time horizons the number of Covid 19 cases for the following day, next week and next month).”
+> “Considering that **Many Labs** has the exclusivity to perform **Covid 19 tests**, and that the contract with the **NHS** in England requires Many Labs to **summarize and report Covid 19 data**, the company needs to: **identify the number of Covid 19 tests performed, identify all positive results to Covid 19 tests, report the total number of Covid 19 cases per day, per week and per month of the year, and send the forecasts for these same time horizons the number of Covid 19 cases for the following day, next week and next month**.”
 
-> "...should send them to the NHS using their API."
+> "...should send them to the **NHS using their API**."
 
-> “To make the predictions , the NHS contract defines that a linear regression algorithm should be used . The NHS required that both simple linear and multiple linear regression algorithms should be evaluated to select the best model . The accuracy of the prediction models should be analysed and documented in the application user manual (in the that must be delivered with the application The algorithm to be used by the application must be defined through a configuration file.”
+> “To make the **predictions** , the NHS contract defines that **a linear regression algorithm should be used** . The NHS required that both **simple linear and multiple linear regression algorithms should be evaluated to select the best model** . The accuracy of the **prediction models** should be **analysed and documented in the application user manual** (in the that must be delivered with the application The algorithm to be used by the application must be defined through a configuration file.”
 
 **From the client clarifications:**
 
@@ -38,15 +38,32 @@ the NHS, the regression model to use and select the independent variables to use
 
 > **Question:** From Sprint D requirements we get "I want to define... the number of historical points (number of days or number of weeks) that must be sent to the NHS". Is the Administrator who must choose between days or weeks? If so, how should he make this choice? 
 > 
-> **Answer** Yes. The Administrator should select between days and weeks using the user interface.
+> **Answer:** Yes. The Administrator should select between days and weeks using the user interface.
+
+> **Question:** From Sprint D requirements we get "I want to define ... the regression model to use and select the independent variables to use"
+**Q1:** If the admin selects the multilinear regression he/she can select more than one independent variable. Should he select from a checklist the ones that he/she want? If so, what are the supposed independent variables we need to include in the checklist?
+From Sprint D requirements we also get "Administrator should be able to choose the independent variable to use with the simple linear regression model (either the number of tests realized or the mean age)."
+**Q2**: When you say "mean age" are you referring to the average age of clients? 
+>
+> **Answer:**
+**Q1** - to apply mlr you need two independent variables- daily number tests and mean age person tested daily. Also you need the same records per week.
+**Q2**-It is already in **Q1**
+
+>**Question:** Regarding the hypothesis tests: "The application should allow the user to choose the significance level."
+**Q**: Is the same logic applied to the confidence intervals to be on the table?
+>
+> **Answer:** Yes the user could choose the significance level for hip t and confidence level for IC.
+
 
 ### 1.3. Acceptance Criteria
 
   * **AC1:** The system should allow the Administrator to select between a simple linear and multilinear regression model to fit the data. Moreover, the Administrator should be able to choose the independent variable to use with the simple linear regression model (either the number of tests realized or the mean age). The system should send the report using the NHS API (available in moodle).
-  * **AC2:** 
-  * **AC3:** 
-  * **AC4:** 
-  * **AC5:** 
+  * **AC2:** The user could choose the significance level for hip t and confidence level for IC.
+  * **AC3:** To apply mlr you need two independent variables - daily number tests and mean age person tested daily. Also you need the same records per week.
+  * **AC4:** The Administrator should select between days and weeks using the user interface.
+  * **AC5:** The NHS Covid report should include statistics computed only from validated tests.
+  * **AC6:** The report should contain all the tests made by Many Labs.
+  * **AC7:** The application should allow the user to choose the significance level.
 
 ### 1.4. Found out Dependencies
 
@@ -56,25 +73,42 @@ There is a dependency to:
 
 * **"US07 Register a new employee"** since at least a Administrator must be registered in the system.
 
+* **"US03 Register a new client"** since there should be "x" registered clients to apply the slr or mlr (1 of the 2 independent variables - mean age).
+
 **From Sprint C:**
 
 There is a dependency to:
+
+* **"US15 Validate a test"** since to perform the slr or mlr (simple linear regression or multi linear regression) there should be validated tests (1 of the 2 independent variables - covid tests).
+
+**From Sprint D :**
+
+There is a dependency to : 
+
+* **"US17 Import a CSV file"** since the system should have the tests from various days available to apply the desired models.
 
 ### 1.5 Input and Output Data
 
 **Input Data:**
 
 * Typed data:
-
+  * The significance level;
+  * Confidence level of IC;
+  * Number of historical points;
+  * The dates intervals to fit the model.
+  
 * Selected data:
+  * The linear regression model (multi linear regression or the simple linear regression);
+  * IF(Simple linear regression) : The independent variable (number of covid tests realized or mean age).
 
 **Output Data:**
 
-* (In)Success of the operation
+* NHS Report with all data;
+* (In)Success of the operation.
 
 ### 1.6. System Sequence Diagram (SSD)
 
-![US12_SSD](US12_SSD.svg)
+![US18_SSD](US18_SSD.svg)
 
 ### 1.7 Other Relevant Remarks
 
@@ -85,7 +119,7 @@ There is a dependency to:
 
 ### 2.1. Relevant Domain Model Excerpt
 
-![US12_DM](US12_DM.svg)
+![US18_DM](US18_DM.svg)
 
 ### 2.2. Other Remarks
 
@@ -144,17 +178,14 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ## 3.2. Sequence Diagram (SD)
 
-![US12_SD](US12_SD.svg)
-
-* SD_AddTestResult(parameterCode, result, metric)
-  ![SD_AddTestResult(parameterCode, result, metric)](SD_AddTestResult.svg)
+![US18_SD](US18_SD.svg)
 
 ## 3.3. Class Diagram (CD)
 
 *In this section, it is suggested to present an UML static view representing the main domain related software classes
 that are involved in fulfilling the requirement as well as and their relations, attributes and methods.*
 
-![US12_CD](US12_CD.svg)
+![US18_CD](US18_CD.svg)
 
 # 4. Tests
 

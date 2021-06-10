@@ -179,8 +179,6 @@ d
 4src/main/java/app/controller/ValidateController.java,3\2\32f190901a7c22374cc6f7578861b4be50adef67
 I
 docs/SprintD/US12/US12.md,8\f\8f94ac9b09c91251479d2d973ae539f824d2774c
-I
-docs/SprintD/US13/US13.md,c\a\ca643c4202856490937d9359e0618667240f1de5
 t
 Ddocs/SprintD/US12/SD_AddTestResult(parameterCode,result,metric).puml,8\1\81ee0809097b86e7048052c9d4f6e7650cf41a30
 l
