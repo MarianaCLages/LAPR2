@@ -191,9 +191,9 @@ public class TestStore implements Serializable {
             }
 
         };
-        List<Test> sup = getTestByTin(clientTin);
-        Collections.sort(sup, comparator1);
-        return sup;
+        List<Test> testList2 = getTestByTin(clientTin);
+        Collections.sort(testList2, comparator1);
+        return testList2;
     }
 
     public List<Test> getTestByTin(String clientTin) {
