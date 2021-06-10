@@ -296,4 +296,8 @@ public class Client implements Serializable {
     public String getTinNumber() {
         return tinNumber;
     }
+
+    public String getName() {
+        return name;
+    }
 }

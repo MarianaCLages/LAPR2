@@ -158,8 +158,6 @@ public class Company implements Serializable {
 
 
     public boolean saveCompany() {
-
-
         return Serialize.writeObject(Constants.COMPANY_SER, this);
     }
 
@@ -171,7 +169,5 @@ public class Company implements Serializable {
             e.printStackTrace();
             return null;
         }
-
     }
-
 }

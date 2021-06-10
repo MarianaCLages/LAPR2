@@ -23,8 +23,7 @@ public class Serialize {
 
     public static boolean writeObject(String stringFile, Company savedObject) {
         try {
-            ObjectOutputStream out = new ObjectOutputStream(
-                    new FileOutputStream(stringFile));
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(stringFile));
             try {
                 out.writeObject(savedObject);
             } finally {

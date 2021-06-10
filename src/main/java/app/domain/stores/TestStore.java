@@ -206,4 +206,15 @@ public class TestStore implements Serializable {
         }
         return tinList;
     }
+
+    public List<Test> getValidatedTestList(Client client) {
+        List<Test> validatedTest = new ArrayList<>();
+
+        for (Test t : array) {
+            if (client.getTinNumber().equalsIgnoreCase(t.getClientTin()) && t.getState().equals("VALIDATED")) {
+                validatedTest.add(t);
+            }
+        }
+        return validatedTest;
+    }
 }

@@ -297,5 +297,11 @@ public class Test implements Serializable {
         return this.createdDate;
     }
 
+    public TestType getTestType() {
+        return testType;
+    }
 
+    public LocalDate getValidatedDate() {
+        return validatedDate;
+    }
 }

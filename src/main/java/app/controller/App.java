@@ -153,6 +153,9 @@ public class App {
 
         store.CreateClient("12345678901", "1234567890123456", "1234567890", "1234567890", date, 'M', "ze@ze.com", "Zé");
         store.saveClient();
+        store.CreateClient("12345678902", "1234567891123456", "1234567893", "2234567890", date, 'F', "maria@maria.com", "Maria");
+        store.saveClient();
+
         TestStore testStore = company.getTestList();
 
         testStore.createTest("100000000000", "1234567890", bloodTest, testCategories, testParameters);
