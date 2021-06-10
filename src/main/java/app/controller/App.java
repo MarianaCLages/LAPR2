@@ -36,7 +36,7 @@ public class App {
         if (f.exists() && !f.isDirectory()) {
             this.company = new Company();
         } else {
-            this.company = new Company(props.getProperty(Constants.PARAMS_COMPANY_DESIGNATION));
+            this.company = new Company(props.getProperty(Constants.PARAMS_COMPANY_DESIGNATION),props.getProperty("report.hour"),props.getProperty("report.min"),props.getProperty("report.sec"));
             this.authFacade = this.company.getAuthFacade();
             bootstrap();
         }

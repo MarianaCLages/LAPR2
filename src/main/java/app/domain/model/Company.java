@@ -9,7 +9,10 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Objects;
+import java.util.Timer;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author Paulo Maio <pam@isep.ipp.pt>
@@ -35,7 +38,7 @@ public class Company implements Serializable {
      *
      * @param designation Designation of Company
      */
-    public Company(String designation) {
+    public Company(String designation, String hour, String min, String sec) {
         if (StringUtils.isBlank(designation))
             throw new IllegalArgumentException("Designation cannot be blank.");
 
@@ -50,6 +53,7 @@ public class Company implements Serializable {
         this.clientList = new ClientStore();
         this.testList = new TestStore();
         this.sampleStore = new SampleStore();
+        scheduleReport(Integer.parseInt(hour), Integer.parseInt(min), Integer.parseInt(sec));
 
     }
 
@@ -70,6 +74,16 @@ public class Company implements Serializable {
 
     }
 
+    private void scheduleReport(int hour, int min, int sec) {
+        Calendar today = Calendar.getInstance();
+        today.set(Calendar.HOUR_OF_DAY, hour);
+        today.set(Calendar.MINUTE, min);
+        today.set(Calendar.SECOND, sec);
+
+        Timer timer = new Timer();
+        timer.schedule(new SendReportTask(), today.getTime(), TimeUnit.MILLISECONDS.convert(1, TimeUnit.DAYS));
+
+    }
 
     /**
      * @return designation of the Company
