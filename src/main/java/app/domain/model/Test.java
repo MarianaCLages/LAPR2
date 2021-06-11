@@ -7,7 +7,6 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
 
 public class Test implements Serializable {
 
@@ -132,6 +131,7 @@ public class Test implements Serializable {
 
     /**
      * Changes the state of the object test by changing the variable state with a value from the enum "State
+     *
      * @param s a value of the enum "State"
      */
     public void changeState(String s) {
@@ -215,7 +215,7 @@ public class Test implements Serializable {
 
     /**
      * @param parameterCode the code of the parameter that will be associated with a result
-     * @param result double that represents numerical the result of the analysis of the test parameters
+     * @param result        double that represents numerical the result of the analysis of the test parameters
      * @return boolean represents the success of the operation
      */
     public boolean addTestResult(String parameterCode, double result) {
@@ -277,6 +277,13 @@ public class Test implements Serializable {
         return state.toString();
     }
 
+    public String getClientTin() {
+        return clientTin;
+    }
+
+    public LocalDate getDate() {
+        return this.createdDate;
+    }
 
     /**
      * This enum represents all the states that the Test object can assume
@@ -290,12 +297,12 @@ public class Test implements Serializable {
 
 
     }
-    public String getClientTin(){
-        return clientTin;
-    }
-    public LocalDate getDate(){
-        return this.createdDate;
+
+    public TestType getTestType() {
+        return testType;
     }
 
-
+    public LocalDate getValidatedDate() {
+        return validatedDate;
+    }
 }

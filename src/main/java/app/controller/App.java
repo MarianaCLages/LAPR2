@@ -36,7 +36,7 @@ public class App {
         if (f.exists() && !f.isDirectory()) {
             this.company = new Company();
         } else {
-            this.company = new Company(props.getProperty(Constants.PARAMS_COMPANY_DESIGNATION));
+            this.company = new Company(props.getProperty(Constants.PARAMS_COMPANY_DESIGNATION),props.getProperty("report.hour"),props.getProperty("report.min"),props.getProperty("report.sec"));
             this.authFacade = this.company.getAuthFacade();
             bootstrap();
         }
@@ -153,6 +153,9 @@ public class App {
 
         store.CreateClient("12345678901", "1234567890123456", "1234567890", "1234567890", date, 'M', "ze@ze.com", "Zé");
         store.saveClient();
+        store.CreateClient("12345678902", "1234567891123456", "1234567893", "2234567890", date, 'F', "maria@maria.com", "Maria");
+        store.saveClient();
+
         TestStore testStore = company.getTestList();
 
         testStore.createTest("100000000000", "1234567890", bloodTest, testCategories, testParameters);

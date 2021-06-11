@@ -6,6 +6,10 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.adminMenuUIs.TestTypeUI">
    <children>
+<<<<<<< HEAD
       <Button fx:id="myReturnButtonTestType" layoutX="14.0" layoutY="343.0" mnemonicParsing="false" onAction="#returnToAdminMenu" prefHeight="43.0" prefWidth="104.0" text="Return" />
+=======
+      <Button fx:id="myReturnButtonTestType" layoutX="16.0" layoutY="321.0" mnemonicParsing="false" onAction="#returnToAdminMenu" prefHeight="65.0" prefWidth="135.0" text="Return" />
+>>>>>>> 95ab65285c0374e53ae9087769a2e207a1c550dc
    </children>
 </AnchorPane>

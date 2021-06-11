@@ -57,7 +57,7 @@ As an organization employee, I want to create a new task in order to be further 
 
 * **AC2:** The report should contain all the tests made by Many Labs.
 
-* **AC3:** The application should write the event into a log file.
+* **AC3:** The application should write the notification the event into a log file.
 
 * **AC4:** The NHS Covid report should include statistics computed only from validated tests.
 

@@ -2,13 +2,9 @@ package app.domain.stores;
 
 import app.domain.model.*;
 
-import javax.xml.crypto.Data;
 import java.io.Serializable;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 /**
@@ -205,5 +201,16 @@ public class TestStore implements Serializable {
             }
         }
         return tinList;
+    }
+
+    public List<Test> getValidatedTestList(Client client) {
+        List<Test> validatedTest = new ArrayList<>();
+
+        for (Test t : array) {
+            if (client.getTinNumber().equalsIgnoreCase(t.getClientTin()) && t.getState().equals("VALIDATED")) {
+                validatedTest.add(t);
+            }
+        }
+        return validatedTest;
     }
 }

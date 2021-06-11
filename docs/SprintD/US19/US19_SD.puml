@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+participant ":App" as ap
+participant ":Company" as comp
+participant "timer:Timer" as timer
+participant "task:SendReportTask" as task
+
+activate ap
+deactivate ap
+ap --> comp**:create(parameterFile)
+activate comp
+comp --> task**: create(parameters)
+comp --> timer**:create()
+comp --> timer : schedule(task,delay,interval)
+note over timer: after the delay specified in the config file
+activate timer
+deactivate timer
+timer -> task:run()
+ref over task: SD_runTask().svg
+activate timer
+deactivate timer
+activate task
+deactivate
+note over timer: after the interval specified in the config file
+timer -> task:run()
+ref over task: SD_runTask().svg
+activate timer
+deactivate timer
+activate task
+deactivate
+deactivate comp
+@enduml

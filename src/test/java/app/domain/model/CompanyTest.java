@@ -7,12 +7,12 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class CompanyTest {
-    Company company = new Company(Constants.PARAMS_COMPANY_DESIGNATION);
+    Company company = new Company(Constants.PARAMS_COMPANY_DESIGNATION,"6","0","0");
 
 
     @Test(expected = IllegalArgumentException.class)
     public void GetDesignationBlank() {
-        Company company = new Company("");
+        Company company = new Company("","6","0","0");
     }
 
     @Test

@@ -1,0 +1,10 @@
+@startuml
+
+autonumber
+participant "Time" as tm
+participant "System" as sys
+
+tm -> sys: ssdf
+sys --> tm: shfjdfhd
+
+@enduml

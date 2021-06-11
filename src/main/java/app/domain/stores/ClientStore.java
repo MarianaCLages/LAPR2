@@ -6,6 +6,7 @@ import app.domain.model.Test;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -126,5 +127,27 @@ public class ClientStore implements Serializable {
             }
         }
         return null;
+    }
+
+    public List<Client> orderClientListByTin() {
+
+        List<Client> clientListOrder = new ArrayList<>();
+
+        clientListOrder.addAll(array);
+
+        clientListOrder.sort(Comparator.comparing(Client::getTinNumber));
+
+        return clientListOrder;
+    }
+
+
+    public List<Client> orderClientListByName() {
+        List<Client> clientListOrder = new ArrayList<>();
+
+        clientListOrder.addAll(array);
+
+        clientListOrder.sort(Comparator.comparing(Client::getName));
+
+        return clientListOrder;
     }
 }
