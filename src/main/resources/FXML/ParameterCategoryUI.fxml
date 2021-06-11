@@ -6,6 +6,6 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.adminMenuUIs.ParameterCategoryUI">
    <children>
-      <Button fx:id="myReturnButtonParameterCategory" layoutX="24.0" layoutY="320.0" mnemonicParsing="false" onAction="#returnToAdminMenu" prefHeight="54.0" prefWidth="124.0" text="Return" />
+      <Button fx:id="myReturnButtonParameterCategory" layoutX="14.0" layoutY="343.0" mnemonicParsing="false" onAction="#returnToAdminMenu" prefHeight="43.0" prefWidth="104.0" text="Return" />
    </children>
 </AnchorPane>

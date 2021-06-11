@@ -97,14 +97,10 @@ i
 9src/main/java/app/domain/mappers/dto/CategoryListDTO.java,5\f\5f086cda3cbb8f8bcce87c4638f3e55c2aee8c9d
 h
 8src/main/java/app/domain/mappers/CategoryListMapper.java,6\a\6ae4d2a9d14653e4238f7216773d4e7b6d7e3131
-Z
-*src/main/java/app/domain/model/Client.java,a\1\a1140e0a891f26f51604f14ed5bf2ac976d60132
 g
 7src/main/java/app/domain/model/ClinicalAnalysisLab.java,5\9\59a8f18d9e027e408a61d00d6f81cd0f58c1eddf
 m
 =src/main/java/app/domain/stores/ClinicalAnalysisLabStore.java,b\c\bc611ab300957ae21088989219be8f1a4d449994
-f
-6src/main/java/app/controller/CreateTestController.java,f\5\f54f6fb19e03f0fa13b00dc9c6f082f28f52680c
 Y
 )src/main/java/app/domain/model/Email.java,e\5\e5b9d6aa410958c18970d8f4c9e19a4c38e62e32
 \
@@ -167,8 +163,6 @@ f
 6src/main/java/app/domain/mappers/dto/TestStoreDTO.java,1\0\104c57003351d0b7e5c8b9b04d7c656259c3db6b
 e
 5src/main/java/app/domain/mappers/TestStoreMapper.java,6\2\62e503cd3f850e2add24c9f7f6935216dffc26ee
-d
-4src/main/java/app/controller/TestTypeController.java,1\4\14fe02ab77de5538015d244c4cb5185cad33c9f9
 e
 5src/main/java/app/domain/mappers/dto/TestTypeDTO.java,3\d\3d048c73bee7915677a10076245a2e9e5a27d45d
 h
@@ -187,3 +181,19 @@ l
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+X
+(src/main/java/app/ui/gui/MainScreen.java,b\5\b59adf73fdf4b7ccc7be755addc8e97dd1524983
+h
+8src/main/java/app/ui/gui/controllers/MainController.java,2\9\292a2c3b98bc8a8029e036d845686e6bd82b7279
+d
+4src/test/java/app/domain/stores/ClientStoreTest.java,e\2\e2b46e13e389ecab1bfeccfd2f4a376c149640dc
+I
+docs/SprintD/US13/US13.md,c\a\ca643c4202856490937d9359e0618667240f1de5
+n
+>docs/SprintD/US05/VERS√ÉO 2 GRUPO 40/US005_RecordTheSamples.md,a\6\a6df19e5817d0568a337ec4bd8cd20395b039daf
+ó
+gdocs/SprintD/US18/US18_As_an_Administrator_I_want_to_send_the_Covid-19_report_to_the_NHS_at_any_time.md,3\7\37aee95c88701e0359fcbca505618db77d24fe5f
+e
+5src/main/java/app/domain/shared/LinearRegression.java,b\5\b5738a1e3a1c85790cbe245760fdbfe6e77be206
+j
+:src/main/java/app/domain/shared/MultiLinearRegression.java,5\1\51ac4d2fa961af5b859a17a30045d1b297b297c4

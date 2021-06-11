@@ -2,7 +2,7 @@ package app.ui.gui.controllers;
 
 import app.controller.App;
 import app.controller.AuthController;
-import app.domain.exceptions.MenuNotFoundException;
+import app.domain.shared.exceptions.MenuNotFoundException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;

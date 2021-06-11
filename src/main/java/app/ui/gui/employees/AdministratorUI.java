@@ -51,4 +51,9 @@ public class AdministratorUI {
     public void goToClinicalAnalysisLaboratoryUI(ActionEvent event) {
         sceneController.switchMenu(event, "/FXML/ClinicalAnalysisLaboratoryUI.fxml");
     }
+
+    public void goToGenerateNHSReportUI(ActionEvent event){
+        sceneController.switchMenu(event,"/FXML/NHSReportUI.fxml");
+    }
+
 }

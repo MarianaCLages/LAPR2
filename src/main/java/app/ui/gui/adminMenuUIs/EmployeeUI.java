@@ -3,11 +3,14 @@ package app.ui.gui.adminMenuUIs;
 import app.controller.App;
 import app.ui.gui.controllers.SceneController;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 public class EmployeeUI {
 
-    public Button myReturnButtonEmployee;
+    @FXML
+    private Button myReturnButtonEmployee;
+
     private SceneController sceneController = SceneController.getInstance();
 
 
