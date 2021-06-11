@@ -4,14 +4,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.employees.ClinicalChemistryTechnologistUI">
    <children>
-      <Label alignment="CENTER" layoutX="115.0" layoutY="29.0" prefHeight="40.0" prefWidth="395.0" text="Clinical Chemistry Technologist" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutY="32.0" prefHeight="40.0" prefWidth="600.0" text="Clinical Chemistry Technologist Menu" textAlignment="CENTER">
          <font>
             <Font size="28.0" />
          </font>
       </Label>
       <Button fx:id="myReturnButtonCht" layoutX="14.0" layoutY="337.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="49.0" prefWidth="104.0" text="Return" />
+      <Label layoutX="72.0" layoutY="159.0" text="Record results" />
+      <Label layoutX="72.0" layoutY="208.0" text="Consult client historical tests and check its details/results" />
+      <Button fx:id="recordresultsbtn" layoutX="451.0" layoutY="155.0" mnemonicParsing="false" onAction="#goToRecordResultsUI" text="Here" />
+      <Button fx:id="consultclienttestsbtn" layoutX="451.0" layoutY="204.0" mnemonicParsing="false" onAction="#goToConsultClientTestsUI" text="Here" />
    </children>
 </AnchorPane>

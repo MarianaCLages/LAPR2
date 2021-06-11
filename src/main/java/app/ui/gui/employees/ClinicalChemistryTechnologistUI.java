@@ -8,6 +8,11 @@ import javafx.scene.control.Button;
 
 public class ClinicalChemistryTechnologistUI {
 
+    @FXML
+    private Button recordresultsbtn;
+    @FXML
+    private Button consultclienttestsbtn;
+
     private SceneController sceneController = SceneController.getInstance();
 
     @FXML
@@ -17,6 +22,14 @@ public class ClinicalChemistryTechnologistUI {
         App app = sceneController.getApp();
         app.doLogout();
         sceneController.switchMenu(event, "/FXML/MainScreen.fxml");
+    }
+
+    public void goToRecordResultsUI(ActionEvent event) {
+        sceneController.switchMenu(event, "/FXML/RecordResultsUI.fxml");
+    }
+
+    public void goToConsultClientTestsUI(ActionEvent event) {
+        sceneController.switchMenu(event, "/FXML/ConsultClientTestsAndResultsUI.fxml");
     }
 
 }
