@@ -150,4 +150,9 @@ public class ClientStore implements Serializable {
 
         return clientListOrder;
     }
+
+    public List<Client> returnClientList(){
+        return this.array;
+    }
+
 }

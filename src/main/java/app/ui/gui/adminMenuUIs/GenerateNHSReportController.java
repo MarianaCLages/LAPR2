@@ -79,6 +79,8 @@ public class GenerateNHSReportController implements Initializable {
             errorAlert(err6.getMessage());
         } catch (HistoricalDaysInvalidException err7) {
             errorAlert(err7.getMessage());
+        } catch (RuntimeException err8){
+            errorAlert("Please enter valid information (Don't leave blank containers!)");
         }
 
     }

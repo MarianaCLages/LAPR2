@@ -10,6 +10,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Objects;
 import java.util.Timer;
 import java.util.concurrent.TimeUnit;
@@ -149,6 +150,10 @@ public class Company implements Serializable {
      */
     public ClientStore getClientList() {
         return this.clientList;
+    }
+
+    public List<Client> getClientArrayList(){
+        return getClientList().returnClientList();
     }
 
     /**
