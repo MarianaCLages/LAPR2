@@ -85,12 +85,6 @@ f
 6src/main/java/app/domain/model/ExternalApiBarcode.java,0\a\0a9e9a167e43840c0cf92bc5100f4bd26cc695cb
 b
 2src/main/java/auth/domain/store/UserRoleStore.java,d\f\df87a76751166dc90bf2d9baaa17c0f9f9f052bc
-\
-,src/main/java/app/ui/console/MainMenuUI.java,0\0\00b6c6e5c167fbd22e7d83c003815158143e9f8b
-`
-0src/main/java/app/controller/AuthController.java,4\0\40778ef1d8f18e9634da9485a353d2b842458731
-X
-(src/main/java/app/ui/console/AuthUI.java,a\c\ac569ed985938d514a4808da16cd4fbc88fa6036
 N
 src/main/java/app/ui/Main.java,7\7\774d0aff326a0164e53c11cda4e3afaaa607428f
 i

@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import app.controller.App;
 import app.domain.shared.Constants;
 import app.domain.shared.Serialize;
 import app.domain.stores.*;
@@ -9,10 +10,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
 import java.io.Serializable;
-import java.util.Calendar;
-import java.util.List;
-import java.util.Objects;
-import java.util.Timer;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -177,7 +175,8 @@ public class Company implements Serializable {
 
 
     public boolean saveCompany() {
-        return Serialize.writeObject(Constants.COMPANY_SER, this);
+        Properties props = App.getProperties();
+        return Serialize.writeObject(props.getProperty("serialize.path"), this);
     }
 
     private Object readCompany() {
