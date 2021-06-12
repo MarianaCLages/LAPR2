@@ -131,9 +131,7 @@ public class ClientStore implements Serializable {
 
     public List<Client> orderClientListByTin() {
 
-        List<Client> clientListOrder = new ArrayList<>();
-
-        clientListOrder.addAll(array);
+        List<Client> clientListOrder = new ArrayList<>(array);
 
         clientListOrder.sort(Comparator.comparing(Client::getTinNumber));
 
@@ -142,9 +140,8 @@ public class ClientStore implements Serializable {
 
 
     public List<Client> orderClientListByName() {
-        List<Client> clientListOrder = new ArrayList<>();
 
-        clientListOrder.addAll(array);
+        List<Client> clientListOrder = new ArrayList<>(array);
 
         clientListOrder.sort(Comparator.comparing(Client::getName));
 

@@ -1,8 +1,6 @@
 package app.controller;
 
-import app.domain.model.Client;
-import app.domain.model.Company;
-import app.domain.model.Test;
+import app.domain.model.*;
 import app.domain.stores.ClientStore;
 import app.domain.stores.TestStore;
 
@@ -53,7 +51,7 @@ public class ConsultClientTestsAndResultsController {
         Test test = null;
 
         for (Test test1 : testList){
-            if (tin.equalsIgnoreCase(test1.getClientTin())){
+            if (tin.equalsIgnoreCase(test1.getTestNhsNumber())){
                 test = test1;
             }
         }
@@ -61,6 +59,14 @@ public class ConsultClientTestsAndResultsController {
     }
 
     public String toString(Test test) {
-        return String.format("TestCode = %s, Client TIN = %s, NHS number = %s, Test type = %s, Date of validation = %tD, Test result = %s", test.getTestCode(), test.getClientTin(), test.getTestNhsNumber(), test.getTestType().getDescription(), test.getValidatedDate(), test.getResults());
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("TestCode = ").append(test.getTestCode()).append("\nClient TIN = ").append(test.getClientTin()).append("\nNHS number = ").append(test.getTestNhsNumber()).append("\nTest type = ").append(test.getTestType().getDescription()).append("\nDate of validation = ").append(test.getValidatedDate().getYear()).append("-").append(test.getValidatedDate().getMonthValue()).append("-").append(test.getValidatedDate().getDayOfMonth()).append(" ").append(test.getValidatedDate().getHour()).append(":").append(test.getValidatedDate().getMinute()).append(":").append(test.getValidatedDate().getSecond());
+
+        System.out.println(stringBuilder);
+        for (TestParameter tp : test.getTestParam()) {
+            System.out.println(tp);
+        }
+
+        return stringBuilder.toString();
     }
 }
