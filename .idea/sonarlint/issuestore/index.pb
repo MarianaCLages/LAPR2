@@ -125,14 +125,10 @@ a
 1src/main/java/app/domain/mappers/dto/TestDTO.java,4\8\48c988d2fdbc7fe7b1afc15b6db0b705a1d69bf7
 d
 4src/main/java/app/domain/mappers/TestListMapper.java,7\4\74ca3db498246ba085f95d28cd744d308af092be
-a
-1src/main/java/app/domain/model/TestParameter.java,4\d\4dc3d189ec133a85b04dfd016faa819500cb5976
 j
 :src/main/java/app/domain/mappers/dto/TestParameterDTO.java,b\1\b1c07c5b81bf847d6e64bbdafd064920c15a76d2
 m
 =src/main/java/app/domain/mappers/TestParameterListMapper.java,0\6\062cd32e6a0b9407759b54987eb6ed84ebf8c74a
-g
-7src/main/java/app/domain/model/TestParameterResult.java,8\9\89c14902f91af9f5afc1e3afe73a166ab424f39c
 f
 6src/main/java/app/domain/mappers/dto/TestStoreDTO.java,1\0\104c57003351d0b7e5c8b9b04d7c656259c3db6b
 e

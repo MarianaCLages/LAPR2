@@ -31,4 +31,8 @@ public class TestParameterResult implements Serializable {
     public String toString() {
         return "Parameter: " + paramId + " ->" + " Result: " + result + " " + refValue.getMetric() + " . Reference: Max: " + refValue.getMaxValue() + "; Min: " + refValue.getMinValue();
     }
+
+    public double getResult() {
+        return result;
+    }
 }

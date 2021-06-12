@@ -1,10 +1,7 @@
 package app.ui.gui.adminMenuUIs;
 
 import app.controller.App;
-import app.domain.model.Client;
-import app.domain.model.Company;
-import app.domain.model.Data;
-import app.domain.model.Test;
+import app.domain.model.*;
 import app.domain.shared.exceptions.ChoiceBoxEmptyException;
 import app.ui.gui.controllers.SceneController;
 import javafx.event.ActionEvent;
@@ -54,12 +51,13 @@ public class SimpleLinearRegressionController implements Initializable {
 
             if (myChoiceBoxSimple.getValue() == "Covid-19 tests") {
 
-                 List<Test> validTests = company.getTestList().getValidatedTestsList();
-                 System.out.println(company.getData().getHistoricalDays());
+                List<Test> validTests = company.getTestList().getValidatedTestsList();
+                List<Test> covidTests = getPositiveCovidTest(validTests);
+                System.out.println(company.getData().getHistoricalDays());
 
-                 for (Test t : validTests){
-                     System.out.println(t);
-                 }
+                for (Test t : validTests) {
+                    System.out.println(t);
+                }
 
             } else if (myChoiceBoxSimple.getValue() == "Mean age") {
 
@@ -72,7 +70,7 @@ public class SimpleLinearRegressionController implements Initializable {
         } catch (ChoiceBoxEmptyException err1) {
             errorAlert(err1.getMessage());
         } catch (RuntimeException err2) {
-               errorAlert(err2.getMessage());
+            errorAlert(err2.getMessage());
             // errorAlert("Please enter valid information (Don't leave blank containers!)");
         }
 
@@ -130,6 +128,29 @@ public class SimpleLinearRegressionController implements Initializable {
 
 
         return clientsAges;
+    }
+
+    private List<Test> getPositiveCovidTest(List<Test> covidList) {
+
+        List<Test> covidTestList = new ArrayList<>();
+
+        for (Test t : covidList) {
+            for (TestParameter t1 : t.getTestParam()) {
+                if (t1 != null) {
+                    if (t1.getpCode().equals("IgGAN") && t1.getTestParameterResult().getResult() > 1.4) {
+                        covidList.add(t);
+                    }
+                }
+            }
+        }
+        System.out.println("---------------------------------");
+
+        for (Test t : covidTestList) {
+            System.out.println(t.toString());
+        }
+
+        return covidTestList;
+
     }
 
 }
