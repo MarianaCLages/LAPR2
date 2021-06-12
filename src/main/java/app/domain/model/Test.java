@@ -197,7 +197,7 @@ public class Test implements Serializable {
      */
     @Override
     public String toString() {
-        return "Test: testCode=" + testCode + ", testNhsNumber=" + testNhsNumber + ", clientCc=" + clientTin + ", testType=" + testType + ", catList=" + catList + ", paList=" + paList;
+        return "Test: testCode=" + testCode + ", testNhsNumber=" + testNhsNumber + ", clientCc=" + clientTin + ", TestTypeID=" + testType.getTestID();
     }
 
     /**

@@ -1,5 +1,6 @@
 package app.domain.stores;
 
+import app.controller.App;
 import app.domain.model.*;
 
 import java.io.Serializable;
@@ -116,6 +117,10 @@ public class TestStore implements Serializable {
         return this.t.toString();
     }
 
+    public Test getT() {
+        return t;
+    }
+
     /**
      * @param testId unique nhs code that represents the test
      * @return the test that is associated with nhs code if there is not a test with this code returns null
@@ -212,5 +217,25 @@ public class TestStore implements Serializable {
             }
         }
         return validatedTest;
+    }
+
+    public List<Test> getValidatedTestsList(){
+
+       // Company company = App.getInstance().getCompany();
+
+        List<Test> testList = new ArrayList<>();
+
+        for(Test t : array){
+           if(t.getState().equals("VALIDATED") && t.getTestType().getTestID().equals("COV19")) {
+               testList.add(t);
+           }
+        }
+
+        return testList;
+
+    }
+
+    public List<Test> getTestListArray() {
+        return array;
     }
 }

@@ -300,4 +300,8 @@ public class Client implements Serializable {
     public String getName() {
         return name;
     }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
 }

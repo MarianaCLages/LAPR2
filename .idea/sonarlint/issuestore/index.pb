@@ -157,8 +157,6 @@ m
 =src/main/java/app/domain/mappers/TestParameterListMapper.java,0\6\062cd32e6a0b9407759b54987eb6ed84ebf8c74a
 g
 7src/main/java/app/domain/model/TestParameterResult.java,8\9\89c14902f91af9f5afc1e3afe73a166ab424f39c
-^
-.src/main/java/app/domain/stores/TestStore.java,9\d\9d7c93dfb2abbc9f3e33ac38ae37e345fc6eea94
 f
 6src/main/java/app/domain/mappers/dto/TestStoreDTO.java,1\0\104c57003351d0b7e5c8b9b04d7c656259c3db6b
 e
@@ -195,8 +193,6 @@ n
 gdocs/SprintD/US18/US18_As_an_Administrator_I_want_to_send_the_Covid-19_report_to_the_NHS_at_any_time.md,3\7\37aee95c88701e0359fcbca505618db77d24fe5f
 d
 4src/main/java/app/controller/TestTypeController.java,1\4\14fe02ab77de5538015d244c4cb5185cad33c9f9
-Z
-*src/main/java/app/domain/model/Client.java,a\1\a1140e0a891f26f51604f14ed5bf2ac976d60132
 u
 Esrc/main/java/app/domain/shared/exceptions/MenuNotFoundException.java,7\7\77d05717394fe84b2dc7147b9a770a031f7d3158
 |
@@ -215,8 +211,6 @@ w
 Gsrc/main/java/app/domain/shared/exceptions/ChoiceBoxEmptyException.java,d\a\da5859ee0fbb622f76a8e66651f4ffb20658ca75
 f
 6src/main/java/app/controller/CreateTestController.java,f\5\f54f6fb19e03f0fa13b00dc9c6f082f28f52680c
-g
-7src/main/java/app/ui/gui/employees/AdministratorUI.java,1\9\19e8d234ed70d2ee98189bee48aecf519f1826fa
 w
 Gsrc/main/java/app/ui/gui/adminMenuUIs/ClinicalAnalysisLaboratoryUI.java,3\3\333e57aa1e107615bb48acfb7c7c07906d34dfd5
 e
@@ -227,3 +221,11 @@ f
 6src/main/java/app/ui/gui/adminMenuUIs/ParameterUI.java,0\7\07ef9b592d55fa35fdb89591fc80faa9ddd29eed
 e
 5src/main/java/app/ui/gui/adminMenuUIs/TestTypeUI.java,5\c\5c0c5691db10f9a7cdcbeb8acdff8d16a98cffa9
+_
+/src/main/java/app/domain/shared/LinearTest.java,b\1\b1ef7502dac291a5892519a19022cfcae28f35aa
+e
+5src/main/java/app/domain/shared/LinearRegression.java,b\5\b5738a1e3a1c85790cbe245760fdbfe6e77be206
+j
+:src/main/java/app/domain/shared/MultiLinearRegression.java,5\1\51ac4d2fa961af5b859a17a30045d1b297b297c4
+i
+9src/main/java/app/ui/gui/controllers/SceneController.java,2\1\21a1870d367d1ba874d3ca96381bdff317fffa0d
