@@ -242,4 +242,11 @@ public class TestStore implements Serializable {
         return array;
     }
 
+    @Override
+    public String toString() {
+        for (Test t: array) {
+            System.out.println(t.toString());
+        }
+        return null;
+    }
 }

@@ -233,8 +233,6 @@ _
 /src/main/java/auth/mappers/dto/UserRoleDTO.java,9\1\917a420456517cc69cf4e510d078c65a68c2cdca
 b
 2src/main/java/app/domain/stores/EmployeeStore.java,b\5\b5bc3e26da714d4b55cff5a97f4a3753de94c0ed
-;
-Company.ser,b\4\b454abc40c090b9b68d018521b92cf0516eaa385
 \
 ,src/main/java/app/ui/console/MainMenuUI.java,0\0\00b6c6e5c167fbd22e7d83c003815158143e9f8b
 ~
@@ -243,8 +241,6 @@ w
 Gsrc/main/java/app/ui/gui/employees/ClinicalChemistryTechnologistUI.java,c\8\c8e646c2340560f4592e6b0180982db37dc61399
 h
 8src/main/java/app/ui/gui/controllers/MainController.java,2\9\292a2c3b98bc8a8029e036d845686e6bd82b7279
-X
-(src/main/java/app/ui/gui/MainScreen.java,b\5\b59adf73fdf4b7ccc7be755addc8e97dd1524983
 R
 "ClientInformation/notification.txt,2\5\25136f2e3d2b7a57c3a84d096aae3c7b7ac0e721
 ]

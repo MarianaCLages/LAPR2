@@ -34,8 +34,9 @@ public class App {
         File f = new File(props.getProperty("serialize.path"));
        /* if (f.exists() && !f.isDirectory()) {
             this.company = new Company();
-        } else*/ {
-            this.company = new Company(props.getProperty(Constants.PARAMS_COMPANY_DESIGNATION),props.getProperty("report.hour"),props.getProperty("report.min"),props.getProperty("report.sec"));
+        } else*/
+        {
+            this.company = new Company(props.getProperty(Constants.PARAMS_COMPANY_DESIGNATION), props.getProperty("report.hour"), props.getProperty("report.min"), props.getProperty("report.sec"));
             this.authFacade = this.company.getAuthFacade();
             bootstrap();
         }
@@ -55,22 +56,6 @@ public class App {
         return singleton;
     }
 
-    public Company getCompany() {
-        return this.company;
-    }
-
-    public UserSession getCurrentUserSession() {
-        return this.authFacade.getCurrentUserSession();
-    }
-
-    public boolean doLogin(String email, String pwd) {
-        return this.authFacade.doLogin(email, pwd).isLoggedIn();
-    }
-
-    public void doLogout() {
-        this.authFacade.doLogout();
-    }
-
     public static Properties getProperties() {
         Properties props = new Properties();
         // Add default properties and values
@@ -87,6 +72,22 @@ public class App {
 
         }
         return props;
+    }
+
+    public Company getCompany() {
+        return this.company;
+    }
+
+    public UserSession getCurrentUserSession() {
+        return this.authFacade.getCurrentUserSession();
+    }
+
+    public boolean doLogin(String email, String pwd) {
+        return this.authFacade.doLogin(email, pwd).isLoggedIn();
+    }
+
+    public void doLogout() {
+        this.authFacade.doLogout();
     }
 
     private void bootstrap() {
@@ -131,13 +132,12 @@ public class App {
         parameterStore.add(p7);
 
 
-
         ClinicalAnalysisLabStore clinicalAnalysisLabStore = company.getClinicalAnalysisLabList();
-        ClinicalAnalysisLab cl1 = new ClinicalAnalysisLab("Lab1", "address A", "001DO", "1111111111", "11111111111",ttStore);
+        ClinicalAnalysisLab cl1 = new ClinicalAnalysisLab("Lab1", "address A", "001DO", "1111111111", "11111111111", ttStore);
         clinicalAnalysisLabStore.add(cl1);
-        ClinicalAnalysisLab cl2 = new ClinicalAnalysisLab("Lab2", "address B", "001LN", "1111111112", "11111111112",ttStore);
+        ClinicalAnalysisLab cl2 = new ClinicalAnalysisLab("Lab2", "address B", "001LN", "1111111112", "11111111112", ttStore);
         clinicalAnalysisLabStore.add(cl2);
-        ClinicalAnalysisLab cl3 = new ClinicalAnalysisLab("Lab3", "address C", "001LR", "1111111113", "11111111113",ttStore);
+        ClinicalAnalysisLab cl3 = new ClinicalAnalysisLab("Lab3", "address C", "001LR", "1111111113", "11111111113", ttStore);
         clinicalAnalysisLabStore.add(cl3);
         ClinicalAnalysisLab cl4 = new ClinicalAnalysisLab("Lab4", "address D", "001MA", "1111111114", "11111111114", ttStore);
         clinicalAnalysisLabStore.add(cl4);
@@ -195,54 +195,95 @@ public class App {
         store.CreateClient("12345698905", "1234567891183456", "1234766891", "1234567881", date5, 'M', "manuel@alberto.com", "Manuel");
         store.saveClient();
 
-        //
 
         TestStore testStore = company.getTestList();
+        //covid
 
-        testStore.createTest("100000000000", "1234567890", bloodTest, testCategories, testParameters);
-        testStore.saveTest();
-
-        Test t = new Test("1234557890123456","100000000100", "1234567890", covidTest, testCategories, testParameters1);
+        Test t = new Test("1234557890123456", "100000000100", "1234567890", covidTest, testCategories, testParameters1);
         t.addTestParameter();
-        t.addTestResult("IgGAN",1.5);
+        t.addTestResult("IgGAN", 1.5);
         t.changeState("VALIDATED");
         testStore.addTest(t);
 
-        Test t1 = new Test("1234567890123457","100000000001", "1234567890", covidTest, testCategories, testParameters1);
-        t1.setCreatedDate(LocalDateTime.of(2021, Month.JUNE,10,15,30));
-        t.addTestParameter();
-        t.addTestResult("IgGAN",1.4);
-        t.changeState("VALIDATED");
+        Test t1 = new Test("1234567890123457", "100000000001", "1234567890", covidTest, testCategories, testParameters1);
+        t1.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 10, 15, 30));
+        t1.addTestParameter();
+        t1.addTestResult("IgGAN", 1.4);
+        t1.changeState("VALIDATED");
         testStore.addTest(t1);
 
-        Test t2 = new Test("1234567890123458","100000000002", "1234567891", covidTest, testCategories, testParameters1);
-        t1.setCreatedDate(LocalDateTime.of(2021, Month.JUNE,11,15,30));
-        t.addTestParameter();
-        t.addTestResult("IgGAN",1.9);
-        t.changeState("VALIDATED");
+        Test t2 = new Test("1234567890123458", "100000000002", "2234567890", covidTest, testCategories, testParameters1);
+        t2.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 11, 15, 30));
+        t2.addTestParameter();
+        t2.addTestResult("IgGAN", 1.9);
+        t2.changeState("VALIDATED");
         testStore.addTest(t2);
 
-        Test t3 = new Test("1234567890123459","100000000003", "1234567896", covidTest, testCategories, testParameters1);
-        t1.setCreatedDate(LocalDateTime.of(2021, Month.JUNE,11,15, 0));
-        t.addTestParameter();
-        t.addTestResult("IgGAN",2);
-        t.changeState("VALIDATED");
+        Test t3 = new Test("1234567890123459", "100000000003", "1234567896", covidTest, testCategories, testParameters1);
+        t3.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 11, 15, 0));
+        t3.addTestParameter();
+        t3.addTestResult("IgGAN", 2);
+        t3.changeState("VALIDATED");
         testStore.addTest(t3);
 
-        Test t4 = new Test("1234567890123460","100000000004", "1234567891", covidTest, testCategories, testParameters1);
-        t1.setCreatedDate(LocalDateTime.of(2021, Month.JUNE,10,15, 0));
-        t.addTestParameter();
-        t.addTestResult("IgGAN",2.5);
-        t.changeState("VALIDATED");
+        Test t4 = new Test("1234567890123460", "100000000004", "1234567891", covidTest, testCategories, testParameters1);
+        t4.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 10, 15, 0));
+        t4.addTestParameter();
+        t4.addTestResult("IgGAN", 2.5);
+        t4.changeState("VALIDATED");
         testStore.addTest(t4);
 
-        Test t5 = new Test("1234567890123461","100000000006", "1234567881", covidTest, testCategories, testParameters1);
-        t1.setCreatedDate(LocalDateTime.of(2021, Month.JUNE,10,14, 0));
-        t.addTestParameter();
-        t.addTestResult("IgGAN",2.5);
-        t.changeState("VALIDATED");
+        Test t5 = new Test("1234567890123461", "100000000006", "1234567881", covidTest, testCategories, testParameters1);
+        t5.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 10, 14, 0));
+        t5.addTestParameter();
+        t5.addTestResult("IgGAN", 2.5);
+        t5.changeState("VALIDATED");
         testStore.addTest(t5);
-        //
+
+        Test t6 = new Test("1234567890123462", "100000000007", "1234567896", covidTest, testCategories, testParameters1);
+        t6.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 12, 14, 0));
+        t6.addTestParameter();
+        t6.addTestResult("IgGAN", 1.5);
+        t6.changeState("VALIDATED");
+        testStore.addTest(t6);
+
+        Test t7 = new Test("1234567890123465", "100000000007", "1234567896", covidTest, testCategories, testParameters1);
+        t7.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 12, 18, 0));
+        t7.addTestParameter();
+        t7.addTestResult("IgGAN", 1.6);
+        t7.changeState("VALIDATED");
+        testStore.addTest(t7);
+
+        Test t8 = new Test("1234567890123466", "100000000007", "1234567896", covidTest, testCategories, testParameters1);
+        t8.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 12, 18, 20));
+        t8.addTestParameter();
+        t8.addTestResult("IgGAN", 1.9);
+        t8.changeState("VALIDATED");
+
+        Test t9 = new Test("1234567890123467", "100000000007", "1234567896", covidTest, testCategories, testParameters1);
+        t9.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 12, 16, 50));
+        t9.addTestParameter();
+        t9.addTestResult("IgGAN", 1.79);
+        t9.changeState("VALIDATED");
+        testStore.addTest(t9);
+
+        //blood
+
+        Test tn = new Test("1234567890123463", "200000000008", "1234567896", bloodTest, testCategories, testParameters);
+        tn.addTestParameter();
+        tn.addTestResult("MCH00", 15);
+        tn.addTestResult("ESR00", 150);
+        tn.addTestResult("HB000", 50);
+        tn.changeState("VALIDATED");
+        testStore.addTest(tn);
+
+        Test tn1 = new Test("1234567890123464", "200000000009", "1234567881", bloodTest, testCategories, testParameters);
+        tn1.addTestParameter();
+        tn1.addTestResult("MCH00", 85);
+        tn1.addTestResult("ESR00", 170);
+        tn1.addTestResult("HB000", 600);
+        tn1.changeState("VALIDATED");
+        testStore.addTest(tn1);
 
         final String pass = "123456";
         this.authFacade.addUserWithRole("Clinical Chemistry Technologist ", "clichetec@lei.sem2.pt", pass, Constants.ROLE_CLINICALCHEMISTRYTECHNOLOGIST);
