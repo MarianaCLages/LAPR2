@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
@@ -30,7 +31,7 @@ public class ConsultClientTestsAndResultsUI implements Initializable {
     @FXML
     private Label lblClientTin;
     @FXML
-    private Label lblTestResults;
+    private TextArea lblTestResults;
 
     ConsultClientTestsAndResultsController ctrl = new ConsultClientTestsAndResultsController();
 
@@ -65,6 +66,7 @@ public class ConsultClientTestsAndResultsUI implements Initializable {
     }
 
     public void fillTestList() {
+        lvwTestList.getItems().clear();
         client = ctrl.selectedClient(lblClientTin.getText());
         testList = ctrl.getValidatedTestList();
 
