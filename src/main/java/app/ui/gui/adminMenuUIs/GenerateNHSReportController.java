@@ -96,8 +96,8 @@ public class GenerateNHSReportController implements Initializable {
 
     }
 
-    private long getIntervalDate(LocalDate start, LocalDate end) {
-        long n;
+    private int getIntervalDate(LocalDate start, LocalDate end) {
+        int n;
         return n = Period.between(start, end).getDays();
     }
 

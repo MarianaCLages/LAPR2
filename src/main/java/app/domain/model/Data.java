@@ -8,11 +8,11 @@ import org.apache.commons.lang3.StringUtils;
 public class Data {
 
     private String historicalDays;
-    private Long date;
+    private int date;
     private String confidenceLevelIC;
     private String significanceLevel;
 
-    public Data(String historicalDays, long date, String confidenceLevelIC, String significanceLevel) {
+    public Data(String historicalDays, int date, String confidenceLevelIC, String significanceLevel) {
 
         this.historicalDays = historicalDays;
         this.date = date;
@@ -24,7 +24,7 @@ public class Data {
     public Data() {
 
         this.historicalDays = null;
-        this.date = null;
+        this.date = 0;
         this.confidenceLevelIC = null;
         this.significanceLevel = null;
 
@@ -40,7 +40,7 @@ public class Data {
         this.historicalDays = historicalDays;
     }
 
-    public void setIntervalDates(long date) throws DateEmptyException, DateInvalidException {
+    public void setIntervalDates(int date) throws DateEmptyException, DateInvalidException {
         checkIntervalDates(date);
         this.date = date;
     }
@@ -85,7 +85,7 @@ public class Data {
 
     }
 
-    public Long getDate() {
+    public int getDate() {
         return date;
     }
 
