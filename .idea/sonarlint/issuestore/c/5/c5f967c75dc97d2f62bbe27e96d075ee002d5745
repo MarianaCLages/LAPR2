@@ -1,0 +1,11 @@
+
+s
+java:S1450"XRemove the "diagnosis" field and declare it as a local variable in the relevant methods.(Ùè£†ÿÿÿÿÿ
+i
+java:S1450
+"SRemove the "test" field and declare it as a local variable in the relevant methods.(âÂîŒ
+S	java:S106'"9Replace this use of System.out or System.err by a logger.(êŸ˜¸úÿÿÿÿ
+S	java:S106,"9Replace this use of System.out or System.err by a logger.(ã²ìœûÿÿÿÿ
+S	java:S1063"9Replace this use of System.out or System.err by a logger.(©þêÜúÿÿÿÿ
+S	java:S1064"9Replace this use of System.out or System.err by a logger.(Ã›å­ÿÿÿÿÿ
+S	java:S106="9Replace this use of System.out or System.err by a logger.(â¬—›ùÿÿÿÿ

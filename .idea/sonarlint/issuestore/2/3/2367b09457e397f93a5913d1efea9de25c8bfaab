@@ -1,0 +1,11 @@
+
+k
+java:S1104"UMake btnCancel a static final constant or non-public and provide accessors if needed.(ñÙ•Ó
+o
+java:S1104"TMake btnLogin a static final constant or non-public and provide accessors if needed.(’ÎöØùÿÿÿÿ
+p
+java:S1104"UMake passfield a static final constant or non-public and provide accessors if needed.(—çÄûÿÿÿÿ
+l
+java:S1104"VMake emailfield a static final constant or non-public and provide accessors if needed.(şë‰
+œ
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×½¨Åÿÿÿÿÿ

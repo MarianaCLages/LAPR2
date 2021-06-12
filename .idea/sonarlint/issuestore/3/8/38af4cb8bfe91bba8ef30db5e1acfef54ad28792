@@ -1,0 +1,8 @@
+
+‚	java:S116"hRename this field "ClinicalChemistryTechnologist" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ûï¥´ùÿÿÿÿ
+y	java:S116"_Rename this field "MedicalLabTechnician" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È·œ›ÿÿÿÿÿ
+z	java:S116"`Rename this field "LaboratoryCoordinator" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íŠà•ùÿÿÿÿ
+l	java:S116"WRename this field "Receptionist" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§¨êØ
+p	java:S116"[Rename this field "SpecialistDoctor" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñ—ÏÃ
+A
+java:S1068"&Remove this unused "pc" private field.(™Ï¤âùÿÿÿÿ

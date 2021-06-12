@@ -1,0 +1,11 @@
+
+>
+java:S1948""Make "array" private or transient.(·Òºf8ÚÍ «/
+c	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„ÅôÌ
+h	java:S100,"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–·õÍøÿÿÿÿ
+\
+java:S1126-"AReplace this if-then-else statement by a single return statement.(ÊÑ²½ÿÿÿÿÿ
+V
+java:S1126L"AReplace this if-then-else statement by a single return statement.(ƒóğI
+Q
+java:S1117"6Rename "pc" which hides the field declared at line 15.(Ÿïş¦úÿÿÿÿ

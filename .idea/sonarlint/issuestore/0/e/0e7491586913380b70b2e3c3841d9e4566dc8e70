@@ -1,0 +1,17 @@
+
+o
+java:S1450"YRemove the "categories" field and declare it as a local variable in the relevant methods.(ÓèÆ•
+m
+java:S1450"WRemove the "category" field and declare it as a local variable in the relevant methods.(œ¬óï
+n
+java:S1450"XRemove the "parameter" field and declare it as a local variable in the relevant methods.(›´êî
+t
+java:S1450"YRemove the "parameters" field and declare it as a local variable in the relevant methods.(–ƒ¼Üüÿÿÿÿ
+r
+java:S1450"WRemove the "testType" field and declare it as a local variable in the relevant methods.(àè©Ëùÿÿÿÿ
+h
+java:S3776#"RRefactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.(“–ış
+N	java:S106@"9Replace this use of System.out or System.err by a logger.(ñ¿ç…
+S	java:S106F"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ
+M	java:S106G"9Replace this use of System.out or System.err by a logger.(ıÛ+
+N	java:S106R"9Replace this use of System.out or System.err by a logger.(—‰£˜

@@ -1,0 +1,17 @@
+
+V	java:S107#"AConstructor has 8 parameters, which is greater than 7 authorized.(Ø•Ì¬
+f	java:S117#"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ø•Ì¬
+f	java:S117#"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ø•Ì¬
+k	java:S1172"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ø—ÏĞøÿÿÿÿ
+q	java:S116"\Rename this field "DoctorIndexNumber" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²²ß°
+j	java:S116"NRename this field "SOC" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µæÍÀ8¯†Ç˜›/
+E
+java:S1068"(Remove this unused "role" private field.(âÈ»ú8·†Ç˜›/
+M
+java:S1068"+Remove this unused "address" private field.(÷§ùÿÿÿÿ8·†Ç˜›/
+L
+java:S1068"/Remove this unused "phonenumber" private field.(öƒ…±8·†Ç˜›/
+D
+java:S1068"'Remove this unused "SOC" private field.(µæÍÀ8·†Ç˜›/
+P
+java:S1068".Remove this unused "employeeID" private field.(ŞÃ‡ßıÿÿÿÿ8äÙŞ˜›/

@@ -1,0 +1,10 @@
+
+]
+java:S3518:";Make sure "xxbar" can't be zero before doing this division.(µªÍıÿÿÿÿ8¼è¿Ÿ/
+@
+java:S16594"#Declare "yybar" on a separate line.(Ö³§…8Äè¿Ÿ/
+@
+java:S16594"#Declare "xybar" on a separate line.(Ö³§…8Äè¿Ÿ/
+o	java:S100e"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(éÆó×ûÿÿÿÿ8Ìè¿Ÿ/
+L
+java:S1481*"*Remove this unused "sumx2" local variable.(®‹şúÿÿÿÿ8Ìè¿Ÿ/
