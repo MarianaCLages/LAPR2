@@ -72,7 +72,8 @@ public class SimpleLinearRegressionController implements Initializable {
         } catch (ChoiceBoxEmptyException err1) {
             errorAlert(err1.getMessage());
         } catch (RuntimeException err2) {
-            errorAlert("Please enter valid information (Don't leave blank containers!)");
+               errorAlert(err2.getMessage());
+            // errorAlert("Please enter valid information (Don't leave blank containers!)");
         }
 
 
