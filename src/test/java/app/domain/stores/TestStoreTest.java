@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class TestStoreTest {
@@ -27,7 +28,7 @@ public class TestStoreTest {
         TestStore store = new TestStore();
         app.domain.model.Test t = store.createTest("123456789187", "1234567890123456", testType, cat1, pa);
 
-        Assert.assertEquals(t.toString(),"Test: testCode=000000000000001, testNhsNumber=123456789187, clientCc=1234567890123456, TestTypeID=BL000");
+        Assert.assertEquals(t.toString(), "Test: testCode=000000000000001, testNhsNumber=123456789187, clientCc=1234567890123456, TestTypeID=BL000, state=CREATED");
 
     }
 
@@ -152,14 +153,22 @@ public class TestStoreTest {
         TestType testType = new TestType("BL000", "description", "sei lá", cat);
         TestStore store = new TestStore();
         app.domain.model.Test t1 = new app.domain.model.Test("12345", "123456789187", "1234567890123456", testType, cat1, pa);
+        t1.changeState("CREATED");
         app.domain.model.Test t2 = new app.domain.model.Test("12342", "123456789185", "1234567890123456", testType, cat1, pa);
+        t2.changeState("CREATED");
         app.domain.model.Test t3 = new app.domain.model.Test("12343", "123456782187", "1234567890123455", testType, cat1, pa);
+        t3.changeState("CREATED");
         store.addTest(t3);
         store.addTest(t2);
         store.addTest(t1);
 
+        TestStore store1 = new TestStore();
+        store1.addTest(t1);
+        store1.addTest(t2);
         List<app.domain.model.Test> list = store.sortDate("1234567890123456");
+        System.out.println(Arrays.toString(list.toArray()));
+        System.out.println(Arrays.toString(store1.getTestListArray().toArray()));
 
-        System.out.println(list);
+        Assert.assertArrayEquals(list.toArray(), store1.getTestListArray().toArray());
     }
 }

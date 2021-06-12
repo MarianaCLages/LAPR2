@@ -154,8 +154,8 @@ public class TestTest {
         TestType testType = new TestType("BL000", "description", "sei lá", cat);
 
         app.domain.model.Test test = new app.domain.model.Test("000000000000001", "123456789187", "1234567890123456", testType, cat1, pa);
-
-        String expected = "Test: testCode=000000000000001, testNhsNumber=123456789187, clientCc=1234567890123456, TestTypeID=BL000";
+        test.changeState("CREATED");
+        String expected = "Test: testCode=000000000000001, testNhsNumber=123456789187, clientCc=1234567890123456, TestTypeID=BL000, state=CREATED";
         String actual = test.toString();
 
         Assert.assertEquals(expected, actual);

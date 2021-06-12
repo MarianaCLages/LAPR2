@@ -41,8 +41,6 @@ h
 8src/test/java/app/domain/model/SpecialistDoctorTest.java,9\8\980d63e192031a91dc68783f4c565dc0c83098ed
 k
 ;src/test/java/app/domain/model/TestParameterResultTest.java,b\7\b7455c49fcd89c281b730d745f578b7c3dabcf56
-\
-,src/test/java/app/domain/model/TestTest.java,2\c\2cf03933548261c5794447fc0379d09dc74bc37a
 `
 0src/test/java/app/domain/model/TestTypeTest.java,3\f\3fd04dd577dee7a6d88b49fdc1a11d0af2ea6a18
 q
@@ -57,8 +55,6 @@ b
 2src/test/java/app/domain/stores/RoleStoreTest.java,b\d\bd12965ce694b76b1345995f3cfcb91eaac04074
 d
 4src/test/java/app/domain/stores/SampleStoreTest.java,d\a\da910ce79a563b2cacaddc3f7b356f379844a6bb
-b
-2src/test/java/app/domain/stores/TestStoreTest.java,6\8\6880c3102dbeabe7f1611d6490822c3a78335ec6
 f
 6src/test/java/app/domain/stores/TestTypeStoreTest.java,5\6\5624d11db655e0a9fbcbcda6fe4399b28ce4a77f
 m
