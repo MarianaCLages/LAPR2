@@ -135,10 +135,10 @@ public class SimpleLinearRegressionController implements Initializable {
         List<Test> validCovidTests = new ArrayList<>();
 
         for(Test t : company.getTestList().getValidatedTestsList()){
-            LocalDate localDate = localDateTime.toLocalDate();
-            if(Period.between(todate2,t.getDate()).getDays() > 0 && Period.between(t.getDate(),date3).getDays() < 0){
-                validCovidTests.add(t);
-            }
+            //LocalDate localDate = localDateTime.toLocalDate();
+           // if(Period.between(todate2,t.getDate()).getDays() > 0 && Period.between(t.getDate(),date3).getDays() < 0){
+             //   validCovidTests.add(t);
+            //}
         }
 
 
@@ -150,13 +150,13 @@ public class SimpleLinearRegressionController implements Initializable {
 
         for (Client c : clientList) {
             for(Test t : company.getTestList().getTestListArray()) {
-                if (t.getDate()>date3) {
+               // if (t.getDate()>date3) {
                     LocalDate date = c.getBirthDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
                     age = Period.between(date, LocalDate.now()).getYears();
                     sum += age;
                     x++;
 
-                }
+                //}
             }
 
             clientsAges[n] = sum/x;
