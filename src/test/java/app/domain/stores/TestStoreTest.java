@@ -151,15 +151,16 @@ public class TestStoreTest {
         pa.add(p1);
         TestType testType = new TestType("BL000", "description", "sei lá", cat);
         TestStore store = new TestStore();
-        app.domain.model.Test t1 = new app.domain.model.Test("12345", "123456789187", "1234567890123456", testType, cat1, pa);
-        app.domain.model.Test t2 = new app.domain.model.Test("12342", "123456789185", "1234567890123456", testType, cat1, pa);
-        app.domain.model.Test t3 = new app.domain.model.Test("12343", "123456782187", "1234567890123455", testType, cat1, pa);
+        app.domain.model.Test t1 = store.createTest( "123456789187", "1234567890123456", testType, cat1, pa);
+        app.domain.model.Test t2 = store.createTest( "123456789185", "1234567890123456", testType, cat1, pa);
+        app.domain.model.Test t3 = store.createTest( "123456782187", "1234567890123455", testType, cat1, pa);
+
         store.addTest(t3);
         store.addTest(t2);
         store.addTest(t1);
 
         List<app.domain.model.Test> list = store.sortDate("1234567890123456");
 
-        System.out.println(list);
+        store.toStringSortedList("1234567890123456");
     }
 }
