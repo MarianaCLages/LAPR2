@@ -11,12 +11,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class SimpleLinearRegressionController implements Initializable {
 
@@ -52,7 +52,7 @@ public class SimpleLinearRegressionController implements Initializable {
             if (myChoiceBoxSimple.getValue() == "Covid-19 tests") {
 
                 List<Test> validTests = company.getTestList().getValidatedTestsList();
-                //    List<Test> covidTests = getPositiveCovidTest(validTests);
+                    List<Test> covidTests = getPositiveCovidTest(validTests);
 
                 System.out.println("---------------------------------");
                 for (Test t : validTests) {
@@ -118,14 +118,45 @@ public class SimpleLinearRegressionController implements Initializable {
             System.out.println(c.toString());
         }
 
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        Date date2 = new Date();
+        String todate = dateFormat.format(date2);
+        LocalDate date3 = LocalDate.now();
+
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -company.getData().getDate());
+        Date todate1 = cal.getTime();
+
+        LocalDate todate2 = todate1.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
+        String fromdate = dateFormat.format(todate1);
+
+        List<Test> validCovidTests = new ArrayList<>();
+
+        for(Test t : company.getTestList().getValidatedTestsList()){
+            //LocalDate localDate = localDateTime.toLocalDate();
+           // if(Period.between(todate2,t.getDate()).getDays() > 0 && Period.between(t.getDate(),date3).getDays() < 0){
+             //   validCovidTests.add(t);
+            //}
+        }
+
+
+
+
+
+
+
+
         for (Client c : clientList) {
-            for(Test t : company.getTestList().getTestListArray()){
-                if(c.getTinNumber().equals(t.getClientTin())){
-                     LocalDate date = c.getBirthDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-                     age = Period.between(date, LocalDate.now()).getYears();
-                     sum += age;
-                     x++;
-                }
+            for(Test t : company.getTestList().getTestListArray()) {
+               // if (t.getDate()>date3) {
+                    LocalDate date = c.getBirthDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                    age = Period.between(date, LocalDate.now()).getYears();
+                    sum += age;
+                    x++;
+
+                //}
             }
 
             clientsAges[n] = sum/x;
@@ -136,7 +167,7 @@ public class SimpleLinearRegressionController implements Initializable {
         }
 
         for (int i = 0; i < clientsAges.length; i++) {
-            if (clientsAges[i] != 0) System.out.println(clientsAges[i]);
+            if (clientsAges[i] != 0) System.out.println("Day " + clientsAges[i]);
         }
 
 
@@ -151,7 +182,7 @@ public class SimpleLinearRegressionController implements Initializable {
             for (TestParameter t1 : t.getTestParam()) {
                 if (t1 != null) {
                     if (t1.getpCode().equals("IgGAN") && t1.getTestParameterResult().getResult() > 1.4) {
-                        covidList.add(t);
+                        covidTestList.add(t);
                     }
                 }
             }

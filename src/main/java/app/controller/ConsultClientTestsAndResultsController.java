@@ -64,7 +64,7 @@ public class ConsultClientTestsAndResultsController {
 
         System.out.println(stringBuilder);
         for (TestParameter tp : test.getTestParam()) {
-            System.out.println(tp);
+            stringBuilder.append("\n").append(tp.getTestParameterResult().toString());
         }
 
         return stringBuilder.toString();

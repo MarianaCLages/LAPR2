@@ -55,8 +55,6 @@ b
 2src/test/java/app/domain/stores/RoleStoreTest.java,b\d\bd12965ce694b76b1345995f3cfcb91eaac04074
 d
 4src/test/java/app/domain/stores/SampleStoreTest.java,d\a\da910ce79a563b2cacaddc3f7b356f379844a6bb
-b
-2src/test/java/app/domain/stores/TestStoreTest.java,6\8\6880c3102dbeabe7f1611d6490822c3a78335ec6
 f
 6src/test/java/app/domain/stores/TestTypeStoreTest.java,5\6\5624d11db655e0a9fbcbcda6fe4399b28ce4a77f
 m
@@ -197,8 +195,6 @@ j
 0src/main/java/app/controller/AuthController.java,4\0\40778ef1d8f18e9634da9485a353d2b842458731
 N
 docs/SprintD/US18/US018_SD.svg,4\7\47879f96a8b08db42b6b059e5d704ae8a0535934
-b
-2src/main/java/app/domain/model/SendReportTask.java,8\5\85686568e666822bea9d6d3cc3520c4db4a26869
 e
 5src/main/java/app/domain/model/PasswordGenerator.java,6\7\6705402122199c116945958d1eaead60ce41746c
 R
