@@ -211,17 +211,7 @@ f
 6src/main/java/app/ui/gui/adminMenuUIs/ParameterUI.java,0\7\07ef9b592d55fa35fdb89591fc80faa9ddd29eed
 e
 5src/main/java/app/ui/gui/adminMenuUIs/TestTypeUI.java,5\c\5c0c5691db10f9a7cdcbeb8acdff8d16a98cffa9
-_
-/src/main/java/app/domain/shared/LinearTest.java,b\1\b1ef7502dac291a5892519a19022cfcae28f35aa
-e
-5src/main/java/app/domain/shared/LinearRegression.java,b\5\b5738a1e3a1c85790cbe245760fdbfe6e77be206
 j
 :src/main/java/app/domain/shared/MultiLinearRegression.java,5\1\51ac4d2fa961af5b859a17a30045d1b297b297c4
 i
-9src/main/java/app/ui/gui/controllers/SceneController.java,2\1\21a1870d367d1ba874d3ca96381bdff317fffa0d
-`
-0src/main/java/app/domain/stores/ClientStore.java,a\2\a208024caf8eb82d63bccfceb639afa2ced6c709
-i
 9src/main/java/app/ui/gui/controllers/LoginController.java,1\e\1e8d2e1e4388d0af8c4dd82600df5820f95913d4
-v
-Fsrc/main/java/app/ui/gui/adminMenuUIs/GenerateNHSReportController.java,4\9\492080ff1251d93f2fbaf48c23b559c00af79225

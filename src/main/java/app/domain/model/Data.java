@@ -1,6 +1,8 @@
 package app.domain.model;
 
+import app.controller.App;
 import app.domain.shared.exceptions.*;
+import app.ui.gui.controllers.SceneController;
 import org.apache.commons.lang3.StringUtils;
 
 public class Data {
@@ -82,6 +84,19 @@ public class Data {
         }
 
     }
+
+    public Long getDate() {
+        return date;
+    }
+
+    public String getConfidenceLevelIC() {
+        return confidenceLevelIC;
+    }
+
+    public String getHistoricalDays() {
+        return historicalDays;
+    }
+
 
 }
 
