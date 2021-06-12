@@ -5,12 +5,21 @@ participant "linReg:LinearRegression" as linReg
 participant "mlinReg:LinearRegression" as linReg
 participant "mlinReg:LinearRegression" as mlinReg
 participant "tStore:TestStore" as tStore
+participant "cStore:ClientStore" as cStore
 participant "api:NHSApi" as api
 
 [o-> task: run()
-task -> tStore:algo()
+loop for each historical point
+    task -> tStore:getTestsForDate(date)
 activate tStore
 deactivate
+loop for each test
+    task -> cStore:getClient(tinNumber)
+    activate cStore
+    deactivate
+end
+end
+
 alt linear Regression
     task --> linReg** : creates()
     alt variable equal number of tests

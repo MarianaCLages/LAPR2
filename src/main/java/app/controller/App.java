@@ -12,6 +12,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -146,12 +148,26 @@ public class App {
 
         ClientStore store = company.getClientList();
 
-        String strDate = "07-08-2002";
+        String strDate1 = "07-08-2002";
+        String strDate2 = "07-01-2000";
+        String strDate3 = "07-08-1995";
+        String strDate4 = "27-10-1956";
+        String strDate5 = "07-08-1983";
+
 
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-        Date date = null;
+        Date date1 = null;
+        Date date2 = null;
+        Date date3 = null;
+        Date date4 = null;
+        Date date5 = null;
         try {
-            date = df.parse(strDate);
+            date1 = df.parse(strDate1);
+            date2 = df.parse(strDate2);
+            date3 = df.parse(strDate3);
+            date4 = df.parse(strDate4);
+            date5 = df.parse(strDate5);
+
         } catch (ParseException e) {
             e.printStackTrace();
         }
@@ -168,27 +184,65 @@ public class App {
         testParameters1.add(p4);
 
 
-        store.CreateClient("12345678901", "1234567890123456", "1234567890", "1234567890", date, 'M', "ze@ze.com", "Zé");
+        store.CreateClient("12345678901", "1234567890123456", "1234567890", "1234567890", date1, 'M', "ze@ze.com", "Zé");
         store.saveClient();
-        store.CreateClient("12345678902", "1234567891123456", "1234567893", "2234567890", date, 'F', "maria@maria.com", "Maria");
+        store.CreateClient("12345678902", "1234565891123456", "1234567893", "2234567890", date2, 'F', "maria@maria.com", "Maria");
         store.saveClient();
-        store.CreateClient("12345678902", "1234567891123456", "1234567891", "1234567891", date, 'F', "alberto@alberto.com", "Alberto");
+        store.CreateClient("12345678903", "1234567891123456", "1234567891", "1234567891", date3, 'F', "alberto@alberto.com", "Alberto");
         store.saveClient();
+        store.CreateClient("12345698904", "1234567891123456", "1234566891", "1234567896", date4, 'F', "joana@alberto.com", "Joana");
+        store.saveClient();
+        store.CreateClient("12345698905", "1234567891183456", "1234766891", "1234567881", date5, 'M', "manuel@alberto.com", "Manuel");
+        store.saveClient();
+
+        //
 
         TestStore testStore = company.getTestList();
 
         testStore.createTest("100000000000", "1234567890", bloodTest, testCategories, testParameters);
         testStore.saveTest();
-        testStore.getT().changeState("VALIDATED");
-        testStore.createTest("100000000001", "2234567890", covidTest, testCategories, testParameters1);
-        testStore.saveTest();
-        testStore.getT().changeState("VALIDATED");
-        testStore.createTest("100000000002", "1234567890", covidTest, testCategories, testParameters);
-        testStore.saveTest();
-        testStore.getT().changeState("VALIDATED");
-        testStore.createTest("100000000002", "1234567891", covidTest, testCategories, testParameters);
-        testStore.saveTest();
-        testStore.getT().changeState("VALIDATED");
+
+        Test t = new Test("1234557890123456","100000000100", "1234567890", covidTest, testCategories, testParameters1);
+        t.addTestParameter();
+        t.addTestResult("IgGAN",1.5);
+        t.changeState("VALIDATED");
+        testStore.addTest(t);
+
+        Test t1 = new Test("1234567890123457","100000000001", "1234567890", covidTest, testCategories, testParameters1);
+        t1.setCreatedDate(LocalDateTime.of(2021, Month.JUNE,10,15,30));
+        t.addTestParameter();
+        t.addTestResult("IgGAN",1.4);
+        t.changeState("VALIDATED");
+        testStore.addTest(t1);
+
+        Test t2 = new Test("1234567890123458","100000000002", "1234567891", covidTest, testCategories, testParameters1);
+        t1.setCreatedDate(LocalDateTime.of(2021, Month.JUNE,11,15,30));
+        t.addTestParameter();
+        t.addTestResult("IgGAN",1.9);
+        t.changeState("VALIDATED");
+        testStore.addTest(t2);
+
+        Test t3 = new Test("1234567890123459","100000000003", "1234567896", covidTest, testCategories, testParameters1);
+        t1.setCreatedDate(LocalDateTime.of(2021, Month.JUNE,11,15, 0));
+        t.addTestParameter();
+        t.addTestResult("IgGAN",2);
+        t.changeState("VALIDATED");
+        testStore.addTest(t3);
+
+        Test t4 = new Test("1234567890123460","100000000004", "1234567891", covidTest, testCategories, testParameters1);
+        t1.setCreatedDate(LocalDateTime.of(2021, Month.JUNE,10,15, 0));
+        t.addTestParameter();
+        t.addTestResult("IgGAN",2.5);
+        t.changeState("VALIDATED");
+        testStore.addTest(t4);
+
+        Test t5 = new Test("1234567890123461","100000000006", "1234567881", covidTest, testCategories, testParameters1);
+        t1.setCreatedDate(LocalDateTime.of(2021, Month.JUNE,10,14, 0));
+        t.addTestParameter();
+        t.addTestResult("IgGAN",2.5);
+        t.changeState("VALIDATED");
+        testStore.addTest(t5);
+        //
 
         final String pass = "123456";
         this.authFacade.addUserWithRole("Clinical Chemistry Technologist ", "clichetec@lei.sem2.pt", pass, Constants.ROLE_CLINICALCHEMISTRYTECHNOLOGIST);

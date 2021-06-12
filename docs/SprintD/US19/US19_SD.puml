@@ -2,33 +2,44 @@
 'https://plantuml.com/sequence-diagram
 
 autonumber
+participant "Time" as tm
+
 participant ":App" as ap
 participant ":Company" as comp
 participant "timer:Timer" as timer
 participant "task:SendReportTask" as task
 
-activate ap
-deactivate ap
-ap --> comp**:create(parameterFile)
-activate comp
-comp --> task**: create(parameters)
-comp --> timer**:create()
-comp --> timer : schedule(task,delay,interval)
-note over timer: after the delay specified in the config file
-activate timer
-deactivate timer
-timer -> task:run()
-ref over task: SD_runTask().svg
-activate timer
-deactivate timer
-activate task
-deactivate
-note over timer: after the interval specified in the config file
-timer -> task:run()
-ref over task: SD_runTask().svg
-activate timer
-deactivate timer
-activate task
-deactivate
-deactivate comp
+loop every day at 6:00AM
+activate tm
+
+    activate ap
+    ap --> comp**:create(parameterFile)
+    deactivate ap
+    activate comp
+    comp --> task**: create(parameters)
+    comp --> timer**:create()
+    comp --> timer : schedule(task,delay,interval)
+    deactivate comp
+    note over timer: after the delay specified in the config file
+    activate timer
+    deactivate
+
+    timer -> task:run()
+    ref over task: SD_runTask().svg
+    activate timer
+    deactivate timer
+    activate task
+    deactivate
+    note over timer: after the interval specified in the config file
+    tm -> timer: create and send the report
+    timer -> task:run()
+    ref over task: SD_runTask().svg
+    activate timer
+    deactivate timer
+    activate task
+    deactivate
+    deactivate comp
+    task --> tm: informs the success into a log file
+end
+deactivate tm
 @enduml

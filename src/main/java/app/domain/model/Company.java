@@ -1,7 +1,6 @@
 package app.domain.model;
 
 import app.controller.App;
-import app.domain.shared.Constants;
 import app.domain.shared.Serialize;
 import app.domain.stores.*;
 import auth.AuthFacade;
@@ -116,7 +115,6 @@ public class Company implements Serializable {
 
     public EmployeeStore getEmployeeList() {
         return this.employeeList;
-
     }
 
     /**
@@ -154,7 +152,7 @@ public class Company implements Serializable {
         return this.clientList;
     }
 
-    public List<Client> getClientArrayList(){
+    public List<Client> getClientArrayList() {
         return getClientList().returnClientList();
     }
 
@@ -184,9 +182,10 @@ public class Company implements Serializable {
     }
 
     private Object readCompany() {
+        Properties props = App.getProperties();
 
         try {
-            return Serialize.readFile(Constants.COMPANY_SER);
+            return Serialize.readFile(props.getProperty("serialize.path"));
         } catch (IOException e) {
            // e.printStackTrace();
             return null;

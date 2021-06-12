@@ -218,14 +218,15 @@ public class TestStore implements Serializable {
         }
         return validatedTest;
     }
-    public List<Test> getValidatedTestsList(){
+
+    public List<Test> getValidatedTestsList() {
 
         // Company company = App.getInstance().getCompany();
 
         List<Test> testList = new ArrayList<>();
 
-        for(Test t : array){
-            if(t.getState().equals("VALIDATED") && t.getTestType().getTestID().equals("COV19")) {
+        for (Test t : array) {
+            if (t.getState().equals("VALIDATED") && t.getTestType().getTestID().equals("COV19")) {
                 testList.add(t);
             }
         }
@@ -233,7 +234,9 @@ public class TestStore implements Serializable {
         return testList;
 
     }
+
     public List<Test> getTestListArray() {
         return array;
     }
+
 }

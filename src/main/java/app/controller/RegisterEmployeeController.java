@@ -70,7 +70,7 @@ public class RegisterEmployeeController {
         boolean saved = false;
 
         saved = store.saveEmployee();
-        store.addUserWithRole(this.company);
+        System.out.println(store.addUserWithRole(this.company));
         company.saveCompany();
 
         return saved;

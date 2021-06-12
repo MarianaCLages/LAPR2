@@ -55,10 +55,8 @@ public class SceneController {
             stage.setScene(scene);
             stage.show();
 
-        } catch (IOException error) {
+        } catch (IOException | MenuNotFoundException error) {
             System.out.println(error.getMessage());
-        } catch (MenuNotFoundException e) {
-            System.out.println(e.getMessage());
         }
 
     }

@@ -4,7 +4,9 @@ autonumber
 participant "Time" as tm
 participant "System" as sys
 
-tm -> sys: ssdf
-sys --> tm: shfjdfhd
+loop every day at 6:00AM
+    tm -> sys: create and send the report
+    sys --> tm: informs the success into a log file
+end
 
 @enduml

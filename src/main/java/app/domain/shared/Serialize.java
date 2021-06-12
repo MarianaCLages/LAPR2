@@ -28,7 +28,7 @@ public class Serialize {
         try {
             Properties props = App.getProperties();
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(stringFile));
-            File dir = new File(props.getProperty("serialize.file"));
+            File dir = new File(props.getProperty("serialize.folder"));
             if (!dir.exists()){
                 dir.mkdir();
             }

@@ -154,6 +154,7 @@ public class Employee implements Serializable {
 
         boolean success = false;
         String password = PasswordGenerator.getPassword();
+     //   System.out.println(password);
         AuthFacade authFacade = company.getAuthFacade();
 
         if (role.toString().equals("Clinical Chemistry Technologist")) {
