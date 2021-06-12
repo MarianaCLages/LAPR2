@@ -145,4 +145,8 @@ public class ClinicalAnalysisLab implements Serializable {
                 ", phonenumber=" + this.phoneNumber +
                 ", typetest=" + this.tType.toString();
     }
+
+    public String getId() {
+        return this.id;
+    }
 }

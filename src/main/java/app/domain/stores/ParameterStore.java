@@ -2,6 +2,7 @@ package app.domain.stores;
 
 import app.domain.model.Parameter;
 import app.domain.model.ParameterCategory;
+import app.domain.model.Test;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -168,6 +169,23 @@ public class ParameterStore implements Serializable {
         for (Parameter p : array) {
             if (p.getCode().equals(parameterCode)) {
                 return p;
+            }
+        }
+        return null;
+    }
+
+    public Parameter getParameterExist(String parameter) {
+        for (Parameter p : this.array) {
+            if (p.getName().equals(parameter)) {
+                return p;
+            }
+        }
+        return null;
+    }
+    public Parameter getParameterByCode(String code) {
+        for (Parameter p1 : this.array) {
+            if (p1.getCode().equals(code)) {
+                return p1;
             }
         }
         return null;

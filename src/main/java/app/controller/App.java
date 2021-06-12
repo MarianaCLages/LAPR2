@@ -1,9 +1,6 @@
 package app.controller;
 
-import app.domain.model.Company;
-import app.domain.model.Parameter;
-import app.domain.model.ParameterCategory;
-import app.domain.model.TestType;
+import app.domain.model.*;
 import app.domain.shared.Constants;
 import app.domain.stores.*;
 import auth.AuthFacade;
@@ -101,20 +98,20 @@ public class App {
 
 
         ParameterCategoryStore parameterCategoryStore = company.getParameterCategoryList();
-        ParameterCategory pc1 = parameterCategoryStore.CreateParameterCategory("12345", "Hemoglob");
+        ParameterCategory pc1 = parameterCategoryStore.CreateParameterCategory("12345", "Hemogram");
         parameterCategoryStore.saveParameterCategory();
-        ParameterCategory pc2 = parameterCategoryStore.CreateParameterCategory("12346", "EryRate");
+        ParameterCategory pc2 = parameterCategoryStore.CreateParameterCategory("12346", "Cholesterol");
         parameterCategoryStore.saveParameterCategory();
         ParameterCategory pc3 = parameterCategoryStore.CreateParameterCategory("12347", "Covid");
         parameterCategoryStore.saveParameterCategory();
 
         TestTypeStore ttStore = company.getTestTypeList();
-        TestType bloodTest = new TestType("BL000", "Blood Test", "Needle", parameterCategoryStore);
-        TestType covidTest = new TestType("COV19", "Covid Test", "Swab", parameterCategoryStore);
+        TestType bloodTest = new TestType("BL000", "Blood", "Needle", parameterCategoryStore);
+        TestType covidTest = new TestType("COV19", "Covid", "Swab", parameterCategoryStore);
 
         ttStore.add(bloodTest);
-
         ttStore.add(covidTest);
+
         ParameterStore parameterStore = company.getParameterList();
         Parameter p1 = new Parameter("MCH00", "MCH", "Mean Haemoglobin", pc1);
         parameterStore.add(p1);
@@ -122,10 +119,30 @@ public class App {
         parameterStore.add(p2);
         Parameter p3 = new Parameter("HB000", "HB", "Haemoglobin", pc1);
         parameterStore.add(p3);
-
-
         Parameter p4 = new Parameter("IgGAN", "COVID", "000", pc3);
         parameterStore.add(p4);
+        Parameter p5 = new Parameter("WBC00", "WBC", "White blood cells", pc1);
+        parameterStore.add(p5);
+        Parameter p6 = new Parameter("PLT00", "PLT", "Platelets", pc1);
+        parameterStore.add(p6);
+        Parameter p7 = new Parameter("RBC00", "RBC", "Red blood cells", pc1);
+        parameterStore.add(p7);
+
+
+
+        ClinicalAnalysisLabStore clinicalAnalysisLabStore = company.getClinicalAnalysisLabList();
+        ClinicalAnalysisLab cl1 = new ClinicalAnalysisLab("Lab1", "address A", "001DO", "1111111111", "11111111111",ttStore);
+        clinicalAnalysisLabStore.add(cl1);
+        ClinicalAnalysisLab cl2 = new ClinicalAnalysisLab("Lab2", "address B", "001LN", "1111111112", "11111111112",ttStore);
+        clinicalAnalysisLabStore.add(cl2);
+        ClinicalAnalysisLab cl3 = new ClinicalAnalysisLab("Lab3", "address C", "001LR", "1111111113", "11111111113",ttStore);
+        clinicalAnalysisLabStore.add(cl3);
+        ClinicalAnalysisLab cl4 = new ClinicalAnalysisLab("Lab4", "address D", "001MA", "1111111114", "11111111114", ttStore);
+        clinicalAnalysisLabStore.add(cl4);
+        ClinicalAnalysisLab cl5 = new ClinicalAnalysisLab("Lab5", "address E", "001SO", "1111111115", "11111111115", ttStore);
+        clinicalAnalysisLabStore.add(cl5);
+        ClinicalAnalysisLab cl6 = new ClinicalAnalysisLab("Lab6", "address F", "001WA", "1111111116", "11111111116", ttStore);
+        clinicalAnalysisLabStore.add(cl6);
 
         ClientStore store = company.getClientList();
 
@@ -162,8 +179,10 @@ public class App {
 
         testStore.createTest("100000000000", "1234567890", bloodTest, testCategories, testParameters);
         testStore.saveTest();
-        testStore.createTest("100000000001", "1234567890", covidTest, testCategories, testParameters1);
+        testStore.getT().changeState("VALIDATED");
+        testStore.createTest("100000000001", "2234567890", covidTest, testCategories, testParameters1);
         testStore.saveTest();
+        testStore.getT().changeState("VALIDATED");
         testStore.createTest("100000000002", "1234567890", covidTest, testCategories, testParameters);
         testStore.saveTest();
         testStore.getT().changeState("VALIDATED");

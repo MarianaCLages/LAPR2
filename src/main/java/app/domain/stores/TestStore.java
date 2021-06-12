@@ -1,10 +1,10 @@
 package app.domain.stores;
 
-import app.controller.App;
 import app.domain.model.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.*;
 
@@ -32,12 +32,12 @@ public class TestStore implements Serializable {
      * @param paList        list of parameters that are measured in this test
      * @return boolean value representing the test validity within the system requirements
      */
-    public boolean createTest(String testNhsNumber, String clientTin, TestType testType, List<ParameterCategory> catList, List<Parameter> paList) {
+    public Test createTest(String testNhsNumber, String clientTin, TestType testType, List<ParameterCategory> catList, List<Parameter> paList) {
 
         this.t = new Test(getTestId(), testNhsNumber, clientTin, testType, catList, paList);
         this.t.addTestParameter();
 
-        return validateTest();
+        return t;
     }
 
     /**
@@ -117,10 +117,6 @@ public class TestStore implements Serializable {
         return this.t.toString();
     }
 
-    public Test getT() {
-        return t;
-    }
-
     /**
      * @param testId unique nhs code that represents the test
      * @return the test that is associated with nhs code if there is not a test with this code returns null
@@ -176,10 +172,10 @@ public class TestStore implements Serializable {
         Comparator<Test> comparator1 = new Comparator<Test>() {
             @Override
             public int compare(Test o1, Test o2) {
-                LocalDate d1 = o1.getDate();
-                Date date1 = java.util.Date.from(d1.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
-                LocalDate d2 = o2.getDate();
-                Date date2 = java.util.Date.from(d2.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());
+                LocalDateTime d1 = o1.getDate();
+                Date date1 = java.util.Date.from(d1.atZone(ZoneId.systemDefault()).toInstant());
+                LocalDateTime d2 = o2.getDate();
+                Date date2 = java.util.Date.from(d2.atZone(ZoneId.systemDefault()).toInstant());
 
                 if (date1.before(date2)) {
                     return 1;
@@ -208,6 +204,10 @@ public class TestStore implements Serializable {
         return tinList;
     }
 
+    public Test getT() {
+        return t;
+    }
+
     public List<Test> getValidatedTestList(Client client) {
         List<Test> validatedTest = new ArrayList<>();
 
@@ -218,23 +218,21 @@ public class TestStore implements Serializable {
         }
         return validatedTest;
     }
-
     public List<Test> getValidatedTestsList(){
 
-       // Company company = App.getInstance().getCompany();
+        // Company company = App.getInstance().getCompany();
 
         List<Test> testList = new ArrayList<>();
 
         for(Test t : array){
-           if(t.getState().equals("VALIDATED") && t.getTestType().getTestID().equals("COV19")) {
-               testList.add(t);
-           }
+            if(t.getState().equals("VALIDATED") && t.getTestType().getTestID().equals("COV19")) {
+                testList.add(t);
+            }
         }
 
         return testList;
 
     }
-
     public List<Test> getTestListArray() {
         return array;
     }

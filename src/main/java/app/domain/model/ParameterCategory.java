@@ -50,7 +50,7 @@ public class ParameterCategory implements Serializable {
             throw new IllegalArgumentException("Name cannot be blank.");
         }
         if (name.length() > Constants.MAX_CATEGORY_NAME) {
-            throw new IllegalArgumentException("Name cannot have more than 10 characters.");
+            throw new IllegalArgumentException("Name cannot have more than" + Constants.MAX_CATEGORY_NAME + "characters.");
         }
     }
 

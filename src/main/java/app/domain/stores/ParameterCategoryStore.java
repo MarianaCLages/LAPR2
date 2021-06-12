@@ -1,6 +1,9 @@
 package app.domain.stores;
 
+import app.domain.model.ClinicalAnalysisLab;
+import app.domain.model.Parameter;
 import app.domain.model.ParameterCategory;
+import app.domain.model.TestType;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -169,5 +172,14 @@ public class ParameterCategoryStore implements Serializable {
         return this.array.isEmpty();
     }
 
+    public ParameterCategory getParameterCategoryExist(String parametercategory) {
 
+        for (ParameterCategory pc : this.array) {
+            if (pc.getName().equals(parametercategory)) {
+
+                return pc;
+            }
+        }
+        return null;
+    }
 }

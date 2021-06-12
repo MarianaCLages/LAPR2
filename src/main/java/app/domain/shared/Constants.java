@@ -18,7 +18,7 @@ public class Constants {
     public static final int MAX_DESCRIPTION = 15;
     public static final int MAX_COLLECTING_METHODS = 20;
     public static final int MAX_PARAMETER_DESCRIPTION = 20;
-    public static final int MAX_CATEGORY_NAME = 10;
+    public static final int MAX_CATEGORY_NAME = 15;
     public static final int MAX_PARAMETER_NAME = 8;
     public static final int PHONE_NUMBER_DIGITS = 11;
     public static final int PASSWORD_LENGTH = 10;

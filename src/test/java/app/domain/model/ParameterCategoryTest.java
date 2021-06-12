@@ -22,7 +22,7 @@ public class ParameterCategoryTest {
     @Test(expected = IllegalArgumentException.class)
     public void CreateNameTooBigCategoryTest() {
         //Arrange + Act
-        ParameterCategory cat = new ParameterCategory("AFO4I", "Hemogramatu");
+        ParameterCategory cat = new ParameterCategory("AFO4I", "Hemogramatuaaaaaa");
     }
 
     @Test
