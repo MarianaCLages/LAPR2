@@ -52,10 +52,14 @@ public class SimpleLinearRegressionController implements Initializable {
             if (myChoiceBoxSimple.getValue() == "Covid-19 tests") {
 
                 List<Test> validTests = company.getTestList().getValidatedTestsList();
-                    List<Test> covidTests = getPositiveCovidTest(validTests);
+                List<Test> covidTests = getPositiveCovidTest(validTests);
 
-                System.out.println("---------------------------------");
-                for (Test t : validTests) {
+                System.out.println("Valid Tests        ---------------------------------");
+                    for (Test t : validTests) {
+                    System.out.println(t);
+                }
+                System.out.println("Covid Tests positive ---------------------------------");
+                for (Test t : covidTests) {
                     System.out.println(t);
                 }
 
@@ -112,67 +116,40 @@ public class SimpleLinearRegressionController implements Initializable {
         int n = 0;
         int x = 0;
         int sum = 0;
-        int age =0;
+        int age = 0;
+
+        getListOfCovidTestInsideTheHistoricalDays();
 
         for (Client c : clientList) {
             System.out.println(c.toString());
         }
 
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-
-        Date date2 = new Date();
-        String todate = dateFormat.format(date2);
-        LocalDate date3 = LocalDate.now();
-
-        Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.DATE, -company.getData().getDate());
-        Date todate1 = cal.getTime();
-
-        LocalDate todate2 = todate1.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-
-        String fromdate = dateFormat.format(todate1);
-
-        List<Test> validCovidTests = new ArrayList<>();
-
-        for(Test t : company.getTestList().getValidatedTestsList()){
-            //LocalDate localDate = localDateTime.toLocalDate();
-           // if(Period.between(todate2,t.getDate()).getDays() > 0 && Period.between(t.getDate(),date3).getDays() < 0){
-             //   validCovidTests.add(t);
-            //}
-        }
-
-
-
-
-
-
-
-
         for (Client c : clientList) {
-            for(Test t : company.getTestList().getTestListArray()) {
-               // if (t.getDate()>date3) {
-                    LocalDate date = c.getBirthDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-                    age = Period.between(date, LocalDate.now()).getYears();
-                    sum += age;
-                    x++;
+            for (Test t1 : company.getTestList().getTestListArray()) {
+                // if (t.getDate()>date3) {
+                LocalDate date = c.getBirthDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                age = Period.between(date, LocalDate.now()).getYears();
+                sum += age;
+                x++;
 
                 //}
             }
 
-            clientsAges[n] = sum/x;
+            clientsAges[n] = sum / x;
             n++;
-            x=0;
-            sum=0;
+            x = 0;
+            sum = 0;
 
         }
 
         for (int i = 0; i < clientsAges.length; i++) {
-            if (clientsAges[i] != 0) System.out.println("Day " + clientsAges[i]);
+            if (clientsAges[i] != 0) System.out.println(clientsAges[i]);
         }
 
 
         return clientsAges;
     }
+
 
     private List<Test> getPositiveCovidTest(List<Test> covidList) {
 
@@ -196,6 +173,32 @@ public class SimpleLinearRegressionController implements Initializable {
 
         return covidTestList;
 
+    }
+
+    private void getListOfCovidTestInsideTheHistoricalDays(){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        Date date2 = new Date();
+        String todate = dateFormat.format(date2);
+        LocalDate date3 = LocalDate.now();
+
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -company.getData().getDate());
+        Date todate1 = cal.getTime();
+
+        LocalDate todate2 = todate1.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
+        String fromdate = dateFormat.format(todate1);
+
+        List<Test> validCovidTests = new ArrayList<>();
+
+        for (Test t : company.getTestList().getValidatedTestsList()) {
+            LocalDate localDate = t.getDate().toLocalDate();
+            if (Period.between(todate2, localDate).getDays() < 0 && Period.between(localDate, date3).getDays() > 0) {
+                System.out.println(localDate);
+                validCovidTests.add(t);
+            }
+        }
     }
 
 }

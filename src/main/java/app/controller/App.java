@@ -200,6 +200,7 @@ public class App {
         //covid
 
         Test t = new Test("1234557890123456", "100000000100", "1234567890", covidTest, testCategories, testParameters1);
+        t.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 10, 11, 30));
         t.addTestParameter();
         t.changeState("SAMPLE_COLLECTED");
         t.addTestResult("IgGAN", 1.5);
