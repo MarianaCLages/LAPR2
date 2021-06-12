@@ -52,9 +52,9 @@ public class SimpleLinearRegressionController implements Initializable {
             if (myChoiceBoxSimple.getValue() == "Covid-19 tests") {
 
                 List<Test> validTests = company.getTestList().getValidatedTestsList();
-                List<Test> covidTests = getPositiveCovidTest(validTests);
-                System.out.println(company.getData().getHistoricalDays());
+                //    List<Test> covidTests = getPositiveCovidTest(validTests);
 
+                System.out.println("---------------------------------");
                 for (Test t : validTests) {
                     System.out.println(t);
                 }
@@ -63,6 +63,7 @@ public class SimpleLinearRegressionController implements Initializable {
 
                 List<Client> clientsWithTests = getClientsWithTests();
                 int[] ages = getClientAge(clientsWithTests);
+
                 //linearRegression(ages) quando isto estiver implementado
 
             }
@@ -109,16 +110,28 @@ public class SimpleLinearRegressionController implements Initializable {
 
         int[] clientsAges = new int[1000];
         int n = 0;
+        int x = 0;
+        int sum = 0;
+        int age =0;
 
         for (Client c : clientList) {
             System.out.println(c.toString());
         }
 
         for (Client c : clientList) {
+            for(Test t : company.getTestList().getTestListArray()){
+                if(c.getTinNumber().equals(t.getClientTin())){
+                     LocalDate date = c.getBirthDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                     age = Period.between(date, LocalDate.now()).getYears();
+                     sum += age;
+                     x++;
+                }
+            }
 
-            LocalDate date = c.getBirthDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-            clientsAges[n] = Period.between(date, LocalDate.now()).getYears();
+            clientsAges[n] = sum/x;
             n++;
+            x=0;
+            sum=0;
 
         }
 
@@ -143,6 +156,7 @@ public class SimpleLinearRegressionController implements Initializable {
                 }
             }
         }
+
         System.out.println("---------------------------------");
 
         for (Test t : covidTestList) {
