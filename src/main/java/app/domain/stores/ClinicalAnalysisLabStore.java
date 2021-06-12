@@ -96,7 +96,7 @@ public class ClinicalAnalysisLabStore implements Serializable {
      * @return the Clinical Analysis Lab object that was in the index of the array list
      */
     public ClinicalAnalysisLab get(int index) {
-        return array.get(index);
+        return this.array.get(index);
     }
 
     /**
@@ -118,6 +118,17 @@ public class ClinicalAnalysisLabStore implements Serializable {
      */
     public ClinicalAnalysisLab getCal() {
         return cal;
+    }
+
+    public boolean VerifyClinicalLabID(String id) {
+        List<ClinicalAnalysisLab> cList = new ArrayList<>();
+        for (ClinicalAnalysisLab c : this.array) {
+
+            if (c.getId().equals(id)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }

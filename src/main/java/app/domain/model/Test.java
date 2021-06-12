@@ -5,8 +5,10 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 public class Test implements Serializable {
 
@@ -16,13 +18,13 @@ public class Test implements Serializable {
     private final TestType testType;
     private final List<ParameterCategory> catList;
     private final List<Parameter> paList;
-    private final LocalDate createdDate;
+    private final LocalDateTime createdDate;
     private State state;
     private List<TestParameter> testParam;
-    private LocalDate sampleCreatedDate;
-    private LocalDate analysedData;
-    private LocalDate diagnosticDate;
-    private LocalDate validatedDate;
+    private LocalDateTime sampleCreatedDate;
+    private LocalDateTime analysedData;
+    private LocalDateTime diagnosticDate;
+    private LocalDateTime validatedDate;
     private Report rep;
 
     /**
@@ -47,7 +49,7 @@ public class Test implements Serializable {
         this.testType = testType;
         this.catList = catList;
         this.paList = paList;
-        this.createdDate = LocalDate.now();
+        this.createdDate = LocalDateTime.now();
 
     }
 
@@ -131,7 +133,6 @@ public class Test implements Serializable {
 
     /**
      * Changes the state of the object test by changing the variable state with a value from the enum "State
-     *
      * @param s a value of the enum "State"
      */
     public void changeState(String s) {
@@ -141,23 +142,39 @@ public class Test implements Serializable {
                 break;
             case "SAMPLE_COLLECTED":
                 changeState(State.SAMPLE_COLLECTED);
-                this.sampleCreatedDate = LocalDate.now();
+                this.sampleCreatedDate = LocalDateTime.now();
                 break;
             case "SAMPLE_ANALYSED":
                 changeState(State.SAMPLE_ANALYSED);
-                this.analysedData = LocalDate.now();
+                this.analysedData = LocalDateTime.now();
                 break;
             case "DIAGNOSTIC_MADE":
                 changeState(State.DIAGNOSTIC_MADE);
-                this.diagnosticDate = LocalDate.now();
+                this.diagnosticDate = LocalDateTime.now();
                 break;
             case "VALIDATED":
                 changeState(State.VALIDATED);
-                this.validatedDate = LocalDate.now();
+                this.validatedDate = LocalDateTime.now();
                 break;
             default:
                 break;
         }
+    }
+    
+    public void setSampleCreatedDate(LocalDateTime sampleCreatedDate) {
+        this.sampleCreatedDate = sampleCreatedDate;
+    }
+
+    public void setAnalysedData(LocalDateTime analysedData) {
+        this.analysedData = analysedData;
+    }
+
+    public void setDiagnosticDate(LocalDateTime diagnosticDate) {
+        this.diagnosticDate = diagnosticDate;
+    }
+
+    public void setValidatedDate(LocalDateTime validatedDate) {
+        this.validatedDate = validatedDate;
     }
 
     /**
@@ -215,7 +232,7 @@ public class Test implements Serializable {
 
     /**
      * @param parameterCode the code of the parameter that will be associated with a result
-     * @param result        double that represents numerical the result of the analysis of the test parameters
+     * @param result double that represents numerical the result of the analysis of the test parameters
      * @return boolean represents the success of the operation
      */
     public boolean addTestResult(String parameterCode, double result) {
@@ -277,13 +294,6 @@ public class Test implements Serializable {
         return state.toString();
     }
 
-    public String getClientTin() {
-        return clientTin;
-    }
-
-    public LocalDate getDate() {
-        return this.createdDate;
-    }
 
     /**
      * This enum represents all the states that the Test object can assume
@@ -298,11 +308,18 @@ public class Test implements Serializable {
 
     }
 
+
+    public String getClientTin(){
+        return clientTin;
+    }
+    public LocalDateTime getDate(){
+        return this.createdDate;
+    }
     public TestType getTestType() {
         return testType;
     }
-
-    public LocalDate getValidatedDate() {
+    public LocalDateTime getValidatedDate() {
         return validatedDate;
     }
+
 }

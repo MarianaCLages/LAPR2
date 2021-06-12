@@ -1,5 +1,6 @@
 package app.domain.stores;
 
+import app.domain.model.Test;
 import app.domain.model.TestType;
 
 import java.io.Serializable;
@@ -131,4 +132,14 @@ public class TestTypeStore implements Serializable {
     public TestType getTestT() {
         return t;
     }
+
+    public TestType getTestTypeExist(String testtype) {
+        for (TestType t : this.array) {
+            if (t.getDescription().equals(testtype)) {
+                return t;
+            }
+        }
+        return null;
+    }
+
 }
