@@ -1,0 +1,12 @@
+
+Q	java:S107&"<Method has 8 parameters, which is greater than 7 authorized.(ˆ‘•Ü
+r	java:S117z"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œŠıàùÿÿÿÿ8†èŸ«/
+T
+java:S1128"2Remove this unused import 'app.domain.model.Test'.(Ãïîêøÿÿÿÿ8ŠèŸ«/
+c	java:S100&"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ‘•Ü
+K
+java:S1751@"6Remove this "return" statement or make it conditional.(Ú“í*
+L
+java:S1751G"6Remove this "return" statement or make it conditional.(¨ÈıÒ
+B
+java:S1172t"-Remove this unused method parameter "client".(˜±”V

@@ -1,0 +1,18 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÔëÏ
+E
+java:S1128"/Remove this unused import 'javafx.scene.Scene'.(Õü²
+D
+java:S1128	".Remove this unused import 'javafx.scene.Node'.(ÑÖ¬ï
+F
+java:S1128
+"0Remove this unused import 'javafx.scene.Parent'.(²ä¡È
+N
+java:S1128"3Remove this unused import 'javafx.fxml.FXMLLoader'.(À‡ô³úÿÿÿÿ
+w
+java:S1450$"URemove the "sucess" field and declare it as a local variable in the relevant methods.(¬Ûß±üÿÿÿÿ8ØÑç/
+E	java:S108/")Either remove or fill this block of code.(”ı¾8àÑç/
+E	java:S1089")Either remove or fill this block of code.(”ı¾8âÑç/
+N	java:S106a"9Replace this use of System.out or System.err by a logger.(¡¤øÓ
+[	java:S106€"9Replace this use of System.out or System.err by a logger.(Õ’•šşÿÿÿÿ8ïÑç/
+R	java:S125†"<This block of commented-out lines of code should be removed.(öÍá–
