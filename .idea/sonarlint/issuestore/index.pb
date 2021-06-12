@@ -183,8 +183,6 @@ w
 Gsrc/main/java/app/domain/shared/exceptions/ChoiceBoxEmptyException.java,d\a\da5859ee0fbb622f76a8e66651f4ffb20658ca75
 f
 6src/main/java/app/controller/CreateTestController.java,f\5\f54f6fb19e03f0fa13b00dc9c6f082f28f52680c
-g
-7src/main/java/app/ui/gui/employees/AdministratorUI.java,1\9\19e8d234ed70d2ee98189bee48aecf519f1826fa
 w
 Gsrc/main/java/app/ui/gui/adminMenuUIs/ClinicalAnalysisLaboratoryUI.java,3\3\333e57aa1e107615bb48acfb7c7c07906d34dfd5
 e
