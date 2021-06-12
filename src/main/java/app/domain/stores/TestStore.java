@@ -192,6 +192,15 @@ public class TestStore implements Serializable {
         Collections.sort(testList2, comparator1);
         return testList2;
     }
+    public String toStringSortedList(String clientTin) {
+        for (Test test : sortDate(clientTin)) {
+            System.out.println(test);
+        }
+        return null;
+    }
+
+
+
 
     public List<Test> getTestByTin(String clientTin) {
         List<Test> tinList = new ArrayList<>();
