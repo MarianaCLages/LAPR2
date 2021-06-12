@@ -56,8 +56,9 @@ public class Company implements Serializable {
 
     }
 
-    public Company() {
+   public Company() {
         Company temp = (Company) readCompany();
+
 
         this.designation = Objects.requireNonNull(temp).getDesignation();
         this.authFacade = temp.getAuthFacade();
@@ -184,7 +185,7 @@ public class Company implements Serializable {
         try {
             return Serialize.readFile(Constants.COMPANY_SER);
         } catch (IOException e) {
-            e.printStackTrace();
+           // e.printStackTrace();
             return null;
         }
     }

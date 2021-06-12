@@ -21,6 +21,7 @@ public class Serialize {
             throw new IOException("File dont exists");
         }
 
+
     }
 
     public static boolean writeObject(String stringFile, Company savedObject) {

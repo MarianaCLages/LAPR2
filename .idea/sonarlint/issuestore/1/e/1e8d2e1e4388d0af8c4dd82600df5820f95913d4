@@ -1,0 +1,5 @@
+
+p
+java:S1450"URemove the "sucess" field and declare it as a local variable in the relevant methods.(¬Ûß±üÿÿÿÿ
+N	java:S106R"9Replace this use of System.out or System.err by a logger.(¡¤øÓ
+S	java:S106q"9Replace this use of System.out or System.err by a logger.(Õ’•šþÿÿÿÿ

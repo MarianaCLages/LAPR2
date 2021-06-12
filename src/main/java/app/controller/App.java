@@ -33,9 +33,9 @@ public class App {
     private App() {
         Properties props = getProperties();
         File f = new File(props.getProperty("serialize.path"));
-        if (f.exists() && !f.isDirectory()) {
+       /* if (f.exists() && !f.isDirectory()) {
             this.company = new Company();
-        } else {
+        } else*/ {
             this.company = new Company(props.getProperty(Constants.PARAMS_COMPANY_DESIGNATION),props.getProperty("report.hour"),props.getProperty("report.min"),props.getProperty("report.sec"));
             this.authFacade = this.company.getAuthFacade();
             bootstrap();

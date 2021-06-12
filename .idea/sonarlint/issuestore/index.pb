@@ -171,8 +171,6 @@ l
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-X
-(src/main/java/app/ui/gui/MainScreen.java,b\5\b59adf73fdf4b7ccc7be755addc8e97dd1524983
 h
 8src/main/java/app/ui/gui/controllers/MainController.java,2\9\292a2c3b98bc8a8029e036d845686e6bd82b7279
 d
@@ -221,3 +219,9 @@ j
 :src/main/java/app/domain/shared/MultiLinearRegression.java,5\1\51ac4d2fa961af5b859a17a30045d1b297b297c4
 i
 9src/main/java/app/ui/gui/controllers/SceneController.java,2\1\21a1870d367d1ba874d3ca96381bdff317fffa0d
+`
+0src/main/java/app/domain/stores/ClientStore.java,a\2\a208024caf8eb82d63bccfceb639afa2ced6c709
+i
+9src/main/java/app/ui/gui/controllers/LoginController.java,1\e\1e8d2e1e4388d0af8c4dd82600df5820f95913d4
+v
+Fsrc/main/java/app/ui/gui/adminMenuUIs/GenerateNHSReportController.java,4\9\492080ff1251d93f2fbaf48c23b559c00af79225
