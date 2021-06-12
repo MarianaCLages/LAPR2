@@ -46,7 +46,7 @@ public class ImportTests {
 
 
 
-        Path path = Paths.get("C:\\Users\\EN\\Documents\\prog lapr2 clone1\\csv\\" + fileName + ".csv");
+        Path path = Paths.get("csv/"+fileName+".csv");
         String firstLine = "Test_Code;NHS_Code;Lab_ID;CitizenCard_Number;NHS_Number;TIN;BirthDay;PhoneNumber;Name;E/mail ;Address;TestType;Category;HB000;WBC00;PLT00;RBC00;Category;HDL00;Category;IgGAN;Test_Reg_DateHour;Test_Chemical_DateHour;Test_Doctor_DateHour;Test_Validation_DateHour";
         try (BufferedReader br = Files.newBufferedReader(path, StandardCharsets.US_ASCII)) {
 
