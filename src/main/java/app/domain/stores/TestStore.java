@@ -224,7 +224,7 @@ public class TestStore implements Serializable {
         // Company company = App.getInstance().getCompany();
 
         List<Test> testList = new ArrayList<>();
-        
+
         for (Test t : array) {
             if (t.getState().equals("VALIDATED") && t.getTestType().getTestID().equals("COV19")) {
                 testList.add(t);
