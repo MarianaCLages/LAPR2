@@ -201,6 +201,7 @@ public class App {
 
         Test t = new Test("1234557890123456", "100000000100", "1234567890", covidTest, testCategories, testParameters1);
         t.addTestParameter();
+        t.changeState("SAMPLE_COLLECTED");
         t.addTestResult("IgGAN", 1.5);
         t.changeState("VALIDATED");
         testStore.addTest(t);
@@ -208,6 +209,7 @@ public class App {
         Test t1 = new Test("1234567890123457", "100000000001", "1234567890", covidTest, testCategories, testParameters1);
         t1.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 10, 15, 30));
         t1.addTestParameter();
+        t1.changeState("SAMPLE_COLLECTED");
         t1.addTestResult("IgGAN", 1.4);
         t1.changeState("VALIDATED");
         testStore.addTest(t1);
@@ -215,6 +217,7 @@ public class App {
         Test t2 = new Test("1234567890123458", "100000000002", "2234567890", covidTest, testCategories, testParameters1);
         t2.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 11, 15, 30));
         t2.addTestParameter();
+        t2.changeState("SAMPLE_COLLECTED");
         t2.addTestResult("IgGAN", 1.9);
         t2.changeState("VALIDATED");
         testStore.addTest(t2);
@@ -222,6 +225,7 @@ public class App {
         Test t3 = new Test("1234567890123459", "100000000003", "1234567896", covidTest, testCategories, testParameters1);
         t3.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 11, 15, 0));
         t3.addTestParameter();
+        t3.changeState("SAMPLE_COLLECTED");
         t3.addTestResult("IgGAN", 2);
         t3.changeState("VALIDATED");
         testStore.addTest(t3);
@@ -229,6 +233,7 @@ public class App {
         Test t4 = new Test("1234567890123460", "100000000004", "1234567891", covidTest, testCategories, testParameters1);
         t4.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 10, 15, 0));
         t4.addTestParameter();
+        t4.changeState("SAMPLE_COLLECTED");
         t4.addTestResult("IgGAN", 2.5);
         t4.changeState("VALIDATED");
         testStore.addTest(t4);
@@ -236,6 +241,7 @@ public class App {
         Test t5 = new Test("1234567890123461", "100000000006", "1234567881", covidTest, testCategories, testParameters1);
         t5.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 10, 14, 0));
         t5.addTestParameter();
+        t5.changeState("SAMPLE_COLLECTED");
         t5.addTestResult("IgGAN", 2.5);
         t5.changeState("VALIDATED");
         testStore.addTest(t5);
@@ -243,6 +249,7 @@ public class App {
         Test t6 = new Test("1234567890123462", "100000000007", "1234567896", covidTest, testCategories, testParameters1);
         t6.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 12, 14, 0));
         t6.addTestParameter();
+        t6.changeState("SAMPLE_COLLECTED");
         t6.addTestResult("IgGAN", 1.5);
         t6.changeState("VALIDATED");
         testStore.addTest(t6);
@@ -250,6 +257,7 @@ public class App {
         Test t7 = new Test("1234567890123465", "100000000007", "1234567896", covidTest, testCategories, testParameters1);
         t7.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 12, 18, 0));
         t7.addTestParameter();
+        t7.changeState("SAMPLE_COLLECTED");
         t7.addTestResult("IgGAN", 1.6);
         t7.changeState("VALIDATED");
         testStore.addTest(t7);
@@ -257,12 +265,14 @@ public class App {
         Test t8 = new Test("1234567890123466", "100000000007", "1234567896", covidTest, testCategories, testParameters1);
         t8.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 12, 18, 20));
         t8.addTestParameter();
+        t8.changeState("SAMPLE_COLLECTED");
         t8.addTestResult("IgGAN", 1.9);
         t8.changeState("VALIDATED");
 
         Test t9 = new Test("1234567890123467", "100000000007", "1234567896", covidTest, testCategories, testParameters1);
         t9.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 12, 16, 50));
         t9.addTestParameter();
+        t9.changeState("SAMPLE_COLLECTED");
         t9.addTestResult("IgGAN", 1.79);
         t9.changeState("VALIDATED");
         testStore.addTest(t9);
@@ -271,6 +281,7 @@ public class App {
 
         Test tn = new Test("1234567890123463", "200000000008", "1234567896", bloodTest, testCategories, testParameters);
         tn.addTestParameter();
+        tn.changeState("SAMPLE_COLLECTED");
         tn.addTestResult("MCH00", 15);
         tn.addTestResult("ESR00", 150);
         tn.addTestResult("HB000", 50);
@@ -279,6 +290,7 @@ public class App {
 
         Test tn1 = new Test("1234567890123464", "200000000009", "1234567881", bloodTest, testCategories, testParameters);
         tn1.addTestParameter();
+        tn1.changeState("SAMPLE_COLLECTED");
         tn1.addTestResult("MCH00", 85);
         tn1.addTestResult("ESR00", 170);
         tn1.addTestResult("HB000", 600);
