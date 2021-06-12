@@ -218,7 +218,7 @@ public class App {
         t2.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 11, 15, 30));
         t2.addTestParameter();
         t2.changeState("SAMPLE_COLLECTED");
-        t2.addTestResult("IgGAN", 1.9);
+        t2.addTestResult("IgGAN", 0.5);
         t2.changeState("VALIDATED");
         testStore.addTest(t2);
 
@@ -234,7 +234,7 @@ public class App {
         t4.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 10, 15, 0));
         t4.addTestParameter();
         t4.changeState("SAMPLE_COLLECTED");
-        t4.addTestResult("IgGAN", 2.5);
+        t4.addTestResult("IgGAN", 1);
         t4.changeState("VALIDATED");
         testStore.addTest(t4);
 

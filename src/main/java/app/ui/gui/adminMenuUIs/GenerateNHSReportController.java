@@ -72,26 +72,10 @@ public class GenerateNHSReportController implements Initializable {
             setInformation();
             changeScene(event);
 
-        } catch (ConfidenceLevelInvalidException err1) {
+        } catch (ConfidenceLevelInvalidException | InvalidIntervalOfDatesEndException | InvalidIntervalOfDatesStartException | HistoricalDaysEmptyException | DateEmptyException | DateInvalidException | ConfidenceLevelICEmptyException | ChoiceBoxEmptyException | HistoricalDaysInvalidException err1) {
             errorAlert(err1.getMessage());
-        } catch (HistoricalDaysEmptyException err2) {
-            errorAlert(err2.getMessage());
-        } catch (DateEmptyException err3) {
-            errorAlert(err3.getMessage());
-        } catch (DateInvalidException err4) {
-            errorAlert(err4.getMessage());
-        } catch (ConfidenceLevelICEmptyException err5) {
-            errorAlert(err5.getMessage());
-        } catch (ChoiceBoxEmptyException err6) {
-            errorAlert(err6.getMessage());
-        } catch (HistoricalDaysInvalidException err7) {
-            errorAlert(err7.getMessage());
         } catch (RuntimeException err8) {
             errorAlert("Please enter valid information (Don't leave blank containers!)");
-        } catch (InvalidIntervalOfDatesStartException err9) {
-            errorAlert(err9.getMessage());
-        } catch (InvalidIntervalOfDatesEndException err10) {
-            errorAlert(err10.getMessage());
         }
 
     }

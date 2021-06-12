@@ -52,7 +52,7 @@ public class SimpleLinearRegressionController implements Initializable {
             if (myChoiceBoxSimple.getValue() == "Covid-19 tests") {
 
                 List<Test> validTests = company.getTestList().getValidatedTestsList();
-                //    List<Test> covidTests = getPositiveCovidTest(validTests);
+                    List<Test> covidTests = getPositiveCovidTest(validTests);
 
                 System.out.println("---------------------------------");
                 for (Test t : validTests) {
@@ -182,7 +182,7 @@ public class SimpleLinearRegressionController implements Initializable {
             for (TestParameter t1 : t.getTestParam()) {
                 if (t1 != null) {
                     if (t1.getpCode().equals("IgGAN") && t1.getTestParameterResult().getResult() > 1.4) {
-                        covidList.add(t);
+                        covidTestList.add(t);
                     }
                 }
             }
