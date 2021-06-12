@@ -166,8 +166,6 @@ public class TestStoreTest {
         store1.addTest(t1);
         store1.addTest(t2);
         List<app.domain.model.Test> list = store.sortDate("1234567890123456");
-        System.out.println(Arrays.toString(list.toArray()));
-        System.out.println(Arrays.toString(store1.getTestListArray().toArray()));
 
         Assert.assertArrayEquals(list.toArray(), store1.getTestListArray().toArray());
     }
