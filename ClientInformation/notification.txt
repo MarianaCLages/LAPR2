@@ -1,1 +1,1 @@
-MR/MS Zé you were registered with the email email@gamil.com and your password is LJW5FQlDBZ
+MR/MS name you were registered with the email String email and your password is String password

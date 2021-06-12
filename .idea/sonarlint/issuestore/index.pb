@@ -41,8 +41,6 @@ h
 8src/test/java/app/domain/model/SpecialistDoctorTest.java,9\8\980d63e192031a91dc68783f4c565dc0c83098ed
 k
 ;src/test/java/app/domain/model/TestParameterResultTest.java,b\7\b7455c49fcd89c281b730d745f578b7c3dabcf56
-\
-,src/test/java/app/domain/model/TestTest.java,2\c\2cf03933548261c5794447fc0379d09dc74bc37a
 `
 0src/test/java/app/domain/model/TestTypeTest.java,3\f\3fd04dd577dee7a6d88b49fdc1a11d0af2ea6a18
 q

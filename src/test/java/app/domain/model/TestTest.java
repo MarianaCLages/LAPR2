@@ -154,7 +154,7 @@ public class TestTest {
 
         app.domain.model.Test test = new app.domain.model.Test("000000000000001", "123456789187", "1234567890123456", testType, cat1, pa);
 
-        String expected = "Test: testCode=000000000000001, testNhsNumber=123456789187, clientCc=1234567890123456, testType=" + testType.toString() + ", catList=" + cat1.toString() + ", paList=" + pa.toString();
+        String expected = "Test: testCode=000000000000001, testNhsNumber=123456789187, clientCc=1234567890123456, TestTypeID=BL000";
         String actual = test.toString();
 
         Assert.assertEquals(expected, actual);
