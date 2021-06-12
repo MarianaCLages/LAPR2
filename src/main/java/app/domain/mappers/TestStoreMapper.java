@@ -10,7 +10,9 @@ import java.util.List;
 
 public class TestStoreMapper implements Serializable {
 
-    private TestStoreDTO toDTO(Test t) {return new TestStoreDTO(t);}
+    private TestStoreDTO toDTO(Test t) {
+        return new TestStoreDTO(t);
+    }
 
     public List<TestStoreDTO> toDTO(TestStore store) {
         List<Test> testList = store.getListOfTestsToValidate();

@@ -16,7 +16,7 @@ public class ClinicalChemistryTechnologistUI implements Runnable {
 
         int option = 0;
         do {
-            option = Utils.showAndSelectIndex(options, "\n\nReceptionist Menu:");
+            option = Utils.showAndSelectIndex(options, "\n\nClinical Chemistry Technologist Menu:");
 
             if ((option >= 0) && (option < options.size())) {
                 options.get(option).run();

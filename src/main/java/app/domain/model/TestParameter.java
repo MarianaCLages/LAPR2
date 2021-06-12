@@ -38,8 +38,8 @@ public class TestParameter implements Serializable {
     /**
      * @return a string that represents the test results
      */
-    public String getTestParameterResult() {
-        return this.testParameterResult.toString();
+    public TestParameterResult getTestParameterResult() {
+        return this.testParameterResult;
     }
 
     /**
