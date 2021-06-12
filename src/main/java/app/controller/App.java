@@ -32,7 +32,7 @@ public class App {
 
     private App() {
         Properties props = getProperties();
-        File f = new File(Constants.COMPANY_SER);
+        File f = new File(props.getProperty("serialize.path"));
         if (f.exists() && !f.isDirectory()) {
             this.company = new Company();
         } else {
@@ -72,7 +72,7 @@ public class App {
         this.authFacade.doLogout();
     }
 
-    private Properties getProperties() {
+    public static Properties getProperties() {
         Properties props = new Properties();
         // Add default properties and values
         props.setProperty(Constants.PARAMS_COMPANY_DESIGNATION, "Many Labs");

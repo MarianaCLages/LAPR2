@@ -1,21 +1,29 @@
 @startuml
-'https://plantuml.com/sequence-diagram
-
 autonumber
 participant "task:SendReportTask" as task
 participant "linReg:LinearRegression" as linReg
 participant "mlinReg:LinearRegression" as linReg
+participant "mlinReg:LinearRegression" as mlinReg
 participant "tStore:TestStore" as tStore
 participant "api:NHSApi" as api
 
 [o-> task: run()
+task -> tStore:algo()
+activate tStore
+deactivate
 alt linear Regression
     task --> linReg** : creates()
     alt variable equal number of tests
+
     else variable equal age average
     end
 else multilinear Regression
+    task --> mlinReg**:creates()
 end
 activate task
+task -> task: generatesReport()
+activate task
+deactivate
+task -> api: sendsReport(NhsReport)
 deactivate task
 @enduml
