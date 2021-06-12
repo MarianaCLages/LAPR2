@@ -172,6 +172,8 @@ public class App {
         store.saveClient();
         store.CreateClient("12345678902", "1234567891123456", "1234567893", "2234567890", date, 'F', "maria@maria.com", "Maria");
         store.saveClient();
+        store.CreateClient("12345678902", "1234567891123456", "1234567891", "1234567891", date, 'F', "alberto@alberto.com", "Alberto");
+        store.saveClient();
 
         TestStore testStore = company.getTestList();
 
@@ -182,6 +184,9 @@ public class App {
         testStore.saveTest();
         testStore.getT().changeState("VALIDATED");
         testStore.createTest("100000000002", "1234567890", covidTest, testCategories, testParameters);
+        testStore.saveTest();
+        testStore.getT().changeState("VALIDATED");
+        testStore.createTest("100000000002", "1234567891", covidTest, testCategories, testParameters);
         testStore.saveTest();
         testStore.getT().changeState("VALIDATED");
 

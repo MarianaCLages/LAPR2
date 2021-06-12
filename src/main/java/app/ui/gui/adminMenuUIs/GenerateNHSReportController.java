@@ -9,18 +9,24 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.ZoneId;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class GenerateNHSReportController implements Initializable {
 
     private SceneController sceneController = SceneController.getInstance();
+
     private Company company;
-    private Data data = new Data();
+
+    private LocalDate todayDate = LocalDate.now();
 
     @FXML
     private Button myReturnButtonNHS;
@@ -51,19 +57,20 @@ public class GenerateNHSReportController implements Initializable {
 
         try {
 
-            data.setIntervalDates(getIntervalDate(myDatePicker1.getValue(), myDatePicker2.getValue()));
-            data.setHistoricalDays(myTextFieldNHS.getText());
-            data.setConfidenceLevelIC(myTextFieldNHS2.getText());
+            if (Period.between(getStartDate(), myDatePicker1.getValue()).getDays() < 0) {
+                throw new InvalidIntervalOfDatesStartException();
+            }
+
+            if (Period.between(myDatePicker2.getValue(), todayDate).getDays() < 0) {
+                throw new InvalidIntervalOfDatesEndException();
+            }
 
             if (myChoiceBoxNHS.getValue() == null) {
                 throw new ChoiceBoxEmptyException();
             }
 
-            if (myChoiceBoxNHS.getValue() == "Simple Linear Regression") {
-                sceneController.switchMenu(event, "/FXML/SimpleLinearRegression.fxml");
-            } else {
-                sceneController.switchMenu(event, "/FXML/MultiLinearRegression.fxml");
-            }
+            setInformation();
+            changeScene(event);
 
         } catch (ConfidenceLevelInvalidException err1) {
             errorAlert(err1.getMessage());
@@ -79,8 +86,12 @@ public class GenerateNHSReportController implements Initializable {
             errorAlert(err6.getMessage());
         } catch (HistoricalDaysInvalidException err7) {
             errorAlert(err7.getMessage());
-        } catch (RuntimeException err8){
+        } catch (RuntimeException err8) {
             errorAlert("Please enter valid information (Don't leave blank containers!)");
+        } catch (InvalidIntervalOfDatesStartException err9) {
+            errorAlert(err9.getMessage());
+        } catch (InvalidIntervalOfDatesEndException err10) {
+            errorAlert(err10.getMessage());
         }
 
     }
@@ -109,4 +120,46 @@ public class GenerateNHSReportController implements Initializable {
         alert.setContentText(message);
         alert.show();
     }
+
+    private void setInformation() throws DateEmptyException, DateInvalidException, HistoricalDaysInvalidException, HistoricalDaysEmptyException, ConfidenceLevelICEmptyException, ConfidenceLevelInvalidException {
+
+        Data data = company.getData();
+
+        data.setIntervalDates(getIntervalDate(myDatePicker1.getValue(), myDatePicker2.getValue()));
+        data.setHistoricalDays(myTextFieldNHS.getText());
+        data.setConfidenceLevelIC(myTextFieldNHS2.getText());
+
+    }
+
+    private void changeScene(ActionEvent event) {
+
+        if (myChoiceBoxNHS.getValue() == "Simple Linear Regression") {
+            sceneController.switchMenu(event, "/FXML/SimpleLinearRegression.fxml");
+        } else {
+            sceneController.switchMenu(event, "/FXML/MultiLinearRegression.fxml");
+        }
+    }
+
+    private LocalDate getStartDate(){
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+        Date date = new Date();
+        String todate = dateFormat.format(date);
+
+        int n = Integer.parseInt(myTextFieldNHS.getText());
+
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -n);
+        Date todate1 = cal.getTime();
+        String fromdate = dateFormat.format(todate1);
+
+        LocalDate date1;
+
+        return    date1 = todate1.toInstant()
+                .atZone(ZoneId.systemDefault())
+                .toLocalDate();
+
+    }
+
 }

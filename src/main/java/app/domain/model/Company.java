@@ -31,6 +31,7 @@ public class Company implements Serializable {
     private TestTypeStore testTypeList;
     private RoleStore roleList;
     private UserSession user;
+    private Data data;
 
     /**
      * Constructor of the Company Class, instances a new object of AuthFacade and new empty stores
@@ -52,6 +53,7 @@ public class Company implements Serializable {
         this.clientList = new ClientStore();
         this.testList = new TestStore();
         this.sampleStore = new SampleStore();
+        this.data = new Data();
         scheduleReport(Integer.parseInt(hour), Integer.parseInt(min), Integer.parseInt(sec));
 
     }
@@ -71,6 +73,7 @@ public class Company implements Serializable {
         this.clientList = temp.getClientList();
         this.testList = temp.getTestList();
         this.sampleStore = temp.getSampleStore();
+        this.data = temp.getData();
 
     }
 
@@ -188,5 +191,9 @@ public class Company implements Serializable {
            // e.printStackTrace();
             return null;
         }
+    }
+
+    public Data getData() {
+        return data;
     }
 }

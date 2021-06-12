@@ -1,12 +1,0 @@
-
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(˜ê£¸
-O
-java:S4973>"9Use the "equals" method if value comparison was intended.(Ñ®¤«
-Q
-java:S1128";Remove this unused import 'javafx.scene.layout.AnchorPane'.(Ø µ
-D
-java:S1121Z".Extract the assignment out of this expression.(»ê¹×
-K
-java:S1854Z"5Remove this useless assignment to local variable "n".(»ê¹×
-F
-java:S1068"+Remove this unused "company" private field.(ûÖòùÿÿÿÿ

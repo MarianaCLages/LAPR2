@@ -22,7 +22,7 @@ public class SceneController {
     public static SceneController getInstance() {
 
         if (singleton == null) {
-            synchronized (App.class) {
+            synchronized (SceneController.class) {
                 singleton = new SceneController();
             }
         }

@@ -3,6 +3,7 @@ package app.ui.gui.adminMenuUIs;
 import app.controller.App;
 import app.domain.model.Client;
 import app.domain.model.Company;
+import app.domain.model.Data;
 import app.domain.model.Test;
 import app.domain.shared.exceptions.ChoiceBoxEmptyException;
 import app.ui.gui.controllers.SceneController;
@@ -54,6 +55,7 @@ public class SimpleLinearRegressionController implements Initializable {
             if (myChoiceBoxSimple.getValue() == "Covid-19 tests") {
 
                  List<Test> validTests = company.getTestList().getValidatedTestsList();
+                 System.out.println(company.getData().getHistoricalDays());
 
                  for (Test t : validTests){
                      System.out.println(t);
