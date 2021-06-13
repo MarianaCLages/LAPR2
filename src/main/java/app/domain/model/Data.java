@@ -85,8 +85,8 @@ public class Data {
 
     }
 
-    public int getDate() {
-        return date;
+   public int getHistoricalDaysInt() {
+        return Integer.parseInt(historicalDays);
     }
 
     public String getConfidenceLevelIC() {

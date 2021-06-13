@@ -241,14 +241,10 @@ l
 <src/main/java/app/controller/RegisterEmployeeController.java,a\7\a7a46266d73376633f802e31465ba57f12cf1fca
 S
 #docs/SprintD/US19/SD_runTask().puml,6\2\62d9b6e9f773098752ee05be093f14fc3c4dae02
-^
-.src/main/java/app/domain/shared/Serialize.java,3\f\3fe7ffce209e4112cfdc3ef138eaedb338af6089
 N
 docs/SprintD/US19/US19_SD.puml,4\6\46f0aa57703298515d752a55b01a860d6bbdd421
 O
 docs/SprintD/US19/US19_SSD.puml,2\4\2450b1747969c05d0a3da7b81267eee114110551
-X
-(src/main/java/app/domain/model/Data.java,f\a\facd46acab9e1cd55acb7b39820dc3dfa90996b5
 O
 .idea/artifacts/Sem2App_jar.xml,9\a\9a36f05a7cc7eec42026caea684078f299f65b24
 [
@@ -265,13 +261,3 @@ _
 /src/main/java/app/domain/model/ImportTests.java,2\b\2ba2b8de80823c9a585b6b27c3508a2da0c756d3
 b
 2src/main/java/app/domain/model/SendReportTask.java,8\5\85686568e666822bea9d6d3cc3520c4db4a26869
-g
-7src/main/java/app/ui/gui/employees/AdministratorUI.java,1\9\19e8d234ed70d2ee98189bee48aecf519f1826fa
-U
-%src/main/java/app/controller/App.java,4\7\47cfbdc47faac4c1edcb93d1b6968a5d5bdad509
-a
-1src/main/java/app/domain/model/TestParameter.java,4\d\4dc3d189ec133a85b04dfd016faa819500cb5976
-g
-7src/main/java/app/domain/model/TestParameterResult.java,8\9\89c14902f91af9f5afc1e3afe73a166ab424f39c
-X
-(src/main/java/app/domain/model/Test.java,0\3\0346ca7efc8246aba1bce2abd18994f1118a0b11

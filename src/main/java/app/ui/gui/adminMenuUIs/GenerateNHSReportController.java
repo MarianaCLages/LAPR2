@@ -23,9 +23,7 @@ import java.util.ResourceBundle;
 public class GenerateNHSReportController implements Initializable {
 
     private SceneController sceneController = SceneController.getInstance();
-
     private Company company;
-
     private LocalDate todayDate = LocalDate.now();
 
     @FXML
@@ -126,21 +124,15 @@ public class GenerateNHSReportController implements Initializable {
 
     private LocalDate getStartDate() {
 
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-
-        Date date = new Date();
-        String todate = dateFormat.format(date);
-
         int n = Integer.parseInt(myTextFieldNHS.getText());
 
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.DATE, -n);
-        Date todate1 = cal.getTime();
-        String fromdate = dateFormat.format(todate1);
+        Date toDate = cal.getTime();
 
-        LocalDate date1;
+        LocalDate startDate;
 
-        return date1 = todate1.toInstant()
+        return startDate = toDate.toInstant()
                 .atZone(ZoneId.systemDefault())
                 .toLocalDate();
 

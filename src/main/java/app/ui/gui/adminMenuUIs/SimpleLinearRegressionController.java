@@ -51,13 +51,9 @@ public class SimpleLinearRegressionController implements Initializable {
 
             if (myChoiceBoxSimple.getValue() == "Covid-19 tests") {
 
-                List<Test> validTests = company.getTestList().getValidatedTestsList();
+                List<Test> validTests = getListOfCovidTestInsideTheHistoricalDays();
                 List<Test> covidTests = getPositiveCovidTest(validTests);
 
-                System.out.println("Valid Tests        ---------------------------------");
-                    for (Test t : validTests) {
-                    System.out.println(t);
-                }
                 System.out.println("Covid Tests positive ---------------------------------");
                 for (Test t : covidTests) {
                     System.out.println(t);
@@ -65,8 +61,10 @@ public class SimpleLinearRegressionController implements Initializable {
 
             } else if (myChoiceBoxSimple.getValue().equals("Mean age")) {
 
-                List<Client> clientsWithTests = getClientsWithTests();
-                int[] ages = getClientAge(clientsWithTests);
+                //  List<Client> clientsWithTests = getClientsWithTests();
+                //   int[] ages = getClientAge(clientsWithTests);
+
+                getCovidPositiveTestsPerDayIntoArray();
 
                 //linearRegression(ages) quando isto estiver implementado
 
@@ -116,9 +114,7 @@ public class SimpleLinearRegressionController implements Initializable {
         int n = 0;
         int x = 0;
         int sum = 0;
-        int age =0;
-
-        getListOfCovidTestInsideTheHistoricalDays();
+        int age = 0;
 
         for (Client c : clientList) {
             System.out.println(c.toString());
@@ -148,8 +144,8 @@ public class SimpleLinearRegressionController implements Initializable {
 
 
         return clientsAges;
-    }
 
+    }
 
     private List<Test> getPositiveCovidTest(List<Test> covidList) {
 
@@ -165,40 +161,80 @@ public class SimpleLinearRegressionController implements Initializable {
             }
         }
 
-        System.out.println("---------------------------------");
-
-        for (Test t : covidTestList) {
-            System.out.println(t.toString());
-        }
-
         return covidTestList;
 
     }
 
-    private void getListOfCovidTestInsideTheHistoricalDays(){
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    private List<Test> getListOfCovidTestInsideTheHistoricalDays() {
 
-        Date date2 = new Date();
-        String todate = dateFormat.format(date2);
-        LocalDate date3 = LocalDate.now();
+        LocalDate todayDate = LocalDate.now(); //Date atual (dia de hoje)
 
         Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.DATE, -company.getData().getDate());
-        Date todate1 = cal.getTime();
+        cal.add(Calendar.DATE, -company.getData().getHistoricalDaysInt());
+        Date toDate = cal.getTime();
 
-        LocalDate todate2 = todate1.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-
-        String fromdate = dateFormat.format(todate1);
+        LocalDate beginDate = toDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //Date de começo do intervalo (dia de hj - historical days)
 
         List<Test> validCovidTests = new ArrayList<>();
 
+        System.out.println("------------------\n" + beginDate);
+        System.out.println("------------------\n" + todayDate);
+        System.out.println("------------------");
+
         for (Test t : company.getTestList().getValidatedTestsList()) {
-            LocalDate localDate = t.getDate().toLocalDate();
-            if (Period.between(todate2, localDate).getDays() < 0 && Period.between(localDate, date3).getDays() > 0) {
-                System.out.println(localDate);
+            LocalDate testDate = t.getDate().toLocalDate();
+
+            if (Period.between(beginDate, testDate).getDays() >= 0 && Period.between(testDate, todayDate).getDays() >= 0) {
+                System.out.println(testDate);
                 validCovidTests.add(t);
             }
         }
+
+        return validCovidTests;
+
+    }
+
+    private void getCovidPositiveTestsPerDayIntoArray() {
+
+        List<Test> testList = getListOfCovidTestInsideTheHistoricalDays();
+
+        LocalDate todayDate = LocalDate.now(); //Date atual (dia de hoje)
+
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -company.getData().getHistoricalDaysInt());
+        Date toDate = cal.getTime();
+
+        LocalDate beginDate = toDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //Date de começo do intervalo (dia de hj - historical days)
+
+        int interval = Period.between(beginDate, todayDate).getDays();
+
+        int[] positiveCovidTestsPerDay = new int[interval];
+
+        for (int i = 0; i < interval; i++) {
+
+            int interV = company.getData().getHistoricalDaysInt() - i;
+
+            Calendar cal2 = Calendar.getInstance();
+            cal2.add(Calendar.DATE, -interV);
+            Date toDate2 = cal2.getTime();
+
+            LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //Date de começo do intervalo (dia de hj - historical days)
+
+            for (Test t : testList) {
+                LocalDate testDate = t.getDate().toLocalDate();
+                System.out.println(testDate);
+                if (testDate.equals(currentDay)) {
+                    positiveCovidTestsPerDay[i] += 1;
+                }
+            }
+
+        }
+
+        for (int n : positiveCovidTestsPerDay) {
+            System.out.println(n);
+        }
+
+
     }
 
 }

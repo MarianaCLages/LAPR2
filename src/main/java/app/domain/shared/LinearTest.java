@@ -9,6 +9,7 @@ public class LinearTest {
         int i = 1;
         for (double xi : x) {
             System.out.println(String.format("x%d: %.4f", i, linearRegression.predict(xi)));
+            i++;
         }
     }
 }

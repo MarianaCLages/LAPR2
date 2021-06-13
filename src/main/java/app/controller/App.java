@@ -278,6 +278,14 @@ public class App {
         t9.changeState("VALIDATED");
         testStore.addTest(t9);
 
+        Test t10 = new Test("1234567890123416", "100000000007", "1234567896", covidTest, testCategories, testParameters1);
+        t10.setCreatedDate(LocalDateTime.of(2021, Month.MAY, 12, 16, 50));
+        t10.addTestParameter();
+        t10.changeState("SAMPLE_COLLECTED");
+        t10.addTestResult("IgGAN", 1.79);
+        t10.changeState("VALIDATED");
+        testStore.addTest(t10);
+
         //blood
 
         Test tn = new Test("1234567890123463", "200000000008", "1234567896", bloodTest, testCategories, testParameters);
