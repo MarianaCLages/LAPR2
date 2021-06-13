@@ -124,7 +124,7 @@ public class GenerateNHSReportController implements Initializable {
         }
     }
 
-    private LocalDate getStartDate(){
+    private LocalDate getStartDate() {
 
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
@@ -140,7 +140,7 @@ public class GenerateNHSReportController implements Initializable {
 
         LocalDate date1;
 
-        return   date1 = todate1.toInstant()
+        return date1 = todate1.toInstant()
                 .atZone(ZoneId.systemDefault())
                 .toLocalDate();
 

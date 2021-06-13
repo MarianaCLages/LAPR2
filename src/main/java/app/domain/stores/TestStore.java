@@ -3,7 +3,6 @@ package app.domain.stores;
 import app.domain.model.*;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.*;
@@ -241,7 +240,7 @@ public class TestStore implements Serializable {
 
     @Override
     public String toString() {
-        for (Test t: array) {
+        for (Test t : array) {
             System.out.println(t.toString());
         }
         return null;

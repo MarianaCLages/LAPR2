@@ -1,135 +1,141 @@
 package app.domain.shared;
 
-/******************************************************************************
- *  Compilation:  javac -classpath jama.jar:. MultipleLinearRegression.java
- *  Execution:    java  -classpath jama.jar:. MultipleLinearRegression
- *  Dependencies: jama.jar
- *
- *  Compute least squares solution to X beta = y using Jama library.
- *  Assumes X has full column rank.
- *
- *       http://math.nist.gov/javanumerics/jama/
- *       http://math.nist.gov/javanumerics/jama/Jama-1.0.1.jar
- *
- ******************************************************************************/
+import java.util.Arrays;
 
-//import Jama.Matrix;
-//import Jama.QRDecomposition;
+public class MultiLinearRegression {
+    private double intercept;
+    private double slope;
+    private double r2;
+    private double svar0;
+    private double svar1;
 
-/**
- *  The {@code MultipleLinearRegression} class performs a multiple linear regression
- *  on an set of <em>N</em> data points using the model
- *  <em>y</em> = &beta;<sub>0</sub> + &beta;<sub>1</sub> <em>x</em><sub>1</sub> + ... +
- &beta;<sub><em>p</em></sub> <em>x<sub>p</sub></em>,
- *  where <em>y</em> is the response (or dependent) variable,
- *  and <em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, ..., <em>x<sub>p</sub></em>
- *  are the <em>p</em> predictor (or independent) variables.
- *  The parameters &beta;<sub><em>i</em></sub> are chosen to minimize
- *  the sum of squared residuals of the multiple linear regression model.
- *  It also computes the coefficient of determination <em>R</em><sup>2</sup>.
- *
- *  @author Robert Sedgewick
- *  @author Kevin Wayne
- */
-/*
-public class MultipleLinearRegression {
-    private final Matrix beta;  // regression coefficients
-    private double sse;         // sum of squared
-    private double sst;         // sum of squared
 
-    /**
-     * Performs a linear regression on the data points {@code (y[i], x[i][j])}.
-     * @param  x the values of the predictor variables
-     * @param  y the corresponding values of the response variable
-     * @throws IllegalArgumentException if the lengths of the two arrays are not equal
-     */
-
-/*
-    public MultipleLinearRegression(double[][] x, double[] y) {
+    public MultiLinearRegression(double[][] x, double[] y) {
         if (x.length != y.length) {
-            throw new IllegalArgumentException("matrix dimensions don't agree");
+            throw new IllegalArgumentException("array lengths are not equal");
         }
 
         // number of observations
         int n = y.length;
 
-        Matrix matrixX = new Matrix(x);
-
-        // create matrix from vector
-        Matrix matrixY = new Matrix(y, n);
-
-        // find least squares solution
-        QRDecomposition qr = new QRDecomposition(matrixX);
-        beta = qr.solve(matrixY);
-
-
-        // mean of y[] values
-        double sum = 0.0;
-        for (int i = 0; i < n; i++)
-            sum += y[i];
-        double mean = sum / n;
-
-        // total variation to be accounted for
-        for (int i = 0; i < n; i++) {
-            double dev = y[i] - mean;
-            sst += dev*dev;
-        }
-
-        // variation not accounted for
-        Matrix residuals = matrixX.times(beta).minus(matrixY);
-        sse = residuals.norm2() * residuals.norm2();
 
     }
-
-    /**
-     * Returns the least squares estimate of &beta;<sub><em>j</em></sub>.
-     *
-     * @param  j the index
-     * @return the estimate of &beta;<sub><em>j</em></sub>
-     */
-
-/*
-
-    public double beta(int j) {
-        return beta.get(j, 0);
-    }
-
-    /**
-     * Returns the coefficient of determination <em>R</em><sup>2</sup>.
-     *
-     * @return the coefficient of determination <em>R</em><sup>2</sup>,
-     *         which is a real number between 0 and 1
-     */
-
-/*
-    public double R2() {
-        return 1.0 - sse/sst;
-    }
-
-    /**
-     * Unit tests the {@code MultipleLinearRegression} data type.
-     *
-     * @param args the command-line arguments
-     */
-
-/*
-
 
     public static void main(String[] args) {
-        double[][] x = { {  1,  10,  20 },
-                {  1,  20,  40 },
-                {  1,  40,  15 },
-                {  1,  80, 100 },
-                {  1, 160,  23 },
-                {  1, 200,  18 } };
-        double[] y = { 243, 483, 508, 1503, 1764, 2129 };
-        MultipleLinearRegression regression = new MultipleLinearRegression(x, y);
+        double[][] matrix = {
+                {1, 4, 3},
+                {1, 2, 4},
+                {1, 0, 3}
+        };
+        double [] matrixb = {1,5,6};
+        System.out.println(Arrays.deepToString(matrix));
 
-        StdOut.printf("%.2f + %.2f beta1 + %.2f beta2  (R^2 = %.2f)\n",
-                regression.beta(0), regression.beta(1), regression.beta(2), regression.R2());
+        System.out.println(Arrays.deepToString(matrix));
+
+        System.out.println(Arrays.deepToString(inverse(matrix)));
+
+        System.out.println(Arrays.deepToString(transpose(matrix)));
+        double[] betta = matrixVectorProduct(matrixProduct(inverse(matrixProduct(transpose(matrix),matrix)),transpose(matrix)),matrixb);
+        System.out.println(Arrays.toString(betta));
+    }
+
+    public static double[] matrixVectorProduct(double[][] matrix, double[] vector) {
+
+
+        double[] produto = new double[matrix.length];
+        int i=0;
+
+
+        for(int j = 0; j<matrix.length; j++){
+
+            for(int k = 0; k < matrix.length; k++){
+
+                produto[i] += matrix[j][k] * vector[k];
+
+            }
+
+            i++;
+
+        }
+
+
+        return produto;
+
+    }
+
+    public static double[][] matrixProduct(double[][] matrixA, double[][] matrixB) {
+
+        double[][] product = new double[matrixA.length][matrixB[0].length];
+
+        for (int i = 0; i < matrixA.length; i++) {
+            for (int j = 0; j < matrixB[0].length; j++) {
+                for (int k = 0; k < matrixA[0].length; k++) {
+                    product[i][j] += matrixA[i][k] * matrixB[k][j];
+                }
+            }
+        }
+        return product;
+    }
+
+    private static double[][] transpose(double[][] matrix) {
+        double[][] transpose = new double[matrix.length][matrix[0].length];  //3 rows and 3 columns
+
+//Code to transpose a matrix
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                transpose[i][j] = matrix[j][i];
+            }
+        }
+        return transpose;
+    }
+
+
+    //dar aqui os creditos
+    //uses the laplace theorem to calculate the determinant
+    private static double determinant(double[][] matrix) {
+        if (matrix.length != matrix[0].length)
+            throw new IllegalStateException("matrix should be a square matrizx");
+
+        if (matrix.length == 2)
+            return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
+
+        double det = 0;
+        for (int i = 0; i < matrix[0].length; i++)
+            det += Math.pow(-1, i) * matrix[0][i]
+                    * determinant(minor(matrix, 0, i));
+        return det;
+    }
+
+    //calculates the inverse matix using the
+    private static double[][] inverse(double[][] matrix) {
+        double[][] inverse = new double[matrix.length][matrix.length];
+
+        // minors and cofactors
+        for (int i = 0; i < matrix.length; i++)
+            for (int j = 0; j < matrix[i].length; j++)
+                inverse[i][j] = Math.pow(-1, i + j)
+                        * determinant(minor(matrix, i, j));
+
+        // adjugate and determinant
+        double det = 1.0 / determinant(matrix);
+        for (int i = 0; i < inverse.length; i++) {
+            for (int j = 0; j <= i; j++) {
+                double temp = inverse[i][j];
+                inverse[i][j] = inverse[j][i] * det;
+                inverse[j][i] = temp * det;
+            }
+        }
+
+        return inverse;
+    }
+
+    private static double[][] minor(double[][] matrix, int row, int column) {
+        double[][] minor = new double[matrix.length - 1][matrix.length - 1];
+
+        for (int i = 0; i < matrix.length; i++)
+            for (int j = 0; i != row && j < matrix[i].length; j++)
+                if (j != column)
+                    minor[i < row ? i : i - 1][j < column ? j : j - 1] = matrix[i][j];
+        return minor;
     }
 }
-
-
-}
-*/

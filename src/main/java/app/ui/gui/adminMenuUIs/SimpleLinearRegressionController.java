@@ -1,7 +1,10 @@
 package app.ui.gui.adminMenuUIs;
 
 import app.controller.App;
-import app.domain.model.*;
+import app.domain.model.Client;
+import app.domain.model.Company;
+import app.domain.model.Test;
+import app.domain.model.TestParameter;
 import app.domain.shared.exceptions.ChoiceBoxEmptyException;
 import app.ui.gui.controllers.SceneController;
 import javafx.event.ActionEvent;
@@ -52,14 +55,14 @@ public class SimpleLinearRegressionController implements Initializable {
             if (myChoiceBoxSimple.getValue() == "Covid-19 tests") {
 
                 List<Test> validTests = company.getTestList().getValidatedTestsList();
-                    List<Test> covidTests = getPositiveCovidTest(validTests);
+                List<Test> covidTests = getPositiveCovidTest(validTests);
 
                 System.out.println("---------------------------------");
                 for (Test t : validTests) {
                     System.out.println(t);
                 }
 
-            } else if (myChoiceBoxSimple.getValue() == "Mean age") {
+            } else if (myChoiceBoxSimple.getValue().equals("Mean age")) {
 
                 List<Client> clientsWithTests = getClientsWithTests();
                 int[] ages = getClientAge(clientsWithTests);
@@ -112,7 +115,7 @@ public class SimpleLinearRegressionController implements Initializable {
         int n = 0;
         int x = 0;
         int sum = 0;
-        int age =0;
+        int age = 0;
 
         for (Client c : clientList) {
             System.out.println(c.toString());
@@ -134,35 +137,29 @@ public class SimpleLinearRegressionController implements Initializable {
 
         List<Test> validCovidTests = new ArrayList<>();
 
-        for(Test t : company.getTestList().getValidatedTestsList()){
+        for (Test t : company.getTestList().getValidatedTestsList()) {
             //LocalDate localDate = localDateTime.toLocalDate();
-           // if(Period.between(todate2,t.getDate()).getDays() > 0 && Period.between(t.getDate(),date3).getDays() < 0){
-             //   validCovidTests.add(t);
+            // if(Period.between(todate2,t.getDate()).getDays() > 0 && Period.between(t.getDate(),date3).getDays() < 0){
+            //   validCovidTests.add(t);
             //}
         }
 
 
-
-
-
-
-
-
         for (Client c : clientList) {
-            for(Test t : company.getTestList().getTestListArray()) {
-               // if (t.getDate()>date3) {
-                    LocalDate date = c.getBirthDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-                    age = Period.between(date, LocalDate.now()).getYears();
-                    sum += age;
-                    x++;
+            for (Test t : company.getTestList().getTestListArray()) {
+                // if (t.getDate()>date3) {
+                LocalDate date = c.getBirthDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                age = Period.between(date, LocalDate.now()).getYears();
+                sum += age;
+                x++;
 
                 //}
             }
 
-            clientsAges[n] = sum/x;
+            clientsAges[n] = sum / x;
             n++;
-            x=0;
-            sum=0;
+            x = 0;
+            sum = 0;
 
         }
 
