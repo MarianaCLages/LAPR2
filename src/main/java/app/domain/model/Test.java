@@ -320,9 +320,6 @@ public class Test implements Serializable {
         SAMPLE_COLLECTED,
         SAMPLE_ANALYSED,
         DIAGNOSTIC_MADE,
-        VALIDATED;
-
-
+        VALIDATED
     }
-
 }
