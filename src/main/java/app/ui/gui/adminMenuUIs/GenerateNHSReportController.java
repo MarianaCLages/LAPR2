@@ -3,7 +3,9 @@ package app.ui.gui.adminMenuUIs;
 import app.controller.App;
 import app.domain.model.Company;
 import app.domain.model.Data;
+import app.domain.shared.Constants;
 import app.domain.shared.exceptions.*;
+import app.ui.gui.Alerts;
 import app.ui.gui.controllers.SceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -71,9 +73,9 @@ public class GenerateNHSReportController implements Initializable {
             changeScene(event);
 
         } catch (ConfidenceLevelInvalidException | InvalidIntervalOfDatesEndException | InvalidIntervalOfDatesStartException | HistoricalDaysEmptyException | DateEmptyException | DateInvalidException | ConfidenceLevelICEmptyException | ChoiceBoxEmptyException | HistoricalDaysInvalidException err1) {
-            errorAlert(err1.getMessage());
+            Alerts.errorAlert(err1.getMessage());
         } catch (RuntimeException err8) {
-            errorAlert("Please enter valid information (Don't leave blank containers!)");
+            Alerts.errorAlert(Constants.ERROR_BLANK_CONTAINERS);
         }
 
     }
@@ -86,21 +88,13 @@ public class GenerateNHSReportController implements Initializable {
     public void returnToAdminMenu(ActionEvent event) {
         App app = sceneController.getApp();
         app.doLogout();
-        sceneController.switchMenu(event, "/FXML/AdministratorUI.fxml");
+        sceneController.switchMenu(event, Constants.ADMINISTRATOR_UI);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        String[] choices = {"Simple Linear Regression", "Multi Linear Regression"};
+        String[] choices = {Constants.SIMPLE_LINEAR_REGRESSION, Constants.MULTI_LINEAR_REGRESSION};
         myChoiceBoxNHS.getItems().addAll(choices);
-    }
-
-    private void errorAlert(String message) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("ERROR!");
-        alert.setHeaderText("Invalid format!");
-        alert.setContentText(message);
-        alert.show();
     }
 
     private void setInformation() throws DateEmptyException, DateInvalidException, HistoricalDaysInvalidException, HistoricalDaysEmptyException, ConfidenceLevelICEmptyException, ConfidenceLevelInvalidException {
@@ -117,10 +111,10 @@ public class GenerateNHSReportController implements Initializable {
 
     private void changeScene(ActionEvent event) {
 
-        if (myChoiceBoxNHS.getValue() == "Simple Linear Regression") {
-            sceneController.switchMenu(event, "/FXML/SimpleLinearRegression.fxml");
+        if (myChoiceBoxNHS.getValue() == Constants.SIMPLE_LINEAR_REGRESSION) {
+            sceneController.switchMenu(event, Constants.SIMPLE_LINEAR_REGRESSION_UI);
         } else {
-            sceneController.switchMenu(event, "/FXML/MultiLinearRegression.fxml");
+            sceneController.switchMenu(event, Constants.MULTI_LINEAR_REGRESSION_UI);
         }
     }
 

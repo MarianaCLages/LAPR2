@@ -1,6 +1,7 @@
 package app.ui.gui.controllers;
 
 import app.controller.App;
+import app.domain.shared.Constants;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -13,6 +14,6 @@ public class CreditsController {
     public void Back(ActionEvent actionEvent) {
         App app = sceneController.getApp();
         app.doLogout();
-        sceneController.switchMenu(actionEvent, "/FXML/MainScreen.fxml");
+        sceneController.switchMenu(actionEvent, Constants.MAIN_SCREEN_UI);
     }
 }

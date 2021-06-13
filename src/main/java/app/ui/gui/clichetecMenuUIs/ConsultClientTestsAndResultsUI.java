@@ -3,7 +3,9 @@ package app.ui.gui.clichetecMenuUIs;
 import app.controller.App;
 import app.controller.ConsultClientTestsAndResultsController;
 import app.domain.model.Client;
+import app.domain.model.Company;
 import app.domain.model.Test;
+import app.domain.shared.Constants;
 import app.ui.gui.controllers.SceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -44,7 +46,7 @@ public class ConsultClientTestsAndResultsUI implements Initializable {
     public void returnToCCTMenu(ActionEvent event) {
         App app = sceneController.getApp();
         app.doLogout();
-        sceneController.switchMenu(event, "/FXML/ClinicalChemistryTechnologistUI.fxml");
+        sceneController.switchMenu(event, Constants.CLINICAL_CHEMISTRY_TECHNOLOGIST_UI);
     }
 
     public boolean fillClientList() {
@@ -81,7 +83,7 @@ public class ConsultClientTestsAndResultsUI implements Initializable {
         selectedTest();
     }
 
-    public void selectedTest(){
+    public void selectedTest() {
         lvwTestList.getSelectionModel().selectedIndexProperty().addListener((observableValue, number, t1) -> lblTestResults.setText(ctrl.toString(testList.get(t1.intValue()))));
     }
 

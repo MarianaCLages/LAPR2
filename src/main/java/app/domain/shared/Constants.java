@@ -6,6 +6,7 @@ package app.domain.shared;
 public class Constants {
     private Constants() {
     }
+
     public static final String ROLE_ADMIN = "ADMINISTRATOR";
     public static final String ROLE_CLIENT = "CLIENT";
     public static final String ROLE_RECEPTIONIST = "RECEPTIONIST";
@@ -39,7 +40,45 @@ public class Constants {
     public static final String PARAMS_COMPANY_DESIGNATION = "Company.Designation";
     public static final String FILE = "ClientInformation\\";
 
-    public static final String COMPANY_SER="Ser\\company.ser";
+    public static final String COMPANY_SER = "Ser\\company.ser";
 
+    //Paths
+
+    public static final String MAIN_SCREEN_UI = "/FXML/MainScreen.fxml";
+
+    public static final String ADMINISTRATOR_UI = "/FXML/AdministratorUI.fxml";
+    public static final String SPECIALIST_DOCTOR_UI = "/FXML/SpecialistDoctorUI.fxml";
+    public static final String CLIENT_UI = "/FXML/ClientUI.fxml";
+    public static final String RECEPTIONIST_UI = "/FXML/ReceptionistUI.fxml";
+    public static final String LABORATORY_COORDINATOR_UI = "/FXML/LaboratoryCoordinatorUI.fxml";
+    public static final String MEDICAL_LAB_TECHINICIAN_UI = "/FXML/MedicalLabTechnicianUI.fxml";
+    public static final String CLINICAL_CHEMISTRY_TECHNOLOGIST_UI = "/FXML/ClinicalChemistryTechnologistUI.fxml";
+
+    public static final String TEST_TYPE_UI = "/FXML/TestTypeUI.fxml";
+    public static final String PARAMETER_UI = "/FXML/ParameterUI.fxml";
+    public static final String EMPLOYEE_UI = "/FXML/EmployeeUI.fxml";
+    public static final String CLINICAL_ANALYSIS_LABORATORY_UI = "/FXML/ClinicalAnalysisLaboratoryUI.fxml";
+    public static final String NHS_REPORT_UI = "/FXML/NHSReportUI.fxml";
+    public static final String PARAMETER_CATEGORY_UI = "/FXML/ParameterCategoryUI.fxml";
+
+    public static final String RECORD_RESULTS_UI = "/FXML/RecordResultsUI.fxml";
+    public static final String CONSULT_CLIENT_TESTS_UI = "/FXML/ConsultClientTestsAndResultsUI.fxml";
+
+    public static final String LOGIN_CONTROLLER = "/FXML/Login.fxml";
+    public static final String CREDITS_UI = "/FXML/Credits.fxml";
+
+    public static final String SIMPLE_LINEAR_REGRESSION_UI = "/FXML/SimpleLinearRegression.fxml";
+    public static final String MULTI_LINEAR_REGRESSION_UI = "/FXML/MultiLinearRegression.fxml";
+
+    public static final String SIMPLE_LINEAR_REGRESSION = "Simple Linear Regression";
+    public static final String MULTI_LINEAR_REGRESSION = "Multi Linear Regression";
+
+    public static final String ERROR_BLANK_CONTAINERS = "Please enter valid information (Don't leave blank containers!)";
+
+    public static final String COVID_TESTS = "Covid-19 tests";
+    public static final String MEAN_AGE = "Mean age";
+
+    public static final double VALID_COVID_PARAMETER_VALUE = 1.4;
+    public static final String VALID_COVID_PARAMETER = "IgGAN";
 
 }

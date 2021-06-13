@@ -23,8 +23,8 @@ public class MainScreen extends Application {
         Parent root = loader.load();
         Scene scene = new Scene(root);
 
-       //  String css = this.getClass().getResource("/Styles/Styles.css").toExternalForm();
-       //  scene.getStylesheets().add(css);
+        //  String css = this.getClass().getResource("/Styles/Styles.css").toExternalForm();
+        //  scene.getStylesheets().add(css);
 
        /* try {
             primaryStage.getIcons().add(new Image("Logo1.jpg"));
@@ -38,22 +38,11 @@ public class MainScreen extends Application {
 
         primaryStage.setOnCloseRequest(event -> {
             event.consume();
-            logout(primaryStage);
+            Alerts.logout(primaryStage);
         });
 
         primaryStage.setResizable(false);
 
-    }
-
-    private void logout(Stage stage){
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Logout");
-        alert.setHeaderText("You're about to logout!");
-        alert.setContentText("Do you really wish to exit? ");
-
-        if(alert.showAndWait().get() == ButtonType.OK){
-            stage.close();
-        }
     }
 
 }

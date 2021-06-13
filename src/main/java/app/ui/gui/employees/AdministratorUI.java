@@ -2,6 +2,7 @@ package app.ui.gui.employees;
 
 
 import app.controller.App;
+import app.domain.shared.Constants;
 import app.ui.gui.controllers.SceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,31 +30,31 @@ public class AdministratorUI {
     public void returnToMenu(ActionEvent event) {
         App app = sceneController.getApp();
         app.doLogout();
-        sceneController.switchMenu(event, "/FXML/MainScreen.fxml");
+        sceneController.switchMenu(event, Constants.MAIN_SCREEN_UI);
     }
 
     public void goToTestTypeUI(ActionEvent event) {
-        sceneController.switchMenu(event, "/FXML/TestTypeUI.fxml");
+        sceneController.switchMenu(event, Constants.TEST_TYPE_UI);
     }
 
     public void goToParameterCategoryUI(ActionEvent event) {
-        sceneController.switchMenu(event, "/FXML/ParameterCategoryUI.fxml");
+        sceneController.switchMenu(event, Constants.PARAMETER_CATEGORY_UI);
     }
 
     public void goToParameterUI(ActionEvent event) {
-        sceneController.switchMenu(event, "/FXML/ParameterUI.fxml");
+        sceneController.switchMenu(event, Constants.PARAMETER_UI);
     }
 
     public void goToEmployeeUI(ActionEvent event) {
-        sceneController.switchMenu(event, "/FXML/EmployeeUI.fxml");
+        sceneController.switchMenu(event, Constants.EMPLOYEE_UI);
     }
 
     public void goToClinicalAnalysisLaboratoryUI(ActionEvent event) {
-        sceneController.switchMenu(event, "/FXML/ClinicalAnalysisLaboratoryUI.fxml");
+        sceneController.switchMenu(event, Constants.CLINICAL_ANALYSIS_LABORATORY_UI);
     }
 
     public void goToGenerateNHSReportUI(ActionEvent event){
-        sceneController.switchMenu(event,"/FXML/NHSReportUI.fxml");
+        sceneController.switchMenu(event,Constants.NHS_REPORT_UI);
     }
 
 }

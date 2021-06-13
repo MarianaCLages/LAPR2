@@ -2,13 +2,14 @@ package app.ui.gui.adminMenuUIs;
 
 import app.controller.App;
 import app.domain.model.*;
+import app.domain.shared.Constants;
 import app.domain.shared.LinearRegression;
 import app.domain.shared.exceptions.ChoiceBoxEmptyException;
+import app.ui.gui.Alerts;
 import app.ui.gui.controllers.SceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 
@@ -28,7 +29,7 @@ public class SimpleLinearRegressionController implements Initializable {
 
     private SceneController sceneController = SceneController.getInstance();
 
-    private Company company = App.getInstance().getCompany();
+    private Company company = sceneController.getCompany();
 
     private LocalDate todayDate;
     private Calendar cal;
@@ -37,12 +38,12 @@ public class SimpleLinearRegressionController implements Initializable {
     public void returnToGenerateNHSReport(ActionEvent event) {
         App app = sceneController.getApp();
         app.doLogout();
-        sceneController.switchMenu(event, "/FXML/NHSReportUI.fxml");
+        sceneController.switchMenu(event, Constants.NHS_REPORT_UI);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        String[] choices = {"Covid-19 tests", "Mean age"};
+        String[] choices = {Constants.COVID_TESTS, Constants.MEAN_AGE};
         myChoiceBoxSimple.getItems().addAll(choices);
         setDates();
     }
@@ -69,31 +70,23 @@ public class SimpleLinearRegressionController implements Initializable {
 
             String choice = myChoiceBoxSimple.getValue();
 
-            if (myChoiceBoxSimple.getValue() == "Covid-19 tests") {
+            if (myChoiceBoxSimple.getValue().equals(Constants.COVID_TESTS)) {
 
                 linearRegressionWithCovidTests();
 
-            } else if (myChoiceBoxSimple.getValue().equals("Mean age")) {
+            } else if (myChoiceBoxSimple.getValue().equals(Constants.MEAN_AGE)) {
 
                 linearRegressionWithMeanAge();
 
             }
 
         } catch (ChoiceBoxEmptyException err2) {
-            errorAlert(err2.getMessage());
+            Alerts.errorAlert(err2.getMessage());
         } catch (RuntimeException err1) {
-            //errorAlert("Please enter valid information (Don't leave blank containers!)");
-            errorAlert(err1.getMessage());
+            Alerts.errorAlert(err1.getMessage());
+            //  Alerts.errorAlert("Please enter valid information (Don't leave blank containers!)");
         }
 
-    }
-
-    private void errorAlert(String message) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("ERROR!");
-        alert.setHeaderText("Invalid format!");
-        alert.setContentText(message);
-        alert.show();
     }
 
     private void linearRegressionWithCovidTests() {
@@ -104,13 +97,13 @@ public class SimpleLinearRegressionController implements Initializable {
         List<Test> validTestInsideInterval = getListTestsInsideDateInterval(company.getTestList().getValidatedTestsList());
         List<Test> covidTestInsideInterval = getPositiveCovidTest(validTestInsideInterval);
 
-        double[] positiveCovidTestsPerDayInsideTheHistoricalInterval = getCovidTestsPerDayIntoArray(covidTests,company.getData().getHistoricalDaysInt()+1);
-        double[] covidTestsPerDayInsideTheHistoricalInterval = getCovidTestsPerDayIntoArray(validTests,company.getData().getHistoricalDaysInt()+1);
+        double[] positiveCovidTestsPerDayInsideTheHistoricalInterval = getCovidTestsPerDayIntoArray(covidTests, company.getData().getHistoricalDaysInt() + 1);
+        double[] covidTestsPerDayInsideTheHistoricalInterval = getCovidTestsPerDayIntoArray(validTests, company.getData().getHistoricalDaysInt() + 1);
 
         System.out.println(company.getData().getDifferenceInDates());
 
-        double[] positiveCovidTestsPerDayInsideTheDateInterval = getCovidTestsPerDayIntoArrayInsideInterval(covidTestInsideInterval,company.getData().getDifferenceInDates()+1);
-        double[] covidTestsPerDayInsideTheDateInterval = getCovidTestsPerDayIntoArrayInsideInterval(validTestInsideInterval,company.getData().getDifferenceInDates()+1);
+        double[] positiveCovidTestsPerDayInsideTheDateInterval = getCovidTestsPerDayIntoArrayInsideInterval(covidTestInsideInterval, company.getData().getDifferenceInDates() + 1);
+        double[] covidTestsPerDayInsideTheDateInterval = getCovidTestsPerDayIntoArrayInsideInterval(validTestInsideInterval, company.getData().getDifferenceInDates() + 1);
 
         LinearRegression linearRegression = new LinearRegression(positiveCovidTestsPerDayInsideTheDateInterval, covidTestsPerDayInsideTheDateInterval);
 
@@ -141,7 +134,7 @@ public class SimpleLinearRegressionController implements Initializable {
         List<Client> clientsWithTests = getClientsWithTests();
 
         double[] ages = getClientAge(clientsWithTests);
-        double[] covidTestsPerDayInsideTheHistoricalInterval = getCovidTestsPerDayIntoArray(validTests,company.getData().getHistoricalDaysInt()+1);
+        double[] covidTestsPerDayInsideTheHistoricalInterval = getCovidTestsPerDayIntoArray(validTests, company.getData().getHistoricalDaysInt() + 1);
 
         LinearRegression linearRegression = new LinearRegression(ages, covidTestsPerDayInsideTheHistoricalInterval);
 
@@ -257,7 +250,7 @@ public class SimpleLinearRegressionController implements Initializable {
         for (Test t : covidList) {
             for (TestParameter t1 : t.getTestParam()) {
                 if (t1 != null) {
-                    if (t1.getpCode().equals("IgGAN") && t1.getTestParameterResult().getResult() > 1.4) {
+                    if (t1.getpCode().equals(Constants.VALID_COVID_PARAMETER) && t1.getTestParameterResult().getResult() > Constants.VALID_COVID_PARAMETER_VALUE) {
                         covidTestList.add(t);
                     }
                 }
@@ -268,7 +261,7 @@ public class SimpleLinearRegressionController implements Initializable {
 
     }
 
-    private double[] getCovidTestsPerDayIntoArray(List<Test> testList,int space) {
+    private double[] getCovidTestsPerDayIntoArray(List<Test> testList, int space) {
 
         double[] positiveCovidTestsPerDay = new double[space];
 
@@ -315,7 +308,7 @@ public class SimpleLinearRegressionController implements Initializable {
 
         LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //Date de começo do intervalo (dia de hj - historical days)
 
-        return currentDay ;
+        return currentDay;
 
     }
 
@@ -353,7 +346,7 @@ public class SimpleLinearRegressionController implements Initializable {
 
     }
 
-    private double[] getCovidTestsPerDayIntoArrayInsideInterval(List<Test> testList,int space) {
+    private double[] getCovidTestsPerDayIntoArrayInsideInterval(List<Test> testList, int space) {
 
         double[] positiveCovidTestsPerDay = new double[space];
 

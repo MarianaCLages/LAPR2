@@ -1,6 +1,7 @@
 package app.ui.gui.employees;
 
 import app.controller.App;
+import app.domain.shared.Constants;
 import app.ui.gui.controllers.SceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,11 +26,11 @@ public class ClinicalChemistryTechnologistUI {
     }
 
     public void goToRecordResultsUI(ActionEvent event) {
-        sceneController.switchMenu(event, "/FXML/RecordResultsUI.fxml");
+        sceneController.switchMenu(event, Constants.RECORD_RESULTS_UI);
     }
 
     public void goToConsultClientTestsUI(ActionEvent event) {
-        sceneController.switchMenu(event, "/FXML/ConsultClientTestsAndResultsUI.fxml");
+        sceneController.switchMenu(event, Constants.CONSULT_CLIENT_TESTS_UI);
     }
 
 }
