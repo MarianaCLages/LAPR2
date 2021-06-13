@@ -493,7 +493,7 @@ public class TestTest {
 
 
     @Test
-    public void getTestparamTest() {
+    public void getTestParamTest() {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
         cat.add(pc1);

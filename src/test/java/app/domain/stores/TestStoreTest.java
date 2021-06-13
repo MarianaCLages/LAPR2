@@ -1,12 +1,15 @@
 package app.domain.stores;
 
-import app.domain.model.Parameter;
-import app.domain.model.ParameterCategory;
-import app.domain.model.TestType;
+import app.domain.model.*;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.Month;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class TestStoreTest {
@@ -162,5 +165,18 @@ public class TestStoreTest {
         List<app.domain.model.Test> list = store.sortDate("1234567890123456");
 
         store.toStringSortedList("1234567890123456");
+    }
+
+    @Test
+    public void getValidatedTestList() {
+        ClientStore clientStore = new ClientStore();
+        TestStore testStore = new TestStore();
+
+        Client client = clientStore.getClient();
+        testStore.getValidatedTestList(client);
+
+        List<app.domain.model.Test> expected = testStore.getValidatedTestList(client);
+
+        Assert.assertNotNull(expected);
     }
 }

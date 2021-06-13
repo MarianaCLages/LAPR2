@@ -114,11 +114,6 @@ public class ClientStore implements Serializable {
         return client;
     }
 
-    public String getEmail(Client client){
-        return this.client.getEmail();
-    }
-
-
 
     public Client getClientByEmail(String Email) {
         for (Client c1 : this.array) {

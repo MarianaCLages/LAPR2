@@ -1,13 +1,17 @@
 package app.domain.stores;
 
 import app.controller.App;
+import app.domain.model.Client;
 import app.domain.model.Company;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
+import java.util.List;
 
 public class ClientStoreTest {
 
@@ -18,7 +22,7 @@ public class ClientStoreTest {
     }
 
     @Test
-    public void CreateNulllientStore() {
+    public void CreateNullClientStore() {
         ClientStore store = null;
         Assert.assertNull(store);
     }
@@ -151,5 +155,32 @@ public class ClientStoreTest {
         Assert.assertFalse(store.exists("1234567791"));
 
     }
-    
+
+    @Test
+    public void orderClientListByTin() {
+        ClientStore store = new ClientStore();
+        List<Client> array = store.returnClientList();
+
+        List<Client> orderedListTin = new ArrayList<>(array);
+        orderedListTin.sort(Comparator.comparing(Client::getTinNumber));
+
+        List<Client> actual = store.orderClientListByTin();
+
+        Assert.assertEquals(actual, orderedListTin);
+    }
+
+
+    @Test
+    public void orderClientListByName() {
+        ClientStore store = new ClientStore();
+        List<Client> array = store.returnClientList();
+
+        List<Client> orderedListName = new ArrayList<>(array);
+        orderedListName.sort(Comparator.comparing(Client::getName));
+
+        List<Client> actual = store.orderClientListByName();
+
+        Assert.assertEquals(actual, orderedListName);
+    }
+
 }
