@@ -198,8 +198,6 @@ e
 R
 "src/main/java/auth/AuthFacade.java,4\5\45cf31993ccced1bef92d8901777893aaf80a7bb
 Y
-)src/main/java/app/domain/model/Email.java,e\5\e5b9d6aa410958c18970d8f4c9e19a4c38e62e32
-Y
 )src/main/java/app/ui/console/AdminUI.java,0\a\0a9fb9c3271ce78061d523da4e5474691abf5009
 Z
 *src/main/java/app/ui/console/MenuItem.java,7\4\740030e937298447c12c48a7f0a934b08c3819e9
@@ -247,8 +245,6 @@ O
 docs/SprintD/US19/US19_SSD.puml,2\4\2450b1747969c05d0a3da7b81267eee114110551
 O
 .idea/artifacts/Sem2App_jar.xml,9\a\9a36f05a7cc7eec42026caea684078f299f65b24
-[
-+src/main/java/app/domain/model/Company.java,e\6\e66f0f8e51b44df23f2004467961976fbec241aa
 d
 4src/main/java/app/controller/ValidateController.java,3\2\32f190901a7c22374cc6f7578861b4be50adef67
 X

@@ -1,9 +1,9 @@
 package app.domain.model;
 
-import app.controller.App;
 import app.domain.shared.exceptions.*;
-import app.ui.gui.controllers.SceneController;
 import org.apache.commons.lang3.StringUtils;
+import java.time.LocalDate;
+import java.time.Period;
 
 public class Data {
 
@@ -11,6 +11,8 @@ public class Data {
     private int date;
     private String confidenceLevelIC;
     private String significanceLevel;
+    private LocalDate intervalStartDate;
+    private LocalDate intervalEndDate;
 
     public Data(String historicalDays, int date, String confidenceLevelIC, String significanceLevel) {
 
@@ -27,6 +29,8 @@ public class Data {
         this.date = 0;
         this.confidenceLevelIC = null;
         this.significanceLevel = null;
+        this.intervalStartDate=null;
+        this.intervalEndDate=null;
 
     }
 
@@ -43,6 +47,11 @@ public class Data {
     public void setIntervalDates(int date) throws DateEmptyException, DateInvalidException {
         checkIntervalDates(date);
         this.date = date;
+    }
+
+    public void setDates(LocalDate start , LocalDate end){
+        this.intervalStartDate=start;
+        this.intervalEndDate=end;
     }
 
     private void checkConfidenceLevelIC(String confidenceLevelIC) throws ConfidenceLevelInvalidException, ConfidenceLevelICEmptyException {
@@ -97,6 +106,19 @@ public class Data {
         return historicalDays;
     }
 
+    public LocalDate getIntervalEndDate() {
+        return intervalEndDate;
+    }
+
+    public LocalDate getIntervalStartDate() {
+        return intervalStartDate;
+    }
+
+    public int getDifferenceInDates(){
+
+        return Period.between(this.intervalStartDate,this.intervalEndDate).getDays();
+
+    }
 
 }
 

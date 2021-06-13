@@ -111,6 +111,8 @@ public class GenerateNHSReportController implements Initializable {
         data.setHistoricalDays(myTextFieldNHS.getText());
         data.setConfidenceLevelIC(myTextFieldNHS2.getText());
 
+        data.setDates(myDatePicker1.getValue(), myDatePicker2.getValue());
+
     }
 
     private void changeScene(ActionEvent event) {
