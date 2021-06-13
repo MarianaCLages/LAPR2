@@ -267,10 +267,6 @@ b
 2src/main/java/app/domain/model/SendReportTask.java,8\5\85686568e666822bea9d6d3cc3520c4db4a26869
 g
 7src/main/java/app/ui/gui/employees/AdministratorUI.java,1\9\19e8d234ed70d2ee98189bee48aecf519f1826fa
-;
-Company.ser,b\4\b454abc40c090b9b68d018521b92cf0516eaa385
-b
-2src/test/java/app/domain/stores/TestStoreTest.java,6\8\6880c3102dbeabe7f1611d6490822c3a78335ec6
 U
 %src/main/java/app/controller/App.java,4\7\47cfbdc47faac4c1edcb93d1b6968a5d5bdad509
 a

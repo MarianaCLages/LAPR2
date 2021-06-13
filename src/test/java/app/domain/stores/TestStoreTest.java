@@ -27,7 +27,7 @@ public class TestStoreTest {
         TestStore store = new TestStore();
         app.domain.model.Test t = store.createTest("123456789187", "1234567890123456", testType, cat1, pa);
 
-        Assert.assertEquals(t.toString(),"Test: testCode=000000000000001, testNhsNumber=123456789187, clientCc=1234567890123456, TestTypeID=BL000");
+        Assert.assertEquals(t.toString(),"Test: testCode=000000000000001, testNhsNumber=123456789187, clientCc=1234567890123456, TestTypeID=BL000, state=CREATED");
 
     }
 
