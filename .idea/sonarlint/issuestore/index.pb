@@ -261,3 +261,15 @@ _
 /src/main/java/app/domain/model/ImportTests.java,2\b\2ba2b8de80823c9a585b6b27c3508a2da0c756d3
 b
 2src/main/java/app/domain/model/SendReportTask.java,8\5\85686568e666822bea9d6d3cc3520c4db4a26869
+X
+(src/main/java/app/domain/model/Test.java,0\3\0346ca7efc8246aba1bce2abd18994f1118a0b11
+a
+1src/main/java/app/domain/model/TestParameter.java,4\d\4dc3d189ec133a85b04dfd016faa819500cb5976
+‚
+Rsrc/main/java/app/domain/shared/exceptions/InvalidIntervalOfDatesEndException.java,1\7\176a2717604b8c1f243d24bb6800531d07cf8c5b
+„
+Tsrc/main/java/app/domain/shared/exceptions/InvalidIntervalOfDatesStartException.java,9\2\92a32d9f0338b18480c7b2ffa07f509d0f90fa47
+^
+.src/main/java/app/domain/shared/Serialize.java,3\f\3fe7ffce209e4112cfdc3ef138eaedb338af6089
+g
+7src/main/java/app/domain/model/TestParameterResult.java,8\9\89c14902f91af9f5afc1e3afe73a166ab424f39c

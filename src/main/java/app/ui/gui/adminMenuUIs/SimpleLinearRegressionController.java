@@ -2,6 +2,7 @@ package app.ui.gui.adminMenuUIs;
 
 import app.controller.App;
 import app.domain.model.*;
+import app.domain.shared.LinearRegression;
 import app.domain.shared.exceptions.ChoiceBoxEmptyException;
 import app.ui.gui.controllers.SceneController;
 import javafx.event.ActionEvent;
@@ -9,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextArea;
 
 import java.net.URL;
 import java.text.DateFormat;
@@ -22,6 +24,9 @@ public class SimpleLinearRegressionController implements Initializable {
 
     @FXML
     private ChoiceBox<String> myChoiceBoxSimple;
+
+    @FXML
+    private TextArea myTextAreaSimple;
 
     private SceneController sceneController = SceneController.getInstance();
 
@@ -51,32 +56,22 @@ public class SimpleLinearRegressionController implements Initializable {
 
             if (myChoiceBoxSimple.getValue() == "Covid-19 tests") {
 
-                List<Test> validTests = getListOfCovidTestInsideTheHistoricalDays();
-                List<Test> covidTests = getPositiveCovidTest(validTests);
-
-                System.out.println("Covid Tests positive ---------------------------------");
-                for (Test t : covidTests) {
-                    System.out.println(t);
-                }
+                linearRegressionWithCovidTests();
 
             } else if (myChoiceBoxSimple.getValue().equals("Mean age")) {
 
-                //  List<Client> clientsWithTests = getClientsWithTests();
-                //   int[] ages = getClientAge(clientsWithTests);
-
-                getCovidPositiveTestsPerDayIntoArray();
-
+                List<Client> clientsWithTests = getClientsWithTests();
+                int[] ages = getClientAge(clientsWithTests);
                 //linearRegression(ages) quando isto estiver implementado
 
             }
 
-        } catch (ChoiceBoxEmptyException err1) {
-            errorAlert(err1.getMessage());
-        } catch (RuntimeException err2) {
+        } catch (ChoiceBoxEmptyException err2) {
             errorAlert(err2.getMessage());
-            // errorAlert("Please enter valid information (Don't leave blank containers!)");
+        } catch (RuntimeException err1) {
+            //errorAlert("Please enter valid information (Don't leave blank containers!)");
+            errorAlert(err1.getMessage());
         }
-
 
     }
 
@@ -91,12 +86,12 @@ public class SimpleLinearRegressionController implements Initializable {
     private List<Client> getClientsWithTests() {
 
         List<Client> clientList = company.getClientArrayList();
-        List<Test> testList = company.getTestList().getTestListArray();
+        List<Test> validTestList = getListTestsInsideTheHistoricalDays(company.getTestList().getTestListArray());
 
         List<Client> clientList1 = new ArrayList<>();
 
         for (Client c : clientList) {
-            for (Test t : testList) {
+            for (Test t : validTestList) {
                 if (c.getTinNumber().equals(t.getClientTin())) {
                     if (!clientList1.contains(c))
                         clientList1.add(c);
@@ -108,9 +103,29 @@ public class SimpleLinearRegressionController implements Initializable {
 
     }
 
+    private List<Test> getClientsWithTests2() {
+
+        List<Client> clientList = company.getClientArrayList();
+        List<Test> validTestList = getListTestsInsideTheHistoricalDays(company.getTestList().getTestListArray());
+
+        List<Test> testList = new ArrayList<>();
+
+        for (Client c : clientList) {
+            for (Test t : validTestList) {
+                if (c.getTinNumber().equals(t.getClientTin())) {
+                    if (!testList.contains(t))
+                        testList.add(t);
+                }
+            }
+        }
+
+        return testList;
+
+    }
+
     private int[] getClientAge(List<Client> clientList) {
 
-        int[] clientsAges = new int[1000];
+        int[] clientsAges = new int[company.getData().getHistoricalDaysInt() + 1];
         int n = 0;
         int x = 0;
         int sum = 0;
@@ -120,26 +135,60 @@ public class SimpleLinearRegressionController implements Initializable {
             System.out.println(c.toString());
         }
 
-        for (Client c : clientList) {
-            for (Test t1 : company.getTestList().getTestListArray()) {
-                // if (t.getDate()>date3) {
-                LocalDate date = c.getBirthDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-                age = Period.between(date, LocalDate.now()).getYears();
-                sum += age;
-                x++;
+        LocalDate todayDate = LocalDate.now(); //Date atual (dia de hoje)
 
-                //}
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -company.getData().getHistoricalDaysInt());
+        Date toDate = cal.getTime();
+
+        LocalDate beginDate = toDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //Date de começo do intervalo (dia de hj - historical days)
+
+        int interval = Period.between(beginDate, todayDate).getDays();
+
+        for (int i = 0; i < interval; i++) {
+
+            int interV = company.getData().getHistoricalDaysInt() - i;
+
+            Calendar cal2 = Calendar.getInstance();
+            cal2.add(Calendar.DATE, -interV);
+            Date toDate2 = cal2.getTime();
+
+            LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //Date de começo do intervalo (dia de hj - historical days)
+
+
+            for (Test t1 : getClientsWithTests2()) {
+
+                LocalDate testDate = t1.getDate().toLocalDate();
+
+                if (testDate.equals(currentDay)) {
+
+                    Client c1 = null;
+
+                    for (Client c : clientList) {
+                        if (t1.getClientTin().equals(c.getTinNumber())) {
+                            c1 = c;
+                        }
+                    }
+
+                    LocalDate date = c1.getBirthDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                    age = Period.between(date, LocalDate.now()).getYears();
+                    sum += age;
+                    x++;
+
+                }
+
             }
 
-            clientsAges[n] = sum / x;
+            if (x != 0) clientsAges[n] = sum / x;
             n++;
             x = 0;
             sum = 0;
 
         }
 
-        for (int i = 0; i < clientsAges.length; i++) {
-            if (clientsAges[i] != 0) System.out.println(clientsAges[i]);
+
+        for (int i : clientsAges) {
+            System.out.println(i);
         }
 
 
@@ -165,7 +214,7 @@ public class SimpleLinearRegressionController implements Initializable {
 
     }
 
-    private List<Test> getListOfCovidTestInsideTheHistoricalDays() {
+    private List<Test> getListTestsInsideTheHistoricalDays(List<Test> list) {
 
         LocalDate todayDate = LocalDate.now(); //Date atual (dia de hoje)
 
@@ -177,15 +226,10 @@ public class SimpleLinearRegressionController implements Initializable {
 
         List<Test> validCovidTests = new ArrayList<>();
 
-        System.out.println("------------------\n" + beginDate);
-        System.out.println("------------------\n" + todayDate);
-        System.out.println("------------------");
-
-        for (Test t : company.getTestList().getValidatedTestsList()) {
+        for (Test t : list) {
             LocalDate testDate = t.getDate().toLocalDate();
 
             if (Period.between(beginDate, testDate).getDays() >= 0 && Period.between(testDate, todayDate).getDays() >= 0) {
-                System.out.println(testDate);
                 validCovidTests.add(t);
             }
         }
@@ -194,9 +238,7 @@ public class SimpleLinearRegressionController implements Initializable {
 
     }
 
-    private void getCovidPositiveTestsPerDayIntoArray() {
-
-        List<Test> testList = getListOfCovidTestInsideTheHistoricalDays();
+    private double[] getCovidTestsPerDayIntoArray(List<Test> testList) {
 
         LocalDate todayDate = LocalDate.now(); //Date atual (dia de hoje)
 
@@ -208,7 +250,7 @@ public class SimpleLinearRegressionController implements Initializable {
 
         int interval = Period.between(beginDate, todayDate).getDays();
 
-        int[] positiveCovidTestsPerDay = new int[interval];
+        double[] positiveCovidTestsPerDay = new double[interval + 1];
 
         for (int i = 0; i < interval; i++) {
 
@@ -222,18 +264,47 @@ public class SimpleLinearRegressionController implements Initializable {
 
             for (Test t : testList) {
                 LocalDate testDate = t.getDate().toLocalDate();
-                System.out.println(testDate);
                 if (testDate.equals(currentDay)) {
                     positiveCovidTestsPerDay[i] += 1;
                 }
             }
 
+            for (double x : positiveCovidTestsPerDay) {
+                System.out.println(x);
+            }
+
         }
 
-        for (int n : positiveCovidTestsPerDay) {
-            System.out.println(n);
+        return positiveCovidTestsPerDay;
+
+    }
+
+    private void linearRegressionWithCovidTests() {
+
+        List<Test> validTests = getListTestsInsideTheHistoricalDays(company.getTestList().getValidatedTestsList());
+        List<Test> covidTests = getPositiveCovidTest(validTests);
+
+        double[] positiveCovidTestsPerDayInsideTheHistoricalInterval = getCovidTestsPerDayIntoArray(covidTests);
+        double[] covidTestsPerDayInsideTheHistoricalInterval = getCovidTestsPerDayIntoArray(validTests);
+
+        LinearRegression linearRegression = new LinearRegression(positiveCovidTestsPerDayInsideTheHistoricalInterval, covidTestsPerDayInsideTheHistoricalInterval);
+
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(linearRegression.toString());
+        sb.append("\n");
+
+        int i = 1;
+        for (double xi : positiveCovidTestsPerDayInsideTheHistoricalInterval) {
+            sb.append("x");
+            sb.append(i);
+            sb.append(": ");
+            sb.append(linearRegression.predict(xi));
+            sb.append("\n");
+            i++;
         }
 
+        myTextAreaSimple.setText(sb.toString());
 
     }
 
