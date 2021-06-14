@@ -259,8 +259,6 @@ _
 .src/main/java/app/domain/stores/TestStore.java,9\d\9d7c93dfb2abbc9f3e33ac38ae37e345fc6eea94
 Y
 )src/main/java/app/domain/model/Email.java,e\5\e5b9d6aa410958c18970d8f4c9e19a4c38e62e32
-j
-:src/main/java/app/domain/shared/MultiLinearRegression.java,5\1\51ac4d2fa961af5b859a17a30045d1b297b297c4
 e
 5src/main/java/app/domain/shared/LinearRegression.java,b\5\b5738a1e3a1c85790cbe245760fdbfe6e77be206
 w
@@ -295,7 +293,3 @@ X
 (src/main/java/app/ui/gui/MainScreen.java,b\5\b59adf73fdf4b7ccc7be755addc8e97dd1524983
 }
 Msrc/main/java/app/ui/gui/clichetecMenuUIs/ConsultClientTestsAndResultsUI.java,7\1\7147b5694f147c53f140ea5472f6f543c3ac978e
-[
-+src/main/java/app/domain/model/Company.java,e\6\e66f0f8e51b44df23f2004467961976fbec241aa
-g
-7src/main/java/app/ui/gui/employees/AdministratorUI.java,1\9\19e8d234ed70d2ee98189bee48aecf519f1826fa

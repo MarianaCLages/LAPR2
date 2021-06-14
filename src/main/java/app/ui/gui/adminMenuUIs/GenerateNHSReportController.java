@@ -124,6 +124,7 @@ public class GenerateNHSReportController implements Initializable {
         data.setDates(myDatePicker1.getValue(), myDatePicker2.getValue());
         data.setDayReport(dayReport);
         data.setWeekReport(weekReport);
+        data.setMonthlyReport(monthlyReport);
 
         dayReport = false;
         weekReport = false;
