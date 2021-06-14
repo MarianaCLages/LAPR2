@@ -2,6 +2,7 @@ package app.domain.model;
 
 import app.domain.shared.exceptions.*;
 import org.apache.commons.lang3.StringUtils;
+
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -15,6 +16,7 @@ public class Data {
     private LocalDate intervalEndDate;
     private boolean dayReport;
     private boolean weekReport;
+    private boolean monthlyReport;
 
     public Data(String historicalDays, int date, int confidenceLevelIC, String significanceLevel) {
 
@@ -31,10 +33,11 @@ public class Data {
         this.date = 0;
         this.confidenceLevelIC = 0;
         this.significanceLevel = null;
-        this.intervalStartDate=null;
-        this.intervalEndDate=null;
-        this.dayReport=false;
-        this.weekReport=false;
+        this.intervalStartDate = null;
+        this.intervalEndDate = null;
+        this.dayReport = false;
+        this.weekReport = false;
+        this.monthlyReport = false;
 
     }
 
@@ -53,12 +56,12 @@ public class Data {
         this.date = date;
     }
 
-    public void setDates(LocalDate start , LocalDate end){
-        this.intervalStartDate=start;
-        this.intervalEndDate=end;
+    public void setDates(LocalDate start, LocalDate end) {
+        this.intervalStartDate = start;
+        this.intervalEndDate = end;
     }
 
-    private void checkConfidenceLevelIC(int confidenceLevelIC) throws ConfidenceLevelInvalidException{
+    private void checkConfidenceLevelIC(int confidenceLevelIC) throws ConfidenceLevelInvalidException {
 
         if (confidenceLevelIC > 100 || confidenceLevelIC < 0) {
             throw new ConfidenceLevelInvalidException();
@@ -92,11 +95,11 @@ public class Data {
 
     }
 
-   public int getHistoricalDaysInt() {
+    public int getHistoricalDaysInt() {
         return Integer.parseInt(historicalDays);
     }
 
-    public int getConfidenceLevelIC() {
+    public int getConfidenceLevel() {
         return confidenceLevelIC;
     }
 
@@ -112,9 +115,9 @@ public class Data {
         return intervalStartDate;
     }
 
-    public int getDifferenceInDates(){
+    public int getDifferenceInDates() {
 
-        return Period.between(this.intervalStartDate,this.intervalEndDate).getDays();
+        return Period.between(this.intervalStartDate, this.intervalEndDate).getDays();
 
     }
 
@@ -126,12 +129,20 @@ public class Data {
         this.dayReport = dayReport;
     }
 
-    public boolean getDayReportValue(){
+    public boolean getDayReportValue() {
         return this.dayReport;
     }
 
-    public boolean getWeekReportValue(){
+    public boolean getWeekReportValue() {
         return this.weekReport;
+    }
+
+    public boolean getMontlhyReportValue() {
+        return this.monthlyReport;
+    }
+
+    public void setMonthlyReport(boolean monthlyReport) {
+        this.monthlyReport = monthlyReport;
     }
 
 }
