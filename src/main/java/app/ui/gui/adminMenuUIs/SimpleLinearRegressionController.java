@@ -444,33 +444,69 @@ public class SimpleLinearRegressionController implements Initializable {
 
     }
 
+    private LocalDate getCurrentDayInsideAMonthInterval() {
+        Calendar c = Calendar.getInstance();
+        int monthMaxDays = c.getActualMaximum(Calendar.DAY_OF_MONTH);
+
+        Calendar cal2 = Calendar.getInstance();
+        cal2.add(Calendar.DATE, -monthMaxDays);
+        Date toDate2 = cal2.getTime();
+
+        LocalDate weekIntervalDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
+        return weekIntervalDay;
+
+
+    }
+
     private void printCovidTestsPerInterval(StringBuilder sb) {
 
-        if (company.getData().getDayReportValue() && company.getData().getWeekReportValue()) {
-            getCovidTestsIntoTheNHSReport(true, true, sb);
+        if (company.getData().getMontlhyReportValue() && company.getData().getDayReportValue() && company.getData().getWeekReportValue()) {
+            getCovidTestsIntoTheNHSReport(true, true, true, sb);
+        } else if (company.getData().getDayReportValue() && company.getData().getWeekReportValue()) {
+            getCovidTestsIntoTheNHSReport(true, true, false, sb);
+        } else if (company.getData().getWeekReportValue() && company.getData().getMontlhyReportValue()) {
+            getCovidTestsIntoTheNHSReport(false, true, true, sb);
+        } else if (company.getData().getMontlhyReportValue() && company.getData().getDayReportValue()) {
+            getCovidTestsIntoTheNHSReport(true, false, true, sb);
         } else if (company.getData().getWeekReportValue()) {
-            getCovidTestsIntoTheNHSReport(false, true, sb);
+            getCovidTestsIntoTheNHSReport(false, true, false, sb);
         } else if (company.getData().getDayReportValue()) {
-            getCovidTestsIntoTheNHSReport(true, false, sb);
+            getCovidTestsIntoTheNHSReport(true, false, false, sb);
+        } else if (company.getData().getMontlhyReportValue()) {
+            getCovidTestsIntoTheNHSReport(false, false, true, sb);
         }
 
     }
 
-    private StringBuilder getCovidTestsIntoTheNHSReport(boolean day, boolean week, StringBuilder sb) {
+    private StringBuilder getCovidTestsIntoTheNHSReport(boolean day, boolean week, boolean monthly, StringBuilder sb) {
 
-        if (!week) {
+        if (!week && !monthly) {
             printTheCovidTestsIntoTheNHSReportDay(sb);
-        } else if (!day) {
+        } else if (!day && !monthly) {
             printTheCovidTestsIntoTheNHSReportWeek(sb);
         } else if (day && week) {
             printTheCovidTestsIntoTheNHSReportDay(sb);
             printTheCovidTestsIntoTheNHSReportWeek(sb);
+        } else if (day && week && monthly) {
+            printTheCovidTestsIntoTheNHSReportDay(sb);
+            printTheCovidTestsIntoTheNHSReportWeek(sb);
+            printTheCovidTestsIntoTheNHSReportMonthly(sb);
+        } else if (!day && !week) {
+            printTheCovidTestsIntoTheNHSReportMonthly(sb);
+        } else if (day && monthly) {
+            printTheCovidTestsIntoTheNHSReportDay(sb);
+            printTheCovidTestsIntoTheNHSReportMonthly(sb);
+        } else if (week && monthly) {
+            printTheCovidTestsIntoTheNHSReportWeek(sb);
+            printTheCovidTestsIntoTheNHSReportMonthly(sb);
         }
 
         return sb;
     }
 
     private StringBuilder printTheCovidTestsIntoTheNHSReportDay(StringBuilder sb) {
+
         int dayTests = 0;
         sb.append("\n");
         sb.append("Today covid tests :");
@@ -492,6 +528,7 @@ public class SimpleLinearRegressionController implements Initializable {
     }
 
     private StringBuilder printTheCovidTestsIntoTheNHSReportWeek(StringBuilder sb) {
+
         int interval = Period.between(getCurrentDayInsideAWeekInterval(), todayDateForCovidReport).getDays();
         int[] covidTestsIntoArray = new int[interval + 1];
 
@@ -521,6 +558,48 @@ public class SimpleLinearRegressionController implements Initializable {
             sb.append(covidTestsIntoArray[i]);
             sb.append(" positive covid tests");
             sb.append("\n");
+
+        }
+
+        return sb;
+
+    }
+
+    private StringBuilder printTheCovidTestsIntoTheNHSReportMonthly(StringBuilder sb) {
+
+        int interval = Period.between(getCurrentDayInsideAMonthInterval(), todayDateForCovidReport).getDays();
+        int[] covidTestsIntoArray = new int[interval + 1];
+
+        Calendar c = Calendar.getInstance();
+        int monthMaxDays = c.getActualMaximum(Calendar.DAY_OF_MONTH);
+
+        sb.append("\n");
+        sb.append("Month report:");
+        sb.append("\n");
+
+        for (int i = 0; i < interval; i++) {
+
+            int interM = monthMaxDays - i - 1;
+
+            Calendar cal2 = Calendar.getInstance();
+            cal2.add(Calendar.DATE, -interM);
+            Date toDate2 = cal2.getTime();
+
+            LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //Date de começo do intervalo (dia de hj - historical days)
+
+            for (Test t : getPositiveCovidTest(company.getTestList().getValidatedTestsList())) {
+                LocalDate tDate = t.getDate().toLocalDate();
+                if (tDate.equals(currentDay)) {
+                    covidTestsIntoArray[i] += 1;
+                }
+            }
+
+            sb.append(currentDay);
+            sb.append(" : ");
+            sb.append(covidTestsIntoArray[i]);
+            sb.append(" positive covid tests");
+            sb.append("\n");
+
 
         }
         return sb;

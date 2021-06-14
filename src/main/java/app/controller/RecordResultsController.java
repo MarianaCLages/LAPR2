@@ -12,11 +12,10 @@ import app.domain.stores.TestStore;
 import java.util.List;
 
 public class RecordResultsController {
-    private Company company;
-    private TestStore tStore;
-    private List<TestParameter> pList;
+    private final Company company;
+    private final TestStore tStore;
     private Test t;
-    private SampleStore sampleStore;
+    private final SampleStore sampleStore;
 
     public RecordResultsController() {
         this(App.getInstance().getCompany());
@@ -35,17 +34,14 @@ public class RecordResultsController {
         if (this.t == null) {
             throw new IllegalStateException("Sample does not exists");
         } else {
-            pList = t.getTestParam();
+            List<TestParameter> pList = t.getTestParam();
             TestParameterListMapper testParameterListMapper = new TestParameterListMapper();
             return testParameterListMapper.toDTO(pList);
         }
     }
 
     public boolean addTestResult(String parameterCode, double result) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-        if (t.addTestResult(parameterCode, result)) {
-            return true;
-        }
-        return false;
+        return t.addTestResult(parameterCode, result);
     }
 
     public String getResults() {

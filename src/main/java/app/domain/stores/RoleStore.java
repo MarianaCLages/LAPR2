@@ -11,13 +11,7 @@ import java.util.List;
  */
 public class RoleStore implements Serializable {
 
-    private final Role ClinicalChemistryTechnologist = new Role("0", "Clinical Chemistry Technologist");
-    private final Role MedicalLabTechnician = new Role("1", "Medical Lab Technician");
-    private final Role LaboratoryCoordinator = new Role("2", "LaboratoryCoordinator");
-    private final Role Receptionist = new Role("3", "Receptionist");
-    private final Role SpecialistDoctor = new Role("4", "SpecialistDoctor");
-    private List<Role> array;
-    private Role pc;
+    private final List<Role> array;
 
     /**
      * Constructor of the class it creates an empty list and fills it with the roles of the Company
@@ -25,11 +19,16 @@ public class RoleStore implements Serializable {
     public RoleStore() {
         this.array = new ArrayList<>();
 
-        array.add(ClinicalChemistryTechnologist);
-        array.add(MedicalLabTechnician);
-        array.add(LaboratoryCoordinator);
-        array.add(Receptionist);
-        array.add(SpecialistDoctor);
+        Role clinicalChemistryTechnologist = new Role("0", "Clinical Chemistry Technologist");
+        array.add(clinicalChemistryTechnologist);
+        Role medicalLabTechnician = new Role("1", "Medical Lab Technician");
+        array.add(medicalLabTechnician);
+        Role laboratoryCoordinator = new Role("2", "LaboratoryCoordinator");
+        array.add(laboratoryCoordinator);
+        Role receptionist = new Role("3", "Receptionist");
+        array.add(receptionist);
+        Role specialistDoctor = new Role("4", "SpecialistDoctor");
+        array.add(specialistDoctor);
     }
 
 
@@ -51,8 +50,6 @@ public class RoleStore implements Serializable {
 
         return this.array;
     }
-
-
 }
 
 

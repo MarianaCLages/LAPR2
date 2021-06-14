@@ -36,8 +36,8 @@ public class CreateTestController {
 
     public void getLists() {
 
-        this.caList = new ArrayList<ParameterCategory>();
-        this.paList = new ArrayList<Parameter>();
+        this.caList = new ArrayList<>();
+        this.paList = new ArrayList<>();
 
     }
 

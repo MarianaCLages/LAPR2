@@ -48,7 +48,8 @@ public class GenerateNHSReportController implements Initializable {
     private RadioButton myRadioButtonDay;
     @FXML
     private RadioButton myRadioButtonWeek;
-
+    @FXML
+    private RadioButton myRadioButtonMonthly;
 
     public GenerateNHSReportController() {
         this(App.getInstance().getCompany());
@@ -74,7 +75,7 @@ public class GenerateNHSReportController implements Initializable {
                 throw new ChoiceBoxEmptyException();
             }
 
-            if (!myRadioButtonDay.isSelected() && !myRadioButtonWeek.isSelected()) {
+            if (!myRadioButtonDay.isSelected() && !myRadioButtonWeek.isSelected() && !myRadioButtonMonthly.isSelected()) {
                 throw new RadioButtonsNotSelectedException();
             }
 
@@ -110,6 +111,7 @@ public class GenerateNHSReportController implements Initializable {
 
         boolean dayReport = myRadioButtonDay.isSelected();
         boolean weekReport = myRadioButtonWeek.isSelected();
+        boolean monthlyReport = myRadioButtonMonthly.isSelected();
 
         Data data = company.getData();
 
@@ -117,20 +119,7 @@ public class GenerateNHSReportController implements Initializable {
         data.setHistoricalDays(myTextFieldNHS.getText());
         data.setConfidenceLevelIC(100 - Integer.parseInt(myTextFieldNHS2.getText()));
 
-        if (myRadioButtonDay.isSelected() && myRadioButtonWeek.isSelected()) {
-
-            data.setDayReport(dayReport);
-            data.setWeekReport(weekReport);
-
-        } else if (myRadioButtonDay.isSelected()) {
-
-            data.setDayReport(dayReport);
-
-        } else if (myRadioButtonWeek.isSelected()) {
-
-            data.setWeekReport(weekReport);
-
-        }
+        setReport(dayReport, weekReport, monthlyReport, data);
 
         data.setDates(myDatePicker1.getValue(), myDatePicker2.getValue());
         data.setDayReport(dayReport);
@@ -138,6 +127,7 @@ public class GenerateNHSReportController implements Initializable {
 
         dayReport = false;
         weekReport = false;
+        monthlyReport = false;
 
     }
 
@@ -172,6 +162,49 @@ public class GenerateNHSReportController implements Initializable {
 
     public void configWeekReport(ActionEvent event) {
         myRadioButtonWeek.setSelected(true);
+    }
+
+    public void configMonthlyReport(ActionEvent event) {
+        myRadioButtonMonthly.setSelected(true);
+    }
+
+    public void setReport(boolean dayReport, boolean weekReport, boolean monthlyReport, Data data) {
+
+        if (myRadioButtonDay.isSelected() && myRadioButtonWeek.isSelected() && myRadioButtonMonthly.isSelected()) {
+
+            data.setDayReport(dayReport);
+            data.setWeekReport(weekReport);
+            data.setMonthlyReport(monthlyReport);
+
+        } else if (myRadioButtonWeek.isSelected() && myRadioButtonDay.isSelected()) {
+
+            data.setDayReport(dayReport);
+            data.setWeekReport(weekReport);
+
+        } else if (myRadioButtonDay.isSelected() && myRadioButtonMonthly.isSelected()) {
+
+            data.setMonthlyReport(monthlyReport);
+            data.setDayReport(dayReport);
+
+        } else if (myRadioButtonWeek.isSelected() && myRadioButtonMonthly.isSelected()) {
+
+            data.setMonthlyReport(monthlyReport);
+            data.setWeekReport(weekReport);
+
+        } else if (myRadioButtonMonthly.isSelected()) {
+
+            data.setMonthlyReport(monthlyReport);
+
+        } else if (myRadioButtonDay.isSelected()) {
+
+            data.setDayReport(dayReport);
+
+        } else if (myRadioButtonWeek.isSelected()) {
+
+            data.setWeekReport(weekReport);
+
+        }
+
     }
 
 }

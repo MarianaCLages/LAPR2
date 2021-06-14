@@ -10,14 +10,15 @@ import java.util.List;
  * Class that represents an List of all the Clinical Analysis Lab in the system
  */
 public class ClinicalAnalysisLabStore implements Serializable {
-    List<ClinicalAnalysisLab> array;
-    ClinicalAnalysisLab cal;
+
+    private final List<ClinicalAnalysisLab> array;
+    private ClinicalAnalysisLab cal;
 
     /**
      * Constructor of the class it creates an empty list to be filled with objects of Clinical Analysis Lab
      */
     public ClinicalAnalysisLabStore() {
-        this.array = new ArrayList<ClinicalAnalysisLab>();
+        this.array = new ArrayList<>();
     }
 
     /**
@@ -31,7 +32,7 @@ public class ClinicalAnalysisLabStore implements Serializable {
      * @param tType       list of Test Types associated with the test
      * @return Clinical Analysis Lab object created
      */
-    public ClinicalAnalysisLab CreateClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber, TestTypeStore tType) {
+    public ClinicalAnalysisLab createClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber, TestTypeStore tType) {
         this.cal = new ClinicalAnalysisLab(name, address, id, tin, phoneNumber, tType);
         return this.cal;
     }
@@ -40,13 +41,10 @@ public class ClinicalAnalysisLabStore implements Serializable {
      * this method checks if the Clinical Analysis Lab object received is not null, if don't already exists in the ArrayList
      *
      * @param cal Clinical Analysis Lab object
-     * @return boolean value that is true if the object is not null and dont already exists in the ArrayList
+     * @return boolean value that is true if the object is not null and don't already exists in the ArrayList
      */
-    public boolean ValidateClinicalAnalysisLab(ClinicalAnalysisLab cal) {
-        if (cal == null || contains(cal)) {
-            return false;
-        }
-        return true;
+    public boolean validateClinicalAnalysisLab(ClinicalAnalysisLab cal) {
+        return cal != null && !contains(cal);
     }
 
     /**
@@ -57,11 +55,7 @@ public class ClinicalAnalysisLabStore implements Serializable {
      */
 
     public boolean contains(ClinicalAnalysisLab cal) {
-        if (this.array.contains(cal)) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.array.contains(cal);
     }
 
     /**
@@ -70,7 +64,7 @@ public class ClinicalAnalysisLabStore implements Serializable {
      * @return a boolean value that indicates the success of the operation
      */
     public boolean saveClinicalAnalysisLab() {
-        if (ValidateClinicalAnalysisLab(this.cal)) {
+        if (validateClinicalAnalysisLab(this.cal)) {
             add(cal);
             return true;
         } else {
@@ -120,8 +114,7 @@ public class ClinicalAnalysisLabStore implements Serializable {
         return cal;
     }
 
-    public boolean VerifyClinicalLabID(String id) {
-        List<ClinicalAnalysisLab> cList = new ArrayList<>();
+    public boolean verifyClinicalLabID(String id) {
         for (ClinicalAnalysisLab c : this.array) {
 
             if (c.getId().equals(id)) {

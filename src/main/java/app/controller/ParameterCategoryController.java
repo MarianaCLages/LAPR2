@@ -9,8 +9,8 @@ import app.domain.stores.ParameterCategoryStore;
  */
 public class ParameterCategoryController {
 
-    private Company company;
-    private ParameterCategoryStore store;
+    private final Company company;
+    private final ParameterCategoryStore store;
 
     /**
      * Constructor of the class, gets an instance of the company class
@@ -37,7 +37,7 @@ public class ParameterCategoryController {
      * @param name short name that characterize the Parameter Category
      */
     public void createParameterCategory(String code, String name) {
-        store.CreateParameterCategory(code, name);
+        store.createParameterCategory(code, name);
     }
 
     /**
