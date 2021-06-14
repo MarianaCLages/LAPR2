@@ -177,7 +177,6 @@ public class Company implements Serializable {
 
 
     public boolean saveCompany() {
-        System.out.println(testList.toString());
         Properties props = App.getProperties();
         return Serialize.writeObject(props.getProperty("serialize.path"), this);
     }

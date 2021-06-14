@@ -1,9 +1,10 @@
 package app.domain.model;
 
 
+import java.io.Serializable;
 import java.util.TimerTask;
 
-public class SendReportTask extends TimerTask {
+public class SendReportTask extends TimerTask implements Serializable {
     public SendReportTask() {
     }
 
