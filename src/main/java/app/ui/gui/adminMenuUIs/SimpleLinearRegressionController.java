@@ -37,6 +37,7 @@ public class SimpleLinearRegressionController implements Initializable {
     private LocalDate todayDate;
     private Calendar cal;
     private LocalDate beginDate;
+    private LocalDate todayDateForCovidReport = LocalDate.now();
 
     public void returnToGenerateNHSReport(ActionEvent event) {
         App app = sceneController.getApp();
@@ -103,29 +104,23 @@ public class SimpleLinearRegressionController implements Initializable {
         double[] positiveCovidTestsPerDayInsideTheHistoricalInterval = getCovidTestsPerDayIntoArray(covidTests, company.getData().getHistoricalDaysInt() + 1);
         double[] covidTestsPerDayInsideTheHistoricalInterval = getCovidTestsPerDayIntoArray(validTests, company.getData().getHistoricalDaysInt() + 1);
 
-        System.out.println(company.getData().getDifferenceInDates());
-
         double[] positiveCovidTestsPerDayInsideTheDateInterval = getCovidTestsPerDayIntoArrayInsideInterval(covidTestInsideInterval, company.getData().getDifferenceInDates() + 1);
         double[] covidTestsPerDayInsideTheDateInterval = getCovidTestsPerDayIntoArrayInsideInterval(validTestInsideInterval, company.getData().getDifferenceInDates() + 1);
 
         LinearRegression linearRegression = new LinearRegression(positiveCovidTestsPerDayInsideTheDateInterval, covidTestsPerDayInsideTheDateInterval);
 
         StringBuilder sb = new StringBuilder();
-
         sb.append(linearRegression.toString());
         sb.append("\n");
 
         int i = 1;
-
         for (double xi : positiveCovidTestsPerDayInsideTheHistoricalInterval) {
-            sb.append("x");
-            sb.append(i);
-            sb.append(": ");
-            sb.append(linearRegression.predict(xi));
-            sb.append("\n");
+            sb = printPredictedValues(xi, sb, i, linearRegression);
             i++;
 
         }
+
+        printCovidTestsPerInterval(sb);
 
         myTextAreaSimple.setText(sb.toString());
 
@@ -136,25 +131,27 @@ public class SimpleLinearRegressionController implements Initializable {
         List<Test> validTests = getListTestsInsideTheHistoricalDays(company.getTestList().getValidatedTestsList());
         List<Client> clientsWithTests = getClientsWithTests();
 
-        double[] ages = getClientAge(clientsWithTests);
-        double[] covidTestsPerDayInsideTheHistoricalInterval = getCovidTestsPerDayIntoArray(validTests, company.getData().getHistoricalDaysInt() + 1);
+        List<Test> validTestsInsideInterval = getListTestsInsideDateInterval(company.getTestList().getValidatedTestsList());
 
-        LinearRegression linearRegression = new LinearRegression(ages, covidTestsPerDayInsideTheHistoricalInterval);
+        double[] ages = getClientAge(clientsWithTests, company.getData().getHistoricalDaysInt() + 1);
+        double[] covidTestsPerDayInsideTheHistoricalInterval = getCovidTestsPerDayIntoArray(validTestsInsideInterval, company.getData().getHistoricalDaysInt() + 1);
+
+        double[] agesInsideTheDateInterval = getClientAgeInsideTheInterval(clientsWithTests, company.getData().getDifferenceInDates() + 1);
+        double[] covidTestsPerDayInsideTheIntervalOfDates = getCovidTestsPerDayIntoArrayInsideInterval(validTests, company.getData().getDifferenceInDates() + 1);
+
+        LinearRegression linearRegression = new LinearRegression(agesInsideTheDateInterval, covidTestsPerDayInsideTheIntervalOfDates);
 
         StringBuilder sb = new StringBuilder();
-
         sb.append(linearRegression.toString());
         sb.append("\n");
 
         int i = 1;
         for (double xi : ages) {
-            sb.append("x");
-            sb.append(i);
-            sb.append(": ");
-            sb.append(linearRegression.predict(xi));
-            sb.append("\n");
+            sb = printPredictedValues(xi, sb, i, linearRegression);
             i++;
         }
+
+        printCovidTestsPerInterval(sb);
 
         myTextAreaSimple.setText(sb.toString());
 
@@ -180,7 +177,7 @@ public class SimpleLinearRegressionController implements Initializable {
 
     }
 
-    private List<Test> getClientsWithTests2() {
+    private List<Test> getClientsWithTestsListWithTests() {
 
         List<Client> clientList = company.getClientArrayList();
         List<Test> validTestList = getListTestsInsideTheHistoricalDays(company.getTestList().getTestListArray());
@@ -200,19 +197,67 @@ public class SimpleLinearRegressionController implements Initializable {
 
     }
 
-    private double[] getClientAge(List<Client> clientList) {
+    private double[] getClientAge(List<Client> clientList, int space) {
 
-        double[] clientsAges = new double[company.getData().getHistoricalDaysInt() + 1]; // O mais 1 é pq é preciso registar o dia de "HJ"
+        double[] clientsAges = new double[space]; // O mais 1 é pq é preciso registar o dia de "HJ"
+
         int n = 0;
         int x = 0;
         int sum = 0;
         int age = 0;
 
-        for (int i = 0; i < company.getData().getHistoricalDaysInt(); i++) {
+        for (int i = 0; i < space; i++) {
 
             LocalDate currentDay = getCurrentDay(i);
 
-            for (Test t1 : getClientsWithTests2()) {
+            for (Test t1 : getClientsWithTestsListWithTests()) {
+
+                LocalDate testDate = t1.getDate().toLocalDate();
+
+                if (testDate.equals(currentDay)) {
+
+                    Client c1 = null;
+
+                    for (Client c : clientList) {
+                        if (t1.getClientTin().equals(c.getTinNumber())) {
+                            c1 = c;
+                        }
+                    }
+
+                    LocalDate date = c1.getBirthDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                    age = Period.between(date, LocalDate.now()).getYears();
+                    sum += age;
+                    x++;
+
+                }
+
+            }
+
+            if (x != 0) clientsAges[n] = sum / x;
+            n++;
+            x = 0;
+            sum = 0;
+
+        }
+
+        return clientsAges;
+
+    }
+
+    private double[] getClientAgeInsideTheInterval(List<Client> clientList, int space) {
+
+        double[] clientsAges = new double[space]; // O mais 1 é pq é preciso registar o dia de "HJ"
+
+        int n = 0;
+        int x = 0;
+        int sum = 0;
+        int age = 0;
+
+        for (int i = 0; i < space; i++) {
+
+            LocalDate currentDay = getCurrentDayInsideInterval(i);
+
+            for (Test t1 : getClientsWithTestsListWithTests()) {
 
                 LocalDate testDate = t1.getDate().toLocalDate();
 
@@ -317,8 +362,6 @@ public class SimpleLinearRegressionController implements Initializable {
 
     private LocalDate getCurrentDayInsideInterval(int i) {
 
-        int interV = company.getData().getDifferenceInDates() - i;
-
         int startDayInterval = Period.between(company.getData().getIntervalStartDate(), todayDate).getDays();
 
         int interW = startDayInterval - i;
@@ -370,4 +413,116 @@ public class SimpleLinearRegressionController implements Initializable {
 
     }
 
+    private StringBuilder printPredictedValues(double xi, StringBuilder sb, int i, LinearRegression linearRegression) {
+
+        int startDayIntervalForStringBuilder = company.getData().getHistoricalDaysInt();
+
+        int interW = startDayIntervalForStringBuilder - i + 1;
+
+        Calendar cal2 = Calendar.getInstance();
+        cal2.add(Calendar.DATE, -interW);
+        Date toDate2 = cal2.getTime();
+
+        LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        sb.append(currentDay);
+        sb.append(": ");
+        sb.append(linearRegression.predict(xi));
+        sb.append("\n");
+        return sb;
+
+    }
+
+    private LocalDate getCurrentDayInsideAWeekInterval() {
+
+        Calendar cal2 = Calendar.getInstance();
+        cal2.add(Calendar.DATE, -7);
+        Date toDate2 = cal2.getTime();
+
+        LocalDate weekIntervalDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
+        return weekIntervalDay;
+
+    }
+
+    private void printCovidTestsPerInterval(StringBuilder sb) {
+
+        if (company.getData().getDayReportValue() && company.getData().getWeekReportValue()) {
+            getCovidTestsIntoTheNHSReport(true, true, sb);
+        } else if (company.getData().getWeekReportValue()) {
+            getCovidTestsIntoTheNHSReport(false, true, sb);
+        } else if (company.getData().getDayReportValue()) {
+            getCovidTestsIntoTheNHSReport(true, false, sb);
+        }
+
+    }
+
+    private StringBuilder getCovidTestsIntoTheNHSReport(boolean day, boolean week, StringBuilder sb) {
+
+        if (!week) {
+            printTheCovidTestsIntoTheNHSReportDay(sb);
+        } else if (!day) {
+            printTheCovidTestsIntoTheNHSReportWeek(sb);
+        } else if (day && week) {
+            printTheCovidTestsIntoTheNHSReportDay(sb);
+            printTheCovidTestsIntoTheNHSReportWeek(sb);
+        }
+
+        return sb;
+    }
+
+    private StringBuilder printTheCovidTestsIntoTheNHSReportDay(StringBuilder sb) {
+        int dayTests = 0;
+        sb.append("\n");
+        sb.append("Today covid tests :");
+        sb.append("\n\n");
+        sb.append(todayDateForCovidReport);
+        sb.append(" : ");
+        for (Test t : getPositiveCovidTest(company.getTestList().getValidatedTestsList())) {
+            LocalDate tDate = t.getDate().toLocalDate();
+
+            if (tDate.equals(todayDateForCovidReport)) {
+                dayTests++;
+            }
+
+        }
+
+        sb.append(dayTests);
+        sb.append(" positive covid tests");
+        return sb;
+    }
+
+    private StringBuilder printTheCovidTestsIntoTheNHSReportWeek(StringBuilder sb) {
+        int interval = Period.between(getCurrentDayInsideAWeekInterval(), todayDateForCovidReport).getDays();
+        int[] covidTestsIntoArray = new int[interval + 1];
+
+        sb.append("\n");
+        sb.append("Week report:");
+        sb.append("\n");
+
+        for (int i = 0; i < interval; i++) {
+
+            int interW = 7 - i - 1;
+
+            Calendar cal2 = Calendar.getInstance();
+            cal2.add(Calendar.DATE, -interW);
+            Date toDate2 = cal2.getTime();
+
+            LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //Date de começo do intervalo (dia de hj - historical days)
+
+            for (Test t : getPositiveCovidTest(company.getTestList().getValidatedTestsList())) {
+                LocalDate tDate = t.getDate().toLocalDate();
+                if (tDate.equals(currentDay)) {
+                    covidTestsIntoArray[i] += 1;
+                }
+            }
+
+            sb.append(currentDay);
+            sb.append(" : ");
+            sb.append(covidTestsIntoArray[i]);
+            sb.append(" positive covid tests");
+            sb.append("\n");
+
+        }
+        return sb;
+    }
 }

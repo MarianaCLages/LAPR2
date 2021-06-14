@@ -33,7 +33,7 @@ public class ConsultClientTestsAndResultsUI implements Initializable {
     @FXML
     private Label lblClientTin;
     @FXML
-    private TextArea lblTestResults;
+    private TextArea txtTestResults;
 
     ConsultClientTestsAndResultsController ctrl = new ConsultClientTestsAndResultsController();
 
@@ -84,7 +84,7 @@ public class ConsultClientTestsAndResultsUI implements Initializable {
     }
 
     public void selectedTest() {
-        lvwTestList.getSelectionModel().selectedIndexProperty().addListener((observableValue, number, t1) -> lblTestResults.setText(ctrl.toString(testList.get(t1.intValue()))));
+        lvwTestList.getSelectionModel().selectedIndexProperty().addListener((observableValue, number, t1) -> txtTestResults.setText(ctrl.toString(testList.get(t1.intValue()))));
     }
 
     @Override

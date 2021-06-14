@@ -44,6 +44,11 @@ public class GenerateNHSReportController implements Initializable {
     private DatePicker myDatePicker1;
     @FXML
     private DatePicker myDatePicker2;
+    @FXML
+    private RadioButton myRadioButtonDay;
+    @FXML
+    private RadioButton myRadioButtonWeek;
+
 
     public GenerateNHSReportController() {
         this(App.getInstance().getCompany());
@@ -69,12 +74,16 @@ public class GenerateNHSReportController implements Initializable {
                 throw new ChoiceBoxEmptyException();
             }
 
+            if (!myRadioButtonDay.isSelected() && !myRadioButtonWeek.isSelected()) {
+                throw new RadioButtonsNotSelectedException();
+            }
+
             setInformation();
             changeScene(event);
 
-        } catch (ConfidenceLevelInvalidException | InvalidIntervalOfDatesEndException | InvalidIntervalOfDatesStartException | HistoricalDaysEmptyException | DateEmptyException | DateInvalidException | ConfidenceLevelICEmptyException | ChoiceBoxEmptyException | HistoricalDaysInvalidException err1) {
+        } catch (ConfidenceLevelInvalidException | InvalidIntervalOfDatesEndException | InvalidIntervalOfDatesStartException | HistoricalDaysEmptyException | DateEmptyException | DateInvalidException | ConfidenceLevelICEmptyException | ChoiceBoxEmptyException | HistoricalDaysInvalidException | RadioButtonsNotSelectedException err1) {
             Alerts.errorAlert(err1.getMessage());
-        } catch (RuntimeException err8) {
+        } catch (RuntimeException err2) {
             Alerts.errorAlert(Constants.ERROR_BLANK_CONTAINERS);
         }
 
@@ -99,13 +108,36 @@ public class GenerateNHSReportController implements Initializable {
 
     private void setInformation() throws DateEmptyException, DateInvalidException, HistoricalDaysInvalidException, HistoricalDaysEmptyException, ConfidenceLevelICEmptyException, ConfidenceLevelInvalidException {
 
+        boolean dayReport = myRadioButtonDay.isSelected();
+        boolean weekReport = myRadioButtonWeek.isSelected();
+
         Data data = company.getData();
 
         data.setIntervalDates(getIntervalDate(myDatePicker1.getValue(), myDatePicker2.getValue()));
         data.setHistoricalDays(myTextFieldNHS.getText());
-        data.setConfidenceLevelIC(myTextFieldNHS2.getText());
+        data.setConfidenceLevelIC(100 - Integer.parseInt(myTextFieldNHS2.getText()));
+
+        if (myRadioButtonDay.isSelected() && myRadioButtonWeek.isSelected()) {
+
+            data.setDayReport(dayReport);
+            data.setWeekReport(weekReport);
+
+        } else if (myRadioButtonDay.isSelected()) {
+
+            data.setDayReport(dayReport);
+
+        } else if (myRadioButtonWeek.isSelected()) {
+
+            data.setWeekReport(weekReport);
+
+        }
 
         data.setDates(myDatePicker1.getValue(), myDatePicker2.getValue());
+        data.setDayReport(dayReport);
+        data.setWeekReport(weekReport);
+
+        dayReport = false;
+        weekReport = false;
 
     }
 
@@ -132,6 +164,14 @@ public class GenerateNHSReportController implements Initializable {
                 .atZone(ZoneId.systemDefault())
                 .toLocalDate();
 
+    }
+
+    public void configDayReport(ActionEvent event) {
+        myRadioButtonDay.setSelected(true);
+    }
+
+    public void configWeekReport(ActionEvent event) {
+        myRadioButtonWeek.setSelected(true);
     }
 
 }

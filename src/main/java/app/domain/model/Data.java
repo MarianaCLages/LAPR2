@@ -2,7 +2,6 @@ package app.domain.model;
 
 import app.domain.shared.exceptions.*;
 import org.apache.commons.lang3.StringUtils;
-
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -10,12 +9,14 @@ public class Data {
 
     private String historicalDays;
     private int date;
-    private String confidenceLevelIC;
+    private int confidenceLevelIC;
     private String significanceLevel;
     private LocalDate intervalStartDate;
     private LocalDate intervalEndDate;
+    private boolean dayReport;
+    private boolean weekReport;
 
-    public Data(String historicalDays, int date, String confidenceLevelIC, String significanceLevel) {
+    public Data(String historicalDays, int date, int confidenceLevelIC, String significanceLevel) {
 
         this.historicalDays = historicalDays;
         this.date = date;
@@ -28,11 +29,23 @@ public class Data {
 
         this.historicalDays = null;
         this.date = 0;
-        this.confidenceLevelIC = null;
+        this.confidenceLevelIC = 0;
         this.significanceLevel = null;
-        this.intervalStartDate = null;
-        this.intervalEndDate = null;
+        this.intervalStartDate=null;
+        this.intervalEndDate=null;
+        this.dayReport=false;
+        this.weekReport=false;
 
+    }
+
+    public void setConfidenceLevelIC(int confidenceLevelIC) throws ConfidenceLevelInvalidException, ConfidenceLevelICEmptyException {
+        checkConfidenceLevelIC(confidenceLevelIC);
+        this.confidenceLevelIC = confidenceLevelIC;
+    }
+
+    public void setHistoricalDays(String historicalDays) throws HistoricalDaysEmptyException, HistoricalDaysInvalidException {
+        checkHistoricaldays(historicalDays);
+        this.historicalDays = historicalDays;
     }
 
     public void setIntervalDates(int date) throws DateEmptyException, DateInvalidException {
@@ -40,20 +53,14 @@ public class Data {
         this.date = date;
     }
 
-    public void setDates(LocalDate start, LocalDate end) {
-        this.intervalStartDate = start;
-        this.intervalEndDate = end;
+    public void setDates(LocalDate start , LocalDate end){
+        this.intervalStartDate=start;
+        this.intervalEndDate=end;
     }
 
-    private void checkConfidenceLevelIC(String confidenceLevelIC) throws ConfidenceLevelInvalidException, ConfidenceLevelICEmptyException {
+    private void checkConfidenceLevelIC(int confidenceLevelIC) throws ConfidenceLevelInvalidException{
 
-        if (confidenceLevelIC.isEmpty() || StringUtils.isBlank(confidenceLevelIC)) {
-            throw new ConfidenceLevelICEmptyException();
-        }
-
-        int n = Integer.parseInt(confidenceLevelIC);
-
-        if (n > 100 || n < 0) {
+        if (confidenceLevelIC > 100 || confidenceLevelIC < 0) {
             throw new ConfidenceLevelInvalidException();
         }
 
@@ -85,26 +92,16 @@ public class Data {
 
     }
 
-    public int getHistoricalDaysInt() {
+   public int getHistoricalDaysInt() {
         return Integer.parseInt(historicalDays);
     }
 
-    public String getConfidenceLevelIC() {
+    public int getConfidenceLevelIC() {
         return confidenceLevelIC;
-    }
-
-    public void setConfidenceLevelIC(String confidenceLevelIC) throws ConfidenceLevelInvalidException, ConfidenceLevelICEmptyException {
-        checkConfidenceLevelIC(confidenceLevelIC);
-        this.confidenceLevelIC = confidenceLevelIC;
     }
 
     public String getHistoricalDays() {
         return historicalDays;
-    }
-
-    public void setHistoricalDays(String historicalDays) throws HistoricalDaysEmptyException, HistoricalDaysInvalidException {
-        checkHistoricaldays(historicalDays);
-        this.historicalDays = historicalDays;
     }
 
     public LocalDate getIntervalEndDate() {
@@ -115,10 +112,26 @@ public class Data {
         return intervalStartDate;
     }
 
-    public int getDifferenceInDates() {
+    public int getDifferenceInDates(){
 
-        return Period.between(this.intervalStartDate, this.intervalEndDate).getDays();
+        return Period.between(this.intervalStartDate,this.intervalEndDate).getDays();
 
+    }
+
+    public void setWeekReport(boolean weekReport) {
+        this.weekReport = weekReport;
+    }
+
+    public void setDayReport(boolean dayReport) {
+        this.dayReport = dayReport;
+    }
+
+    public boolean getDayReportValue(){
+        return this.dayReport;
+    }
+
+    public boolean getWeekReportValue(){
+        return this.weekReport;
     }
 
 }

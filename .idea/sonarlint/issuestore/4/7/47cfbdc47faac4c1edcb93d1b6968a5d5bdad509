@@ -1,0 +1,31 @@
+
+h
+java:S2095C"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(³žˆ•ùÿÿÿÿ
+g
+java:S1192¿"KDefine a constant instead of duplicating this literal "1234567891" 3 times.(¼“Ã†ùÿÿÿÿ
+g
+java:S1192»"KDefine a constant instead of duplicating this literal "1234567890" 4 times.(¾ÒÁšÿÿÿÿÿ
+a
+java:S1192Ï"KDefine a constant instead of duplicating this literal "VALIDATED" 13 times.(ðªäi
+g
+java:S1192Á"KDefine a constant instead of duplicating this literal "1234567896" 8 times.(¸üÏ¢ÿÿÿÿÿ
+i
+java:S1192Í"RDefine a constant instead of duplicating this literal "SAMPLE_COLLECTED" 13 times.(Æ•¹Ž
+b
+java:S1192}"GDefine a constant instead of duplicating this literal "IgGAN" 12 times.(ÿãáÿùÿÿÿÿ
+a
+java:S1192y"FDefine a constant instead of duplicating this literal "ESR00" 3 times.(íÒŸôùÿÿÿÿ
+\
+java:S1192w"FDefine a constant instead of duplicating this literal "MCH00" 3 times.(Ð‘…‡
+[
+java:S1192{"FDefine a constant instead of duplicating this literal "HB000" 3 times.(þð§/
+i
+java:S1192ú"MDefine a constant instead of duplicating this literal "100000000007" 5 times.(˜¹¤Êÿÿÿÿÿ
+g
+java:S1192Ã"KDefine a constant instead of duplicating this literal "1234567881" 3 times.(«ýçÛøÿÿÿÿ
+H
+java:S1199&"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ
+V	java:S125#"<This block of commented-out lines of code should be removed.(ø„ýÊùÿÿÿÿ
+S	java:S106G"9Replace this use of System.out or System.err by a logger.(ý™øøÿÿÿÿ
+;
+java:S1481""&Remove this unused "f" local variable.(¹Î*
