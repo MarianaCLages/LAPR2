@@ -103,7 +103,7 @@ public class GenerateNHSReportController implements Initializable {
 
         data.setIntervalDates(getIntervalDate(myDatePicker1.getValue(), myDatePicker2.getValue()));
         data.setHistoricalDays(myTextFieldNHS.getText());
-        data.setConfidenceLevelIC(myTextFieldNHS2.getText());
+        data.setConfidenceLevelIC(100 - Integer.parseInt(myTextFieldNHS2.getText()));
 
         data.setDates(myDatePicker1.getValue(), myDatePicker2.getValue());
 

@@ -9,12 +9,12 @@ public class Data {
 
     private String historicalDays;
     private int date;
-    private String confidenceLevelIC;
+    private int confidenceLevelIC;
     private String significanceLevel;
     private LocalDate intervalStartDate;
     private LocalDate intervalEndDate;
 
-    public Data(String historicalDays, int date, String confidenceLevelIC, String significanceLevel) {
+    public Data(String historicalDays, int date, int confidenceLevelIC, String significanceLevel) {
 
         this.historicalDays = historicalDays;
         this.date = date;
@@ -27,14 +27,14 @@ public class Data {
 
         this.historicalDays = null;
         this.date = 0;
-        this.confidenceLevelIC = null;
+        this.confidenceLevelIC = 0;
         this.significanceLevel = null;
         this.intervalStartDate=null;
         this.intervalEndDate=null;
 
     }
 
-    public void setConfidenceLevelIC(String confidenceLevelIC) throws ConfidenceLevelInvalidException, ConfidenceLevelICEmptyException {
+    public void setConfidenceLevelIC(int confidenceLevelIC) throws ConfidenceLevelInvalidException, ConfidenceLevelICEmptyException {
         checkConfidenceLevelIC(confidenceLevelIC);
         this.confidenceLevelIC = confidenceLevelIC;
     }
@@ -54,15 +54,9 @@ public class Data {
         this.intervalEndDate=end;
     }
 
-    private void checkConfidenceLevelIC(String confidenceLevelIC) throws ConfidenceLevelInvalidException, ConfidenceLevelICEmptyException {
+    private void checkConfidenceLevelIC(int confidenceLevelIC) throws ConfidenceLevelInvalidException{
 
-        if (confidenceLevelIC.isEmpty() || StringUtils.isBlank(confidenceLevelIC)) {
-            throw new ConfidenceLevelICEmptyException();
-        }
-
-        int n = Integer.parseInt(confidenceLevelIC);
-
-        if (n > 100 || n < 0) {
+        if (confidenceLevelIC > 100 || confidenceLevelIC < 0) {
             throw new ConfidenceLevelInvalidException();
         }
 
@@ -98,7 +92,7 @@ public class Data {
         return Integer.parseInt(historicalDays);
     }
 
-    public String getConfidenceLevelIC() {
+    public int getConfidenceLevelIC() {
         return confidenceLevelIC;
     }
 

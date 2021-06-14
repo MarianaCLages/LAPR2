@@ -114,6 +114,7 @@ public class SimpleLinearRegressionController implements Initializable {
         int i = 1;
         for (double xi : positiveCovidTestsPerDayInsideTheHistoricalInterval) {
             sb = printPredictedValues(xi, sb, i, linearRegression);
+            i++;
 
         }
 
@@ -131,8 +132,8 @@ public class SimpleLinearRegressionController implements Initializable {
         double[] ages = getClientAge(clientsWithTests, company.getData().getHistoricalDaysInt() + 1);
         double[] covidTestsPerDayInsideTheHistoricalInterval = getCovidTestsPerDayIntoArray(validTestsInsideInterval, company.getData().getHistoricalDaysInt() + 1);
 
-        double[] agesInsideTheDateInterval = getClientAgeInsideTheInterval(clientsWithTests,company.getData().getDifferenceInDates()+1) ;
-        double[] covidTestsPerDayInsideTheIntervalOfDates = getCovidTestsPerDayIntoArrayInsideInterval(validTests,company.getData().getDifferenceInDates()+1);
+        double[] agesInsideTheDateInterval = getClientAgeInsideTheInterval(clientsWithTests, company.getData().getDifferenceInDates() + 1);
+        double[] covidTestsPerDayInsideTheIntervalOfDates = getCovidTestsPerDayIntoArrayInsideInterval(validTests, company.getData().getDifferenceInDates() + 1);
 
 
         LinearRegression linearRegression = new LinearRegression(agesInsideTheDateInterval, covidTestsPerDayInsideTheIntervalOfDates);
@@ -144,6 +145,7 @@ public class SimpleLinearRegressionController implements Initializable {
         int i = 1;
         for (double xi : ages) {
             sb = printPredictedValues(xi, sb, i, linearRegression);
+            i++;
         }
 
         myTextAreaSimple.setText(sb.toString());
@@ -317,10 +319,6 @@ public class SimpleLinearRegressionController implements Initializable {
                 }
             }
 
-            for (double xi : positiveCovidTestsPerDay) {
-                System.out.println(xi);
-            }
-
         }
 
         return positiveCovidTestsPerDay;
@@ -358,8 +356,6 @@ public class SimpleLinearRegressionController implements Initializable {
     }
 
     private LocalDate getCurrentDayInsideInterval(int i) {
-
-        int interV = company.getData().getDifferenceInDates() - i;
 
         int startDayInterval = Period.between(company.getData().getIntervalStartDate(), todayDate).getDays();
 
@@ -414,13 +410,19 @@ public class SimpleLinearRegressionController implements Initializable {
 
     private StringBuilder printPredictedValues(double xi, StringBuilder sb, int i, LinearRegression linearRegression) {
 
-        sb.append("x");
-        sb.append(i);
+        int startDayIntervalForStringBuilder = company.getData().getHistoricalDaysInt();
+
+        int interW = startDayIntervalForStringBuilder - i + 1;
+
+        Calendar cal2 = Calendar.getInstance();
+        cal2.add(Calendar.DATE, -interW);
+        Date toDate2 = cal2.getTime();
+
+        LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        sb.append(currentDay);
         sb.append(": ");
         sb.append(linearRegression.predict(xi));
         sb.append("\n");
-        i++;
-
         return sb;
 
     }
