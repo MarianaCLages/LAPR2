@@ -11,12 +11,9 @@ import app.domain.stores.TestTypeStore;
  * Controller of the UserStory : Register a new clinical analysis laboratory
  */
 public class ClinicalAnalysisLabController {
-    private Company company;
+    private final Company company;
     private ClinicalAnalysisLabStore store;
-    private ClinicalAnalysisLab cal;
-    private TestTypeStore typeTStoreCli;
-    private TestTypeStore typeTStore;
-
+    private final TestTypeStore typeTStoreCli;
 
     /**
      * Constructor of the class, gets an instance of the company class
@@ -33,7 +30,6 @@ public class ClinicalAnalysisLabController {
     public ClinicalAnalysisLabController(Company company) {
         this.typeTStoreCli = new TestTypeStore();
         this.company = company;
-        this.cal = null;
     }
 
     /**
@@ -47,15 +43,14 @@ public class ClinicalAnalysisLabController {
      */
     public void createClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber) {
         store = company.getClinicalAnalysisLabList();
-        store.CreateClinicalAnalysisLab(name, address, id, tin, phoneNumber, this.typeTStoreCli);
-
+        store.createClinicalAnalysisLab(name, address, id, tin, phoneNumber, this.typeTStoreCli);
     }
 
     /**
      * @return the list with all the Type if Tests in the system
      */
     public TestTypeStore getTypetestList() {
-        return this.typeTStore = company.getTestTypeList();
+        return company.getTestTypeList();
     }
 
     /**
@@ -73,7 +68,6 @@ public class ClinicalAnalysisLabController {
      */
     public boolean addToList(TestType t) {
         return typeTStoreCli.add(t);
-
     }
 
     /**

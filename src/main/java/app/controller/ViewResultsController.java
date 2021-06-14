@@ -11,7 +11,6 @@ import java.util.List;
 public class ViewResultsController  {
 
     private Company company;
-    private Client client;
     private TestStore store;
     private Test test;
     private ClientStore cstore;
@@ -27,8 +26,8 @@ public class ViewResultsController  {
 
 
     public List<Test> sortedDateList(){
-        this.client = cstore.getClientByEmail(company.getUserID());
-        return store.sortDate(this.client.getTinNumber());
+        Client client = cstore.getClientByEmail(company.getUserID());
+        return store.sortDate(client.getTinNumber());
     }
 
     public String getResults() {

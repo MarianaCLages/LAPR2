@@ -1,8 +1,0 @@
-
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¡šØÞÿÿÿÿÿ
-B
-java:S1172",Remove this unused method parameter "event".(²»ç†
-W
-java:S1854"<Remove this useless assignment to local variable "sampleID".(ŽåØ¼üÿÿÿÿ
-H
-java:S1481"-Remove this unused "sampleID" local variable.(¥÷ì“ÿÿÿÿÿ

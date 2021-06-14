@@ -18,7 +18,7 @@ public class TestTypeStoreTest {
         //Act
         store.add(t);
         //Assert
-        Assert.assertFalse(store.ValidateTestType(t));
+        Assert.assertFalse(store.validateTestType(t));
     }
 
 
@@ -27,7 +27,7 @@ public class TestTypeStoreTest {
         //Arrange + act
         TestType t = null;
         //Assert
-        Assert.assertFalse(store.ValidateTestType(t));
+        Assert.assertFalse(store.validateTestType(t));
     }
 
     @Test
@@ -104,7 +104,7 @@ public class TestTypeStoreTest {
         cat.add(pc1);
         TestType t1 = new TestType("COV19", "descrição", "metodo 1", cat);
         store.add(t1);
-        store.CreateTestType("BL000", "descrição", "metodo 1", cat);
+        store.createTestType("BL000", "descrição", "metodo 1", cat);
         //Assert
         Assert.assertTrue(store.saveTestType());
     }
@@ -114,7 +114,7 @@ public class TestTypeStoreTest {
         TestTypeStore store = new TestTypeStore();
         ParameterCategory pc1 = new ParameterCategory("AF687", "Hemogram");
         cat.add(pc1);
-        Assert.assertNotNull(store.CreateTestType("COV19", "descrição", "metodo 1", cat));
+        Assert.assertNotNull(store.createTestType("COV19", "descrição", "metodo 1", cat));
 
     }
 
@@ -125,7 +125,7 @@ public class TestTypeStoreTest {
         cat.add(pc1);
         TestType t1 = new TestType("COV19", "descrição", "metodo 1", cat);
         store.add(t1);
-        store.CreateTestType("BL000", "descrição", "metodo 1", cat);
+        store.createTestType("BL000", "descrição", "metodo 1", cat);
         //Assert
         Assert.assertNotNull(store.getTestT());
     }

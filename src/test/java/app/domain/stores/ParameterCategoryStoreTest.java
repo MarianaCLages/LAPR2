@@ -14,7 +14,7 @@ public class ParameterCategoryStoreTest {
         //Act
         store.add(pc1);
         //Assert
-        Assert.assertFalse(store.ValidateParameterCategory(pc1));
+        Assert.assertFalse(store.validateParameterCategory(pc1));
     }
 
 
@@ -26,7 +26,7 @@ public class ParameterCategoryStoreTest {
         //Act
         store.add(pc1);
         //Assert
-        Assert.assertFalse(store.ValidateParameterCategory(pc1));
+        Assert.assertFalse(store.validateParameterCategory(pc1));
     }
 
     @Test
@@ -35,7 +35,7 @@ public class ParameterCategoryStoreTest {
         ParameterCategoryStore store = new ParameterCategoryStore();
         ParameterCategory pc1 = null;
         //Assert
-        Assert.assertFalse(store.ValidateParameterCategory(pc1));
+        Assert.assertFalse(store.validateParameterCategory(pc1));
     }
 
     @Test
@@ -46,7 +46,7 @@ public class ParameterCategoryStoreTest {
         store.add(pc1);
         ParameterCategory pc2 = new ParameterCategory("AF687", "Hemograma");
 
-        Assert.assertFalse(store.ValidateParameterCategory(pc2));
+        Assert.assertFalse(store.validateParameterCategory(pc2));
 
     }
 
@@ -128,7 +128,7 @@ public class ParameterCategoryStoreTest {
     public void createValidParameterCategory() {
         ParameterCategoryStore store = new ParameterCategoryStore();
 
-        Assert.assertNotNull(store.CreateParameterCategory("AF784", "Hemogram"));
+        Assert.assertNotNull(store.createParameterCategory("AF784", "Hemogram"));
 
     }
 
@@ -136,7 +136,7 @@ public class ParameterCategoryStoreTest {
     @Test
     public void getPcValid() {
         ParameterCategoryStore store = new ParameterCategoryStore();
-        ParameterCategory pc1 = store.CreateParameterCategory("AF687", "Hemogram");
+        ParameterCategory pc1 = store.createParameterCategory("AF687", "Hemogram");
         ParameterCategory expected = pc1;
         ParameterCategory actual = store.getPc();
 
@@ -177,7 +177,7 @@ public class ParameterCategoryStoreTest {
     public void saveParameterCategoryValid() {
         //Arrange
         ParameterCategoryStore store = new ParameterCategoryStore();
-        ParameterCategory pc = store.CreateParameterCategory("AE554", "Hemogram");
+        ParameterCategory pc = store.createParameterCategory("AE554", "Hemogram");
 
         //Assert
         Assert.assertTrue(store.saveParameterCategory());
@@ -188,9 +188,9 @@ public class ParameterCategoryStoreTest {
     public void saveParameterCategoryInvalid() {
         //Arrange
         ParameterCategoryStore store = new ParameterCategoryStore();
-        ParameterCategory pc = store.CreateParameterCategory("AE554", "Hemogram");
+        ParameterCategory pc = store.createParameterCategory("AE554", "Hemogram");
         store.add(pc);
-        ParameterCategory pc1 = store.CreateParameterCategory("AE554", "Hemogram");
+        ParameterCategory pc1 = store.createParameterCategory("AE554", "Hemogram");
 
         //Assert
         Assert.assertFalse(store.saveParameterCategory());
@@ -200,13 +200,13 @@ public class ParameterCategoryStoreTest {
     @Test
     public void addValid() {
         ParameterCategoryStore store = new ParameterCategoryStore();
-        ParameterCategory pc = store.CreateParameterCategory("AE554", "Hemogram");
+        ParameterCategory pc = store.createParameterCategory("AE554", "Hemogram");
         Assert.assertTrue(store.add(pc));
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void addInvalid() {
         ParameterCategoryStore store = new ParameterCategoryStore();
-        ParameterCategory pc = store.CreateParameterCategory(null, null);
+        ParameterCategory pc = store.createParameterCategory(null, null);
     }
 }

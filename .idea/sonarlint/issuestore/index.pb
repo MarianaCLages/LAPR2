@@ -1,16 +1,6 @@
 
 b
-2src/main/java/app/controller/ClientController.java,5\a\5a87feaf6f42c59d6fb9b1b9dfbc7e3301510ae2
-o
-?src/main/java/app/controller/ClinicalAnalysisLabController.java,9\9\99d9976c4ac34e1567bbe535e4dd5d6ff6d7017b
-h
-8src/main/java/app/controller/CreateReportController.java,9\5\954d5db3391dc8b57d290338d9603b874969bfe6
-b
 2src/main/java/app/ui/console/LabCoordinatorUI.java,6\e\6ec64a9683594148c3fad2c0650a65c947677758
-c
-3src/main/java/app/domain/stores/ParameterStore.java,7\d\7df0384a20bdaebe6b51963547bbdd812dd751a8
-b
-2src/main/java/app/domain/stores/TestTypeStore.java,6\9\69abcc76976e9f417dc01351473c7f46aba03ee9
 ^
 .src/test/java/app/domain/model/ClientTest.java,1\d\1ded02609d9819f819b2a83507b751b1338f4e87
 k
@@ -65,8 +55,6 @@ i
 9src/test/java/app/domain/mappers/dto/TestTypeDTOTest.java,6\5\65ad84bd5cf9010d51cb0036208ea0c96eb6b5ff
 e
 5src/test/java/app/domain/mappers/dto/TestDTOTest.java,e\3\e38f4b033961e67fd3e600d0e5a6aec6eefcd82e
-h
-8src/main/java/app/controller/RecordSampleController.java,d\d\dd80a1497acffafe28094da8362c395f56b62a36
 `
 0src/main/java/app/ui/console/RecordSampleUI.java,c\4\c47fc00542260444261c62b97d7e948aefb765b6
 H
@@ -79,30 +67,12 @@ b
 2src/main/java/app/domain/model/BarcodeAdapter.java,5\7\572c72cede0b54c6aa265bd8ca31dfceabbe6d68
 f
 6src/main/java/app/domain/model/ExternalApiBarcode.java,0\a\0a9e9a167e43840c0cf92bc5100f4bd26cc695cb
-i
-9src/main/java/app/domain/mappers/dto/CategoryListDTO.java,5\f\5f086cda3cbb8f8bcce87c4638f3e55c2aee8c9d
-h
-8src/main/java/app/domain/mappers/CategoryListMapper.java,6\a\6ae4d2a9d14653e4238f7216773d4e7b6d7e3131
 g
 7src/main/java/app/domain/model/ClinicalAnalysisLab.java,5\9\59a8f18d9e027e408a61d00d6f81cd0f58c1eddf
-m
-=src/main/java/app/domain/stores/ClinicalAnalysisLabStore.java,b\c\bc611ab300957ae21088989219be8f1a4d449994
 ]
 -src/main/java/app/domain/model/Parameter.java,e\a\ea1c265ce1c0dddada8e92fe4c6adf72874d6977
 e
 5src/main/java/app/domain/model/ParameterCategory.java,a\2\a266433b5fa3cea381600bb3447b9e60b57d11b6
-m
-=src/main/java/app/controller/ParameterCategoryController.java,2\3\23d7effaa727cc5c981046c12a8f9235e70b6480
-k
-;src/main/java/app/domain/stores/ParameterCategoryStore.java,9\0\90d1cb3bc9c98c352bd9dcd1a6f966b1b9d5fd20
-e
-5src/main/java/app/controller/ParameterController.java,4\f\4f19fce5393904d211ab231416f416fab58e5767
-f
-6src/main/java/app/domain/mappers/dto/ParameterDTO.java,7\a\7aca6e7922a574f79fb4a6ff1e4205a35f34f3b9
-i
-9src/main/java/app/domain/mappers/ParameterListMapper.java,d\3\d33a1a9d71c83a91270e60ce260917ebbf57829c
-i
-9src/main/java/app/controller/RecordResultsController.java,a\7\a7f5307ea84c2cf215123296f60c1979997e3715
 \
 ,src/main/java/app/domain/model/RefValue.java,2\c\2c88ff0298b17555153c63fef7d6efb1981aeb27
 d
@@ -115,28 +85,10 @@ Z
 *src/main/java/app/domain/model/Report.java,5\0\50aaf8912efcd7144f4cf66a4fbfdabdc16cbbc9
 X
 (src/main/java/app/domain/model/Role.java,1\d\1db30fcc6150b7f76eb9115e4098cf1557ce3f93
-^
-.src/main/java/app/domain/stores/RoleStore.java,3\8\38af4cb8bfe91bba8ef30db5e1acfef54ad28792
 Z
 *src/main/java/app/domain/model/Sample.java,b\a\ba164b4c03f593dbc5a575d2806dae1ffe3dfe0c
 d
 4src/main/java/app/domain/model/SpecialistDoctor.java,1\f\1fe2526cdf6f266c0d2cb8c4e936e3c475559125
-a
-1src/main/java/app/domain/mappers/dto/TestDTO.java,4\8\48c988d2fdbc7fe7b1afc15b6db0b705a1d69bf7
-d
-4src/main/java/app/domain/mappers/TestListMapper.java,7\4\74ca3db498246ba085f95d28cd744d308af092be
-j
-:src/main/java/app/domain/mappers/dto/TestParameterDTO.java,b\1\b1c07c5b81bf847d6e64bbdafd064920c15a76d2
-m
-=src/main/java/app/domain/mappers/TestParameterListMapper.java,0\6\062cd32e6a0b9407759b54987eb6ed84ebf8c74a
-f
-6src/main/java/app/domain/mappers/dto/TestStoreDTO.java,1\0\104c57003351d0b7e5c8b9b04d7c656259c3db6b
-e
-5src/main/java/app/domain/mappers/TestStoreMapper.java,6\2\62e503cd3f850e2add24c9f7f6935216dffc26ee
-e
-5src/main/java/app/domain/mappers/dto/TestTypeDTO.java,3\d\3d048c73bee7915677a10076245a2e9e5a27d45d
-h
-8src/main/java/app/domain/mappers/TestTypeListMapper.java,9\2\92df252ef206a36226a1aade804a510e8f8f2a4e
 I
 docs/SprintD/US12/US12.md,8\f\8f94ac9b09c91251479d2d973ae539f824d2774c
 t
@@ -155,8 +107,6 @@ n
 >docs/SprintD/US05/VERS√ÉO 2 GRUPO 40/US005_RecordTheSamples.md,a\6\a6df19e5817d0568a337ec4bd8cd20395b039daf
 ó
 gdocs/SprintD/US18/US18_As_an_Administrator_I_want_to_send_the_Covid-19_report_to_the_NHS_at_any_time.md,3\7\37aee95c88701e0359fcbca505618db77d24fe5f
-d
-4src/main/java/app/controller/TestTypeController.java,1\4\14fe02ab77de5538015d244c4cb5185cad33c9f9
 Z
 *src/main/java/app/domain/model/Client.java,a\1\a1140e0a891f26f51604f14ed5bf2ac976d60132
 u
@@ -173,12 +123,8 @@ r
 Bsrc/main/java/app/domain/shared/exceptions/DateEmptyException.java,4\b\4b5eb190cd1f755e46ed5125ac1ec7a2c6c156c3
 w
 Gsrc/main/java/app/domain/shared/exceptions/ChoiceBoxEmptyException.java,d\a\da5859ee0fbb622f76a8e66651f4ffb20658ca75
-f
-6src/main/java/app/controller/CreateTestController.java,f\5\f54f6fb19e03f0fa13b00dc9c6f082f28f52680c
 X
 (src/main/java/app/ui/console/AuthUI.java,a\c\ac569ed985938d514a4808da16cd4fbc88fa6036
-`
-0src/main/java/app/controller/AuthController.java,4\0\40778ef1d8f18e9634da9485a353d2b842458731
 N
 docs/SprintD/US18/US018_SD.svg,4\7\47879f96a8b08db42b6b059e5d704ae8a0535934
 e
@@ -205,8 +151,6 @@ b
 2src/main/java/auth/domain/store/UserRoleStore.java,d\f\df87a76751166dc90bf2d9baaa17c0f9f9f052bc
 _
 /src/main/java/auth/mappers/dto/UserRoleDTO.java,9\1\917a420456517cc69cf4e510d078c65a68c2cdca
-b
-2src/main/java/app/domain/stores/EmployeeStore.java,b\5\b5bc3e26da714d4b55cff5a97f4a3753de94c0ed
 \
 ,src/main/java/app/ui/console/MainMenuUI.java,0\0\00b6c6e5c167fbd22e7d83c003815158143e9f8b
 ~
@@ -219,8 +163,6 @@ R
 ,src/main/java/app/domain/model/Employee.java,1\7\172c090ab1c754bae4d9ce2efae5056312661a20
 N
 src/main/java/app/ui/Main.java,7\7\774d0aff326a0164e53c11cda4e3afaaa607428f
-l
-<src/main/java/app/controller/RegisterEmployeeController.java,a\7\a7a46266d73376633f802e31465ba57f12cf1fca
 S
 #docs/SprintD/US19/SD_runTask().puml,6\2\62d9b6e9f773098752ee05be093f14fc3c4dae02
 N
@@ -229,14 +171,10 @@ O
 docs/SprintD/US19/US19_SSD.puml,2\4\2450b1747969c05d0a3da7b81267eee114110551
 O
 .idea/artifacts/Sem2App_jar.xml,9\a\9a36f05a7cc7eec42026caea684078f299f65b24
-d
-4src/main/java/app/controller/ValidateController.java,3\2\32f190901a7c22374cc6f7578861b4be50adef67
 \
 ,src/main/java/app/domain/model/TestType.java,2\4\2423c136bbc016d77dbe900fd13fca08fa27b56a
 \
 ,src/test/java/app/domain/model/TestTest.java,2\c\2cf03933548261c5794447fc0379d09dc74bc37a
-_
-/src/main/java/app/domain/model/ImportTests.java,2\b\2ba2b8de80823c9a585b6b27c3508a2da0c756d3
 b
 2src/main/java/app/domain/model/SendReportTask.java,8\5\85686568e666822bea9d6d3cc3520c4db4a26869
 X
@@ -247,20 +185,19 @@ a
 Rsrc/main/java/app/domain/shared/exceptions/InvalidIntervalOfDatesEndException.java,1\7\176a2717604b8c1f243d24bb6800531d07cf8c5b
 Ñ
 Tsrc/main/java/app/domain/shared/exceptions/InvalidIntervalOfDatesStartException.java,9\2\92a32d9f0338b18480c7b2ffa07f509d0f90fa47
-^
-.src/main/java/app/domain/shared/Serialize.java,3\f\3fe7ffce209e4112cfdc3ef138eaedb338af6089
 g
 7src/main/java/app/domain/model/TestParameterResult.java,8\9\89c14902f91af9f5afc1e3afe73a166ab424f39c
-U
-%src/main/java/app/controller/App.java,4\7\47cfbdc47faac4c1edcb93d1b6968a5d5bdad509
 _
 /src/main/java/app/domain/shared/LinearTest.java,b\1\b1ef7502dac291a5892519a19022cfcae28f35aa
-^
-.src/main/java/app/domain/stores/TestStore.java,9\d\9d7c93dfb2abbc9f3e33ac38ae37e345fc6eea94
 Y
 )src/main/java/app/domain/model/Email.java,e\5\e5b9d6aa410958c18970d8f4c9e19a4c38e62e32
+<<<<<<< HEAD
 e
 5src/main/java/app/domain/shared/LinearRegression.java,b\5\b5738a1e3a1c85790cbe245760fdbfe6e77be206
+=======
+j
+:src/main/java/app/domain/shared/MultiLinearRegression.java,5\1\51ac4d2fa961af5b859a17a30045d1b297b297c4
+>>>>>>> 60e02204ab3807e56077574d25f724959bb4b2c4
 w
 Gsrc/main/java/app/ui/gui/employees/ClinicalChemistryTechnologistUI.java,c\8\c8e646c2340560f4592e6b0180982db37dc61399
 i
@@ -281,8 +218,6 @@ e
 5src/main/java/app/ui/gui/adminMenuUIs/EmployeeUI.java,b\8\b82d595fe288cd991b66e8607554fce866cbd2fa
 w
 Gsrc/main/java/app/ui/gui/adminMenuUIs/ClinicalAnalysisLaboratoryUI.java,3\3\333e57aa1e107615bb48acfb7c7c07906d34dfd5
-n
->src/main/java/app/ui/gui/clichetecMenuUIs/RecordResultsUI.java,6\6\66a7af29ac6138935d300ad18d05e37d77610446
 h
 8src/main/java/app/ui/gui/controllers/MainController.java,2\9\292a2c3b98bc8a8029e036d845686e6bd82b7279
 k
@@ -291,5 +226,12 @@ T
 $src/main/java/app/ui/gui/Alerts.java,a\2\a2c5c826a3655d1cf1512f81124558ddd6665219
 X
 (src/main/java/app/ui/gui/MainScreen.java,b\5\b59adf73fdf4b7ccc7be755addc8e97dd1524983
+<<<<<<< HEAD
 }
 Msrc/main/java/app/ui/gui/clichetecMenuUIs/ConsultClientTestsAndResultsUI.java,7\1\7147b5694f147c53f140ea5472f6f543c3ac978e
+=======
+[
++src/main/java/app/domain/model/Company.java,e\6\e66f0f8e51b44df23f2004467961976fbec241aa
+g
+7src/main/java/app/ui/gui/employees/AdministratorUI.java,1\9\19e8d234ed70d2ee98189bee48aecf519f1826fa
+>>>>>>> 60e02204ab3807e56077574d25f724959bb4b2c4

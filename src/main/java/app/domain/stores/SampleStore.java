@@ -21,7 +21,7 @@ import java.util.Properties;
 public class SampleStore implements Serializable {
 
     private Sample sample;
-    private List<Sample> testSamples;
+    private final List<Sample> testSamples;
     private BarcodeAdapter em;
 
     /**
@@ -57,11 +57,7 @@ public class SampleStore implements Serializable {
         this.em = (BarcodeAdapter) oClass.newInstance();
         this.sample = new Sample(testID, em.createBarcode(createSampleID()));
 
-        if (this.sample == null) {
-            return false;
-        } else {
-            return true;
-        }
+        return this.sample != null;
     }
 
     /**
@@ -121,10 +117,10 @@ public class SampleStore implements Serializable {
      * @return a string (a number) that represents the code of the sample
      */
     public String createSampleID() {
-        int ID = testSamples.size() + 1;
-        String SampleID = String.valueOf(ID);
+        int id = testSamples.size() + 1;
+        String sampleID = String.valueOf(id);
         String empty;
-        empty = "" + SampleID;
+        empty = "" + sampleID;
         while (empty.length() < 11) {
             empty = "0" + empty;
         }

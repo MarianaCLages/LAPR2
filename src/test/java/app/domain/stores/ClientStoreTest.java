@@ -33,7 +33,7 @@ public class ClientStoreTest {
         String strDate = "25-06-1950";
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         Date date = df.parse(strDate);
-        store.CreateClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
+        store.createClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
         Assert.assertNotNull(store.getClient());
     }
 
@@ -43,7 +43,7 @@ public class ClientStoreTest {
         String strDate = "25-06-1950";
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         Date date = df.parse(strDate);
-        store.CreateClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'u', "email@gamil.com", "Zé");
+        store.createClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'u', "email@gamil.com", "Zé");
         Assert.assertNotNull(store.getClient());
     }
 
@@ -53,7 +53,7 @@ public class ClientStoreTest {
         String strDate = "25-06-1950";
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         Date date = df.parse(strDate);
-        store.CreateClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
+        store.createClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
 
         Assert.assertTrue(store.validateClient(store.getClient()));
     }
@@ -64,7 +64,7 @@ public class ClientStoreTest {
         String strDate = "25-06-1950";
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         Date date = df.parse(strDate);
-        store.CreateClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
+        store.createClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
         store.saveClient();
         Assert.assertFalse(store.validateClient(store.getClient()));
     }
@@ -75,9 +75,9 @@ public class ClientStoreTest {
         String strDate = "25-06-1950";
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         Date date = df.parse(strDate);
-        store.CreateClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
+        store.createClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
         store.saveClient();
-        store.CreateClient("12385678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
+        store.createClient("12385678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
 
 
         Assert.assertFalse(store.validateClient(store.getClient()));
@@ -89,9 +89,9 @@ public class ClientStoreTest {
         String strDate = "25-06-1950";
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         Date date = df.parse(strDate);
-        store.CreateClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
+        store.createClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
         store.saveClient();
-        store.CreateClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "emil@gamil.com", "Zé");
+        store.createClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "emil@gamil.com", "Zé");
         Assert.assertFalse(store.validateClient(store.getClient()));
     }
 
@@ -101,9 +101,9 @@ public class ClientStoreTest {
         String strDate = "25-06-1950";
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         Date date = df.parse(strDate);
-        store.CreateClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
+        store.createClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
         store.saveClient();
-        store.CreateClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "emil@gamil.com", "Zé");
+        store.createClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "emil@gamil.com", "Zé");
 
         Assert.assertFalse(store.saveClient());
     }
@@ -114,7 +114,7 @@ public class ClientStoreTest {
         String strDate = "25-06-1950";
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         Date date = df.parse(strDate);
-        store.CreateClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
+        store.createClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
 
         Assert.assertTrue(store.saveClient());
     }
@@ -125,7 +125,7 @@ public class ClientStoreTest {
         String strDate = "25-06-1950";
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         Date date = df.parse(strDate);
-        store.CreateClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
+        store.createClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
         store.saveClient();
 
         Assert.assertTrue(store.exists("1234567891"));
@@ -138,7 +138,7 @@ public class ClientStoreTest {
         String strDate = "25-06-1950";
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         Date date = df.parse(strDate);
-        store.CreateClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
+        store.createClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
         store.saveClient();
 
         Assert.assertFalse(store.exists("1234567791"));
@@ -151,7 +151,7 @@ public class ClientStoreTest {
         String strDate = "25-06-1950";
         SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
         Date date = df.parse(strDate);
-        store.CreateClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
+        store.createClient("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "email@gamil.com", "Zé");
         Assert.assertFalse(store.exists("1234567791"));
 
     }

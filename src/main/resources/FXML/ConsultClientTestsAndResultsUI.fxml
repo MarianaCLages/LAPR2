@@ -21,7 +21,7 @@
             <Cursor fx:constant="HAND" />
          </cursor></Button>
       <Label layoutX="47.0" layoutY="23.0" text="Select a client:" />
-      <Label fx:id="lblClientTin" alignment="CENTER" layoutX="40.0" layoutY="176.0" prefHeight="18.0" prefWidth="104.0" textAlignment="RIGHT" />
+      <Label fx:id="lblClientTin" alignment="CENTER" layoutX="40.0" layoutY="176.0" prefHeight="18.0" prefWidth="104.0" textAlignment="RIGHT" visible="false" />
       <Label layoutX="369.0" layoutY="23.0" text="Client's tests:" />
       <TextArea fx:id="txtTestResults" editable="false" layoutX="120.0" layoutY="207.0" prefHeight="165.0" prefWidth="446.0" />
    </children>

@@ -24,10 +24,4 @@ public class RecordResultsUI {
         app.doLogout();
         sceneController.switchMenu(event, Constants.CLINICAL_CHEMISTRY_TECHNOLOGIST_UI);
     }
-
-    public void btnEnterAction(ActionEvent event) {
-        String sampleID;
-
-        sampleID = sampleIDtxt.getText();
-    }
 }

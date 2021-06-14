@@ -11,9 +11,8 @@ import app.domain.stores.TestTypeStore;
  */
 public class TestTypeController {
 
-    private Company company;
-    private TestTypeStore store;
-    private ParameterCategoryStore cat;
+    private final Company company;
+    private final TestTypeStore store;
 
     /**
      * Constructor of the class, gets an instance of the company class
@@ -42,7 +41,7 @@ public class TestTypeController {
      */
     public void createTestType(String testID, String description, String collectingMethod, ParameterCategoryStore cat) {
 
-        store.CreateTestType(testID, description, collectingMethod, cat);
+        store.createTestType(testID, description, collectingMethod, cat);
     }
 
     /**
