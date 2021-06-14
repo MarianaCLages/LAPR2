@@ -1,5 +1,8 @@
 package app.domain.shared;
 
+import org.apache.commons.math3.distribution.TDistribution;
+
+
 public class MultiLinearRegression {
     private double intercept;
     private double slope1;
@@ -14,9 +17,15 @@ public class MultiLinearRegression {
     private double SQe;
     private double MQr;
     private double MQe;
+    private double alpha;
+    private double[][] x;
+    private double[] y;
+
+    private int n;
+    private int k;
 
 
-    public MultiLinearRegression(double[][] x, double[] y) {
+    public MultiLinearRegression(double[][] x, double[] y, double alfa) {
 
         if (x.length != y.length) {
             throw new IllegalArgumentException("array lengths are not equal");
@@ -30,17 +39,19 @@ public class MultiLinearRegression {
             }
         }
 
-        int k =2;
+        this.k = 2;
+        this.n = y.length;
+        this.alpha = alfa;
+        this.x = m1;
+        this.y = y;
 
-        int n = y.length;
+        double[][] xt = transpose(this.x);
 
-        double[][] xt = transpose(m1);
-
-        double[][] xtx = matrixProduct(xt, m1);
+        double[][] xtx = matrixProduct(xt, this.x);
 
         double[][] xtxinv = inverse(xtx);
 
-        double[][] xtxinvxt = matrixProduct(xtxinv, transpose(m1));
+        double[][] xtxinvxt = matrixProduct(xtxinv, transpose(this.x));
 
         this.betta = new double[xtxinvxt.length];
 
@@ -60,7 +71,7 @@ public class MultiLinearRegression {
 
         this.SQt = calculateSQT(y);
         System.out.println("SQt: " + SQt);
-        this.SQr = calculateSQR(y, betta, m1);
+        this.SQr = calculateSQR(y, betta, this.x);
         System.out.println("SQr: " + SQr);
         this.SQe = calculateSQE(this.SQt, this.SQr);
         System.out.println("SQe: " + SQe);
@@ -72,13 +83,14 @@ public class MultiLinearRegression {
         this.r2Ajusted = calculateR2Adjusted(this.r2, n, k);
         System.out.println("r2 adjusted = " + r2Ajusted);
 
-        this.MQr = SQr/k;
+        this.MQr = SQr / k;
 
-        this.MQe =SQe/(n-(k+1));
+        this.MQe = SQe / (n - (k + 1));
+        System.out.println(lowerLimitCoeficient(2));
+
+        System.out.println(upperLimitCoeficient(2));
 
     }
-
-
 
     public static void main(String[] args) {
 
@@ -96,7 +108,8 @@ public class MultiLinearRegression {
 
         };
         double[] matrixb = {4, 4.5, 5, 6.5, 7, 7.8, 7.5, 8, 8, 8.5};
-        MultiLinearRegression s = new MultiLinearRegression(matrix1, matrixb);
+        MultiLinearRegression s = new MultiLinearRegression(matrix1, matrixb, 0.25);
+
 
     }
 
@@ -116,7 +129,6 @@ public class MultiLinearRegression {
         }
         return product;
     }
-
 
     public static double[][] matrixProduct(double[][] matrixA, double[][] matrixB) {
 
@@ -191,6 +203,29 @@ public class MultiLinearRegression {
                 if (j != column)
                     minor[i < row ? i : i - 1][j < column ? j : j - 1] = matrix[i][j];
         return minor;
+    }
+
+    public double lowerLimitCoeficient(int index) {
+        double[][] C = inverse(matrixProduct(transpose(this.x), this.x));
+        TDistribution td = new TDistribution(this.n - this.k - 1);
+
+        double critTD = td.inverseCumulativeProbability(1-this.alpha);
+
+        double variance = this.MQe;
+
+        return this.betta[index]-critTD*Math.sqrt(variance*C[index][index]);
+
+    }
+    public double upperLimitCoeficient(int index) {
+        double[][] C = inverse(matrixProduct(transpose(this.x), this.x));
+        TDistribution td = new TDistribution(this.n - this.k - 1);
+
+        double critTD = td.inverseCumulativeProbability(1-this.alpha);
+
+        double variance = this.MQe;
+
+        return this.betta[index]+critTD*Math.sqrt(variance*C[index][index]);
+
     }
 
     private double calculateSQR(double[] y, double[] betta, double[][] x) {
