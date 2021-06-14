@@ -175,6 +175,18 @@ w
 Gsrc/main/java/app/domain/shared/exceptions/ChoiceBoxEmptyException.java,d\a\da5859ee0fbb622f76a8e66651f4ffb20658ca75
 f
 6src/main/java/app/controller/CreateTestController.java,f\5\f54f6fb19e03f0fa13b00dc9c6f082f28f52680c
+w
+Gsrc/main/java/app/ui/gui/adminMenuUIs/ClinicalAnalysisLaboratoryUI.java,3\3\333e57aa1e107615bb48acfb7c7c07906d34dfd5
+e
+5src/main/java/app/ui/gui/adminMenuUIs/EmployeeUI.java,b\8\b82d595fe288cd991b66e8607554fce866cbd2fa
+n
+>src/main/java/app/ui/gui/adminMenuUIs/ParameterCategoryUI.java,1\e\1e5d21f80f2e4dd656896587bdfec170a82be5ec
+f
+6src/main/java/app/ui/gui/adminMenuUIs/ParameterUI.java,0\7\07ef9b592d55fa35fdb89591fc80faa9ddd29eed
+e
+5src/main/java/app/ui/gui/adminMenuUIs/TestTypeUI.java,5\c\5c0c5691db10f9a7cdcbeb8acdff8d16a98cffa9
+^
+.src/main/java/app/domain/shared/Constants.java,f\e\fecb2f10414ac5d80f9e492ba88044c5911e8e84
 X
 (src/main/java/app/ui/console/AuthUI.java,a\c\ac569ed985938d514a4808da16cd4fbc88fa6036
 `
@@ -211,6 +223,10 @@ b
 ,src/main/java/app/ui/console/MainMenuUI.java,0\0\00b6c6e5c167fbd22e7d83c003815158143e9f8b
 ~
 Nsrc/main/java/app/domain/shared/exceptions/HistoricalDaysInvalidException.java,8\e\8eaf29dbeb09447c67d417855cc050c1cc5f4bdd
+w
+Gsrc/main/java/app/ui/gui/employees/ClinicalChemistryTechnologistUI.java,c\8\c8e646c2340560f4592e6b0180982db37dc61399
+h
+8src/main/java/app/ui/gui/controllers/MainController.java,2\9\292a2c3b98bc8a8029e036d845686e6bd82b7279
 R
 "ClientInformation/notification.txt,2\5\25136f2e3d2b7a57c3a84d096aae3c7b7ac0e721
 ]
@@ -221,8 +237,6 @@ N
 src/main/java/app/ui/Main.java,7\7\774d0aff326a0164e53c11cda4e3afaaa607428f
 l
 <src/main/java/app/controller/RegisterEmployeeController.java,a\7\a7a46266d73376633f802e31465ba57f12cf1fca
-S
-#docs/SprintD/US19/SD_runTask().puml,6\2\62d9b6e9f773098752ee05be093f14fc3c4dae02
 N
 docs/SprintD/US19/US19_SD.puml,4\6\46f0aa57703298515d752a55b01a860d6bbdd421
 O
@@ -231,14 +245,14 @@ O
 .idea/artifacts/Sem2App_jar.xml,9\a\9a36f05a7cc7eec42026caea684078f299f65b24
 d
 4src/main/java/app/controller/ValidateController.java,3\2\32f190901a7c22374cc6f7578861b4be50adef67
+X
+(src/main/java/app/ui/gui/MainScreen.java,b\5\b59adf73fdf4b7ccc7be755addc8e97dd1524983
 \
 ,src/main/java/app/domain/model/TestType.java,2\4\2423c136bbc016d77dbe900fd13fca08fa27b56a
 \
 ,src/test/java/app/domain/model/TestTest.java,2\c\2cf03933548261c5794447fc0379d09dc74bc37a
 _
 /src/main/java/app/domain/model/ImportTests.java,2\b\2ba2b8de80823c9a585b6b27c3508a2da0c756d3
-b
-2src/main/java/app/domain/model/SendReportTask.java,8\5\85686568e666822bea9d6d3cc3520c4db4a26869
 X
 (src/main/java/app/domain/model/Test.java,0\3\0346ca7efc8246aba1bce2abd18994f1118a0b11
 a
@@ -251,3 +265,7 @@ Tsrc/main/java/app/domain/shared/exceptions/InvalidIntervalOfDatesStartException
 .src/main/java/app/domain/shared/Serialize.java,3\f\3fe7ffce209e4112cfdc3ef138eaedb338af6089
 g
 7src/main/java/app/domain/model/TestParameterResult.java,8\9\89c14902f91af9f5afc1e3afe73a166ab424f39c
+b
+2src/test/java/app/domain/stores/TestStoreTest.java,6\8\6880c3102dbeabe7f1611d6490822c3a78335ec6
+^
+.src/main/java/app/domain/stores/TestStore.java,9\d\9d7c93dfb2abbc9f3e33ac38ae37e345fc6eea94

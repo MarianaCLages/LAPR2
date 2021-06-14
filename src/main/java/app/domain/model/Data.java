@@ -2,6 +2,7 @@ package app.domain.model;
 
 import app.domain.shared.exceptions.*;
 import org.apache.commons.lang3.StringUtils;
+
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -29,19 +30,9 @@ public class Data {
         this.date = 0;
         this.confidenceLevelIC = null;
         this.significanceLevel = null;
-        this.intervalStartDate=null;
-        this.intervalEndDate=null;
+        this.intervalStartDate = null;
+        this.intervalEndDate = null;
 
-    }
-
-    public void setConfidenceLevelIC(String confidenceLevelIC) throws ConfidenceLevelInvalidException, ConfidenceLevelICEmptyException {
-        checkConfidenceLevelIC(confidenceLevelIC);
-        this.confidenceLevelIC = confidenceLevelIC;
-    }
-
-    public void setHistoricalDays(String historicalDays) throws HistoricalDaysEmptyException, HistoricalDaysInvalidException {
-        checkHistoricaldays(historicalDays);
-        this.historicalDays = historicalDays;
     }
 
     public void setIntervalDates(int date) throws DateEmptyException, DateInvalidException {
@@ -49,9 +40,9 @@ public class Data {
         this.date = date;
     }
 
-    public void setDates(LocalDate start , LocalDate end){
-        this.intervalStartDate=start;
-        this.intervalEndDate=end;
+    public void setDates(LocalDate start, LocalDate end) {
+        this.intervalStartDate = start;
+        this.intervalEndDate = end;
     }
 
     private void checkConfidenceLevelIC(String confidenceLevelIC) throws ConfidenceLevelInvalidException, ConfidenceLevelICEmptyException {
@@ -94,7 +85,7 @@ public class Data {
 
     }
 
-   public int getHistoricalDaysInt() {
+    public int getHistoricalDaysInt() {
         return Integer.parseInt(historicalDays);
     }
 
@@ -102,8 +93,18 @@ public class Data {
         return confidenceLevelIC;
     }
 
+    public void setConfidenceLevelIC(String confidenceLevelIC) throws ConfidenceLevelInvalidException, ConfidenceLevelICEmptyException {
+        checkConfidenceLevelIC(confidenceLevelIC);
+        this.confidenceLevelIC = confidenceLevelIC;
+    }
+
     public String getHistoricalDays() {
         return historicalDays;
+    }
+
+    public void setHistoricalDays(String historicalDays) throws HistoricalDaysEmptyException, HistoricalDaysInvalidException {
+        checkHistoricaldays(historicalDays);
+        this.historicalDays = historicalDays;
     }
 
     public LocalDate getIntervalEndDate() {
@@ -114,9 +115,9 @@ public class Data {
         return intervalStartDate;
     }
 
-    public int getDifferenceInDates(){
+    public int getDifferenceInDates() {
 
-        return Period.between(this.intervalStartDate,this.intervalEndDate).getDays();
+        return Period.between(this.intervalStartDate, this.intervalEndDate).getDays();
 
     }
 

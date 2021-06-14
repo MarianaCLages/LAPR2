@@ -1,7 +1,10 @@
 package app.ui.gui.adminMenuUIs;
 
 import app.controller.App;
-import app.domain.model.*;
+import app.domain.model.Client;
+import app.domain.model.Company;
+import app.domain.model.Test;
+import app.domain.model.TestParameter;
 import app.domain.shared.Constants;
 import app.domain.shared.LinearRegression;
 import app.domain.shared.exceptions.ChoiceBoxEmptyException;
