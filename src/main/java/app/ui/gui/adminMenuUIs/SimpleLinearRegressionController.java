@@ -455,62 +455,71 @@ public class SimpleLinearRegressionController implements Initializable {
 
     private StringBuilder getCovidTestsIntoTheNHSReport(boolean day, boolean week, StringBuilder sb) {
 
-        int dayTests = 0;
-
         if (!week) {
-            sb.append("\n");
-            sb.append("Today covid tests :");
-            sb.append("\n");
-            sb.append(todayDateForCovidReport);
-            sb.append(" : ");
-            for (Test t : getPositiveCovidTest(company.getTestList().getValidatedTestsList())) {
-                LocalDate tDate = t.getDate().toLocalDate();
-
-                if (tDate.equals(todayDateForCovidReport)) {
-                    dayTests++;
-                }
-
-            }
-
-            sb.append(dayTests);
-
+            printTheCovidTestsIntoTheNHSReportDay(sb);
         } else if (!day) {
-
-            int interval = Period.between(getCurrentDayInsideAWeekInterval(), todayDateForCovidReport).getDays();
-            int[] covidTestsIntoArray = new int[interval + 1];
-
-            sb.append("\n");
-            sb.append("Week report:");
-            sb.append("\n");
-
-            for (int i = 0; i < interval; i++) {
-
-                int interW = 7 - i - 1;
-
-                Calendar cal2 = Calendar.getInstance();
-                cal2.add(Calendar.DATE, -interW);
-                Date toDate2 = cal2.getTime();
-
-                LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //Date de começo do intervalo (dia de hj - historical days)
-
-                for (Test t : getPositiveCovidTest(company.getTestList().getValidatedTestsList())) {
-                    LocalDate tDate = t.getDate().toLocalDate();
-                    if (tDate.equals(currentDay)) {
-                        covidTestsIntoArray[i] += 1;
-                    }
-                }
-
-                sb.append(currentDay);
-                sb.append(" : ");
-                sb.append(covidTestsIntoArray[i]);
-                sb.append(" positive covid tests");
-                sb.append("\n");
-
-            }
+            printTheCovidTestsIntoTheNHSReportWeek(sb);
+        } else if (day && week) {
+            printTheCovidTestsIntoTheNHSReportDay(sb);
+            printTheCovidTestsIntoTheNHSReportWeek(sb);
         }
 
         return sb;
-
     }
 
+    private StringBuilder printTheCovidTestsIntoTheNHSReportDay(StringBuilder sb) {
+        int dayTests = 0;
+        sb.append("\n");
+        sb.append("Today covid tests :");
+        sb.append("\n\n");
+        sb.append(todayDateForCovidReport);
+        sb.append(" : ");
+        for (Test t : getPositiveCovidTest(company.getTestList().getValidatedTestsList())) {
+            LocalDate tDate = t.getDate().toLocalDate();
+
+            if (tDate.equals(todayDateForCovidReport)) {
+                dayTests++;
+            }
+
+        }
+
+        sb.append(dayTests);
+        sb.append(" positive covid tests");
+        return sb;
+    }
+
+    private StringBuilder printTheCovidTestsIntoTheNHSReportWeek(StringBuilder sb) {
+        int interval = Period.between(getCurrentDayInsideAWeekInterval(), todayDateForCovidReport).getDays();
+        int[] covidTestsIntoArray = new int[interval + 1];
+
+        sb.append("\n");
+        sb.append("Week report:");
+        sb.append("\n");
+
+        for (int i = 0; i < interval; i++) {
+
+            int interW = 7 - i - 1;
+
+            Calendar cal2 = Calendar.getInstance();
+            cal2.add(Calendar.DATE, -interW);
+            Date toDate2 = cal2.getTime();
+
+            LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //Date de começo do intervalo (dia de hj - historical days)
+
+            for (Test t : getPositiveCovidTest(company.getTestList().getValidatedTestsList())) {
+                LocalDate tDate = t.getDate().toLocalDate();
+                if (tDate.equals(currentDay)) {
+                    covidTestsIntoArray[i] += 1;
+                }
+            }
+
+            sb.append(currentDay);
+            sb.append(" : ");
+            sb.append(covidTestsIntoArray[i]);
+            sb.append(" positive covid tests");
+            sb.append("\n");
+
+        }
+        return sb;
+    }
 }
