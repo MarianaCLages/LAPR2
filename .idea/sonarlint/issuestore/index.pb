@@ -261,14 +261,10 @@ Y
 )src/main/java/app/domain/model/Email.java,e\5\e5b9d6aa410958c18970d8f4c9e19a4c38e62e32
 j
 :src/main/java/app/domain/shared/MultiLinearRegression.java,5\1\51ac4d2fa961af5b859a17a30045d1b297b297c4
-[
-+src/main/java/app/domain/model/Company.java,e\6\e66f0f8e51b44df23f2004467961976fbec241aa
 e
 5src/main/java/app/domain/shared/LinearRegression.java,b\5\b5738a1e3a1c85790cbe245760fdbfe6e77be206
 w
 Gsrc/main/java/app/ui/gui/employees/ClinicalChemistryTechnologistUI.java,c\8\c8e646c2340560f4592e6b0180982db37dc61399
-g
-7src/main/java/app/ui/gui/employees/AdministratorUI.java,1\9\19e8d234ed70d2ee98189bee48aecf519f1826fa
 i
 9src/main/java/app/ui/gui/controllers/LoginController.java,1\e\1e8d2e1e4388d0af8c4dd82600df5820f95913d4
 o

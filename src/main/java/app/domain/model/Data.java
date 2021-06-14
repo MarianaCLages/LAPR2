@@ -13,6 +13,8 @@ public class Data {
     private String significanceLevel;
     private LocalDate intervalStartDate;
     private LocalDate intervalEndDate;
+    private boolean dayReport;
+    private boolean weekReport;
 
     public Data(String historicalDays, int date, int confidenceLevelIC, String significanceLevel) {
 
@@ -31,6 +33,8 @@ public class Data {
         this.significanceLevel = null;
         this.intervalStartDate=null;
         this.intervalEndDate=null;
+        this.dayReport=false;
+        this.weekReport=false;
 
     }
 
@@ -112,6 +116,22 @@ public class Data {
 
         return Period.between(this.intervalStartDate,this.intervalEndDate).getDays();
 
+    }
+
+    public void setWeekReport(boolean weekReport) {
+        this.weekReport = weekReport;
+    }
+
+    public void setDayReport(boolean dayReport) {
+        this.dayReport = dayReport;
+    }
+
+    public boolean getDayReportValue(){
+        return this.dayReport;
+    }
+
+    public boolean getWeekReportValue(){
+        return this.weekReport;
     }
 
 }
