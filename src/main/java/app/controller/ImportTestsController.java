@@ -1,11 +1,7 @@
 package app.controller;
 
-import app.domain.model.Client;
 import app.domain.model.Company;
 import app.domain.model.ImportTests;
-import app.domain.model.Test;
-import app.domain.stores.ClientStore;
-import app.domain.stores.TestStore;
 
 import java.io.IOException;
 

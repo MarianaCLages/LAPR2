@@ -12,14 +12,14 @@ import java.util.List;
  * Class that represents an List of all the Category of Parameters in the system
  */
 public class EmployeeStore implements Serializable {
-    private List<Employee> array;
+    private final List<Employee> array;
     private Employee em;
 
     /**
      * Constructor of the class it creates an empty list to be filled with objects of Employee
      */
     public EmployeeStore() {
-        this.array = new ArrayList<Employee>();
+        this.array = new ArrayList<>();
     }
 
 
@@ -28,21 +28,21 @@ public class EmployeeStore implements Serializable {
      *
      * @param name              name of the Employee
      * @param address           address of the Employee
-     * @param phonenumber       Phone number of the Employee
+     * @param phoneNumber       Phone number of the Employee
      * @param email             email of the Employee
-     * @param SOC               standard occupation code of the Employee
-     * @param DoctorIndexNumber Doctor Index Number of the Specialist Doctor
+     * @param soc               standard occupation code of the Employee
+     * @param doctorIndexNumber Doctor Index Number of the Specialist Doctor
      * @param role              integer that indicates the role of the employee
      * @return Employee instance created
      */
-    public Employee CreateEmployee(String name, String address, String phonenumber, String email, String SOC, String DoctorIndexNumber, int role) {
+    public Employee createEmployee(String name, String address, String phoneNumber, String email, String soc, String doctorIndexNumber, int role) {
 
         RoleStore roles = new RoleStore();
 
         if (role == 5) {
-            this.em = new SpecialistDoctor(CreateEmployeeID(name), name, address, phonenumber, email, SOC, DoctorIndexNumber, roles.get(role));
+            this.em = new SpecialistDoctor(createEmployeeID(name), name, address, phoneNumber, email, soc, doctorIndexNumber, roles.get(role));
         } else {
-            this.em = new Employee(CreateEmployeeID(name), name, address, phonenumber, email, SOC, roles.get(role));
+            this.em = new Employee(createEmployeeID(name), name, address, phoneNumber, email, soc, roles.get(role));
         }
         return this.em;
     }
@@ -53,25 +53,23 @@ public class EmployeeStore implements Serializable {
      * @param name Name of the Employee
      * @return The EmployeeID
      */
-    private String CreateEmployeeID(String name) {
+    private String createEmployeeID(String name) {
 
-        int ID = array.size() + 1;
-        String EmployeeNumberID = String.valueOf(ID);
-        String EmployeeNameID = "";
-        String empty;
+        int id = array.size() + 1;
+        StringBuilder employeeNameID = new StringBuilder();
+        StringBuilder empty;
 
         for (int i = 0; i < name.length(); i++) {
             if (Character.isUpperCase(name.charAt(i))) {
-                EmployeeNameID += name.charAt(i);
+                employeeNameID.append(name.charAt(i));
             }
         }
-        empty = "" + ID;
+        empty = new StringBuilder("" + id);
         while (empty.length() < 5) {
-            empty = "0" + empty;
+            empty.insert(0, "0");
         }
-        String EmployeeID = EmployeeNameID + empty;
 
-        return EmployeeID;
+        return employeeNameID + empty.toString();
     }
 
     /**
@@ -80,7 +78,7 @@ public class EmployeeStore implements Serializable {
      * @param em instance of Employee
      * @return boolean value that is true if the object is not null and don't already exists in the ArrayList
      */
-    public boolean ValidateEmployee(Employee em) {
+    public boolean validateEmployee(Employee em) {
         return em != null && !contains(em) && !exists(em);
     }
 
@@ -98,11 +96,7 @@ public class EmployeeStore implements Serializable {
      * @return boolean value that is true if the object already exists in the ArrayList
      */
     public boolean contains(Employee em) {
-        if (this.array.contains(em)) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.array.contains(em);
     }
 
     /**
@@ -111,7 +105,7 @@ public class EmployeeStore implements Serializable {
      * @return a boolean value that indicates the success of the operation
      */
     public boolean saveEmployee() {
-        if (ValidateEmployee(this.em)) {
+        if (validateEmployee(this.em)) {
             array.add(this.em);
             return true;
         } else {

@@ -16,7 +16,7 @@ public class EmployeeStoreTest {
         Employee employeeID1 = new Employee("B00001", "Bino", "casa", "91111111111", "something@isep.pt", "111111111111111111", role);
 
         //Assert
-        Assert.assertTrue(store.ValidateEmployee(employeeID1));
+        Assert.assertTrue(store.validateEmployee(employeeID1));
     }
 
     @Test
@@ -28,7 +28,7 @@ public class EmployeeStoreTest {
         //Act
         store.add(em1);
         //Assert
-        Assert.assertFalse(store.ValidateEmployee(em1));
+        Assert.assertFalse(store.validateEmployee(em1));
     }
 
     @Test
@@ -40,7 +40,7 @@ public class EmployeeStoreTest {
         //Act
         store.add(em1);
         //Assert
-        Assert.assertFalse(store.ValidateEmployee(em1));
+        Assert.assertFalse(store.validateEmployee(em1));
     }
 
     @Test
@@ -49,7 +49,7 @@ public class EmployeeStoreTest {
         EmployeeStore store = new EmployeeStore();
         Employee em1 = null;
         //Assert
-        Assert.assertFalse(store.ValidateEmployee(em1));
+        Assert.assertFalse(store.validateEmployee(em1));
     }
 
     @Test
@@ -99,7 +99,7 @@ public class EmployeeStoreTest {
         //Arrange + Act
         String expected = "Employee: ID=B00001, name=Bino, address=AtuaTerra, phonenumber=91234567811, email=something@isep.com, soc=111111111111111111, Role=Medical Lab Technician";
         EmployeeStore store = new EmployeeStore();
-        store.CreateEmployee("Bino", "AtuaTerra", "91234567811", "something@isep.com", "111111111111111111", "", 1);
+        store.createEmployee("Bino", "AtuaTerra", "91234567811", "something@isep.com", "111111111111111111", "", 1);
 
         Employee employee = new Employee("B00001", "Bino", "AtuaTerra", "91234567811", "something@isep.com", "111111111111111111", role);
         String actual = store.getEm().toString();
@@ -112,14 +112,14 @@ public class EmployeeStoreTest {
     public void createValidEmployee() {
         EmployeeStore store = new EmployeeStore();
 
-        Assert.assertNotNull(store.CreateEmployee("Bino", "casa", "91111111111", "something@isep.pt", "111111111111111111", "1111111111111", 1));
+        Assert.assertNotNull(store.createEmployee("Bino", "casa", "91111111111", "something@isep.pt", "111111111111111111", "1111111111111", 1));
 
     }
 
     @Test
     public void getEmValid() {
         EmployeeStore store = new EmployeeStore();
-        Employee em1 = store.CreateEmployee("Bino", "casa", "91111111111", "something@isep.pt", "111111111111111111", "1111111111111", 1);
+        Employee em1 = store.createEmployee("Bino", "casa", "91111111111", "something@isep.pt", "111111111111111111", "1111111111111", 1);
         Employee expected = em1;
         Employee actual = store.getEm();
 
@@ -158,7 +158,7 @@ public class EmployeeStoreTest {
     public void saveEmployeeValid() {
         //Arrange
         EmployeeStore store = new EmployeeStore();
-        Employee em = store.CreateEmployee("Bino", "casa", "91111111111", "something@isep.pt", "111111111111111111", "11111111111111", 1);
+        Employee em = store.createEmployee("Bino", "casa", "91111111111", "something@isep.pt", "111111111111111111", "11111111111111", 1);
 
         //Assert
         Assert.assertTrue(store.saveEmployee());
@@ -169,9 +169,9 @@ public class EmployeeStoreTest {
     public void saveEmployeeInvalid() {
         //Arrange
         EmployeeStore store = new EmployeeStore();
-        Employee em = store.CreateEmployee("Bino", "casa", "91111111111", "something@isep.pt", "111111111111111111", "11111111111111", 1);
+        Employee em = store.createEmployee("Bino", "casa", "91111111111", "something@isep.pt", "111111111111111111", "11111111111111", 1);
         store.add(em);
-        Employee em1 = store.CreateEmployee("Bina", "casa", "91111111112", "something@marcin.pl", "11111111111111112", "11111111111112", 2);
+        Employee em1 = store.createEmployee("Bina", "casa", "91111111112", "something@marcin.pl", "11111111111111112", "11111111111112", 2);
         store.add(em1);
         //Assert
         Assert.assertFalse(store.saveEmployee());
@@ -181,8 +181,8 @@ public class EmployeeStoreTest {
     @Test
     public void toStringTest() {
         EmployeeStore store = new EmployeeStore();
-        Employee em1 = store.CreateEmployee("Bino", "casa", "91111111111", "something@isep.pt", "111111111111111111", "11111111111111", 1);
-        Employee em2 = store.CreateEmployee("Bina", "casa", "91111111112", "something@marcin.pl", "11111111111111112", "11111111111112", 2);
+        Employee em1 = store.createEmployee("Bino", "casa", "91111111111", "something@isep.pt", "111111111111111111", "11111111111111", 1);
+        Employee em2 = store.createEmployee("Bina", "casa", "91111111112", "something@marcin.pl", "11111111111111112", "11111111111112", 2);
 
         store.add(em1);
         store.add(em2);

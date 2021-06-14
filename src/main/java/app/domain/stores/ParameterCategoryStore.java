@@ -1,10 +1,6 @@
 package app.domain.stores;
 
-import app.domain.model.ClinicalAnalysisLab;
-import app.domain.model.Parameter;
 import app.domain.model.ParameterCategory;
-import app.domain.model.TestType;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +10,7 @@ import java.util.List;
  * Class that represents an List of all the Category of Parameters in the system
  */
 public class ParameterCategoryStore implements Serializable {
-    List<ParameterCategory> array;
+    private final List<ParameterCategory> array;
     private ParameterCategory pc;
 
     /**
@@ -31,31 +27,28 @@ public class ParameterCategoryStore implements Serializable {
      * @param name short name that characterize the Parameter Category
      * @return Parameter Category object created
      */
-    public ParameterCategory CreateParameterCategory(String code, String name) {
+    public ParameterCategory createParameterCategory(String code, String name) {
 
         this.pc = new ParameterCategory(code, name);
         return this.pc;
     }
 
     /**
-     * this method checks if the ParameterCategory object received is not null, if don't already exists.in the ArrayList and if the ParameterCategory code dont already exist
+     * this method checks if the ParameterCategory object received is not null, if don't already exists.in the ArrayList and if the ParameterCategory code don't already exist
      *
      * @param pc ParameterCategory object
-     * @return boolean value that is true if the object is not null and dont already exists in the ArrayList
+     * @return boolean value that is true if the object is not null and don't already exists in the ArrayList
      */
 
-    public boolean ValidateParameterCategory(ParameterCategory pc) {
-        if (pc == null || contains(pc) || !uniqueCode(pc)) {
-            return false;
-        }
-        return true;
+    public boolean validateParameterCategory(ParameterCategory pc) {
+        return pc != null && !contains(pc) && uniqueCode(pc);
     }
 
     /**
-     * This method searches in the Array List if alredy exists a Parameter Category object with the same code
+     * This method searches in the Array List if already exists a Parameter Category object with the same code
      *
      * @param pc Parameter Category object in which we want to check the code
-     * @return true if the code dont already exists, false if not
+     * @return true if the code don't already exists, false if not
      */
 
     public boolean uniqueCode(ParameterCategory pc) {
@@ -76,11 +69,7 @@ public class ParameterCategoryStore implements Serializable {
      */
 
     public boolean contains(ParameterCategory pc) {
-        if (this.array.contains(pc)) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.array.contains(pc);
     }
 
     /**
@@ -89,7 +78,7 @@ public class ParameterCategoryStore implements Serializable {
      * @return a boolean value that indicates the success of the operation
      */
     public boolean saveParameterCategory() {
-        if (ValidateParameterCategory(this.pc)) {
+        if (validateParameterCategory(this.pc)) {
             add(this.pc);
             return true;
         } else {
@@ -127,9 +116,9 @@ public class ParameterCategoryStore implements Serializable {
      */
 
     public ParameterCategory getByCode(String code) {
-        for (ParameterCategory pc : array) {
-            if (pc.getCode().equals(code)) {
-                return pc;
+        for (ParameterCategory parameterCategory : array) {
+            if (parameterCategory.getCode().equals(code)) {
+                return parameterCategory;
             }
         }
         return null;
@@ -174,10 +163,10 @@ public class ParameterCategoryStore implements Serializable {
 
     public ParameterCategory getParameterCategoryExist(String parametercategory) {
 
-        for (ParameterCategory pc : this.array) {
-            if (pc.getName().equals(parametercategory)) {
+        for (ParameterCategory parameterCategory : this.array) {
+            if (parameterCategory.getName().equals(parametercategory)) {
 
-                return pc;
+                return parameterCategory;
             }
         }
         return null;

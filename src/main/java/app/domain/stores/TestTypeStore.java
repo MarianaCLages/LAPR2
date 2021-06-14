@@ -1,6 +1,5 @@
 package app.domain.stores;
 
-import app.domain.model.Test;
 import app.domain.model.TestType;
 
 import java.io.Serializable;
@@ -11,8 +10,8 @@ import java.util.List;
  * Class that represents an List of all the Types of Tests in the system
  */
 public class TestTypeStore implements Serializable {
-    List<TestType> array;
-    TestType t;
+    private final List<TestType> array;
+    private TestType t;
 
     /**
      * Constructor of the class it creates an empty list to be filled with objects of Parameter
@@ -30,18 +29,18 @@ public class TestTypeStore implements Serializable {
      * @param catStore         list of Parameter Categories associated with the test
      * @return Type of Test created
      */
-    public TestType CreateTestType(String testID, String description, String collectingMethod, ParameterCategoryStore catStore) {
+    public TestType createTestType(String testID, String description, String collectingMethod, ParameterCategoryStore catStore) {
         this.t = new TestType(testID, description, collectingMethod, catStore);
         return this.t;
     }
 
     /**
-     * this method checks if the Test Type object received is not null, if don't already exists.in the ArrayList and if the Test Type code dont already exist
+     * this method checks if the Test Type object received is not null, if don't already exists.in the ArrayList and if the Test Type code don't already exist
      *
      * @param t TestType that is going to be validate
-     * @return boolean value that is true if the object is not null and dont already exists in the ArrayList
+     * @return boolean value that is true if the object is not null and don't already exists in the ArrayList
      */
-    public boolean ValidateTestType(TestType t) {
+    public boolean validateTestType(TestType t) {
         return t != null && !contains(t) && uniqueID(t);
     }
 
@@ -49,7 +48,7 @@ public class TestTypeStore implements Serializable {
      * This method searches in the Array List if already exists a Parameter Category object with the same code
      *
      * @param t TestType object in which we want to check the code
-     * @return true if the code dont already exists, false if not
+     * @return true if the code don't already exists, false if not
      */
     public boolean uniqueID(TestType t) {
         boolean find = true;
@@ -77,7 +76,7 @@ public class TestTypeStore implements Serializable {
      * @return a boolean value that indicates the success of the operation
      */
     public boolean saveTestType() {
-        if (ValidateTestType(this.t)) {
+        if (validateTestType(this.t)) {
             add(t);
             return true;
         } else {
@@ -133,10 +132,10 @@ public class TestTypeStore implements Serializable {
         return t;
     }
 
-    public TestType getTestTypeExist(String testtype) {
-        for (TestType t : this.array) {
-            if (t.getDescription().equals(testtype)) {
-                return t;
+    public TestType getTestTypeExist(String testType) {
+        for (TestType tt : this.array) {
+            if (tt.getDescription().equals(testType)) {
+                return tt;
             }
         }
         return null;

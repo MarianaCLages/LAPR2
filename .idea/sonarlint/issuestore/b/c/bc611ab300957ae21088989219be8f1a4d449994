@@ -1,11 +1,0 @@
-
-D
-java:S1948""Make "array" private or transient.(ÉûÅÌùÿÿÿÿ8ŠŸ «/
-t
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(®ÿÉñÿÿÿÿÿ
-h	java:S100""NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Û£»Õùÿÿÿÿ
-c	java:S100-"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•»Œ‚
-\
-java:S1126."AReplace this if-then-else statement by a single return statement.(®Ô¶ùÿÿÿÿ
-W
-java:S1126<"AReplace this if-then-else statement by a single return statement.(úÃ¤‹

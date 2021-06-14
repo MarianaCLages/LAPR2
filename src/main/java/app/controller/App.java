@@ -101,11 +101,11 @@ public class App {
 
 
         ParameterCategoryStore parameterCategoryStore = company.getParameterCategoryList();
-        ParameterCategory pc1 = parameterCategoryStore.CreateParameterCategory("12345", "Hemogram");
+        ParameterCategory pc1 = parameterCategoryStore.createParameterCategory("12345", "Hemogram");
         parameterCategoryStore.saveParameterCategory();
-        ParameterCategory pc2 = parameterCategoryStore.CreateParameterCategory("12346", "Cholesterol");
+        ParameterCategory pc2 = parameterCategoryStore.createParameterCategory("12346", "Cholesterol");
         parameterCategoryStore.saveParameterCategory();
-        ParameterCategory pc3 = parameterCategoryStore.CreateParameterCategory("12347", "Covid");
+        ParameterCategory pc3 = parameterCategoryStore.createParameterCategory("12347", "Covid");
         parameterCategoryStore.saveParameterCategory();
 
         TestTypeStore ttStore = company.getTestTypeList();
@@ -184,15 +184,15 @@ public class App {
         testParameters1.add(p4);
 
 
-        store.CreateClient("12345678901", "1234567890123456", "1234567890", "1234567890", date1, 'M', "ze@ze.com", "Zé");
+        store.createClient("12345678901", "1234567890123456", "1234567890", "1234567890", date1, 'M', "ze@ze.com", "Zé");
         store.saveClient();
-        store.CreateClient("12345678902", "1234565891123456", "1234567893", "2234567890", date2, 'F', "maria@maria.com", "Maria");
+        store.createClient("12345678902", "1234565891123456", "1234567893", "2234567890", date2, 'F', "maria@maria.com", "Maria");
         store.saveClient();
-        store.CreateClient("12345678903", "1234567891123456", "1234567891", "1234567891", date3, 'F', "alberto@alberto.com", "Alberto");
+        store.createClient("12345678903", "1234567891123456", "1234567891", "1234567891", date3, 'F', "alberto@alberto.com", "Alberto");
         store.saveClient();
-        store.CreateClient("12345698904", "1234567891123456", "1234566891", "1234567896", date4, 'F', "joana@alberto.com", "Joana");
+        store.createClient("12345698904", "1234567891123456", "1234566891", "1234567896", date4, 'F', "joana@alberto.com", "Joana");
         store.saveClient();
-        store.CreateClient("12345698905", "1234567891183456", "1234766891", "1234567881", date5, 'M', "manuel@alberto.com", "Manuel");
+        store.createClient("12345698905", "1234567891183456", "1234766891", "1234567881", date5, 'M', "manuel@alberto.com", "Manuel");
         store.saveClient();
 
 

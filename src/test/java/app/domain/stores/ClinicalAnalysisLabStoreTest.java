@@ -23,7 +23,7 @@ public class ClinicalAnalysisLabStoreTest {
         store.add(t);
         //Arrange + Act
         ClinicalAnalysisLabStore lab = new ClinicalAnalysisLabStore();
-        Assert.assertNotNull(lab.CreateClinicalAnalysisLab("laboratorio dois", "porto", "2gs45", "6357896543", "12345678901", store));
+        Assert.assertNotNull(lab.createClinicalAnalysisLab("laboratorio dois", "porto", "2gs45", "6357896543", "12345678901", store));
     }
 
     @Test
@@ -35,7 +35,7 @@ public class ClinicalAnalysisLabStoreTest {
         store.add(t);
         //Arrange + Act
         ClinicalAnalysisLabStore lab = new ClinicalAnalysisLabStore();
-        Assert.assertNotNull(lab.CreateClinicalAnalysisLab("laboratorio dois", "porto", "2gs45", "6357896543", "12345678901", store));
+        Assert.assertNotNull(lab.createClinicalAnalysisLab("laboratorio dois", "porto", "2gs45", "6357896543", "12345678901", store));
     }
 
     @Test
@@ -49,7 +49,7 @@ public class ClinicalAnalysisLabStoreTest {
         ClinicalAnalysisLabStore cal = new ClinicalAnalysisLabStore();
         ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45", "6357896543", "12345678901", store);
         cal.add(lab);
-        Assert.assertFalse(cal.ValidateClinicalAnalysisLab(lab));
+        Assert.assertFalse(cal.validateClinicalAnalysisLab(lab));
     }
 
 
@@ -64,7 +64,7 @@ public class ClinicalAnalysisLabStoreTest {
         ClinicalAnalysisLabStore cal = new ClinicalAnalysisLabStore();
         ClinicalAnalysisLab lab = new ClinicalAnalysisLab("lab2", "porto", "2gs45", "6357896543", "12345678901", store);
         cal.add(lab);
-        Assert.assertFalse(cal.ValidateClinicalAnalysisLab(lab));
+        Assert.assertFalse(cal.validateClinicalAnalysisLab(lab));
     }
 
     @Test

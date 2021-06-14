@@ -9,10 +9,9 @@ import app.domain.stores.TestStore;
 import java.util.List;
 
 public class ValidateController {
-    private Company company;
-    private TestStore store;
+    private final Company company;
+    private final TestStore store;
     private List<Test> tSt;
-    private TestStoreDTO tListDTO;
 
     public ValidateController() {
         this(App.getInstance().getCompany());

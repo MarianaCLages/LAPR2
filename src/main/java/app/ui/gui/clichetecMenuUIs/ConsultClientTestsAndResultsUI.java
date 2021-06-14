@@ -3,7 +3,6 @@ package app.ui.gui.clichetecMenuUIs;
 import app.controller.App;
 import app.controller.ConsultClientTestsAndResultsController;
 import app.domain.model.Client;
-import app.domain.model.Company;
 import app.domain.model.Test;
 import app.domain.shared.Constants;
 import app.ui.gui.controllers.SceneController;
@@ -14,7 +13,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
-import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
 import java.util.List;
@@ -52,8 +50,8 @@ public class ConsultClientTestsAndResultsUI implements Initializable {
     public boolean fillClientList() {
         clientList = ctrl.getClientListTin();
 
-        for (Client client : clientList) {
-            lvwClientList.getItems().add(client.getTinNumber());
+        for (Client client1 : clientList) {
+            lvwClientList.getItems().add(client1.getTinNumber());
         }
 
         if (lvwClientList.getItems().isEmpty() || lvwClientList.getItems() == null) {
