@@ -108,19 +108,12 @@ public class SimpleLinearRegressionController implements Initializable {
         LinearRegression linearRegression = new LinearRegression(positiveCovidTestsPerDayInsideTheDateInterval, covidTestsPerDayInsideTheDateInterval);
 
         StringBuilder sb = new StringBuilder();
-
         sb.append(linearRegression.toString());
         sb.append("\n");
 
         int i = 1;
-
         for (double xi : positiveCovidTestsPerDayInsideTheHistoricalInterval) {
-            sb.append("x");
-            sb.append(i);
-            sb.append(": ");
-            sb.append(linearRegression.predict(xi));
-            sb.append("\n");
-            i++;
+            sb = printPredictedValues(xi, sb, i, linearRegression);
 
         }
 
@@ -133,24 +126,24 @@ public class SimpleLinearRegressionController implements Initializable {
         List<Test> validTests = getListTestsInsideTheHistoricalDays(company.getTestList().getValidatedTestsList());
         List<Client> clientsWithTests = getClientsWithTests();
 
-        double[] ages = getClientAge(clientsWithTests);
-        double[] covidTestsPerDayInsideTheHistoricalInterval = getCovidTestsPerDayIntoArray(validTests, company.getData().getHistoricalDaysInt() + 1);
+        List<Test> validTestsInsideInterval = getListTestsInsideDateInterval(company.getTestList().getValidatedTestsList());
 
-        LinearRegression linearRegression = new LinearRegression(ages, covidTestsPerDayInsideTheHistoricalInterval);
+        double[] ages = getClientAge(clientsWithTests, company.getData().getHistoricalDaysInt() + 1);
+        double[] covidTestsPerDayInsideTheHistoricalInterval = getCovidTestsPerDayIntoArray(validTestsInsideInterval, company.getData().getHistoricalDaysInt() + 1);
+
+        double[] agesInsideTheDateInterval = getClientAgeInsideTheInterval(clientsWithTests,company.getData().getDifferenceInDates()+1) ;
+        double[] covidTestsPerDayInsideTheIntervalOfDates = getCovidTestsPerDayIntoArrayInsideInterval(validTests,company.getData().getDifferenceInDates()+1);
+
+
+        LinearRegression linearRegression = new LinearRegression(agesInsideTheDateInterval, covidTestsPerDayInsideTheIntervalOfDates);
 
         StringBuilder sb = new StringBuilder();
-
         sb.append(linearRegression.toString());
         sb.append("\n");
 
         int i = 1;
         for (double xi : ages) {
-            sb.append("x");
-            sb.append(i);
-            sb.append(": ");
-            sb.append(linearRegression.predict(xi));
-            sb.append("\n");
-            i++;
+            sb = printPredictedValues(xi, sb, i, linearRegression);
         }
 
         myTextAreaSimple.setText(sb.toString());
@@ -177,7 +170,7 @@ public class SimpleLinearRegressionController implements Initializable {
 
     }
 
-    private List<Test> getClientsWithTests2() {
+    private List<Test> getClientsWithTestsListWithTests() {
 
         List<Client> clientList = company.getClientArrayList();
         List<Test> validTestList = getListTestsInsideTheHistoricalDays(company.getTestList().getTestListArray());
@@ -197,19 +190,67 @@ public class SimpleLinearRegressionController implements Initializable {
 
     }
 
-    private double[] getClientAge(List<Client> clientList) {
+    private double[] getClientAge(List<Client> clientList, int space) {
 
-        double[] clientsAges = new double[company.getData().getHistoricalDaysInt() + 1]; // O mais 1 é pq é preciso registar o dia de "HJ"
+        double[] clientsAges = new double[space]; // O mais 1 é pq é preciso registar o dia de "HJ"
+
         int n = 0;
         int x = 0;
         int sum = 0;
         int age = 0;
 
-        for (int i = 0; i < company.getData().getHistoricalDaysInt(); i++) {
+        for (int i = 0; i < space; i++) {
 
             LocalDate currentDay = getCurrentDay(i);
 
-            for (Test t1 : getClientsWithTests2()) {
+            for (Test t1 : getClientsWithTestsListWithTests()) {
+
+                LocalDate testDate = t1.getDate().toLocalDate();
+
+                if (testDate.equals(currentDay)) {
+
+                    Client c1 = null;
+
+                    for (Client c : clientList) {
+                        if (t1.getClientTin().equals(c.getTinNumber())) {
+                            c1 = c;
+                        }
+                    }
+
+                    LocalDate date = c1.getBirthDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                    age = Period.between(date, LocalDate.now()).getYears();
+                    sum += age;
+                    x++;
+
+                }
+
+            }
+
+            if (x != 0) clientsAges[n] = sum / x;
+            n++;
+            x = 0;
+            sum = 0;
+
+        }
+
+        return clientsAges;
+
+    }
+
+    private double[] getClientAgeInsideTheInterval(List<Client> clientList, int space) {
+
+        double[] clientsAges = new double[space]; // O mais 1 é pq é preciso registar o dia de "HJ"
+
+        int n = 0;
+        int x = 0;
+        int sum = 0;
+        int age = 0;
+
+        for (int i = 0; i < space; i++) {
+
+            LocalDate currentDay = getCurrentDayInsideInterval(i);
+
+            for (Test t1 : getClientsWithTestsListWithTests()) {
 
                 LocalDate testDate = t1.getDate().toLocalDate();
 
@@ -274,6 +315,10 @@ public class SimpleLinearRegressionController implements Initializable {
                 if (testDate.equals(currentDay)) {
                     positiveCovidTestsPerDay[i] += 1;
                 }
+            }
+
+            for (double xi : positiveCovidTestsPerDay) {
+                System.out.println(xi);
             }
 
         }
@@ -364,6 +409,19 @@ public class SimpleLinearRegressionController implements Initializable {
         }
 
         return positiveCovidTestsPerDay;
+
+    }
+
+    private StringBuilder printPredictedValues(double xi, StringBuilder sb, int i, LinearRegression linearRegression) {
+
+        sb.append("x");
+        sb.append(i);
+        sb.append(": ");
+        sb.append(linearRegression.predict(xi));
+        sb.append("\n");
+        i++;
+
+        return sb;
 
     }
 

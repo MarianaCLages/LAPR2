@@ -1,0 +1,23 @@
+
+^
+java:S3518x"CMake sure this expression can't be zero before doing this division.(òŸ²‹üÿÿÿÿ
+X
+java:S2184t"BCast one of the operands of this addition operation to a "double".(Ÿı®Î
+S	java:S106"9Replace this use of System.out or System.err by a logger.(§Ø€İÿÿÿÿÿ
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(§Ø€İÿÿÿÿÿ
+S	java:S106#"9Replace this use of System.out or System.err by a logger.(¸êéÂıÿÿÿÿ
+N	java:S106%"9Replace this use of System.out or System.err by a logger.(Õö´“
+N	java:S106'"9Replace this use of System.out or System.err by a logger.(àÆ÷
+A
+java:S1481"&Remove this unused "n" local variable.(‡¥¼ìşÿÿÿÿ
+H
+java:S1068"-Remove this unused "intercept" private field.(î°àÔşÿÿÿÿ
+?
+java:S1068")Remove this unused "slope" private field.(ªéÇõ
+<
+java:S1068"&Remove this unused "r2" private field.(Âö‰•
+?
+java:S1068	")Remove this unused "svar0" private field.(Æ¼ØÊ
+?
+java:S1068
+")Remove this unused "svar1" private field.(ˆ«Ø­
