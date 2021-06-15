@@ -97,8 +97,6 @@ l
 <docs/SprintD/US12/SD_AddTestResult(parameterCode,result).svg,8\6\86ebd43a5a95c8d4ebe77a158f9ad2d022620afd
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 d
 4src/test/java/app/domain/stores/ClientStoreTest.java,e\2\e2b46e13e389ecab1bfeccfd2f4a376c149640dc
 I
@@ -121,8 +119,6 @@ Osrc/main/java/app/domain/shared/exceptions/ConfidenceLevelICEmptyException.java
 Osrc/main/java/app/domain/shared/exceptions/ConfidenceLevelInvalidException.java,9\f\9f359eb1a2de4a24862d2f4ff684230b4a4857e8
 r
 Bsrc/main/java/app/domain/shared/exceptions/DateEmptyException.java,4\b\4b5eb190cd1f755e46ed5125ac1ec7a2c6c156c3
-w
-Gsrc/main/java/app/domain/shared/exceptions/ChoiceBoxEmptyException.java,d\a\da5859ee0fbb622f76a8e66651f4ffb20658ca75
 X
 (src/main/java/app/ui/console/AuthUI.java,a\c\ac569ed985938d514a4808da16cd4fbc88fa6036
 N
@@ -175,8 +171,6 @@ O
 ,src/main/java/app/domain/model/TestType.java,2\4\2423c136bbc016d77dbe900fd13fca08fa27b56a
 \
 ,src/test/java/app/domain/model/TestTest.java,2\c\2cf03933548261c5794447fc0379d09dc74bc37a
-b
-2src/main/java/app/domain/model/SendReportTask.java,8\5\85686568e666822bea9d6d3cc3520c4db4a26869
 X
 (src/main/java/app/domain/model/Test.java,0\3\0346ca7efc8246aba1bce2abd18994f1118a0b11
 a
@@ -191,13 +185,6 @@ _
 /src/main/java/app/domain/shared/LinearTest.java,b\1\b1ef7502dac291a5892519a19022cfcae28f35aa
 Y
 )src/main/java/app/domain/model/Email.java,e\5\e5b9d6aa410958c18970d8f4c9e19a4c38e62e32
-<<<<<<< HEAD
-e
-5src/main/java/app/domain/shared/LinearRegression.java,b\5\b5738a1e3a1c85790cbe245760fdbfe6e77be206
-=======
-j
-:src/main/java/app/domain/shared/MultiLinearRegression.java,5\1\51ac4d2fa961af5b859a17a30045d1b297b297c4
->>>>>>> 60e02204ab3807e56077574d25f724959bb4b2c4
 w
 Gsrc/main/java/app/ui/gui/employees/ClinicalChemistryTechnologistUI.java,c\8\c8e646c2340560f4592e6b0180982db37dc61399
 i
@@ -226,12 +213,12 @@ T
 $src/main/java/app/ui/gui/Alerts.java,a\2\a2c5c826a3655d1cf1512f81124558ddd6665219
 X
 (src/main/java/app/ui/gui/MainScreen.java,b\5\b59adf73fdf4b7ccc7be755addc8e97dd1524983
-<<<<<<< HEAD
-}
-Msrc/main/java/app/ui/gui/clichetecMenuUIs/ConsultClientTestsAndResultsUI.java,7\1\7147b5694f147c53f140ea5472f6f543c3ac978e
-=======
-[
-+src/main/java/app/domain/model/Company.java,e\6\e66f0f8e51b44df23f2004467961976fbec241aa
 g
 7src/main/java/app/ui/gui/employees/AdministratorUI.java,1\9\19e8d234ed70d2ee98189bee48aecf519f1826fa
->>>>>>> 60e02204ab3807e56077574d25f724959bb4b2c4
+U
+%src/main/java/app/controller/App.java,4\7\47cfbdc47faac4c1edcb93d1b6968a5d5bdad509
+;
+Company.ser,b\4\b454abc40c090b9b68d018521b92cf0516eaa385
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
