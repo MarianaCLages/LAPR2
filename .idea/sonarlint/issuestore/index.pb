@@ -103,8 +103,6 @@ I
 docs/SprintD/US13/US13.md,c\a\ca643c4202856490937d9359e0618667240f1de5
 n
 >docs/SprintD/US05/VERS√ÉO 2 GRUPO 40/US005_RecordTheSamples.md,a\6\a6df19e5817d0568a337ec4bd8cd20395b039daf
-ó
-gdocs/SprintD/US18/US18_As_an_Administrator_I_want_to_send_the_Covid-19_report_to_the_NHS_at_any_time.md,3\7\37aee95c88701e0359fcbca505618db77d24fe5f
 Z
 *src/main/java/app/domain/model/Client.java,a\1\a1140e0a891f26f51604f14ed5bf2ac976d60132
 u
@@ -121,8 +119,6 @@ r
 Bsrc/main/java/app/domain/shared/exceptions/DateEmptyException.java,4\b\4b5eb190cd1f755e46ed5125ac1ec7a2c6c156c3
 X
 (src/main/java/app/ui/console/AuthUI.java,a\c\ac569ed985938d514a4808da16cd4fbc88fa6036
-N
-docs/SprintD/US18/US018_SD.svg,4\7\47879f96a8b08db42b6b059e5d704ae8a0535934
 e
 5src/main/java/app/domain/model/PasswordGenerator.java,6\7\6705402122199c116945958d1eaead60ce41746c
 R
@@ -161,10 +157,6 @@ N
 src/main/java/app/ui/Main.java,7\7\774d0aff326a0164e53c11cda4e3afaaa607428f
 S
 #docs/SprintD/US19/SD_runTask().puml,6\2\62d9b6e9f773098752ee05be093f14fc3c4dae02
-N
-docs/SprintD/US19/US19_SD.puml,4\6\46f0aa57703298515d752a55b01a860d6bbdd421
-O
-docs/SprintD/US19/US19_SSD.puml,2\4\2450b1747969c05d0a3da7b81267eee114110551
 O
 .idea/artifacts/Sem2App_jar.xml,9\a\9a36f05a7cc7eec42026caea684078f299f65b24
 \
@@ -226,3 +218,17 @@ Fsrc/main/java/app/domain/shared/exceptions/InvalidLengthException.java,e\f\ef0
 Sem2App.iml,6\6\6625fec75a340c498d62942af985e893471ee551
 w
 Gsrc/main/java/app/domain/shared/exceptions/ChoiceBoxEmptyException.java,d\a\da5859ee0fbb622f76a8e66651f4ffb20658ca75
+X
+(src/main/java/app/domain/model/Data.java,f\a\facd46acab9e1cd55acb7b39820dc3dfa90996b5
+O
+docs/SprintD/US18/US018_SSD.svg,4\d\4d4f6a2342293f3d4753c5840099637c43421c2c
+N
+docs/SprintD/US18/US018_SD.svg,4\7\47879f96a8b08db42b6b059e5d704ae8a0535934
+ó
+gdocs/SprintD/US18/US18_As_an_Administrator_I_want_to_send_the_Covid-19_report_to_the_NHS_at_any_time.md,3\7\37aee95c88701e0359fcbca505618db77d24fe5f
+N
+docs/SprintD/US14/US14_MD.puml,0\2\0251a9789161e7d43e8aa66740cfbdbe890fd20a
+N
+docs/SprintD/US12/US12_MD.puml,5\1\517f331d08b59a98ea7535ecdf143b4e55763448
+M
+docs/SprintD/US04/US4_MD.puml,2\f\2f6a4e27680def385dd857b4452454decea51a03

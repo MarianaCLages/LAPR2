@@ -19,14 +19,11 @@ public class MultiLinearRegression {
     private double SQe;
     private double MQr;
     private double MQe;
-    private double alpha;
     private double[][] x;
     private double[] y;
     private int n;
     private int k;
-
-
-    public MultiLinearRegression(double[][] x, double[] y, double alfa) {
+    public MultiLinearRegression(double[][] x, double[] y) {
 
         if (x.length != y.length) {
             throw new IllegalArgumentException("array lengths are not equal");
@@ -42,7 +39,6 @@ public class MultiLinearRegression {
 
         this.k = 2;
         this.n = y.length;
-        this.alpha = alfa;
         this.x = m1;
         this.y = y;
 
@@ -96,38 +92,6 @@ public class MultiLinearRegression {
         this.F0 = this.MQr / this.MQe;
 
     }
-
-    public static void main(String[] args) throws InvalidLengthException {
-
-        double[][] matrix1 = {
-                {120, 19},
-                {200, 8},
-                {150, 12},
-                {180, 15},
-                {240, 16},
-                {250, 13}
-        };
-        double[] matrixb = {23.8, 24.2, 22.0, 26.2, 33.5, 35};
-        MultiLinearRegression s = new MultiLinearRegression(matrix1, matrixb, 0.05);
-        System.out.println();
-        System.out.println("Lower x1: " + s.lowerLimitCoeficient(1));
-
-        System.out.println("Upper x1: " + s.upperLimitCoeficient(1));
-        System.out.println();
-        System.out.println("Lower x2: " + s.lowerLimitCoeficient(2));
-
-        System.out.println("Upper x2: " + s.upperLimitCoeficient(2));
-        System.out.println();
-        double[] arr1 = {170, 12};
-
-        System.out.println("Estimativa: " + s.getEstimate(arr1));
-        System.out.println();
-        System.out.println("Limite Inferior: " + s.lowerLimitAnswer(arr1));
-        System.out.println("Limite Superior: " + s.upperLimitAnswer(arr1));
-
-
-    }
-
 
     private static double[] matrixVectorProduct(double[][] matrix, double[] vector) {
 
@@ -221,6 +185,10 @@ public class MultiLinearRegression {
         return minor;
     }
 
+    public double getF0() {
+        return F0;
+    }
+
     public double getCriticValueStudent(double alpha) {
         TDistribution td = new TDistribution(this.n - this.k - 1);
 
@@ -232,7 +200,7 @@ public class MultiLinearRegression {
         return fDistribution.inverseCumulativeProbability(1 - alphaf);
     }
 
-    public double lowerLimitCoeficient(int index) {
+    public double lowerLimitCoeficient(int index,double alpha) {
 
         double critTD = getCriticValueStudent(alpha);
 
@@ -242,7 +210,7 @@ public class MultiLinearRegression {
 
     }
 
-    public double upperLimitCoeficient(int index) {
+    public double upperLimitCoeficient(int index,double alpha) {
 
         double critTD = getCriticValueStudent(alpha);
 
@@ -320,7 +288,7 @@ public class MultiLinearRegression {
         return yEstimated;
     }
 
-    public double lowerLimitAnswer(double[] x0) throws InvalidLengthException {
+    public double lowerLimitAnswer(double[] x0,double alpha) throws InvalidLengthException {
         if (x0.length != this.betta.length - 1) {
             throw new InvalidLengthException();
         }
@@ -355,7 +323,7 @@ public class MultiLinearRegression {
 
     }
 
-    public double upperLimitAnswer(double[] x0) throws InvalidLengthException {
+    public double upperLimitAnswer(double[] x0,double alpha) throws InvalidLengthException {
         if (x0.length != this.betta.length - 1) {
             throw new InvalidLengthException();
         }
@@ -389,8 +357,8 @@ public class MultiLinearRegression {
 
     }
 
-    public double getTestStatistics(int index){
-        return this.betta[index]/Math.sqrt(this.MQe*this.C[index][index]);
+    public double getTestStatistics(int index) {
+        return this.betta[index] / Math.sqrt(this.MQe * this.C[index][index]);
     }
 
     public double getR2() {

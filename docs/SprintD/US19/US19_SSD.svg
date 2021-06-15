@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="199px" preserveAspectRatio="none" style="width:339px;height:199px;background:#FFFFFF;" version="1.1" viewBox="0 0 339 199" width="339px" zoomAndPan="magnify"><defs><filter height="300%" id="fjb0wvpaidhcm" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#FFFFFF" filter="url(#fjb0wvpaidhcm)" height="93.0547" style="stroke:#A80036;stroke-width:1.0;" width="10" x="39.5" y="51.6094"/><rect fill="#FFFFFF" filter="url(#fjb0wvpaidhcm)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="278.5" y="99.3125"/><rect fill="#FFFFFF" filter="url(#fjb0wvpaidhcm)" height="79.0547" style="stroke:#000000;stroke-width:2.0;" width="315.5" x="10" y="58.6094"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="44" x2="44" y1="41.6094" y2="154.6641"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="283.5" x2="283.5" y1="41.6094" y2="154.6641"/><rect fill="#FEFECE" filter="url(#fjb0wvpaidhcm)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="45" x="20" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="27" y="26.5332">Time</text><rect fill="#FEFECE" filter="url(#fjb0wvpaidhcm)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="45" x="20" y="153.6641"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="31" x="27" y="175.1973">Time</text><rect fill="#FEFECE" filter="url(#fjb0wvpaidhcm)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="60" x="251.5" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="258.5" y="26.5332">System</text><rect fill="#FEFECE" filter="url(#fjb0wvpaidhcm)" height="31.6094" style="stroke:#A80036;stroke-width:1.5;" width="60" x="251.5" y="153.6641"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="46" x="258.5" y="175.1973">System</text><rect fill="#FFFFFF" filter="url(#fjb0wvpaidhcm)" height="93.0547" style="stroke:#A80036;stroke-width:1.0;" width="10" x="39.5" y="51.6094"/><rect fill="#FFFFFF" filter="url(#fjb0wvpaidhcm)" height="30.3516" style="stroke:#A80036;stroke-width:1.0;" width="10" x="278.5" y="99.3125"/><path d="M10,58.6094 L83,58.6094 L83,66.6094 L73,76.6094 L10,76.6094 L10,58.6094 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.0;"/><rect fill="none" height="79.0547" style="stroke:#000000;stroke-width:2.0;" width="315.5" x="10" y="58.6094"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="28" x="25" y="73.1045">loop</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="116" x="98" y="72.0283">[every day at 6:00AM]</text><polygon fill="#A80036" points="266.5,95.3125,276.5,99.3125,266.5,103.3125,270.5,99.3125" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="49.5" x2="272.5" y1="99.3125" y2="99.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="56.5" y="94.4561">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="152" x="67.5" y="94.4561">create and send the report</text><polygon fill="#A80036" points="60.5,125.6641,50.5,129.6641,60.5,133.6641,56.5,129.6641" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="54.5" x2="282.5" y1="129.6641" y2="129.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="66.5" y="124.8076">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="194" x="77.5" y="124.8076">informs the success into a log file</text><!--MD5=[6e50c744e66b2a86bea7d8ddd2c3bdf9]
+@startuml
+
+autonumber
+participant "Time" as tm
+participant "System" as sys
+
+activate tm
+loop every day at 6:00AM
+    tm -> sys: create and send the report
+    activate sys
+    sys - -> tm: informs the success into a log file
+    deactivate
+end
+deactivate tm
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 13:40:07 BST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>
