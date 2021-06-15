@@ -215,10 +215,14 @@ X
 (src/main/java/app/ui/gui/MainScreen.java,b\5\b59adf73fdf4b7ccc7be755addc8e97dd1524983
 g
 7src/main/java/app/ui/gui/employees/AdministratorUI.java,1\9\19e8d234ed70d2ee98189bee48aecf519f1826fa
-U
-%src/main/java/app/controller/App.java,4\7\47cfbdc47faac4c1edcb93d1b6968a5d5bdad509
-;
-Company.ser,b\4\b454abc40c090b9b68d018521b92cf0516eaa385
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+v
+Fsrc/main/java/app/domain/shared/exceptions/InvalidLengthException.java,e\f\ef07ae6c152cdbb50fe01066808195f516b81040
+;
+Sem2App.iml,6\6\6625fec75a340c498d62942af985e893471ee551
+w
+Gsrc/main/java/app/domain/shared/exceptions/ChoiceBoxEmptyException.java,d\a\da5859ee0fbb622f76a8e66651f4ffb20658ca75

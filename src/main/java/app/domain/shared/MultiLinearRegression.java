@@ -1,13 +1,13 @@
 package app.domain.shared;
 
 import app.domain.shared.exceptions.InvalidLengthException;
+import org.apache.commons.math3.distribution.FDistribution;
 import org.apache.commons.math3.distribution.TDistribution;
-
-import java.util.Arrays;
 
 
 public class MultiLinearRegression {
-    double[][] C;
+    private double[][] C;
+    private double F0;
     private double intercept;
     private double slope1;
     private double slope2;
@@ -63,12 +63,8 @@ public class MultiLinearRegression {
 
             }
         }
-        System.out.println("x: " + Arrays.deepToString(x));
-        System.out.println("xt: " + Arrays.deepToString(transpose(this.x)));
-        System.out.println("xtx: " + Arrays.deepToString(matrixProduct(transpose(this.x), this.x)));
-        System.out.println("xtx-1: " + Arrays.deepToString(inverse(matrixProduct(transpose(this.x), this.x))));
+
         this.C = inverse(matrixProduct(transpose(this.x), this.x));
-        System.out.println("C:  " + Arrays.deepToString(inverse(matrixProduct(transpose(this.x), this.x))));
 
         this.intercept = this.betta[0];
         this.slope1 = this.betta[1];
@@ -90,38 +86,44 @@ public class MultiLinearRegression {
         this.r2Ajusted = calculateR2Adjusted(this.r2, n, k);
         System.out.println("r2 adjusted = " + r2Ajusted);
 
-        this.MQr = SQr / k;
+        this.MQr = SQr / this.k;
 
-        this.MQe = SQe / (n - (k + 1));
+        System.out.println("MQr: " + this.MQr);
+
+        this.MQe = this.SQe / (this.n - (this.k + 1));
+        System.out.println("MQe: " + this.MQe);
+
+        this.F0 = this.MQr / this.MQe;
 
     }
 
     public static void main(String[] args) throws InvalidLengthException {
 
         double[][] matrix1 = {
-                {4, 36},
-                {5, 33},
-                {5.5, 37},
-                {7, 37},
-                {6, 34},
-                {5, 32},
-                {7, 36},
-                {8, 35},
-                {8.5, 38},
-                {9, 39},
-
+                {120, 19},
+                {200, 8},
+                {150, 12},
+                {180, 15},
+                {240, 16},
+                {250, 13}
         };
-        double[] matrixb = {4, 4.5, 5, 6.5, 7, 7.8, 7.5, 8, 8, 8.5};
+        double[] matrixb = {23.8, 24.2, 22.0, 26.2, 33.5, 35};
         MultiLinearRegression s = new MultiLinearRegression(matrix1, matrixb, 0.05);
-        System.out.println(s.lowerLimitCoeficient(1));
+        System.out.println();
+        System.out.println("Lower x1: " + s.lowerLimitCoeficient(1));
 
-        System.out.println(s.upperLimitCoeficient(1));
+        System.out.println("Upper x1: " + s.upperLimitCoeficient(1));
+        System.out.println();
+        System.out.println("Lower x2: " + s.lowerLimitCoeficient(2));
 
-        double[] arr = {5.5, 36};
-        System.out.println("Estimativa: " + s.getEstimate(arr));
-        System.out.println("Limite Inferior: " + s.lowerLimitAnswer(arr));
-        System.out.println("\n");
-        System.out.println("Limite Superior: " + s.upperLimitAnswer(arr));
+        System.out.println("Upper x2: " + s.upperLimitCoeficient(2));
+        System.out.println();
+        double[] arr1 = {170, 12};
+
+        System.out.println("Estimativa: " + s.getEstimate(arr1));
+        System.out.println();
+        System.out.println("Limite Inferior: " + s.lowerLimitAnswer(arr1));
+        System.out.println("Limite Superior: " + s.upperLimitAnswer(arr1));
 
 
     }
@@ -186,7 +188,7 @@ public class MultiLinearRegression {
         return det;
     }
 
-    //calculates the inverse matix using the
+    //calculates the inverse matrix using the complement matrix
     private static double[][] inverse(double[][] matrix) {
         double[][] inverse = new double[matrix.length][matrix.length];
 
@@ -219,22 +221,30 @@ public class MultiLinearRegression {
         return minor;
     }
 
-    public double lowerLimitCoeficient(int index) {
-        double[][] C = inverse(matrixProduct(transpose(this.x), this.x));
+    public double getCriticValueStudent(double alpha) {
         TDistribution td = new TDistribution(this.n - this.k - 1);
 
-        double critTD = td.inverseCumulativeProbability(1 - this.alpha);
+        return td.inverseCumulativeProbability(1 - alpha);
+    }
+
+    public double getCriticValueFisher(double alphaf) {
+        FDistribution fDistribution = new FDistribution(this.k, this.n - (this.k + 1));
+        return fDistribution.inverseCumulativeProbability(1 - alphaf);
+    }
+
+    public double lowerLimitCoeficient(int index) {
+
+        double critTD = getCriticValueStudent(alpha);
 
         double variance = this.MQe;
 
-        return this.betta[index] - critTD * Math.sqrt(variance * C[index][index]);
+        return this.betta[index] - critTD * Math.sqrt(variance * this.C[index][index]);
 
     }
 
     public double upperLimitCoeficient(int index) {
-        TDistribution td = new TDistribution(this.n - (this.k + 1));
 
-        double critTD = td.inverseCumulativeProbability(1 - this.alpha);
+        double critTD = getCriticValueStudent(alpha);
 
         double variance = this.MQe;
 
@@ -329,13 +339,7 @@ public class MultiLinearRegression {
             x1t[i][0] = x1[i];
         }
 
-        System.out.println(Arrays.toString(x1));
-        System.out.println("C: " + Arrays.deepToString(this.C));
-//esta a dar mal ver isto
         double[] cx0 = matrixVectorProduct(this.C, x1);
-
-        System.out.println("Cx0 = " + Arrays.toString(cx0));
-        System.out.println("x1t = " + Arrays.deepToString(x1t));
 
         double xtcx = 0;
 
@@ -343,17 +347,11 @@ public class MultiLinearRegression {
             xtcx += cx0[i] * x1t[i][0];
         }
 
-        System.out.println("XtCX0= " + xtcx);
 
-        TDistribution td = new TDistribution(this.n - this.k - 1);
-
-        double critTD = td.inverseCumulativeProbability(1 - this.alpha/2);
-        System.out.println("critTD: " + critTD);
+        double critTD = getCriticValueStudent(alpha);
         double variance = this.MQe;
 
-
         return getEstimate(x0) - critTD * Math.sqrt(variance * (1 + xtcx));
-
 
     }
 
@@ -376,13 +374,7 @@ public class MultiLinearRegression {
             x1t[i][0] = x1[i];
         }
 
-        System.out.println(Arrays.toString(x1));
-        System.out.println("C: " + Arrays.deepToString(this.C));
-//esta a dar mal ver isto
         double[] cx0 = matrixVectorProduct(this.C, x1);
-
-        System.out.println("Cx0 = " + Arrays.toString(cx0));
-        System.out.println("x1t = " + Arrays.deepToString(x1t));
 
         double xtcx = 0;
 
@@ -390,18 +382,42 @@ public class MultiLinearRegression {
             xtcx += cx0[i] * x1t[i][0];
         }
 
-        System.out.println("XtCX0= " + xtcx);
-
-        TDistribution td = new TDistribution(this.n - this.k - 1);
-
-        double critTD = td.inverseCumulativeProbability(1 - this.alpha/2);
-        System.out.println("critTD: " + critTD);
+        double critTD = getCriticValueStudent(alpha);
         double variance = this.MQe;
-
 
         return getEstimate(x0) + critTD * Math.sqrt(variance * (1 + xtcx));
 
-
     }
 
+    public double getTestStatistics(int index){
+        return this.betta[index]/Math.sqrt(this.MQe*this.C[index][index]);
+    }
+
+    public double getR2() {
+        return r2;
+    }
+
+    public double getR2Ajusted() {
+        return r2Ajusted;
+    }
+
+    public double getSQt() {
+        return SQt;
+    }
+
+    public double getSQr() {
+        return SQr;
+    }
+
+    public double getSQe() {
+        return SQe;
+    }
+
+    public double getMQr() {
+        return MQr;
+    }
+
+    public double getMQe() {
+        return MQe;
+    }
 }
