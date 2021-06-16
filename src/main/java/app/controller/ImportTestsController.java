@@ -21,8 +21,8 @@ public class ImportTestsController {
     }
 
 
-    public void readTestsfromFile(String fileName) {
-        importt.readTestFromCSV(fileName);
+    public void readTestsfromFile(String filepath) {
+        importt.readTestFromCSV(filepath);
     }
 
     public List<String> saveFileTestList(){
