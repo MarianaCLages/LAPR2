@@ -2,7 +2,9 @@ package app.ui.gui.controllers;
 
 import app.controller.App;
 import app.controller.AuthController;
+import app.domain.model.Company;
 import app.domain.shared.exceptions.MenuNotFoundException;
+import app.ui.gui.Alerts;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -18,6 +20,7 @@ public class SceneController {
     private static SceneController singleton = null;
     private AuthController authController = new AuthController();
     private App app = App.getInstance();
+    private Company company = app.getCompany();
 
     public static SceneController getInstance() {
 
@@ -56,9 +59,14 @@ public class SceneController {
             stage.show();
 
         } catch (IOException | MenuNotFoundException error) {
-            System.out.println(error.getMessage());
+            Alerts.errorAlert(error.getMessage());
         }
 
+
+    }
+
+    public Company getCompany() {
+        return company;
     }
 
 }

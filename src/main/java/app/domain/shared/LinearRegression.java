@@ -1,9 +1,7 @@
 package app.domain.shared;
 
-/******************************************************************************
- *  Compute least squares solution to y = beta * x + alpha.
- *  Simple linear regression.
- ******************************************************************************/
+import org.apache.commons.math3.distribution.FDistribution;
+import org.apache.commons.math3.distribution.TDistribution;
 
 /**
  * The code LinearRegression class performs a simple linear regression
@@ -20,8 +18,18 @@ public class LinearRegression {
     private final double intercept;
     private final double slope;
     private final double r2;
-    private final double svar0;
-    private final double svar1;
+    private final double xbar;
+    private final double ybar;
+    private final int n;
+    private final double st;
+    private final double mse;
+    private final double msr;
+    private final double f0;
+    private double sxx;
+    private double syy;
+    private double sxy;
+    private double sr;
+    private double se;
 
     /**
      * Performs a linear regression on the data points (y[i], x[i]).
@@ -34,7 +42,7 @@ public class LinearRegression {
         if (x.length != y.length) {
             throw new IllegalArgumentException("array lengths are not equal");
         }
-        int n = x.length;
+        this.n = x.length;
 
         // first pass
         double sumx = 0.0;
@@ -45,33 +53,38 @@ public class LinearRegression {
             sumx2 += x[i] * x[i];
             sumy += y[i];
         }
-        double xbar = sumx / n;
-        double ybar = sumy / n;
+        this.xbar = sumx / n;
+        this.ybar = sumy / n;
 
         // second pass: compute summary statistics
-        double xxbar = 0.0, yybar = 0.0, xybar = 0.0;
+        this.sxx = 0.0;
+        this.syy = 0.0;
+        this.sxy = 0.0;
         for (int i = 0; i < n; i++) {
-            xxbar += (x[i] - xbar) * (x[i] - xbar);
-            yybar += (y[i] - ybar) * (y[i] - ybar);
-            xybar += (x[i] - xbar) * (y[i] - ybar);
+            this.sxx += (x[i] - this.xbar) * (x[i] - this.xbar);
+            this.syy += (y[i] - this.ybar) * (y[i] - this.ybar);
+            this.sxy += (x[i] - this.xbar) * (y[i] - this.ybar);
         }
-        slope = xybar / xxbar;
-        intercept = ybar - slope * xbar;
+        this.slope = sxy / sxx;
+        this.intercept = this.ybar - this.slope * this.xbar;
 
         // more statistical analysis
-        double rss = 0.0;      // residual sum of squares
-        double ssr = 0.0;      // regression sum of squares
+        this.se = 0.0;      // residual sum of squares
+        this.sr = 0.0;      // regression sum of squares
         for (int i = 0; i < n; i++) {
-            double fit = slope * x[i] + intercept;
-            rss += (fit - y[i]) * (fit - y[i]);
-            ssr += (fit - ybar) * (fit - ybar);
+            double fit = this.slope * x[i] + this.intercept;
+            this.se += (fit - y[i]) * (fit - y[i]);
+            sr += (fit - this.ybar) * (fit - this.ybar);
         }
+        this.st = this.se + this.sr;
 
         int degreesOfFreedom = n - 2;
-        r2 = ssr / yybar;
-        double svar = rss / degreesOfFreedom;
-        svar1 = svar / xxbar;
-        svar0 = svar / n + xbar * xbar * svar1;
+        this.r2 = sr / syy;
+        this.mse = se / degreesOfFreedom;
+        this.msr = this.sr;
+
+        this.f0 = msr / mse;
+
     }
 
     /**
@@ -103,24 +116,6 @@ public class LinearRegression {
     }
 
     /**
-     * Returns the standard error of the estimate for the intercept.
-     *
-     * @return the standard error of the estimate for the intercept
-     */
-    public double interceptStdErr() {
-        return Math.sqrt(svar0);
-    }
-
-    /**
-     * Returns the standard error of the estimate for the slope.
-     *
-     * @return the standard error of the estimate for the slope
-     */
-    public double slopeStdErr() {
-        return Math.sqrt(svar1);
-    }
-
-    /**
      * Returns the expected response y given the value of the predictor
      * variable x.
      *
@@ -130,6 +125,91 @@ public class LinearRegression {
      */
     public double predict(double x) {
         return slope * x + intercept;
+    }
+
+    public double getCriticValueStudent(double alpha) {
+        TDistribution td = new TDistribution(this.n);
+
+        return td.inverseCumulativeProbability(1 - alpha);
+    }
+
+    public double getCriticValueFisher(double alphaf) {
+        FDistribution fDistribution = new FDistribution(1, this.n - 2);
+        return fDistribution.inverseCumulativeProbability(1 - alphaf);
+    }
+
+    public double lowerLimitAnswer(double x, double alpha) {
+        double y = predict(x);
+        double criticalValue = getCriticValueStudent(alpha);
+        double s = Math.sqrt(this.se / (this.n - 2));
+        return y - criticalValue * s * Math.sqrt(1 + 1 / n + (Math.pow((x - this.xbar), 2) / this.sxx));
+    }
+
+    public double upperLimitAnswer(double x, double alpha) {
+        double y = predict(x);
+        double s = Math.sqrt(this.se / (this.n - 2));
+        double criticalValue = getCriticValueStudent(alpha);
+        return y + criticalValue * s * Math.sqrt(1 + 1 / n + (Math.pow((x - this.xbar), 2) / this.sxx));
+    }
+
+    public double upperLimitParama(double alpha) {
+        double s = Math.sqrt(this.se / (this.n - 2));
+        double criticalValue = getCriticValueStudent(alpha);
+        return this.intercept + criticalValue * s * Math.sqrt(1 / n + (Math.pow(this.xbar, 2) / this.sxx));
+    }
+
+    public double lowerLimitParama(double alpha) {
+        double s = Math.sqrt(this.se / (this.n - 2));
+        double criticalValue = getCriticValueStudent(alpha);
+        return this.intercept - criticalValue * s * Math.sqrt(1 / n + (Math.pow(this.xbar, 2) / this.sxx));
+    }
+
+    public double upperLimitParamb(double alpha) {
+        double s = Math.sqrt(this.se / (this.n - 2));
+        double criticalValue = getCriticValueStudent(alpha);
+        return this.slope + criticalValue * s * Math.sqrt(1 / this.sxx);
+    }
+
+    public double lowerLimitParamb(double alpha) {
+        double s = Math.sqrt(this.se / (this.n - 2));
+        double criticalValue = getCriticValueStudent(alpha);
+        return this.slope - criticalValue * s * Math.sqrt(1 / this.sxx);
+    }
+
+    public double getTestStatisticb() {
+        return (this.slope) / (Math.sqrt(this.se / (this.n - 2)) / Math.sqrt(this.sxx));
+    }
+
+    public double getTestStatistica() {
+        return (this.intercept) / (Math.sqrt(this.se / (this.n - 2)) / Math.sqrt((1 / n) + Math.pow(this.xbar, 2) / this.sxx));
+    }
+
+    public double getSt() {
+        return st;
+    }
+
+    public double getMse() {
+        return mse;
+    }
+
+    public double getMsr() {
+        return msr;
+    }
+
+    public double getF0() {
+        return f0;
+    }
+
+    public double getSr() {
+        return sr;
+    }
+
+    public double getSe() {
+        return se;
+    }
+
+    public double getR() {
+        return Math.sqrt(this.r2);
     }
 
     /**

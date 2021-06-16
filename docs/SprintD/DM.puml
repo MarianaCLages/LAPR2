@@ -140,7 +140,11 @@ Client;
 Doctor's text;
 }
 
-
+class TestType{
+code
+description
+collectingMethod
+}
 
 class Parameter{
 name;

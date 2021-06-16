@@ -11,9 +11,8 @@ import app.domain.stores.ParameterStore;
  */
 public class ParameterController {
 
-    private Company company;
+    private final Company company;
     private ParameterStore store;
-    private ParameterCategoryStore catStore;
 
     /**
      * Constructor of the class, gets an instance of the company class
@@ -50,8 +49,7 @@ public class ParameterController {
      * @return the list with all the Type if Tests in the system
      */
     public ParameterCategoryStore getParameterCategoryList() {
-        this.catStore = company.getParameterCategoryList();
-        return this.catStore;
+        return company.getParameterCategoryList();
     }
 
     /**

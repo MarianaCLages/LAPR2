@@ -100,7 +100,7 @@ public class ImportTests {
 
         Date date = new SimpleDateFormat("dd/MM/yyyy").parse(metadata[6]);
 
-        cstore.CreateClient(metadata[7],metadata[3],metadata[4],metadata[5], date,' ',metadata[9],metadata[8]);
+        cstore.createClient(metadata[7],metadata[3],metadata[4],metadata[5], date,' ',metadata[9],metadata[8]);
 
 
         return cstore.saveClient();
@@ -108,7 +108,7 @@ public class ImportTests {
 
     public boolean verifyClinic(String[] metadata) {
 
-        return store.VerifyClinicalLabID(metadata[2]);
+        return store.verifyClinicalLabID(metadata[2]);
     }
 
     public boolean createTestfromFile(String[] metadata) throws ParseException {
@@ -124,21 +124,21 @@ public class ImportTests {
 
             ParameterCategory pc1 = pcstore.getParameterCategoryExist(metadata[12]);
             if(pc1==null){
-                pc1 = pcstore.CreateParameterCategory("12345",metadata[12]);
+                pc1 = pcstore.createParameterCategory("12345",metadata[12]);
             }
             pcList.add(pc1);
         }
         if (!metadata[17].equalsIgnoreCase("NA")){
             ParameterCategory pc2 = pcstore.getParameterCategoryExist(metadata[17]);
             if(pc2==null){
-                pc2 = pcstore.CreateParameterCategory("12346",metadata[12]);
+                pc2 = pcstore.createParameterCategory("12346",metadata[12]);
             }
             pcList.add(pc2);
         }
         if (!metadata[19].equalsIgnoreCase("NA")){
             ParameterCategory pc3 = pcstore.getParameterCategoryExist(metadata[19]);
             if(pc3==null){
-                pc3 = pcstore.CreateParameterCategory("12347",metadata[12]);
+                pc3 = pcstore.createParameterCategory("12347",metadata[12]);
             }
             pcList.add(pc3);
         }

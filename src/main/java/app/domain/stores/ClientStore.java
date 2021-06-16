@@ -2,7 +2,6 @@ package app.domain.stores;
 
 import app.domain.model.Client;
 import app.domain.model.Company;
-import app.domain.model.Test;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -36,7 +35,7 @@ public class ClientStore implements Serializable {
      * @param email       unique email that belongs to client
      * @param name        name of the client
      */
-    public void CreateClient(String phoneNumber, String cc, String nhs, String tinNumber, Date birthDate, char sex, String email, String name) {
+    public void createClient(String phoneNumber, String cc, String nhs, String tinNumber, Date birthDate, char sex, String email, String name) {
         if (sex == 'M' || sex == 'F') {
             this.client = new Client(phoneNumber, cc, nhs, tinNumber, birthDate, sex, email, name);
         } else {
@@ -114,15 +113,10 @@ public class ClientStore implements Serializable {
         return client;
     }
 
-    public String getEmail(Client client){
-        return this.client.getEmail();
-    }
 
-
-
-    public Client getClientByEmail(String Email) {
+    public Client getClientByEmail(String email) {
         for (Client c1 : this.array) {
-            if (c1.getEmail().equals(Email)) {
+            if (c1.getEmail().equals(email)) {
                 return c1;
             }
         }
@@ -131,9 +125,7 @@ public class ClientStore implements Serializable {
 
     public List<Client> orderClientListByTin() {
 
-        List<Client> clientListOrder = new ArrayList<>();
-
-        clientListOrder.addAll(array);
+        List<Client> clientListOrder = new ArrayList<>(array);
 
         clientListOrder.sort(Comparator.comparing(Client::getTinNumber));
 
@@ -142,9 +134,8 @@ public class ClientStore implements Serializable {
 
 
     public List<Client> orderClientListByName() {
-        List<Client> clientListOrder = new ArrayList<>();
 
-        clientListOrder.addAll(array);
+        List<Client> clientListOrder = new ArrayList<>(array);
 
         clientListOrder.sort(Comparator.comparing(Client::getName));
 

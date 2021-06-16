@@ -3,7 +3,6 @@ package app.domain.stores;
 import app.domain.model.*;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.*;
@@ -12,7 +11,7 @@ import java.util.*;
  * Class that represents an List of Tests in the system
  */
 public class TestStore implements Serializable {
-    private List<Test> array;
+    private final List<Test> array;
     private Test t;
 
     /**
@@ -46,8 +45,8 @@ public class TestStore implements Serializable {
      * @return string that represents the id of the test
      */
     public String getTestId() {
-        int ID = this.array.size() + 1;
-        StringBuilder testNumber = new StringBuilder(String.valueOf(ID));
+        int id = this.array.size() + 1;
+        StringBuilder testNumber = new StringBuilder(String.valueOf(id));
 
         while (testNumber.length() < 15) {
             testNumber.insert(0, "0");
@@ -135,9 +134,9 @@ public class TestStore implements Serializable {
      */
     public List<Test> getListOfTestsToValidate() {
         List<Test> listToValidate = new ArrayList<>();
-        for (Test t : this.array) {
-            if (t.getState().equals("DIAGNOSTIC_MADE")) {
-                listToValidate.add(t);
+        for (Test test : this.array) {
+            if (test.getState().equals("DIAGNOSTIC_MADE")) {
+                listToValidate.add(test);
             }
         }
         return listToValidate;
@@ -148,9 +147,9 @@ public class TestStore implements Serializable {
      */
     public TestStore getListOfTestsAnalysed() {
         TestStore listToReport = new TestStore();
-        for (Test t : this.array) {
-            if (t.getState().equals("SAMPLE_ANALYSED")) {
-                listToReport.addTest(t);
+        for (Test test : this.array) {
+            if (test.getState().equals("SAMPLE_ANALYSED")) {
+                listToReport.addTest(test);
             }
         }
         return listToReport;
@@ -168,7 +167,6 @@ public class TestStore implements Serializable {
 
 
     public List<Test> sortDate(String clientTin) {
-        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         Comparator<Test> comparator1 = new Comparator<Test>() {
             @Override
             public int compare(Test o1, Test o2) {
@@ -193,6 +191,13 @@ public class TestStore implements Serializable {
         return testList2;
     }
 
+    public String toStringSortedList(String clientTin) {
+        for (Test test : sortDate(clientTin)) {
+            System.out.println(test);
+        }
+        return null;
+    }
+
     public List<Test> getTestByTin(String clientTin) {
         List<Test> tinList = new ArrayList<>();
         for (Test tinTests : this.array) {
@@ -211,9 +216,9 @@ public class TestStore implements Serializable {
     public List<Test> getValidatedTestList(Client client) {
         List<Test> validatedTest = new ArrayList<>();
 
-        for (Test t : array) {
-            if (client.getTinNumber().equalsIgnoreCase(t.getClientTin()) && t.getState().equals("VALIDATED")) {
-                validatedTest.add(t);
+        for (Test test : array) {
+            if (client.getTinNumber().equalsIgnoreCase(test.getClientTin()) && test.getState().equals("VALIDATED")) {
+                validatedTest.add(test);
             }
         }
         return validatedTest;
@@ -221,13 +226,11 @@ public class TestStore implements Serializable {
 
     public List<Test> getValidatedTestsList() {
 
-        // Company company = App.getInstance().getCompany();
-
         List<Test> testList = new ArrayList<>();
 
-        for (Test t : array) {
-            if (t.getState().equals("VALIDATED") && t.getTestType().getTestID().equals("COV19")) {
-                testList.add(t);
+        for (Test test : array) {
+            if (test.getState().equals("VALIDATED") && test.getTestType().getTestID().equals("COV19")) {
+                testList.add(test);
             }
         }
 
@@ -239,4 +242,11 @@ public class TestStore implements Serializable {
         return array;
     }
 
+    @Override
+    public String toString() {
+        for (Test test : array) {
+            System.out.println(test.toString());
+        }
+        return null;
+    }
 }

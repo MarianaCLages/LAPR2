@@ -4,6 +4,7 @@ import app.controller.App;
 import app.controller.ConsultClientTestsAndResultsController;
 import app.domain.model.Client;
 import app.domain.model.Test;
+import app.domain.shared.Constants;
 import app.ui.gui.controllers.SceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,7 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.control.TextArea;
 
 import java.net.URL;
 import java.util.List;
@@ -30,7 +31,7 @@ public class ConsultClientTestsAndResultsUI implements Initializable {
     @FXML
     private Label lblClientTin;
     @FXML
-    private Label lblTestResults;
+    private TextArea txtTestResults;
 
     ConsultClientTestsAndResultsController ctrl = new ConsultClientTestsAndResultsController();
 
@@ -43,14 +44,14 @@ public class ConsultClientTestsAndResultsUI implements Initializable {
     public void returnToCCTMenu(ActionEvent event) {
         App app = sceneController.getApp();
         app.doLogout();
-        sceneController.switchMenu(event, "/FXML/ClinicalChemistryTechnologistUI.fxml");
+        sceneController.switchMenu(event, Constants.CLINICAL_CHEMISTRY_TECHNOLOGIST_UI);
     }
 
     public boolean fillClientList() {
         clientList = ctrl.getClientListTin();
 
-        for (Client client : clientList) {
-            lvwClientList.getItems().add(client.getTinNumber());
+        for (Client client1 : clientList) {
+            lvwClientList.getItems().add(client1.getTinNumber());
         }
 
         if (lvwClientList.getItems().isEmpty() || lvwClientList.getItems() == null) {
@@ -65,6 +66,7 @@ public class ConsultClientTestsAndResultsUI implements Initializable {
     }
 
     public void fillTestList() {
+        lvwTestList.getItems().clear();
         client = ctrl.selectedClient(lblClientTin.getText());
         testList = ctrl.getValidatedTestList();
 
@@ -79,8 +81,8 @@ public class ConsultClientTestsAndResultsUI implements Initializable {
         selectedTest();
     }
 
-    public void selectedTest(){
-        lvwTestList.getSelectionModel().selectedIndexProperty().addListener((observableValue, number, t1) -> lblTestResults.setText(ctrl.toString(testList.get(t1.intValue()))));
+    public void selectedTest() {
+        lvwTestList.getSelectionModel().selectedIndexProperty().addListener((observableValue, number, t1) -> txtTestResults.setText(ctrl.toString(testList.get(t1.intValue()))));
     }
 
     @Override

@@ -1,6 +1,7 @@
 package app.ui.gui.adminMenuUIs;
 
 import app.controller.App;
+import app.domain.shared.Constants;
 import app.ui.gui.controllers.SceneController;
 import javafx.event.ActionEvent;
 
@@ -11,7 +12,7 @@ public class MultiLinearRegressionController {
     public void returnToGenerateNHSReport(ActionEvent event) {
         App app = sceneController.getApp();
         app.doLogout();
-        sceneController.switchMenu(event, "/FXML/NHSReportUI.fxml");
+        sceneController.switchMenu(event, Constants.NHS_REPORT_UI);
     }
 
 }

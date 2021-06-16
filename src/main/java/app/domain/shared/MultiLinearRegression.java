@@ -1,135 +1,396 @@
 package app.domain.shared;
 
-/******************************************************************************
- *  Compilation:  javac -classpath jama.jar:. MultipleLinearRegression.java
- *  Execution:    java  -classpath jama.jar:. MultipleLinearRegression
- *  Dependencies: jama.jar
- *
- *  Compute least squares solution to X beta = y using Jama library.
- *  Assumes X has full column rank.
- *
- *       http://math.nist.gov/javanumerics/jama/
- *       http://math.nist.gov/javanumerics/jama/Jama-1.0.1.jar
- *
- ******************************************************************************/
+import app.domain.shared.exceptions.InvalidLengthException;
+import org.apache.commons.math3.distribution.FDistribution;
+import org.apache.commons.math3.distribution.TDistribution;
 
-//import Jama.Matrix;
-//import Jama.QRDecomposition;
 
-/**
- *  The {@code MultipleLinearRegression} class performs a multiple linear regression
- *  on an set of <em>N</em> data points using the model
- *  <em>y</em> = &beta;<sub>0</sub> + &beta;<sub>1</sub> <em>x</em><sub>1</sub> + ... +
- &beta;<sub><em>p</em></sub> <em>x<sub>p</sub></em>,
- *  where <em>y</em> is the response (or dependent) variable,
- *  and <em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>, ..., <em>x<sub>p</sub></em>
- *  are the <em>p</em> predictor (or independent) variables.
- *  The parameters &beta;<sub><em>i</em></sub> are chosen to minimize
- *  the sum of squared residuals of the multiple linear regression model.
- *  It also computes the coefficient of determination <em>R</em><sup>2</sup>.
- *
- *  @author Robert Sedgewick
- *  @author Kevin Wayne
- */
-/*
-public class MultipleLinearRegression {
-    private final Matrix beta;  // regression coefficients
-    private double sse;         // sum of squared
-    private double sst;         // sum of squared
+public class MultiLinearRegression {
+    private double[][] C;
+    private double F0;
+    private double intercept;
 
-    /**
-     * Performs a linear regression on the data points {@code (y[i], x[i][j])}.
-     * @param  x the values of the predictor variables
-     * @param  y the corresponding values of the response variable
-     * @throws IllegalArgumentException if the lengths of the two arrays are not equal
-     */
+    public double getIntercept() {
+        return intercept;
+    }
 
-/*
-    public MultipleLinearRegression(double[][] x, double[] y) {
+    public double getSlope1() {
+        return slope1;
+    }
+
+    public double getSlope2() {
+        return slope2;
+    }
+
+    private double slope1;
+    private double slope2;
+    private double r2;
+    private double r2Ajusted;
+    private double[] betta;
+    private double SQt;
+    private double SQr;
+    private double SQe;
+    private double MQr;
+    private double MQe;
+    private double[][] x;
+    private double[] y;
+    private int n;
+    private int k;
+    public MultiLinearRegression(double[][] x, double[] y) {
+
         if (x.length != y.length) {
-            throw new IllegalArgumentException("matrix dimensions don't agree");
+            throw new IllegalArgumentException("array lengths are not equal");
         }
 
-        // number of observations
+        double[][] m1 = new double[x.length][x[0].length + 1];
+        for (int i = 0; i < m1.length; i++) {
+            m1[i][0] = 1;
+            for (int j = 1; j < m1[i].length; j++) {
+                m1[i][j] = x[i][j - 1];
+            }
+        }
+
+        this.k = 2;
+        this.n = y.length;
+        this.x = m1;
+        this.y = y;
+
+        double[][] xt = transpose(this.x);
+
+        double[][] xtx = matrixProduct(xt, this.x);
+
+        double[][] xtxinv = inverse(xtx);
+
+        double[][] xtxinvxt = matrixProduct(xtxinv, transpose(this.x));
+
+        this.betta = new double[xtxinvxt.length];
+
+        for (int j = 0; j < xtxinvxt.length; j++) {
+            for (int m = 0; m < xtxinvxt[0].length; m++) {
+
+                betta[j] += xtxinvxt[j][m] * y[m];
+
+            }
+        }
+
+        this.C = inverse(matrixProduct(transpose(this.x), this.x));
+
+        this.intercept = this.betta[0];
+        this.slope1 = this.betta[1];
+        this.slope2 = this.betta[2];
+
+
+        this.SQt = calculateSQT(y);
+        this.SQr = calculateSQR(y, betta, this.x);
+        this.SQe = calculateSQE(this.SQt, this.SQr);
+
+        this.r2 = SQr / SQt;
+
+
+        this.r2Ajusted = calculateR2Adjusted(this.r2, n, k);
+
+        this.MQr = SQr / this.k;
+
+
+        this.MQe = this.SQe / (this.n - (this.k + 1));
+
+        this.F0 = this.MQr / this.MQe;
+
+    }
+
+    private static double[] matrixVectorProduct(double[][] matrix, double[] vector) {
+
+
+        double[] product = new double[matrix.length];
+        int i = 0;
+
+        for (int j = 0; j < matrix.length; j++) {
+            for (int k = 0; k < matrix.length; k++) {
+                product[i] += matrix[j][k] * vector[k];
+            }
+
+            i++;
+
+        }
+        return product;
+    }
+
+    private static double[][] matrixProduct(double[][] matrixA, double[][] matrixB) {
+
+        double[][] product = new double[matrixA.length][matrixB[0].length];
+
+        for (int i = 0; i < matrixA.length; i++) {
+            for (int j = 0; j < matrixB[0].length; j++) {
+                for (int k = 0; k < matrixA[0].length; k++) {
+                    product[i][j] += matrixA[i][k] * matrixB[k][j];
+                }
+            }
+        }
+        return product;
+    }
+
+    private static double[][] transpose(double[][] matrix) {
+        double[][] transpose = new double[matrix[0].length][matrix.length];
+
+//Code to transpose a matrix
+        for (int i = 0; i < matrix[0].length; i++) {
+            for (int j = 0; j < matrix.length; j++) {
+                transpose[i][j] = matrix[j][i];
+            }
+        }
+        return transpose;
+    }
+
+    //dar aqui os creditos
+    //uses the laplace theorem to calculate the determinant
+    private static double determinant(double[][] matrix) {
+        if (matrix.length != matrix[0].length)
+            throw new IllegalStateException("matrix should be a square matrizx");
+
+        if (matrix.length == 2)
+            return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
+
+        double det = 0;
+        for (int i = 0; i < matrix[0].length; i++)
+            det += Math.pow(-1, i) * matrix[0][i]
+                    * determinant(minor(matrix, 0, i));
+        return det;
+    }
+
+    //calculates the inverse matrix using the complement matrix
+    private static double[][] inverse(double[][] matrix) {
+        double[][] inverse = new double[matrix.length][matrix.length];
+
+        // minors and cofactors
+        for (int i = 0; i < matrix.length; i++)
+            for (int j = 0; j < matrix[i].length; j++)
+                inverse[i][j] = Math.pow(-1, i + j)
+                        * determinant(minor(matrix, i, j));
+
+        // adjugate and determinant
+        double det = 1.0 / determinant(matrix);
+        for (int i = 0; i < inverse.length; i++) {
+            for (int j = 0; j <= i; j++) {
+                double temp = inverse[i][j];
+                inverse[i][j] = inverse[j][i] * det;
+                inverse[j][i] = temp * det;
+            }
+        }
+
+        return inverse;
+    }
+
+    private static double[][] minor(double[][] matrix, int row, int column) {
+        double[][] minor = new double[matrix.length - 1][matrix.length - 1];
+
+        for (int i = 0; i < matrix.length; i++)
+            for (int j = 0; i != row && j < matrix[i].length; j++)
+                if (j != column)
+                    minor[i < row ? i : i - 1][j < column ? j : j - 1] = matrix[i][j];
+        return minor;
+    }
+
+    public double getF0() {
+        return F0;
+    }
+
+    public double getCriticValueStudent(double alpha) {
+        TDistribution td = new TDistribution(this.n - this.k - 1);
+
+        return td.inverseCumulativeProbability(1 - alpha);
+    }
+
+    public double getCriticValueFisher(double alphaf) {
+        FDistribution fDistribution = new FDistribution(this.k, this.n - (this.k + 1));
+        return fDistribution.inverseCumulativeProbability(1 - alphaf);
+    }
+
+    public double lowerLimitCoeficient(int index,double alpha) {
+
+        double critTD = getCriticValueStudent(alpha);
+
+        double variance = this.MQe;
+
+        return this.betta[index] - critTD * Math.sqrt(variance * this.C[index][index]);
+
+    }
+
+    public double upperLimitCoeficient(int index,double alpha) {
+
+        double critTD = getCriticValueStudent(alpha);
+
+        double variance = this.MQe;
+
+        return this.betta[index] + critTD * Math.sqrt(variance * this.C[index][index]);
+
+    }
+
+    private double calculateSQR(double[] y, double[] betta, double[][] x) {
+        double[][] bettat = new double[betta.length][1];
+        for (int i = 0; i < betta.length; i++) {
+            bettat[i][0] = betta[i];
+        }
+        x = transpose(x);
+
+
+        double[] btxt = new double[x[0].length];
+        for (int i = 0; i < x[0].length; i++) {
+            for (int j = 0; j < bettat.length; j++) {
+                btxt[i] += x[j][i] * bettat[j][0];
+            }
+        }
+
+        double btxty = 0;
+        for (int i = 0; i < y.length; i++) {
+            btxty += y[i] * btxt[i];
+        }
+
+        return btxty - y.length * Math.pow(calculateym(y), 2);
+
+    }
+
+    private double calculateym(double[] y) {
+        double ym = 0;
+
+        for (int i = 0; i < y.length; i++) {
+            ym += y[i];
+        }
+        return ym / y.length;
+
+    }
+
+    private double calculateSQT(double[] y) {
         int n = y.length;
-
-        Matrix matrixX = new Matrix(x);
-
-        // create matrix from vector
-        Matrix matrixY = new Matrix(y, n);
-
-        // find least squares solution
-        QRDecomposition qr = new QRDecomposition(matrixX);
-        beta = qr.solve(matrixY);
-
-
-        // mean of y[] values
-        double sum = 0.0;
-        for (int i = 0; i < n; i++)
-            sum += y[i];
-        double mean = sum / n;
-
-        // total variation to be accounted for
-        for (int i = 0; i < n; i++) {
-            double dev = y[i] - mean;
-            sst += dev*dev;
+        double yty = 0;
+        for (int i = 0; i < y.length; i++) {
+            yty += y[i] * y[i];
         }
 
-        // variation not accounted for
-        Matrix residuals = matrixX.times(beta).minus(matrixY);
-        sse = residuals.norm2() * residuals.norm2();
+        return yty - n * Math.pow(calculateym(y), 2);
+    }
+
+    private double calculateSQE(double SQT, double SQR) {
+        return SQT - SQR;
+    }
+
+    private double calculateR2Adjusted(double r2, double n, double k) {
+
+        return (1 - (((n - 1) / (n - (k + 1))) * (1 - r2)));
+    }
+
+    public double getEstimate(double[] x) throws InvalidLengthException {
+        if (x.length != this.betta.length - 1) {
+            throw new InvalidLengthException();
+        }
+
+        double yEstimated = 0;
+
+        yEstimated += yEstimated + this.betta[0];
+        for (int i = 0; i < x.length; i++) {
+            yEstimated += this.betta[i + 1] * x[i];
+        }
+
+        return yEstimated;
+    }
+
+    public double lowerLimitAnswer(double[] x0,double alpha) throws InvalidLengthException {
+        if (x0.length != this.betta.length - 1) {
+            throw new InvalidLengthException();
+        }
+
+        double[] x1 = new double[x0.length + 1];
+
+        x1[0] = 1;
+
+        for (int i = 1; i < x1.length; i++) {
+            x1[i] = x0[i - 1];
+        }
+
+        double[][] x1t = new double[x1.length][1];
+
+        for (int i = 0; i < x1.length; i++) {
+            x1t[i][0] = x1[i];
+        }
+
+        double[] cx0 = matrixVectorProduct(this.C, x1);
+
+        double xtcx = 0;
+
+        for (int i = 0; i < cx0.length; i++) {
+            xtcx += cx0[i] * x1t[i][0];
+        }
+
+
+        double critTD = getCriticValueStudent(alpha);
+        double variance = this.MQe;
+
+        return getEstimate(x0) - critTD * Math.sqrt(variance * (1 + xtcx));
 
     }
 
-    /**
-     * Returns the least squares estimate of &beta;<sub><em>j</em></sub>.
-     *
-     * @param  j the index
-     * @return the estimate of &beta;<sub><em>j</em></sub>
-     */
+    public double upperLimitAnswer(double[] x0,double alpha) throws InvalidLengthException {
+        if (x0.length != this.betta.length - 1) {
+            throw new InvalidLengthException();
+        }
 
-/*
+        double[] x1 = new double[x0.length + 1];
 
-    public double beta(int j) {
-        return beta.get(j, 0);
+        x1[0] = 1;
+
+        for (int i = 1; i < x1.length; i++) {
+            x1[i] = x0[i - 1];
+        }
+
+        double[][] x1t = new double[x1.length][1];
+
+        for (int i = 0; i < x1.length; i++) {
+            x1t[i][0] = x1[i];
+        }
+
+        double[] cx0 = matrixVectorProduct(this.C, x1);
+
+        double xtcx = 0;
+
+        for (int i = 0; i < cx0.length; i++) {
+            xtcx += cx0[i] * x1t[i][0];
+        }
+
+        double critTD = getCriticValueStudent(alpha);
+        double variance = this.MQe;
+
+        return getEstimate(x0) + critTD * Math.sqrt(variance * (1 + xtcx));
+
     }
 
-    /**
-     * Returns the coefficient of determination <em>R</em><sup>2</sup>.
-     *
-     * @return the coefficient of determination <em>R</em><sup>2</sup>,
-     *         which is a real number between 0 and 1
-     */
-
-/*
-    public double R2() {
-        return 1.0 - sse/sst;
+    public double getTestStatistics(int index) {
+        return this.betta[index] / Math.sqrt(this.MQe * this.C[index][index]);
     }
 
-    /**
-     * Unit tests the {@code MultipleLinearRegression} data type.
-     *
-     * @param args the command-line arguments
-     */
+    public double getR2() {
+        return r2;
+    }
 
-/*
+    public double getR2Ajusted() {
+        return r2Ajusted;
+    }
 
+    public double getSQt() {
+        return SQt;
+    }
 
-    public static void main(String[] args) {
-        double[][] x = { {  1,  10,  20 },
-                {  1,  20,  40 },
-                {  1,  40,  15 },
-                {  1,  80, 100 },
-                {  1, 160,  23 },
-                {  1, 200,  18 } };
-        double[] y = { 243, 483, 508, 1503, 1764, 2129 };
-        MultipleLinearRegression regression = new MultipleLinearRegression(x, y);
+    public double getSQr() {
+        return SQr;
+    }
 
-        StdOut.printf("%.2f + %.2f beta1 + %.2f beta2  (R^2 = %.2f)\n",
-                regression.beta(0), regression.beta(1), regression.beta(2), regression.R2());
+    public double getSQe() {
+        return SQe;
+    }
+
+    public double getMQr() {
+        return MQr;
+    }
+
+    public double getMQe() {
+        return MQe;
     }
 }
-
-
-}
-*/

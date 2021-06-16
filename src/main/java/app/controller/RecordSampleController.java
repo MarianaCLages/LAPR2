@@ -17,11 +17,10 @@ import java.util.List;
  */
 public class RecordSampleController {
 
-    private Company company;
+    private final Company company;
     private TestStore store;
     private TestStore tList;
     private SampleStore sampleList;
-    private Test test;
 
     /**
      * Constructor of the class, receives an instance of the company class
@@ -104,8 +103,8 @@ public class RecordSampleController {
      */
     public void confirm(String testID) {
 
-        this.test = tList.getTestByCode(testID);
-        this.test.changeState("SAMPLE_COLLECTED");
+        Test test = tList.getTestByCode(testID);
+        test.changeState("SAMPLE_COLLECTED");
         company.saveCompany();
 
 

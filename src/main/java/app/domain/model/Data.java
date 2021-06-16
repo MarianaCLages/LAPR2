@@ -1,18 +1,24 @@
 package app.domain.model;
 
-import app.controller.App;
 import app.domain.shared.exceptions.*;
-import app.ui.gui.controllers.SceneController;
 import org.apache.commons.lang3.StringUtils;
+
+import java.time.LocalDate;
+import java.time.Period;
 
 public class Data {
 
     private String historicalDays;
-    private Long date;
-    private String confidenceLevelIC;
+    private int date;
+    private int confidenceLevelIC;
     private String significanceLevel;
+    private LocalDate intervalStartDate;
+    private LocalDate intervalEndDate;
+    private boolean dayReport;
+    private boolean weekReport;
+    private boolean monthlyReport;
 
-    public Data(String historicalDays, long date, String confidenceLevelIC, String significanceLevel) {
+    public Data(String historicalDays, int date, int confidenceLevelIC, String significanceLevel) {
 
         this.historicalDays = historicalDays;
         this.date = date;
@@ -24,13 +30,18 @@ public class Data {
     public Data() {
 
         this.historicalDays = null;
-        this.date = null;
-        this.confidenceLevelIC = null;
+        this.date = 0;
+        this.confidenceLevelIC = 0;
         this.significanceLevel = null;
+        this.intervalStartDate = null;
+        this.intervalEndDate = null;
+        this.dayReport = false;
+        this.weekReport = false;
+        this.monthlyReport = false;
 
     }
 
-    public void setConfidenceLevelIC(String confidenceLevelIC) throws ConfidenceLevelInvalidException, ConfidenceLevelICEmptyException {
+    public void setConfidenceLevelIC(int confidenceLevelIC) throws ConfidenceLevelInvalidException, ConfidenceLevelICEmptyException {
         checkConfidenceLevelIC(confidenceLevelIC);
         this.confidenceLevelIC = confidenceLevelIC;
     }
@@ -40,20 +51,19 @@ public class Data {
         this.historicalDays = historicalDays;
     }
 
-    public void setIntervalDates(long date) throws DateEmptyException, DateInvalidException {
+    public void setIntervalDates(int date) throws DateEmptyException, DateInvalidException {
         checkIntervalDates(date);
         this.date = date;
     }
 
-    private void checkConfidenceLevelIC(String confidenceLevelIC) throws ConfidenceLevelInvalidException, ConfidenceLevelICEmptyException {
+    public void setDates(LocalDate start, LocalDate end) {
+        this.intervalStartDate = start;
+        this.intervalEndDate = end;
+    }
 
-        if (confidenceLevelIC.isEmpty() || StringUtils.isBlank(confidenceLevelIC)) {
-            throw new ConfidenceLevelICEmptyException();
-        }
+    private void checkConfidenceLevelIC(int confidenceLevelIC) throws ConfidenceLevelInvalidException {
 
-        int n = Integer.parseInt(confidenceLevelIC);
-
-        if (n > 100 || n < 0) {
+        if (confidenceLevelIC > 100 || confidenceLevelIC < 0) {
             throw new ConfidenceLevelInvalidException();
         }
 
@@ -85,11 +95,11 @@ public class Data {
 
     }
 
-    public Long getDate() {
-        return date;
+    public int getHistoricalDaysInt() {
+        return Integer.parseInt(historicalDays);
     }
 
-    public String getConfidenceLevelIC() {
+    public int getConfidenceLevel() {
         return confidenceLevelIC;
     }
 
@@ -97,6 +107,43 @@ public class Data {
         return historicalDays;
     }
 
+    public LocalDate getIntervalEndDate() {
+        return intervalEndDate;
+    }
+
+    public LocalDate getIntervalStartDate() {
+        return intervalStartDate;
+    }
+
+    public int getDifferenceInDates() {
+
+        return Period.between(this.intervalStartDate, this.intervalEndDate).getDays();
+
+    }
+
+    public void setWeekReport(boolean weekReport) {
+        this.weekReport = weekReport;
+    }
+
+    public void setDayReport(boolean dayReport) {
+        this.dayReport = dayReport;
+    }
+
+    public boolean getDayReportValue() {
+        return this.dayReport;
+    }
+
+    public boolean getWeekReportValue() {
+        return this.weekReport;
+    }
+
+    public boolean getMontlhyReportValue() {
+        return this.monthlyReport;
+    }
+
+    public void setMonthlyReport(boolean monthlyReport) {
+        this.monthlyReport = monthlyReport;
+    }
 
 }
 

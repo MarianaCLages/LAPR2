@@ -1,6 +1,7 @@
 package app.ui.gui.employees;
 
 import app.controller.App;
+import app.domain.shared.Constants;
 import app.ui.gui.controllers.SceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,7 +17,7 @@ public class MedicalLabTechinicianUI {
     public void returnToMenu(ActionEvent event) {
         App app = sceneController.getApp();
         app.doLogout();
-        sceneController.switchMenu(event, "/FXML/MainScreen.fxml");
+        sceneController.switchMenu(event, Constants.MAIN_SCREEN_UI);
     }
 
 }

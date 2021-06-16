@@ -30,7 +30,7 @@ public class ConsultClientTestsAndResultsUI implements Runnable {
             clientTin.add(client.getTinNumber());
         }
 
-        tin = Utils.showAndSelectOne(clientTin, "Client List Ordered").toString();
+        tin = Utils.showAndSelectOne(clientTin, "\nClient list ordered by TIN number:").toString();
 
         List<Test> testList;
         List<String> testTin = new ArrayList<>();
@@ -44,16 +44,16 @@ public class ConsultClientTestsAndResultsUI implements Runnable {
         }
 
         for (Test test : testList) {
-            testTin.add(test.getClientTin());
+            testTin.add(test.getTestNhsNumber());
         }
 
         tin = Utils.showAndSelectOne(testTin, "Test List").toString();
 
         try {
-            System.out.println(ctrl.toString(ctrl.selectedTest(tin, testList)));
-        } catch (Exception e) {
+            Test test = ctrl.selectedTest(tin, testList);
+            System.out.println(ctrl.toString(test));
+        } catch (NullPointerException e) {
             System.out.println("ERROR FINAL!!");
-            return;
         }
     }
 }

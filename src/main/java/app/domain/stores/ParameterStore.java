@@ -2,7 +2,6 @@ package app.domain.stores;
 
 import app.domain.model.Parameter;
 import app.domain.model.ParameterCategory;
-import app.domain.model.Test;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -15,14 +14,14 @@ import static java.lang.String.valueOf;
  * Class that represents an List of all the Parameters in the system
  */
 public class ParameterStore implements Serializable {
-    private List<Parameter> array;
+    private final List<Parameter> array;
     private Parameter pc;
 
     /**
      * Constructor of the class it creates an empty list to be filled with objects of Parameter
      */
     public ParameterStore() {
-        this.array = new ArrayList<Parameter>();
+        this.array = new ArrayList<>();
     }
 
     /**
@@ -45,10 +44,7 @@ public class ParameterStore implements Serializable {
      */
 
     public boolean validateParameter(Parameter pc) {
-        if (pc == null || contains(pc)) {
-            return false;
-        }
-        return true;
+        return pc != null && !contains(pc);
     }
 
     /**
@@ -59,11 +55,7 @@ public class ParameterStore implements Serializable {
      */
 
     public boolean contains(Parameter pc) {
-        if (this.array.contains(pc)) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.array.contains(pc);
     }
 
     /**

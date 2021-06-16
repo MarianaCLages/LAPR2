@@ -1,7 +1,9 @@
 package app.ui.gui.controllers;
 
 import app.controller.AuthController;
+import app.domain.shared.Constants;
 import app.ui.console.utils.Utils;
+import app.ui.gui.Alerts;
 import auth.mappers.dto.UserRoleDTO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -37,12 +39,12 @@ public class LoginController {
         if (sucess) {
             switchM(actionEvent);
         } else if (maxAttempts == 0) {
-            sceneController.switchMenu(actionEvent, "/FXML/MainScreen.fxml");
+            sceneController.switchMenu(actionEvent, Constants.MAIN_SCREEN_UI);
         }
     }
 
     public void cancel(ActionEvent actionEvent) {
-        sceneController.switchMenu(actionEvent, "/FXML/MainScreen.fxml");
+        sceneController.switchMenu(actionEvent, Constants.MAIN_SCREEN_UI);
     }
 
     private boolean doLogin() {
@@ -55,7 +57,7 @@ public class LoginController {
         maxAttempts--;
         success = ctrl.doLogin(id, pwd);
         if (!success && maxAttempts!=0) {
-            informationAlert(maxAttempts);
+            Alerts.informationAlert(maxAttempts);
         }
 
         return success;
@@ -68,14 +70,6 @@ public class LoginController {
             return (UserRoleDTO) Utils.showAndSelectOne(roles, "Select the role you want to adopt in this session:");
     }
 
-    private void informationAlert(int maxAttempts) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("");
-        alert.setHeaderText("Invalid UserId and/or Password.");
-        alert.setContentText("You have  " + maxAttempts + " more attempt(s).");
-        alert.show();
-    }
-
     private void switchM(ActionEvent actionEvent) {
         List<UserRoleDTO> roles = this.ctrl.getUserRoles();
         if ((roles == null) || (roles.isEmpty())) {
@@ -85,25 +79,25 @@ public class LoginController {
             if (!Objects.isNull(role)) {
                 switch (role.getDescription()) {
                     case "ADMINISTRATOR":
-                        sceneController.switchMenu(actionEvent, "/FXML/AdministratorUI.fxml");
+                        sceneController.switchMenu(actionEvent, Constants.ADMINISTRATOR_UI);
                         break;
                     case "SPECIALISTDOCTOR":
-                        sceneController.switchMenu(actionEvent, "/FXML/SpecialistDoctorUI.fxml");
+                        sceneController.switchMenu(actionEvent, Constants.SPECIALIST_DOCTOR_UI);
                         break;
                     case "ClIENT":
-                        sceneController.switchMenu(actionEvent, "/FXML/ClientUI.fxml");
+                        sceneController.switchMenu(actionEvent, Constants.CLIENT_UI);
                         break;
                     case "RECEPTIONIST":
-                        sceneController.switchMenu(actionEvent, "/FXML/ReceptionistUI.fxml");
+                        sceneController.switchMenu(actionEvent, Constants.RECEPTIONIST_UI);
                         break;
                     case "LABORATORYCOORDINATOR":
-                        sceneController.switchMenu(actionEvent, "/FXML/LaboratoryCoordinatorUI.fxml");
+                        sceneController.switchMenu(actionEvent, Constants.LABORATORY_COORDINATOR_UI);
                         break;
                     case "MEDICALLABTECHNICIIAN":
-                        sceneController.switchMenu(actionEvent, "/FXML/MedicalLabTechnicianUI.fxml");
+                        sceneController.switchMenu(actionEvent, Constants.MEDICAL_LAB_TECHINICIAN_UI);
                         break;
                     case "CLINICALCHEMISTRYTECHNOLOGIST":
-                        sceneController.switchMenu(actionEvent, "/FXML/ClinicalChemistryTechnologistUI.fxml");
+                        sceneController.switchMenu(actionEvent, Constants.CLINICAL_CHEMISTRY_TECHNOLOGIST_UI);
                         break;
                     default:
                         break;
