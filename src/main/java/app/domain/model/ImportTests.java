@@ -28,6 +28,7 @@ public class ImportTests {
     ParameterStore pstore;
     Company company;
     TestStore tstore;
+    List<String> testFileList = new ArrayList<>();
 
     public ImportTests() {
         App app = App.getInstance();
@@ -85,7 +86,8 @@ public class ImportTests {
                     }
 
                     if(createClientfromFile(metadata) && verifyClinic(metadata) && createTestfromFile(metadata)){
-                        System.out.println(Arrays.toString(metadata));
+                        testFileList.add(Arrays.toString(metadata));
+                        /*System.out.println(Arrays.toString(metadata));*/
                     }
 
                 }
@@ -93,6 +95,10 @@ public class ImportTests {
         } catch (IOException | ParseException ioe) {
             ioe.printStackTrace();
         }
+    }
+
+    public List<String> getTestFileList() {
+        return testFileList;
     }
 
     public boolean createClientfromFile(String[] metadata) throws ParseException {
