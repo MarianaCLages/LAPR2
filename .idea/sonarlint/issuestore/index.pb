@@ -9,8 +9,6 @@ _
 /src/test/java/app/domain/model/CompanyTest.java,f\f\ff6dd89f0cd7857a07c771f5cf78d0af203b0511
 ]
 -src/test/java/app/domain/model/EmailTest.java,1\3\135feb5d30f995563cc1a82564df68b69ac6c930
-i
-9src/test/java/app/domain/model/ParameterCategoryTest.java,1\2\123cd2f5497bb247ec839e219a88873b0f77bc99
 a
 1src/test/java/app/domain/model/ParameterTest.java,5\a\5a7f926c4b2c375b8b717de1b79b2c76f0f4de07
 h
@@ -220,8 +218,6 @@ N
 docs/SprintD/US12/US12_MD.puml,5\1\517f331d08b59a98ea7535ecdf143b4e55763448
 M
 docs/SprintD/US04/US4_MD.puml,2\f\2f6a4e27680def385dd857b4452454decea51a03
-e
-5src/main/java/app/domain/shared/LinearRegression.java,b\5\b5738a1e3a1c85790cbe245760fdbfe6e77be206
 N
 docs/SprintD/US19/US19_DM.puml,e\5\e586368f87f8636785e28c6391040b4767f165a4
 M
@@ -234,3 +230,41 @@ N
 docs/SprintD/US19/US19_SSD.svg,4\6\46df73713f32f2a4e06ca55a5e3bc93f09918622
 o
 ?src/test/java/app/domain/stores/ParameterCategoryStoreTest.java,a\d\ad10a870e86f06eb3574f636cae639ed6b48432d
+U
+%src/main/java/app/controller/App.java,4\7\47cfbdc47faac4c1edcb93d1b6968a5d5bdad509
+[
++src/main/java/app/domain/model/Company.java,e\6\e66f0f8e51b44df23f2004467961976fbec241aa
+g
+7docs/SprintD/US19/US19_send_to_the_NHS_daily_reports.md,2\1\21cde031ea54f071604d6fab193a5b0d63a20e99
+D
+docs/SprintD/DM.puml,5\d\5dff55b21dbdf4f5b06aa1150995ae36147d966b
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+N
+docs/SprintD/US16/US16_DM.puml,e\d\ed7ab63f6477bc49499e03e724329f7ba5dffb4a
+a
+1src/main/java/app/domain/model/MaxSumAdapter.java,c\f\cfbd95090e4ba559534db58c1bf29296c81ccb9f
+g
+7src/main/java/app/domain/model/TestParameterResult.java,8\9\89c14902f91af9f5afc1e3afe73a166ab424f39c
+\
+,src/test/java/app/domain/model/TestTest.java,2\c\2cf03933548261c5794447fc0379d09dc74bc37a
+`
+0src/test/java/app/domain/model/EmployeeTest.java,e\3\e3c8c18d9e7436b0c6e2317e0e84a55d7e796e7a
+J
+docs/SprintD/US16/US016.md,f\5\f5caca5dac09ecb7e9bb6b2d7201376b312dc05d
+j
+:src/main/java/app/domain/shared/MultiLinearRegression.java,5\1\51ac4d2fa961af5b859a17a30045d1b297b297c4
+c
+3src/test/java/app/domain/model/ImportTestsTest.java,6\c\6cc4e132156821eab2b8a041d40e3ebf297c62f7
+i
+9src/test/java/app/domain/model/ParameterCategoryTest.java,1\2\123cd2f5497bb247ec839e219a88873b0f77bc99
+k
+;src/main/java/app/domain/model/MaxSumAdapterBruteForce.java,a\e\ae301bca2c482636ac2afab016a20b05ff1c94d3
+e
+5src/main/java/app/domain/shared/BruteForceMaxSum.java,5\1\516c2f7f87101ab76272a56682396c55dcc03e5a
+{
+Ksrc/main/java/app/ui/gui/adminMenuUIs/SimpleLinearRegressionController.java,2\8\2899725b031127861288aaf5dab8ea638fdbab20
+v
+Fsrc/main/java/app/ui/gui/adminMenuUIs/GenerateNHSReportController.java,4\9\492080ff1251d93f2fbaf48c23b559c00af79225
+j
+:src/main/java/app/domain/model/MaxSumAdapterBenchmark.java,c\3\c329355b06efa27a8e01f08fcca3c0a6032691d8
