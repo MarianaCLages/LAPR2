@@ -1,0 +1,36 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+hide methods
+
+class Company{
+Name
+}
+
+class Test{
+Test code
+NhsCode
+State
+Registered Date
+Diagnosis Date
+Validated Date
+}
+
+class Client{
+Name
+Citizen card Number
+National Healthcare Service Number
+Birth date
+Sex
+Tax Identification Number
+Phone
+E-mail
+}
+
+
+
+Company "1" -- "*" Test: performs >
+Company "1" -- "*" Client: knows >
+Test "*" - "1" Client: associated with >
+
+@enduml

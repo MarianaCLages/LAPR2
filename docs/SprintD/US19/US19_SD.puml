@@ -13,7 +13,7 @@ loop every day at 6:00AM
 activate tm
 
     activate ap
-    ap --> comp**:create(parameterFile)
+    ap --> comp**:create()
     deactivate ap
     activate comp
     comp --> task**: create(parameters)

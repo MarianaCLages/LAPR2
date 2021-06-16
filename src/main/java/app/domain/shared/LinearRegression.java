@@ -208,6 +208,10 @@ public class LinearRegression {
         return se;
     }
 
+    public double getR() {
+        return Math.sqrt(this.r2);
+    }
+
     /**
      * Returns a string representation of the simple linear regression model.
      *

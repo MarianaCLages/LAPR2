@@ -39,9 +39,17 @@ As an organization employee, I want to create a new task in order to be further 
 >
 > **Answer:** Each team should implement the classes and methods needed.
 
-> **Question:** which significance level should we use for the hypothesis tests?
+> **Question:** Which significance level should we use for the hypothesis tests?
 >
 > **Answer:** The application should allow the user to choose the significance level.
+
+> **Question:** Should we assume the report scope is Many Labs or is it each laboratory?
+>
+> **Answer:** Many Labs Many has exclusivity for doing Covid-19 tests and should send nationwide reports to NHS. The scope is Many Labs.
+
+> **Question:** Could you clarify how the historical points work? Acording to the NhsReportExample, it was chosen 15 points and the dates to fit the regression model but it seems that it was not chosen the day to start the prediction table
+>
+> **Answer:** In the header of the exampleNHSReport.txt file it says "If the administrator selects: The current day to be 31/05/2021...". Please relate this information with the table available in the exampleNHSReport.txt file. In US19, the current day is the day when the report is sent automatically to the NHS. The teams should not include sundays in their analysis or estimates. When the time resolution is a week, please consider only complete weeks.
 
 ### 1.3. Acceptance Criteria
 
@@ -68,7 +76,6 @@ As an organization employee, I want to create a new task in order to be further 
 * There is a dependency to "US4", "US5", "US12","US14","US15" since the test needs to be on **last state** in order to
   be able to be mentioned in report.
 
-
 ### 1.5 Input and Output Data
 
 **Input Data:**
@@ -79,31 +86,21 @@ As an organization employee, I want to create a new task in order to be further 
 
 * Report sent to the NHS
 
- ### 1.6. System Sequence Diagram (SSD)
+### 1.6. System Sequence Diagram (SSD)
 
 **Alternative 1**
 
-![US006_SSD](US006_SSD.svg)
-
-**Alternative 2**
-
-![US006_SSD_v2](US006_SSD_v2.svg)
-
-**Other alternatives might exist.**
+![US19_SSD](US19_SSD.svg)
 
 ### 1.7 Other Relevant Remarks
-
-
 
 ## 2. OO Analysis
 
 ### 2.1. Relevant Domain Model Excerpt
 
-![US006_MD](US006_MD.svg)
+![US19_MD](US19_DM.svg)
 
 ### 2.2. Other Remarks
-
-n/a
 
 ## 3. Design - User Story Realization
 
@@ -111,32 +108,16 @@ n/a
 
 **SSD - Alternative 1 is adopted.**
 
-| Interaction ID | Question: Which class is responsible for...            | Answer               | Justification (with patterns)                                                                                 |
-| :------------- | :---------------------                                 | :------------        | :----------------------------                                                                                 |
-| Step 1         | ... interacting with the actor?                        | CreateTaskUI         | Pure Fabrication: there is no reason to assign this responsibility to any existing class in the Domain Model. |
-|                | ... coordinating the US?                               | CreateTaskController | Controller                                                                                                    |
-|                | ... instantiating a new Task?                          | Organization         | Creator (Rule 1): in the DM Organization has a Task.                                                          |
-|                | ... knowing the user using the system?                 | UserSession          | IE: cf. A&A component documentation.                                                                          |
-|                | ... knowing to which organization the user belongs to? | Platform             | IE: has registed all Organizations                                                                            |
-|                |                                                        | Organization         | IE: knows/has its own Employees                                                                               |
-|                |                                                        | Employee             | IE: knows its own data (e.g. email)                                                                           |
-| Step 2         |                                                        |                      |                                                                                                               |
-| Step 3         | ...saving the inputted data?                           | Task                 | IE: object created in step 1 has its own data.                                                                |
-| Step 4         | ...knowing the task categories to show?                | Platform             | IE: Task Categories are defined by the Platform.                                                              |
-| Step 5         | ... saving the selected category?                      | Task                 | IE: object created in step 1 is classified in one Category.                                                   |
-| Step 6         |                                                        |                      |                                                                                                               |
-| Step 7         | ... validating all data (local validation)?            | Task                 | IE: owns its data.                                                                                            |
-|                | ... validating all data (global validation)?           | Organization         | IE: knows all its tasks.                                                                                      |
-|                | ... saving the created task?                           | Organization         | IE: owns all its tasks.                                                                                       |
-| Step 8         | ... informing operation success?                       | CreateTaskUI         | IE: is responsible for user interactions.                                                                     |
+| Interaction ID | Question: Which class is responsible for... | Answer        | Justification (with patterns) |
+| :------------- | :---------------------                      | :------------ | :---------------------------- |
+| Step 1         |                                             |               |                               |
+| Step 2         |                                             |               |                               |
 
 ### Systematization ##
 
 According to the taken rationale, the conceptual classes promoted to software classes are:
 
-* Organization
-* Platform
-* Task
+
 
 Other software classes (i.e. Pure Fabrication) identified:
 
