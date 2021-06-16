@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-/** * Simple Java program to read CSV file in Java. In this program we will read * list of books stored in CSV file as comma separated values. * * @author WINDOWS 8 * */
+/** Simple Java program to read CSV file in Java. In this program we will read * list of books stored in CSV file as comma separated values. * * @author WINDOWS 8 * */
 public class ImportTests {
 
     TestTypeStore ttstore;
@@ -85,7 +85,7 @@ public class ImportTests {
                     }
 
                     if(createClientfromFile(metadata) && verifyClinic(metadata) && createTestfromFile(metadata)){
-                        System.out.println(Arrays.toString(metadata));
+                       // System.out.println(Arrays.toString(metadata));
                     }
 
                 }
@@ -111,10 +111,8 @@ public class ImportTests {
         return store.verifyClinicalLabID(metadata[2]);
     }
 
-    public boolean createTestfromFile(String[] metadata) throws ParseException {
+    public boolean createTestfromFile(String[] metadata)  {
         TestType testtype = ttstore.getTestTypeExist(metadata[11]);
-
-
 
 
 
