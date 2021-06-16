@@ -79,6 +79,7 @@ public class SendReportTask extends TimerTask implements Serializable {
 
 
         MultiLinearRegression s = new MultiLinearRegression(matrix1, matrixb);
+
         System.out.println();
         System.out.println("Lower x1: " + s.lowerLimitCoeficient(1, 0.05));
 

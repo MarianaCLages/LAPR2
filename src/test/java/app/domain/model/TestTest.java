@@ -454,7 +454,7 @@ public class TestTest {
 
         test.addTestResult("ESR00", 5);
 
-        String expected = "Parameter: ESR00 -> Result: 5.0 mm/hr . Reference: Max: 10.0; Min: 1.0\n";
+        String expected = "Parameter: ESR00 -> Result: 5.0 mm/hr . Reference: max: 10.0; Min: 1.0\n";
 
         String actual = test.getResults();
 

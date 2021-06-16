@@ -3,7 +3,9 @@ package app.domain.shared;
 import java.util.Arrays;
 
 public class BruteForceMaxSum {
-    public static int[] Max(int[] array) {
+    private BruteForceMaxSum(){
+    }
+    public static int[] max(int[] array) {
         int max = Integer.MIN_VALUE;
         int beggining =0;
         int ending =0;

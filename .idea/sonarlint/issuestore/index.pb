@@ -9,8 +9,6 @@ _
 /src/test/java/app/domain/model/CompanyTest.java,f\f\ff6dd89f0cd7857a07c771f5cf78d0af203b0511
 ]
 -src/test/java/app/domain/model/EmailTest.java,1\3\135feb5d30f995563cc1a82564df68b69ac6c930
-`
-0src/test/java/app/domain/model/EmployeeTest.java,e\3\e3c8c18d9e7436b0c6e2317e0e84a55d7e796e7a
 i
 9src/test/java/app/domain/model/ParameterCategoryTest.java,1\2\123cd2f5497bb247ec839e219a88873b0f77bc99
 a
@@ -159,8 +157,6 @@ O
 .idea/artifacts/Sem2App_jar.xml,9\a\9a36f05a7cc7eec42026caea684078f299f65b24
 \
 ,src/main/java/app/domain/model/TestType.java,2\4\2423c136bbc016d77dbe900fd13fca08fa27b56a
-\
-,src/test/java/app/domain/model/TestTest.java,2\c\2cf03933548261c5794447fc0379d09dc74bc37a
 X
 (src/main/java/app/domain/model/Test.java,0\3\0346ca7efc8246aba1bce2abd18994f1118a0b11
 a
@@ -169,10 +165,6 @@ a
 Rsrc/main/java/app/domain/shared/exceptions/InvalidIntervalOfDatesEndException.java,1\7\176a2717604b8c1f243d24bb6800531d07cf8c5b
 „
 Tsrc/main/java/app/domain/shared/exceptions/InvalidIntervalOfDatesStartException.java,9\2\92a32d9f0338b18480c7b2ffa07f509d0f90fa47
-g
-7src/main/java/app/domain/model/TestParameterResult.java,8\9\89c14902f91af9f5afc1e3afe73a166ab424f39c
-_
-/src/main/java/app/domain/shared/LinearTest.java,b\1\b1ef7502dac291a5892519a19022cfcae28f35aa
 Y
 )src/main/java/app/domain/model/Email.java,e\5\e5b9d6aa410958c18970d8f4c9e19a4c38e62e32
 w
@@ -228,12 +220,8 @@ N
 docs/SprintD/US12/US12_MD.puml,5\1\517f331d08b59a98ea7535ecdf143b4e55763448
 M
 docs/SprintD/US04/US4_MD.puml,2\f\2f6a4e27680def385dd857b4452454decea51a03
-;
-Company.ser,b\4\b454abc40c090b9b68d018521b92cf0516eaa385
 e
 5src/main/java/app/domain/shared/LinearRegression.java,b\5\b5738a1e3a1c85790cbe245760fdbfe6e77be206
-j
-:src/main/java/app/domain/shared/MultiLinearRegression.java,5\1\51ac4d2fa961af5b859a17a30045d1b297b297c4
 N
 docs/SprintD/US19/US19_DM.puml,e\5\e586368f87f8636785e28c6391040b4767f165a4
 M

@@ -29,7 +29,7 @@ public class TestParameterResult implements Serializable {
      */
     @Override
     public String toString() {
-        return "Parameter: " + paramId + " ->" + " Result: " + result + " " + refValue.getMetric() + " . Reference: Max: " + refValue.getMaxValue() + "; Min: " + refValue.getMinValue();
+        return "Parameter: " + paramId + " ->" + " Result: " + result + " " + refValue.getMetric() + " . Reference: max: " + refValue.getMaxValue() + "; Min: " + refValue.getMinValue();
     }
 
     public double getResult() {

@@ -9,6 +9,19 @@ public class MultiLinearRegression {
     private double[][] C;
     private double F0;
     private double intercept;
+
+    public double getIntercept() {
+        return intercept;
+    }
+
+    public double getSlope1() {
+        return slope1;
+    }
+
+    public double getSlope2() {
+        return slope2;
+    }
+
     private double slope1;
     private double slope2;
     private double r2;
@@ -65,29 +78,21 @@ public class MultiLinearRegression {
         this.intercept = this.betta[0];
         this.slope1 = this.betta[1];
         this.slope2 = this.betta[2];
-        System.out.println("y= " + this.slope1 + "x1 + " + this.slope2 + "x2 " + " + " + this.intercept);
-        System.out.println();
+
 
         this.SQt = calculateSQT(y);
-        System.out.println("SQt: " + SQt);
         this.SQr = calculateSQR(y, betta, this.x);
-        System.out.println("SQr: " + SQr);
         this.SQe = calculateSQE(this.SQt, this.SQr);
-        System.out.println("SQe: " + SQe);
 
         this.r2 = SQr / SQt;
-        System.out.println("r2 = " + this.r2);
 
 
         this.r2Ajusted = calculateR2Adjusted(this.r2, n, k);
-        System.out.println("r2 adjusted = " + r2Ajusted);
 
         this.MQr = SQr / this.k;
 
-        System.out.println("MQr: " + this.MQr);
 
         this.MQe = this.SQe / (this.n - (this.k + 1));
-        System.out.println("MQe: " + this.MQe);
 
         this.F0 = this.MQr / this.MQe;
 
