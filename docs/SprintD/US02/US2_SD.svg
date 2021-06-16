@@ -114,16 +114,16 @@
       ><path d="M284 26 L284 41 L53 41 L53 26 ZM0 0 L0 104 L83 104 L83 102 L261 102 L261 104 L348 104 L348 84 L220 84 L220 69 L348 69 L348 0 L230 0 L230 8 L115 8 L115 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath37"
-      ><path d="M0 0 L574 0 L574 104 L0 104 L0 0 Z"
+      ><path d="M0 0 L599 0 L599 129 L0 129 L0 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath38"
-      ><path d="M383 32 L383 47 L190 47 L190 32 ZM231 65 L231 80 L53 80 L53 65 ZM0 0 L0 104 L574 104 L574 0 L254 0 L254 4 L23 4 L23 0 Z"
+      ><path d="M266 1 L266 16 L35 16 L35 1 ZM395 44 L395 59 L202 59 L202 44 ZM243 77 L243 92 L65 92 L65 77 ZM0 0 L0 129 L262 129 L262 126 L455 126 L455 129 L599 129 L599 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath39"
       ><path d="M0 0 L907 0 L907 104 L0 104 L0 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath40"
-      ><path d="M555 30 L555 45 L348 45 L348 30 ZM0 0 L0 36 L46 36 L46 90 L0 90 L0 104 L529 104 L529 98 L580 98 L580 104 L907 104 L907 0 Z"
+      ><path d="M555 30 L555 45 L348 45 L348 30 ZM0 0 L0 36 L46 36 L46 90 L0 90 L0 104 L354 104 L354 98 L750 98 L750 104 L907 104 L907 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath41"
       ><path d="M291 32 L291 47 L107 47 L107 32 ZM0 0 L0 104 L403 104 L403 0 Z"
@@ -132,7 +132,7 @@
       ><path d="M0 0 L1057 0 L1057 104 L0 104 L0 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath43"
-      ><path d="M550 30 L550 45 L499 45 L499 30 ZM1033 52 L1033 67 L1020 67 L1020 52 ZM16 0 L16 22 L0 22 L0 104 L1057 104 L1057 90 L1050 90 L1050 75 L1057 75 L1057 0 Z"
+      ><path d="M720 30 L720 45 L324 45 L324 30 ZM1033 52 L1033 67 L1020 67 L1020 52 ZM16 0 L16 22 L0 22 L0 104 L1057 104 L1057 90 L1050 90 L1050 75 L1057 75 L1057 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath44"
       ><path d="M0 0 L159 0 L159 149 L0 149 L0 0 Z"
@@ -141,10 +141,10 @@
       ><path d="M84 46 L84 61 L71 61 L71 46 ZM0 0 L0 149 L159 149 L159 84 L101 84 L101 69 L159 69 L159 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath46"
-      ><path d="M475 27 L475 42 L424 42 L424 27 ZM475 60 L475 75 L424 75 L424 60 ZM0 0 L0 104 L350 104 L350 89 L402 89 L402 104 L907 104 L907 0 Z"
+      ><path d="M513 27 L513 42 L385 42 L385 27 ZM504 60 L504 75 L394 75 L394 60 ZM0 0 L0 104 L308 104 L308 89 L437 89 L437 104 L907 104 L907 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath47"
-      ><path d="M402 29 L402 44 L350 44 L350 29 ZM0 0 L0 104 L757 104 L757 0 L475 0 L475 15 L424 15 L424 0 Z"
+      ><path d="M437 29 L437 44 L308 44 L308 29 ZM0 0 L0 104 L757 104 L757 0 L504 0 L504 15 L394 15 L394 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath48"
       ><path d="M294 30 L294 45 L70 45 L70 30 ZM220 80 L220 95 L143 95 L143 80 ZM0 0 L0 104 L368 104 L368 0 Z"
@@ -159,7 +159,7 @@
       ><path d="M268 30 L268 45 L131 45 L131 30 ZM0 0 L0 104 L403 104 L403 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath52"
-      ><path d="M475 30 L475 45 L424 45 L424 30 ZM402 59 L402 74 L350 74 L350 59 ZM0 0 L0 104 L907 104 L907 0 L475 0 L475 12 L424 12 L424 0 Z"
+      ><path d="M504 30 L504 45 L394 45 L394 30 ZM437 59 L437 74 L308 74 L308 59 ZM0 0 L0 104 L907 104 L907 0 L513 0 L513 12 L385 12 L385 0 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath53"
       ><path d="M0 0 L129 0 L129 129 L0 129 L0 0 Z"
@@ -168,7 +168,7 @@
       ><path d="M-13 -15 L26 -15 L26 30 L-13 30 L-13 -15 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath55"
-      ><path d="M-51 -15 L102 -15 L102 30 L-51 30 L-51 -15 Z"
+      ><path d="M-110 -15 L220 -15 L220 30 L-110 30 L-110 -15 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath56"
       ><path d="M-137 -15 L274 -15 L274 30 L-137 30 L-137 -15 Z"
@@ -183,33 +183,39 @@
       ><path d="M-224 -15 L448 -15 L448 30 L-224 30 L-224 -15 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath60"
-      ><path d="M-52 -15 L104 -15 L104 30 L-52 30 L-52 -15 Z"
+      ><path d="M-129 -15 L258 -15 L258 30 L-129 30 L-129 -15 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath61"
-      ><path d="M-82 -15 L164 -15 L164 30 L-82 30 L-82 -15 Z"
+      ><path d="M-128 -15 L256 -15 L256 30 L-128 30 L-128 -15 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath62"
-      ><path d="M-184 -15 L368 -15 L368 30 L-184 30 L-184 -15 Z"
+      ><path d="M-82 -15 L164 -15 L164 30 L-82 30 L-82 -15 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath63"
-      ><path d="M-207 -15 L414 -15 L414 30 L-207 30 L-207 -15 Z"
+      ><path d="M-396 -15 L792 -15 L792 30 L-396 30 L-396 -15 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath64"
-      ><path d="M-193 -15 L386 -15 L386 30 L-193 30 L-193 -15 Z"
+      ><path d="M-184 -15 L368 -15 L368 30 L-184 30 L-184 -15 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath65"
-      ><path d="M-231 -15 L462 -15 L462 30 L-231 30 L-231 -15 Z"
+      ><path d="M-207 -15 L414 -15 L414 30 L-207 30 L-207 -15 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath66"
-      ><path d="M-178 -15 L356 -15 L356 30 L-178 30 L-178 -15 Z"
+      ><path d="M-193 -15 L386 -15 L386 30 L-193 30 L-193 -15 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath67"
-      ><path d="M-115 -15 L230 -15 L230 30 L-115 30 L-115 -15 Z"
+      ><path d="M-231 -15 L462 -15 L462 30 L-231 30 L-231 -15 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath68"
-      ><path d="M-251 -54 L502 -54 L502 108 L-251 108 L-251 -54 Z"
+      ><path d="M-178 -15 L356 -15 L356 30 L-178 30 L-178 -15 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath69"
+      ><path d="M-115 -15 L230 -15 L230 30 L-115 30 L-115 -15 Z"
+      /></clipPath
+      ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath70"
+      ><path d="M-251 -54 L502 -54 L502 108 L-251 108 L-251 -54 Z"
+      /></clipPath
+      ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath71"
       ><path d="M-118 -15 L236 -15 L236 30 L-118 30 L-118 -15 Z"
       /></clipPath
     ></defs
@@ -420,10 +426,10 @@
       /><polygon points=" 324 50 312 44 312 56" clip-path="url(#clipPath36)" stroke="none"
       /><polygon fill="none" points=" 324 50 312 44 312 56" clip-path="url(#clipPath36)"
     /></g
-    ><g stroke-linecap="butt" font-size="11px" transform="translate(565,228)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke-linejoin="round" stroke="black" stroke-opacity="1"
-    ><line y2="50" fill="none" x1="50" clip-path="url(#clipPath38)" x2="520" y1="50"
-      /><polygon points=" 520 50 508 44 508 56" clip-path="url(#clipPath38)" stroke="none"
-      /><polygon fill="none" points=" 520 50 508 44 508 56" clip-path="url(#clipPath38)"
+    ><g stroke-linecap="butt" font-size="11px" transform="translate(553,216)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke-linejoin="round" stroke="black" stroke-opacity="1"
+    ><line y2="63" fill="none" x1="63" clip-path="url(#clipPath38)" x2="533" y1="63"
+      /><polygon points=" 533 63 521 57 521 69" clip-path="url(#clipPath38)" stroke="none"
+      /><polygon fill="none" points=" 533 63 521 57 521 69" clip-path="url(#clipPath38)"
     /></g
     ><g stroke-linecap="butt" font-size="11px" transform="translate(535,365)" fill-opacity="1" fill="black" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke-linejoin="round" stroke="black" stroke-opacity="1"
     ><line y2="50" fill="none" x1="50" clip-path="url(#clipPath40)" x2="883" y1="50"
@@ -486,10 +492,10 @@
     ><text x="2" xml:space="preserve" y="12" clip-path="url(#clipPath54)" stroke="none"
       >{}</text
     ></g
-    ><g font-size="11px" transform="translate(989,618)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
-    ><rect x="0" width="51" height="15" y="0" clip-path="url(#clipPath55)" stroke="none"
-      /><text fill="black" x="11" xml:space="preserve" y="12" clip-path="url(#clipPath55)" stroke="none"
-      >3.1.2:</text
+    ><g font-size="11px" transform="translate(959,618)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
+    ><rect x="0" width="110" height="15" y="0" clip-path="url(#clipPath55)" stroke="none"
+      /><text fill="black" x="9" xml:space="preserve" y="12" clip-path="url(#clipPath55)" stroke="none"
+      >3.1.2: saveClient()</text
     ></g
     ><g font-size="11px" transform="translate(389,558)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
     ><rect x="0" width="137" height="15" y="0" clip-path="url(#clipPath56)" stroke="none"
@@ -511,81 +517,81 @@
       /><text fill="black" x="9" xml:space="preserve" y="12" clip-path="url(#clipPath59)" stroke="none"
       >2.2: Shows data and request confirmation</text
     ></g
-    ><g font-size="11px" transform="translate(915,647)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
-    ><rect x="0" width="52" height="15" y="0" clip-path="url(#clipPath60)" stroke="none"
-      /><text fill="black" x="11" xml:space="preserve" y="12" clip-path="url(#clipPath60)" stroke="none"
-      >3.1.3:</text
+    ><g font-size="11px" transform="translate(873,647)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
+    ><rect x="0" width="129" height="15" y="0" clip-path="url(#clipPath60)" stroke="none"
+      /><text fill="black" x="9" xml:space="preserve" y="12" clip-path="url(#clipPath60)" stroke="none"
+      >3.1.3: saveCompany()</text
     ></g
-    ><g font-size="11px" transform="translate(989,585)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
-    ><rect x="0" width="51" height="15" y="0" clip-path="url(#clipPath55)" stroke="none"
-      /><text fill="black" x="11" xml:space="preserve" y="12" clip-path="url(#clipPath55)" stroke="none"
-      >3.1.1:</text
+    ><g font-size="11px" transform="translate(950,585)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
+    ><rect x="0" width="128" height="15" y="0" clip-path="url(#clipPath61)" stroke="none"
+      /><text fill="black" x="10" xml:space="preserve" y="12" clip-path="url(#clipPath61)" stroke="none"
+      >3.1.1: setClient(client)</text
     ></g
     ><g font-size="11px" transform="translate(1615,508)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
-    ><rect x="0" width="82" height="15" y="0" clip-path="url(#clipPath61)" stroke="none"
-      /><text fill="black" x="10" xml:space="preserve" y="12" clip-path="url(#clipPath61)" stroke="none"
+    ><rect x="0" width="82" height="15" y="0" clip-path="url(#clipPath62)" stroke="none"
+      /><text fill="black" x="10" xml:space="preserve" y="12" clip-path="url(#clipPath62)" stroke="none"
       >2.1.1.1: set()</text
     ></g
-    ><g font-size="11px" transform="translate(1064,463)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
-    ><rect x="0" width="51" height="15" y="0" clip-path="url(#clipPath55)" stroke="none"
-      /><text fill="black" x="11" xml:space="preserve" y="12" clip-path="url(#clipPath55)" stroke="none"
-      >2.1.1:</text
+    ><g font-size="11px" transform="translate(889,463)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
+    ><rect x="0" width="396" height="15" y="0" clip-path="url(#clipPath63)" stroke="none"
+      /><text fill="black" x="9" xml:space="preserve" y="12" clip-path="url(#clipPath63)" stroke="none"
+      >2.1.1: setData(cc,nhs,birthdate, sex, tinNumber, phoneNumber, email, name)</text
     ></g
     ><g font-size="11px" transform="translate(337,121)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
-    ><rect x="0" width="184" height="15" y="0" clip-path="url(#clipPath62)" stroke="none"
-      /><text fill="black" x="9" xml:space="preserve" y="12" clip-path="url(#clipPath62)" stroke="none"
+    ><rect x="0" width="184" height="15" y="0" clip-path="url(#clipPath64)" stroke="none"
+      /><text fill="black" x="9" xml:space="preserve" y="12" clip-path="url(#clipPath64)" stroke="none"
       >1.2: UpdateClientDataController()</text
     ></g
     ><g font-size="11px" transform="translate(883,395)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
-    ><rect x="0" width="207" height="15" y="0" clip-path="url(#clipPath63)" stroke="none"
-      /><text fill="black" x="9" xml:space="preserve" y="12" clip-path="url(#clipPath63)" stroke="none"
+    ><rect x="0" width="207" height="15" y="0" clip-path="url(#clipPath65)" stroke="none"
+      /><text fill="black" x="9" xml:space="preserve" y="12" clip-path="url(#clipPath65)" stroke="none"
       >1.2.6: client = getClientByEmail(email)</text
     ></g
     ><g font-size="11px" transform="translate(755,260)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
-    ><rect x="0" width="193" height="15" y="0" clip-path="url(#clipPath64)" stroke="none"
-      /><text fill="black" x="10" xml:space="preserve" y="12" clip-path="url(#clipPath64)" stroke="none"
+    ><rect x="0" width="193" height="15" y="0" clip-path="url(#clipPath66)" stroke="none"
+      /><text fill="black" x="10" xml:space="preserve" y="12" clip-path="url(#clipPath66)" stroke="none"
       >1.2.3: email = getUserId().toString()</text
     ></g
     ><g font-size="11px" transform="translate(588,217)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
-    ><rect x="0" width="231" height="15" y="0" clip-path="url(#clipPath65)" stroke="none"
-      /><text fill="black" x="10" xml:space="preserve" y="12" clip-path="url(#clipPath65)" stroke="none"
+    ><rect x="0" width="231" height="15" y="0" clip-path="url(#clipPath67)" stroke="none"
+      /><text fill="black" x="10" xml:space="preserve" y="12" clip-path="url(#clipPath67)" stroke="none"
       >1.2.2: userSess = getCurrentUserSession()</text
     ></g
     ><g font-size="11px" transform="translate(815,342)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
-    ><rect x="0" width="193" height="15" y="0" clip-path="url(#clipPath64)" stroke="none"
-      /><text fill="black" x="9" xml:space="preserve" y="12" clip-path="url(#clipPath64)" stroke="none"
+    ><rect x="0" width="193" height="15" y="0" clip-path="url(#clipPath66)" stroke="none"
+      /><text fill="black" x="9" xml:space="preserve" y="12" clip-path="url(#clipPath66)" stroke="none"
       >1.2.5: clientStore = getClientStore()</text
     ></g
     ><g font-size="11px" transform="translate(618,293)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
-    ><rect x="0" width="178" height="15" y="0" clip-path="url(#clipPath66)" stroke="none"
-      /><text fill="black" x="9" xml:space="preserve" y="12" clip-path="url(#clipPath66)" stroke="none"
+    ><rect x="0" width="178" height="15" y="0" clip-path="url(#clipPath68)" stroke="none"
+      /><text fill="black" x="9" xml:space="preserve" y="12" clip-path="url(#clipPath68)" stroke="none"
       >1.2.4: company = getCompany()</text
     ></g
     ><g font-size="11px" transform="translate(650,184)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
-    ><rect x="0" width="115" height="15" y="0" clip-path="url(#clipPath67)" stroke="none"
-      /><text fill="black" x="10" xml:space="preserve" y="12" clip-path="url(#clipPath67)" stroke="none"
+    ><rect x="0" width="115" height="15" y="0" clip-path="url(#clipPath69)" stroke="none"
+      /><text fill="black" x="10" xml:space="preserve" y="12" clip-path="url(#clipPath69)" stroke="none"
       >1.2.1: getInstance()</text
     ></g
     ><g font-size="11px" transform="translate(330,401)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
-    ><rect x="0" width="251" height="54" y="0" clip-path="url(#clipPath68)" stroke="none"
-      /><text fill="black" x="15" xml:space="preserve" y="24" clip-path="url(#clipPath68)" stroke="none"
+    ><rect x="0" width="251" height="54" y="0" clip-path="url(#clipPath70)" stroke="none"
+      /><text fill="black" x="15" xml:space="preserve" y="24" clip-path="url(#clipPath70)" stroke="none"
       >2.1: updateClientData(cc, nhs, birthdate, sex,</text
-      ><text fill="black" x="27" xml:space="preserve" y="39" clip-path="url(#clipPath68)" stroke="none"
+      ><text fill="black" x="27" xml:space="preserve" y="39" clip-path="url(#clipPath70)" stroke="none"
       >tinNumber, phoneNumber, email, name)</text
     ></g
     ><g font-size="11px" transform="translate(52,394)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
-    ><rect x="0" width="231" height="15" y="0" clip-path="url(#clipPath65)" stroke="none"
-      /><text fill="black" x="9" xml:space="preserve" y="12" clip-path="url(#clipPath65)" stroke="none"
+    ><rect x="0" width="231" height="15" y="0" clip-path="url(#clipPath67)" stroke="none"
+      /><text fill="black" x="9" xml:space="preserve" y="12" clip-path="url(#clipPath67)" stroke="none"
       >2: Inputs data to be changed(CC, email, ...)</text
     ></g
     ><g font-size="11px" transform="translate(80,98)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
-    ><rect x="0" width="118" height="15" y="0" clip-path="url(#clipPath69)" stroke="none"
-      /><text fill="black" x="11" xml:space="preserve" y="12" clip-path="url(#clipPath69)" stroke="none"
+    ><rect x="0" width="118" height="15" y="0" clip-path="url(#clipPath71)" stroke="none"
+      /><text fill="black" x="11" xml:space="preserve" y="12" clip-path="url(#clipPath71)" stroke="none"
       >1.1: Requests input</text
     ></g
     ><g font-size="11px" transform="translate(78,68)" fill-opacity="1" fill="white" text-rendering="geometricPrecision" image-rendering="optimizeQuality" font-family="sans-serif" stroke="white" stroke-opacity="1"
-    ><rect x="0" width="178" height="15" y="0" clip-path="url(#clipPath66)" stroke="none"
-      /><text fill="black" x="9" xml:space="preserve" y="12" clip-path="url(#clipPath66)" stroke="none"
+    ><rect x="0" width="178" height="15" y="0" clip-path="url(#clipPath68)" stroke="none"
+      /><text fill="black" x="9" xml:space="preserve" y="12" clip-path="url(#clipPath68)" stroke="none"
       >1: Asks to change personal data</text
     ></g
     ><g font-size="8px" fill-opacity="1" fill="rgb(120,120,120)" text-rendering="geometricPrecision" image-rendering="optimizeQuality" stroke="rgb(120,120,120)" stroke-opacity="1"
