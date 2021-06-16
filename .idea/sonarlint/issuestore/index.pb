@@ -37,8 +37,6 @@ q
 Asrc/test/java/app/domain/stores/ClinicalAnalysisLabStoreTest.java,b\a\ba7ddfec45a807f51a1800878552596c68bdbe6e
 f
 6src/test/java/app/domain/stores/EmployeeStoreTest.java,3\a\3a9bdb855d5b94efa1ef21a2e4623f56d083d0cf
-o
-?src/test/java/app/domain/stores/ParameterCategoryStoreTest.java,a\d\ad10a870e86f06eb3574f636cae639ed6b48432d
 g
 7src/test/java/app/domain/stores/ParameterStoreTest.java,2\2\22664c2c7dd56392c373cadc9bbaacd17f3cba1d
 b
@@ -232,3 +230,23 @@ N
 docs/SprintD/US12/US12_MD.puml,5\1\517f331d08b59a98ea7535ecdf143b4e55763448
 M
 docs/SprintD/US04/US4_MD.puml,2\f\2f6a4e27680def385dd857b4452454decea51a03
+;
+Company.ser,b\4\b454abc40c090b9b68d018521b92cf0516eaa385
+D
+docs/SprintD/DM.puml,5\d\5dff55b21dbdf4f5b06aa1150995ae36147d966b
+e
+5src/main/java/app/domain/shared/LinearRegression.java,b\5\b5738a1e3a1c85790cbe245760fdbfe6e77be206
+j
+:src/main/java/app/domain/shared/MultiLinearRegression.java,5\1\51ac4d2fa961af5b859a17a30045d1b297b297c4
+N
+docs/SprintD/US19/US19_DM.puml,e\5\e586368f87f8636785e28c6391040b4767f165a4
+M
+docs/SprintD/US19/US19_DM.svg,1\a\1a583f5d459b76907aba3c24f0337cfecb20a121
+N
+docs/SprintD/US19/US19_SD.puml,4\6\46f0aa57703298515d752a55b01a860d6bbdd421
+O
+docs/SprintD/US19/US19_SSD.puml,2\4\2450b1747969c05d0a3da7b81267eee114110551
+N
+docs/SprintD/US19/US19_SSD.svg,4\6\46df73713f32f2a4e06ca55a5e3bc93f09918622
+o
+?src/test/java/app/domain/stores/ParameterCategoryStoreTest.java,a\d\ad10a870e86f06eb3574f636cae639ed6b48432d
