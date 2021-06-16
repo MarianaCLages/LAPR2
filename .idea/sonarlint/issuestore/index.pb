@@ -37,8 +37,6 @@ g
 7src/test/java/app/domain/stores/ParameterStoreTest.java,2\2\22664c2c7dd56392c373cadc9bbaacd17f3cba1d
 b
 2src/test/java/app/domain/stores/RoleStoreTest.java,b\d\bd12965ce694b76b1345995f3cfcb91eaac04074
-d
-4src/test/java/app/domain/stores/SampleStoreTest.java,d\a\da910ce79a563b2cacaddc3f7b356f379844a6bb
 f
 6src/test/java/app/domain/stores/TestTypeStoreTest.java,5\6\5624d11db655e0a9fbcbcda6fe4399b28ce4a77f
 m
@@ -51,8 +49,6 @@ e
 5src/test/java/app/domain/mappers/dto/TestDTOTest.java,e\3\e38f4b033961e67fd3e600d0e5a6aec6eefcd82e
 `
 0src/main/java/app/ui/console/RecordSampleUI.java,c\4\c47fc00542260444261c62b97d7e948aefb765b6
-H
-docs/SprintD/US01/US1.md,f\1\f1d873b3c221c77a469df54aa9f14f55e55b0cb8
 >
 docs/README.md,9\f\9f7cbce127b94a94ee14460050fbff2ce58417d0
 E
@@ -149,8 +145,6 @@ R
 ,src/main/java/app/domain/model/Employee.java,1\7\172c090ab1c754bae4d9ce2efae5056312661a20
 N
 src/main/java/app/ui/Main.java,7\7\774d0aff326a0164e53c11cda4e3afaaa607428f
-S
-#docs/SprintD/US19/SD_runTask().puml,6\2\62d9b6e9f773098752ee05be093f14fc3c4dae02
 O
 .idea/artifacts/Sem2App_jar.xml,9\a\9a36f05a7cc7eec42026caea684078f299f65b24
 \
@@ -191,8 +185,6 @@ k
 ;src/main/java/app/ui/gui/controllers/CreditsController.java,0\c\0c897ffb9b607f9d244687c4700d1b381b9eefb5
 T
 $src/main/java/app/ui/gui/Alerts.java,a\2\a2c5c826a3655d1cf1512f81124558ddd6665219
-X
-(src/main/java/app/ui/gui/MainScreen.java,b\5\b59adf73fdf4b7ccc7be755addc8e97dd1524983
 g
 7src/main/java/app/ui/gui/employees/AdministratorUI.java,1\9\19e8d234ed70d2ee98189bee48aecf519f1826fa
 :
@@ -204,8 +196,6 @@ Fsrc/main/java/app/domain/shared/exceptions/InvalidLengthException.java,e\f\ef0
 Sem2App.iml,6\6\6625fec75a340c498d62942af985e893471ee551
 w
 Gsrc/main/java/app/domain/shared/exceptions/ChoiceBoxEmptyException.java,d\a\da5859ee0fbb622f76a8e66651f4ffb20658ca75
-X
-(src/main/java/app/domain/model/Data.java,f\a\facd46acab9e1cd55acb7b39820dc3dfa90996b5
 O
 docs/SprintD/US18/US018_SSD.svg,4\d\4d4f6a2342293f3d4753c5840099637c43421c2c
 N
@@ -218,12 +208,8 @@ N
 docs/SprintD/US12/US12_MD.puml,5\1\517f331d08b59a98ea7535ecdf143b4e55763448
 M
 docs/SprintD/US04/US4_MD.puml,2\f\2f6a4e27680def385dd857b4452454decea51a03
-N
-docs/SprintD/US19/US19_DM.puml,e\5\e586368f87f8636785e28c6391040b4767f165a4
 M
 docs/SprintD/US19/US19_DM.svg,1\a\1a583f5d459b76907aba3c24f0337cfecb20a121
-N
-docs/SprintD/US19/US19_SD.puml,4\6\46f0aa57703298515d752a55b01a860d6bbdd421
 O
 docs/SprintD/US19/US19_SSD.puml,2\4\2450b1747969c05d0a3da7b81267eee114110551
 N
@@ -234,14 +220,8 @@ U
 %src/main/java/app/controller/App.java,4\7\47cfbdc47faac4c1edcb93d1b6968a5d5bdad509
 [
 +src/main/java/app/domain/model/Company.java,e\6\e66f0f8e51b44df23f2004467961976fbec241aa
-g
-7docs/SprintD/US19/US19_send_to_the_NHS_daily_reports.md,2\1\21cde031ea54f071604d6fab193a5b0d63a20e99
 D
 docs/SprintD/DM.puml,5\d\5dff55b21dbdf4f5b06aa1150995ae36147d966b
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-N
-docs/SprintD/US16/US16_DM.puml,e\d\ed7ab63f6477bc49499e03e724329f7ba5dffb4a
 a
 1src/main/java/app/domain/model/MaxSumAdapter.java,c\f\cfbd95090e4ba559534db58c1bf29296c81ccb9f
 g
@@ -250,18 +230,12 @@ g
 ,src/test/java/app/domain/model/TestTest.java,2\c\2cf03933548261c5794447fc0379d09dc74bc37a
 `
 0src/test/java/app/domain/model/EmployeeTest.java,e\3\e3c8c18d9e7436b0c6e2317e0e84a55d7e796e7a
-J
-docs/SprintD/US16/US016.md,f\5\f5caca5dac09ecb7e9bb6b2d7201376b312dc05d
 j
 :src/main/java/app/domain/shared/MultiLinearRegression.java,5\1\51ac4d2fa961af5b859a17a30045d1b297b297c4
-c
-3src/test/java/app/domain/model/ImportTestsTest.java,6\c\6cc4e132156821eab2b8a041d40e3ebf297c62f7
 i
 9src/test/java/app/domain/model/ParameterCategoryTest.java,1\2\123cd2f5497bb247ec839e219a88873b0f77bc99
 k
 ;src/main/java/app/domain/model/MaxSumAdapterBruteForce.java,a\e\ae301bca2c482636ac2afab016a20b05ff1c94d3
-e
-5src/main/java/app/domain/shared/BruteForceMaxSum.java,5\1\516c2f7f87101ab76272a56682396c55dcc03e5a
 {
 Ksrc/main/java/app/ui/gui/adminMenuUIs/SimpleLinearRegressionController.java,2\8\2899725b031127861288aaf5dab8ea638fdbab20
 v
