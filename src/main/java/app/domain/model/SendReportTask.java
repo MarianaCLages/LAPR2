@@ -36,31 +36,31 @@ public class SendReportTask extends TimerTask implements Serializable {
         System.out.println("Hypothesis tests for regression coefficients");
         System.out.println("HO:b=0 (a=0) H1: b<>0 (a<>0)");
         System.out.println("Tb: " + l.getTestStatisticb());
-        System.out.println("T: " + l.getCriticValueStudent(confidenceLevelVariables));
-        if (l.getTestStatisticb() > l.getCriticValueStudent(confidenceLevelVariables)) {
+      //  System.out.println("T: " + l.getCriticValueStudent(confidenceLevelVariables));
+     /*   if (l.getTestStatisticb() > l.getCriticValueStudent(confidenceLevelVariables)) {
             System.out.println("H0 rejected\n");
         } else {
             System.out.println("H0 not rejected\n");
-        }
+        } */
 
         System.out.println("HO:a=0 H1: a<>0");
         System.out.println("Tb: " + l.getTestStatistica());
-        System.out.println("T: " + l.getCriticValueStudent(confidenceLevelVariables));
+      /*  System.out.println("T: " + l.getCriticValueStudent(confidenceLevelVariables));
         if (l.getTestStatistica() > l.getCriticValueStudent(confidenceLevelVariables)) {
             System.out.println("H0 rejected\n");
         } else {
             System.out.println("H0 not rejected\n");
-        }
+        } */
 
         System.out.println("ANOVA ");
         System.out.println("F0: " + l.getF0());
-        System.out.println("F1: " + l.getCriticValueFisher(confidenceLevelAnova));
+      //  System.out.println("F1: " + l.getCriticValueFisher(confidenceLevelAnova));
 
-        if (l.getF0() > l.getCriticValueFisher(confidenceLevelAnova)) {
+      /*  if (l.getF0() > l.getCriticValueFisher(confidenceLevelAnova)) {
             System.out.println("Passa no teste");
         } else {
             System.out.println("Não passou no test");
-        }
+        } */
 
         System.out.println("\n\n-------------------------------------------------------------------");
 
@@ -81,14 +81,14 @@ public class SendReportTask extends TimerTask implements Serializable {
         MultiLinearRegression s = new MultiLinearRegression(matrix1, matrixb);
 
         System.out.println();
-        System.out.println("Lower x1: " + s.lowerLimitCoeficient(1, 0.05));
+       /* System.out.println("Lower x1: " + s.lowerLimitCoeficient(1, 0.05));
 
         System.out.println("Upper x1: " + s.upperLimitCoeficient(1, 0.05));
         System.out.println();
         System.out.println("Lower x2: " + s.lowerLimitCoeficient(2, 0.05));
 
         System.out.println("Upper x2: " + s.upperLimitCoeficient(2, 0.05));
-        System.out.println();
+        System.out.println(); */
 
         double[] arr1 = {170, 12};
 
@@ -98,7 +98,7 @@ public class SendReportTask extends TimerTask implements Serializable {
             System.out.println(e.getMessage());
         }
         System.out.println();
-        try {
+       /* try {
             System.out.println("Limite Inferior: " + s.lowerLimitAnswer(arr1, 0.05));
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -116,7 +116,7 @@ public class SendReportTask extends TimerTask implements Serializable {
             System.out.println("Passa no teste");
         } else {
             System.out.println("Não passou no test");
-        }
+        } */
 
 
         System.out.println("\n\n\nTestes de coefficients \n ");
@@ -125,13 +125,13 @@ public class SendReportTask extends TimerTask implements Serializable {
             System.out.println("x" + i);
             System.out.println("HO:b=0 H1: b<>0 \n");
             System.out.println("T0 =" + s.getTestStatistics(i));
-            System.out.println("T =" + s.getCriticValueStudent(confidenceLevelVariables));
+          //  System.out.println("T =" + s.getCriticValueStudent(confidenceLevelVariables));
 
-            if (s.getTestStatistics(i) > s.getCriticValueStudent(confidenceLevelVariables)) {
+           /* if (s.getTestStatistics(i) > s.getCriticValueStudent(confidenceLevelVariables)) {
                 System.out.println("H0 rejected\n");
             } else {
                 System.out.println("H0 not rejected\n");
-            }
+            }*/
         }
 
         int i = 0;
@@ -145,15 +145,18 @@ public class SendReportTask extends TimerTask implements Serializable {
                 e.printStackTrace();
             }
             System.out.println("interval: ");
-            try {
+            /* try {
                 System.out.println("]" + s.lowerLimitAnswer(matrix1[i], confidenceLevelEstimated) + ";" + s.upperLimitAnswer(matrix1[i], confidenceLevelEstimated) + "[");
 
             } catch (InvalidLengthException e) {
                 e.printStackTrace();
-            }
+            } */
             i++;
             System.out.println();
         }
 
     }
+
+
+
 }

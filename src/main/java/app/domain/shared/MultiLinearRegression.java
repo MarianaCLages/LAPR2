@@ -1,8 +1,8 @@
 package app.domain.shared;
 
 import app.domain.shared.exceptions.InvalidLengthException;
-import org.apache.commons.math3.distribution.FDistribution;
-import org.apache.commons.math3.distribution.TDistribution;
+//import org.apache.commons.math3.distribution.FDistribution;
+//import org.apache.commons.math3.distribution.TDistribution;
 
 
 public class MultiLinearRegression {
@@ -194,13 +194,13 @@ public class MultiLinearRegression {
         return F0;
     }
 
-    public double getCriticValueStudent(double alpha) {
+  /*  public double getCriticValueStudent(double alpha) {
         TDistribution td = new TDistribution(this.n - this.k - 1);
 
         return td.inverseCumulativeProbability(1 - alpha);
-    }
+    } */
 
-    public double getCriticValueFisher(double alphaf) {
+    /* public double getCriticValueFisher(double alphaf) {
         FDistribution fDistribution = new FDistribution(this.k, this.n - (this.k + 1));
         return fDistribution.inverseCumulativeProbability(1 - alphaf);
     }
@@ -223,7 +223,7 @@ public class MultiLinearRegression {
 
         return this.betta[index] + critTD * Math.sqrt(variance * this.C[index][index]);
 
-    }
+    } */
 
     private double calculateSQR(double[] y, double[] betta, double[][] x) {
         double[][] bettat = new double[betta.length][1];
@@ -293,7 +293,7 @@ public class MultiLinearRegression {
         return yEstimated;
     }
 
-    public double lowerLimitAnswer(double[] x0,double alpha) throws InvalidLengthException {
+   /* public double lowerLimitAnswer(double[] x0,double alpha) throws InvalidLengthException {
         if (x0.length != this.betta.length - 1) {
             throw new InvalidLengthException();
         }
@@ -360,7 +360,7 @@ public class MultiLinearRegression {
 
         return getEstimate(x0) + critTD * Math.sqrt(variance * (1 + xtcx));
 
-    }
+    } */
 
     public double getTestStatistics(int index) {
         return this.betta[index] / Math.sqrt(this.MQe * this.C[index][index]);
