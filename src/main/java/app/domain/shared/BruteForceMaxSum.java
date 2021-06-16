@@ -20,6 +20,6 @@ public class BruteForceMaxSum {
                 }
             }
         }
-        return Arrays.copyOfRange(array, beggining, ending);
+        return Arrays.copyOfRange(array, beggining, ending+1);
     }
 }
