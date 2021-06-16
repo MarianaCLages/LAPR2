@@ -7,7 +7,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
-      <excludeFolder url="file://$MODULE_DIR$/target" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/0/b" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/2/5" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/4/6" />
@@ -17,6 +16,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/9/a" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/a/1" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/a/7" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -25,6 +25,7 @@
     <orderEntry type="library" name="ExternalModule3API" level="application" />
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="barbecue-2.0-dev" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-math3:3.5" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:13" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:win:13" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:13" level="project" />

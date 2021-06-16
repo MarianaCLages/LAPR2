@@ -4,6 +4,7 @@ import app.domain.model.Company;
 import app.domain.model.ImportTests;
 
 import java.io.IOException;
+import java.util.List;
 
 public class ImportTestsController {
 
@@ -22,6 +23,11 @@ public class ImportTestsController {
 
     public void readTestsfromFile(String fileName) {
         importt.readTestFromCSV(fileName);
+    }
+
+    public List<String> saveFileTestList(){
+        return importt.getTestFileList();
+
     }
 
 

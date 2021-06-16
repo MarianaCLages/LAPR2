@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-/** Simple Java program to read CSV file in Java. In this program we will read * list of books stored in CSV file as comma separated values. * * @author WINDOWS 8 * */
+/** * Simple Java program to read CSV file in Java. In this program we will read * list of books stored in CSV file as comma separated values. * * @author WINDOWS 8 * */
 public class ImportTests {
 
     TestTypeStore ttstore;
@@ -28,6 +28,7 @@ public class ImportTests {
     ParameterStore pstore;
     Company company;
     TestStore tstore;
+    List<String> testFileList = new ArrayList<>();
 
     public ImportTests() {
         App app = App.getInstance();
@@ -85,7 +86,8 @@ public class ImportTests {
                     }
 
                     if(createClientfromFile(metadata) && verifyClinic(metadata) && createTestfromFile(metadata)){
-                       // System.out.println(Arrays.toString(metadata));
+                        testFileList.add(Arrays.toString(metadata));
+                        /*System.out.println(Arrays.toString(metadata));*/
                     }
 
                 }
@@ -93,6 +95,10 @@ public class ImportTests {
         } catch (IOException | ParseException ioe) {
             ioe.printStackTrace();
         }
+    }
+
+    public List<String> getTestFileList() {
+        return testFileList;
     }
 
     public boolean createClientfromFile(String[] metadata) throws ParseException {
@@ -111,8 +117,10 @@ public class ImportTests {
         return store.verifyClinicalLabID(metadata[2]);
     }
 
-    public boolean createTestfromFile(String[] metadata)  {
+    public boolean createTestfromFile(String[] metadata) throws ParseException {
         TestType testtype = ttstore.getTestTypeExist(metadata[11]);
+
+
 
 
 
