@@ -270,7 +270,7 @@ public class TestStore implements Serializable {
     private Calendar cal;
     private LocalDate beginDate;
     private LocalDate todayDateForCovidReport = LocalDate.now();
-    private Company company = App.getInstance().getCompany();
+
 
     public void setDates() {
 

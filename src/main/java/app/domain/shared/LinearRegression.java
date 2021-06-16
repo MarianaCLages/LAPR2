@@ -3,6 +3,9 @@ package app.domain.shared;
 //import org.apache.commons.math3.distribution.FDistribution;
 //import org.apache.commons.math3.distribution.TDistribution;
 
+import org.apache.commons.math3.distribution.FDistribution;
+import org.apache.commons.math3.distribution.TDistribution;
+
 /**
  * The code LinearRegression class performs a simple linear regression
  * on an set of n data points (y_i, x_i).
@@ -127,7 +130,7 @@ public class LinearRegression {
         return slope * x + intercept;
     }
 
-    /*public double getCriticValueStudent(double alpha) {
+    public double getCriticValueStudent(double alpha) {
         TDistribution td = new TDistribution(this.n);
 
         return td.inverseCumulativeProbability(1 - alpha);
@@ -174,7 +177,7 @@ public class LinearRegression {
         double s = Math.sqrt(this.se / (this.n - 2));
         double criticalValue = getCriticValueStudent(alpha);
         return this.slope - criticalValue * s * Math.sqrt(1 / this.sxx);
-    } */
+    }
 
     public double getTestStatisticb() {
         return (this.slope) / (Math.sqrt(this.se / (this.n - 2)) / Math.sqrt(this.sxx));
