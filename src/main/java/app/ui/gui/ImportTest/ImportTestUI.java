@@ -4,20 +4,19 @@ import app.controller.App;
 import app.controller.ImportTestsController;
 import app.domain.shared.Constants;
 import app.ui.gui.controllers.SceneController;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.stage.FileChooser;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ImportTestUI implements Initializable {
     ImportTestsController imp = new ImportTestsController();
-
 
     @FXML
     private TextField textField;
@@ -39,7 +38,12 @@ public class ImportTestUI implements Initializable {
     }
 
     public void confirm() {
-        imp.readTestsfromFile(textField.getText());
+        FileChooser chooser = new FileChooser();
+        chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("CSV files","*.csv"));
+        File f = chooser.showOpenDialog(null);
+
+
+        imp.readTestsfromFile(f.getAbsolutePath());
         ListView.setVisible(true);
         ListView.getItems().addAll(imp.saveFileTestList());
     }
@@ -48,8 +52,4 @@ public class ImportTestUI implements Initializable {
         App app = sceneController.getApp();
         sceneController.switchMenu(event, Constants.LABORATORY_COORDINATOR_UI);
     }
-
-
-
-
 }

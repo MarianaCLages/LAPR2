@@ -46,6 +46,6 @@ public class ViewResultsUI implements Initializable {
     }
     public void returnToMenu(ActionEvent event) {
         App app = sceneController.getApp();
-        sceneController.switchMenu(event, Constants.LABORATORY_COORDINATOR_UI);
+        sceneController.switchMenu(event, Constants.CLIENT_UI);
     }
 }

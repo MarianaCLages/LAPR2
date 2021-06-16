@@ -4,6 +4,7 @@ import app.controller.App;
 import app.domain.stores.*;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -21,6 +22,7 @@ import java.util.List;
 /** * Simple Java program to read CSV file in Java. In this program we will read * list of books stored in CSV file as comma separated values. * * @author WINDOWS 8 * */
 public class ImportTests {
 
+    int errorcount = 0;
     TestTypeStore ttstore;
     ClientStore cstore;
     ClinicalAnalysisLabStore store;
@@ -43,12 +45,12 @@ public class ImportTests {
     }
 
 
-    public void readTestFromCSV(String fileName) {
+    public void readTestFromCSV(String filepath) {
 
 
 
-        Path path = Paths.get("csv/"+fileName+".csv");
-        String firstLine = "Test_Code;NHS_Code;Lab_ID;CitizenCard_Number;NHS_Number;TIN;BirthDay;PhoneNumber;Name;E/mail ;Address;TestType;Category;HB000;WBC00;PLT00;RBC00;Category;HDL00;Category;IgGAN;Test_Reg_DateHour;Test_Chemical_DateHour;Test_Doctor_DateHour;Test_Validation_DateHour";
+        Path path = Paths.get(filepath);
+        String firstLine = "Test_Code;NHS_Code;Lab_ID;CitizenCard_Number;NHS_Number;TIN;BirthDay;PhoneNumber;Name;E-mail ;Address;TestType;Category;HB000;WBC00;PLT00;RBC00;Category;HDL00;Category;IgGAN;Test_Reg_DateHour;Test_Chemical_DateHour;Test_Doctor_DateHour;Test_Validation_DateHour";
         try (BufferedReader br = Files.newBufferedReader(path, StandardCharsets.US_ASCII)) {
 
 
@@ -71,17 +73,20 @@ public class ImportTests {
                     try {
                         createClientfromFile(metadata);
                     } catch (Exception e) {
+                        errorcount++;
                         continue;
                     }
                     try {
                         verifyClinic(metadata);
                     } catch (Exception e) {
+                        errorcount++;
                         continue;
                     }
                     try {
                         createTestfromFile(metadata);
 
                     } catch (Exception e) {
+                        errorcount++;
                         continue;
                     }
 
@@ -98,6 +103,8 @@ public class ImportTests {
     }
 
     public List<String> getTestFileList() {
+        String error = errorcount + " errors found.";
+        testFileList.add(error);
         return testFileList;
     }
 
@@ -119,9 +126,6 @@ public class ImportTests {
 
     public boolean createTestfromFile(String[] metadata) throws ParseException {
         TestType testtype = ttstore.getTestTypeExist(metadata[11]);
-
-
-
 
 
         List<ParameterCategory> pcList = new ArrayList<>();

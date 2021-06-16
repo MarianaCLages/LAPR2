@@ -16,7 +16,7 @@ activate tm
     ap --> comp**:create()
     deactivate ap
     activate comp
-    comp --> task**: create(parameters)
+    comp --> task**: create()
     comp --> timer**:create()
     comp --> timer : schedule(task,delay,interval)
     deactivate comp
