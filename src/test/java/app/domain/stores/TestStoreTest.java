@@ -165,6 +165,7 @@ public class TestStoreTest {
         List<app.domain.model.Test> list = store.sortDate("1234567890123456");
 
         store.toStringSortedList("1234567890123456");
+        System.out.println(store.getTestSortedListString());
     }
 
     @Test

@@ -105,7 +105,8 @@ public class Client implements Serializable {
      * @return boolean value that is positive if the parameter is only numerical
      */
     private boolean checkIfIsNumerical(String i) {
-        return !NumberUtils.isCreatable(i);
+        return !(i.matches("[0-9]+"));
+
     }
 
     /**

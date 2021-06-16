@@ -4,7 +4,6 @@ package app.domain.model;
 import app.controller.App;
 import app.domain.shared.LinearRegression;
 import app.domain.shared.MultiLinearRegression;
-import app.domain.shared.exceptions.InvalidLengthException;
 
 import java.io.Serializable;
 import java.util.Properties;
@@ -29,6 +28,7 @@ public class SendReportTask extends TimerTask implements Serializable {
         double[] m2 = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50};
 
         LinearRegression l = new LinearRegression(m1, m2);
+<<<<<<< HEAD
         System.out.println("Linear");
         System.out.println(l);
         System.out.println("r = " + l.getR());
@@ -65,8 +65,49 @@ public class SendReportTask extends TimerTask implements Serializable {
         System.out.println("\n\n-------------------------------------------------------------------");
 
         System.out.println("Multilinear \n");
+=======
+//        System.out.println("Linear");
+//        System.out.println(l);
+//        System.out.println("r = " + l.getR());
+//        System.out.println(l.lowerLimitParama(0.025));
+//        System.out.println(l.upperLimitParama(0.025));
+
+//        System.out.println("Hypothesis tests for regression coefficients");
+//        System.out.println("HO:b=0 (a=0) H1: b<>0 (a<>0)");
+//        System.out.println("Tb: " + l.getTestStatisticb());
+//        System.out.println("T: " + l.getCriticValueStudent(confidenceLevelVariables));
+//        if (l.getTestStatisticb() > l.getCriticValueStudent(confidenceLevelVariables)) {
+//            System.out.println("H0 rejected\n");
+//        } else {
+//            System.out.println("H0 not rejected\n");
+//        }
+//
+//        System.out.println("HO:a=0 H1: a<>0");
+//        System.out.println("Tb: " + l.getTestStatistica());
+//        System.out.println("T: " + l.getCriticValueStudent(confidenceLevelVariables));
+//        if (l.getTestStatistica() > l.getCriticValueStudent(confidenceLevelVariables)) {
+//            System.out.println("H0 rejected\n");
+//        } else {
+//            System.out.println("H0 not rejected\n");
+//        }
+//
+//        System.out.println("ANOVA ");
+//        System.out.println("F0: " + l.getF0());
+//        System.out.println("F1: " + l.getCriticValueFisher(confidenceLevelAnova));
+//
+//        if (l.getF0() > l.getCriticValueFisher(confidenceLevelAnova)) {
+//            System.out.println("Passa no teste");
+//        } else {
+//            System.out.println("Não passou no test");
+//        }
+//
+//        System.out.println("\n\n-------------------------------------------------------------------");
+//
+//        System.out.println("Multilinear \n");
+>>>>>>> 64d9ee0844bb73e5880cd2e0c7224210f4cabda5
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         double[][] matrix1 = {
                 {120, 19},
                 {200, 8},
@@ -80,6 +121,7 @@ public class SendReportTask extends TimerTask implements Serializable {
 
         MultiLinearRegression s = new MultiLinearRegression(matrix1, matrixb);
 
+<<<<<<< HEAD
         System.out.println();
        /* System.out.println("Lower x1: " + s.lowerLimitCoeficient(1, 0.05));
 
@@ -155,6 +197,8 @@ public class SendReportTask extends TimerTask implements Serializable {
             System.out.println();
         }
 
+=======
+>>>>>>> 64d9ee0844bb73e5880cd2e0c7224210f4cabda5
     }
 
 

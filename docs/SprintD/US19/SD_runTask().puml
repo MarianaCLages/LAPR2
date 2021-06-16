@@ -1,3 +1,4 @@
+@startuml
 autonumber
 participant "task:SendReportTask" as task
 participant "linReg:LinearRegression" as linReg
@@ -16,6 +17,7 @@ alt linear Regression
 
     else variable equal age average
     end
+
 else multilinear Regression
     task --> mlinReg**:creates()
 end
