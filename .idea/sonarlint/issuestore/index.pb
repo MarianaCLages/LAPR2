@@ -232,8 +232,6 @@ M
 docs/SprintD/US04/US4_MD.puml,2\f\2f6a4e27680def385dd857b4452454decea51a03
 ;
 Company.ser,b\4\b454abc40c090b9b68d018521b92cf0516eaa385
-D
-docs/SprintD/DM.puml,5\d\5dff55b21dbdf4f5b06aa1150995ae36147d966b
 e
 5src/main/java/app/domain/shared/LinearRegression.java,b\5\b5738a1e3a1c85790cbe245760fdbfe6e77be206
 j
