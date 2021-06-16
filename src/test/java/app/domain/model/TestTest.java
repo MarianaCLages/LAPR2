@@ -26,6 +26,7 @@ public class TestTest {
         TestType testType = new TestType("BL000", "description", "sei lá", cat);
 
         app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
+
         Assert.assertNotNull(test);
     }
 

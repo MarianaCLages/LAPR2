@@ -12,6 +12,7 @@ import java.util.*;
  */
 public class TestStore implements Serializable {
     private final List<Test> array;
+    private List<String> testSortedListString = new ArrayList<>();
     private Test t;
 
     /**
@@ -188,7 +189,16 @@ public class TestStore implements Serializable {
         };
         List<Test> testList2 = getTestByTin(clientTin);
         Collections.sort(testList2, comparator1);
+
+        for (Test test : testList2) {
+            testSortedListString.add(test.toString()+"\n");
+        }
+
         return testList2;
+    }
+
+    public List<String> getTestSortedListString() {
+        return testSortedListString;
     }
 
     public String toStringSortedList(String clientTin) {
@@ -197,6 +207,7 @@ public class TestStore implements Serializable {
         }
         return null;
     }
+
 
     public List<Test> getTestByTin(String clientTin) {
         List<Test> tinList = new ArrayList<>();

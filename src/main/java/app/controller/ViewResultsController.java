@@ -15,23 +15,28 @@ public class ViewResultsController  {
     private Test test;
     private ClientStore cstore;
 
+    public ViewResultsController(Company company) {
+
+        this.company = company;
+    }
+
     public ViewResultsController() {
         this(App.getInstance().getCompany());
     }
 
-    public ViewResultsController(Company company) {
-        this.company = company;
-    }
-
-
-
-    public List<Test> sortedDateList(){
+    public void sortedDateList(){
         Client client = cstore.getClientByEmail(company.getUserID());
-        return store.sortDate(client.getTinNumber());
+        store.sortDate(client.getTinNumber());
     }
 
-    public String getResults() {
-        return this.test.getResults();
+    public String getResult(String test) {
+        String[] testSplitted = test.split(";");
+        String[] idTestSplitted = testSplitted[0].split("=");
+        Test t = store.getTestByCode(idTestSplitted[1]);
+        return t.getResults();
     }
 
+    public List<String> getTestSortedList(){
+        return store.getTestSortedListString();
+    }
 }

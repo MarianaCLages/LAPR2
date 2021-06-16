@@ -15,6 +15,14 @@ public class ClientUI {
     @FXML
     private Button myReturnButtonClient;
 
+    @FXML
+    private Button ResultsButton;
+
+    public void ViewResultsMenu(ActionEvent event) {
+        App app = sceneController.getApp();
+        sceneController.switchMenu(event, Constants.VIEW_RESULTS_UI);
+    }
+
     public void returnToMenu(ActionEvent event) {
         App app = sceneController.getApp();
         app.doLogout();
