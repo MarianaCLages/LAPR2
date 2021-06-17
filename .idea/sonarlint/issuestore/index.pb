@@ -167,8 +167,6 @@ w
 Gsrc/main/java/app/ui/gui/adminMenuUIs/ClinicalAnalysisLaboratoryUI.java,3\3\333e57aa1e107615bb48acfb7c7c07906d34dfd5
 T
 $src/main/java/app/ui/gui/Alerts.java,a\2\a2c5c826a3655d1cf1512f81124558ddd6665219
-g
-7src/main/java/app/ui/gui/employees/AdministratorUI.java,1\9\19e8d234ed70d2ee98189bee48aecf519f1826fa
 w
 Gsrc/main/java/app/domain/shared/exceptions/ChoiceBoxEmptyException.java,d\a\da5859ee0fbb622f76a8e66651f4ffb20658ca75
 O
@@ -193,8 +191,6 @@ o
 ?src/test/java/app/domain/stores/ParameterCategoryStoreTest.java,a\d\ad10a870e86f06eb3574f636cae639ed6b48432d
 U
 %src/main/java/app/controller/App.java,4\7\47cfbdc47faac4c1edcb93d1b6968a5d5bdad509
-[
-+src/main/java/app/domain/model/Company.java,e\6\e66f0f8e51b44df23f2004467961976fbec241aa
 D
 docs/SprintD/DM.puml,5\d\5dff55b21dbdf4f5b06aa1150995ae36147d966b
 g
@@ -223,8 +219,6 @@ g
 7docs/SprintD/US19/US19_send_to_the_NHS_daily_reports.md,2\1\21cde031ea54f071604d6fab193a5b0d63a20e99
 x
 Hsrc/main/java/app/controller/ConsultClientTestsAndResultsController.java,8\4\8475389b3dfeacabb1273b412ebbf48a5dbc9f8b
-X
-(src/main/java/app/domain/model/Data.java,f\a\facd46acab9e1cd55acb7b39820dc3dfa90996b5
 j
 :src/test/java/app/domain/model/ExternalApiBarcodeTest.java,0\d\0d4ca88a3f9cd0f3a3ca6c3fce5b7497a398bc31
 d
@@ -273,8 +267,6 @@ N
 docs/SprintD/US16/US16_SSD.svg,7\8\787672ec4ad42dcb77a2ecf23686d615b5827c38
 J
 docs/SprintD/US16/US016.md,f\5\f5caca5dac09ecb7e9bb6b2d7201376b312dc05d
-s
-Csrc/main/java/app/ui/gui/adminMenuUIs/SimpleLinearRegressionUI.java,a\8\a8f1748c069885bb6c222d802a02a8b16eab833e
 N
 docs/SprintD/US16/US16_DM.puml,e\d\ed7ab63f6477bc49499e03e724329f7ba5dffb4a
 j

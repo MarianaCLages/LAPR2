@@ -69,7 +69,7 @@ public class StringBuilderReport {
 
     }
 
-    public void printCovidTestsPerInterval(StringBuilder sb) {
+    public StringBuilder printCovidTestsPerInterval(StringBuilder sb) {
 
         if (company.getData().getMontlhyReportValue() && company.getData().getDayReportValue() && company.getData().getWeekReportValue()) {
             getCovidTestsIntoTheNHSReport(true, true, true, sb);
@@ -86,6 +86,8 @@ public class StringBuilderReport {
         } else if (company.getData().getMontlhyReportValue()) {
             getCovidTestsIntoTheNHSReport(false, false, true, sb);
         }
+
+        return sb;
 
     }
 

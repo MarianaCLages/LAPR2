@@ -24,14 +24,12 @@ public class SimpleLinearRegressionUI implements Initializable {
     @FXML
     private TextArea myTextAreaSimple;
 
-    private SceneController sceneController;
-    private App app;
-    private GenerateNHSReportController ctrl;
+    private SceneController sceneController = SceneController.getInstance();
+    private App app = sceneController.getApp();
+    private GenerateNHSReportController ctrl = SceneController.getInstance().getCtrl();
+
 
     public SimpleLinearRegressionUI() {
-        this.ctrl = sceneController.getCtrl();
-        this.app = sceneController.getApp();
-        this.sceneController = SceneController.getInstance();
     }
 
     public void returnToGenerateNHSReport(ActionEvent event) {
@@ -69,8 +67,7 @@ public class SimpleLinearRegressionUI implements Initializable {
         } catch (ChoiceBoxEmptyException err2) {
             Alerts.errorAlert(err2.getMessage());
         } catch (RuntimeException err1) {
-            Alerts.errorAlert(err1.getMessage());
-            //  Alerts.errorAlert("Please enter valid information (Don't leave blank containers!)");
+            Alerts.errorAlert("Please enter valid information (Don't leave blank containers!)");
         }
 
     }

@@ -23,6 +23,7 @@ public class GenerateNHSReportController {
     private Calendar cal;
     private LocalDate beginDate;
     private LocalDate todayDate = LocalDate.now();
+    private StringBuilder sb = new StringBuilder();
 
     public GenerateNHSReportController() {
         this(App.getInstance().getCompany());
@@ -52,7 +53,6 @@ public class GenerateNHSReportController {
 
         LinearRegression linearRegression = new LinearRegression(agesInsideTheDateInterval, covidTestsPerDayInsideTheIntervalOfDates);
 
-        StringBuilder sb = new StringBuilder();
         sb.append(linearRegression.toString());
         sb.append("\n");
 
@@ -62,7 +62,7 @@ public class GenerateNHSReportController {
             i++;
         }
 
-        this.stringBuilderReport.printCovidTestsPerInterval(sb);
+        this.sb = this.stringBuilderReport.printCovidTestsPerInterval(sb);
 
     }
 
@@ -83,7 +83,6 @@ public class GenerateNHSReportController {
 
         LinearRegression linearRegression = new LinearRegression(positiveCovidTestsPerDayInsideTheDateInterval, covidTestsPerDayInsideTheDateInterval);
 
-        StringBuilder sb = new StringBuilder();
         sb.append(linearRegression.toString());
         sb.append("\n");
 
@@ -94,7 +93,7 @@ public class GenerateNHSReportController {
 
         }
 
-        this.stringBuilderReport.printCovidTestsPerInterval(sb);
+        this.sb = this.stringBuilderReport.printCovidTestsPerInterval(sb);
 
     }
 
@@ -419,7 +418,6 @@ public class GenerateNHSReportController {
 
     }
 
-
     public Calendar getCal() {
         return cal;
     }
@@ -431,13 +429,13 @@ public class GenerateNHSReportController {
     public LocalDate getTodayDate() {
         return todayDate;
     }
-    
+
     public Data getData() {
         return data;
     }
 
     public StringBuilder getSb() {
-        return this.stringBuilderReport.getSb();
+        return this.sb;
     }
 
 }
