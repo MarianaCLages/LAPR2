@@ -24,6 +24,8 @@ public class ClientUpdateUI implements Runnable {
         sexes.add("Female");
         sexes.add("Other");
 
+        boolean isDataCorrect = false;
+
         do {
             try {
                 String cc = Utils.readLineFromConsole("Please enter the new cc");
@@ -41,13 +43,13 @@ public class ClientUpdateUI implements Runnable {
                 String phoneNumber = Utils.readLineFromConsole("Please enter the new phone number");
                 String email = Utils.readLineFromConsole("Please enter the email of the new Client");
                 clientDataController.updateClientData(cc, nhs, birthDate, sex, tif, phoneNumber, email, name);
-                exception = false;
+                isDataCorrect = true;
             } catch (Exception e) {
                 System.out.println(e.getMessage());
                 System.out.println("An error occurred during the creation during the creation of the Parameter please try again");
-                exception = true;
+                isDataCorrect = false;
             }
-        } while (exception);
+        } while (!isDataCorrect);
 
 
     }
