@@ -13,11 +13,11 @@ public class ImportTestsTest {
 
     @Test
     public void CreateValidCategoryTest() throws IOException {
-        //Arrange + Act
-     //   String fileName = "C:\\Users\\EN\\Documents\\prog lapr2 clone2\\csv\\tests_BloodMDISCCSV.csv";
+       // Arrange + Act
+        String fileName = "C:\\Users\\EN\\Documents\\prog lapr2 clone2\\csv\\tests_BloodMDISCCSV.csv";
 
         ImportTests aa = new ImportTests();
-      //  aa.readTestFromCSV(fileName);
+        aa.readTestFromCSV(fileName);
         System.out.println((aa.getTestFileList()));
 
     }

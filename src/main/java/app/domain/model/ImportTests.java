@@ -2,6 +2,7 @@ package app.domain.model;
 
 import app.controller.App;
 import app.domain.stores.*;
+import auth.AuthFacade;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -25,6 +26,7 @@ public class ImportTests {
     int errorcount = 0;
     TestTypeStore ttstore;
     ClientStore cstore;
+    AuthFacade authFacade;
     ClinicalAnalysisLabStore store;
     ParameterCategoryStore pcstore;
     ParameterStore pstore;
@@ -35,6 +37,7 @@ public class ImportTests {
     public ImportTests() {
         App app = App.getInstance();
         Company company = app.getCompany();
+        authFacade = company.getAuthFacade();
         cstore = company.getClientList();
         pcstore = company.getParameterCategoryList();
         tstore = company.getTestList();
@@ -114,9 +117,11 @@ public class ImportTests {
         Date date = new SimpleDateFormat("dd/MM/yyyy").parse(metadata[6]);
 
         cstore.createClient(metadata[7],metadata[3],metadata[4],metadata[5], date,' ',metadata[9],metadata[8]);
+        boolean save;
+        save = cstore.saveClient();
+        /*cstore.addUser(company);*/
 
-
-        return cstore.saveClient();
+        return save;
     }
 
     public boolean verifyClinic(String[] metadata) {
