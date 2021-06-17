@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.LabCord.CompanyPerformanceUI">
+<AnchorPane prefHeight="409.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.LabCord.CheckPerformanceUI">
    <children>
       <Button fx:id="btnReturn" layoutX="24.0" layoutY="365.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="32.0" prefWidth="76.0" text="Return">
          <cursor>
@@ -13,7 +13,7 @@
          </cursor>
       </Button>
       <ChoiceBox fx:id="myChoiceBoxSimple" layoutX="300.0" layoutY="90.0" prefHeight="25.0" prefWidth="204.0" />
-      <Button layoutX="526.0" layoutY="90.0" mnemonicParsing="false" onAction="#confirm" text="Confirm" />
+      <Button layoutX="497.0" layoutY="356.0" mnemonicParsing="false" onAction="#confirm" text="Change" />
       <DatePicker layoutX="100.0" layoutY="66.0" />
       <DatePicker layoutX="100.0" layoutY="103.0" />
       <Label layoutX="24.0" layoutY="69.0" prefHeight="18.0" prefWidth="76.0" text="Beginning:" />
@@ -23,12 +23,17 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="349.0" layoutY="47.0" prefHeight="20.0" prefWidth="106.0" text="Algorith Choose">
+      <Label layoutX="349.0" layoutY="47.0" prefHeight="20.0" prefWidth="118.0" text="Algorithm Choose">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextArea fx:id="myTextAreaSimple" editable="false" layoutX="125.0" layoutY="139.0" prefHeight="258.0" prefWidth="357.0" />
-      <Button layoutX="504.0" layoutY="365.0" mnemonicParsing="false" text="View Graphs" />
+      <TextArea fx:id="trackpad" editable="false" layoutX="125.0" layoutY="150.0" prefHeight="258.0" prefWidth="357.0" />
+      <Button layoutX="21.0" layoutY="327.0" mnemonicParsing="false" text="View Graphs" />
+      <RadioButton layoutX="498.0" layoutY="262.0" mnemonicParsing="false" text="Day" />
+      <RadioButton layoutX="498.0" layoutY="287.0" mnemonicParsing="false" text="Week" />
+      <RadioButton layoutX="498.0" layoutY="310.0" mnemonicParsing="false" text="Month" />
+      <RadioButton layoutX="498.0" layoutY="331.0" mnemonicParsing="false" text="Year" />
+      <Button layoutX="520.0" layoutY="90.0" mnemonicParsing="false" onAction="#confirm" text="Confirm" />
    </children>
 </AnchorPane>

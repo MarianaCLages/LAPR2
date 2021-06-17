@@ -31,6 +31,7 @@ public class SendReportTask extends TimerTask implements Serializable {
 
         getProps();
 
+
         double[] m1 = {27, 58, 86, 120, 140, 152, 169, 218, 226, 258};
         double[] m2 = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50};
 

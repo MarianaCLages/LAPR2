@@ -123,7 +123,7 @@ public class StringBuilderReport {
         sb.append("\n\n");
         sb.append(todayDateForCovidReport);
         sb.append(" : ");
-        for (Test t : this.testStore.getPositiveCovidTest(company.getTestList().getValidatedTestsList())) {
+        for (Test t : this.testStore.getPositiveCovidTest(company.getTestList().getValidatedTestsListCovid())) {
             LocalDate tDate = t.getDate().toLocalDate();
 
             if (tDate.equals(todayDateForCovidReport)) {
@@ -156,7 +156,7 @@ public class StringBuilderReport {
 
             LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //Date de começo do intervalo (dia de hj - historical days)
 
-            for (Test t : this.testStore.getPositiveCovidTest(company.getTestList().getValidatedTestsList())) {
+            for (Test t : this.testStore.getPositiveCovidTest(company.getTestList().getValidatedTestsListCovid())) {
                 LocalDate tDate = t.getDate().toLocalDate();
                 if (tDate.equals(currentDay)) {
                     covidTestsIntoArray[i] += 1;
@@ -196,7 +196,7 @@ public class StringBuilderReport {
 
             LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //Date de começo do intervalo (dia de hj - historical days)
 
-            for (Test t : this.testStore.getPositiveCovidTest(company.getTestList().getValidatedTestsList())) {
+            for (Test t : this.testStore.getPositiveCovidTest(company.getTestList().getValidatedTestsListCovid())) {
                 LocalDate tDate = t.getDate().toLocalDate();
                 if (tDate.equals(currentDay)) {
                     covidTestsIntoArray[i] += 1;

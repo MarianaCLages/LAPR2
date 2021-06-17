@@ -238,7 +238,7 @@ public class TestStore implements Serializable {
         return validatedTest;
     }
 
-    public List<Test> getValidatedTestsList() {
+    public List<Test> getValidatedTestsListCovid() {
 
         List<Test> testList = new ArrayList<>();
 
@@ -250,6 +250,74 @@ public class TestStore implements Serializable {
 
         return testList;
 
+    }
+
+    public List<Test> getValidatedTestsListAll() {
+
+        List<Test> testList = new ArrayList<>();
+
+        for (Test test : array) {
+            if (test.getState().equals("VALIDATED")) {
+                testList.add(test);
+            }
+        }
+
+        return testList;
+
+    }
+
+
+    public List<Test> getWaitingResultsTestsList() {
+
+        List<Test> testList = new ArrayList<>();
+
+        for (Test test : array) {
+            if (test.getState().equals("CREATED") || test.getState().equals("SAMPLE_COLLECTED")) {
+                testList.add(test);
+            }
+        }
+
+        return testList;
+
+    }
+
+    public int getWaitingResultsTestsListTime(LocalDateTime timeBeg, LocalDateTime timeEnd) {
+
+        int count = 0;
+
+        for (Test test : array) {
+            if (timeBeg.isBefore(test.getCreatedDate()) && timeEnd.isAfter(test.getCreatedDate())) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    public int getWaitingDiagnosisTestsListTime(LocalDateTime timeBeg, LocalDateTime timeEnd) {
+
+        int count = 0;
+
+        for (Test test : array) {
+            if (timeBeg.isBefore(test.getSampleCreatedDate()) && timeEnd.isAfter(test.getSampleCreatedDate())) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    public int getValidatedTestsListTime(LocalDateTime timeBeg, LocalDateTime timeEnd) {
+
+        int count = 0;
+
+        for (Test test : array) {
+            if (timeBeg.isBefore(test.getValidatedDate()) && timeEnd.isAfter(test.getValidatedDate())) {
+                count++;
+            }
+        }
+
+        return count;
     }
 
     public List<Test> getTestListArray() {
