@@ -178,11 +178,14 @@ public class ImportTests {
 
 
         Test t = tstore.createTest(metadata[4],metadata[5],testtype,pcList,pList);
+        tstore.saveTest();
+
+
 
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
-        t.changeState("SAMPLE_ANALYSED");
+        t.changeState("SAMPLE_COLLECTED");
 
         String date1 = metadata[21];
         String date2 = metadata[22];
@@ -241,6 +244,8 @@ public class ImportTests {
             t.addTestResult("IgGAN", Double.parseDouble(metadata[20].replace(",", ".")));
 
         }
+        t.changeState("VALIDATED");
+
         return true;
     }
 }
