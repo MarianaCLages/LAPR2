@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class BruteForceMaxSum {
     private BruteForceMaxSum(){
     }
+
     public static int[] max(int[] array) {
         int max = Integer.MIN_VALUE;
         int beggining =0;

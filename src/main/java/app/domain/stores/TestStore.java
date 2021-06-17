@@ -264,6 +264,162 @@ public class TestStore implements Serializable {
         return null;
     }
 
+<<<<<<< HEAD
+=======
+
+    private LocalDate todayDate;
+    private Calendar cal;
+    private LocalDate beginDate;
+    private LocalDate todayDateForCovidReport = LocalDate.now();
+
+
+    public void setDates() {
+
+        todayDate = LocalDate.now(); //Date atual (dia de hoje)
+
+        cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -company.getData().getHistoricalDaysInt());
+        Date toDate = cal.getTime();
+
+        beginDate = toDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //Date de começo do intervalo (dia de hj - historical days)
+
+    }
+
+    public List<Client> getClientsWithTests() {
+
+        List<Client> clientList = company.getClientArrayList();
+        List<Test> validTestList = getListTestsInsideTheHistoricalDays(company.getTestList().getTestListArray());
+
+        List<Client> clientList1 = new ArrayList<>();
+
+        for (Client c : clientList) {
+            for (Test t : validTestList) {
+                if (c.getTinNumber().equals(t.getClientTin())) {
+                    if (!clientList1.contains(c))
+                        clientList1.add(c);
+                }
+            }
+        }
+
+        return clientList1;
+
+    }
+
+    public List<Test> getClientsWithTestsListWithTests() {
+
+        List<Client> clientList = company.getClientArrayList();
+        List<Test> validTestList = getListTestsInsideTheHistoricalDays(company.getTestList().getTestListArray());
+
+        List<Test> testList = new ArrayList<>();
+
+        for (Client c : clientList) {
+            for (Test t : validTestList) {
+                if (c.getTinNumber().equals(t.getClientTin())) {
+                    if (!testList.contains(t))
+                        testList.add(t);
+                }
+            }
+        }
+
+        return testList;
+
+    }
+
+    public double[] getClientAge(List<Client> clientList, int space) {
+
+        double[] clientsAges = new double[space]; // O mais 1 é pq é preciso registar o dia de "HJ"
+
+        int n = 0;
+        int x = 0;
+        int sum = 0;
+        int age = 0;
+
+        for (int i = 0; i < space; i++) {
+
+            LocalDate currentDay = getCurrentDay(i);
+
+            for (Test t1 : getClientsWithTestsListWithTests()) {
+
+                LocalDate testDate = t1.getDate().toLocalDate();
+
+                if (testDate.equals(currentDay)) {
+
+                    Client c1 = null;
+
+                    for (Client c : clientList) {
+                        if (t1.getClientTin().equals(c.getTinNumber())) {
+                            c1 = c;
+                        }
+                    }
+
+                    LocalDate date = c1.getBirthDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                    age = Period.between(date, LocalDate.now()).getYears();
+                    sum += age;
+                    x++;
+
+                }
+
+            }
+
+            if (x != 0) clientsAges[n] = sum / x;
+            n++;
+            x = 0;
+            sum = 0;
+
+        }
+
+        return clientsAges;
+
+    }
+
+    public double[] getClientAgeInsideTheInterval(List<Client> clientList, int space) {
+
+        double[] clientsAges = new double[space]; // O mais 1 é pq é preciso registar o dia de "HJ"
+
+        int n = 0;
+        int x = 0;
+        int sum = 0;
+        int age = 0;
+
+        for (int i = 0; i < space; i++) {
+
+            LocalDate currentDay = getCurrentDayInsideInterval(i);
+
+            for (Test t1 : getClientsWithTestsListWithTests()) {
+
+                LocalDate testDate = t1.getDate().toLocalDate();
+
+                if (testDate.equals(currentDay)) {
+
+                    Client c1 = null;
+
+                    for (Client c : clientList) {
+                        if (t1.getClientTin().equals(c.getTinNumber())) {
+                            c1 = c;
+                        }
+                    }
+
+                    LocalDate date = c1.getBirthDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+                    age = Period.between(date, LocalDate.now()).getYears();
+                    sum += age;
+                    x++;
+
+                }
+
+            }
+
+            if (x != 0) clientsAges[n] = sum / x;
+            n++;
+            x = 0;
+            sum = 0;
+
+        }
+
+        return clientsAges;
+
+    }
+
+>>>>>>> 0c8b78422bbd58f9b64f50ae61254c3ea2fbf940
     public List<Test> getPositiveCovidTest(List<Test> covidList) {
 
         List<Test> covidTestList = new ArrayList<>();
