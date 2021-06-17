@@ -218,8 +218,6 @@ _
 /src/main/java/app/domain/model/ImportTests.java,2\b\2ba2b8de80823c9a585b6b27c3508a2da0c756d3
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-_
-/src/main/java/app/domain/shared/LinearTest.java,b\1\b1ef7502dac291a5892519a19022cfcae28f35aa
 H
 docs/SprintD/US01/US1.md,f\1\f1d873b3c221c77a469df54aa9f14f55e55b0cb8
 M
@@ -242,8 +240,6 @@ j
 :src/test/java/app/domain/model/ExternalApiBarcodeTest.java,0\d\0d4ca88a3f9cd0f3a3ca6c3fce5b7497a398bc31
 d
 4src/test/java/app/domain/stores/SampleStoreTest.java,d\a\da910ce79a563b2cacaddc3f7b356f379844a6bb
-c
-3src/test/java/app/domain/model/ImportTestsTest.java,6\c\6cc4e132156821eab2b8a041d40e3ebf297c62f7
 S
 #docs/SprintD/US19/SD_runTask().puml,6\2\62d9b6e9f773098752ee05be093f14fc3c4dae02
 I
@@ -260,13 +256,3 @@ L
 docs/SprintD/US02/US2_CD.svg,0\d\0d236980cbeed59900b6e7ae4d8b7a4d8d26b494
 L
 docs/SprintD/US02/US2_SD.svg,e\9\e94f8ed25f6ca470774326227f411ac76553f5c1
-n
->src/test/java/app/domain/shared/MultiLinearRegressionTest.java,2\c\2c7b9a7fa7b51e171c4a27a4f993a8d666fa00e3
-i
-9src/test/java/app/domain/shared/LinearRegressionTest.java,6\c\6c7c9bb4ec0fd014244666b72fa2fb3f75f12310
-e
-5src/main/java/app/domain/shared/LinearRegression.java,b\5\b5738a1e3a1c85790cbe245760fdbfe6e77be206
-j
-:src/main/java/app/domain/shared/MultiLinearRegression.java,5\1\51ac4d2fa961af5b859a17a30045d1b297b297c4
-b
-2src/main/java/app/domain/model/SendReportTask.java,8\5\85686568e666822bea9d6d3cc3520c4db4a26869
