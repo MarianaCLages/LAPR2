@@ -50,7 +50,7 @@ public class ConsultClientTestsAndResultsUI implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        String[] choices = {Constants.CLIENT_LIST_TIN,Constants.CLIENT_LIST_NAME};
+        String[] choices = {Constants.CLIENT_LIST_TIN, Constants.CLIENT_LIST_NAME};
         cbxListOrder.getItems().addAll(choices);
         selectedOrder();
     }
@@ -59,7 +59,7 @@ public class ConsultClientTestsAndResultsUI implements Initializable {
         cbxListOrder.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-                if(fillClientList(t1)){
+                if (fillClientList(t1)) {
                     selectedClient();
                 }
             }

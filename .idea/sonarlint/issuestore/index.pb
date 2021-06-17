@@ -67,8 +67,6 @@ d
 4src/main/java/app/domain/model/RefValueAdapter2.java,1\3\133cbea848d6f155469752c9f83dd1597bdb0b7e
 d
 4src/main/java/app/domain/model/RefValueAdapter3.java,2\d\2dd3e885181b46c8c9dfe9bae89fe83a48d03b92
-Z
-*src/main/java/app/domain/model/Report.java,5\0\50aaf8912efcd7144f4cf66a4fbfdabdc16cbbc9
 X
 (src/main/java/app/domain/model/Role.java,1\d\1db30fcc6150b7f76eb9115e4098cf1557ce3f93
 Z
@@ -97,8 +95,6 @@ t
 Dsrc/main/java/app/domain/shared/exceptions/DateInvalidException.java,b\c\bcae7caaaf4d29d4cdfd2e25c45972bcdda5b312
 
 Osrc/main/java/app/domain/shared/exceptions/ConfidenceLevelICEmptyException.java,e\2\e25a109b39a38754f0d3cca875666bb35af12948
-
-Osrc/main/java/app/domain/shared/exceptions/ConfidenceLevelInvalidException.java,9\f\9f359eb1a2de4a24862d2f4ff684230b4a4857e8
 r
 Bsrc/main/java/app/domain/shared/exceptions/DateEmptyException.java,4\b\4b5eb190cd1f755e46ed5125ac1ec7a2c6c156c3
 X
@@ -143,8 +139,6 @@ O
 .idea/artifacts/Sem2App_jar.xml,9\a\9a36f05a7cc7eec42026caea684078f299f65b24
 \
 ,src/main/java/app/domain/model/TestType.java,2\4\2423c136bbc016d77dbe900fd13fca08fa27b56a
-X
-(src/main/java/app/domain/model/Test.java,0\3\0346ca7efc8246aba1bce2abd18994f1118a0b11
 a
 1src/main/java/app/domain/model/TestParameter.java,4\d\4dc3d189ec133a85b04dfd016faa819500cb5976
 ‚
@@ -167,6 +161,8 @@ w
 Gsrc/main/java/app/ui/gui/adminMenuUIs/ClinicalAnalysisLaboratoryUI.java,3\3\333e57aa1e107615bb48acfb7c7c07906d34dfd5
 T
 $src/main/java/app/ui/gui/Alerts.java,a\2\a2c5c826a3655d1cf1512f81124558ddd6665219
+g
+7src/main/java/app/ui/gui/employees/AdministratorUI.java,1\9\19e8d234ed70d2ee98189bee48aecf519f1826fa
 w
 Gsrc/main/java/app/domain/shared/exceptions/ChoiceBoxEmptyException.java,d\a\da5859ee0fbb622f76a8e66651f4ffb20658ca75
 O
@@ -183,14 +179,14 @@ M
 docs/SprintD/US04/US4_MD.puml,2\f\2f6a4e27680def385dd857b4452454decea51a03
 M
 docs/SprintD/US19/US19_DM.svg,1\a\1a583f5d459b76907aba3c24f0337cfecb20a121
-O
-docs/SprintD/US19/US19_SSD.puml,2\4\2450b1747969c05d0a3da7b81267eee114110551
 N
 docs/SprintD/US19/US19_SSD.svg,4\6\46df73713f32f2a4e06ca55a5e3bc93f09918622
 o
 ?src/test/java/app/domain/stores/ParameterCategoryStoreTest.java,a\d\ad10a870e86f06eb3574f636cae639ed6b48432d
 U
 %src/main/java/app/controller/App.java,4\7\47cfbdc47faac4c1edcb93d1b6968a5d5bdad509
+[
++src/main/java/app/domain/model/Company.java,e\6\e66f0f8e51b44df23f2004467961976fbec241aa
 D
 docs/SprintD/DM.puml,5\d\5dff55b21dbdf4f5b06aa1150995ae36147d966b
 g
@@ -265,7 +261,13 @@ N
 docs/SprintD/US16/US16_SSD.svg,7\8\787672ec4ad42dcb77a2ecf23686d615b5827c38
 J
 docs/SprintD/US16/US016.md,f\5\f5caca5dac09ecb7e9bb6b2d7201376b312dc05d
+s
+Csrc/main/java/app/ui/gui/adminMenuUIs/SimpleLinearRegressionUI.java,a\8\a8f1748c069885bb6c222d802a02a8b16eab833e
 N
 docs/SprintD/US16/US16_DM.puml,e\d\ed7ab63f6477bc49499e03e724329f7ba5dffb4a
-j
-:src/main/java/app/ui/gui/LabCord/CompanyPerformanceUI.java,6\4\647a656541805ba0a1a54bb352c1f4d681c050a0
+`
+0src/main/java/app/ui/console/ClientUpdateUI.java,2\5\25a0fdd057b68fee3cd31adb9548d7bc26cfcdb8
+L
+docs/SprintD/US02/US2_SD.svg,e\9\e94f8ed25f6ca470774326227f411ac76553f5c1
+h
+8src/main/java/app/ui/gui/LabCord/CheckPerformanceUI.java,6\9\690c37988cd68dae4ac0199b39e634f7fdb47271
