@@ -7,22 +7,24 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.clichetecMenuUIs.ConsultClientTestsAndResultsUI">
    <children>
-      <Button fx:id="btnReturn" layoutX="14.0" layoutY="355.0" mnemonicParsing="false" onAction="#returnToCCTMenu" prefHeight="32.0" prefWidth="76.0" text="Return">
+      <Button fx:id="btnReturn" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#returnToCCTMenu" prefHeight="26.0" prefWidth="66.0" text="Return">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <ListView fx:id="lvwClientList" layoutX="40.0" layoutY="46.0" onEditStart="#fillClientList" prefHeight="117.0" prefWidth="200.0" />
-      <ListView fx:id="lvwTestList" layoutX="360.0" layoutY="46.0" onEditStart="#fillTestList" onMouseClicked="#selectedTest" prefHeight="118.0" prefWidth="200.0" />
-      <Button fx:id="btnShowTests" layoutX="151.0" layoutY="170.0" mnemonicParsing="false" onAction="#fillTestList" text="Show tests">
+      <ListView fx:id="lvwClientList" layoutX="40.0" layoutY="93.0" prefHeight="94.0" prefWidth="238.0" />
+      <ListView fx:id="lvwTestList" layoutX="328.0" layoutY="94.0" onEditStart="#fillTestList" onMouseClicked="#selectedTest" prefHeight="94.0" prefWidth="238.0" />
+      <Button fx:id="btnShowTests" layoutX="194.0" layoutY="192.0" mnemonicParsing="false" onAction="#fillTestList" text="Show tests">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-      <Label layoutX="47.0" layoutY="23.0" text="Select a client:" />
-      <Label fx:id="lblClientTin" alignment="CENTER" layoutX="40.0" layoutY="176.0" prefHeight="18.0" prefWidth="104.0" textAlignment="RIGHT" visible="false" />
-      <Label layoutX="369.0" layoutY="23.0" text="Client's tests:" />
-      <TextArea fx:id="txtTestResults" editable="false" layoutX="120.0" layoutY="207.0" prefHeight="165.0" prefWidth="446.0" />
+      <Label layoutX="47.0" layoutY="73.0" text="2. Select a client:" />
+      <Label fx:id="lblClient" alignment="CENTER" layoutX="40.0" layoutY="176.0" prefHeight="18.0" prefWidth="104.0" textAlignment="RIGHT" visible="false" />
+      <Label layoutX="334.0" layoutY="73.0" text="3. Select a test:" />
+      <TextArea fx:id="txtTestResults" editable="false" layoutX="97.0" layoutY="229.0" prefHeight="157.0" prefWidth="482.0" />
+      <ChoiceBox fx:id="cbxListOrder" layoutX="41.0" layoutY="33.0" prefHeight="26.0" prefWidth="164.0" />
+      <Label layoutX="46.0" layoutY="14.0" text="1. Select the client list order:" />
    </children>
 </AnchorPane>
