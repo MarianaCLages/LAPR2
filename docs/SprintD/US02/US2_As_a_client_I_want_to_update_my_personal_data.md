@@ -21,8 +21,15 @@
 > **Question:** What is the Data that the Client can update?
 > 
 > **Answer:** In this sprint each team should develop a graphical user interface for US2. The application should show the current user data and the client can update any attribute.
-
+> 
+> **Question** In US02 when the client changes the password what should the rules be for this new password? (for example, a digit limit)
+> 
+> **Answer:** The password should be randomly generated. It should have ten alphanumeric characters
+> 
+> 
 ### 1.3. Acceptance Criteria
+The client can only update his: name, address, phone number and sex attributes. The other attributes can not be updated.
+The e-mail message should only inform the client that his personal data has been updated.
 
 ***The client's information is updated***
 ### 1.4. Found out Dependencies
@@ -55,7 +62,7 @@ There is a dependency to:
 ### 2.1. Relevant Domain Model Excerpt 
 *In this section, it is suggested to present an excerpt of the domain model that is seen as relevant to fulfill this requirement.* 
 
-![UpdateClientData_DM](UpdateClientData_DM.jpg)
+![US2_DM](US2_DM.jpg)
 
 
 ## 3. Design - User Story Realization 
