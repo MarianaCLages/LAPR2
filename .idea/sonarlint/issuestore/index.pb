@@ -178,8 +178,6 @@ g
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-;
-Sem2App.iml,6\6\6625fec75a340c498d62942af985e893471ee551
 w
 Gsrc/main/java/app/domain/shared/exceptions/ChoiceBoxEmptyException.java,d\a\da5859ee0fbb622f76a8e66651f4ffb20658ca75
 O
