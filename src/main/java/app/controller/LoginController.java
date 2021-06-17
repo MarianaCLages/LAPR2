@@ -1,13 +1,11 @@
-package app.ui.gui.controllers;
+package app.controller;
 
-import app.controller.AuthController;
 import app.domain.shared.Constants;
 import app.ui.console.utils.Utils;
 import app.ui.gui.Alerts;
 import auth.mappers.dto.UserRoleDTO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
