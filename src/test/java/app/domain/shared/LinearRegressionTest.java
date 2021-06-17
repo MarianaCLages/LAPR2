@@ -121,4 +121,6 @@ public class LinearRegressionTest {
         Assert.assertEquals(0.9939804941297106, l.getR(), delta);
 
     }
+
+
 }

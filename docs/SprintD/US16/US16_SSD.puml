@@ -1,0 +1,20 @@
+@startuml
+actor "LabCoordinator" as LabCord
+actor "System" as Sys
+autonumber
+
+activate LabCord
+LabCord -> Sys: Asks to have an overview of the company's performance
+activate Sys
+Sys --> LabCord: Asks for the date interval to e evaluated
+deactivate Sys
+LabCord -> Sys: Inputs the date interval
+activate Sys
+Sys --> LabCord: Asks which algorithm will be used
+deactivate Sys
+LabCord -> Sys: Selects an algorithm
+activate Sys
+Sys --> LabCord: Show all data requested and the maximum sum interval
+deactivate LabCord
+
+@enduml

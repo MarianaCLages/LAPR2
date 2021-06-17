@@ -7,22 +7,31 @@ Client Tin
 Test Type
 Categories
 Parameters
+State
+Date
+Result
 }
 
 
 class Client{
-Tin Number
+Name
+Citizen Card Number
+National Healthcare Service Number
+Birth date
+Sex
+Tax Identification Number
+Phone
+E-mail
+
 }
 
 class Company{
 
 }
 
-class Results{
-Result
-}
 
-Company -- Test
-Company -- Client
-Test -- Results
+
+Company "1" -- "*" Test : does >
+Company "1"---"*" Client : can reach the information >
+Client "1"---"*" Test :  wants to view the results >
 @enduml

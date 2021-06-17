@@ -57,7 +57,7 @@ deactivate UI
 
 C -> UI: select a test from the list
 activate UI
-UI -> CTRL: getResults()
+UI -> CTRL: getResults(test)
 activate CTRL
 CTRL -> t: getResults()
 deactivate CTRL

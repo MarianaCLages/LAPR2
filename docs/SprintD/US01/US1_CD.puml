@@ -1,55 +1,58 @@
 @startuml
 
-class RecordSampleUI{
+class ViewResultsUI{
 }
 
-class RecordSampleController{
-+ SD_getTestList(testID);
-+ selectTest((testID);
-+ createSampleBarcode();
-+ saveSample();
+class ViewResultsController{
++sortedDateList()
++getResult()
+
 }
 
 class TestStore{
-+ getTest(testID);
+-List<Test> array;
+-List<String> testSortedListString;
++sortedDateList()
 }
 
 class Test{
--state;
--testCode;
--testNhsNumber;
--clientTin;
--testType;
--testParam;
--createdDate;
--sampleCreatedDate;
-+ createSampleBarcode();
-+ saveSample();
-+ validateSample();
+-String clientTin;
+-Report report;
 }
 
-class Sample{
-+ Sample();
+class Company{
+-ClientStore clientList;
+-TestStore testList;
++getUserID()
+
 }
 
-class BarcodeAdapter{
-+ getBarcode();
+class UserSession{
++getId()
 }
 
-class ExternalAPI{
-+ generate();
+class User{
+-Email id;
 }
 
-class Barcode{
-+ createBarcode();
+class ClientStore{
+-List<Client> array
++getClientByEmail()
 }
 
-RecordSampleUI ..> RecordSampleController
-RecordSampleController ..> TestStore
-RecordSampleController -> Test
-Test -> Sample
-Sample --> BarcodeAdapter
-BarcodeAdapter --> ExternalAPI
-ExternalAPI -> Barcode
+class Client{
+-String tinNumber;
++getTinNumber()
+}
+
+ViewResultsUI ..> ViewResultsController
+ViewResultsController ..> Company
+Company .> UserSession
+UserSession ..> User
+Company --> ClientStore
+Company -->TestStore
+ClientStore --> Client
+TestStore --> Test
+
 
 @enduml

@@ -3,7 +3,7 @@ package app.ui.gui.ImportTest;
 import app.controller.App;
 import app.controller.ImportTestsController;
 import app.domain.shared.Constants;
-import app.ui.gui.controllers.SceneController;
+import app.controller.SceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

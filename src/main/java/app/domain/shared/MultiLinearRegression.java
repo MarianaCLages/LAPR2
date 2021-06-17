@@ -3,25 +3,14 @@ package app.domain.shared;
 import app.domain.shared.exceptions.InvalidLengthException;
 import org.apache.commons.math3.distribution.FDistribution;
 import org.apache.commons.math3.distribution.TDistribution;
+import org.apache.commons.math3.distribution.FDistribution;
+import org.apache.commons.math3.distribution.TDistribution;
 
 
 public class MultiLinearRegression {
     private double[][] C;
     private double F0;
     private double intercept;
-
-    public double getIntercept() {
-        return intercept;
-    }
-
-    public double getSlope1() {
-        return slope1;
-    }
-
-    public double getSlope2() {
-        return slope2;
-    }
-
     private double slope1;
     private double slope2;
     private double r2;
@@ -190,11 +179,23 @@ public class MultiLinearRegression {
         return minor;
     }
 
+    public double getIntercept() {
+        return intercept;
+    }
+
+    public double getSlope1() {
+        return slope1;
+    }
+
+    public double getSlope2() {
+        return slope2;
+    }
+
     public double getF0() {
         return F0;
     }
 
-    public double getCriticValueStudent(double alpha) {
+   public double getCriticValueStudent(double alpha) {
         TDistribution td = new TDistribution(this.n - this.k - 1);
 
         return td.inverseCumulativeProbability(1 - alpha);
@@ -205,7 +206,7 @@ public class MultiLinearRegression {
         return fDistribution.inverseCumulativeProbability(1 - alphaf);
     }
 
-    public double lowerLimitCoeficient(int index,double alpha) {
+    public double lowerLimitCoeficient(int index, double alpha) {
 
         double critTD = getCriticValueStudent(alpha);
 
@@ -215,7 +216,7 @@ public class MultiLinearRegression {
 
     }
 
-    public double upperLimitCoeficient(int index,double alpha) {
+    public double upperLimitCoeficient(int index, double alpha) {
 
         double critTD = getCriticValueStudent(alpha);
 
@@ -293,7 +294,7 @@ public class MultiLinearRegression {
         return yEstimated;
     }
 
-    public double lowerLimitAnswer(double[] x0,double alpha) throws InvalidLengthException {
+   public double lowerLimitAnswer(double[] x0,double alpha) throws InvalidLengthException {
         if (x0.length != this.betta.length - 1) {
             throw new InvalidLengthException();
         }
@@ -328,7 +329,7 @@ public class MultiLinearRegression {
 
     }
 
-    public double upperLimitAnswer(double[] x0,double alpha) throws InvalidLengthException {
+   public double upperLimitAnswer(double[] x0,double alpha) throws InvalidLengthException {
         if (x0.length != this.betta.length - 1) {
             throw new InvalidLengthException();
         }

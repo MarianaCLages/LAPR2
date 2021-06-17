@@ -20,13 +20,13 @@ import java.util.regex.Pattern;
  */
 public class Client implements Serializable {
 
-    private final String phoneNumber;
-    private final String cc;
-    private final String nhs;
-    private final String tinNumber;
-    private final Date birthDate;
-    private final String email;
-    private final String name;
+    private String phoneNumber;
+    private String cc;
+    private String nhs;
+    private String tinNumber;
+    private Date birthDate;
+    private String email;
+    private String name;
     private String sex;
 
 
@@ -237,6 +237,38 @@ public class Client implements Serializable {
         if (name.length() > Constants.MAX_CLIENT_NAME) {
             throw new IllegalArgumentException("Name must have maximum of 35 characters");
         }
+    }
+
+    public void setCc(String cc) {
+        this.cc = cc;
+    }
+
+    public void setNhs(String nhs) {
+        this.nhs = nhs;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public void setTinNumber(String tinNumber) {
+        this.tinNumber = tinNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**

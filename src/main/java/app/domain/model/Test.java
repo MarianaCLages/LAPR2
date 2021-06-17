@@ -16,6 +16,8 @@ public class Test implements Serializable {
     private final TestType testType;
     private final List<ParameterCategory> catList;
     private final List<Parameter> paList;
+
+
     private LocalDateTime createdDate;
     private State state;
     private List<TestParameter> testParam;
@@ -310,6 +312,18 @@ public class Test implements Serializable {
 
     public void setCreatedDate(LocalDateTime createdDate) {
         this.createdDate = createdDate;
+    }
+
+    public LocalDateTime getCreatedDate() {
+        return createdDate;
+    }
+
+    public LocalDateTime getSampleCreatedDate() {
+        return sampleCreatedDate;
+    }
+
+    public LocalDateTime getDiagnosticDate() {
+        return diagnosticDate;
     }
 
     /**
