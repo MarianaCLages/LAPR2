@@ -12,6 +12,14 @@ import java.util.Properties;
 import java.util.TimerTask;
 
 public class SendReportTask extends TimerTask implements Serializable {
+    private LocalDate finishDate;
+    private int historicalDays;
+    private LocalDate beginningDate;
+    private double confidenceLevelAnova;
+    private double confidenceLevelVariables;
+    private double confidenceLevelEstimated;
+    private String independentVariable;
+
     public SendReportTask() {
     }
 
@@ -20,14 +28,8 @@ public class SendReportTask extends TimerTask implements Serializable {
      */
     @Override
     public void run() {
-        Properties prop = App.getProperties();
-        LocalDate beginningDate = LocalDate.parse(prop.getProperty("fit.date.beginning"));
-        LocalDate finishDate = LocalDate.parse(prop.getProperty("fit.date.ending"));
-        int historicalDays = Integer.parseInt((prop.getProperty("historical.days")));
-        double confidenceLevelAnova = Double.parseDouble(prop.getProperty("significance.level.anova"));
-        double confidenceLevelVariables = Double.parseDouble(prop.getProperty("significance.level.coefficient"));
-        double confidenceLevelEstimated = Double.parseDouble(prop.getProperty("significance.level.estimated"));
 
+        getProps();
 
         double[] m1 = {27, 58, 86, 120, 140, 152, 169, 218, 226, 258};
         double[] m2 = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50};
@@ -49,7 +51,17 @@ public class SendReportTask extends TimerTask implements Serializable {
 
     }
 
+    private void getProps() {
+        Properties prop = App.getProperties();
+        this.beginningDate = LocalDate.parse(prop.getProperty("fit.date.beginning"));
+        this.finishDate = LocalDate.parse(prop.getProperty("fit.date.ending"));
+        this.historicalDays = Integer.parseInt((prop.getProperty("historical.days")));
+        this.confidenceLevelAnova = Double.parseDouble(prop.getProperty("significance.level.anova"));
+        this.confidenceLevelVariables = Double.parseDouble(prop.getProperty("significance.level.coefficient"));
+        this.confidenceLevelEstimated = Double.parseDouble(prop.getProperty("significance.level.estimated"));
     }
+
+}
 
 
 
