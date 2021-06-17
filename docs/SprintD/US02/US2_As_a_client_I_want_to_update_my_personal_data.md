@@ -13,11 +13,11 @@
 > **Question:** Should the Client type in the attribute he/she wants to update or should he choose from a list?
 > 
 > **Answer:** In this sprint each team should develop a graphical user interface for US2. The application should show the current user data and the client can update any attribute.
-
+>
 > **Question:** To update the attribute, should the Client type the previous data?
 > 
 > **Answer:** In this sprint each team should develop a graphical user interface for US2. The application should show the current user data and the client can update any attribute.
-
+>
 > **Question:** What is the Data that the Client can update?
 > 
 > **Answer:** In this sprint each team should develop a graphical user interface for US2. The application should show the current user data and the client can update any attribute.
@@ -26,10 +26,21 @@
 > 
 > **Answer:** The password should be randomly generated. It should have ten alphanumeric characters
 > 
+> **Question** Should/Can we show the current data held in the client's account? If so, we think that showing certain information(Password, for exemple) could violate some security purposes. How should we approach that situation?
+>
+> **Answer:** "The client can only update his: name, address, phone number and sex attributes. The other attributes can not be updated. There are some restrictions that forced me to make this decision."
+> 
+> **Question** When we update the client's information, should we send an email informing that the client's data has been changed? If so, what should this email contain?
+> 
+> **Answer:** Yes. The e-mail message should only inform the client that his personal data has been updated.
+> 
 > 
 ### 1.3. Acceptance Criteria
 The client can only update his: name, address, phone number and sex attributes. The other attributes can not be updated.
 The e-mail message should only inform the client that his personal data has been updated.
+Develop a graphical user interface for US2
+The application should show the current user data and the client can update any attribute.
+
 
 ***The client's information is updated***
 ### 1.4. Found out Dependencies
@@ -95,7 +106,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ## 3.2. Sequence Diagram (SD)
 
-![UpdateClient_SD](UpdateClient_SD.jpg)
+![US2_SD](US2_SD.jpg)
   
 
 * SD_AddTestResult(parameterCode, result, metric)
@@ -105,7 +116,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 *In this section, it is suggested to present an UML static view representing the main domain related software classes that are involved in fulfilling the requirement as well as and their relations, attributes and methods.*
 
-![UpdateClient_CD](UpdateClient_CD.jpg)
+![US2_CD](US2_CD.jpg)
 
 # 4. Tests
 
