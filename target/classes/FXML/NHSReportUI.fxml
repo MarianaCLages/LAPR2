@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="apNhs" prefHeight="484.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.adminMenuUIs.GenerateNHSReportController">
+<AnchorPane fx:id="apNhs" prefHeight="484.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.adminMenuUIs.GenerateNHSReportUI">
    <children>
       <Button fx:id="myReturnButtonNHS" layoutX="14.0" layoutY="427.0" mnemonicParsing="false" onAction="#returnToAdminMenu" prefHeight="43.0" prefWidth="104.0" text="Return" />
       <Label fx:id="myLabelNHS" layoutX="56.0" layoutY="40.0" prefHeight="25.0" prefWidth="263.0" text=" The number of historical days :" />

@@ -344,7 +344,7 @@ public class ClientTest {
 
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = NullPointerException.class)
     public void ClientNull() throws ParseException {
         Client client = new Client(null, null, null, null, null, ' ', null, null);
     }

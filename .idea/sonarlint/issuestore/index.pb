@@ -1,12 +1,8 @@
 
 b
 2src/main/java/app/ui/console/LabCoordinatorUI.java,6\e\6ec64a9683594148c3fad2c0650a65c947677758
-^
-.src/test/java/app/domain/model/ClientTest.java,1\d\1ded02609d9819f819b2a83507b751b1338f4e87
 k
 ;src/test/java/app/domain/model/ClinicalAnalysisLabTest.java,c\7\c7fe46810f305ec0a466c483bc03cfd82615959c
-_
-/src/test/java/app/domain/model/CompanyTest.java,f\f\ff6dd89f0cd7857a07c771f5cf78d0af203b0511
 ]
 -src/test/java/app/domain/model/EmailTest.java,1\3\135feb5d30f995563cc1a82564df68b69ac6c930
 a
@@ -93,8 +89,6 @@ I
 docs/SprintD/US13/US13.md,c\a\ca643c4202856490937d9359e0618667240f1de5
 n
 >docs/SprintD/US05/VERSÃO 2 GRUPO 40/US005_RecordTheSamples.md,a\6\a6df19e5817d0568a337ec4bd8cd20395b039daf
-Z
-*src/main/java/app/domain/model/Client.java,a\1\a1140e0a891f26f51604f14ed5bf2ac976d60132
 u
 Esrc/main/java/app/domain/shared/exceptions/MenuNotFoundException.java,7\7\77d05717394fe84b2dc7147b9a770a031f7d3158
 |
@@ -173,8 +167,6 @@ f
 6src/main/java/app/ui/gui/employees/ReceptionistUI.java,f\3\f3f1726dbd0191ba02572a807a9a85e5799184dd
 j
 :src/main/java/app/ui/gui/employees/SpecialistDoctorUI.java,5\6\56aa046a147725a28e5fac143e45fcf27cecff22
-c
-3src/main/java/app/ui/gui/clientUIs/ViewTestsUI.java,d\0\d0f1385fa7920040426c4dbc08557ec46b29d321
 e
 5src/main/java/app/ui/gui/adminMenuUIs/EmployeeUI.java,b\8\b82d595fe288cd991b66e8607554fce866cbd2fa
 w
@@ -190,8 +182,6 @@ g
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-v
-Fsrc/main/java/app/domain/shared/exceptions/InvalidLengthException.java,e\f\ef07ae6c152cdbb50fe01066808195f516b81040
 ;
 Sem2App.iml,6\6\6625fec75a340c498d62942af985e893471ee551
 w
@@ -230,8 +220,6 @@ g
 ,src/test/java/app/domain/model/TestTest.java,2\c\2cf03933548261c5794447fc0379d09dc74bc37a
 `
 0src/test/java/app/domain/model/EmployeeTest.java,e\3\e3c8c18d9e7436b0c6e2317e0e84a55d7e796e7a
-j
-:src/main/java/app/domain/shared/MultiLinearRegression.java,5\1\51ac4d2fa961af5b859a17a30045d1b297b297c4
 i
 9src/test/java/app/domain/model/ParameterCategoryTest.java,1\2\123cd2f5497bb247ec839e219a88873b0f77bc99
 k
@@ -242,3 +230,47 @@ v
 Fsrc/main/java/app/ui/gui/adminMenuUIs/GenerateNHSReportController.java,4\9\492080ff1251d93f2fbaf48c23b559c00af79225
 j
 :src/main/java/app/domain/model/MaxSumAdapterBenchmark.java,c\3\c329355b06efa27a8e01f08fcca3c0a6032691d8
+_
+/src/main/java/app/domain/model/ImportTests.java,2\b\2ba2b8de80823c9a585b6b27c3508a2da0c756d3
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+_
+/src/main/java/app/domain/shared/LinearTest.java,b\1\b1ef7502dac291a5892519a19022cfcae28f35aa
+H
+docs/SprintD/US01/US1.md,f\1\f1d873b3c221c77a469df54aa9f14f55e55b0cb8
+M
+docs/SprintD/US01/US1_CD.puml,2\5\25018b23f73c70478654848e1d5721ad2baa3724
+M
+docs/SprintD/US01/US1_MD.puml,6\a\6a2b7cef0bc3550e1f2533a6bd20a5c5eef5df8e
+M
+docs/SprintD/US01/US1_SD.puml,f\6\f669b4697298d1cdf0431a13afdb755ffe8f08ff
+g
+7src/main/java/app/controller/ImportTestsController.java,0\8\089a51a640ef4cdb8894ef8006d47459957f0eec
+N
+docs/SprintD/US19/US19_DM.puml,e\5\e586368f87f8636785e28c6391040b4767f165a4
+g
+7docs/SprintD/US19/US19_send_to_the_NHS_daily_reports.md,2\1\21cde031ea54f071604d6fab193a5b0d63a20e99
+x
+Hsrc/main/java/app/controller/ConsultClientTestsAndResultsController.java,8\4\8475389b3dfeacabb1273b412ebbf48a5dbc9f8b
+X
+(src/main/java/app/domain/model/Data.java,f\a\facd46acab9e1cd55acb7b39820dc3dfa90996b5
+j
+:src/test/java/app/domain/model/ExternalApiBarcodeTest.java,0\d\0d4ca88a3f9cd0f3a3ca6c3fce5b7497a398bc31
+d
+4src/test/java/app/domain/stores/SampleStoreTest.java,d\a\da910ce79a563b2cacaddc3f7b356f379844a6bb
+c
+3src/test/java/app/domain/model/ImportTestsTest.java,6\c\6cc4e132156821eab2b8a041d40e3ebf297c62f7
+;
+Company.ser,b\4\b454abc40c090b9b68d018521b92cf0516eaa385
+S
+#docs/SprintD/US19/SD_runTask().puml,6\2\62d9b6e9f773098752ee05be093f14fc3c4dae02
+I
+docs/SprintD/US02/US02.md,c\3\c3f8bdd5446932fc286aa8d0c20cfa40b5257c1f
+N
+docs/SprintD/US19/US19_SD.puml,4\6\46f0aa57703298515d752a55b01a860d6bbdd421
+i
+9src/test/java/app/domain/shared/BruteForceMaxSumTest.java,3\f\3ff34d7be6645a3a9f52b4ce7e46d66e639dd998
+v
+Fsrc/main/java/app/domain/shared/exceptions/InvalidLengthException.java,e\f\ef07ae6c152cdbb50fe01066808195f516b81040
+^
+.src/main/java/app/domain/shared/Constants.java,f\e\fecb2f10414ac5d80f9e492ba88044c5911e8e84

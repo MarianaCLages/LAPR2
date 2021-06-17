@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="apNhs" prefHeight="484.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.adminMenuUIs.GenerateNHSReportController">
+<AnchorPane fx:id="apNhs" prefHeight="484.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.adminMenuUIs.GenerateNHSReportUI">
    <children>
       <Button fx:id="myReturnButtonNHS" layoutX="14.0" layoutY="427.0" mnemonicParsing="false" onAction="#returnToAdminMenu" prefHeight="43.0" prefWidth="104.0" text="Return" />
       <Label fx:id="myLabelNHS" layoutX="56.0" layoutY="40.0" prefHeight="25.0" prefWidth="263.0" text=" The number of historical days :" />
@@ -18,9 +18,9 @@
       <TextField fx:id="myTextFieldNHS2" layoutX="317.0" layoutY="217.0" prefHeight="25.0" prefWidth="186.0" promptText="Please type here" />
       <ChoiceBox fx:id="myChoiceBoxNHS" layoutX="317.0" layoutY="276.0" prefHeight="25.0" prefWidth="186.0" />
       <Label fx:id="myRegressionModelLabel" layoutX="56.0" layoutY="276.0" prefHeight="25.0" prefWidth="263.0" text="Please choose the linear regression model :" />
-      <RadioButton fx:id="myRadioButtonDay" layoutX="66.0" layoutY="370.0" mnemonicParsing="false" onAction="#configDayReport" text="DayReport" />
-      <RadioButton fx:id="myRadioButtonWeek" layoutX="158.0" layoutY="370.0" mnemonicParsing="false" onAction="#configWeekReport" text="WeekReport" />
+      <RadioButton fx:id="myRadioButtonDay" layoutX="66.0" layoutY="370.0" mnemonicParsing="false" text="DayReport" />
+      <RadioButton fx:id="myRadioButtonWeek" layoutX="158.0" layoutY="370.0" mnemonicParsing="false" text="WeekReport" />
       <Label alignment="CENTER" layoutX="72.0" layoutY="347.0" prefHeight="17.0" prefWidth="273.0" text="Covid-19 Tests :" />
-      <RadioButton fx:id="myRadioButtonMonthly" layoutX="257.0" layoutY="370.0" mnemonicParsing="false" onAction="#configMonthlyReport" text="MonthlyReport" />
+      <RadioButton fx:id="myRadioButtonMonthly" layoutX="257.0" layoutY="370.0" mnemonicParsing="false" text="MonthlyReport" />
    </children>
 </AnchorPane>

@@ -1,9 +1,13 @@
 package app.domain.stores;
 
+import app.controller.App;
 import app.domain.model.*;
+import app.domain.shared.Constants;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Period;
 import java.time.ZoneId;
 import java.util.*;
 
@@ -208,7 +212,6 @@ public class TestStore implements Serializable {
         return null;
     }
 
-
     public List<Test> getTestByTin(String clientTin) {
         List<Test> tinList = new ArrayList<>();
         for (Test tinTests : this.array) {
@@ -260,4 +263,23 @@ public class TestStore implements Serializable {
         }
         return null;
     }
+
+    public List<Test> getPositiveCovidTest(List<Test> covidList) {
+
+        List<Test> covidTestList = new ArrayList<>();
+
+        for (Test t : covidList) {
+            for (TestParameter t1 : t.getTestParam()) {
+                if (t1 != null) {
+                    if (t1.getpCode().equals(Constants.VALID_COVID_PARAMETER) && t1.getTestParameterResult().getResult() > Constants.VALID_COVID_PARAMETER_VALUE) {
+                        covidTestList.add(t);
+                    }
+                }
+            }
+        }
+
+        return covidTestList;
+
+    }
+
 }
