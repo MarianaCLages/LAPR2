@@ -5,7 +5,7 @@ import app.controller.ConsultClientTestsAndResultsController;
 import app.domain.model.Client;
 import app.domain.model.Test;
 import app.domain.shared.Constants;
-import app.ui.gui.controllers.SceneController;
+import app.controller.SceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

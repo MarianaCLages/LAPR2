@@ -1,16 +1,12 @@
 package app.ui.gui.adminMenuUIs;
 
 import app.controller.App;
-
-import app.domain.model.Client;
-import app.domain.model.Company;
-import app.domain.model.Test;
+import app.controller.GenerateNHSReportController;
+import app.domain.model.StringBuilderReport;
 import app.domain.shared.Constants;
-import app.domain.shared.LinearRegression;
 import app.domain.shared.exceptions.ChoiceBoxEmptyException;
-import app.domain.stores.TestStore;
 import app.ui.gui.Alerts;
-import app.ui.gui.controllers.SceneController;
+import app.controller.SceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -19,28 +15,23 @@ import javafx.scene.control.TextArea;
 
 import java.net.URL;
 import java.time.LocalDate;
-import java.time.Period;
-import java.time.ZoneId;
 import java.util.*;
 
 public class SimpleLinearRegressionUI implements Initializable {
 
     @FXML
     private ChoiceBox<String> myChoiceBoxSimple;
-
     @FXML
     private TextArea myTextAreaSimple;
 
-    private SceneController sceneController = SceneController.getInstance();
-    private StringBuilder sb;
+    private SceneController sceneController;
     private App app;
-  //  private GenerateNHSReportController ctrl;
-
-    private LocalDate todayDateForCovidReport = LocalDate.now();
+    private GenerateNHSReportController ctrl;
 
     public SimpleLinearRegressionUI() {
-    //    this.ctrl = sceneController.getCtrl();
+        this.ctrl = sceneController.getCtrl();
         this.app = sceneController.getApp();
+        this.sceneController = SceneController.getInstance();
     }
 
     public void returnToGenerateNHSReport(ActionEvent event) {
@@ -52,10 +43,10 @@ public class SimpleLinearRegressionUI implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String[] choices = {Constants.COVID_TESTS, Constants.MEAN_AGE};
         myChoiceBoxSimple.getItems().addAll(choices);
-   //     ctrl.setDates();
+        ctrl.setDates();
     }
 
-    public void confirm(ActionEvent event) {
+    public void confirm() {
 
         try {
 
@@ -63,17 +54,15 @@ public class SimpleLinearRegressionUI implements Initializable {
                 throw new ChoiceBoxEmptyException();
             }
 
-            String choice = myChoiceBoxSimple.getValue();
-
             if (myChoiceBoxSimple.getValue().equals(Constants.COVID_TESTS)) {
 
-    //            ctrl.linearRegressionWithCovidTests();
-                myTextAreaSimple.setText(sb.toString());
+                ctrl.linearRegressionWithCovidTests();
+                myTextAreaSimple.setText(ctrl.getSb().toString());
 
             } else if (myChoiceBoxSimple.getValue().equals(Constants.MEAN_AGE)) {
 
-      //          ctrl.linearRegressionWithMeanAge();
-                myTextAreaSimple.setText(sb.toString());
+                ctrl.linearRegressionWithMeanAge();
+                myTextAreaSimple.setText(ctrl.getSb().toString());
 
             }
 

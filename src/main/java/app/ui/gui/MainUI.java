@@ -1,5 +1,6 @@
-package app.ui.gui.controllers;
+package app.ui.gui;
 
+import app.controller.SceneController;
 import app.domain.shared.Constants;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -8,7 +9,7 @@ import javafx.scene.control.Button;
 import java.io.IOException;
 
 
-public class MainController {
+public class MainUI {
 
     @FXML
     private Button btnLogin;
