@@ -12,7 +12,7 @@ activate task
 task -> task: getProperties(propsFileLocation)
 activate task
 task -> tStore:algo()
-deactivate task
+deactivate task 
 activate tStore
 deactivate tStore
 alt linear Regression
