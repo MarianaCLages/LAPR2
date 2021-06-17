@@ -7,6 +7,7 @@ import app.domain.shared.MultiLinearRegression;
 import app.domain.shared.exceptions.InvalidLengthException;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Properties;
 import java.util.TimerTask;
 
@@ -20,6 +21,9 @@ public class SendReportTask extends TimerTask implements Serializable {
     @Override
     public void run() {
         Properties prop = App.getProperties();
+        LocalDate beginningDate = LocalDate.parse(prop.getProperty("fit.date.beginning"));
+        LocalDate finishDate = LocalDate.parse(prop.getProperty("fit.date.ending"));
+        int historicalDays = Integer.parseInt((prop.getProperty("historical.days")));
         double confidenceLevelAnova = Double.parseDouble(prop.getProperty("significance.level.anova"));
         double confidenceLevelVariables = Double.parseDouble(prop.getProperty("significance.level.coefficient"));
         double confidenceLevelEstimated = Double.parseDouble(prop.getProperty("significance.level.estimated"));

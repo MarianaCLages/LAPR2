@@ -111,11 +111,7 @@ public class GenerateNHSReportController {
         cal.add(Calendar.DATE, -n);
         Date toDate = cal.getTime();
 
-        LocalDate startDate;
-
-        return startDate = toDate.toInstant()
-                .atZone(ZoneId.systemDefault())
-                .toLocalDate();
+        return toDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
     }
 
