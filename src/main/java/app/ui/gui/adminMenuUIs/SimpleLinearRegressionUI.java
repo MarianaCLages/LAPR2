@@ -41,7 +41,7 @@ public class SimpleLinearRegressionUI implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String[] choices = {Constants.COVID_TESTS, Constants.MEAN_AGE};
         myChoiceBoxSimple.getItems().addAll(choices);
-        ctrl.setDates();
+        ctrl.setDates(ctrl.getData().getHistoricalDaysInt());
     }
 
     public void confirm() {
