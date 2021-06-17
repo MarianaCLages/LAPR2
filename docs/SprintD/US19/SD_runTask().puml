@@ -7,19 +7,25 @@ participant "mlinReg:LinearRegression" as mlinReg
 participant "tStore:TestStore" as tStore
 participant "api:NHSApi" as api
 
+activate task
 [o-> task: run()
+task -> task: getProperties(propsFileLocation)
+activate task
 task -> tStore:algo()
+deactivate task
 activate tStore
-deactivate
+deactivate tStore
 alt linear Regression
-    task --> linReg** : creates()
     alt variable equal number of tests
+    task --> linReg** : creates(validTestList,positiveTestList)
 
     else variable equal age average
+    task --> linReg** : creates(meanAgeList,positiveTestList)
+
     end
 
 else multilinear Regression
-    task --> mlinReg**:creates()
+    task --> mlinReg**:creates(meanAgeList,validTestList,positiveTestList)
 end
 activate task
 task -> task: generatesReport()

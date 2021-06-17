@@ -44,6 +44,14 @@ public class ClientStore implements Serializable {
     }
 
     /**
+     * This Method sets the client object in this class as a given client
+     * @param client client to be set as the client object in this class
+     */
+    public void setClient(Client client){
+        this.client = client;
+    }
+
+    /**
      * Checks if a instance of object Client is valid. An instance of a client is valid if it is not null, if dont already exists or if the email and phone number of the instance are not unique
      *
      * @param client instance of object Client
