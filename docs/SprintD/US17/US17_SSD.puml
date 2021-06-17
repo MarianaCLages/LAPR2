@@ -10,7 +10,7 @@ S --> C:show the list of files
 deactivate S
 C -> S:choose the file
 activate S
-S --> C: comfirms that the tests were imported
+S --> C: shows the tests that were imported
 deactivate S
 
 deactivate C
