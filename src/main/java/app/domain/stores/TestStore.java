@@ -265,7 +265,7 @@ public class TestStore implements Serializable {
         return null;
     }
 
-
+/**
     private LocalDate todayDate;
     private Calendar cal;
     private LocalDate beginDate;
@@ -566,5 +566,6 @@ public class TestStore implements Serializable {
 
 
     }
+ **/
 
 }

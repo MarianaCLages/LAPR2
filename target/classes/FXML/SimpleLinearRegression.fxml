@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.adminMenuUIs.SimpleLinearRegressionController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.adminMenuUIs.SimpleLinearRegressionUI">
     <children>
         <Button fx:id="myReturnButtonSimple" layoutX="14.0" layoutY="343.0" mnemonicParsing="false" onAction="#returnToGenerateNHSReport" prefHeight="43.0" prefWidth="104.0" text="Return" />
       <ChoiceBox fx:id="myChoiceBoxSimple" layoutX="300.0" layoutY="56.0" prefHeight="25.0" prefWidth="204.0" />

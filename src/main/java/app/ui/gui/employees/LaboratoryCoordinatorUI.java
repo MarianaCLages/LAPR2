@@ -5,10 +5,15 @@ import app.domain.shared.Constants;
 import app.ui.gui.controllers.SceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
-public class LaboratoryCoordinatorUI {
+import java.net.URL;
+import java.util.ResourceBundle;
 
+public class LaboratoryCoordinatorUI implements Initializable {
+
+    public Button btnPerformance;
     private SceneController sceneController = SceneController.getInstance();
 
     @FXML
@@ -30,4 +35,14 @@ public class LaboratoryCoordinatorUI {
     }
 
 
+    public void performanceMenu(ActionEvent actionEvent) {
+        App app = sceneController.getApp();
+        app.doLogout();
+        sceneController.switchMenu(actionEvent, "/FXML/CompanyPerformanceUI.fxml");
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }

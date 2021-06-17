@@ -2,7 +2,6 @@ package app.ui.gui.controllers;
 
 import app.controller.App;
 import app.controller.AuthController;
-import app.controller.GenerateNHSReportController;
 import app.domain.model.Company;
 import app.domain.shared.exceptions.MenuNotFoundException;
 import app.ui.gui.Alerts;
@@ -22,7 +21,7 @@ public class SceneController {
     private AuthController authController = new AuthController();
     private App app = App.getInstance();
     private Company company = app.getCompany();
-    private GenerateNHSReportController ctrl = new GenerateNHSReportController();
+ //   private GenerateNHSReportController ctrl = new GenerateNHSReportController();
 
     public static SceneController getInstance() {
 
@@ -71,7 +70,7 @@ public class SceneController {
         return company;
     }
 
-    public GenerateNHSReportController getCtrl() {
-        return ctrl;
-    }
+//    public GenerateNHSReportController getCtrl() {
+//        return ctrl;
+//    }
 }
