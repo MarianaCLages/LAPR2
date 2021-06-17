@@ -31,16 +31,17 @@ public class SimpleLinearRegressionUI implements Initializable {
     @FXML
     private TextArea myTextAreaSimple;
 
-    private SceneController sceneController = SceneController.getInstance();
-    private StringBuilder sb;
+    private SceneController sceneController;
     private App app;
     private GenerateNHSReportController ctrl;
 
     private LocalDate todayDateForCovidReport = LocalDate.now();
+    private StringBuilder sb;
 
     public SimpleLinearRegressionUI() {
         this.ctrl = sceneController.getCtrl();
         this.app = sceneController.getApp();
+        this.sceneController= SceneController.getInstance();
     }
 
     public void returnToGenerateNHSReport(ActionEvent event) {

@@ -4,6 +4,7 @@ package app.domain.model;
 import app.controller.App;
 import app.domain.shared.LinearRegression;
 import app.domain.shared.MultiLinearRegression;
+import app.domain.shared.exceptions.InvalidLengthException;
 
 import java.io.Serializable;
 import java.util.Properties;
@@ -28,7 +29,6 @@ public class SendReportTask extends TimerTask implements Serializable {
         double[] m2 = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50};
 
         LinearRegression l = new LinearRegression(m1, m2);
-<<<<<<< HEAD
         System.out.println("Linear");
         System.out.println(l);
         System.out.println("r = " + l.getR());
@@ -65,7 +65,7 @@ public class SendReportTask extends TimerTask implements Serializable {
         System.out.println("\n\n-------------------------------------------------------------------");
 
         System.out.println("Multilinear \n");
-=======
+
 //        System.out.println("Linear");
 //        System.out.println(l);
 //        System.out.println("r = " + l.getR());
@@ -104,7 +104,6 @@ public class SendReportTask extends TimerTask implements Serializable {
 //        System.out.println("\n\n-------------------------------------------------------------------");
 //
 //        System.out.println("Multilinear \n");
->>>>>>> 64d9ee0844bb73e5880cd2e0c7224210f4cabda5
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -121,7 +120,6 @@ public class SendReportTask extends TimerTask implements Serializable {
 
         MultiLinearRegression s = new MultiLinearRegression(matrix1, matrixb);
 
-<<<<<<< HEAD
         System.out.println();
        /* System.out.println("Lower x1: " + s.lowerLimitCoeficient(1, 0.05));
 
@@ -197,10 +195,7 @@ public class SendReportTask extends TimerTask implements Serializable {
             System.out.println();
         }
 
-=======
->>>>>>> 64d9ee0844bb73e5880cd2e0c7224210f4cabda5
+
     }
-
-
 
 }

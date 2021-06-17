@@ -38,7 +38,7 @@ public class LinearRegressionTest {
         Assert.assertEquals(1.4104709820376184, l.predict(15), delta);
     }
 
-    @Test
+  /*  @Test
     public void getCriticValueStudent() {
         Assert.assertEquals(2.228138851986303, l.getCriticValueStudent(0.025), delta);
     }
@@ -80,7 +80,7 @@ public class LinearRegressionTest {
     public void lowerLimitParamb() {
         Assert.assertEquals(0.18270111141120624, l.lowerLimitParamb(0.025), delta);
 
-    }
+    }*/
 
     @Test
     public void getSt() {

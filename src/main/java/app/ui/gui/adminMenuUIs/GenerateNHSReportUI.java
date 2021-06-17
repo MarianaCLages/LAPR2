@@ -23,10 +23,8 @@ import java.util.ResourceBundle;
 
 public class GenerateNHSReportUI implements Initializable {
 
-    private SceneController sceneController = SceneController.getInstance();
-    private LocalDate todayDate = LocalDate.now();
-
-    private GenerateNHSReportController ctrl = sceneController.getCtrl();
+    private SceneController sceneController;
+    private GenerateNHSReportController ctrl;
 
     @FXML
     private Button myReturnButtonNHS;
@@ -52,6 +50,8 @@ public class GenerateNHSReportUI implements Initializable {
     private RadioButton myRadioButtonMonthly;
 
     public GenerateNHSReportUI() {
+        this.sceneController = SceneController.getInstance();
+        this.ctrl = sceneController.getCtrl();
     }
 
     @Override
@@ -74,7 +74,7 @@ public class GenerateNHSReportUI implements Initializable {
                 throw new InvalidIntervalOfDatesStartException();
             }
 
-            if (Period.between(myDatePicker2.getValue(), todayDate).getDays() < 0) {
+            if (Period.between(myDatePicker2.getValue(), ctrl.getTodayDate()).getDays() < 0) {
                 throw new InvalidIntervalOfDatesEndException();
             }
 
