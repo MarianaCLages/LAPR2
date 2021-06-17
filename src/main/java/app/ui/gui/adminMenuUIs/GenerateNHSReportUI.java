@@ -2,23 +2,18 @@ package app.ui.gui.adminMenuUIs;
 
 import app.controller.App;
 import app.controller.GenerateNHSReportController;
-import app.domain.model.Company;
 import app.domain.model.Data;
 import app.domain.shared.Constants;
 import app.domain.shared.exceptions.*;
 import app.ui.gui.Alerts;
-import app.ui.gui.controllers.SceneController;
+import app.controller.SceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import java.net.URL;
-import java.time.LocalDate;
 import java.time.Period;
-import java.time.ZoneId;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 public class GenerateNHSReportUI implements Initializable {
@@ -103,18 +98,7 @@ public class GenerateNHSReportUI implements Initializable {
         boolean weekReport = myRadioButtonWeek.isSelected();
         boolean monthlyReport = myRadioButtonMonthly.isSelected();
 
-        Data data = ctrl.getData();
-
-        data.setIntervalDates(ctrl.getIntervalDate(myDatePicker1.getValue(), myDatePicker2.getValue()));
-        data.setHistoricalDays(myTextFieldNHS.getText());
-        data.setConfidenceLevelIC(100 - Integer.parseInt(myTextFieldNHS2.getText()));
-
-        setReport(dayReport, weekReport, monthlyReport, data);
-
-        data.setDates(myDatePicker1.getValue(), myDatePicker2.getValue());
-        data.setDayReport(dayReport);
-        data.setWeekReport(weekReport);
-        data.setMonthlyReport(monthlyReport);
+        this.ctrl.setInformation(dayReport,weekReport,monthlyReport,myDatePicker1.getValue(),myDatePicker2.getValue(),myTextFieldNHS.getText(),myTextFieldNHS2.getText());
 
         dayReport = false;
         weekReport = false;
@@ -129,45 +113,6 @@ public class GenerateNHSReportUI implements Initializable {
         } else {
             sceneController.switchMenu(event, Constants.MULTI_LINEAR_REGRESSION_UI);
         }
-    }
-
-    public void setReport(boolean dayReport, boolean weekReport, boolean monthlyReport, Data data) {
-
-        if (myRadioButtonDay.isSelected() && myRadioButtonWeek.isSelected() && myRadioButtonMonthly.isSelected()) {
-
-            data.setDayReport(dayReport);
-            data.setWeekReport(weekReport);
-            data.setMonthlyReport(monthlyReport);
-
-        } else if (myRadioButtonWeek.isSelected() && myRadioButtonDay.isSelected()) {
-
-            data.setDayReport(dayReport);
-            data.setWeekReport(weekReport);
-
-        } else if (myRadioButtonDay.isSelected() && myRadioButtonMonthly.isSelected()) {
-
-            data.setMonthlyReport(monthlyReport);
-            data.setDayReport(dayReport);
-
-        } else if (myRadioButtonWeek.isSelected() && myRadioButtonMonthly.isSelected()) {
-
-            data.setMonthlyReport(monthlyReport);
-            data.setWeekReport(weekReport);
-
-        } else if (myRadioButtonMonthly.isSelected()) {
-
-            data.setMonthlyReport(monthlyReport);
-
-        } else if (myRadioButtonDay.isSelected()) {
-
-            data.setDayReport(dayReport);
-
-        } else if (myRadioButtonWeek.isSelected()) {
-
-            data.setWeekReport(weekReport);
-
-        }
-
     }
 
 }

@@ -17,7 +17,7 @@ public class StringBuilderReport {
     private LocalDate todayDateForCovidReport = LocalDate.now();
     private StringBuilder sb;
 
-    public StringBuilderReport(){
+    public StringBuilderReport() {
         this.company = App.getInstance().getCompany();
         this.testStore = company.getTestList();
         this.sb = new StringBuilder();
@@ -182,7 +182,6 @@ public class StringBuilderReport {
 
         Calendar c = Calendar.getInstance();
         int monthMaxDays = c.getActualMaximum(Calendar.DAY_OF_MONTH);
-
         sb.append("\n");
         sb.append("Month report:");
         sb.append("\n");

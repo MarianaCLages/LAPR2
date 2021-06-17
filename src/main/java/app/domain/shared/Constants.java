@@ -77,6 +77,12 @@ public class Constants {
     public static final String SIMPLE_LINEAR_REGRESSION = "Simple Linear Regression";
     public static final String MULTI_LINEAR_REGRESSION = "Multi Linear Regression";
 
+    public static final String BENCHMARK_ALGORITHM = "Benchmark Algorithm";
+    public static final String BRUTEFORCE_ALGORITHM = "BruteForce Algorithm";
+
+    public static final String BENCHMARK_ALGORITHM_PATH = "app.domain.model.MaxSumAdapterBenchmark";
+    public static final String BRUTEFORCE_ALGORITHM_PATH = "app.domain.model.MaxSumAdapterBruteForce";
+
     public static final String ERROR_BLANK_CONTAINERS = "Please enter valid information (Don't leave blank containers!)";
 
     public static final String COVID_TESTS = "Covid-19 tests";

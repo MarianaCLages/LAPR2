@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+actor "LabCoordinator" as LabCord
+participant "CheckPerformanceUI" as UI
+participant "CheckPerformanceController" as ctrl
+
+activate LabCord
+LabCord -> UI: Asks to have an overview of the company's performance
+activate UI
+UI --> LabCord: Asks for the date interval to e evaluated
+deactivate UI
+LabCord -> UI: Inputs the date interval
+activate UI
+UI -> ctrl: getInterval(beginningDate, endDate)
+activate ctrl
+deactivate
+
+UI --> LabCord: Asks which algorithm will be used
+deactivate UI
+
+LabCord -> UI: Selects an algorithm
+activate UI
+
+UI -> ctrl: selectAlgorithm(algorithm)
+
+activate ctrl
+deactivate
+
+UI --> LabCord: Show all data requested and the maximum sum interval
+deactivate LabCord
+@enduml

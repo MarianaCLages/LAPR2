@@ -1,8 +1,5 @@
-package app.ui.gui.controllers;
+package app.controller;
 
-import app.controller.App;
-import app.controller.AuthController;
-import app.controller.GenerateNHSReportController;
 import app.domain.model.Company;
 import app.domain.shared.exceptions.MenuNotFoundException;
 import app.ui.gui.Alerts;
