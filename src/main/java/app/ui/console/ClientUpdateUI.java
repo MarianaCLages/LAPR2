@@ -1,8 +1,6 @@
 package app.ui.console;
 
 import app.controller.UpdateClientDataController;
-import app.domain.model.Client;
-import app.domain.stores.ClientStore;
 import app.ui.console.utils.Utils;
 
 import java.util.ArrayList;
@@ -13,6 +11,7 @@ public class ClientUpdateUI implements Runnable {
 
     private UpdateClientDataController clientDataController;
     private List<String> sexes;
+    boolean exception = false;
 
     public ClientUpdateUI(){
        clientDataController = new UpdateClientDataController();

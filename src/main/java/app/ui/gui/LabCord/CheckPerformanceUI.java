@@ -14,7 +14,7 @@ import javafx.scene.control.TextArea;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CompanyPerformanceUI implements Initializable {
+public class CheckPerformanceUI implements Initializable {
     public TextArea myTextAreaSimple;
     public ChoiceBox<String> myChoiceBoxSimple;
     private SceneController sceneController = SceneController.getInstance();

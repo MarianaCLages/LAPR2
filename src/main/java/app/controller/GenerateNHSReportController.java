@@ -40,10 +40,10 @@ public class GenerateNHSReportController {
 
     public void linearRegressionWithMeanAge() {
 
-        List<Test> validTests = getListTestsInsideTheHistoricalDays(company.getTestList().getValidatedTestsList());
+        List<Test> validTests = getListTestsInsideTheHistoricalDays(company.getTestList().getValidatedTestsListCovid());
         List<Client> clientsWithTests = getClientsWithTests();
 
-        List<Test> validTestsInsideInterval = getListTestsInsideDateInterval(company.getTestList().getValidatedTestsList());
+        List<Test> validTestsInsideInterval = getListTestsInsideDateInterval(company.getTestList().getValidatedTestsListCovid());
 
         double[] ages = getClientAge(clientsWithTests, company.getData().getHistoricalDaysInt() + 1);
         double[] covidTestsPerDayInsideTheHistoricalInterval = getCovidTestsPerDayIntoArray(validTestsInsideInterval, company.getData().getHistoricalDaysInt() + 1);
@@ -69,10 +69,10 @@ public class GenerateNHSReportController {
     public void linearRegressionWithCovidTests() {
 
 
-        List<Test> validTests = getListTestsInsideTheHistoricalDays(company.getTestList().getValidatedTestsList());
+        List<Test> validTests = getListTestsInsideTheHistoricalDays(company.getTestList().getValidatedTestsListCovid());
         List<Test> covidTests = this.testStore.getPositiveCovidTest(validTests);
 
-        List<Test> validTestInsideInterval = getListTestsInsideDateInterval(company.getTestList().getValidatedTestsList());
+        List<Test> validTestInsideInterval = getListTestsInsideDateInterval(company.getTestList().getValidatedTestsListCovid());
         List<Test> covidTestInsideInterval = this.testStore.getPositiveCovidTest(validTestInsideInterval);
 
         double[] positiveCovidTestsPerDayInsideTheHistoricalInterval = getCovidTestsPerDayIntoArray(covidTests, company.getData().getHistoricalDaysInt() + 1);

@@ -249,8 +249,6 @@ j
 :src/main/java/app/domain/model/MaxSumAdapterBenchmark.java,c\3\c329355b06efa27a8e01f08fcca3c0a6032691d8
 a
 1src/main/java/app/domain/model/MaxSumAdapter.java,c\f\cfbd95090e4ba559534db58c1bf29296c81ccb9f
-}
-Msrc/main/java/app/ui/gui/clichetecMenuUIs/ConsultClientTestsAndResultsUI.java,7\1\7147b5694f147c53f140ea5472f6f543c3ac978e
 ^
 .src/main/java/app/domain/shared/Constants.java,f\e\fecb2f10414ac5d80f9e492ba88044c5911e8e84
 o

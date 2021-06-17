@@ -6,13 +6,12 @@ import app.domain.model.Client;
 import app.domain.model.Test;
 import app.domain.shared.Constants;
 import app.controller.SceneController;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 
 import java.net.URL;
 import java.util.List;
@@ -20,6 +19,8 @@ import java.util.ResourceBundle;
 
 public class ConsultClientTestsAndResultsUI implements Initializable {
 
+    @FXML
+    private ChoiceBox<String> cbxListOrder;
     @FXML
     private Button btnReturn;
     @FXML
@@ -29,7 +30,7 @@ public class ConsultClientTestsAndResultsUI implements Initializable {
     @FXML
     private ListView<String> lvwTestList;
     @FXML
-    private Label lblClientTin;
+    private Label lblClient;
     @FXML
     private TextArea txtTestResults;
 
@@ -47,11 +48,37 @@ public class ConsultClientTestsAndResultsUI implements Initializable {
         sceneController.switchMenu(event, Constants.CLINICAL_CHEMISTRY_TECHNOLOGIST_UI);
     }
 
-    public boolean fillClientList() {
-        clientList = ctrl.getClientListTin();
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        String[] choices = {Constants.CLIENT_LIST_TIN,Constants.CLIENT_LIST_NAME};
+        cbxListOrder.getItems().addAll(choices);
+        selectedOrder();
+    }
 
-        for (Client client1 : clientList) {
-            lvwClientList.getItems().add(client1.getTinNumber());
+    public void selectedOrder() {
+        cbxListOrder.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                if(fillClientList(t1)){
+                    selectedClient();
+                }
+            }
+        });
+    }
+
+    public boolean fillClientList(String order) {
+        lvwClientList.getItems().clear();
+
+        if (order.equalsIgnoreCase(Constants.CLIENT_LIST_TIN)) {
+            clientList = ctrl.getClientListTin();
+            for (Client client1 : clientList) {
+                lvwClientList.getItems().add(client1.getTinNumber());
+            }
+        } else if (order.equalsIgnoreCase(Constants.CLIENT_LIST_NAME)) {
+            clientList = ctrl.getClientListName();
+            for (Client client1 : clientList) {
+                lvwClientList.getItems().add(client1.getName());
+            }
         }
 
         if (lvwClientList.getItems().isEmpty() || lvwClientList.getItems() == null) {
@@ -62,12 +89,12 @@ public class ConsultClientTestsAndResultsUI implements Initializable {
     }
 
     public void selectedClient() {
-        lvwClientList.getSelectionModel().selectedIndexProperty().addListener((observableValue, number, t1) -> lblClientTin.setText(clientList.get(t1.intValue()).getTinNumber()));
+        lvwClientList.getSelectionModel().selectedIndexProperty().addListener((observableValue, number, t1) -> lblClient.setText(clientList.get(t1.intValue()).getTinNumber()));
     }
 
     public void fillTestList() {
         lvwTestList.getItems().clear();
-        client = ctrl.selectedClient(lblClientTin.getText());
+        client = ctrl.selectedClient(lblClient.getText());
         testList = ctrl.getValidatedTestList();
 
         for (Test test : testList) {
@@ -83,12 +110,5 @@ public class ConsultClientTestsAndResultsUI implements Initializable {
 
     public void selectedTest() {
         lvwTestList.getSelectionModel().selectedIndexProperty().addListener((observableValue, number, t1) -> txtTestResults.setText(ctrl.toString(testList.get(t1.intValue()))));
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        if (fillClientList()) {
-            selectedClient();
-        }
     }
 }
