@@ -27,7 +27,7 @@ import java.util.Date;
             this.client.setEmail(email);
             this.client.setName(name);
 
-            //clientStore.setClient(this.client);
+            clientStore.setClient(this.client);
             clientStore.saveClient();
             company.saveCompany();
         }
