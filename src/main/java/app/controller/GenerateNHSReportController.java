@@ -17,7 +17,6 @@ public class GenerateNHSReportController {
     private Company company;
     private TestStore testStore;
     private StringBuilderReport stringBuilderReport;
-    private StringBuilder sb = stringBuilderReport.getSb();
     private Data data;
 
     private Calendar cal;
@@ -96,10 +95,6 @@ public class GenerateNHSReportController {
 
         this.stringBuilderReport.printCovidTestsPerInterval(sb);
 
-    }
-
-    public StringBuilder getSb() {
-        return sb;
     }
 
     public int getIntervalDate(LocalDate start, LocalDate end) {
@@ -390,6 +385,10 @@ public class GenerateNHSReportController {
 
     public Data getData() {
         return data;
+    }
+
+    public StringBuilder getSb() {
+        return this.stringBuilderReport.getSb();
     }
 
 }
