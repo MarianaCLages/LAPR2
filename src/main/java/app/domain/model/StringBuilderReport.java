@@ -9,6 +9,7 @@ import java.time.Period;
 import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class StringBuilderReport {
 
@@ -34,12 +35,17 @@ public class StringBuilderReport {
         Date toDate2 = cal2.getTime();
 
         LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        sb.append(currentDay);
-        sb.append(": ");
-        sb.append(linearRegression.predict(xi));
-        sb.append("\n");
-        return sb;
 
+        if (!(cal2.get(Calendar.DAY_OF_WEEK) == 1)) {
+
+            sb.append(currentDay)
+                    .append("\t\t\t\t\t\t\t\t" + String.format("%.0f",xi))
+                    .append("\t\t\t\t\t\t\t\t\t\t\t\t" + String.format("%.2f", linearRegression.predict(xi)))
+                    .append("\t\t\t\t\t\t\t\t" + String.format("%.2f", linearRegression.predict(xi)) + "\n");
+
+
+        }
+        return sb;
     }
 
     public LocalDate getCurrentDayInsideAWeekInterval() {
@@ -120,11 +126,13 @@ public class StringBuilderReport {
     public StringBuilder printTheCovidTestsIntoTheNHSReportDay(StringBuilder sb) {
 
         int dayTests = 0;
-        sb.append("\n");
-        sb.append("Today covid tests :");
-        sb.append("\n\n");
-        sb.append(todayDateForCovidReport);
-        sb.append(" : ");
+
+        sb.append("\n")
+                .append("Today covid tests :")
+                .append("\n\n")
+                .append(todayDateForCovidReport)
+                .append(" : ");
+
         for (Test t : this.testStore.getPositiveCovidTest(company.getTestList().getValidatedTestsListCovid())) {
             LocalDate tDate = t.getDate().toLocalDate();
 
@@ -134,9 +142,15 @@ public class StringBuilderReport {
 
         }
 
-        sb.append(dayTests);
-        sb.append(" positive covid tests");
+        Calendar cal2 = Calendar.getInstance();
+        if (!(cal2.get(Calendar.DAY_OF_WEEK) == 1)) {
+
+            sb.append(dayTests)
+                    .append(" positive covid tests");
+        }
+
         return sb;
+
     }
 
     public StringBuilder printTheCovidTestsIntoTheNHSReportWeek(StringBuilder sb) {
@@ -144,9 +158,9 @@ public class StringBuilderReport {
         int interval = Period.between(getCurrentDayInsideAWeekInterval(), todayDateForCovidReport).getDays();
         int[] covidTestsIntoArray = new int[interval + 1];
 
-        sb.append("\n");
-        sb.append("Week report:");
-        sb.append("\n");
+        sb.append("\n")
+                .append("Week report:")
+                .append("\n");
 
         for (int i = 0; i < interval; i++) {
 
@@ -165,12 +179,11 @@ public class StringBuilderReport {
                 }
             }
 
-            sb.append(currentDay);
-            sb.append(" : ");
-            sb.append(covidTestsIntoArray[i]);
-            sb.append(" positive covid tests");
-            sb.append("\n");
+            if (!(cal2.get(Calendar.DAY_OF_WEEK) == 1)) {
 
+                sb.append(currentDay).append(" : ").append(covidTestsIntoArray[i]).append(" positive covid tests\n");
+
+            }
         }
 
         return sb;
@@ -184,9 +197,10 @@ public class StringBuilderReport {
 
         Calendar c = Calendar.getInstance();
         int monthMaxDays = c.getActualMaximum(Calendar.DAY_OF_MONTH);
-        sb.append("\n");
-        sb.append("Month report:");
-        sb.append("\n");
+
+        sb.append("\n")
+                .append("Month report:")
+                .append("\n");
 
         for (int i = 0; i < interval; i++) {
 
@@ -205,13 +219,15 @@ public class StringBuilderReport {
                 }
             }
 
-            sb.append(currentDay);
-            sb.append(" : ");
-            sb.append(covidTestsIntoArray[i]);
-            sb.append(" positive covid tests");
-            sb.append("\n");
+            if (!(cal2.get(Calendar.DAY_OF_WEEK) == 1)) {
+
+                sb.append(currentDay)
+                        .append(" : ")
+                        .append(covidTestsIntoArray[i])
+                        .append(" positive covid tests\n");
 
 
+            }
         }
         return sb;
     }
@@ -220,5 +236,8 @@ public class StringBuilderReport {
         return sb;
     }
 
+    private void buildReport() {
+
+    }
 
 }

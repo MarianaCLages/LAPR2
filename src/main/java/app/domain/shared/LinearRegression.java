@@ -115,6 +115,10 @@ public class LinearRegression {
         return r2;
     }
 
+    public double RPARAMUDAR() {
+        return Math.sqrt(r2);
+    }
+
     /**
      * Returns the expected response y given the value of the predictor
      * variable x.
@@ -222,7 +226,6 @@ public class LinearRegression {
     public String toString() {
         StringBuilder s = new StringBuilder();
         s.append(String.format("%.4f n + %.4f", slope(), intercept()));
-        s.append("  (R^2 = " + String.format("%.4f", R2()) + ")");
 
         return s.toString();
     }

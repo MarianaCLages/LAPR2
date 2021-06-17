@@ -4,6 +4,7 @@ import app.domain.model.*;
 import app.domain.shared.LinearRegression;
 import app.domain.shared.exceptions.*;
 import app.domain.stores.TestStore;
+import com.sun.javafx.binding.StringFormatter;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -43,7 +44,7 @@ public class GenerateNHSReportController {
         List<Test> validTestsInsideInterval = this.testStore.getListTestsInsideDateInterval(company.getTestList().getValidatedTestsListCovid(), company.getData().getIntervalStartDate(), company.getData().getIntervalEndDate());
 
         double[] ages = this.testStore.getClientAge(clientsWithTests, company.getData().getHistoricalDaysInt() + 1, company.getData().getHistoricalDaysInt());
-        double[] covidTestsPerDayInsideTheHistoricalInterval = this.testStore.getCovidTestsPerDayIntoArray(validTestsInsideInterval, company.getData().getHistoricalDaysInt() + 1, company.getData().getHistoricalDaysInt());
+        //  double[] covidTestsPerDayInsideTheHistoricalInterval = this.testStore.getCovidTestsPerDayIntoArray(validTestsInsideInterval, company.getData().getHistoricalDaysInt() + 1, company.getData().getHistoricalDaysInt());
 
         double[] agesInsideTheDateInterval = this.testStore.getClientAgeInsideTheInterval(clientsWithTests, company.getData().getDifferenceInDates() + 1, company.getData().getIntervalStartDate());
         double[] covidTestsPerDayInsideTheIntervalOfDates = this.testStore.getCovidTestsPerDayIntoArrayInsideInterval(validTests, company.getData().getDifferenceInDates() + 1, company.getData().getIntervalStartDate());
@@ -76,7 +77,7 @@ public class GenerateNHSReportController {
         List<Test> covidTestInsideInterval = this.testStore.getPositiveCovidTest(validTestInsideInterval);
 
         double[] positiveCovidTestsPerDayInsideTheHistoricalInterval = this.testStore.getCovidTestsPerDayIntoArray(covidTests, company.getData().getHistoricalDaysInt() + 1, company.getData().getHistoricalDaysInt());
-        double[] covidTestsPerDayInsideTheHistoricalInterval = this.testStore.getCovidTestsPerDayIntoArray(validTests, company.getData().getHistoricalDaysInt() + 1, company.getData().getHistoricalDaysInt());
+        //  double[] covidTestsPerDayInsideTheHistoricalInterval = this.testStore.getCovidTestsPerDayIntoArray(validTests, company.getData().getHistoricalDaysInt() + 1, company.getData().getHistoricalDaysInt());
 
         double[] positiveCovidTestsPerDayInsideTheDateInterval = this.testStore.getCovidTestsPerDayIntoArrayInsideInterval(covidTestInsideInterval, company.getData().getDifferenceInDates() + 1, company.getData().getIntervalStartDate());
         double[] covidTestsPerDayInsideTheDateInterval = this.testStore.getCovidTestsPerDayIntoArrayInsideInterval(validTestInsideInterval, company.getData().getDifferenceInDates() + 1, company.getData().getIntervalStartDate());
@@ -86,8 +87,11 @@ public class GenerateNHSReportController {
         StringBuilder sbAux = new StringBuilder();
         this.sb = sbAux;
 
-        sb.append(linearRegression.toString());
-        sb.append("\n");
+        sb.append("The regression model fitted using data from the interval\n")
+                .append("^y=" + linearRegression.toString() + "\n\nOther statistics\n")
+                .append("R^2 = " + String.format("%.4f", linearRegression.R2()) + "\n")
+                .append("R =   " +   String.format("%.4f",linearRegression.RPARAMUDAR()) + "\n\n")
+                .append("Date\t\t\t\t\t\t    " + "Number of OBSERVED positive cases\t\t\t\t\t\t" + "Number of ESTIMATED positive cases\t\t\t\t\t\t").append(this.company.getData().getConfidenceLevel()).append("% intervals\n");
 
         int i = 1;
         for (double xi : positiveCovidTestsPerDayInsideTheHistoricalInterval) {
