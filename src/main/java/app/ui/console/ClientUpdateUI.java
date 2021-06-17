@@ -1,20 +1,32 @@
 package app.ui.console;
 
+import app.controller.UpdateClientDataController;
 import app.domain.model.Client;
 import app.domain.stores.ClientStore;
+import app.ui.console.utils.Utils;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class ClientUpdateUI implements Runnable {
 
-    private ClientStore clientStore;
+    private UpdateClientDataController clientDataController;
+    private List<String> sexes;
 
-    public ClientUpdateUI(ClientStore clientStore){
-        this.clientStore = clientStore;
+    public ClientUpdateUI(){
+       clientDataController = new UpdateClientDataController();
+       sexes = new ArrayList<>();
     }
 
     @Override
     public void run() {
-        Client client = clientStore.getClient();
+        sexes.add("Male");
+        sexes.add("Female");
+        sexes.add("Other");
 
-        System.out.println("Clients current data: " + client.toString());
+       
+
+
     }
 }
