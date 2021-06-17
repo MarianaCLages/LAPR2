@@ -12,15 +12,15 @@
 
 > **Question:** Should the Client type in the attribute he/she wants to update or should he choose from a list?
 > 
-> **Answer:** Each sample has a unique barcode. The Clinical Chemistry Technologist should use the sample barcode number to find the test for which the sample was collected.
+> **Answer:** In this sprint each team should develop a graphical user interface for US2. The application should show the current user data and the client can update any attribute.
 
 > **Question:** To update the attribute, should the Client type the previous data?
 > 
-> **Answer:** The Clinical Chemistry Technologist should register a value/result for each parameter of the test.
+> **Answer:** In this sprint each team should develop a graphical user interface for US2. The application should show the current user data and the client can update any attribute.
 
-> **Question:** Are the reference values, for each parameter, going to be delivered to the groups? If so, when and how?
+> **Question:** What is the Data that the Client can update?
 > 
-> **Answer:** You should use the APIs available in moodle to obtain the reference values.
+> **Answer:** In this sprint each team should develop a graphical user interface for US2. The application should show the current user data and the client can update any attribute.
 
 ### 1.3. Acceptance Criteria
 
