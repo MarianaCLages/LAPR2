@@ -29,7 +29,6 @@ public class SendReportTask extends TimerTask implements Serializable {
         double[] m2 = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50};
 
         LinearRegression l = new LinearRegression(m1, m2);
-<<<<<<< HEAD
         System.out.println("Linear");
         System.out.println(l);
         System.out.println("r = " + l.getR());
@@ -37,7 +36,7 @@ public class SendReportTask extends TimerTask implements Serializable {
         System.out.println("Hypothesis tests for regression coefficients");
         System.out.println("HO:b=0 (a=0) H1: b<>0 (a<>0)");
         System.out.println("Tb: " + l.getTestStatisticb());
-      //  System.out.println("T: " + l.getCriticValueStudent(confidenceLevelVariables));
+        //  System.out.println("T: " + l.getCriticValueStudent(confidenceLevelVariables));
      /*   if (l.getTestStatisticb() > l.getCriticValueStudent(confidenceLevelVariables)) {
             System.out.println("H0 rejected\n");
         } else {
@@ -55,7 +54,7 @@ public class SendReportTask extends TimerTask implements Serializable {
 
         System.out.println("ANOVA ");
         System.out.println("F0: " + l.getF0());
-      //  System.out.println("F1: " + l.getCriticValueFisher(confidenceLevelAnova));
+        //  System.out.println("F1: " + l.getCriticValueFisher(confidenceLevelAnova));
 
       /*  if (l.getF0() > l.getCriticValueFisher(confidenceLevelAnova)) {
             System.out.println("Passa no teste");
@@ -105,8 +104,6 @@ public class SendReportTask extends TimerTask implements Serializable {
 //        System.out.println("\n\n-------------------------------------------------------------------");
 //
 //        System.out.println("Multilinear \n");
-=======
->>>>>>> 0c8b78422bbd58f9b64f50ae61254c3ea2fbf940
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -122,8 +119,6 @@ public class SendReportTask extends TimerTask implements Serializable {
 
 
         MultiLinearRegression s = new MultiLinearRegression(matrix1, matrixb);
-
-<<<<<<< HEAD
         System.out.println();
        /* System.out.println("Lower x1: " + s.lowerLimitCoeficient(1, 0.05));
 
@@ -169,7 +164,7 @@ public class SendReportTask extends TimerTask implements Serializable {
             System.out.println("x" + i);
             System.out.println("HO:b=0 H1: b<>0 \n");
             System.out.println("T0 =" + s.getTestStatistics(i));
-          //  System.out.println("T =" + s.getCriticValueStudent(confidenceLevelVariables));
+            //  System.out.println("T =" + s.getCriticValueStudent(confidenceLevelVariables));
 
            /* if (s.getTestStatistics(i) > s.getCriticValueStudent(confidenceLevelVariables)) {
                 System.out.println("H0 rejected\n");
@@ -198,11 +193,8 @@ public class SendReportTask extends TimerTask implements Serializable {
             i++;
             System.out.println();
         }
-=======
-    }
->>>>>>> 0c8b78422bbd58f9b64f50ae61254c3ea2fbf940
-
 
     }
 
 }
+
