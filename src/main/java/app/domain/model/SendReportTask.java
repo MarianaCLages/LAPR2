@@ -56,7 +56,7 @@ public class SendReportTask extends TimerTask implements Serializable {
         double[] covidTestsPerDayInsideTheDateInterval = testStore.getCovidTestsPerDayIntoArrayInsideInterval(Period.between(this.beginningDate, this.finishDate).getDays() + 1, this.beginningDate);
         double[] covidTestsPerDayInsideHistoricalDays = testStore.getCovidTestsPerDayIntoArrayInsideInterval(historicalDays + 1, currentDay);
 
-        List<Client> clientsWithTests = testStore.getClientsWithTests(clientStore.returnClientList());
+        List<Client> clientsWithTests = testStore.getClientsWithTests(clientStore.getClientList());
         double[] ages = testStore.getClientAge(clientsWithTests, this.historicalDays);
         double[] agesInsideTheDateInterval = testStore.getClientAgeInsideTheInterval(clientsWithTests, Period.between(this.beginningDate, this.finishDate).getDays() + 1, this.beginningDate);
 

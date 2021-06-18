@@ -1,7 +1,6 @@
 package app.domain.model;
 
 import app.controller.App;
-import app.domain.shared.Constants;
 import app.domain.shared.Serialize;
 import app.domain.stores.*;
 import auth.AuthFacade;
@@ -154,7 +153,7 @@ public class Company implements Serializable {
     }
 
     public List<Client> getClientArrayList() {
-        return getClientList().returnClientList();
+        return getClientList().getClientList();
     }
 
     /**
