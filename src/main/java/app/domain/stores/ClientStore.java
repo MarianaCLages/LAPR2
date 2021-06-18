@@ -45,9 +45,10 @@ public class ClientStore implements Serializable {
 
     /**
      * This Method sets the client object in this class as a given client
+     *
      * @param client client to be set as the client object in this class
      */
-    public void setClient(Client client){
+    public void setClient(Client client) {
         this.client = client;
     }
 
@@ -135,8 +136,16 @@ public class ClientStore implements Serializable {
 
         List<Client> clientListOrder = new ArrayList<>(array);
 
-        clientListOrder.sort(Comparator.comparing(Client::getTinNumber));
-
+        for (int i = 0; i < clientListOrder.size(); i++) {
+            for (int j = i + 1; j < clientListOrder.size(); j++) {
+                Client aux;
+                if (Long.parseLong(clientListOrder.get(j).getTinNumber()) < Long.parseLong(clientListOrder.get(i).getTinNumber())) {
+                    aux = clientListOrder.get(i);
+                    clientListOrder.set(i, clientListOrder.get(j));
+                    clientListOrder.set(j, aux);
+                }
+            }
+        }
         return clientListOrder;
     }
 
@@ -145,12 +154,20 @@ public class ClientStore implements Serializable {
 
         List<Client> clientListOrder = new ArrayList<>(array);
 
-        clientListOrder.sort(Comparator.comparing(Client::getName));
-
+        for (int i = 0; i < clientListOrder.size(); i++) {
+            for (int j = i + 1; j < clientListOrder.size(); j++) {
+                Client aux;
+                if (clientListOrder.get(j).getName().compareTo(clientListOrder.get(i).getName()) < 0) {
+                    aux = clientListOrder.get(i);
+                    clientListOrder.set(i, clientListOrder.get(j));
+                    clientListOrder.set(j, aux);
+                }
+            }
+        }
         return clientListOrder;
     }
 
-    public List<Client> returnClientList(){
+    public List<Client> returnClientList() {
         return this.array;
     }
 
