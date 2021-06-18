@@ -97,8 +97,8 @@ public class GenerateNHSReportController {
         StringBuilder sbAux = new StringBuilder();
         this.sb = sbAux;
 
-      //  this.sb = this.stringBuilderReport.printPredictedValues();
-      //  this.sb = this.stringBuilderReport.printCovidTestsPerInterval(sb);
+        //  this.sb = this.stringBuilderReport.printPredictedValues();
+        //  this.sb = this.stringBuilderReport.printCovidTestsPerInterval(sb);
 
     }
 
@@ -112,13 +112,18 @@ public class GenerateNHSReportController {
         StringBuilder sbAux = new StringBuilder();
         this.sb = sbAux;
 
-        this.sb = stringBuilderReport.stringConstructionLinearRegression(1 - this.company.getData().getConfidenceLevel());
-        this.sb = this.stringBuilderReport.printPredictedValues();
+        this.sb = stringBuilderReport.stringConstructionLinearRegression();
         this.sb = this.stringBuilderReport.printCovidTestsPerInterval(company.getData().getSelection());
+
+        //      this.sb = stringBuilderReport.stringConstructionLinearRegression(1 - this.company.getData().getConfidenceLevel());
+
+        //    this.sb = this.stringBuilderReport.printPredictedValues();
+
+        //      this.sb = this.stringBuilderReport.printCovidTestsPerInterval(sb);
 
     }
 
-    public void setInformation(LocalDate start, LocalDate end, String historicalDays, String confidenceLevel,String selection) throws DateEmptyException, DateInvalidException, HistoricalDaysInvalidException, HistoricalDaysEmptyException, ConfidenceLevelICEmptyException, ConfidenceLevelInvalidException {
+    public void setInformation(LocalDate start, LocalDate end, String historicalDays, String confidenceLevel, String selection) throws DateEmptyException, DateInvalidException, HistoricalDaysInvalidException, HistoricalDaysEmptyException, ConfidenceLevelICEmptyException, ConfidenceLevelInvalidException {
 
         Data data = getData();
 

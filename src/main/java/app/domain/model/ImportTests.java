@@ -3,10 +3,8 @@ package app.domain.model;
 import app.controller.App;
 import app.domain.shared.Constants;
 import app.domain.stores.*;
-import auth.AuthFacade;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -14,7 +12,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -30,7 +27,6 @@ public class ImportTests {
     ClinicalAnalysisLabStore store;
     ParameterCategoryStore pcstore;
     ParameterStore pstore;
-    Company company;
     TestStore tstore;
     List<String> testFileList = new ArrayList<>();
 
@@ -111,7 +107,7 @@ public class ImportTests {
     }
 
     public List<String> getTestFileList() {
-        String error = errorcount + " errors found.";
+        String error = (errorcount - 1) + " errors found.";
         testFileList.add(error);
         return testFileList;
     }
@@ -121,18 +117,22 @@ public class ImportTests {
 
         Date date = new SimpleDateFormat("dd/MM/yyyy").parse(metadata[6]);
 
-        cstore.createClient(metadata[7],metadata[3],metadata[4],metadata[5], date,' ',metadata[9],metadata[8]);
+        cstore.createClient(metadata[7], metadata[3], metadata[4], metadata[5], date, ' ', metadata[9], metadata[8]);
         cstore.saveClient();
         String pwd = PasswordGenerator.getPassword();
-        boolean success = App.getInstance().getCompany().getAuthFacade().addUserWithRole(metadata[8], metadata[9], pwd, Constants.ROLE_CLIENT);
-
+        System.out.println(metadata[9] + " " + pwd);
+        boolean success = true;
+        try {
+            App.getInstance().getCompany().getAuthFacade().addUserWithRole(metadata[8], metadata[9], pwd, Constants.ROLE_CLIENT);
+        } catch (Exception e) {
+            success = false;
+        }
         if (success) {
             Email.sendPasswordNotification(metadata[8], metadata[9], pwd);
 
         }
+        
         return success;
-
-
     }
 
     public boolean verifyClinic(String[] metadata) {

@@ -101,8 +101,8 @@ public class ConsultClientTestsAndResultsUI implements Initializable {
             lvwTestList.getItems().add(test.getTestNhsNumber());
         }
 
-        if (lvwTestList.getItems().isEmpty()) {
-            lvwTestList.getItems().add("The test list is empty!");
+        if (lvwTestList.getItems().isEmpty() || lvwTestList.getItems() == null) {
+            lvwTestList.getItems().add("The test list is empty! The selected client doesn't have any validated tests.");
             return;
         }
         selectedTest();

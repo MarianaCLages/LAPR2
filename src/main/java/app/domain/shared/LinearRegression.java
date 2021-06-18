@@ -22,6 +22,8 @@ public class LinearRegression implements Regression {
     private final double r2;
     private final double xbar;
     private final double ybar;
+
+
     private final int n;
     private final double st;
     private final double mse;
@@ -220,6 +222,10 @@ public class LinearRegression implements Regression {
 
     public double getR() {
         return Math.sqrt(this.r2);
+    }
+
+    public int getN() {
+        return n;
     }
 
     /**
