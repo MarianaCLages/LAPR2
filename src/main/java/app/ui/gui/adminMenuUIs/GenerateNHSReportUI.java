@@ -38,11 +38,7 @@ public class GenerateNHSReportUI implements Initializable {
     @FXML
     private DatePicker myDatePicker2;
     @FXML
-    private RadioButton myRadioButtonDay;
-    @FXML
-    private RadioButton myRadioButtonWeek;
-    @FXML
-    private RadioButton myRadioButtonMonthly;
+    private ChoiceBox<String> myChoiceBoxNHS2;
 
     public GenerateNHSReportUI() {
         this.sceneController = SceneController.getInstance();
@@ -53,6 +49,8 @@ public class GenerateNHSReportUI implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String[] choices = {Constants.SIMPLE_LINEAR_REGRESSION, Constants.MULTI_LINEAR_REGRESSION};
         myChoiceBoxNHS.getItems().addAll(choices);
+        String[] choicesForReport ={"Day","Week","Month"};
+        myChoiceBoxNHS2.getItems().addAll(choicesForReport);
     }
 
     public void returnToAdminMenu(ActionEvent event) {
@@ -73,18 +71,14 @@ public class GenerateNHSReportUI implements Initializable {
                 throw new InvalidIntervalOfDatesEndException();
             }
 
-            if (myChoiceBoxNHS.getValue() == null) {
+            if (myChoiceBoxNHS.getValue() == null || myChoiceBoxNHS2.getValue() == null) {
                 throw new ChoiceBoxEmptyException();
-            }
-
-            if (!myRadioButtonDay.isSelected() && !myRadioButtonWeek.isSelected() && !myRadioButtonMonthly.isSelected()) {
-                throw new RadioButtonsNotSelectedException();
             }
 
             setInformation();
             changeScene(event);
 
-        } catch (ConfidenceLevelInvalidException | InvalidIntervalOfDatesEndException | InvalidIntervalOfDatesStartException | HistoricalDaysEmptyException | DateEmptyException | DateInvalidException | ConfidenceLevelICEmptyException | ChoiceBoxEmptyException | HistoricalDaysInvalidException | RadioButtonsNotSelectedException err1) {
+        } catch (ConfidenceLevelInvalidException | InvalidIntervalOfDatesEndException | InvalidIntervalOfDatesStartException | HistoricalDaysEmptyException | DateEmptyException | DateInvalidException | ConfidenceLevelICEmptyException | ChoiceBoxEmptyException | HistoricalDaysInvalidException err1) {
             Alerts.errorAlert(err1.getMessage());
         } catch (RuntimeException err2) {
             Alerts.errorAlert(Constants.ERROR_BLANK_CONTAINERS);
@@ -94,15 +88,9 @@ public class GenerateNHSReportUI implements Initializable {
 
     private void setInformation() throws DateEmptyException, DateInvalidException, HistoricalDaysInvalidException, HistoricalDaysEmptyException, ConfidenceLevelICEmptyException, ConfidenceLevelInvalidException {
 
-        boolean dayReport = myRadioButtonDay.isSelected();
-        boolean weekReport = myRadioButtonWeek.isSelected();
-        boolean monthlyReport = myRadioButtonMonthly.isSelected();
+        System.out.println(myChoiceBoxNHS2.getValue());
 
-        this.ctrl.setInformation(dayReport,weekReport,monthlyReport,myDatePicker1.getValue(),myDatePicker2.getValue(),myTextFieldNHS.getText(),myTextFieldNHS2.getText());
-
-        dayReport = false;
-        weekReport = false;
-        monthlyReport = false;
+        this.ctrl.setInformation(myDatePicker1.getValue(),myDatePicker2.getValue(),myTextFieldNHS.getText(),myTextFieldNHS2.getText(),myChoiceBoxNHS2.getValue());
 
     }
 

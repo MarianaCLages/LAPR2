@@ -90,7 +90,7 @@ public class StringBuilderReport {
         for (int i = 0; i < this.yObs.length; i++) {
 
 
-            int interW = this.historicalDays - i + 1;
+            int interW = this.historicalDays - i;
 
 
             Calendar cal2 = Calendar.getInstance();
@@ -107,7 +107,7 @@ public class StringBuilderReport {
                         .append("\t\t\t\t\t\t\t\t\t\t\t\t")
                         .append(String.format("%.2f", regressionSimple.predict(this.xLinear[i])))
                         .append("\t\t\t\t\t\t\t\t")
- //por os intervalos    .append(String.format("%.2f", regressionSimple.predict(this.xLinear[i])))
+                        //por os intervalos    .append(String.format("%.2f", regressionSimple.predict(this.xLinear[i])))
                         .append("\n");
 
             }
@@ -143,55 +143,22 @@ public class StringBuilderReport {
 
     }
 
-    public StringBuilder printCovidTestsPerInterval(StringBuilder sb) {
+    public StringBuilder printCovidTestsPerInterval(String selection) {
 
-        if (company.getData().getMontlhyReportValue() && company.getData().getDayReportValue() && company.getData().getWeekReportValue()) {
-            getCovidTestsIntoTheNHSReport(true, true, true, sb);
-        } else if (company.getData().getDayReportValue() && company.getData().getWeekReportValue()) {
-            getCovidTestsIntoTheNHSReport(true, true, false, sb);
-        } else if (company.getData().getWeekReportValue() && company.getData().getMontlhyReportValue()) {
-            getCovidTestsIntoTheNHSReport(false, true, true, sb);
-        } else if (company.getData().getMontlhyReportValue() && company.getData().getDayReportValue()) {
-            getCovidTestsIntoTheNHSReport(true, false, true, sb);
-        } else if (company.getData().getWeekReportValue()) {
-            getCovidTestsIntoTheNHSReport(false, true, false, sb);
-        } else if (company.getData().getDayReportValue()) {
-            getCovidTestsIntoTheNHSReport(true, false, false, sb);
-        } else if (company.getData().getMontlhyReportValue()) {
-            getCovidTestsIntoTheNHSReport(false, false, true, sb);
+        if (selection.equals("Day")) {
+            printTheCovidTestsIntoTheNHSReportDay();
+        } else if (selection.equals("Week")) {
+            printTheCovidTestsIntoTheNHSReportWeek();
+        } else {
+            printTheCovidTestsIntoTheNHSReportMonthly();
         }
+
 
         return sb;
 
     }
 
-    public StringBuilder getCovidTestsIntoTheNHSReport(boolean day, boolean week, boolean monthly, StringBuilder sb) {
-
-        if (!week && !monthly) {
-            printTheCovidTestsIntoTheNHSReportDay(sb);
-        } else if (!day && !monthly) {
-            printTheCovidTestsIntoTheNHSReportWeek(sb);
-        } else if (day && week) {
-            printTheCovidTestsIntoTheNHSReportDay(sb);
-            printTheCovidTestsIntoTheNHSReportWeek(sb);
-        } else if (day && week && monthly) {
-            printTheCovidTestsIntoTheNHSReportDay(sb);
-            printTheCovidTestsIntoTheNHSReportWeek(sb);
-            printTheCovidTestsIntoTheNHSReportMonthly(sb);
-        } else if (!day && !week) {
-            printTheCovidTestsIntoTheNHSReportMonthly(sb);
-        } else if (day && monthly) {
-            printTheCovidTestsIntoTheNHSReportDay(sb);
-            printTheCovidTestsIntoTheNHSReportMonthly(sb);
-        } else if (week && monthly) {
-            printTheCovidTestsIntoTheNHSReportWeek(sb);
-            printTheCovidTestsIntoTheNHSReportMonthly(sb);
-        }
-
-        return sb;
-    }
-
-    public StringBuilder printTheCovidTestsIntoTheNHSReportDay(StringBuilder sb) {
+    public StringBuilder printTheCovidTestsIntoTheNHSReportDay() {
 
         int dayTests = 0;
 
@@ -221,7 +188,7 @@ public class StringBuilderReport {
 
     }
 
-    public StringBuilder printTheCovidTestsIntoTheNHSReportWeek(StringBuilder sb) {
+    public StringBuilder printTheCovidTestsIntoTheNHSReportWeek() {
 
         int interval = Period.between(getCurrentDayInsideAWeekInterval(), todayDateForCovidReport).getDays();
         int[] covidTestsIntoArray = new int[interval + 1];
@@ -258,7 +225,7 @@ public class StringBuilderReport {
 
     }
 
-    public StringBuilder printTheCovidTestsIntoTheNHSReportMonthly(StringBuilder sb) {
+    public StringBuilder printTheCovidTestsIntoTheNHSReportMonthly() {
 
         int interval = Period.between(getCurrentDayInsideAMonthInterval(), todayDateForCovidReport).getDays();
         int[] covidTestsIntoArray = new int[interval + 1];

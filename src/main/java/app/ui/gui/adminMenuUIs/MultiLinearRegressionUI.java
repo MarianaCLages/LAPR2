@@ -16,13 +16,13 @@ public class MultiLinearRegressionUI {
     @FXML
     private Button myReturnButtonMulti;
 
-    private SceneController sceneController= SceneController.getInstance();
+    private SceneController sceneController = SceneController.getInstance();
     private App app = sceneController.getApp();
     private GenerateNHSReportController ctrl = SceneController.getInstance().getCtrl();
 
-    public MultiLinearRegressionUI(){
-       ctrl.multiRegression();
-      // myTextAreaMulti.setText(ctrl.getSb().toString());
+    public MultiLinearRegressionUI() {
+        ctrl.multiRegression();
+        //myTextAreaMulti.setText(ctrl.getSb().toString());
     }
 
     public void returnToGenerateNHSReport(ActionEvent event) {

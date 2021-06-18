@@ -12,19 +12,15 @@ public class Data implements Serializable {
     private String historicalDays;
     private int date;
     private double confidenceLevelIC;
-    private String significanceLevel;
     private LocalDate intervalStartDate;
     private LocalDate intervalEndDate;
-    private boolean dayReport;
-    private boolean weekReport;
-    private boolean monthlyReport;
+    private String selection;
 
     public Data(String historicalDays, int date, int confidenceLevelIC, String significanceLevel) {
 
         this.historicalDays = historicalDays;
         this.date = date;
         this.confidenceLevelIC = confidenceLevelIC;
-        this.significanceLevel = significanceLevel;
 
     }
 
@@ -33,13 +29,9 @@ public class Data implements Serializable {
         this.historicalDays = null;
         this.date = 0;
         this.confidenceLevelIC = 0;
-        this.significanceLevel = null;
         this.intervalStartDate = null;
         this.intervalEndDate = null;
-        this.dayReport = false;
-        this.weekReport = false;
-        this.monthlyReport = false;
-
+        this.selection = null;
     }
 
     public void setConfidenceLevelIC(int confidenceLevelIC) throws ConfidenceLevelInvalidException, ConfidenceLevelICEmptyException {
@@ -60,6 +52,16 @@ public class Data implements Serializable {
     public void setDates(LocalDate start, LocalDate end) {
         this.intervalStartDate = start;
         this.intervalEndDate = end;
+    }
+
+    public void setSelection(String selection) {
+        System.out.println(selection);
+        this.selection = selection;
+    }
+
+    public String getSelection() {
+        System.out.println(this.selection);
+        return this.selection;
     }
 
     private void checkConfidenceLevelIC(int confidenceLevelIC) throws ConfidenceLevelInvalidException {
@@ -120,30 +122,6 @@ public class Data implements Serializable {
 
         return Period.between(this.intervalStartDate, this.intervalEndDate).getDays();
 
-    }
-
-    public void setWeekReport(boolean weekReport) {
-        this.weekReport = weekReport;
-    }
-
-    public void setDayReport(boolean dayReport) {
-        this.dayReport = dayReport;
-    }
-
-    public boolean getDayReportValue() {
-        return this.dayReport;
-    }
-
-    public boolean getWeekReportValue() {
-        return this.weekReport;
-    }
-
-    public boolean getMontlhyReportValue() {
-        return this.monthlyReport;
-    }
-
-    public void setMonthlyReport(boolean monthlyReport) {
-        this.monthlyReport = monthlyReport;
     }
 
 }

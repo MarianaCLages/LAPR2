@@ -18,6 +18,15 @@ public class GenerateNHSReportController {
     private StringBuilderReport stringBuilderReport;
     private Data data;
 
+    private double[] agesInsideTheHistoricalDays;
+    private double[] agesInsideTheDateInterval;
+    private double[] covidTestsPerDayInsideTheHistoricalDays;
+    private double[] covidTestsPerDayInsideTheIntervalOfDates;
+    private double[] positiveCovidTestsPerDayInsideTheHistoricalInterval;
+    private double[] positiveCovidTestsPerDayInsideTheDateInterval;
+
+    private List<Client> clientsWithTests;
+
     private StringBuilder sb = new StringBuilder();
 
     public GenerateNHSReportController() {
@@ -28,85 +37,88 @@ public class GenerateNHSReportController {
 
         this.company = company;
         this.testStore = company.getTestList();
-
         this.data = company.getData();
 
     }
 
+    private void setData() {
+
+        clientsWithTests = this.testStore.getClientsWithTests(company.getClientArrayList());
+
+        this.agesInsideTheHistoricalDays = this.testStore.getClientAge(clientsWithTests, this.company.getData().getHistoricalDaysInt());
+        this.agesInsideTheDateInterval = this.testStore.getClientAgeInsideTheInterval(clientsWithTests, this.company.getData().getDifferenceInDates() + 1, this.company.getData().getIntervalStartDate());
+
+        this.covidTestsPerDayInsideTheHistoricalDays = this.testStore.getCovidTestsPerDayIntoArray(this.company.getData().getHistoricalDaysInt());
+        this.covidTestsPerDayInsideTheIntervalOfDates = this.testStore.getCovidTestsPerDayIntoArrayInsideInterval(this.company.getData().getDifferenceInDates() + 1, this.company.getData().getIntervalStartDate());
+
+        this.positiveCovidTestsPerDayInsideTheHistoricalInterval = this.testStore.getCovidTestsPerDayIntoArray(this.company.getData().getHistoricalDaysInt());
+        this.positiveCovidTestsPerDayInsideTheDateInterval = this.testStore.getPositiveCovidTestsPerDayIntoArrayInsideInterval(this.company.getData().getDifferenceInDates() + 1, this.company.getData().getIntervalStartDate());
+
+    }
+
     public void linearRegressionWithMeanAge() {
+        setData();
 
-        List<Client> clientsWithTests = this.testStore.getClientsWithTests(company.getClientArrayList());
-
-
-        double[] ages = this.testStore.getClientAge(clientsWithTests, company.getData().getHistoricalDaysInt());
-
-        double[] agesInsideTheDateInterval = this.testStore.getClientAgeInsideTheInterval(clientsWithTests, company.getData().getDifferenceInDates() + 1, company.getData().getIntervalStartDate());
-        double[] covidTestsPerDayInsideTheIntervalOfDates = this.testStore.getPositiveCovidTestsPerDayIntoArrayInsideInterval(company.getData().getDifferenceInDates() + 1, company.getData().getIntervalStartDate());
-
-        linearRegressionPrintValues(covidTestsPerDayInsideTheIntervalOfDates, agesInsideTheDateInterval, ages);
-
+        linearRegressionPrintValues(covidTestsPerDayInsideTheIntervalOfDates, agesInsideTheDateInterval, agesInsideTheHistoricalDays, covidTestsPerDayInsideTheHistoricalDays);
     }
 
     public void linearRegressionWithCovidTests() {
+        setData();
 
-        double[] positiveCovidTestsPerDayInsideTheHistoricalInterval = this.testStore.getCovidTestsPerDayIntoArray(company.getData().getHistoricalDaysInt());
-
-        double[] positiveCovidTestsPerDayInsideTheDateInterval = this.testStore.getPositiveCovidTestsPerDayIntoArrayInsideInterval(company.getData().getDifferenceInDates() + 1, company.getData().getIntervalStartDate());
-        double[] covidTestsPerDayInsideTheDateInterval = this.testStore.getCovidTestsPerDayIntoArrayInsideInterval(company.getData().getDifferenceInDates() + 1, company.getData().getIntervalStartDate());
-
-        linearRegressionPrintValues(covidTestsPerDayInsideTheDateInterval, positiveCovidTestsPerDayInsideTheDateInterval, positiveCovidTestsPerDayInsideTheHistoricalInterval);
-
+        linearRegressionPrintValues(covidTestsPerDayInsideTheIntervalOfDates, positiveCovidTestsPerDayInsideTheDateInterval, positiveCovidTestsPerDayInsideTheHistoricalInterval, covidTestsPerDayInsideTheHistoricalDays);
     }
 
     public void multiRegression() {
-        List<Client> clientsWithTests = this.testStore.getClientsWithTests(company.getClientArrayList());
+        setData();
 
-        double[] agesInsideTheDateInterval = this.testStore.getClientAgeInsideTheInterval(clientsWithTests, company.getData().getDifferenceInDates() + 1, company.getData().getIntervalStartDate());
-        double[] positiveCovidTestsPerDayInsideTheDateInterval = this.testStore.getPositiveCovidTestsPerDayIntoArrayInsideInterval(company.getData().getDifferenceInDates() + 1, company.getData().getIntervalStartDate());
+        double[][] multiarrayObs = new double[covidTestsPerDayInsideTheHistoricalDays.length][2];
+        for (int i = 0; i < multiarrayObs.length; i++) {
+            multiarrayObs[i][0] = covidTestsPerDayInsideTheHistoricalDays[i];
+            multiarrayObs[i][1] = agesInsideTheHistoricalDays[i];
+        }
 
-        double[] covidTestsPerDayInsideTheDateInterval = this.testStore.getCovidTestsPerDayIntoArrayInsideInterval(company.getData().getDifferenceInDates() + 1, company.getData().getIntervalStartDate());
-
-        double[][] multiarray = new double[covidTestsPerDayInsideTheDateInterval.length][2];
+        double[][] multiarray = new double[covidTestsPerDayInsideTheIntervalOfDates.length][2];
         for (int i = 0; i < multiarray.length; i++) {
-            multiarray[i][0] = covidTestsPerDayInsideTheDateInterval[i];
+            multiarray[i][0] = covidTestsPerDayInsideTheIntervalOfDates[i];
             multiarray[i][1] = agesInsideTheDateInterval[i];
-
         }
 
-        MultiLinearRegression s = new MultiLinearRegression(multiarray, positiveCovidTestsPerDayInsideTheDateInterval);
-
-        for (double xi : agesInsideTheDateInterval) {
-            System.out.println(xi);
-        }
-
-        System.out.println("----------------------------------------");
-
-        for (double yi : covidTestsPerDayInsideTheDateInterval) {
-            System.out.println(yi);
-        }
-
-        System.out.println("----------------------------------------");
-        System.out.println(Arrays.deepToString(multiarray));
+        multiRegressionPrintValues(multiarray, positiveCovidTestsPerDayInsideTheDateInterval, positiveCovidTestsPerDayInsideTheHistoricalInterval, multiarrayObs);
 
     }
 
-    private void linearRegressionPrintValues(double[] x, double[] y, double[] w) {
+    private void multiRegressionPrintValues(double[][] x, double[] y, double[] yObs, double[][] xObs) {
+
+        MultiLinearRegression s = new MultiLinearRegression(x, y);
+
+        this.stringBuilderReport = new StringBuilderReport(s);
+        this.stringBuilderReport.setvalues(xObs, yObs, company.getData().getHistoricalDaysInt());
+
+        StringBuilder sbAux = new StringBuilder();
+        this.sb = sbAux;
+
+      //  this.sb = this.stringBuilderReport.printPredictedValues();
+      //  this.sb = this.stringBuilderReport.printCovidTestsPerInterval(sb);
+
+    }
+
+    private void linearRegressionPrintValues(double[] x, double[] y, double[] yObs, double[] xObs) {
 
         LinearRegression linearRegression = new LinearRegression(x, y);
 
         this.stringBuilderReport = new StringBuilderReport(linearRegression);
+        this.stringBuilderReport.setvalues(xObs, yObs, company.getData().getHistoricalDaysInt());
 
         StringBuilder sbAux = new StringBuilder();
         this.sb = sbAux;
-        
+
         this.sb = stringBuilderReport.stringConstructionLinearRegression(1 - this.company.getData().getConfidenceLevel());
-
         this.sb = this.stringBuilderReport.printPredictedValues();
+        this.sb = this.stringBuilderReport.printCovidTestsPerInterval(company.getData().getSelection());
 
-        this.sb = this.stringBuilderReport.printCovidTestsPerInterval(sb);
     }
 
-    public void setInformation(boolean dayReport, boolean weekReport, boolean monthlyReport, LocalDate start, LocalDate end, String historicalDays, String confidenceLevel) throws DateEmptyException, DateInvalidException, HistoricalDaysInvalidException, HistoricalDaysEmptyException, ConfidenceLevelICEmptyException, ConfidenceLevelInvalidException {
+    public void setInformation(LocalDate start, LocalDate end, String historicalDays, String confidenceLevel,String selection) throws DateEmptyException, DateInvalidException, HistoricalDaysInvalidException, HistoricalDaysEmptyException, ConfidenceLevelICEmptyException, ConfidenceLevelInvalidException {
 
         Data data = getData();
 
@@ -114,53 +126,12 @@ public class GenerateNHSReportController {
         data.setHistoricalDays(historicalDays);
         data.setConfidenceLevelIC(100 - Integer.parseInt(confidenceLevel));
 
-        setReport(dayReport, weekReport, monthlyReport, data);
+        data.setSelection(selection);
 
         data.setDates(start, end);
-        data.setDayReport(dayReport);
-        data.setWeekReport(weekReport);
-        data.setMonthlyReport(monthlyReport);
 
     }
 
-    public void setReport(boolean dayReport, boolean weekReport, boolean monthlyReport, Data data) {
-
-        if (dayReport && weekReport && monthlyReport) {
-
-            data.setDayReport(true);
-            data.setWeekReport(true);
-            data.setMonthlyReport(true);
-
-        } else if (weekReport && dayReport) {
-
-            data.setDayReport(true);
-            data.setWeekReport(true);
-
-        } else if (dayReport && monthlyReport) {
-
-            data.setMonthlyReport(true);
-            data.setDayReport(true);
-
-        } else if (weekReport && monthlyReport) {
-
-            data.setMonthlyReport(true);
-            data.setWeekReport(true);
-
-        } else if (monthlyReport) {
-
-            data.setMonthlyReport(true);
-
-        } else if (dayReport) {
-
-            data.setDayReport(true);
-
-        } else if (weekReport) {
-
-            data.setWeekReport(true);
-
-        }
-
-    }
 
     public LocalDate getStartDate(String Text) {
 
