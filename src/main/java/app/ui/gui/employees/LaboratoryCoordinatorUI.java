@@ -25,7 +25,7 @@ public class LaboratoryCoordinatorUI implements Initializable {
     public void ImportTestsMenu(ActionEvent event) {
         App app = sceneController.getApp();
 
-        sceneController.switchMenu(event, Constants.Import_Test_UI);
+        sceneController.switchMenu(event, Constants.IMPORT_TEST_UI);
     }
 
     public void returnToMenu(ActionEvent event) {
