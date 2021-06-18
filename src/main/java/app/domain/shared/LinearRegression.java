@@ -17,6 +17,8 @@ import org.apache.commons.math3.distribution.TDistribution;
 public class LinearRegression {
     private final double intercept;
     private final double slope;
+
+
     private final double r2;
     private final double xbar;
     private final double ybar;
@@ -186,6 +188,10 @@ public class LinearRegression {
 
     public double getTestStatistica() {
         return (this.intercept) / (Math.sqrt(this.se / (this.n - 2)) / Math.sqrt((1 / n) + Math.pow(this.xbar, 2) / this.sxx));
+    }
+
+    public double getR2() {
+        return r2;
     }
 
     public double getSt() {

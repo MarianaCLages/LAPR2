@@ -10,7 +10,6 @@ import app.domain.stores.TestStore;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 import java.util.TimerTask;
@@ -34,6 +33,7 @@ public class SendReportTask extends TimerTask implements Serializable {
      */
     @Override
     public void run() {
+        LinearRegression linearRegressionChosen = null;
         TestStore testStore = App.getInstance().getCompany().getTestList();
         ClientStore clientStore = App.getInstance().getCompany().getClientList();
         getProps();
@@ -48,16 +48,16 @@ public class SendReportTask extends TimerTask implements Serializable {
 
         if (regression.equals("Linear")) {
 
-            System.out.println(Arrays.toString(covidTestsPerDayInsideTheDateInterval));
-            System.out.println(Arrays.toString(positiveCovidTestsPerDayInsideTheDateInterval));
 
             LinearRegression linearRegressionNumberTest = new LinearRegression(covidTestsPerDayInsideTheDateInterval, positiveCovidTestsPerDayInsideTheDateInterval);
 
-            System.out.println(linearRegressionNumberTest.toString());
-            System.out.println("a");
             LinearRegression linearRegressionMeanAge = new LinearRegression(agesInsideTheDateInterval, positiveCovidTestsPerDayInsideTheDateInterval);
-            System.out.println(linearRegressionNumberTest.toString());
-            System.out.println("aa");
+
+            if (linearRegressionNumberTest.getR2() > linearRegressionMeanAge.getR2()) {
+                linearRegressionChosen = linearRegressionNumberTest;
+            } else {
+                linearRegressionChosen = linearRegressionMeanAge;
+            }
 
 
         } else if (regression.equals("Multilinear")) {
@@ -71,6 +71,7 @@ public class SendReportTask extends TimerTask implements Serializable {
             }
 
             MultiLinearRegression s = new MultiLinearRegression(multiarray, positiveCovidTestsPerDayInsideTheDateInterval);
+            System.out.println(s.getIntercept());
 
         }
 

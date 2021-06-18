@@ -40,7 +40,7 @@ public class App {
             this.authFacade = this.company.getAuthFacade();
             bootstrap();
         }
-        company.saveCompany();
+       // company.saveCompany();
 
         this.authFacade = this.company.getAuthFacade();
 
@@ -91,6 +91,7 @@ public class App {
     }
 
     private void bootstrap() {
+        System.out.println("bootstrap");
         this.authFacade.addUserRole(Constants.ROLE_ADMIN, Constants.ROLE_ADMIN);
         this.authFacade.addUserRole(Constants.ROLE_CLINICALCHEMISTRYTECHNOLOGIST, Constants.ROLE_CLINICALCHEMISTRYTECHNOLOGIST);
         this.authFacade.addUserRole(Constants.ROLE_MEDICALLABTECHNICIIAN, Constants.ROLE_MEDICALLABTECHNICIIAN);

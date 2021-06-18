@@ -29,7 +29,6 @@ public class MainScreen extends Application {
         } catch (Exception error){
             System.out.println("NAO DA");
         }*/
-
         primaryStage.setScene(scene);
         primaryStage.setTitle("Many Labs APP");
         primaryStage.show();

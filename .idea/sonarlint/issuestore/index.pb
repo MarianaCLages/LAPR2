@@ -81,8 +81,6 @@ l
 <docs/SprintD/US12/SD_AddTestResult(parameterCode,result).svg,8\6\86ebd43a5a95c8d4ebe77a158f9ad2d022620afd
 9
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-d
-4src/test/java/app/domain/stores/ClientStoreTest.java,e\2\e2b46e13e389ecab1bfeccfd2f4a376c149640dc
 I
 docs/SprintD/US13/US13.md,c\a\ca643c4202856490937d9359e0618667240f1de5
 n
@@ -183,10 +181,6 @@ N
 docs/SprintD/US19/US19_SSD.svg,4\6\46df73713f32f2a4e06ca55a5e3bc93f09918622
 o
 ?src/test/java/app/domain/stores/ParameterCategoryStoreTest.java,a\d\ad10a870e86f06eb3574f636cae639ed6b48432d
-U
-%src/main/java/app/controller/App.java,4\7\47cfbdc47faac4c1edcb93d1b6968a5d5bdad509
-[
-+src/main/java/app/domain/model/Company.java,e\6\e66f0f8e51b44df23f2004467961976fbec241aa
 D
 docs/SprintD/DM.puml,5\d\5dff55b21dbdf4f5b06aa1150995ae36147d966b
 g
@@ -231,8 +225,6 @@ Z
 .src/test/java/app/domain/model/ClientTest.java,1\d\1ded02609d9819f819b2a83507b751b1338f4e87
 _
 /src/test/java/app/domain/model/CompanyTest.java,f\f\ff6dd89f0cd7857a07c771f5cf78d0af203b0511
-X
-(src/main/java/app/ui/gui/MainScreen.java,b\5\b59adf73fdf4b7ccc7be755addc8e97dd1524983
 `
 0src/main/java/app/domain/stores/ClientStore.java,a\2\a208024caf8eb82d63bccfceb639afa2ced6c709
 d

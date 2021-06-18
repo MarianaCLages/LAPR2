@@ -3,10 +3,11 @@ package app.domain.model;
 import app.domain.shared.exceptions.*;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Data {
+public class Data implements Serializable {
 
     private String historicalDays;
     private int date;

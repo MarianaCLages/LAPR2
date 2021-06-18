@@ -78,6 +78,7 @@ public class Company implements Serializable {
     }
 
     private void scheduleReport(int hour, int min, int sec) {
+        System.out.println("aaaaaaaaaaaaaaaaaaaaaaa");
         Calendar today = Calendar.getInstance();
         today.set(Calendar.HOUR_OF_DAY, hour);
         today.set(Calendar.MINUTE, min);
