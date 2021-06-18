@@ -188,7 +188,7 @@ public class App {
         store.saveClient();
         store.createClient("12345678902", "1234565891123456", "1234567893", "2234567890", date2, 'F', "maria@maria.com", "Maria");
         store.saveClient();
-        store.createClient("12345678903", "1234567891123456", "1234567891", "1234567891", date3, 'F', "alberto@alberto.com", "Alberto");
+        store.createClient("12345678903", "1234567891123456", "1234567891", "1234567891", date3, 'M', "alberto@alberto.com", "Alberto");
         store.saveClient();
         store.createClient("12345698904", "1234567891123456", "1234566891", "1234567896", date4, 'F', "joana@alberto.com", "Joana");
         store.saveClient();

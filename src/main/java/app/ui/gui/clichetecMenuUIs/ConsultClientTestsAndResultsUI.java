@@ -6,8 +6,6 @@ import app.domain.model.Client;
 import app.domain.model.Test;
 import app.domain.shared.Constants;
 import app.controller.SceneController;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -56,12 +54,9 @@ public class ConsultClientTestsAndResultsUI implements Initializable {
     }
 
     public void selectedOrder() {
-        cbxListOrder.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-                if (fillClientList(t1)) {
-                    selectedClient();
-                }
+        cbxListOrder.getSelectionModel().selectedItemProperty().addListener((observableValue, s, t1) -> {
+            if (fillClientList(t1)) {
+                selectedClient();
             }
         });
     }
