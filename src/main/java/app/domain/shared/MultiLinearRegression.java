@@ -399,4 +399,16 @@ public class MultiLinearRegression implements Regression {
     public double getMQe() {
         return MQe;
     }
+    public int getN() {
+        return n;
+    }
+    public int getK() {
+        return k;
+    }
+
+    @Override
+    public String toString() {
+        return slope1 + "x1 + " + slope2 + "x2 + " + intercept;
+
+    }
 }
