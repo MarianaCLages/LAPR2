@@ -37,6 +37,7 @@ public class GenerateNHSReportController {
 
         this.company = company;
         this.testStore = company.getTestList();
+
         this.data = company.getData();
 
     }
@@ -81,6 +82,7 @@ public class GenerateNHSReportController {
         for (int i = 0; i < multiarray.length; i++) {
             multiarray[i][0] = covidTestsPerDayInsideTheIntervalOfDates[i];
             multiarray[i][1] = agesInsideTheDateInterval[i];
+
         }
 
         multiRegressionPrintValues(multiarray, positiveCovidTestsPerDayInsideTheDateInterval, positiveCovidTestsPerDayInsideTheHistoricalInterval, multiarrayObs);

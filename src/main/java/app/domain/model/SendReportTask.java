@@ -61,8 +61,6 @@ public class SendReportTask extends TimerTask implements Serializable {
         double[] agesInsideTheDateInterval = testStore.getClientAgeInsideTheInterval(clientsWithTests, Period.between(this.beginningDate, this.finishDate).getDays() + 1, this.beginningDate);
 
         if (regression.equals("Linear")) {
-            log();
-
 
             LinearRegression linearRegressionNumberTest = new LinearRegression(covidTestsPerDayInsideTheDateInterval, positiveCovidTestsPerDayInsideTheDateInterval);
 
@@ -73,14 +71,21 @@ public class SendReportTask extends TimerTask implements Serializable {
                 this.report = new StringBuilderReport(linearRegressionChosen);
                 report.setvalues(covidTestsPerDayInsideHistoricalDays, positiveCovidTestsPerDayInsideTheHistoricalInterval, historicalDays);
                 this.report.setConfidenceValues(confidenceLevelAnova, confidenceLevelVariables, confidenceLevelEstimated);
+                this.report.stringConstructionLinearRegression();
+
+
             } else {
                 linearRegressionChosen = linearRegressionMeanAge;
                 this.report = new StringBuilderReport(linearRegressionChosen);
                 report.setvalues(ages, positiveCovidTestsPerDayInsideTheHistoricalInterval, historicalDays);
                 this.report.setConfidenceValues(confidenceLevelAnova, confidenceLevelVariables, confidenceLevelEstimated);
-            }
 
-            Report2NHS.writeUsingFileWriter(report.getSb().toString());
+                this.report.stringConstructionLinearRegression();
+
+
+            }
+            System.out.println("a");
+            Report2NHS.writeUsingFileWriter(this.report.getSb().toString());
             log();
 
 
@@ -101,7 +106,6 @@ public class SendReportTask extends TimerTask implements Serializable {
             }
 
             MultiLinearRegression s = new MultiLinearRegression(multiarray, positiveCovidTestsPerDayInsideTheDateInterval);
-            System.out.println(s.getCriticValueStudent(confidenceLevelVariables));
             this.report = new StringBuilderReport(s);
             this.report.setConfidenceValues(confidenceLevelAnova, confidenceLevelVariables, confidenceLevelEstimated);
             this.report.setvalues(multiarray2, positiveCovidTestsPerDayInsideTheHistoricalInterval, historicalDays);

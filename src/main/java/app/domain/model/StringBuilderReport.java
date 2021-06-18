@@ -176,31 +176,97 @@ public class StringBuilderReport {
 
 
     public StringBuilder stringConstructionLinearRegression() {
-        sb.append("The regression model fitted using data from the interval\n")
-                .append("^y = " + regressionSimple.toString() + "\n\nOther statistics\n")
-                .append("R^2 = " + String.format("%.4f", regressionSimple.R2()) + "\n")
-                .append("R     = " + String.format("%.4f", regressionSimple.R()) + "\n\n")
-                .append("Hypothesis tests for regression coefficient\n\n Hypothesis test for coefficient a\n H0: a=0   H1: a!=0 \n")
-                .append(" t_obs = ")
-                .append(String.format("%.4f", regressionSimple.getCriticValueStudent(significanceLevelCoefficient)) + "\n");
+        sb.append("\n\n").append("-----------------------------Beginning of Report-------------------------------").append("\n\n");
 
-        if (regressionSimple.getCriticValueStudent(significanceLevelCoefficient) > regressionSimple.getTestStatistica()) {
+        sb.append("The regression model fitted using data from the interval\n")
+                .append("^y = ").append(regressionSimple.toString())
+                .append("\n\nOther statistics\n")
+                .append("R = ").append(String.format("%.4f", regressionSimple.getR())).append("\n\n")
+                .append("R^2 = " + String.format("%.4f", regressionSimple.getR2()) + "\n")
+                .append("Hypothesis tests for regression coefficient\n\n ")
+                .append("Hypothesis test for coefficient a\n H0: a=0   H1: a!=0 \n")
+                .append(" t_obs = ")
+                .append(String.format("%.4f", regressionSimple.getCriticValueStudent(significanceLevelCoefficient)) + "\n")
+                .append("T0 = " + String.format("%.4f", regressionSimple.getTestStatistica()) + "\n");
+
+        if (regressionSimple.getCriticValueStudent(significanceLevelCoefficient) < regressionSimple.getTestStatistica()) {
             sb.append("Reject H0\n\n");
         } else {
             sb.append(" No reject H0\n\n");
         }
 
-        sb.append("Hypothesis test for coefficient b\n H0 : b=0 H1: b!=0\n")
-                .append(" t_obs = ")
-                .append(String.format("%.4f", regressionSimple.getCriticValueStudent(significanceLevelCoefficient)) + "\n");
+        sb.append("Hypothesis test for coefficient \n H0: b1=0   H1: betta1!=0 \n")
+                .append("t_obs = ")
+                .append(String.format("%.4f", regressionSimple.getCriticValueStudent(significanceLevelCoefficient)) + "\n")
+                .append("T0 = " + String.format("%.4f", regressionSimple.getTestStatisticb()) + "\n");
 
-        if (regressionSimple.getCriticValueStudent(significanceLevelCoefficient) > regressionSimple.getTestStatisticb()) {
+        if (regressionSimple.getCriticValueStudent(significanceLevelCoefficient) < regressionSimple.getTestStatisticb()) {
             sb.append(" Reject H0\n\n");
         } else {
             sb.append(" No reject H0\n\n");
         }
-        sb.append(anovaTable());
-        sb.append(printPredictedValues());
+
+        sb.append("\n\n").append("-----------------------------Beginning of ANOVA-------------------------------").append("\n\n");
+
+        sb.append("\n")
+                .append("Significance model with Anova")
+                .append("H0: b=0  H1:b<>0 \n")
+                .append("\n")
+                .append("\t\t\t\t" + "df" + "\t\t\t\t\t" + "SS" + "\t\t\t\t\t\t\t" + "MS" + "\t\t\t\t\t\t" + "F" + "\n")
+                .append("Regression" + "\t\t").append(1).append("\t\t\t\t\t").append(String.format("%.4f", this.regressionSimple.getSr())).append("\t\t\t\t\t\t").append(String.format("%.4f", this.regressionSimple.getMsr()) + "\t\t\t" + this.regressionSimple.getF0() + "\n")
+                .append("Residual" + "\t\t").append(this.regressionSimple.getN() - 2).append("\t\t\t\t\t").append(String.format("%.4f", this.regressionSimple.getSe())).append("\t\t\t\t\t\t").append(String.format("%.4f", this.regressionSimple.getMse()) + "\n")
+                .append("Total" + "\t\t\t").append(this.regressionSimple.getN() - 1).append("\t\t\t\t\t").append(String.format("%.4f", this.regressionSimple.getSt()) + "\n");
+
+        sb.append("\n");
+        System.out.println("anova: " + (1 - significanceLevelAnova));
+        if (this.regressionSimple.getF0() > this.regressionSimple.getCriticValueFisher(1 - significanceLevelAnova)) {
+            sb.append(String.format("Decision: f0 > f %.4f = %.4f %n", 1 - significanceLevelAnova, this.regressionSimple.getCriticValueFisher(1 - significanceLevelAnova))).append("\n")
+                    .append("Reject H0\n")
+                    .append("The regression model is significant." + "\n");
+        } else {
+            sb.append(String.format("Decision: f0 < f %.4f = %.4f %n", 1 - significanceLevelAnova, this.regressionSimple.getCriticValueFisher(1 - significanceLevelAnova))).append("\n")
+                    .append("Don't reject H0\n")
+                    .append("The regression model is significant." + "\n");
+        }
+
+        sb.append("\n\n").append("-----------------------------End of ANOVA-------------------------------").append("\n\n");
+
+        sb.append("\n\n").append("-----------------------------Beginning of Prediction-------------------------------").append("\n\n");
+
+        sb.append("Date\t\t\t\t\t\t    " + "Number of OBSERVED positive cases\t\t\t\t" + "Number of ESTIMATED positive cases\t\t\t\t\t\t").append(100 - (significanceLevelEstimated * 100)).append("% intervals\n");
+
+        for (int i = 0; i < this.yObs.length; i++) {
+
+            int interW = this.historicalDays - i + 1;
+
+            Calendar cal2 = Calendar.getInstance();
+            cal2.add(Calendar.DATE, -interW);
+            Date toDate2 = cal2.getTime();
+
+            LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
+            if (!(cal2.get(Calendar.DAY_OF_WEEK) == 1)) {
+
+                this.sb.append(currentDay)
+                        .append("\t\t\t\t\t\t\t\t")
+                        .append(String.format("%.0f", this.yObs[i]))
+                        .append("\t\t\t\t\t\t\t\t\t\t\t\t")
+                        .append(String.format("%.2f", this.regressionSimple.predict(this.xLinear[i])))
+                        .append("\t\t\t\t\t\t\t\t")
+                        .append("]").append(String.format("%.2f", this.regressionSimple.lowerLimitAnswer(this.xLinear[i], significanceLevelEstimated)))
+                        .append(",")
+                        .append(this.regressionSimple.upperLimitAnswer(this.xLinear[i], significanceLevelEstimated)).append("[")
+                        .append("\n");
+
+            }
+        }
+
+
+        sb.append("\n\n").append("-----------------------------End of Prediction-------------------------------").append("\n\n");
+
+
+        sb.append("\n\n").append("-----------------------------End of Report-------------------------------").append("\n\n");
+
 
         return sb;
     }
