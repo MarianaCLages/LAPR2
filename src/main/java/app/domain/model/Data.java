@@ -10,13 +10,13 @@ import java.time.Period;
 public class Data implements Serializable {
 
     private String historicalDays;
-    private int date;
     private double confidenceLevelAnova;
     private double confidenceLevelVariables;
     private double confidenceLevelEstimated;
     private LocalDate intervalStartDate;
     private LocalDate intervalEndDate;
     private String selection;
+    private int date;
 
     public Data() {
 
@@ -59,12 +59,10 @@ public class Data implements Serializable {
     }
 
     public void setSelection(String selection) {
-        System.out.println(selection);
         this.selection = selection;
     }
 
     public String getSelection() {
-        System.out.println(this.selection);
         return this.selection;
     }
 

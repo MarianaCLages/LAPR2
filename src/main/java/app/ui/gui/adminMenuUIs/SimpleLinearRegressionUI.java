@@ -2,7 +2,6 @@ package app.ui.gui.adminMenuUIs;
 
 import app.controller.App;
 import app.controller.GenerateNHSReportController;
-import app.domain.model.StringBuilderReport;
 import app.domain.shared.Constants;
 import app.domain.shared.exceptions.ChoiceBoxEmptyException;
 import app.ui.gui.Alerts;
@@ -14,7 +13,6 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.*;
 
 public class SimpleLinearRegressionUI implements Initializable {
@@ -27,10 +25,6 @@ public class SimpleLinearRegressionUI implements Initializable {
     private SceneController sceneController = SceneController.getInstance();
     private App app = sceneController.getApp();
     private GenerateNHSReportController ctrl = SceneController.getInstance().getCtrl();
-
-
-    public SimpleLinearRegressionUI() {
-    }
 
     public void returnToGenerateNHSReport(ActionEvent event) {
         app.doLogout();
@@ -67,8 +61,7 @@ public class SimpleLinearRegressionUI implements Initializable {
         } catch (ChoiceBoxEmptyException err2) {
             Alerts.errorAlert(err2.getMessage());
         } catch (RuntimeException err1) {
-            Alerts.errorAlert(err1.getMessage());
-           // Alerts.errorAlert("Please enter valid information (Don't leave blank containers!)");
+            Alerts.errorAlert("Please enter valid information (Don't leave blank containers!)");
         }
 
     }

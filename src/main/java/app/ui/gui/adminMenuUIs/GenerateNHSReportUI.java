@@ -2,7 +2,6 @@ package app.ui.gui.adminMenuUIs;
 
 import app.controller.App;
 import app.controller.GenerateNHSReportController;
-import app.domain.model.Data;
 import app.domain.shared.Constants;
 import app.domain.shared.exceptions.*;
 import app.ui.gui.Alerts;
@@ -11,7 +10,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import org.w3c.dom.Text;
 
 import java.net.URL;
 import java.time.Period;
@@ -99,7 +97,7 @@ public class GenerateNHSReportUI implements Initializable {
 
     private void changeScene(ActionEvent event) {
 
-        if (myChoiceBoxNHS.getValue() == Constants.SIMPLE_LINEAR_REGRESSION) {
+        if (myChoiceBoxNHS.getValue().equals(Constants.SIMPLE_LINEAR_REGRESSION)) {
             sceneController.switchMenu(event, Constants.SIMPLE_LINEAR_REGRESSION_UI);
         } else {
             sceneController.switchMenu(event, Constants.MULTI_LINEAR_REGRESSION_UI);

@@ -13,10 +13,10 @@ public class ParameterCategoryUI {
     private Button myReturnButtonParameterCategory;
 
     private SceneController sceneController = SceneController.getInstance();
+    private App app = sceneController.getApp();
 
 
     public void returnToAdminMenu(ActionEvent event) {
-        App app = sceneController.getApp();
         app.doLogout();
         sceneController.switchMenu(event, Constants.ADMINISTRATOR_UI);
     }

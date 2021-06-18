@@ -8,7 +8,6 @@ import app.domain.stores.TestStore;
 import app.ui.gui.Alerts;
 
 import java.time.LocalDate;
-import java.time.Period;
 import java.time.ZoneId;
 import java.util.*;
 
@@ -26,8 +25,6 @@ public class GenerateNHSReportController {
     private double[] positiveCovidTestsPerDayInsideTheHistoricalInterval;
     private double[] positiveCovidTestsPerDayInsideTheDateInterval;
 
-    private List<Client> clientsWithTests;
-
     private StringBuilder sb = new StringBuilder();
 
     public GenerateNHSReportController() {
@@ -38,14 +35,13 @@ public class GenerateNHSReportController {
 
         this.company = company;
         this.testStore = company.getTestList();
-
         this.data = company.getData();
 
     }
 
     private void setData() {
 
-        clientsWithTests = this.testStore.getClientsWithTests(company.getClientArrayList());
+        List<Client> clientsWithTests = this.testStore.getClientsWithTests(company.getClientArrayList());
 
         this.agesInsideTheHistoricalDays = this.testStore.getClientAge(clientsWithTests, this.company.getData().getHistoricalDaysInt());
         this.agesInsideTheDateInterval = this.testStore.getClientAgeInsideTheInterval(clientsWithTests, this.company.getData().getDifferenceInDates() + 1, this.company.getData().getIntervalStartDate());
@@ -73,20 +69,20 @@ public class GenerateNHSReportController {
     public void multiRegression() {
         setData();
 
-        double[][] multiarray = new double[covidTestsPerDayInsideTheIntervalOfDates.length][2];
-        for (int i = 0; i < multiarray.length; i++) {
-            multiarray[i][0] = covidTestsPerDayInsideTheIntervalOfDates[i];
-            multiarray[i][1] = agesInsideTheDateInterval[i];
+        double[][] multiArray = new double[covidTestsPerDayInsideTheIntervalOfDates.length][2];
+        for (int i = 0; i < multiArray.length; i++) {
+            multiArray[i][0] = covidTestsPerDayInsideTheIntervalOfDates[i];
+            multiArray[i][1] = agesInsideTheDateInterval[i];
 
         }
 
-        double[][] multiarrayObs = new double[covidTestsPerDayInsideTheHistoricalDays.length][2];
-        for (int i = 0; i < multiarrayObs.length; i++) {
-            multiarrayObs[i][0] = covidTestsPerDayInsideTheHistoricalDays[i];
-            multiarrayObs[i][1] = agesInsideTheHistoricalDays[i];
+        double[][] multiArrayObs = new double[covidTestsPerDayInsideTheHistoricalDays.length][2];
+        for (int i = 0; i < multiArrayObs.length; i++) {
+            multiArrayObs[i][0] = covidTestsPerDayInsideTheHistoricalDays[i];
+            multiArrayObs[i][1] = agesInsideTheHistoricalDays[i];
         }
 
-        multiRegressionPrintValues(multiarray, positiveCovidTestsPerDayInsideTheDateInterval, positiveCovidTestsPerDayInsideTheHistoricalInterval, multiarrayObs);
+        multiRegressionPrintValues(multiArray, positiveCovidTestsPerDayInsideTheDateInterval, positiveCovidTestsPerDayInsideTheHistoricalInterval, multiArrayObs);
 
     }
 
@@ -98,8 +94,7 @@ public class GenerateNHSReportController {
         this.stringBuilderReport.setvalues(xObs, yObs, company.getData().getHistoricalDaysInt());
         this.stringBuilderReport.setConfidenceValues(company.getData().getConfidenceLevelAnova(), company.getData().getConfidenceLevelVariables(), company.getData().getConfidenceLevelEstimated());
 
-        StringBuilder sbAux = new StringBuilder();
-        this.sb = sbAux;
+        this.stringBuilderReport.clear();
 
         try {
             this.sb = this.stringBuilderReport.stringConstructionMultiLinearRegression();
@@ -120,24 +115,21 @@ public class GenerateNHSReportController {
         this.stringBuilderReport.setvalues(xObs, yObs, company.getData().getHistoricalDaysInt());
         this.stringBuilderReport.setConfidenceValues(company.getData().getConfidenceLevelAnova(), company.getData().getConfidenceLevelVariables(), company.getData().getConfidenceLevelEstimated());
 
-        StringBuilder sbAux = new StringBuilder();
-        this.sb = sbAux;
+        this.stringBuilderReport.clear();
 
         this.sb = stringBuilderReport.stringConstructionLinearRegression();
         this.sb = this.stringBuilderReport.printCovidTestsPerInterval(company.getData().getSelection());
 
     }
 
-    public void setInformation(LocalDate start, LocalDate end, String historicalDays, String ICAnova, String selection, String ICVariables, String ICEstimated) throws DateEmptyException, DateInvalidException, HistoricalDaysInvalidException, HistoricalDaysEmptyException, ConfidenceLevelICEmptyException, ConfidenceLevelInvalidException {
-
-        Data data = getData();
+    public void setInformation(LocalDate start, LocalDate end, String historicalDays, String icAnova, String selection, String icVariables, String icEstimated) throws DateEmptyException, DateInvalidException, HistoricalDaysInvalidException, HistoricalDaysEmptyException, ConfidenceLevelInvalidException {
 
         data.setIntervalDates(this.testStore.getIntervalDate(start, end));
         data.setHistoricalDays(historicalDays);
 
-        data.setConfidenceLevelAnova(100 - Integer.parseInt(ICAnova));
-        data.setConfidenceLevelEstimated(100 - Integer.parseInt(ICEstimated));
-        data.setConfidenceLevelVariables(100 - Integer.parseInt(ICVariables));
+        data.setConfidenceLevelAnova(100 - Integer.parseInt(icAnova));
+        data.setConfidenceLevelEstimated(100 - Integer.parseInt(icEstimated));
+        data.setConfidenceLevelVariables(100 - Integer.parseInt(icVariables));
 
         data.setSelection(selection);
 
@@ -146,9 +138,9 @@ public class GenerateNHSReportController {
     }
 
 
-    public LocalDate getStartDate(String Text) {
+    public LocalDate getStartDate(String text) {
 
-        int n = Integer.parseInt(Text);
+        int n = Integer.parseInt(text);
 
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.DATE, -n);

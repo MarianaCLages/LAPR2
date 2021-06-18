@@ -24,9 +24,6 @@ public class MultiLinearRegressionUI implements Initializable {
     private App app = sceneController.getApp();
     private GenerateNHSReportController ctrl = SceneController.getInstance().getCtrl();
 
-    public MultiLinearRegressionUI() {
-    }
-
     public void returnToGenerateNHSReport(ActionEvent event) {
         app.doLogout();
         sceneController.switchMenu(event, Constants.NHS_REPORT_UI);

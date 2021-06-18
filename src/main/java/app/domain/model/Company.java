@@ -1,7 +1,6 @@
 package app.domain.model;
 
 import app.controller.App;
-import app.domain.shared.Constants;
 import app.domain.shared.Serialize;
 import app.domain.stores.*;
 import auth.AuthFacade;
@@ -13,9 +12,6 @@ import java.io.Serializable;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-/**
- * @author Paulo Maio <pam@isep.ipp.pt>
- */
 public class Company implements Serializable {
 
     private String designation;
