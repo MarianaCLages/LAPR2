@@ -2,6 +2,8 @@ package app.domain.model;
 
 import app.controller.App;
 import app.domain.shared.LinearRegression;
+import app.domain.shared.MultiLinearRegression;
+import app.domain.shared.Regression;
 import app.domain.stores.TestStore;
 
 import java.time.LocalDate;
@@ -9,7 +11,6 @@ import java.time.Period;
 import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 public class StringBuilderReport {
 
@@ -17,33 +18,64 @@ public class StringBuilderReport {
     private TestStore testStore;
     private LocalDate todayDateForCovidReport = LocalDate.now();
     private StringBuilder sb;
+    private LinearRegression regressionSimple;
+    private MultiLinearRegression regressionMulti;
+    private double[] xLinear;
+    private double[][] xMulti;
+    private double[] yObs;
+    private int historicalDays;
 
-    public StringBuilderReport() {
+    public StringBuilderReport(Regression regression) {
+        if (regression instanceof LinearRegression) {
+            this.regressionSimple = (LinearRegression) regression;
+        } else if (regression instanceof MultiLinearRegression) {
+            this.regressionMulti = (MultiLinearRegression) regression;
+        } else {
+            throw new IllegalArgumentException();
+        }
+
         this.company = App.getInstance().getCompany();
         this.testStore = company.getTestList();
         this.sb = new StringBuilder();
     }
 
-    public StringBuilder stringConstructionLinearRegression(LinearRegression linearRegression, double t_obs){
+    public void clear() {
+        StringBuilder sbAux = new StringBuilder();
+        this.sb = sbAux;
+    }
+
+    public void setvalues(double[] x, double[] yObs, int historicalDays) {
+        this.xLinear = x;
+        this.yObs = yObs;
+        this.historicalDays = historicalDays;
+    }
+
+    public void setvalues(double[][] x, double[] yObs, int historicalDays) {
+        this.xMulti = x;
+        this.yObs = yObs;
+        this.historicalDays = this.historicalDays;
+    }
+
+    public StringBuilder stringConstructionLinearRegression(double alpha) {
         sb.append("The regression model fitted using data from the interval\n")
-                .append("^y = " + linearRegression.toString() + "\n\nOther statistics\n")
-                .append("R^2 = " + String.format("%.4f", linearRegression.R2()) + "\n")
-                .append("R     = " + String.format("%.4f", linearRegression.RPARAMUDAR()) + "\n\n")
+                .append("^y = " + regressionSimple.toString() + "\n\nOther statistics\n")
+                .append("R^2 = " + String.format("%.4f", regressionSimple.R2()) + "\n")
+                .append("R     = " + String.format("%.4f", regressionSimple.R()) + "\n\n")
                 .append("Hypothesis tests for regression coefficient\n\n Hypothesis test for coefficient a\n H0: a=0   H1: a!=0 \n")
                 .append(" t_obs = ")
-                .append(String.format("%.4f", t_obs) + "\n");
+                .append(String.format("%.4f", regressionSimple.getCriticValueStudent(alpha)) + "\n");
 
-        if (t_obs > linearRegression.getTestStatistica()) {
-            sb.append( "Reject H0\n\n");
+        if (regressionSimple.getCriticValueStudent(alpha) > regressionSimple.getTestStatistica()) {
+            sb.append("Reject H0\n\n");
         } else {
             sb.append(" No reject H0\n\n");
         }
 
         sb.append("Hypothesis test for coefficient b\n H0 : b=0 H1: b!=0\n")
                 .append(" t_obs = ")
-                .append(String.format("%.4f", t_obs) + "\n");
+                .append(String.format("%.4f", regressionSimple.getCriticValueStudent(alpha)) + "\n");
 
-        if (t_obs > linearRegression.getTestStatisticb()) {
+        if (regressionSimple.getCriticValueStudent(alpha) > regressionSimple.getTestStatisticb()) {
             sb.append(" Reject H0\n\n");
         } else {
             sb.append(" No reject H0\n\n");
@@ -53,28 +85,35 @@ public class StringBuilderReport {
         return sb;
     }
 
-    public StringBuilder printPredictedValues(double xi, StringBuilder sb, int i, LinearRegression linearRegression) {
 
-        int startDayIntervalForStringBuilder = company.getData().getHistoricalDaysInt();
-
-        int interW = startDayIntervalForStringBuilder - i + 1;
-
-        Calendar cal2 = Calendar.getInstance();
-        cal2.add(Calendar.DATE, -interW);
-        Date toDate2 = cal2.getTime();
-
-        LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-
-        if (!(cal2.get(Calendar.DAY_OF_WEEK) == 1)) {
-
-            sb.append(currentDay)
-                    .append("\t\t\t\t\t\t\t\t" + String.format("%.0f",xi))
-                    .append("\t\t\t\t\t\t\t\t\t\t\t\t" + String.format("%.2f", linearRegression.predict(xi)))
-                    .append("\t\t\t\t\t\t\t\t" + String.format("%.2f", linearRegression.predict(xi)) + "\n");
+    public StringBuilder printPredictedValues() {
+        for (int i = 0; i < this.yObs.length; i++) {
 
 
+            int interW = this.historicalDays - i + 1;
+
+
+            Calendar cal2 = Calendar.getInstance();
+            cal2.add(Calendar.DATE, -interW);
+            Date toDate2 = cal2.getTime();
+
+            LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
+            if (!(cal2.get(Calendar.DAY_OF_WEEK) == 1)) {
+
+                this.sb.append(currentDay)
+                        .append("\t\t\t\t\t\t\t\t")
+                        .append(String.format("%.0f", this.yObs[i]))
+                        .append("\t\t\t\t\t\t\t\t\t\t\t\t")
+                        .append(String.format("%.2f", regressionSimple.predict(this.xLinear[i])))
+                        .append("\t\t\t\t\t\t\t\t")
+ //por os intervalos    .append(String.format("%.2f", regressionSimple.predict(this.xLinear[i])))
+                        .append("\n");
+
+            }
         }
-        return sb;
+        return this.sb;
+
     }
 
     public LocalDate getCurrentDayInsideAWeekInterval() {

@@ -2,10 +2,16 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
+<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.adminMenuUIs.MultiLinearRegressionUI">
-   <children>
-       <Button fx:id="myReturnButtonMulti" layoutX="14.0" layoutY="343.0" mnemonicParsing="false" onAction="#returnToGenerateNHSReport" prefHeight="43.0" prefWidth="104.0" text="Return" />
-   </children>
+    <children>
+        <Button fx:id="myReturnButtonMulti" layoutX="14.0" layoutY="343.0" mnemonicParsing="false" onAction="#returnToGenerateNHSReport" prefHeight="43.0" prefWidth="104.0" text="Return" />
+        <TextArea fx:id="myTextAreaMulti" layoutX="4.0" layoutY="7.0" prefHeight="294.0" prefWidth="593.0" />
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="298.0" layoutY="335.0" prefHeight="17.0" prefWidth="288.0" text="Multi Linear Regression" textAlignment="CENTER">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+    </children>
 </AnchorPane>

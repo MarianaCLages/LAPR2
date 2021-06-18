@@ -2,16 +2,14 @@ package app.controller;
 
 import app.domain.model.*;
 import app.domain.shared.LinearRegression;
+import app.domain.shared.MultiLinearRegression;
 import app.domain.shared.exceptions.*;
 import app.domain.stores.TestStore;
 
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 public class GenerateNHSReportController {
 
@@ -30,7 +28,7 @@ public class GenerateNHSReportController {
 
         this.company = company;
         this.testStore = company.getTestList();
-        this.stringBuilderReport = new StringBuilderReport();
+
         this.data = company.getData();
 
     }
@@ -60,23 +58,50 @@ public class GenerateNHSReportController {
 
     }
 
+    public void multiRegression() {
+        List<Client> clientsWithTests = this.testStore.getClientsWithTests(company.getClientArrayList());
+
+        double[] agesInsideTheDateInterval = this.testStore.getClientAgeInsideTheInterval(clientsWithTests, company.getData().getDifferenceInDates() + 1, company.getData().getIntervalStartDate());
+        double[] positiveCovidTestsPerDayInsideTheDateInterval = this.testStore.getPositiveCovidTestsPerDayIntoArrayInsideInterval(company.getData().getDifferenceInDates() + 1, company.getData().getIntervalStartDate());
+
+        double[] covidTestsPerDayInsideTheDateInterval = this.testStore.getCovidTestsPerDayIntoArrayInsideInterval(company.getData().getDifferenceInDates() + 1, company.getData().getIntervalStartDate());
+
+        double[][] multiarray = new double[covidTestsPerDayInsideTheDateInterval.length][2];
+        for (int i = 0; i < multiarray.length; i++) {
+            multiarray[i][0] = covidTestsPerDayInsideTheDateInterval[i];
+            multiarray[i][1] = agesInsideTheDateInterval[i];
+
+        }
+
+        MultiLinearRegression s = new MultiLinearRegression(multiarray, positiveCovidTestsPerDayInsideTheDateInterval);
+
+        for (double xi : agesInsideTheDateInterval) {
+            System.out.println(xi);
+        }
+
+        System.out.println("----------------------------------------");
+
+        for (double yi : covidTestsPerDayInsideTheDateInterval) {
+            System.out.println(yi);
+        }
+
+        System.out.println("----------------------------------------");
+        System.out.println(Arrays.deepToString(multiarray));
+
+    }
+
     private void linearRegressionPrintValues(double[] x, double[] y, double[] w) {
 
         LinearRegression linearRegression = new LinearRegression(x, y);
 
+        this.stringBuilderReport = new StringBuilderReport(linearRegression);
+
         StringBuilder sbAux = new StringBuilder();
         this.sb = sbAux;
+        
+        this.sb = stringBuilderReport.stringConstructionLinearRegression(1 - this.company.getData().getConfidenceLevel());
 
-        double t_obs = linearRegression.getCriticValueStudent(1 - this.company.getData().getConfidenceLevel());
-
-        this.sb = stringBuilderReport.stringConstructionLinearRegression(linearRegression, t_obs);
-
-        int i = 1;
-        for (double xi : w) {
-            sb = this.stringBuilderReport.printPredictedValues(xi, sb, i, linearRegression);
-            i++;
-
-        }
+        this.sb = this.stringBuilderReport.printPredictedValues();
 
         this.sb = this.stringBuilderReport.printCovidTestsPerInterval(sb);
     }
