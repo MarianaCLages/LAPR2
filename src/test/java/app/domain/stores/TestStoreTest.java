@@ -30,7 +30,7 @@ public class TestStoreTest {
         TestStore store = new TestStore();
         app.domain.model.Test t = store.createTest("123456789187", "1234567890123456", testType, cat1, pa);
 
-        Assert.assertEquals(t.toString(),"Test: testCode=000000000000001, testNhsNumber=123456789187, clientCc=1234567890123456, TestTypeID=BL000, state=CREATED");
+        Assert.assertEquals(t.toString(), "Test: testCode=000000000000001, testNhsNumber=123456789187, clientCc=1234567890123456, TestTypeID=BL000, state=CREATED");
 
     }
 
@@ -153,9 +153,9 @@ public class TestStoreTest {
         pa.add(p1);
         TestType testType = new TestType("BL000", "description", "sei lá", cat);
         TestStore store = new TestStore();
-        app.domain.model.Test t1 = store.createTest( "123456789187", "1234567890123456", testType, cat1, pa);
-        app.domain.model.Test t2 = store.createTest( "123456789185", "1234567890123456", testType, cat1, pa);
-        app.domain.model.Test t3 = store.createTest( "123456782187", "1234567890123455", testType, cat1, pa);
+        app.domain.model.Test t1 = store.createTest("123456789187", "1234567890123456", testType, cat1, pa);
+        app.domain.model.Test t2 = store.createTest("123456789185", "1234567890123456", testType, cat1, pa);
+        app.domain.model.Test t3 = store.createTest("123456782187", "1234567890123455", testType, cat1, pa);
 
         store.addTest(t3);
         store.addTest(t2);
@@ -168,15 +168,38 @@ public class TestStoreTest {
     }
 
     @Test
-    public void getValidatedTestList() {
-        ClientStore clientStore = new ClientStore();
+    public void getValidatedTestList() throws ParseException {
+
+        List<app.domain.model.Test> validatedTest = new ArrayList<>();
+
+        ParameterCategory[] categories = new ParameterCategory[1];
+        String dateStr = "19-02-2021";
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = dateFormat.parse(dateStr);
+
+        Client client = new Client("12345698905", "1234567891183456", "1234766891", "1234567881", date, 'M', "manuel@alberto.com", "Manuel");
+        ParameterCategory cat = new ParameterCategory("codee", "name");
+        categories[0] = cat;
+
+        ParameterCategoryStore pcStore = new ParameterCategoryStore();
+        ParameterCategory pc1 = pcStore.createParameterCategory("12345", "Hemogram");
+        pcStore.saveParameterCategory();
+        List<ParameterCategory> testCategories = new ArrayList<>();
+        testCategories.add(pc1);
+        TestType covidTest = new TestType("COV19", "Covid", "Swab", pcStore);
+
+        ParameterStore pStore = new ParameterStore();
+        Parameter p4 = new Parameter("IgGAN", "COVID", "000", pc1);
+        pStore.add(p4);
+        List<Parameter> testParameters1 = new ArrayList<>();
+        testParameters1.add(p4);
+
         TestStore testStore = new TestStore();
+        app.domain.model.Test test = new app.domain.model.Test("1234557890123456", "100000000100", "1234567890", covidTest, testCategories, testParameters1);
+        testStore.saveTest();
 
-        Client client = clientStore.getClient();
+        validatedTest.add(test);
+
         testStore.getValidatedTestList(client);
-
-        List<app.domain.model.Test> expected = testStore.getValidatedTestList(client);
-
-        Assert.assertNotNull(expected);
     }
 }

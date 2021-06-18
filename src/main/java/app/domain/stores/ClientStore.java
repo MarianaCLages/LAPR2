@@ -5,7 +5,6 @@ import app.domain.model.Company;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -53,7 +52,7 @@ public class ClientStore implements Serializable {
     }
 
     /**
-     * Checks if a instance of object Client is valid. An instance of a client is valid if it is not null, if dont already exists or if the email and phone number of the instance are not unique
+     * Checks if a instance of object Client is valid. An instance of a client is valid if it is not null, if don't already exists or if the email and phone number of the instance are not unique
      *
      * @param client instance of object Client
      * @return a boolean value that represents if the instance of object Client is valid
