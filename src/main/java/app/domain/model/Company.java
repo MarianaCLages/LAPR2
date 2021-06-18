@@ -150,7 +150,7 @@ public class Company implements Serializable {
     }
 
     public List<Client> getClientArrayList() {
-        return getClientList().returnClientList();
+        return getClientList().getClientList();
     }
 
     /**
