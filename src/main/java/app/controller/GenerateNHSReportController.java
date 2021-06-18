@@ -98,14 +98,10 @@ public class GenerateNHSReportController {
 
         StringBuilder sbAux = new StringBuilder();
         this.sb = sbAux;
-
-
+        
         this.sb = stringBuilderReport.stringConstructionLinearRegression(1 - this.company.getData().getConfidenceLevel());
 
-
         this.sb = this.stringBuilderReport.printPredictedValues();
-
-
 
         this.sb = this.stringBuilderReport.printCovidTestsPerInterval(sb);
     }
