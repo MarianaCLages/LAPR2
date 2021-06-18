@@ -3,14 +3,15 @@ package app.domain.model;
 import app.domain.shared.exceptions.*;
 import org.apache.commons.lang3.StringUtils;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Data {
+public class Data implements Serializable {
 
     private String historicalDays;
     private int date;
-    private int confidenceLevelIC;
+    private double confidenceLevelIC;
     private String significanceLevel;
     private LocalDate intervalStartDate;
     private LocalDate intervalEndDate;
@@ -99,8 +100,8 @@ public class Data {
         return Integer.parseInt(historicalDays);
     }
 
-    public int getConfidenceLevel() {
-        return confidenceLevelIC;
+    public double getConfidenceLevel() {
+        return (confidenceLevelIC / 100);
     }
 
     public String getHistoricalDays() {

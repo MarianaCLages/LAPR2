@@ -72,7 +72,6 @@ public class TestStoreTest {
         store.saveTest();
 
         store.createTest("123456789187", "1234567890123456", testType, cat1, pa);
-
         Assert.assertFalse(store.saveTest());
 
     }

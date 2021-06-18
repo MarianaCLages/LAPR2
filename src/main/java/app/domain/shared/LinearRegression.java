@@ -17,6 +17,8 @@ import org.apache.commons.math3.distribution.TDistribution;
 public class LinearRegression {
     private final double intercept;
     private final double slope;
+
+
     private final double r2;
     private final double xbar;
     private final double ybar;
@@ -115,6 +117,10 @@ public class LinearRegression {
         return r2;
     }
 
+    public double RPARAMUDAR() {
+        return Math.sqrt(r2);
+    }
+
     /**
      * Returns the expected response y given the value of the predictor
      * variable x.
@@ -184,6 +190,10 @@ public class LinearRegression {
         return (this.intercept) / (Math.sqrt(this.se / (this.n - 2)) / Math.sqrt((1 / n) + Math.pow(this.xbar, 2) / this.sxx));
     }
 
+    public double getR2() {
+        return r2;
+    }
+
     public double getSt() {
         return st;
     }
@@ -222,7 +232,6 @@ public class LinearRegression {
     public String toString() {
         StringBuilder s = new StringBuilder();
         s.append(String.format("%.4f n + %.4f", slope(), intercept()));
-        s.append("  (R^2 = " + String.format("%.4f", R2()) + ")");
 
         return s.toString();
     }

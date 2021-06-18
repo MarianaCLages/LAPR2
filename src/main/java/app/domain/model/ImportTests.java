@@ -1,6 +1,7 @@
 package app.domain.model;
 
 import app.controller.App;
+import app.domain.shared.Constants;
 import app.domain.stores.*;
 import auth.AuthFacade;
 
@@ -26,7 +27,6 @@ public class ImportTests {
     int errorcount = 0;
     TestTypeStore ttstore;
     ClientStore cstore;
-    AuthFacade authFacade;
     ClinicalAnalysisLabStore store;
     ParameterCategoryStore pcstore;
     ParameterStore pstore;
@@ -34,10 +34,12 @@ public class ImportTests {
     TestStore tstore;
     List<String> testFileList = new ArrayList<>();
 
+
+
+
     public ImportTests() {
         App app = App.getInstance();
         Company company = app.getCompany();
-        authFacade = company.getAuthFacade();
         cstore = company.getClientList();
         pcstore = company.getParameterCategoryList();
         tstore = company.getTestList();
@@ -66,7 +68,7 @@ public class ImportTests {
 
                 while (line != null) {
 
-
+                    boolean a = true;
                     String[] metadata = line.split(";");
 
 
@@ -76,12 +78,14 @@ public class ImportTests {
                     try {
                         createClientfromFile(metadata);
                     } catch (Exception e) {
+                        a = false;
                         errorcount++;
                         continue;
                     }
                     try {
                         verifyClinic(metadata);
                     } catch (Exception e) {
+                        a = false;
                         errorcount++;
                         continue;
                     }
@@ -89,19 +93,20 @@ public class ImportTests {
                         createTestfromFile(metadata);
 
                     } catch (Exception e) {
+                        a = false;
                         errorcount++;
                         continue;
                     }
 
-                    if(createClientfromFile(metadata) && verifyClinic(metadata) && createTestfromFile(metadata)){
+                    if(a){
                         testFileList.add(Arrays.toString(metadata));
                         /*System.out.println(Arrays.toString(metadata));*/
                     }
 
                 }
             }
-        } catch (IOException | ParseException ioe) {
-            ioe.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -117,11 +122,17 @@ public class ImportTests {
         Date date = new SimpleDateFormat("dd/MM/yyyy").parse(metadata[6]);
 
         cstore.createClient(metadata[7],metadata[3],metadata[4],metadata[5], date,' ',metadata[9],metadata[8]);
-        boolean save;
-        save = cstore.saveClient();
-        /*cstore.addUser(company);*/
+        cstore.saveClient();
+        String pwd = PasswordGenerator.getPassword();
+        boolean success = App.getInstance().getCompany().getAuthFacade().addUserWithRole(metadata[8], metadata[9], pwd, Constants.ROLE_CLIENT);
 
-        return save;
+        if (success) {
+            Email.sendPasswordNotification(metadata[8], metadata[9], pwd);
+
+        }
+        return success;
+
+
     }
 
     public boolean verifyClinic(String[] metadata) {
@@ -192,6 +203,28 @@ public class ImportTests {
 
         t.changeState("SAMPLE_COLLECTED");
 
+
+        if (!(metadata[13].equalsIgnoreCase("NA"))) {
+            t.addTestResult("HB000", Double.parseDouble(metadata[13].replace(",", ".")));
+
+        }
+        if (!(metadata[14].equalsIgnoreCase("NA"))) {
+            t.addTestResult("WBC00", Double.parseDouble(metadata[14].replace(",", ".")));
+
+        }
+        if (!(metadata[15].equalsIgnoreCase("NA"))) {
+            t.addTestResult("PLT00", Double.parseDouble(metadata[15].replace(",", ".")));
+
+        }
+        if (!(metadata[16].equalsIgnoreCase("NA"))) {
+            t.addTestResult("RBC00", Double.parseDouble(metadata[16].replace(",", ".")));
+
+        }
+        if (!(metadata[20].equalsIgnoreCase("NA"))) {
+            t.addTestResult("IgGAN", Double.parseDouble(metadata[20].replace(",", ".")));
+
+        }
+
         String date1 = metadata[21];
         String date2 = metadata[22];
         String date3 = metadata[23];
@@ -217,6 +250,7 @@ public class ImportTests {
         }
 
 
+
         LocalDateTime date11 = LocalDateTime.parse(date1, formatter);
         t.setSampleCreatedDate(date11);
         LocalDateTime date22 = LocalDateTime.parse(date2, formatter);
@@ -229,27 +263,7 @@ public class ImportTests {
 
 
 
-        if (!(metadata[13].equalsIgnoreCase("NA"))) {
-            t.addTestResult("HB000", Double.parseDouble(metadata[13].replace(",", ".")));
-
-        }
-        if (!(metadata[14].equalsIgnoreCase("NA"))) {
-            t.addTestResult("WBC00", Double.parseDouble(metadata[14].replace(",", ".")));
-
-        }
-        if (!(metadata[15].equalsIgnoreCase("NA"))) {
-            t.addTestResult("PLT00", Double.parseDouble(metadata[15].replace(",", ".")));
-
-        }
-        if (!(metadata[16].equalsIgnoreCase("NA"))) {
-            t.addTestResult("RBC00", Double.parseDouble(metadata[16].replace(",", ".")));
-
-        }
-        if (!(metadata[20].equalsIgnoreCase("NA"))) {
-            t.addTestResult("IgGAN", Double.parseDouble(metadata[20].replace(",", ".")));
-
-        }
-        t.changeState("VALIDATED");
+        t.changeState(Test.State.VALIDATED);
 
         return true;
     }

@@ -4,12 +4,20 @@ package app.domain.model;
 import app.controller.App;
 import app.domain.shared.LinearRegression;
 import app.domain.shared.MultiLinearRegression;
-import app.domain.shared.exceptions.InvalidLengthException;
+import app.domain.stores.ClientStore;
+import app.domain.stores.TestStore;
+import com.nhs.report.Report2NHS;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.Period;
+import java.util.List;
 import java.util.Properties;
 import java.util.TimerTask;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 public class SendReportTask extends TimerTask implements Serializable {
     private LocalDate finishDate;
@@ -19,6 +27,7 @@ public class SendReportTask extends TimerTask implements Serializable {
     private double confidenceLevelVariables;
     private double confidenceLevelEstimated;
     private String independentVariable;
+    private String regression;
 
     public SendReportTask() {
     }
@@ -28,27 +37,54 @@ public class SendReportTask extends TimerTask implements Serializable {
      */
     @Override
     public void run() {
-
+        LinearRegression linearRegressionChosen = null;
+        TestStore testStore = App.getInstance().getCompany().getTestList();
+        ClientStore clientStore = App.getInstance().getCompany().getClientList();
         getProps();
+        testStore.setDates(historicalDays);
+        double[] positiveCovidTestsPerDayInsideTheDateInterval = testStore.getPositiveCovidTestsPerDayIntoArrayInsideInterval(Period.between(this.beginningDate, this.finishDate).getDays() + 1, this.beginningDate);
+        double[] positiveCovidTestsPerDayInsideTheHistoricalInterval = testStore.getCovidTestsPerDayIntoArray(historicalDays);
+        double[] covidTestsPerDayInsideTheDateInterval = testStore.getCovidTestsPerDayIntoArrayInsideInterval(Period.between(this.beginningDate, this.finishDate).getDays() + 1, this.beginningDate);
+
+        List<Client> clientsWithTests = testStore.getClientsWithTests(clientStore.returnClientList());
+        double[] ages = testStore.getClientAge(clientsWithTests, this.historicalDays);
+        double[] agesInsideTheDateInterval = testStore.getClientAgeInsideTheInterval(clientsWithTests, Period.between(this.beginningDate, this.finishDate).getDays() + 1, this.beginningDate);
+
+        if (regression.equals("Linear")) {
+            log();
 
 
-        double[] m1 = {27, 58, 86, 120, 140, 152, 169, 218, 226, 258};
-        double[] m2 = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50};
+            LinearRegression linearRegressionNumberTest = new LinearRegression(covidTestsPerDayInsideTheDateInterval, positiveCovidTestsPerDayInsideTheDateInterval);
 
-        LinearRegression l = new LinearRegression(m1, m2);
+            LinearRegression linearRegressionMeanAge = new LinearRegression(agesInsideTheDateInterval, positiveCovidTestsPerDayInsideTheDateInterval);
 
-        double[][] matrix1 = {
-                {120, 19},
-                {200, 8},
-                {150, 12},
-                {180, 15},
-                {240, 16},
-                {250, 13}
-        };
-        double[] matrixb = {23.8, 24.2, 22.0, 26.2, 33.5, 35};
+            if (linearRegressionNumberTest.getR2() > linearRegressionMeanAge.getR2()) {
+                linearRegressionChosen = linearRegressionNumberTest;
+            } else {
+                linearRegressionChosen = linearRegressionMeanAge;
+            }
+            Report2NHS.writeUsingFileWriter("data");
+            log();
 
 
-        MultiLinearRegression s = new MultiLinearRegression(matrix1, matrixb);
+        } else if (regression.equals("Multilinear")) {
+
+
+            double[][] multiarray = new double[covidTestsPerDayInsideTheDateInterval.length][2];
+            for (int i = 0; i < multiarray.length; i++) {
+                multiarray[i][0] = covidTestsPerDayInsideTheDateInterval[i];
+                multiarray[i][1] = agesInsideTheDateInterval[i];
+
+            }
+
+            MultiLinearRegression s = new MultiLinearRegression(multiarray, positiveCovidTestsPerDayInsideTheDateInterval);
+
+            Report2NHS.writeUsingFileWriter("data");
+            log();
+
+
+        }
+
 
     }
 
@@ -60,6 +96,30 @@ public class SendReportTask extends TimerTask implements Serializable {
         this.confidenceLevelAnova = Double.parseDouble(prop.getProperty("significance.level.anova"));
         this.confidenceLevelVariables = Double.parseDouble(prop.getProperty("significance.level.coefficient"));
         this.confidenceLevelEstimated = Double.parseDouble(prop.getProperty("significance.level.estimated"));
+        this.regression = prop.getProperty("type.regression");
+
+    }
+
+
+    private void log(){
+        Logger logger = Logger.getLogger("MyLog");
+        FileHandler fh;
+
+        try {
+
+            fh = new FileHandler("log.log",true);
+            logger.addHandler(fh);
+            SimpleFormatter formatter;
+            formatter = new SimpleFormatter();
+            fh.setFormatter(formatter);
+            logger.setUseParentHandlers(false);
+            logger.info("Report sent to NHS");
+
+        } catch (SecurityException | IOException e) {
+            System.out.println(e.getMessage());
+        }
+
+
     }
 
 }

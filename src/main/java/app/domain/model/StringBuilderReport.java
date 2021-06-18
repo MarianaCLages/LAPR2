@@ -9,6 +9,7 @@ import java.time.Period;
 import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class StringBuilderReport {
 
@@ -23,6 +24,35 @@ public class StringBuilderReport {
         this.sb = new StringBuilder();
     }
 
+    public StringBuilder stringConstructionLinearRegression(LinearRegression linearRegression, double t_obs){
+        sb.append("The regression model fitted using data from the interval\n")
+                .append("^y = " + linearRegression.toString() + "\n\nOther statistics\n")
+                .append("R^2 = " + String.format("%.4f", linearRegression.R2()) + "\n")
+                .append("R     = " + String.format("%.4f", linearRegression.RPARAMUDAR()) + "\n\n")
+                .append("Hypothesis tests for regression coefficient\n\n Hypothesis test for coefficient a\n H0: a=0   H1: a!=0 \n")
+                .append(" t_obs = ")
+                .append(String.format("%.4f", t_obs) + "\n");
+
+        if (t_obs > linearRegression.getTestStatistica()) {
+            sb.append( "Reject H0\n\n");
+        } else {
+            sb.append(" No reject H0\n\n");
+        }
+
+        sb.append("Hypothesis test for coefficient b\n H0 : b=0 H1: b!=0\n")
+                .append(" t_obs = ")
+                .append(String.format("%.4f", t_obs) + "\n");
+
+        if (t_obs > linearRegression.getTestStatisticb()) {
+            sb.append(" Reject H0\n\n");
+        } else {
+            sb.append(" No reject H0\n\n");
+        }
+        sb.append("Date\t\t\t\t\t\t    " + "Number of OBSERVED positive cases\t\t\t\t\t\t" + "Number of ESTIMATED positive cases\t\t\t\t\t\t").append(this.company.getData().getConfidenceLevel()).append("% intervals\n");
+
+        return sb;
+    }
+
     public StringBuilder printPredictedValues(double xi, StringBuilder sb, int i, LinearRegression linearRegression) {
 
         int startDayIntervalForStringBuilder = company.getData().getHistoricalDaysInt();
@@ -34,12 +64,17 @@ public class StringBuilderReport {
         Date toDate2 = cal2.getTime();
 
         LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        sb.append(currentDay);
-        sb.append(": ");
-        sb.append(linearRegression.predict(xi));
-        sb.append("\n");
-        return sb;
 
+        if (!(cal2.get(Calendar.DAY_OF_WEEK) == 1)) {
+
+            sb.append(currentDay)
+                    .append("\t\t\t\t\t\t\t\t" + String.format("%.0f",xi))
+                    .append("\t\t\t\t\t\t\t\t\t\t\t\t" + String.format("%.2f", linearRegression.predict(xi)))
+                    .append("\t\t\t\t\t\t\t\t" + String.format("%.2f", linearRegression.predict(xi)) + "\n");
+
+
+        }
+        return sb;
     }
 
     public LocalDate getCurrentDayInsideAWeekInterval() {
@@ -120,12 +155,14 @@ public class StringBuilderReport {
     public StringBuilder printTheCovidTestsIntoTheNHSReportDay(StringBuilder sb) {
 
         int dayTests = 0;
-        sb.append("\n");
-        sb.append("Today covid tests :");
-        sb.append("\n\n");
-        sb.append(todayDateForCovidReport);
-        sb.append(" : ");
-        for (Test t : this.testStore.getPositiveCovidTest(company.getTestList().getValidatedTestsListCovid())) {
+
+        sb.append("\n")
+                .append("Today covid tests :")
+                .append("\n\n")
+                .append(todayDateForCovidReport)
+                .append(" : ");
+
+        for (Test t : this.testStore.getPositiveCovidTest()) {
             LocalDate tDate = t.getDate().toLocalDate();
 
             if (tDate.equals(todayDateForCovidReport)) {
@@ -134,9 +171,15 @@ public class StringBuilderReport {
 
         }
 
-        sb.append(dayTests);
-        sb.append(" positive covid tests");
+        Calendar cal2 = Calendar.getInstance();
+        if (!(cal2.get(Calendar.DAY_OF_WEEK) == 1)) {
+
+            sb.append(dayTests)
+                    .append(" positive covid tests");
+        }
+
         return sb;
+
     }
 
     public StringBuilder printTheCovidTestsIntoTheNHSReportWeek(StringBuilder sb) {
@@ -144,9 +187,9 @@ public class StringBuilderReport {
         int interval = Period.between(getCurrentDayInsideAWeekInterval(), todayDateForCovidReport).getDays();
         int[] covidTestsIntoArray = new int[interval + 1];
 
-        sb.append("\n");
-        sb.append("Week report:");
-        sb.append("\n");
+        sb.append("\n")
+                .append("Week report:")
+                .append("\n");
 
         for (int i = 0; i < interval; i++) {
 
@@ -158,19 +201,18 @@ public class StringBuilderReport {
 
             LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //Date de começo do intervalo (dia de hj - historical days)
 
-            for (Test t : this.testStore.getPositiveCovidTest(company.getTestList().getValidatedTestsListCovid())) {
+            for (Test t : this.testStore.getPositiveCovidTest()) {
                 LocalDate tDate = t.getDate().toLocalDate();
                 if (tDate.equals(currentDay)) {
                     covidTestsIntoArray[i] += 1;
                 }
             }
 
-            sb.append(currentDay);
-            sb.append(" : ");
-            sb.append(covidTestsIntoArray[i]);
-            sb.append(" positive covid tests");
-            sb.append("\n");
+            if (!(cal2.get(Calendar.DAY_OF_WEEK) == 1)) {
 
+                sb.append(currentDay).append(" : ").append(covidTestsIntoArray[i]).append(" positive covid tests\n");
+
+            }
         }
 
         return sb;
@@ -184,9 +226,10 @@ public class StringBuilderReport {
 
         Calendar c = Calendar.getInstance();
         int monthMaxDays = c.getActualMaximum(Calendar.DAY_OF_MONTH);
-        sb.append("\n");
-        sb.append("Month report:");
-        sb.append("\n");
+
+        sb.append("\n")
+                .append("Month report:")
+                .append("\n");
 
         for (int i = 0; i < interval; i++) {
 
@@ -198,20 +241,22 @@ public class StringBuilderReport {
 
             LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //Date de começo do intervalo (dia de hj - historical days)
 
-            for (Test t : this.testStore.getPositiveCovidTest(company.getTestList().getValidatedTestsListCovid())) {
+            for (Test t : this.testStore.getPositiveCovidTest()) {
                 LocalDate tDate = t.getDate().toLocalDate();
                 if (tDate.equals(currentDay)) {
                     covidTestsIntoArray[i] += 1;
                 }
             }
 
-            sb.append(currentDay);
-            sb.append(" : ");
-            sb.append(covidTestsIntoArray[i]);
-            sb.append(" positive covid tests");
-            sb.append("\n");
+            if (!(cal2.get(Calendar.DAY_OF_WEEK) == 1)) {
+
+                sb.append(currentDay)
+                        .append(" : ")
+                        .append(covidTestsIntoArray[i])
+                        .append(" positive covid tests\n");
 
 
+            }
         }
         return sb;
     }
@@ -220,5 +265,8 @@ public class StringBuilderReport {
         return sb;
     }
 
+    private void buildReport() {
+
+    }
 
 }
