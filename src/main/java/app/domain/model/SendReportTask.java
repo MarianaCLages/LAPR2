@@ -6,13 +6,18 @@ import app.domain.shared.LinearRegression;
 import app.domain.shared.MultiLinearRegression;
 import app.domain.stores.ClientStore;
 import app.domain.stores.TestStore;
+import com.nhs.report.Report2NHS;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.List;
 import java.util.Properties;
 import java.util.TimerTask;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 public class SendReportTask extends TimerTask implements Serializable {
     private LocalDate finishDate;
@@ -23,7 +28,6 @@ public class SendReportTask extends TimerTask implements Serializable {
     private double confidenceLevelEstimated;
     private String independentVariable;
     private String regression;
-    private String variable;
 
     public SendReportTask() {
     }
@@ -47,6 +51,7 @@ public class SendReportTask extends TimerTask implements Serializable {
         double[] agesInsideTheDateInterval = testStore.getClientAgeInsideTheInterval(clientsWithTests, Period.between(this.beginningDate, this.finishDate).getDays() + 1, this.beginningDate);
 
         if (regression.equals("Linear")) {
+            log();
 
 
             LinearRegression linearRegressionNumberTest = new LinearRegression(covidTestsPerDayInsideTheDateInterval, positiveCovidTestsPerDayInsideTheDateInterval);
@@ -58,6 +63,8 @@ public class SendReportTask extends TimerTask implements Serializable {
             } else {
                 linearRegressionChosen = linearRegressionMeanAge;
             }
+            Report2NHS.writeUsingFileWriter("data");
+            log();
 
 
         } else if (regression.equals("Multilinear")) {
@@ -71,7 +78,10 @@ public class SendReportTask extends TimerTask implements Serializable {
             }
 
             MultiLinearRegression s = new MultiLinearRegression(multiarray, positiveCovidTestsPerDayInsideTheDateInterval);
-            System.out.println(s.getIntercept());
+
+            Report2NHS.writeUsingFileWriter("data");
+            log();
+
 
         }
 
@@ -87,7 +97,28 @@ public class SendReportTask extends TimerTask implements Serializable {
         this.confidenceLevelVariables = Double.parseDouble(prop.getProperty("significance.level.coefficient"));
         this.confidenceLevelEstimated = Double.parseDouble(prop.getProperty("significance.level.estimated"));
         this.regression = prop.getProperty("type.regression");
-        this.variable = prop.getProperty("independent.variable");
+
+    }
+
+
+    private void log(){
+        Logger logger = Logger.getLogger("MyLog");
+        FileHandler fh;
+
+        try {
+
+            fh = new FileHandler("log.log",true);
+            logger.addHandler(fh);
+            SimpleFormatter formatter;
+            formatter = new SimpleFormatter();
+            fh.setFormatter(formatter);
+            logger.setUseParentHandlers(false);
+            logger.info("Report sent to NHS");
+
+        } catch (SecurityException | IOException e) {
+            System.out.println(e.getMessage());
+        }
+
 
     }
 
