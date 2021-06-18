@@ -99,11 +99,11 @@ public class GenerateNHSReportController {
         StringBuilder sbAux = new StringBuilder();
         this.sb = sbAux;
         
-        this.sb = stringBuilderReport.stringConstructionLinearRegression(1 - this.company.getData().getConfidenceLevel());
+  //      this.sb = stringBuilderReport.stringConstructionLinearRegression(1 - this.company.getData().getConfidenceLevel());
 
-        this.sb = this.stringBuilderReport.printPredictedValues();
+    //    this.sb = this.stringBuilderReport.printPredictedValues();
 
-        this.sb = this.stringBuilderReport.printCovidTestsPerInterval(sb);
+  //      this.sb = this.stringBuilderReport.printCovidTestsPerInterval(sb);
     }
 
     public void setInformation(boolean dayReport, boolean weekReport, boolean monthlyReport, LocalDate start, LocalDate end, String historicalDays, String confidenceLevel) throws DateEmptyException, DateInvalidException, HistoricalDaysInvalidException, HistoricalDaysEmptyException, ConfidenceLevelICEmptyException, ConfidenceLevelInvalidException {
