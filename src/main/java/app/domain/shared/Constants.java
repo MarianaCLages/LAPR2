@@ -70,6 +70,8 @@ public class Constants {
     public static final String VIEW_RESULTS_UI = "/FXML/ViewResultsUI.fxml";
     public static final String IMPORT_TEST_UI = "/FXML/ImportTest.fxml";
 
+    public static final String COMPANY_PERFORMANCE_UI = "/FXML/CompanyPerformanceUI.fxml";
+
 
     public static final String SIMPLE_LINEAR_REGRESSION_UI = "/FXML/SimpleLinearRegression.fxml";
     public static final String MULTI_LINEAR_REGRESSION_UI = "/FXML/MultiLinearRegression.fxml";

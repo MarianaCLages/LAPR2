@@ -6,6 +6,10 @@ import javafx.stage.Stage;
 
 public class Alerts {
 
+    private Alerts(){
+
+    }
+
     public static void informationAlert(int maxAttempts) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("");

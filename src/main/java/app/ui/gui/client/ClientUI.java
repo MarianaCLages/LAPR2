@@ -11,6 +11,7 @@ public class ClientUI {
 
 
     private SceneController sceneController = SceneController.getInstance();
+    private App app = sceneController.getApp();
 
     @FXML
     private Button myReturnButtonClient;
@@ -19,12 +20,10 @@ public class ClientUI {
     private Button ResultsButton;
 
     public void ViewResultsMenu(ActionEvent event) {
-        App app = sceneController.getApp();
         sceneController.switchMenu(event, Constants.VIEW_RESULTS_UI);
     }
 
     public void returnToMenu(ActionEvent event) {
-        App app = sceneController.getApp();
         app.doLogout();
         sceneController.switchMenu(event, Constants.MAIN_SCREEN_UI);
     }

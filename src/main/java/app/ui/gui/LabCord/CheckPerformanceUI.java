@@ -24,19 +24,19 @@ public class CheckPerformanceUI implements Initializable {
     public Button choiceAlgo;
     private SceneController sceneController = SceneController.getInstance();
     private CheckPerformanceController ctrl = new CheckPerformanceController();
+    private App app = sceneController.getApp();
 
 
     @FXML
     private Button btnReturn;
 
     public void returnToMenu(ActionEvent actionEvent) {
-        App app = sceneController.getApp();
         app.doLogout();
         sceneController.switchMenu(actionEvent, Constants.LABORATORY_COORDINATOR_UI);
     }
 
     public void confirm(ActionEvent actionEvent) {
-        ctrl.getSubArray(dtnBeg.getValue(),dtnEnd.getValue());
+        ctrl.getSubArray(dtnBeg.getValue(), dtnEnd.getValue());
 
     }
 

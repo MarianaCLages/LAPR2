@@ -11,7 +11,7 @@ import javafx.scene.control.Button;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class LaboratoryCoordinatorUI implements Initializable {
+public class LaboratoryCoordinatorUI {
 
     public Button btnPerformance;
     private SceneController sceneController = SceneController.getInstance();
@@ -22,27 +22,21 @@ public class LaboratoryCoordinatorUI implements Initializable {
     @FXML
     private Button ImportTestsButton;
 
-    public void ImportTestsMenu(ActionEvent event) {
-        App app = sceneController.getApp();
+    private App app = sceneController.getApp();
 
+    public void ImportTestsMenu(ActionEvent event) {
         sceneController.switchMenu(event, Constants.IMPORT_TEST_UI);
     }
 
     public void returnToMenu(ActionEvent event) {
-        App app = sceneController.getApp();
         app.doLogout();
         sceneController.switchMenu(event, Constants.MAIN_SCREEN_UI);
     }
 
 
     public void performanceMenu(ActionEvent actionEvent) {
-        App app = sceneController.getApp();
         app.doLogout();
-        sceneController.switchMenu(actionEvent, "/FXML/CompanyPerformanceUI.fxml");
+        sceneController.switchMenu(actionEvent, Constants.COMPANY_PERFORMANCE_UI);
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
 }

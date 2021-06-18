@@ -25,10 +25,10 @@ public class AdministratorUI {
 
 
     private SceneController sceneController = SceneController.getInstance();
+    private App app = sceneController.getApp();
 
 
     public void returnToMenu(ActionEvent event) {
-        App app = sceneController.getApp();
         app.doLogout();
         sceneController.switchMenu(event, Constants.MAIN_SCREEN_UI);
     }
@@ -53,8 +53,8 @@ public class AdministratorUI {
         sceneController.switchMenu(event, Constants.CLINICAL_ANALYSIS_LABORATORY_UI);
     }
 
-    public void goToGenerateNHSReportUI(ActionEvent event){
-        sceneController.switchMenu(event,Constants.NHS_REPORT_UI);
+    public void goToGenerateNHSReportUI(ActionEvent event) {
+        sceneController.switchMenu(event, Constants.NHS_REPORT_UI);
     }
 
 }

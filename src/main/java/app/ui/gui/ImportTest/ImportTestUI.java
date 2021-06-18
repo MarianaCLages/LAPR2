@@ -16,6 +16,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ImportTestUI implements Initializable {
+
     ImportTestsController imp = new ImportTestsController();
 
     @FXML
@@ -49,7 +50,6 @@ public class ImportTestUI implements Initializable {
     }
 
     public void returnToMenu(ActionEvent event) {
-        App app = sceneController.getApp();
         sceneController.switchMenu(event, Constants.LABORATORY_COORDINATOR_UI);
     }
 }

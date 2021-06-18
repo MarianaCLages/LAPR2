@@ -18,11 +18,11 @@ public class MainUI {
 
     private SceneController sceneController = SceneController.getInstance();
 
-    public void login(ActionEvent e) throws IOException {
+    public void login(ActionEvent e) {
         sceneController.switchMenu(e, Constants.LOGIN_CONTROLLER);
     }
 
-    public void credits(ActionEvent actionEvent) throws IOException {
+    public void credits(ActionEvent actionEvent) {
         sceneController.switchMenu(actionEvent, Constants.CREDITS_UI);
     }
 }

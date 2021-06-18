@@ -18,9 +18,9 @@ public class RecordResultsUI {
     public TextField sampleIDtxt;
 
     private SceneController sceneController = SceneController.getInstance();
+    private App app = sceneController.getApp();
 
     public void btnReturnAction(ActionEvent event) {
-        App app = sceneController.getApp();
         app.doLogout();
         sceneController.switchMenu(event, Constants.CLINICAL_CHEMISTRY_TECHNOLOGIST_UI);
     }

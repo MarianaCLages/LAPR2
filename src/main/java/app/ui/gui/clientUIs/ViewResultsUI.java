@@ -17,15 +17,16 @@ import java.util.ResourceBundle;
 
 public class ViewResultsUI implements Initializable {
 
-        ViewResultsController VRc = new ViewResultsController();
+    ViewResultsController VRc = new ViewResultsController();
 
-        @FXML
-        private ListView<String> ListView1;
+    @FXML
+    private ListView<String> ListView1;
 
-        @FXML
-        private TextArea TextArea1;
+    @FXML
+    private TextArea TextArea1;
 
     private SceneController sceneController = SceneController.getInstance();
+    private App app = sceneController.getApp();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -44,8 +45,8 @@ public class ViewResultsUI implements Initializable {
             }
         });
     }
+
     public void returnToMenu(ActionEvent event) {
-        App app = sceneController.getApp();
         sceneController.switchMenu(event, Constants.CLIENT_UI);
     }
 }
