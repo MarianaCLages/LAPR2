@@ -16,24 +16,6 @@
       <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/9/a" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/a/1" />
       <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/a/7" />
-      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/0/1" />
-      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/0/2" />
-      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/1/4" />
-      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/1/a" />
-      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/1/d" />
-      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/2/1" />
-      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/5/1" />
-      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/5/d" />
-      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/6/4" />
-      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/6/a" />
-      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/7/8" />
-      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/7/e" />
-      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/a/8" />
-      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/a/e" />
-      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/b/5" />
-      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/c/3" />
-      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/e/6" />
-      <excludeFolder url="file://$MODULE_DIR$/.idea/sonarlint/issuestore/f/5" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -43,6 +25,14 @@
     <orderEntry type="library" name="ExternalModule3API" level="application" />
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="barbecue-2.0-dev" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:13" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-controls:win:13" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:13" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:win:13" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:13" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-base:win:13" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:13" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:win:13" level="project" />
     <orderEntry type="module-library">
       <library name="Maven: com.example3:CovidReferenceValues1API:1.0.0">
         <CLASSES>
