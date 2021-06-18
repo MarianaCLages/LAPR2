@@ -1,6 +1,7 @@
 package app.ui.gui.LabCord;
 
 import app.controller.App;
+import app.controller.CheckPerformanceController;
 import app.controller.SceneController;
 import app.domain.shared.Constants;
 
@@ -9,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 
 import java.net.URL;
@@ -17,7 +19,11 @@ import java.util.ResourceBundle;
 public class CheckPerformanceUI implements Initializable {
     public TextArea myTextAreaSimple;
     public ChoiceBox<String> myChoiceBoxSimple;
+    public DatePicker dtnBeg;
+    public DatePicker dtnEnd;
+    public Button choiceAlgo;
     private SceneController sceneController = SceneController.getInstance();
+    private CheckPerformanceController ctrl = new CheckPerformanceController();
 
 
     @FXML
@@ -30,6 +36,7 @@ public class CheckPerformanceUI implements Initializable {
     }
 
     public void confirm(ActionEvent actionEvent) {
+        ctrl.getSubArray(dtnBeg.getValue(),dtnEnd.getValue());
 
     }
 

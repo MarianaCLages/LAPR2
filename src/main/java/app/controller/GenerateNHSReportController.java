@@ -30,7 +30,7 @@ public class GenerateNHSReportController {
 
         this.company = company;
         this.testStore = company.getTestList();
-        this.stringBuilderReport = new StringBuilderReport();
+
         this.data = company.getData();
 
     }
@@ -64,19 +64,18 @@ public class GenerateNHSReportController {
 
         LinearRegression linearRegression = new LinearRegression(x, y);
 
+        this.stringBuilderReport = new StringBuilderReport(linearRegression);
+
         StringBuilder sbAux = new StringBuilder();
         this.sb = sbAux;
 
-        double t_obs = linearRegression.getCriticValueStudent(1 - this.company.getData().getConfidenceLevel());
 
-        this.sb = stringBuilderReport.stringConstructionLinearRegression(linearRegression, t_obs);
+        this.sb = stringBuilderReport.stringConstructionLinearRegression(1 - this.company.getData().getConfidenceLevel());
 
-        int i = 1;
-        for (double xi : w) {
-            sb = this.stringBuilderReport.printPredictedValues(xi, sb, i, linearRegression);
-            i++;
 
-        }
+        this.sb = this.stringBuilderReport.printPredictedValues();
+
+
 
         this.sb = this.stringBuilderReport.printCovidTestsPerInterval(sb);
     }

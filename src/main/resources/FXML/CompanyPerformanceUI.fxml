@@ -14,8 +14,8 @@
       </Button>
       <ChoiceBox fx:id="myChoiceBoxSimple" layoutX="300.0" layoutY="90.0" prefHeight="25.0" prefWidth="204.0" />
       <Button layoutX="497.0" layoutY="356.0" mnemonicParsing="false" onAction="#confirm" text="Change" />
-      <DatePicker layoutX="100.0" layoutY="66.0" />
-      <DatePicker layoutX="100.0" layoutY="103.0" />
+      <DatePicker fx:id="dtnBeg" layoutX="100.0" layoutY="66.0" />
+      <DatePicker fx:id="dtnEnd" layoutX="100.0" layoutY="103.0" />
       <Label layoutX="24.0" layoutY="69.0" prefHeight="18.0" prefWidth="76.0" text="Beginning:" />
       <Label layoutX="24.0" layoutY="107.0" prefHeight="18.0" prefWidth="175.0" text="End" />
       <Label layoutX="100.0" layoutY="27.0" prefHeight="20.0" prefWidth="98.0" text="Interval Choose">
@@ -34,6 +34,6 @@
       <RadioButton layoutX="498.0" layoutY="287.0" mnemonicParsing="false" text="Week" />
       <RadioButton layoutX="498.0" layoutY="310.0" mnemonicParsing="false" text="Month" />
       <RadioButton layoutX="498.0" layoutY="331.0" mnemonicParsing="false" text="Year" />
-      <Button layoutX="520.0" layoutY="90.0" mnemonicParsing="false" onAction="#confirm" text="Confirm" />
+      <Button fx:id="choiceAlgo" layoutX="520.0" layoutY="90.0" mnemonicParsing="false" onAction="#confirm" text="Confirm" />
    </children>
 </AnchorPane>
