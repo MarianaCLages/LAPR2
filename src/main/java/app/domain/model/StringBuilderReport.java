@@ -233,7 +233,7 @@ public class StringBuilderReport {
 
         sb.append("\n\n").append("-----------------------------Beginning of Prediction-------------------------------").append("\n\n");
 
-        sb.append("Date\t\t\t\t\t\t    " + "Number of OBSERVED positive cases\t\t\t\t" + "Number of ESTIMATED positive cases\t\t\t\t\t\t").append(100 - (significanceLevelEstimated * 100)).append("% intervals\n");
+        sb.append("Date\t\t\t\t\t\t    " + "Number of OBSERVED positive cases\t\t\t\t\t\t" + "Number of ESTIMATED positive cases\t\t\t\t\t\t").append(100 - (significanceLevelEstimated * 100)).append("% intervals\n");
 
         for (int i = 0; i < this.yObs.length; i++) {
 
@@ -296,7 +296,7 @@ public class StringBuilderReport {
     }
 
     private StringBuilder printPredictedValues() {
-        sb.append("Date\t\t\t\t\t\t    " + "Number of OBSERVED positive cases\t\t\t\t" + "Number of ESTIMATED positive cases\t\t\t\t\t\t").append(1 - significanceLevelEstimated * 100).append("% intervals\n");
+        sb.append("Date\t\t\t\t\t\t    " + "Number of OBSERVED positive cases\t\t\t\t\t\t" + "Number of ESTIMATED positive cases\t\t\t\t\t\t").append(1 - significanceLevelEstimated * 100).append("% intervals\n");
 
         for (int i = 0; i < this.yObs.length; i++) {
 

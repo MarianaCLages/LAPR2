@@ -6,10 +6,14 @@ import app.domain.shared.Constants;
 import app.controller.SceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 
-public class MultiLinearRegressionUI {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class MultiLinearRegressionUI implements Initializable {
 
     @FXML
     private TextArea myTextAreaMulti;
@@ -21,8 +25,6 @@ public class MultiLinearRegressionUI {
     private GenerateNHSReportController ctrl = SceneController.getInstance().getCtrl();
 
     public MultiLinearRegressionUI() {
-        ctrl.multiRegression();
-        //myTextAreaMulti.setText(ctrl.getSb().toString());
     }
 
     public void returnToGenerateNHSReport(ActionEvent event) {
@@ -30,4 +32,9 @@ public class MultiLinearRegressionUI {
         sceneController.switchMenu(event, Constants.NHS_REPORT_UI);
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ctrl.multiRegression();
+        myTextAreaMulti.setText(ctrl.getSb().toString());
+    }
 }

@@ -2,13 +2,19 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.adminMenuUIs.SimpleLinearRegressionUI">
+<AnchorPane prefHeight="563.0" prefWidth="791.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.adminMenuUIs.SimpleLinearRegressionUI">
     <children>
-        <Button fx:id="myReturnButtonSimple" layoutX="14.0" layoutY="343.0" mnemonicParsing="false" onAction="#returnToGenerateNHSReport" prefHeight="43.0" prefWidth="104.0" text="Return" />
-      <ChoiceBox fx:id="myChoiceBoxSimple" layoutX="300.0" layoutY="56.0" prefHeight="25.0" prefWidth="204.0" />
-      <Label layoutX="26.0" layoutY="56.0" prefHeight="25.0" prefWidth="274.0" text="Please choose the desired independent variable" />
-      <Button layoutX="527.0" layoutY="56.0" mnemonicParsing="false" onAction="#confirm" text="Confirm" />
-      <TextArea fx:id="myTextAreaSimple" layoutX="145.0" layoutY="129.0" prefHeight="257.0" prefWidth="447.0" />
+        <Button fx:id="myReturnButtonSimple" layoutX="718.0" layoutY="58.0" mnemonicParsing="false" onAction="#returnToGenerateNHSReport" prefHeight="25.0" prefWidth="59.0" text="Return" />
+      <ChoiceBox fx:id="myChoiceBoxSimple" layoutX="294.0" layoutY="58.0" prefHeight="25.0" prefWidth="204.0" />
+      <Label layoutX="20.0" layoutY="58.0" prefHeight="25.0" prefWidth="274.0" text="Please choose the desired independent variable" />
+      <Button layoutX="515.0" layoutY="58.0" mnemonicParsing="false" onAction="#confirm" text="Confirm" />
+      <TextArea fx:id="myTextAreaSimple" editable="false" layoutX="1.0" layoutY="100.0" prefHeight="463.0" prefWidth="790.0" />
+      <Label alignment="CENTER" layoutX="157.0" layoutY="14.0" prefHeight="32.0" prefWidth="274.0" text="Simple Linear Regression">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
     </children>
 </AnchorPane>

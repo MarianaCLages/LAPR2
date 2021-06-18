@@ -84,7 +84,6 @@ public class SendReportTask extends TimerTask implements Serializable {
 
 
             }
-            System.out.println("a");
             Report2NHS.writeUsingFileWriter(this.report.getSb().toString());
             log();
 

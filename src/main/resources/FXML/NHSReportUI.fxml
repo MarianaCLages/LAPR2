@@ -3,22 +3,26 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="apNhs" prefHeight="484.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.adminMenuUIs.GenerateNHSReportUI">
+<AnchorPane fx:id="apNhs" prefHeight="516.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.adminMenuUIs.GenerateNHSReportUI">
    <children>
-      <Button fx:id="myReturnButtonNHS" layoutX="14.0" layoutY="427.0" mnemonicParsing="false" onAction="#returnToAdminMenu" prefHeight="43.0" prefWidth="104.0" text="Return" />
+      <Button fx:id="myReturnButtonNHS" layoutX="14.0" layoutY="470.0" mnemonicParsing="false" onAction="#returnToAdminMenu" prefHeight="43.0" prefWidth="104.0" text="Return" />
       <Label fx:id="myLabelNHS" layoutX="56.0" layoutY="40.0" prefHeight="25.0" prefWidth="263.0" text=" The number of historical days :" />
       <TextField fx:id="myTextFieldNHS" layoutX="317.0" layoutY="40.0" prefHeight="25.0" prefWidth="186.0" promptText="Please type here" />
-      <Button fx:id="myButton2NHS" layoutX="482.0" layoutY="418.0" mnemonicParsing="false" onAction="#enterData" prefHeight="43.0" prefWidth="104.0" text="Enter" />
+      <Button fx:id="myButton2NHS" layoutX="482.0" layoutY="470.0" mnemonicParsing="false" onAction="#enterData" prefHeight="43.0" prefWidth="104.0" text="Enter" />
       <DatePicker fx:id="myDatePicker1" layoutX="66.0" layoutY="151.0" prefHeight="25.0" prefWidth="186.0" promptText="date" />
       <DatePicker fx:id="myDatePicker2" layoutX="317.0" layoutY="151.0" prefHeight="25.0" prefWidth="186.0" promptText="date" />
       <Label fx:id="myLabelDate" layoutX="56.0" layoutY="91.0" prefHeight="17.0" prefWidth="244.0" text="Interval of dates to fit the regression model :" />
       <Label fx:id="myLabelStart" alignment="CENTER" layoutX="72.0" layoutY="134.0" prefHeight="17.0" prefWidth="174.0" text="Start" />
       <Label fx:id="myLabelEnd" alignment="CENTER" layoutX="323.0" layoutY="134.0" prefHeight="17.0" prefWidth="174.0" text="End" />
-      <Label fx:id="myConfidenceLabel" layoutX="56.0" layoutY="217.0" prefHeight="25.0" prefWidth="263.0" text="Confidence Level :" />
-      <TextField fx:id="myTextFieldNHS2" layoutX="317.0" layoutY="217.0" prefHeight="25.0" prefWidth="186.0" promptText="Please type here" />
-      <ChoiceBox fx:id="myChoiceBoxNHS" layoutX="317.0" layoutY="276.0" prefHeight="25.0" prefWidth="186.0" />
-      <Label fx:id="myRegressionModelLabel" layoutX="56.0" layoutY="276.0" prefHeight="25.0" prefWidth="263.0" text="Please choose the linear regression model :" />
-      <Label alignment="CENTER" layoutX="93.0" layoutY="336.0" prefHeight="17.0" prefWidth="132.0" text="Covid-19 Tests :" />
-      <ChoiceBox fx:id="myChoiceBoxNHS2" layoutX="93.0" layoutY="360.0" prefHeight="25.0" prefWidth="132.0" />
+      <Label fx:id="myConfidenceLabel" layoutX="56.0" layoutY="217.0" prefHeight="25.0" prefWidth="263.0" text="Confidence Level Anova :" />
+      <TextField fx:id="myTextFieldNHSIC1" layoutX="317.0" layoutY="217.0" prefHeight="25.0" prefWidth="186.0" promptText="Please type here" />
+      <ChoiceBox fx:id="myChoiceBoxNHS" layoutX="317.0" layoutY="358.0" prefHeight="25.0" prefWidth="186.0" />
+      <Label fx:id="myRegressionModelLabel" layoutX="56.0" layoutY="358.0" prefHeight="25.0" prefWidth="263.0" text="Please choose the linear regression model :" />
+      <Label alignment="CENTER" layoutX="234.0" layoutY="424.0" prefHeight="17.0" prefWidth="132.0" text="Covid-19 Tests :" />
+      <ChoiceBox fx:id="myChoiceBoxNHS2" layoutX="234.0" layoutY="441.0" prefHeight="25.0" prefWidth="132.0" />
+      <Label fx:id="myConfidenceLabel1" layoutX="56.0" layoutY="264.0" prefHeight="25.0" prefWidth="263.0" text="Confidence Level Variables :" />
+      <Label fx:id="myConfidenceLabel11" layoutX="56.0" layoutY="306.0" prefHeight="25.0" prefWidth="263.0" text="Confidence Level Estimated :" />
+      <TextField fx:id="myTextFieldNHSIC2" layoutX="317.0" layoutY="264.0" prefHeight="25.0" prefWidth="186.0" promptText="Please type here" />
+      <TextField fx:id="myTextFieldNHSIC3" layoutX="317.0" layoutY="306.0" prefHeight="25.0" prefWidth="186.0" promptText="Please type here" />
    </children>
 </AnchorPane>

@@ -11,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import org.w3c.dom.Text;
 
 import java.net.URL;
 import java.time.Period;
@@ -28,8 +29,6 @@ public class GenerateNHSReportUI implements Initializable {
     @FXML
     private TextField myTextFieldNHS;
     @FXML
-    private TextField myTextFieldNHS2;
-    @FXML
     private ChoiceBox<String> myChoiceBoxNHS;
     @FXML
     private Button myButton2NHS;
@@ -39,6 +38,12 @@ public class GenerateNHSReportUI implements Initializable {
     private DatePicker myDatePicker2;
     @FXML
     private ChoiceBox<String> myChoiceBoxNHS2;
+    @FXML
+    private TextField myTextFieldNHSIC1;
+    @FXML
+    private TextField myTextFieldNHSIC2;
+    @FXML
+    private TextField myTextFieldNHSIC3;
 
     public GenerateNHSReportUI() {
         this.sceneController = SceneController.getInstance();
@@ -88,9 +93,7 @@ public class GenerateNHSReportUI implements Initializable {
 
     private void setInformation() throws DateEmptyException, DateInvalidException, HistoricalDaysInvalidException, HistoricalDaysEmptyException, ConfidenceLevelICEmptyException, ConfidenceLevelInvalidException {
 
-        System.out.println(myChoiceBoxNHS2.getValue());
-
-        this.ctrl.setInformation(myDatePicker1.getValue(),myDatePicker2.getValue(),myTextFieldNHS.getText(),myTextFieldNHS2.getText(),myChoiceBoxNHS2.getValue());
+        this.ctrl.setInformation(myDatePicker1.getValue(),myDatePicker2.getValue(),myTextFieldNHS.getText(),myTextFieldNHSIC1.getText(),myChoiceBoxNHS2.getValue(),myTextFieldNHSIC2.getText(),myTextFieldNHSIC3.getText());
 
     }
 
