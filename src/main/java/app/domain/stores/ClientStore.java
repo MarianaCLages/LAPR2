@@ -138,11 +138,11 @@ public class ClientStore implements Serializable {
 
         for (int i = 0; i < clientListOrder.size(); i++) {
             for (int j = i + 1; j < clientListOrder.size(); j++) {
-                Client aux;
+                Client temp;
                 if (Long.parseLong(clientListOrder.get(j).getTinNumber()) < Long.parseLong(clientListOrder.get(i).getTinNumber())) {
-                    aux = clientListOrder.get(i);
+                    temp = clientListOrder.get(i);
                     clientListOrder.set(i, clientListOrder.get(j));
-                    clientListOrder.set(j, aux);
+                    clientListOrder.set(j, temp);
                 }
             }
         }
@@ -156,11 +156,11 @@ public class ClientStore implements Serializable {
 
         for (int i = 0; i < clientListOrder.size(); i++) {
             for (int j = i + 1; j < clientListOrder.size(); j++) {
-                Client aux;
+                Client temp;
                 if (clientListOrder.get(j).getName().compareTo(clientListOrder.get(i).getName()) < 0) {
-                    aux = clientListOrder.get(i);
+                    temp = clientListOrder.get(i);
                     clientListOrder.set(i, clientListOrder.get(j));
-                    clientListOrder.set(j, aux);
+                    clientListOrder.set(j, temp);
                 }
             }
         }
