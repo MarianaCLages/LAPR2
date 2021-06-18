@@ -28,7 +28,7 @@ public class Data implements Serializable {
         this.selection = null;
     }
 
-    public void setConfidenceLevelAnova(int confidenceLevelAnova) throws ConfidenceLevelInvalidException {
+    public void setConfidenceLevelAnova(double confidenceLevelAnova) throws ConfidenceLevelInvalidException {
         checkConfidenceLevelIC(confidenceLevelAnova);
         this.confidenceLevelAnova = confidenceLevelAnova;
     }

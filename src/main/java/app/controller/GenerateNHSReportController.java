@@ -127,9 +127,9 @@ public class GenerateNHSReportController {
         data.setIntervalDates(this.testStore.getIntervalDate(start, end));
         data.setHistoricalDays(historicalDays);
 
-        data.setConfidenceLevelAnova(100 - Integer.parseInt(icAnova));
-        data.setConfidenceLevelEstimated(100 - Integer.parseInt(icEstimated));
-        data.setConfidenceLevelVariables(100 - Integer.parseInt(icVariables));
+        data.setConfidenceLevelAnova((double)100 - Integer.parseInt(icAnova));
+        data.setConfidenceLevelEstimated((double)100 - Integer.parseInt(icEstimated));
+        data.setConfidenceLevelVariables((double) 100 - Integer.parseInt(icVariables));
 
         data.setSelection(selection);
 

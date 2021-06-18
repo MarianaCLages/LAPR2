@@ -3,20 +3,18 @@ package app.controller;
 import app.domain.model.Company;
 import app.domain.model.ImportTests;
 
-import java.io.IOException;
 import java.util.List;
 
 public class ImportTestsController {
 
     private Company company;
-    private String fileName;
     private ImportTests importt = new ImportTests();
 
-    public ImportTestsController(Company company) throws IOException {
+    public ImportTestsController(Company company) {
         this.company = company;
     }
 
-    public ImportTestsController() throws IOException {
+    public ImportTestsController() {
         this(App.getInstance().getCompany());
     }
 

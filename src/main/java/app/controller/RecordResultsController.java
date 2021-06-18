@@ -40,7 +40,7 @@ public class RecordResultsController {
         }
     }
 
-    public boolean addTestResult(String parameterCode, double result) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public boolean addTestResult(String parameterCode, double result) {
         return t.addTestResult(parameterCode, result);
     }
 

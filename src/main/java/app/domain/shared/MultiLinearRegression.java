@@ -3,9 +3,6 @@ package app.domain.shared;
 import app.domain.shared.exceptions.InvalidLengthException;
 import org.apache.commons.math3.distribution.FDistribution;
 import org.apache.commons.math3.distribution.TDistribution;
-import org.apache.commons.math3.distribution.FDistribution;
-import org.apache.commons.math3.distribution.TDistribution;
-
 
 public class MultiLinearRegression implements Regression {
     private double[][] C;

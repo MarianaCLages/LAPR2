@@ -184,7 +184,6 @@ public class Company implements Serializable {
         try {
             return Serialize.readFile(props.getProperty("serialize.path"));
         } catch (IOException e) {
-           // e.printStackTrace();
             return null;
         }
     }

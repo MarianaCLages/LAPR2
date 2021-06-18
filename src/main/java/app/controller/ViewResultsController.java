@@ -12,7 +12,6 @@ public class ViewResultsController  {
 
     private Company company;
     private TestStore store;
-    private Test test;
     private ClientStore cstore;
 
     public ViewResultsController(Company company) {

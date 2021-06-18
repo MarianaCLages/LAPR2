@@ -40,8 +40,8 @@ public class StringBuilderReport {
     private static final String SPACE_1 = "\t\t\t\t\t";
     private static final String SPACE_2 = "\t\t\t\t\t\t";
     private static final String SPACE_3 = "\t\t\t\t\t\t\t\t";
-    private static final String SPACE_4 ="\t\t\t";
-    private static final String REGRESSION_MODEL ="The regression model is significant.";
+    private static final String SPACE_4 = "\t\t\t";
+    private static final String REGRESSION_MODEL = "The regression model is significant.";
 
 
     public StringBuilderReport(Regression regression) {
@@ -168,10 +168,10 @@ public class StringBuilderReport {
                         .append(String.format("%.0f", this.yObs[i]))
                         .append("\t\t\t\t\t\t\t\t\t\t\t\t")
                         .append(String.format("%.2f", this.regressionMulti.getEstimate(this.xMulti[i])))
-                        .append(SPACE_3)
+                        .append(SPACE_3 + "\t\t  ")
                         .append("]").append(String.format("%.2f", this.regressionMulti.lowerLimitAnswer(this.xMulti[i], significanceLevelEstimated)))
                         .append(",")
-                        .append(this.regressionMulti.upperLimitAnswer(this.xMulti[i], significanceLevelEstimated)).append("[")
+                        .append(String.format("%.2f", this.regressionMulti.upperLimitAnswer(this.xMulti[i], significanceLevelEstimated))).append("[")
                         .append("\n");
 
             }
@@ -264,10 +264,10 @@ public class StringBuilderReport {
                         .append(String.format("%.0f", this.yObs[i]))
                         .append("\t\t\t\t\t\t\t\t\t\t\t\t")
                         .append(String.format("%.2f", this.regressionSimple.predict(this.xLinear[i])))
-                        .append(SPACE_3)
+                        .append(SPACE_3 + "\t\t  ")
                         .append("]").append(String.format("%.2f", this.regressionSimple.lowerLimitAnswer(this.xLinear[i], significanceLevelEstimated)))
                         .append(",")
-                        .append(this.regressionSimple.upperLimitAnswer(this.xLinear[i], significanceLevelEstimated)).append("[")
+                        .append(String.format("%.2f", this.regressionSimple.upperLimitAnswer(this.xLinear[i], significanceLevelEstimated))).append("[")
                         .append("\n");
 
             }
@@ -302,10 +302,8 @@ public class StringBuilderReport {
         Date toDate2 = cal2.getTime();
 
         return toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-
-
+        
     }
-
 
     public StringBuilder printCovidTestsPerInterval(String selection) {
 
