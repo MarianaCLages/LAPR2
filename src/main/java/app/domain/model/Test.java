@@ -127,7 +127,7 @@ public class Test implements Serializable {
      *
      * @param s a value of the enum "State"
      */
-    private void changeState(State s) {
+    void changeState(State s) {
         this.state = s;
     }
 
