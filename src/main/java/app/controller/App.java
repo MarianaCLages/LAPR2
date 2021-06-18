@@ -91,7 +91,6 @@ public class App {
     }
 
     private void bootstrap() {
-        System.out.println("bootstrap");
         this.authFacade.addUserRole(Constants.ROLE_ADMIN, Constants.ROLE_ADMIN);
         this.authFacade.addUserRole(Constants.ROLE_CLINICALCHEMISTRYTECHNOLOGIST, Constants.ROLE_CLINICALCHEMISTRYTECHNOLOGIST);
         this.authFacade.addUserRole(Constants.ROLE_MEDICALLABTECHNICIIAN, Constants.ROLE_MEDICALLABTECHNICIIAN);
@@ -256,7 +255,7 @@ public class App {
         t6.changeState("VALIDATED");
         testStore.addTest(t6);
 
-        Test t7 = new Test("1234567890123465", "100000000007", "1234567896", covidTest, testCategories, testParameters1);
+        Test t7 = new Test("1234567890123465", "100000000008", "1234567896", covidTest, testCategories, testParameters1);
         t7.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 12, 18, 0));
         t7.addTestParameter();
         t7.changeState("SAMPLE_COLLECTED");
@@ -264,14 +263,14 @@ public class App {
         t7.changeState("VALIDATED");
         testStore.addTest(t7);
 
-        Test t8 = new Test("1234567890123466", "100000000007", "1234567896", covidTest, testCategories, testParameters1);
+        Test t8 = new Test("1234567890123466", "100000000009", "1234567896", covidTest, testCategories, testParameters1);
         t8.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 12, 18, 20));
         t8.addTestParameter();
         t8.changeState("SAMPLE_COLLECTED");
         t8.addTestResult("IgGAN", 1.9);
         t8.changeState("VALIDATED");
 
-        Test t9 = new Test("1234567890123467", "100000000007", "1234567896", covidTest, testCategories, testParameters1);
+        Test t9 = new Test("1234567890123467", "100000000010", "1234567896", covidTest, testCategories, testParameters1);
         t9.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 12, 16, 50));
         t9.addTestParameter();
         t9.changeState("SAMPLE_COLLECTED");
@@ -279,7 +278,7 @@ public class App {
         t9.changeState("VALIDATED");
         testStore.addTest(t9);
 
-        Test t10 = new Test("1234567890123416", "100000000007", "1234567896", covidTest, testCategories, testParameters1);
+        Test t10 = new Test("1234567890123416", "100000000011", "1234567896", covidTest, testCategories, testParameters1);
         t10.setCreatedDate(LocalDateTime.of(2021, Month.MAY, 12, 16, 50));
         t10.addTestParameter();
         t10.changeState("SAMPLE_COLLECTED");
@@ -289,7 +288,7 @@ public class App {
 
         //blood
 
-        Test tn = new Test("1234567890123463", "200000000008", "1234567896", bloodTest, testCategories, testParameters);
+        Test tn = new Test("1234567890123463", "200000000010", "1234567896", bloodTest, testCategories, testParameters);
         tn.addTestParameter();
         tn.changeState("SAMPLE_COLLECTED");
         tn.addTestResult("MCH00", 15);

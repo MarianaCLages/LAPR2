@@ -35,18 +35,18 @@ public class ClinicalAnalysisLabUI implements Runnable {
                 boolean exception = false;
                 do {
                     try {
-                        String name = Utils.readLineFromConsole("Please enter the name of the new Clinical Analysis Lab");
-                        String address = Utils.readLineFromConsole("Please enter the address of the new Clinical Analysis Lab");
-                        String id = Utils.readLineFromConsole("Please enter the id of the new Clinical Analysis Lab");
-                        String tin = Utils.readLineFromConsole("Please enter the tin of the new Clinical Analysis Lab");
-                        String phoneNumber = Utils.readLineFromConsole("Please enter the phoneNumber of the new Clinical Analysis Lab");
+                        String name = Utils.readLineFromConsole("Please, enter the name of the new Clinical Analysis Lab:");
+                        String address = Utils.readLineFromConsole("Please, enter the address of the new Clinical Analysis Lab:");
+                        String id = Utils.readLineFromConsole("Please, enter the ID of the new Clinical Analysis Lab:");
+                        String tin = Utils.readLineFromConsole("Please, enter the TIN of the new Clinical Analysis Lab:");
+                        String phoneNumber = Utils.readLineFromConsole("Please, enter the phone number of the new Clinical Analysis Lab:");
 
                         do {
 
-                            TestType testType = (TestType) Utils.showAndSelectOne(ctrl.getTypetestList().getList(), "Select a TypeTest");
+                            TestType testType = (TestType) Utils.showAndSelectOne(ctrl.getTypetestList().getList(), "Select a Test Type:");
                             ctrl.addToList(testType);
 
-                            again = Utils.confirm("Do you want to a add more tests? (s/n)");
+                            again = Utils.confirm("Do you want to add more tests? (s/n)");
 
                         } while (again);
                         ctrl.createClinicalAnalysisLab(name, address, id, tin, phoneNumber);
@@ -68,8 +68,6 @@ public class ClinicalAnalysisLabUI implements Runnable {
                 } else {
                     System.out.println("Couldn't save the Clinical Analysis Lab please try again ");
                 }
-
-
             } while (!cont);
 
         }

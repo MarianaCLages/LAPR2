@@ -24,6 +24,35 @@ public class StringBuilderReport {
         this.sb = new StringBuilder();
     }
 
+    public StringBuilder stringConstructionLinearRegression(LinearRegression linearRegression, double t_obs){
+        sb.append("The regression model fitted using data from the interval\n")
+                .append("^y = " + linearRegression.toString() + "\n\nOther statistics\n")
+                .append("R^2 = " + String.format("%.4f", linearRegression.R2()) + "\n")
+                .append("R     = " + String.format("%.4f", linearRegression.RPARAMUDAR()) + "\n\n")
+                .append("Hypothesis tests for regression coefficient\n\n Hypothesis test for coefficient a\n H0: a=0   H1: a!=0 \n")
+                .append(" t_obs = ")
+                .append(String.format("%.4f", t_obs) + "\n");
+
+        if (t_obs > linearRegression.getTestStatistica()) {
+            sb.append( "Reject H0\n\n");
+        } else {
+            sb.append(" No reject H0\n\n");
+        }
+
+        sb.append("Hypothesis test for coefficient b\n H0 : b=0 H1: b!=0\n")
+                .append(" t_obs = ")
+                .append(String.format("%.4f", t_obs) + "\n");
+
+        if (t_obs > linearRegression.getTestStatisticb()) {
+            sb.append(" Reject H0\n\n");
+        } else {
+            sb.append(" No reject H0\n\n");
+        }
+        sb.append("Date\t\t\t\t\t\t    " + "Number of OBSERVED positive cases\t\t\t\t\t\t" + "Number of ESTIMATED positive cases\t\t\t\t\t\t").append(this.company.getData().getConfidenceLevel()).append("% intervals\n");
+
+        return sb;
+    }
+
     public StringBuilder printPredictedValues(double xi, StringBuilder sb, int i, LinearRegression linearRegression) {
 
         int startDayIntervalForStringBuilder = company.getData().getHistoricalDaysInt();

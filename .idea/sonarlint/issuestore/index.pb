@@ -263,3 +263,5 @@ L
 docs/SprintD/US02/US2_SD.svg,e\9\e94f8ed25f6ca470774326227f411ac76553f5c1
 h
 8src/main/java/app/ui/gui/LabCord/CheckPerformanceUI.java,6\9\690c37988cd68dae4ac0199b39e634f7fdb47271
+a
+1src/main/java/app/controller/SceneController.java,f\6\f66cf25b1d7cf68a632aa24e220de97f47f7ca13

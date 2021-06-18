@@ -40,56 +40,45 @@ public class GenerateNHSReportController {
         List<Client> clientsWithTests = this.testStore.getClientsWithTests(company.getClientArrayList());
 
 
-        double[] ages = this.testStore.getClientAge(clientsWithTests,  company.getData().getHistoricalDaysInt());
+        double[] ages = this.testStore.getClientAge(clientsWithTests, company.getData().getHistoricalDaysInt());
 
         double[] agesInsideTheDateInterval = this.testStore.getClientAgeInsideTheInterval(clientsWithTests, company.getData().getDifferenceInDates() + 1, company.getData().getIntervalStartDate());
-        double[] covidTestsPerDayInsideTheIntervalOfDates = this.testStore.getPositiveCovidTestsPerDayIntoArrayInsideInterval( company.getData().getDifferenceInDates() + 1, company.getData().getIntervalStartDate());
+        double[] covidTestsPerDayInsideTheIntervalOfDates = this.testStore.getPositiveCovidTestsPerDayIntoArrayInsideInterval(company.getData().getDifferenceInDates() + 1, company.getData().getIntervalStartDate());
 
-        LinearRegression linearRegression = new LinearRegression(agesInsideTheDateInterval, covidTestsPerDayInsideTheIntervalOfDates);
-
-        StringBuilder sbAux = new StringBuilder();
-        this.sb = sbAux;
-
-        sb.append(linearRegression.toString());
-        sb.append("\n");
-
-        int i = 1;
-        for (double xi : ages) {
-            sb = this.stringBuilderReport.printPredictedValues(xi, sb, i, linearRegression);
-            i++;
-        }
-
-        this.sb = this.stringBuilderReport.printCovidTestsPerInterval(sb);
+        linearRegressionPrintValues(covidTestsPerDayInsideTheIntervalOfDates, agesInsideTheDateInterval, ages);
 
     }
 
     public void linearRegressionWithCovidTests() {
 
+        double[] positiveCovidTestsPerDayInsideTheHistoricalInterval = this.testStore.getCovidTestsPerDayIntoArray(company.getData().getHistoricalDaysInt());
 
-
-
-        double[] positiveCovidTestsPerDayInsideTheHistoricalInterval = this.testStore.getCovidTestsPerDayIntoArray( company.getData().getHistoricalDaysInt());
-
-        double[] positiveCovidTestsPerDayInsideTheDateInterval = this.testStore.getPositiveCovidTestsPerDayIntoArrayInsideInterval( company.getData().getDifferenceInDates() + 1, company.getData().getIntervalStartDate());
+        double[] positiveCovidTestsPerDayInsideTheDateInterval = this.testStore.getPositiveCovidTestsPerDayIntoArrayInsideInterval(company.getData().getDifferenceInDates() + 1, company.getData().getIntervalStartDate());
         double[] covidTestsPerDayInsideTheDateInterval = this.testStore.getCovidTestsPerDayIntoArrayInsideInterval(company.getData().getDifferenceInDates() + 1, company.getData().getIntervalStartDate());
 
-        LinearRegression linearRegression = new LinearRegression(positiveCovidTestsPerDayInsideTheDateInterval, covidTestsPerDayInsideTheDateInterval);
+        linearRegressionPrintValues(covidTestsPerDayInsideTheDateInterval, positiveCovidTestsPerDayInsideTheDateInterval, positiveCovidTestsPerDayInsideTheHistoricalInterval);
+
+    }
+
+    private void linearRegressionPrintValues(double[] x, double[] y, double[] w) {
+
+        LinearRegression linearRegression = new LinearRegression(x, y);
 
         StringBuilder sbAux = new StringBuilder();
         this.sb = sbAux;
 
-        sb.append(linearRegression.toString());
-        sb.append("\n");
+        double t_obs = linearRegression.getCriticValueStudent(1 - this.company.getData().getConfidenceLevel());
+
+        this.sb = stringBuilderReport.stringConstructionLinearRegression(linearRegression, t_obs);
 
         int i = 1;
-        for (double xi : positiveCovidTestsPerDayInsideTheHistoricalInterval) {
+        for (double xi : w) {
             sb = this.stringBuilderReport.printPredictedValues(xi, sb, i, linearRegression);
             i++;
 
         }
 
         this.sb = this.stringBuilderReport.printCovidTestsPerInterval(sb);
-
     }
 
     public void setInformation(boolean dayReport, boolean weekReport, boolean monthlyReport, LocalDate start, LocalDate end, String historicalDays, String confidenceLevel) throws DateEmptyException, DateInvalidException, HistoricalDaysInvalidException, HistoricalDaysEmptyException, ConfidenceLevelICEmptyException, ConfidenceLevelInvalidException {
