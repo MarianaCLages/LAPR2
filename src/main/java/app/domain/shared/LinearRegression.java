@@ -14,7 +14,7 @@ import org.apache.commons.math3.distribution.TDistribution;
  * determination R^2 and the standard deviation of the
  * estimates for the slope and y-intercept.
  */
-public class LinearRegression {
+public class LinearRegression implements Regression {
     private final double intercept;
     private final double slope;
 
@@ -117,7 +117,7 @@ public class LinearRegression {
         return r2;
     }
 
-    public double RPARAMUDAR() {
+    public double R() {
         return Math.sqrt(r2);
     }
 

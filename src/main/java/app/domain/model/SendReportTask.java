@@ -28,6 +28,8 @@ public class SendReportTask extends TimerTask implements Serializable {
     private double confidenceLevelEstimated;
     private String independentVariable;
     private String regression;
+    private String scope;
+    StringBuilderReport report;
 
     public SendReportTask() {
     }
@@ -60,10 +62,16 @@ public class SendReportTask extends TimerTask implements Serializable {
 
             if (linearRegressionNumberTest.getR2() > linearRegressionMeanAge.getR2()) {
                 linearRegressionChosen = linearRegressionNumberTest;
+                this.report = new StringBuilderReport(linearRegressionChosen);
+                report.setvalues(positiveCovidTestsPerDayInsideTheHistoricalInterval,positiveCovidTestsPerDayInsideTheDateInterval,historicalDays);
             } else {
                 linearRegressionChosen = linearRegressionMeanAge;
+                this.report = new StringBuilderReport(linearRegressionChosen);
+                report.setvalues(ages,positiveCovidTestsPerDayInsideTheDateInterval,historicalDays);
+
             }
-            Report2NHS.writeUsingFileWriter("data");
+
+            Report2NHS.writeUsingFileWriter(report.getSb().toString());
             log();
 
 
@@ -97,12 +105,13 @@ public class SendReportTask extends TimerTask implements Serializable {
         this.confidenceLevelVariables = Double.parseDouble(prop.getProperty("significance.level.coefficient"));
         this.confidenceLevelEstimated = Double.parseDouble(prop.getProperty("significance.level.estimated"));
         this.regression = prop.getProperty("type.regression");
+        this.scope = prop.getProperty("report.scope");
 
     }
 
 
     private void log(){
-        Logger logger = Logger.getLogger("MyLog");
+        Logger logger = Logger.getLogger("Logger");
         FileHandler fh;
 
         try {
@@ -113,7 +122,7 @@ public class SendReportTask extends TimerTask implements Serializable {
             formatter = new SimpleFormatter();
             fh.setFormatter(formatter);
             logger.setUseParentHandlers(false);
-            logger.info("Report sent to NHS");
+            logger.info("Report sent to NHS\n");
 
         } catch (SecurityException | IOException e) {
             System.out.println(e.getMessage());

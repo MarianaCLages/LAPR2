@@ -7,7 +7,7 @@ import org.apache.commons.math3.distribution.FDistribution;
 import org.apache.commons.math3.distribution.TDistribution;
 
 
-public class MultiLinearRegression {
+public class MultiLinearRegression implements Regression {
     private double[][] C;
     private double F0;
     private double intercept;
@@ -361,7 +361,7 @@ public class MultiLinearRegression {
 
         return getEstimate(x0) + critTD * Math.sqrt(variance * (1 + xtcx));
 
-    }
+   }
 
     public double getTestStatistics(int index) {
         return this.betta[index] / Math.sqrt(this.MQe * this.C[index][index]);
@@ -369,6 +369,11 @@ public class MultiLinearRegression {
 
     public double getR2() {
         return r2;
+    }
+
+    @Override
+    public double getR() {
+       return Math.sqrt(this.r2);
     }
 
     public double getR2Ajusted() {
