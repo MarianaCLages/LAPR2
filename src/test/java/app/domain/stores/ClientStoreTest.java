@@ -1,15 +1,12 @@
 package app.domain.stores;
 
-import app.controller.App;
 import app.domain.model.Client;
-import app.domain.model.Company;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -157,30 +154,67 @@ public class ClientStoreTest {
     }
 
     @Test
-    public void orderClientListByTin() {
-        ClientStore store = new ClientStore();
-        List<Client> array = store.returnClientList();
+    public void orderClientListByTin() throws ParseException {
+        String dateStr = "21/07/2002";
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = dateFormat.parse(dateStr);
 
-        List<Client> orderedListTin = new ArrayList<>(array);
-        orderedListTin.sort(Comparator.comparing(Client::getTinNumber));
+        ClientStore clientStore = new ClientStore();
+        List<Client> clientList = clientStore.returnClientList();
+        List<Client> orderedListTIN = new ArrayList<>(clientList);
 
-        List<Client> actual = store.orderClientListByTin();
+        clientStore.createClient("12345678901", "1234567890123456", "1234567890", "1234567890", date, 'M', "ze@ze.com", "Zé");
+        clientStore.saveClient();
 
-        Assert.assertEquals(actual, orderedListTin);
+        clientStore.createClient( "12345678903", "1234567891123456", "1234567891", "1234567891", date, 'M', "alberto@alberto.com", "Alberto");
+        clientStore.saveClient();
+
+        clientStore.createClient("12345678902", "1234565891123456", "1234567893", "2234567890", date, 'F', "maria@maria.com", "Maria");
+        clientStore.saveClient();
+
+        Client client1 = new Client("12345678901", "1234567890123456", "1234567890", "1234567890", date, 'M', "ze@ze.com", "Zé");
+        Client client2 = new Client("12345678903", "1234567891123456", "1234567891", "1234567891", date, 'M', "alberto@alberto.com", "Alberto");
+        Client client3 = new Client("12345678902", "1234565891123456", "1234567893", "2234567890", date, 'F', "maria@maria.com", "Maria");
+
+        orderedListTIN.add(client1);
+        orderedListTIN.add(client2);
+        orderedListTIN.add(client3);
+
+        Assert.assertEquals(orderedListTIN.get(0).getTinNumber(), clientStore.orderClientListByTin().get(0).getTinNumber());
+        Assert.assertEquals(orderedListTIN.get(1).getTinNumber(), clientStore.orderClientListByTin().get(1).getTinNumber());
+        Assert.assertEquals(orderedListTIN.get(2).getTinNumber(), clientStore.orderClientListByTin().get(2).getTinNumber());
     }
 
 
     @Test
-    public void orderClientListByName() {
-        ClientStore store = new ClientStore();
-        List<Client> array = store.returnClientList();
+    public void orderClientListByName() throws ParseException {
+        String dateStr = "21/07/2002";
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = dateFormat.parse(dateStr);
 
-        List<Client> orderedListName = new ArrayList<>(array);
-        orderedListName.sort(Comparator.comparing(Client::getName));
+        ClientStore clientStore = new ClientStore();
+        List<Client> clientList = clientStore.returnClientList();
+        List<Client> orderedListName = new ArrayList<>(clientList);
 
-        List<Client> actual = store.orderClientListByName();
+        clientStore.createClient("12345678901", "1234567890123456", "1234567890", "1234567890", date, 'M', "ze@ze.com", "Zé");
+        clientStore.saveClient();
 
-        Assert.assertEquals(actual, orderedListName);
+        clientStore.createClient( "12345678903", "1234567891123456", "1234567891", "1234567891", date, 'M', "alberto@alberto.com", "Alberto");
+        clientStore.saveClient();
+
+        clientStore.createClient("12345678902", "1234565891123456", "1234567893", "2234567890", date, 'F', "maria@maria.com", "Maria");
+        clientStore.saveClient();
+
+        Client client1 = new Client("12345678903", "1234567891123456", "1234567891", "1234567891", date, 'M', "alberto@alberto.com", "Alberto");
+        Client client2 = new Client("12345678902", "1234565891123456", "1234567893", "2234567890", date, 'F', "maria@maria.com", "Maria");
+        Client client3 = new Client("12345678901", "1234567890123456", "1234567890", "1234567890", date, 'M', "ze@ze.com", "Zé");
+
+        orderedListName.add(client1);
+        orderedListName.add(client2);
+        orderedListName.add(client3);
+
+        Assert.assertEquals(orderedListName.get(0).getName(), clientStore.orderClientListByName().get(0).getName());
+        Assert.assertEquals(orderedListName.get(1).getName(), clientStore.orderClientListByName().get(1).getName());
+        Assert.assertEquals(orderedListName.get(2).getName(), clientStore.orderClientListByName().get(2).getName());
     }
-
 }
