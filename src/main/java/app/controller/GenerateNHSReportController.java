@@ -6,6 +6,7 @@ import app.domain.shared.MultiLinearRegression;
 import app.domain.shared.exceptions.*;
 import app.domain.stores.TestStore;
 import app.ui.gui.Alerts;
+import com.nhs.report.Report2NHS;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -112,6 +113,7 @@ public class GenerateNHSReportController {
         }
 
         this.sb = this.stringBuilderReport.printCovidTestsPerInterval(company.getData().getSelection());
+        Report2NHS.writeUsingFileWriter(stringBuilderReport.getSb().toString());
 
     }
 
@@ -127,10 +129,11 @@ public class GenerateNHSReportController {
 
         this.sb = stringBuilderReport.stringConstructionLinearRegression();
         this.sb = this.stringBuilderReport.printCovidTestsPerInterval(company.getData().getSelection());
+        Report2NHS.writeUsingFileWriter(stringBuilderReport.getSb().toString());
 
     }
 
-    public void setInformation(LocalDate start, LocalDate end, String historicalDays, String icAnova, String selection, String icVariables, String icEstimated) throws DateEmptyException, DateInvalidException, HistoricalDaysInvalidException, HistoricalDaysEmptyException, ConfidenceLevelInvalidException {
+    public void setInformation(LocalDate start, LocalDate end, String historicalDays, String icAnova, String selection, String icVariables, String icEstimated) throws DateInvalidException, HistoricalDaysInvalidException, HistoricalDaysEmptyException, ConfidenceLevelInvalidException {
 
         data.setIntervalDates(this.testStore.getIntervalDate(start, end));
         data.setHistoricalDays(historicalDays);

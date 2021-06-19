@@ -13,6 +13,7 @@ import javafx.scene.control.*;
 
 import java.net.URL;
 import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.ResourceBundle;
 
 public class GenerateNHSReportUI implements Initializable {
@@ -46,8 +47,8 @@ public class GenerateNHSReportUI implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String[] choices = {Constants.SIMPLE_LINEAR_REGRESSION, Constants.MULTI_LINEAR_REGRESSION};
         myChoiceBoxNHS.getItems().addAll(choices);
-        String[] choicesForReport = {"Day", "Week", "Month"};
-        myChoiceBoxNHS2.getItems().addAll(choicesForReport);
+        String[] information = {Constants.DAY, Constants.WEEK, Constants.MONTH};
+        myChoiceBoxNHS2.getItems().addAll(information);
     }
 
     public void returnToAdminMenu(ActionEvent event) {
@@ -59,11 +60,7 @@ public class GenerateNHSReportUI implements Initializable {
 
         try {
 
-            if (Period.between(ctrl.getStartDate(myTextFieldNHS.getText()), myDatePicker1.getValue()).getDays() < 0) {
-                throw new InvalidIntervalOfDatesStartException();
-            }
-
-            if (Period.between(myDatePicker2.getValue(), ctrl.getTodayDate()).getDays() < 0) {
+            if ((int) ChronoUnit.DAYS.between(myDatePicker2.getValue(), ctrl.getTodayDate()) < 0) {
                 throw new InvalidIntervalOfDatesEndException();
             }
 
@@ -74,7 +71,7 @@ public class GenerateNHSReportUI implements Initializable {
             setInformation();
             changeScene(event);
 
-        } catch (ConfidenceLevelInvalidException | InvalidIntervalOfDatesEndException | InvalidIntervalOfDatesStartException | HistoricalDaysEmptyException | DateEmptyException | DateInvalidException | ConfidenceLevelICEmptyException | ChoiceBoxEmptyException | HistoricalDaysInvalidException err1) {
+        } catch (ConfidenceLevelInvalidException | InvalidIntervalOfDatesEndException | HistoricalDaysEmptyException | DateInvalidException | ConfidenceLevelICEmptyException | ChoiceBoxEmptyException | HistoricalDaysInvalidException err1) {
             Alerts.errorAlert(err1.getMessage());
         } catch (RuntimeException err2) {
             Alerts.errorAlert(Constants.ERROR_BLANK_CONTAINERS);
@@ -82,7 +79,7 @@ public class GenerateNHSReportUI implements Initializable {
 
     }
 
-    private void setInformation() throws DateEmptyException, DateInvalidException, HistoricalDaysInvalidException, HistoricalDaysEmptyException, ConfidenceLevelICEmptyException, ConfidenceLevelInvalidException {
+    private void setInformation() throws DateInvalidException, HistoricalDaysInvalidException, HistoricalDaysEmptyException, ConfidenceLevelICEmptyException, ConfidenceLevelInvalidException {
 
         this.ctrl.setInformation(myDatePicker1.getValue(), myDatePicker2.getValue(), myTextFieldNHS.getText(), myTextFieldNHSIC1.getText(), myChoiceBoxNHS2.getValue(), myTextFieldNHSIC2.getText(), myTextFieldNHSIC3.getText());
 

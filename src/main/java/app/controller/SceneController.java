@@ -19,6 +19,12 @@ public class SceneController {
     private AuthController authController = new AuthController();
     private App app = App.getInstance();
     private Company company = app.getCompany();
+
+    public CheckPerformanceController getCtrl() {
+        return ctrl;
+    }
+
+    private final CheckPerformanceController ctrl = new CheckPerformanceController();
     private Runnable ui;
 
     public static SceneController getInstance() {

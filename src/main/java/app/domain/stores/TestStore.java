@@ -172,22 +172,18 @@ public class TestStore implements Serializable {
 
 
     public List<Test> sortDate(String clientTin) {
-        Comparator<Test> comparator1 = new Comparator<Test>() {
-            @Override
-            public int compare(Test o1, Test o2) {
-                LocalDateTime d1 = o1.getDate();
-                Date date1 = java.util.Date.from(d1.atZone(ZoneId.systemDefault()).toInstant());
-                LocalDateTime d2 = o2.getDate();
-                Date date2 = java.util.Date.from(d2.atZone(ZoneId.systemDefault()).toInstant());
+        Comparator<Test> comparator1 = (o1, o2) -> {
+            LocalDateTime d1 = o1.getDate();
+            Date date1 = Date.from(d1.atZone(ZoneId.systemDefault()).toInstant());
+            LocalDateTime d2 = o2.getDate();
+            Date date2 = Date.from(d2.atZone(ZoneId.systemDefault()).toInstant());
 
-                if (date1.before(date2)) {
-                    return 1;
-                } else if (date1.after(date2)) {
-                    return -1;
-                } else {
-                    return 0;
-                }
-
+            if (date1.before(date2)) {
+                return 1;
+            } else if (date1.after(date2)) {
+                return -1;
+            } else {
+                return 0;
             }
 
         };
@@ -336,8 +332,31 @@ public class TestStore implements Serializable {
         for (Test test : array) {
             System.out.println(test.toString());
         }
-        return null;
+        return "";
     }
+
+    public List<Test> getWaitingResult() {
+        List<Test> testList = new ArrayList<>();
+        for (Test t : array) {
+            if (t.getState().equals("SAMPLE_COLLECTED") || t.getState().equals("CREATED")) {
+                testList.add(t);
+            }
+
+        }
+        return testList;
+    }
+
+    public List<Test> getWaitingDiagnosis() {
+        List<Test> testList = new ArrayList<>();
+        for (Test t : array) {
+            if (t.getState().equals("SAMPLE_COLLECTED") || t.getState().equals("CREATED") || t.getState().equals("SAMPLE_ANALYSED")) {
+                testList.add(t);
+            }
+
+        }
+        return testList;
+    }
+
 
     public List<Test> getPositiveCovidTest() {
 
@@ -637,17 +656,49 @@ public class TestStore implements Serializable {
         List<Test> validCovidTests = getValidatedTestsListCovid();
         List<Test> covidTestsInterval = new ArrayList<>();
 
-        for (Test t : validCovidTests) {
-            LocalDate testDate = t.getValidatedDate().toLocalDate();
+        for (Test test : validCovidTests) {
+            LocalDate testDate = test.getValidatedDate().toLocalDate();
 
             if (Period.between(beginDate, testDate).getDays() >= 0 && Period.between(testDate, todayDate).getDays() >= 0) {
-                covidTestsInterval.add(t);
+                covidTestsInterval.add(test);
             }
         }
 
         return covidTestsInterval;
+    }
+
+    public int getAllTestsInAInterval(int inter) {
+
+        int sum = 0;
+
+        for (int i = 0; i < inter; i++) {
+
+            inter -= 1;
+
+            Calendar calendar = getDayForTests(inter);
+            Date toDate2 = calendar.getTime();
+            LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
+            if ((calendar.get(Calendar.DAY_OF_WEEK) != 1)) {
+                for (Test t : getTestListArray()) {
+                    if (t.getValidatedDate().toLocalDate().equals(currentDay) || t.getDate().toLocalDate().equals(currentDay) || t.getDiagnosticDate().toLocalDate().equals(currentDay) || t.getSampleCreatedDate().toLocalDate().equals(currentDay) || t.getAnalysedDate().toLocalDate().equals(currentDay)) {
+                        sum += 1;
+                    }
+                }
+            }
+        }
+
+
+        return sum;
 
     }
 
+    public Calendar getDayForTests(int inter) {
+
+        Calendar cal2 = Calendar.getInstance();
+        cal2.add(Calendar.DATE, -inter);
+
+        return cal2;
+    }
 
 }

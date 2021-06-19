@@ -4,6 +4,7 @@ import app.domain.shared.Constants;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,7 @@ public class Test implements Serializable {
     private final TestType testType;
     private final List<ParameterCategory> catList;
     private final List<Parameter> paList;
-
+    Report rep;
 
     private LocalDateTime createdDate;
     private State state;
@@ -25,7 +26,6 @@ public class Test implements Serializable {
     private LocalDateTime analysedData;
     private LocalDateTime diagnosticDate;
     private LocalDateTime validatedDate;
-    private Report rep;
 
     /**
      * Constructor of the Test object, it call methods on order to validate the NhsNumber, the list of categories and the list of parameters
@@ -271,9 +271,9 @@ public class Test implements Serializable {
      * @return boolean represents the success of the operation
      */
     public boolean createReport(String diagnosis) {
-        this.rep = new Report(this.testCode, diagnosis);
+        rep = new Report(this.testCode, diagnosis);
 
-        return this.rep != null;
+        return rep != null;
     }
 
     /**
@@ -324,6 +324,10 @@ public class Test implements Serializable {
 
     public LocalDateTime getDiagnosticDate() {
         return diagnosticDate;
+    }
+
+    public LocalDateTime getAnalysedDate() {
+        return analysedData;
     }
 
     /**

@@ -49,7 +49,7 @@ public class Data implements Serializable {
         this.historicalDays = historicalDays;
     }
 
-    public void setIntervalDates(int date) throws DateEmptyException, DateInvalidException {
+    public void setIntervalDates(int date) throws DateInvalidException {
         checkIntervalDates(date);
         this.date = date;
     }
@@ -75,11 +75,7 @@ public class Data implements Serializable {
 
     }
 
-    private void checkIntervalDates(long date) throws DateEmptyException, DateInvalidException {
-
-        if (date == 0) {
-            throw new DateEmptyException();
-        }
+    private void checkIntervalDates(long date) throws DateInvalidException {
 
         if (date < 0) {
             throw new DateInvalidException();
