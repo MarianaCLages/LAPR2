@@ -21,5 +21,3 @@ e
 5src/main/java/app/domain/shared/LinearRegression.java,b\5\b5738a1e3a1c85790cbe245760fdbfe6e77be206
 j
 :src/main/java/app/domain/shared/MultiLinearRegression.java,5\1\51ac4d2fa961af5b859a17a30045d1b297b297c4
-m
-=src/main/java/app/controller/GenerateNHSReportController.java,3\b\3bab230b12c42ad13260f547c26d1ac821b6e53d
