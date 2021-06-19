@@ -41,16 +41,52 @@ public class GenerateNHSReportController {
 
     private void setData() {
 
+        Calendar cal2 = Calendar.getInstance();
+        cal2.add(Calendar.DATE, -company.getData().getHistoricalDaysInt());
+        Date toDate2 = cal2.getTime();
+
+        LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(); //Date de começo do intervalo (dia de hj - historical days)
+
+
         List<Client> clientsWithTests = this.testStore.getClientsWithTests(company.getClientArrayList());
 
         this.agesInsideTheHistoricalDays = this.testStore.getClientAge(clientsWithTests, this.company.getData().getHistoricalDaysInt());
         this.agesInsideTheDateInterval = this.testStore.getClientAgeInsideTheInterval(clientsWithTests, this.company.getData().getDifferenceInDates() + 1, this.company.getData().getIntervalStartDate());
 
-        this.covidTestsPerDayInsideTheHistoricalDays = this.testStore.getCovidTestsPerDayIntoArray(this.company.getData().getHistoricalDaysInt());
+        this.covidTestsPerDayInsideTheHistoricalDays = this.testStore.getCovidTestsPerDayIntoArrayInsideInterval(company.getData().getHistoricalDaysInt()+1,currentDay);
         this.covidTestsPerDayInsideTheIntervalOfDates = this.testStore.getCovidTestsPerDayIntoArrayInsideInterval(this.company.getData().getDifferenceInDates() + 1, this.company.getData().getIntervalStartDate());
 
         this.positiveCovidTestsPerDayInsideTheHistoricalInterval = this.testStore.getCovidTestsPerDayIntoArray(this.company.getData().getHistoricalDaysInt());
         this.positiveCovidTestsPerDayInsideTheDateInterval = this.testStore.getPositiveCovidTestsPerDayIntoArrayInsideInterval(this.company.getData().getDifferenceInDates() + 1, this.company.getData().getIntervalStartDate());
+
+
+        System.out.println("Testes positivos nos historical days");
+        int sum=0;
+        for(double xi : positiveCovidTestsPerDayInsideTheHistoricalInterval){
+            sum+=xi;
+        }
+        System.out.println(sum);
+
+        System.out.println("Testes positivos no intervalo de datas");
+        int sum2=0;
+        for(double xi : positiveCovidTestsPerDayInsideTheHistoricalInterval){
+            sum2+=xi;
+        }
+        System.out.println(sum2);
+
+        System.out.println("Testes nos historical days");
+        int sum3=0;
+        for(double xi : covidTestsPerDayInsideTheHistoricalDays){
+            sum3+=xi;
+        }
+        System.out.println(sum3);
+
+        System.out.println("Testes nos historical days");
+        int sum4=0;
+        for(double xi : covidTestsPerDayInsideTheIntervalOfDates){
+            sum4+=xi;
+        }
+        System.out.println(sum4);
 
     }
 
@@ -166,4 +202,7 @@ public class GenerateNHSReportController {
         return LocalDate.now();
     }
 
+    public Company getCompany() {
+        return company;
+    }
 }

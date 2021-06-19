@@ -201,7 +201,7 @@ public class ImportTests {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
-        t.changeState("SAMPLE_COLLECTED");
+        t.changeState(Test.State.SAMPLE_COLLECTED);
 
 
         if (!(metadata[13].equalsIgnoreCase("NA"))) {
@@ -268,10 +268,3 @@ public class ImportTests {
         return true;
     }
 }
-
-
-
-
-
-
-

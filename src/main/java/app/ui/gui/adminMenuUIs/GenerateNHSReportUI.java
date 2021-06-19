@@ -17,8 +17,8 @@ import java.util.ResourceBundle;
 
 public class GenerateNHSReportUI implements Initializable {
 
-    private SceneController sceneController;
-    private GenerateNHSReportController ctrl;
+    private SceneController sceneController = SceneController.getInstance();
+    private GenerateNHSReportController ctrl = new GenerateNHSReportController();
 
     @FXML
     private Button myReturnButtonNHS;
@@ -44,15 +44,13 @@ public class GenerateNHSReportUI implements Initializable {
     private TextField myTextFieldNHSIC3;
 
     public GenerateNHSReportUI() {
-        this.sceneController = SceneController.getInstance();
-        this.ctrl = sceneController.getCtrl();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String[] choices = {Constants.SIMPLE_LINEAR_REGRESSION, Constants.MULTI_LINEAR_REGRESSION};
         myChoiceBoxNHS.getItems().addAll(choices);
-        String[] choicesForReport ={"Day","Week","Month"};
+        String[] choicesForReport = {"Day", "Week", "Month"};
         myChoiceBoxNHS2.getItems().addAll(choicesForReport);
     }
 
@@ -91,7 +89,7 @@ public class GenerateNHSReportUI implements Initializable {
 
     private void setInformation() throws DateEmptyException, DateInvalidException, HistoricalDaysInvalidException, HistoricalDaysEmptyException, ConfidenceLevelICEmptyException, ConfidenceLevelInvalidException {
 
-        this.ctrl.setInformation(myDatePicker1.getValue(),myDatePicker2.getValue(),myTextFieldNHS.getText(),myTextFieldNHSIC1.getText(),myChoiceBoxNHS2.getValue(),myTextFieldNHSIC2.getText(),myTextFieldNHSIC3.getText());
+        this.ctrl.setInformation(myDatePicker1.getValue(), myDatePicker2.getValue(), myTextFieldNHS.getText(), myTextFieldNHSIC1.getText(), myChoiceBoxNHS2.getValue(), myTextFieldNHSIC2.getText(), myTextFieldNHSIC3.getText());
 
     }
 

@@ -19,7 +19,6 @@ public class SceneController {
     private AuthController authController = new AuthController();
     private App app = App.getInstance();
     private Company company = app.getCompany();
-    private GenerateNHSReportController ctrl = new GenerateNHSReportController();
 
     public static SceneController getInstance() {
 
@@ -68,7 +67,4 @@ public class SceneController {
         return company;
     }
 
-    public GenerateNHSReportController getCtrl() {
-        return ctrl;
-    }
 }

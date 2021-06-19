@@ -63,13 +63,19 @@ public class App {
 
 
         // Read configured values
+        InputStream in = null;
         try {
-            InputStream in = new FileInputStream(Constants.PARAMS_FILENAME);
-            props.load(in);
-            in.close();
+             in = new FileInputStream(Constants.PARAMS_FILENAME);
+             props.load(in);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
 
+        } finally {
+            try{
+                in.close();
+            } catch (IOException err){
+
+            }
         }
 
         return props;

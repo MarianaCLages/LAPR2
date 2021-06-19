@@ -6,6 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.temporal.ChronoUnit;
 
 public class Data implements Serializable {
 
@@ -130,7 +131,7 @@ public class Data implements Serializable {
 
     public int getDifferenceInDates() {
 
-        return Period.between(this.intervalStartDate, this.intervalEndDate).getDays();
+        return (int) ChronoUnit.DAYS.between(this.intervalStartDate, this.intervalEndDate);
 
     }
 

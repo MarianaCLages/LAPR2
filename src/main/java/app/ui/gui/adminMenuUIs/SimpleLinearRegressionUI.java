@@ -24,7 +24,7 @@ public class SimpleLinearRegressionUI implements Initializable {
 
     private SceneController sceneController = SceneController.getInstance();
     private App app = sceneController.getApp();
-    private GenerateNHSReportController ctrl = SceneController.getInstance().getCtrl();
+    private GenerateNHSReportController ctrl = new GenerateNHSReportController();
 
     public void returnToGenerateNHSReport(ActionEvent event) {
         app.doLogout();

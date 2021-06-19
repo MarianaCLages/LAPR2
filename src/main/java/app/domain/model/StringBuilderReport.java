@@ -302,7 +302,7 @@ public class StringBuilderReport {
         Date toDate2 = cal2.getTime();
 
         return toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-        
+
     }
 
     public StringBuilder printCovidTestsPerInterval(String selection) {
