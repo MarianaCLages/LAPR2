@@ -2,8 +2,12 @@ package app.ui.gui.employees;
 
 
 import app.controller.App;
+import app.domain.model.Employee;
+import app.domain.model.Test;
 import app.domain.shared.Constants;
 import app.controller.SceneController;
+import app.ui.console.*;
+import app.ui.gui.adminMenuUIs.EmployeeUI;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -12,7 +16,7 @@ public class AdministratorUI {
 
     private final SceneController sceneController = SceneController.getInstance();
     private final App app = sceneController.getApp();
-
+    private Runnable ui = sceneController.getUi();
 
     public void returnToMenu(ActionEvent event) {
         app.doLogout();
@@ -20,23 +24,28 @@ public class AdministratorUI {
     }
 
     public void goToTestTypeUI(ActionEvent event) {
-        sceneController.switchMenu(event, Constants.TEST_TYPE_UI);
+        this.ui = new TestTypeUI();
+        ui.run();
     }
 
     public void goToParameterCategoryUI(ActionEvent event) {
-        sceneController.switchMenu(event, Constants.PARAMETER_CATEGORY_UI);
+        this.ui = new ParameterCategoryUI();
+        ui.run();
     }
 
     public void goToParameterUI(ActionEvent event) {
-        sceneController.switchMenu(event, Constants.PARAMETER_UI);
+        this.ui = new ParameterUI();
+        ui.run();
     }
 
     public void goToEmployeeUI(ActionEvent event) {
-        sceneController.switchMenu(event, Constants.EMPLOYEE_UI);
+        this.ui = new RegisterEmployeeUI();
+        ui.run();
     }
 
     public void goToClinicalAnalysisLaboratoryUI(ActionEvent event) {
-        sceneController.switchMenu(event, Constants.CLINICAL_ANALYSIS_LABORATORY_UI);
+        this.ui = new ClinicalAnalysisLabUI();
+        ui.run();
     }
 
     public void goToGenerateNHSReportUI(ActionEvent event) {

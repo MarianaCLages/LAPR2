@@ -12,16 +12,12 @@ public class ParameterCategoryUI {
 
     private final SceneController sceneController = SceneController.getInstance();
     private final App app = sceneController.getApp();
+    private Runnable ui;
 
 
     public void returnToAdminMenu(ActionEvent event) {
         app.doLogout();
         sceneController.switchMenu(event, Constants.ADMINISTRATOR_UI);
-    }
-
-    public void runUI() {
-        ParameterCategoryUI ui = new ParameterCategoryUI();
-
     }
 
 }
