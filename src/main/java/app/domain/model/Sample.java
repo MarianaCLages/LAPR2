@@ -13,7 +13,7 @@ public class Sample implements Serializable {
     /**
      * Constructor of the Sample, it calls methods in order to validate the parameters
      *
-     * @param testID id of the test
+     * @param testID  id of the test
      * @param barcode unique number which is an attribute of the sample
      */
     public Sample(String testID, String barcode) {
@@ -47,7 +47,6 @@ public class Sample implements Serializable {
     }
 
     /**
-     *
      * @return a string with the Barcode
      */
     public String getBarcode() {

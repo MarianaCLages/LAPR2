@@ -28,8 +28,6 @@ public class ImportTestUI implements Initializable {
     @FXML
     private ListView<String> ListView;
 
-    public ImportTestUI() throws IOException {
-    }
     private SceneController sceneController = SceneController.getInstance();
 
     @Override
@@ -40,7 +38,7 @@ public class ImportTestUI implements Initializable {
 
     public void confirm() {
         FileChooser chooser = new FileChooser();
-        chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("CSV files","*.csv"));
+        chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("CSV files", "*.csv"));
         File f = chooser.showOpenDialog(null);
 
 

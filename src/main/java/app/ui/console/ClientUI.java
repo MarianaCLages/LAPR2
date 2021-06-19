@@ -7,23 +7,23 @@ import java.util.List;
 
 public class ClientUI implements Runnable {
 
-    public ClientUI (){
-            //UI constructor
-        }
-
-        public void run() {
-            List<MenuItem> options = new ArrayList<MenuItem>();
-            options.add(new MenuItem("Update Client Data", new ClientUpdateUI()));
-            
-            int option = 0;
-            do {
-                option = Utils.showAndSelectIndex(options, "\n\nClient Menu:");
-
-                if ((option >= 0) && (option < options.size())) {
-                    options.get(option).run();
-                }
-            }
-            while (option != -1);
-        }
+    public ClientUI() {
+        //UI constructor
     }
+
+    public void run() {
+        List<MenuItem> options = new ArrayList<MenuItem>();
+        options.add(new MenuItem("Update Client Data", new ClientUpdateUI()));
+
+        int option = 0;
+        do {
+            option = Utils.showAndSelectIndex(options, "\n\nClient Menu:");
+
+            if ((option >= 0) && (option < options.size())) {
+                options.get(option).run();
+            }
+        }
+        while (option != -1);
+    }
+}
 

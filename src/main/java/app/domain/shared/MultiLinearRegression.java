@@ -22,6 +22,7 @@ public class MultiLinearRegression implements Regression {
     private double[] y;
     private int n;
     private int k;
+
     public MultiLinearRegression(double[][] x, double[] y) {
 
         if (x.length != y.length) {
@@ -192,7 +193,7 @@ public class MultiLinearRegression implements Regression {
         return F0;
     }
 
-   public double getCriticValueStudent(double alpha) {
+    public double getCriticValueStudent(double alpha) {
         TDistribution td = new TDistribution(this.n - this.k - 1);
 
         return td.inverseCumulativeProbability(1 - alpha);
@@ -291,7 +292,7 @@ public class MultiLinearRegression implements Regression {
         return yEstimated;
     }
 
-   public double lowerLimitAnswer(double[] x0,double alpha) throws InvalidLengthException {
+    public double lowerLimitAnswer(double[] x0, double alpha) throws InvalidLengthException {
         if (x0.length != this.betta.length - 1) {
             throw new InvalidLengthException();
         }
@@ -326,7 +327,7 @@ public class MultiLinearRegression implements Regression {
 
     }
 
-   public double upperLimitAnswer(double[] x0,double alpha) throws InvalidLengthException {
+    public double upperLimitAnswer(double[] x0, double alpha) throws InvalidLengthException {
         if (x0.length != this.betta.length - 1) {
             throw new InvalidLengthException();
         }
@@ -358,7 +359,7 @@ public class MultiLinearRegression implements Regression {
 
         return getEstimate(x0) + critTD * Math.sqrt(variance * (1 + xtcx));
 
-   }
+    }
 
     public double getTestStatistics(int index) {
         return this.betta[index] / Math.sqrt(this.MQe * this.C[index][index]);
@@ -370,7 +371,7 @@ public class MultiLinearRegression implements Regression {
 
     @Override
     public double getR() {
-       return Math.sqrt(this.r2);
+        return Math.sqrt(this.r2);
     }
 
     public double getR2Ajusted() {
@@ -396,9 +397,11 @@ public class MultiLinearRegression implements Regression {
     public double getMQe() {
         return MQe;
     }
+
     public int getN() {
         return n;
     }
+
     public int getK() {
         return k;
     }

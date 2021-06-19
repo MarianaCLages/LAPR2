@@ -116,7 +116,7 @@ public class SendReportTask extends TimerTask implements Serializable {
             try {
                 this.report.stringConstructionMultiLinearRegression();
             } catch (InvalidLengthException e) {
-               Alerts.errorAlert(e.getMessage());
+                Alerts.errorAlert(e.getMessage());
             }
             Report2NHS.writeUsingFileWriter(report.getSb().toString());
             log();
@@ -141,13 +141,13 @@ public class SendReportTask extends TimerTask implements Serializable {
     }
 
 
-    private void log(){
+    private void log() {
         Logger logger = Logger.getLogger("Logger");
         FileHandler fh;
 
         try {
 
-            fh = new FileHandler("log.log",true);
+            fh = new FileHandler("log.log", true);
             logger.addHandler(fh);
             SimpleFormatter formatter;
             formatter = new SimpleFormatter();

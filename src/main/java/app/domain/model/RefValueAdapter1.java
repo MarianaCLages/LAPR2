@@ -5,7 +5,7 @@ import com.example3.CovidReferenceValues1API;
 
 import java.io.Serializable;
 
-public class RefValueAdapter1 implements RefValueAdapter , Serializable {
+public class RefValueAdapter1 implements RefValueAdapter, Serializable {
     CovidReferenceValues1API api;
 
     /**

@@ -5,7 +5,7 @@ import com.example1.ExternalModule3API;
 
 import java.io.Serializable;
 
-public class RefValueAdapter3 implements RefValueAdapter , Serializable {
+public class RefValueAdapter3 implements RefValueAdapter, Serializable {
     ExternalModule3API api;
 
     /**

@@ -40,7 +40,7 @@ public class App {
             this.authFacade = this.company.getAuthFacade();
             bootstrap();
         }
-       // company.saveCompany();
+        // company.saveCompany();
 
         this.authFacade = this.company.getAuthFacade();
 
@@ -65,15 +65,15 @@ public class App {
         // Read configured values
         InputStream in = null;
         try {
-             in = new FileInputStream(Constants.PARAMS_FILENAME);
-             props.load(in);
+            in = new FileInputStream(Constants.PARAMS_FILENAME);
+            props.load(in);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
 
         } finally {
-            try{
+            try {
                 in.close();
-            } catch (IOException err){
+            } catch (IOException err) {
 
             }
         }

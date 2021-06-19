@@ -49,7 +49,8 @@ public class RecordResultsController {
         return this.t.getResults();
 
     }
-    public void saveTest(){
+
+    public void saveTest() {
         t.changeState("SAMPLE_ANALYSED");
         company.saveCompany();
 

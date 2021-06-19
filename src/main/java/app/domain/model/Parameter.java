@@ -98,7 +98,6 @@ public class Parameter implements Serializable {
     }
 
     /**
-     *
      * @return short name that characterize the Parameter
      */
     public String getName() {
@@ -106,7 +105,6 @@ public class Parameter implements Serializable {
     }
 
     /**
-     *
      * @return category associated with the Parameter
      */
     public ParameterCategory getCat() {

@@ -19,7 +19,6 @@ public class ExternalApiBarcode implements BarcodeAdapter, Serializable {
         // constructor
     }
 
-
     public String createBarcode(String ID) throws BarcodeException {
         this.barcode = BarcodeFactory.createUPCA(ID);
         return barcode.getData();

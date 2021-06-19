@@ -18,7 +18,7 @@ public class Serialize {
             read = in.readObject();
             return read;
         } catch (IOException | ClassNotFoundException ex) {
-            throw new IOException("File dont exists");
+            throw new IOException("File doesn't exist!");
         }
 
 
@@ -29,7 +29,7 @@ public class Serialize {
             Properties props = App.getProperties();
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(stringFile));
             File dir = new File(props.getProperty("serialize.folder"));
-            if (!dir.exists()){
+            if (!dir.exists()) {
                 dir.mkdir();
             }
             try {

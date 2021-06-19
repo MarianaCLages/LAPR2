@@ -32,13 +32,12 @@ public class ValidateController {
         return tSt.add(store.getTestByCode(testID));
     }
 
-    public void validateListOfTests(List<Test> tSt){
-        for (Test test : tSt){
+    public void validateListOfTests(List<Test> tSt) {
+        for (Test test : tSt) {
             test.changeState("VALIDATED");
         }
         company.saveCompany();
     }
-
 
 
 }

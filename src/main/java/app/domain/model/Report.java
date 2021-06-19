@@ -17,7 +17,7 @@ public class Report implements Serializable {
     /**
      * Constructor of the Report, it calls methods in order to validate the parameters
      *
-     * @param testID id of the test
+     * @param testID    id of the test
      * @param diagnosis text contained in the report
      */
     public Report(String testID, String diagnosis) {
