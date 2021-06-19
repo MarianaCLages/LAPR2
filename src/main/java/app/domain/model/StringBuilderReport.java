@@ -115,10 +115,10 @@ public class StringBuilderReport {
                 .append("Significance model with Anova")
                 .append("H0: b=0  H1:b<>0 \n")
                 .append("\n")
-                .append("\t\t\t\t" + "df" + "\t\t\t\t\t" + "SS" + "\t\t\t\t\t\t\t" + "MS" + "\t\t\t\t\t\t" + "F" + "\n")
-                .append("Regression" + "\t\t").append(this.regressionMulti.getK()).append("\t\t\t\t\t").append(String.format("%.4f", this.regressionMulti.getSQr())).append("\t\t\t\t\t\t").append(String.format("%.4f", this.regressionMulti.getMQr()) + "\t\t\t" + this.regressionMulti.getF0() + "\n")
-                .append("Residual" + "\t\t").append(this.regressionMulti.getN() - (this.regressionMulti.getK() + 1)).append("\t\t\t\t\t").append(String.format("%.4f", this.regressionMulti.getSQe())).append("\t\t\t\t\t\t").append(String.format("%.4f", this.regressionMulti.getMQe()) + "\n")
-                .append("Total" + "\t\t\t").append(this.regressionMulti.getN() - 1).append("\t\t\t\t\t").append(String.format("%.4f", this.regressionMulti.getSQt()) + "\n");
+                .append("\t\t|\t\t" + "df" + "\t\t\t|\t\t" + "SS" + "\t\t\t|\t\t\t\t" + "MS" + "\t\t\t|\t\t\t" + "F" + "\n")
+                .append("Regression" + "\t|\t").append(this.regressionMulti.getK()).append("\t\t\t|\t\t").append(String.format("%.4f", this.regressionMulti.getSQr())).append("\t\t\t|\t\t\t").append(String.format("%.4f", this.regressionMulti.getMQr()) + "\t\t|\t" + this.regressionMulti.getF0() + "\n")
+                .append("Residual" + "\t|\t").append(this.regressionMulti.getN() - (this.regressionMulti.getK() + 1)).append("\t\t\t|\t\t").append(String.format("%.4f", this.regressionMulti.getSQe())).append("\t\t\t|\t\t\t").append(String.format("%.4f", this.regressionMulti.getMQe()) + "\n")
+                .append("Total" + "\t\t|\t").append(this.regressionMulti.getN() - 1).append("\t\t\t|\t\t").append(String.format("%.4f", this.regressionMulti.getSQt()) + "\n");
 
         sb.append("\n");
         System.out.println("anova: " + (1 - significanceLevelAnova));
@@ -212,10 +212,10 @@ public class StringBuilderReport {
                 .append("Significance model with Anova")
                 .append("H0: b=0  H1:b<>0 \n")
                 .append("\n")
-                .append("\t\t\t\t" + "df" + "\t\t\t\t\t" + "SS" + "\t\t\t\t\t\t\t" + "MS" + "\t\t\t\t\t\t" + "F" + "\n")
-                .append("Regression" + "\t\t").append(1).append("\t\t\t\t\t").append(String.format("%.4f", this.regressionSimple.getSr())).append("\t\t\t\t\t\t").append(String.format("%.4f", this.regressionSimple.getMsr()) + "\t\t\t" + this.regressionSimple.getF0() + "\n")
-                .append("Residual" + "\t\t").append(this.regressionSimple.getN() - 2).append("\t\t\t\t\t").append(String.format("%.4f", this.regressionSimple.getSe())).append("\t\t\t\t\t\t").append(String.format("%.4f", this.regressionSimple.getMse()) + "\n")
-                .append("Total" + "\t\t\t").append(this.regressionSimple.getN() - 1).append("\t\t\t\t\t").append(String.format("%.4f", this.regressionSimple.getSt()) + "\n");
+                .append("\t\t\t\t|" + "df" + "\t\t|\t\t\t" + "SS" + "\t\t\t\t|\t\t\t" + "MS" + "\t\t\t\t|\t\t" + "F" + "\n")
+                .append("Regression" + "\t|\t").append(1).append("\t\t\t|\t\t").append(String.format("%.4f", this.regressionSimple.getSr())).append("\t\t\t|\t\t\t").append(String.format("%.4f", this.regressionSimple.getMsr()) + "\t|\t\t" + this.regressionSimple.getF0() + "\n")
+                .append("Residual" + "\t|\t").append(this.regressionSimple.getN() - 2).append("\t\t\t|\t\t").append(String.format("%.4f", this.regressionSimple.getSe())).append("\t\t\t|\t\t\t").append(String.format("%.4f", this.regressionSimple.getMse()) + "\n")
+                .append("Total" + "\t\t|\t").append(this.regressionSimple.getN() - 1).append("\t\t\t|\t\t").append(String.format("%.4f", this.regressionSimple.getSt()) + "\n");
 
         sb.append("\n");
         System.out.println("anova: " + (1 - significanceLevelAnova));

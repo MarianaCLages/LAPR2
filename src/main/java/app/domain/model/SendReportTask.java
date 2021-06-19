@@ -73,7 +73,6 @@ public class SendReportTask extends TimerTask implements Serializable {
                 this.report.setConfidenceValues(confidenceLevelAnova, confidenceLevelVariables, confidenceLevelEstimated);
                 this.report.stringConstructionLinearRegression();
 
-
             } else {
                 linearRegressionChosen = linearRegressionMeanAge;
                 this.report = new StringBuilderReport(linearRegressionChosen);
@@ -81,7 +80,7 @@ public class SendReportTask extends TimerTask implements Serializable {
                 this.report.setConfidenceValues(confidenceLevelAnova, confidenceLevelVariables, confidenceLevelEstimated);
 
                 this.report.stringConstructionLinearRegression();
-
+                this.report.printCovidTestsPerInterval(this.scope);
 
             }
             System.out.println("a");

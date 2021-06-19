@@ -545,6 +545,22 @@ public class TestStore implements Serializable {
 
     }
 
+    public Object[] getTestsInsideDateInterval(LocalDate startDateInterval, LocalDate endDateInterval) {
+
+        List<Test> tests = new ArrayList<>();
+
+        for (Test t : array) {
+            LocalDate testDate = t.getDate().toLocalDate();
+
+            if (Period.between(startDateInterval, testDate).getDays() >= 0 && Period.between(testDate, endDateInterval).getDays() >= 0) {
+                tests.add(t);
+            }
+        }
+
+        return tests.toArray();
+
+    }
+
     public double[] getCovidTestsPerDayIntoArrayInsideInterval(int space, LocalDate startDateInterval) {
 
         double[] positiveCovidTestsPerDay = new double[space];
@@ -623,8 +639,5 @@ public class TestStore implements Serializable {
         return covidTestsInterval;
 
     }
-
-
-
 
 }
