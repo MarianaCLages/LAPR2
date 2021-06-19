@@ -119,13 +119,12 @@ public class SendReportTask extends TimerTask implements Serializable {
             }
             Report2NHS.writeUsingFileWriter(report.getSb().toString());
             log();
-
-
         }
-
-
     }
 
+    /**
+     * Gets the properties.
+     */
     private void getProps() {
         Properties prop = App.getProperties();
         this.beginningDate = LocalDate.parse(prop.getProperty("fit.date.beginning"));
@@ -139,7 +138,9 @@ public class SendReportTask extends TimerTask implements Serializable {
 
     }
 
-
+    /**
+     * Logs a message to the NHS.
+     */
     private void log() {
         Logger logger = Logger.getLogger("Logger");
         FileHandler fh;
@@ -157,11 +158,5 @@ public class SendReportTask extends TimerTask implements Serializable {
         } catch (SecurityException | IOException e) {
             Alerts.errorAlert(e.getMessage());
         }
-
-
     }
-
 }
-
-
-

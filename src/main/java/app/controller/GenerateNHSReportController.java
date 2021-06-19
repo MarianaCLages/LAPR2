@@ -28,10 +28,18 @@ public class GenerateNHSReportController {
 
     private StringBuilder sb = new StringBuilder();
 
+    /**
+     * Creates an empty NHS Report controller.
+     */
     public GenerateNHSReportController() {
         this(App.getInstance().getCompany());
     }
 
+    /**
+     * Constructor.
+     *
+     * @param company the company that administrates the system
+     */
     public GenerateNHSReportController(Company company) {
 
         this.company = company;
@@ -40,6 +48,9 @@ public class GenerateNHSReportController {
 
     }
 
+    /**
+     * Sets all the data.
+     */
     private void setData() {
 
         Calendar cal2 = Calendar.getInstance();
@@ -63,18 +74,27 @@ public class GenerateNHSReportController {
     }
 
 
+    /**
+     * Prints the linear regression values for mean age as independent variable.
+     */
     public void linearRegressionWithMeanAge() {
         setData();
 
         linearRegressionPrintValues(agesInsideTheDateInterval, positiveCovidTestsPerDayInsideTheDateInterval, positiveCovidTestsPerDayInsideTheHistoricalInterval, covidTestsPerDayInsideTheHistoricalDays);
     }
 
+    /**
+     * Prints the linear regression values for Covid-19 tests as independent variable.
+     */
     public void linearRegressionWithCovidTests() {
         setData();
 
         linearRegressionPrintValues(covidTestsPerDayInsideTheIntervalOfDates, positiveCovidTestsPerDayInsideTheDateInterval, positiveCovidTestsPerDayInsideTheHistoricalInterval, covidTestsPerDayInsideTheHistoricalDays);
     }
 
+    /**
+     * Does the multi linear regression.
+     */
     public void multiRegression() {
         setData();
 
@@ -95,6 +115,14 @@ public class GenerateNHSReportController {
 
     }
 
+    /**
+     * Prints the multi regression values.
+     *
+     * @param x    the x
+     * @param y    the y
+     * @param yObs the observed y
+     * @param xObs the observed x
+     */
     private void multiRegressionPrintValues(double[][] x, double[] y, double[] yObs, double[][] xObs) {
 
         MultiLinearRegression s = new MultiLinearRegression(x, y);
@@ -117,6 +145,14 @@ public class GenerateNHSReportController {
 
     }
 
+    /**
+     * Prints the linear regression values.
+     *
+     * @param x    the x array
+     * @param y    the y array
+     * @param yObs the observed y (array)
+     * @param xObs the observed x (array)
+     */
     private void linearRegressionPrintValues(double[] x, double[] y, double[] yObs, double[] xObs) {
 
         LinearRegression linearRegression = new LinearRegression(x, y);
@@ -133,6 +169,21 @@ public class GenerateNHSReportController {
 
     }
 
+    /**
+     * Sets the information.
+     *
+     * @param start          the beggining date
+     * @param end            the ending date
+     * @param historicalDays the number of historical days
+     * @param icAnova        the ANOVA's alpha (confidence level for the ANOVA table)
+     * @param selection      the selection for the report generation time
+     * @param icVariables    the confidence level values
+     * @param icEstimated    the confidence level estimated
+     * @throws DateInvalidException
+     * @throws HistoricalDaysInvalidException
+     * @throws HistoricalDaysEmptyException
+     * @throws ConfidenceLevelInvalidException
+     */
     public void setInformation(LocalDate start, LocalDate end, String historicalDays, String icAnova, String selection, String icVariables, String icEstimated) throws DateInvalidException, HistoricalDaysInvalidException, HistoricalDaysEmptyException, ConfidenceLevelInvalidException {
 
         data.setIntervalDates(this.testStore.getIntervalDate(start, end));
@@ -148,35 +199,42 @@ public class GenerateNHSReportController {
 
     }
 
-
-    public LocalDate getStartDate(String text) {
-
-        int n = Integer.parseInt(text);
-
-        Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.DATE, -n);
-        Date toDate = cal.getTime();
-
-        return toDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-
-    }
-
+    /**
+     * Sets the dates.
+     * @param historicalDaysInt the number of historical days
+     */
     public void setDates(int historicalDaysInt) {
         this.testStore.setDates(historicalDaysInt);
     }
 
+    /**
+     * Gets the data.
+     * @return the data
+     */
     public Data getData() {
         return data;
     }
 
+    /**
+     * Gets the string builder.
+     * @return the string builder
+     */
     public StringBuilder getSb() {
         return this.sb;
     }
 
+    /**
+     * Gets the today's date.
+     * @return the today's date
+     */
     public LocalDate getTodayDate() {
         return LocalDate.now();
     }
 
+    /**
+     * Gets the company.
+     * @return the company
+     */
     public Company getCompany() {
         return company;
     }

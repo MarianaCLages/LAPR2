@@ -175,6 +175,11 @@ public class ClientStore implements Serializable {
         return clientListOrder;
     }
 
+    /**
+     * Gets the client list.
+     *
+     * @return the client list
+     */
     public List<Client> getClientList() {
         return this.array;
     }

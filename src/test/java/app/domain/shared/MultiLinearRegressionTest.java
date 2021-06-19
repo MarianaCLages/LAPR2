@@ -20,12 +20,12 @@ public class MultiLinearRegressionTest {
 
    @Test
     public void getLowerLimitCoefficient(){
-        Assert.assertEquals(0.08365938736194439,s.lowerLimitCoeficient(1,0.05),delta);
+        Assert.assertEquals(0.08365938736194439,s.lowerLimitCoefficient(1,0.05),delta);
     }
 
     @Test
     public void getUpperLimitCoefficient(){
-        Assert.assertEquals(0.13741612284213717,s.upperLimitCoeficient(1,0.05),delta);
+        Assert.assertEquals(0.13741612284213717,s.upperLimitCoefficient(1,0.05),delta);
     }
 
     @Test
@@ -105,7 +105,7 @@ public class MultiLinearRegressionTest {
 
     @Test
     public void r2ajustedTest() {
-        Assert.assertEquals(0.9494485796739921, s.getR2Ajusted(), delta);
+        Assert.assertEquals(0.9494485796739921, s.getR2Adjusted(), delta);
     }
 
     @Test
