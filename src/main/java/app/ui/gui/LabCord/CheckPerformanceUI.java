@@ -30,7 +30,7 @@ public class CheckPerformanceUI implements Initializable {
     private ChoiceBox<String> myChoiceBoxInformation;
 
     private final SceneController sceneController = SceneController.getInstance();
-    private final CheckPerformanceController ctrl = new CheckPerformanceController();
+    private final CheckPerformanceController ctrl = sceneController.getCtrl();
     private final App app = sceneController.getApp();
 
     @Override

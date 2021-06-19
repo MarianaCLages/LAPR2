@@ -21,7 +21,7 @@ public class CheckPerformanceController {
     private final Company company;
     private final TestStore tStore;
     private final ClientStore cStore;
-    LocalDateTime[] times;
+    private LocalDateTime[] times;
     int[] differenceArray;
 
 
@@ -49,6 +49,13 @@ public class CheckPerformanceController {
 
     }
 
+    public LocalDateTime[] getTimes() {
+        return times;
+    }
+
+    public int[] getDifferenceArray() {
+        return differenceArray;
+    }
 
     public int[] getSubArray(LocalDate beg, LocalDate end, String algorithm) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         MaxSumAdapter adapter = getAdapter(algorithm);
@@ -109,6 +116,11 @@ public class CheckPerformanceController {
         int[] subarray = adapter.getMaxSum(differenceArray);
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 9136d5d47e4a27d62ce8916c3b2d299013a41d41
         return subarray;
     }
 
@@ -126,6 +138,9 @@ public class CheckPerformanceController {
         int i;
         int k = 0;
         int[] indexes = new int[subSeq.length];
+        if (subSeq.length == 0) {
+            return new int[]{0, 0};
+        }
         for (i = 0; i < sequence.length; i++) {
             while (sequence[i] == subSeq[k]) {
                 indexes[k] = i;

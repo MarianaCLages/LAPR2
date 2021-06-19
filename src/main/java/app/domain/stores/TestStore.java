@@ -560,7 +560,7 @@ public class TestStore implements Serializable {
         List<Test> tests = new ArrayList<>();
 
         for (Test t : array) {
-            LocalDate testDate = t.getValidatedDate().toLocalDate();
+            LocalDate testDate = t.getDate().toLocalDate();
 
             if (Period.between(startDateInterval, testDate).getDays() >= 0 && Period.between(testDate, endDateInterval).getDays() >= 0) {
                 tests.add(t);
