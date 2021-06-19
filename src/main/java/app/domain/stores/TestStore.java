@@ -536,6 +536,22 @@ public class TestStore implements Serializable {
 
     }
 
+    public Object[] getTestsInsideDateInterval(LocalDate startDateInterval, LocalDate endDateInterval) {
+
+        List<Test> tests = new ArrayList<>();
+
+        for (Test t : array) {
+            LocalDate testDate = t.getDate().toLocalDate();
+
+            if (Period.between(startDateInterval, testDate).getDays() >= 0 && Period.between(testDate, endDateInterval).getDays() >= 0) {
+                tests.add(t);
+            }
+        }
+
+        return tests.toArray();
+
+    }
+
     public List<Test> getListTestsInsideDateInterval(LocalDate startDateInterval, LocalDate endDateInterval) {
 
         List<Test> validTests = new ArrayList<>();

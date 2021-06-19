@@ -31,11 +31,3 @@ m
 +src/main/java/app/domain/model/Company.java,e\6\e66f0f8e51b44df23f2004467961976fbec241aa
 g
 7src/main/java/app/domain/model/StringBuilderReport.java,1\d\1d1c6fd2d764530b609d4c92ce9c276f3e16c798
-^
-.src/main/java/app/domain/stores/TestStore.java,9\d\9d7c93dfb2abbc9f3e33ac38ae37e345fc6eea94
-X
-(src/main/java/app/domain/model/Test.java,0\3\0346ca7efc8246aba1bce2abd18994f1118a0b11
-U
-%src/main/java/app/controller/App.java,4\7\47cfbdc47faac4c1edcb93d1b6968a5d5bdad509
-l
-<src/main/java/app/controller/CheckPerformanceController.java,8\a\8adf29f14cdf19697d4f158bb9a95ed1481d800f
