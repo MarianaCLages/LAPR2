@@ -1,5 +1,6 @@
 package app.ui.gui;
 
+import app.controller.SceneController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -35,11 +36,14 @@ public class MainScreen extends Application {
         primaryStage.show();
 
         primaryStage.setOnCloseRequest(event -> {
+            SceneController.getInstance().getCompany().saveCompany();
             event.consume();
             Alerts.logout(primaryStage);
         });
 
         primaryStage.setResizable(false);
+
+
 
     }
 

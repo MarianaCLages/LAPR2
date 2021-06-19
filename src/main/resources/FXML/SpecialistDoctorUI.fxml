@@ -12,5 +12,6 @@
          </font>
       </Label>
       <Button fx:id="myReturnButtonSpecialistDoctor" layoutX="14.0" layoutY="346.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="40.0" prefWidth="86.0" text="Return" />
+      <Button layoutX="161.0" layoutY="130.0" mnemonicParsing="false" onAction="#goToDiagnosticUI" prefHeight="25.0" prefWidth="286.0" text="Create a report" />
    </children>
 </AnchorPane>
