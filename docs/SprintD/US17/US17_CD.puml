@@ -1,0 +1,150 @@
+@startuml
+
+class ImportTestUI{
+}
+
+class ImportTestController{
+readTestsfromFile()
+saveFileTestList()
+
+
+}
+
+class TestStore{
+-List<Test> array
++createTest()
++saveTest()
+}
+
+class Test{
+-String testCode
+-String testNhsNumber
+-String clientTin
+-TestType testType
+-List<ParameterCategory> catList
+-List<Parameter> paList
+-createdDate
+-State state
+-List<TestParameter> testParam
+-LocalDateTime sampleCreatedDate
+-LocalDateTime analysedData
+-LocalDateTime diagnosticDate
+-LocalDateTime validatedDate
++setSampleCreatedDate()
++setAnalysedData()
++setDiagnosticDate()
++setValidatedDate()
+}
+
+class Company{
+
++getClientList()
++getParameterCategoryList()
++getTestList()
++getTestTypeList()
++getParameterList()
++getClinicalAnalysisLabList()
+
+}
+
+class ImportTests{
+-List<String> testFileList
++readTestFromCSV()
++getTestFileList()
++createClientfromFile()
++verifyClinic()
++createTestfromFile()
+}
+
+class ClinicalAnalysisLabStore{
+-List<ClinicalAnalysisLab> array
++verifyClinicalLabID()
++saveClient()
+}
+class ClinicalAnalysisLab{
+-String name
+-String address
+-String id
+-String tin
+-String phoneNumber
++getId()
+}
+
+
+class ClientStore{
+-List<Client> array
++createClient()
+}
+
+class Client{
+-String phoneNumber
+-String cc
+-String nhs
+-String tinNumber
+-Date birthDate
+-String email
+-String name
+-String sex
+
+}
+class ParameterStore{
+-List<Parameter> pList
++getParameterExist()
+}
+class Parameter{
+-String name
+-String code
+-String description
+-ParameterCategory cat
++getName()
+}
+class TestTypeStore{
+-List<TestType> array
++getTestTypeExist()
+}
+class TestType{
+String testID
+String description
+String collectingMethod
+ParameterCategoryStore catStore
+}
+
+class ParameterCategoryStore{
+-List<ParameterCategory> pcList
++getParameterCategoryExist()
++createParameterCategory()
+}
+class ParameterCategory{
+-String code
+-String name
++getName()
+}
+
+ImportTestUI ..> ImportTestController
+ImportTestController ..> ImportTests
+ImportTestController ..> Company
+Company ..> ImportTests
+Company --> ClinicalAnalysisLabStore
+Company --> ClientStore
+Company -->TestStore
+Company --> ParameterStore
+Company --> ParameterCategoryStore
+Company --> TestTypeStore
+TestTypeStore --> TestType
+Test --> TestType
+ParameterStore --> Parameter
+ParameterCategoryStore --> ParameterCategory
+ClientStore --> Client
+TestStore --> Test
+Test --> Parameter
+Test --> ParameterCategory
+ClinicalAnalysisLabStore --> ClinicalAnalysisLab
+ImportTests ..> TestTypeStore
+ImportTests ..> ParameterCategoryStore
+ImportTests ..> ParameterStore
+ImportTests ..> ClinicalAnalysisLabStore
+ImportTests ..> TestStore
+ImportTests ..> ClientStore
+
+
+@enduml

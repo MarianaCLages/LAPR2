@@ -97,9 +97,6 @@ public class LoginController {
                     case "CLINICALCHEMISTRYTECHNOLOGIST":
                         sceneController.switchMenu(actionEvent, Constants.CLINICAL_CHEMISTRY_TECHNOLOGIST_UI);
                         break;
-                    case "CLIENT":
-                        sceneController.switchMenu(actionEvent, Constants.CLIENT_UI);
-                        break;
                     default:
                         break;
                 }
