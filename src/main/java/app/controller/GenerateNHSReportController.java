@@ -69,7 +69,7 @@ public class GenerateNHSReportController {
 
         System.out.println("Testes positivos no intervalo de datas");
         int sum2=0;
-        for(double xi : positiveCovidTestsPerDayInsideTheHistoricalInterval){
+        for(double xi : positiveCovidTestsPerDayInsideTheDateInterval){
             sum2+=xi;
         }
         System.out.println(sum2);
