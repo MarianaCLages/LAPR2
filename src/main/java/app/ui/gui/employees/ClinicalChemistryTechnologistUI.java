@@ -13,14 +13,13 @@ public class ClinicalChemistryTechnologistUI {
     private Button recordresultsbtn;
     @FXML
     private Button consultclienttestsbtn;
-
-    private SceneController sceneController = SceneController.getInstance();
-
     @FXML
     private Button myReturnButtonCht;
 
+    private SceneController sceneController = SceneController.getInstance();
+    private App app = sceneController.getApp();
+
     public void returnToMenu(ActionEvent event) {
-        App app = sceneController.getApp();
         app.doLogout();
         sceneController.switchMenu(event, "/FXML/MainScreen.fxml");
     }

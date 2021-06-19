@@ -11,9 +11,8 @@ public class TestParameterResult implements Serializable {
     RefValue refValue;
 
     /**
-     *
-     * @param result double that represents numerical the result of the analysis of the test parameters
-     * @param paramId unique Id that represents the parameter that will receive the result
+     * @param result   double that represents numerical the result of the analysis of the test parameters
+     * @param paramId  unique Id that represents the parameter that will receive the result
      * @param refValue reference values of the results of the parameter
      */
     public TestParameterResult(double result, String paramId, RefValue refValue) {
@@ -25,6 +24,7 @@ public class TestParameterResult implements Serializable {
 
     /**
      * Method that represents the object in a string
+     *
      * @return a string that represents the object
      */
     @Override

@@ -13,9 +13,9 @@ public class ClientUpdateUI implements Runnable {
     private List<String> sexes;
     boolean exception = false;
 
-    public ClientUpdateUI(){
-       clientDataController = new UpdateClientDataController();
-       sexes = new ArrayList<>();
+    public ClientUpdateUI() {
+        clientDataController = new UpdateClientDataController();
+        sexes = new ArrayList<>();
     }
 
     @Override

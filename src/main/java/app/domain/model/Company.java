@@ -1,7 +1,6 @@
 package app.domain.model;
 
 import app.controller.App;
-import app.domain.shared.Constants;
 import app.domain.shared.Serialize;
 import app.domain.stores.*;
 import auth.AuthFacade;
@@ -13,9 +12,6 @@ import java.io.Serializable;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-/**
- * @author Paulo Maio <pam@isep.ipp.pt>
- */
 public class Company implements Serializable {
 
     private String designation;
@@ -58,7 +54,7 @@ public class Company implements Serializable {
 
     }
 
-   public Company() {
+    public Company() {
         Company temp = (Company) readCompany();
 
 
@@ -154,7 +150,7 @@ public class Company implements Serializable {
     }
 
     public List<Client> getClientArrayList() {
-        return getClientList().returnClientList();
+        return getClientList().getClientList();
     }
 
     /**
@@ -188,7 +184,6 @@ public class Company implements Serializable {
         try {
             return Serialize.readFile(props.getProperty("serialize.path"));
         } catch (IOException e) {
-           // e.printStackTrace();
             return null;
         }
     }

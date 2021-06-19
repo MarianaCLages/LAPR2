@@ -7,6 +7,7 @@ import app.domain.shared.MultiLinearRegression;
 import app.domain.shared.exceptions.InvalidLengthException;
 import app.domain.stores.ClientStore;
 import app.domain.stores.TestStore;
+import app.ui.gui.Alerts;
 import com.nhs.report.Report2NHS;
 
 import java.io.IOException;
@@ -29,9 +30,11 @@ public class SendReportTask extends TimerTask implements Serializable {
     private String independentVariable;
     private String regression;
     private String scope;
+
     StringBuilderReport report;
 
     public SendReportTask() {
+        //Send report constructor
     }
 
     /**
@@ -53,10 +56,11 @@ public class SendReportTask extends TimerTask implements Serializable {
         testStore.setDates(historicalDays);
         double[] positiveCovidTestsPerDayInsideTheDateInterval = testStore.getPositiveCovidTestsPerDayIntoArrayInsideInterval(Period.between(this.beginningDate, this.finishDate).getDays() + 1, this.beginningDate);
         double[] positiveCovidTestsPerDayInsideTheHistoricalInterval = testStore.getCovidTestsPerDayIntoArray(historicalDays);
+
         double[] covidTestsPerDayInsideTheDateInterval = testStore.getCovidTestsPerDayIntoArrayInsideInterval(Period.between(this.beginningDate, this.finishDate).getDays() + 1, this.beginningDate);
         double[] covidTestsPerDayInsideHistoricalDays = testStore.getCovidTestsPerDayIntoArrayInsideInterval(historicalDays + 1, currentDay);
 
-        List<Client> clientsWithTests = testStore.getClientsWithTests(clientStore.returnClientList());
+        List<Client> clientsWithTests = testStore.getClientsWithTests(clientStore.getClientList());
         double[] ages = testStore.getClientAge(clientsWithTests, this.historicalDays);
         double[] agesInsideTheDateInterval = testStore.getClientAgeInsideTheInterval(clientsWithTests, Period.between(this.beginningDate, this.finishDate).getDays() + 1, this.beginningDate);
 
@@ -83,7 +87,6 @@ public class SendReportTask extends TimerTask implements Serializable {
                 this.report.printCovidTestsPerInterval(this.scope);
 
             }
-            System.out.println("a");
             Report2NHS.writeUsingFileWriter(this.report.getSb().toString());
             log();
 
@@ -112,7 +115,7 @@ public class SendReportTask extends TimerTask implements Serializable {
             try {
                 this.report.stringConstructionMultiLinearRegression();
             } catch (InvalidLengthException e) {
-                System.out.println(e.getMessage());
+                Alerts.errorAlert(e.getMessage());
             }
             Report2NHS.writeUsingFileWriter(report.getSb().toString());
             log();
@@ -137,13 +140,13 @@ public class SendReportTask extends TimerTask implements Serializable {
     }
 
 
-    private void log(){
+    private void log() {
         Logger logger = Logger.getLogger("Logger");
         FileHandler fh;
 
         try {
 
-            fh = new FileHandler("log.log",true);
+            fh = new FileHandler("log.log", true);
             logger.addHandler(fh);
             SimpleFormatter formatter;
             formatter = new SimpleFormatter();
@@ -152,7 +155,7 @@ public class SendReportTask extends TimerTask implements Serializable {
             logger.info("Report sent to NHS\n");
 
         } catch (SecurityException | IOException e) {
-            System.out.println(e.getMessage());
+            Alerts.errorAlert(e.getMessage());
         }
 
 

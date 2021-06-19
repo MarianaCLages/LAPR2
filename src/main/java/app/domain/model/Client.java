@@ -315,7 +315,6 @@ public class Client implements Serializable {
     }
 
     /**
-     *
      * @return string that represents cc of the client
      */
     public String getCc() {
@@ -323,7 +322,6 @@ public class Client implements Serializable {
     }
 
     /**
-     *
      * @return string that represents cc number of the client
      */
     public String getTinNumber() {

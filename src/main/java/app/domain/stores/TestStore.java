@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.Period;
 import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 
 /**
@@ -194,7 +195,7 @@ public class TestStore implements Serializable {
         Collections.sort(testList2, comparator1);
 
         for (Test test : testList2) {
-            testSortedListString.add(test.toString()+"\n");
+            testSortedListString.add(test.toString() + "\n");
         }
 
         return testList2;
@@ -226,6 +227,12 @@ public class TestStore implements Serializable {
         return t;
     }
 
+    /**
+     * Gets the validated tests for a given client.
+     *
+     * @param client the client
+     * @return the list of validated tests of a given client
+     */
     public List<Test> getValidatedTestList(Client client) {
         List<Test> validatedTest = new ArrayList<>();
 
@@ -420,7 +427,7 @@ public class TestStore implements Serializable {
 
             for (Test t1 : getClientsWithTestsListWithTests(clientList)) {
 
-                LocalDate testDate = t1.getDate().toLocalDate();
+                LocalDate testDate = t1.getValidatedDate().toLocalDate();
 
                 if (testDate.equals(currentDay)) {
 
@@ -452,7 +459,7 @@ public class TestStore implements Serializable {
 
     }
 
-    public double[] getClientAgeInsideTheInterval(List<Client> clientList, int space,LocalDate startDate) {
+    public double[] getClientAgeInsideTheInterval(List<Client> clientList, int space, LocalDate startDate) {
 
         double[] clientsAges = new double[space]; // O mais 1 é pq é preciso registar o dia de "HJ"
 
@@ -463,11 +470,11 @@ public class TestStore implements Serializable {
 
         for (int i = 0; i < space; i++) {
 
-            LocalDate currentDay = getCurrentDayInsideInterval(i,startDate);
+            LocalDate currentDay = getCurrentDayInsideInterval(i, startDate);
 
             for (Test t1 : getClientsWithTestsListWithTests(clientList)) {
 
-                LocalDate testDate = t1.getDate().toLocalDate();
+                LocalDate testDate = t1.getValidatedDate().toLocalDate();
 
                 if (testDate.equals(currentDay)) {
 
@@ -515,7 +522,7 @@ public class TestStore implements Serializable {
 
     public LocalDate getCurrentDayInsideInterval(int i, LocalDate startDateInterval) {
 
-        int startDayInterval = Period.between(startDateInterval, todayDate).getDays();
+        int startDayInterval = (int) ChronoUnit.DAYS.between(startDateInterval, todayDate);
 
         int interW = startDayInterval - i;
 
@@ -534,7 +541,7 @@ public class TestStore implements Serializable {
         List<Test> validTests = new ArrayList<>();
 
         for (Test t : getValidatedTestsListCovid()) {
-            LocalDate testDate = t.getDate().toLocalDate();
+            LocalDate testDate = t.getValidatedDate().toLocalDate();
 
             if (Period.between(startDateInterval, testDate).getDays() >= 0 && Period.between(testDate, endDateInterval).getDays() >= 0) {
                 validTests.add(t);
@@ -542,22 +549,6 @@ public class TestStore implements Serializable {
         }
 
         return validTests;
-
-    }
-
-    public Object[] getTestsInsideDateInterval(LocalDate startDateInterval, LocalDate endDateInterval) {
-
-        List<Test> tests = new ArrayList<>();
-
-        for (Test t : array) {
-            LocalDate testDate = t.getDate().toLocalDate();
-
-            if (Period.between(startDateInterval, testDate).getDays() >= 0 && Period.between(testDate, endDateInterval).getDays() >= 0) {
-                tests.add(t);
-            }
-        }
-
-        return tests.toArray();
 
     }
 
@@ -570,7 +561,7 @@ public class TestStore implements Serializable {
             LocalDate currentDay = getCurrentDayInsideInterval(i, startDateInterval);
 
             for (Test t : getListTestsInsideTheHistoricalDays()) {
-                LocalDate testDate = t.getDate().toLocalDate();
+                LocalDate testDate = t.getValidatedDate().toLocalDate();
                 if (testDate.equals(currentDay)) {
                     positiveCovidTestsPerDay[i] += 1;
                 }
@@ -581,6 +572,7 @@ public class TestStore implements Serializable {
         return positiveCovidTestsPerDay;
 
     }
+
     public double[] getPositiveCovidTestsPerDayIntoArrayInsideInterval(int space, LocalDate startDateInterval) {
 
         double[] positiveCovidTestsPerDay = new double[space];
@@ -589,8 +581,8 @@ public class TestStore implements Serializable {
 
             LocalDate currentDay = getCurrentDayInsideInterval(i, startDateInterval);
 
-            for (Test t : getPositiveCovidTest()){
-                LocalDate testDate = t.getDate().toLocalDate();
+            for (Test t : getPositiveCovidTest()) {
+                LocalDate testDate = t.getValidatedDate().toLocalDate();
                 if (testDate.equals(currentDay)) {
                     positiveCovidTestsPerDay[i] += 1;
                 }
@@ -611,7 +603,7 @@ public class TestStore implements Serializable {
             LocalDate currentDay = getCurrentDay(i, historicalDaysInt);
 
             for (Test t : getPositiveCovidTest()) {
-                LocalDate testDate = t.getDate().toLocalDate();
+                LocalDate testDate = t.getValidatedDate().toLocalDate();
                 if (testDate.equals(currentDay)) {
                     positiveCovidTestsPerDay[i] += 1;
                 }
@@ -629,7 +621,7 @@ public class TestStore implements Serializable {
         List<Test> covidTestsInterval = new ArrayList<>();
 
         for (Test t : validCovidTests) {
-            LocalDate testDate = t.getDate().toLocalDate();
+            LocalDate testDate = t.getValidatedDate().toLocalDate();
 
             if (Period.between(beginDate, testDate).getDays() >= 0 && Period.between(testDate, todayDate).getDays() >= 0) {
                 covidTestsInterval.add(t);
@@ -639,5 +631,6 @@ public class TestStore implements Serializable {
         return covidTestsInterval;
 
     }
+
 
 }

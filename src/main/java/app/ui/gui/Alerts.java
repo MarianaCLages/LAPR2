@@ -6,6 +6,10 @@ import javafx.stage.Stage;
 
 public class Alerts {
 
+    private Alerts() {
+
+    }
+
     public static void informationAlert(int maxAttempts) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("");
@@ -22,13 +26,13 @@ public class Alerts {
         alert.show();
     }
 
-    public static void logout(Stage stage){
+    public static void logout(Stage stage) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Logout");
         alert.setHeaderText("You're about to logout!");
         alert.setContentText("Do you really wish to exit? ");
 
-        if(alert.showAndWait().get() == ButtonType.OK){
+        if (alert.showAndWait().get() == ButtonType.OK) {
             stage.close();
         }
     }

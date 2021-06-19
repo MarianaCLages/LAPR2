@@ -8,7 +8,7 @@ import app.ui.console.utils.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ValidateUI implements Runnable{
+public class ValidateUI implements Runnable {
     ValidateController ctr;
 
     public ValidateUI() {

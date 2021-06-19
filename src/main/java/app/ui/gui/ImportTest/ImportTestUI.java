@@ -16,6 +16,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ImportTestUI implements Initializable {
+
     ImportTestsController imp = new ImportTestsController();
 
     @FXML
@@ -27,8 +28,6 @@ public class ImportTestUI implements Initializable {
     @FXML
     private ListView<String> ListView;
 
-    public ImportTestUI() throws IOException {
-    }
     private SceneController sceneController = SceneController.getInstance();
 
     @Override
@@ -39,7 +38,7 @@ public class ImportTestUI implements Initializable {
 
     public void confirm() {
         FileChooser chooser = new FileChooser();
-        chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("CSV files","*.csv"));
+        chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("CSV files", "*.csv"));
         File f = chooser.showOpenDialog(null);
 
 
@@ -49,7 +48,6 @@ public class ImportTestUI implements Initializable {
     }
 
     public void returnToMenu(ActionEvent event) {
-        App app = sceneController.getApp();
         sceneController.switchMenu(event, Constants.LABORATORY_COORDINATOR_UI);
     }
 }

@@ -160,7 +160,7 @@ public class ClientStoreTest {
         Date date = dateFormat.parse(dateStr);
 
         ClientStore clientStore = new ClientStore();
-        List<Client> clientList = clientStore.returnClientList();
+        List<Client> clientList = clientStore.getClientList();
         List<Client> orderedListTIN = new ArrayList<>(clientList);
 
         clientStore.createClient("12345678901", "1234567890123456", "1234567890", "1234567890", date, 'M', "ze@ze.com", "Zé");
@@ -180,9 +180,9 @@ public class ClientStoreTest {
         orderedListTIN.add(client2);
         orderedListTIN.add(client3);
 
-        Assert.assertEquals(orderedListTIN.get(0).getTinNumber(), clientStore.orderClientListByTin().get(0).getTinNumber());
-        Assert.assertEquals(orderedListTIN.get(1).getTinNumber(), clientStore.orderClientListByTin().get(1).getTinNumber());
-        Assert.assertEquals(orderedListTIN.get(2).getTinNumber(), clientStore.orderClientListByTin().get(2).getTinNumber());
+        Assert.assertEquals(orderedListTIN.get(0).getTinNumber(), clientStore.sortClientListByTin().get(0).getTinNumber());
+        Assert.assertEquals(orderedListTIN.get(1).getTinNumber(), clientStore.sortClientListByTin().get(1).getTinNumber());
+        Assert.assertEquals(orderedListTIN.get(2).getTinNumber(), clientStore.sortClientListByTin().get(2).getTinNumber());
     }
 
 
@@ -193,7 +193,7 @@ public class ClientStoreTest {
         Date date = dateFormat.parse(dateStr);
 
         ClientStore clientStore = new ClientStore();
-        List<Client> clientList = clientStore.returnClientList();
+        List<Client> clientList = clientStore.getClientList();
         List<Client> orderedListName = new ArrayList<>(clientList);
 
         clientStore.createClient("12345678901", "1234567890123456", "1234567890", "1234567890", date, 'M', "ze@ze.com", "Zé");
@@ -213,8 +213,8 @@ public class ClientStoreTest {
         orderedListName.add(client2);
         orderedListName.add(client3);
 
-        Assert.assertEquals(orderedListName.get(0).getName(), clientStore.orderClientListByName().get(0).getName());
-        Assert.assertEquals(orderedListName.get(1).getName(), clientStore.orderClientListByName().get(1).getName());
-        Assert.assertEquals(orderedListName.get(2).getName(), clientStore.orderClientListByName().get(2).getName());
+        Assert.assertEquals(orderedListName.get(0).getName(), clientStore.sortClientListByName().get(0).getName());
+        Assert.assertEquals(orderedListName.get(1).getName(), clientStore.sortClientListByName().get(1).getName());
+        Assert.assertEquals(orderedListName.get(2).getName(), clientStore.sortClientListByName().get(2).getName());
     }
 }

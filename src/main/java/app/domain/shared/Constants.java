@@ -68,7 +68,9 @@ public class Constants {
     public static final String CREDITS_UI = "/FXML/Credits.fxml";
 
     public static final String VIEW_RESULTS_UI = "/FXML/ViewResultsUI.fxml";
-    public static final String Import_Test_UI = "/FXML/ImportTest.fxml";
+    public static final String IMPORT_TEST_UI = "/FXML/ImportTest.fxml";
+
+    public static final String COMPANY_PERFORMANCE_UI = "/FXML/CompanyPerformanceUI.fxml";
 
 
     public static final String SIMPLE_LINEAR_REGRESSION_UI = "/FXML/SimpleLinearRegression.fxml";
@@ -93,5 +95,10 @@ public class Constants {
 
     public static final double VALID_COVID_PARAMETER_VALUE = 1.4;
     public static final String VALID_COVID_PARAMETER = "IgGAN";
+
+    public static final String VALIDATED = "VALIDATED";
+    public static final String SAMPLE_COLLECTED = "SAMPLE_COLLECTED";
+
+    public static final String IG_GAN = "IgGAN";
 
 }

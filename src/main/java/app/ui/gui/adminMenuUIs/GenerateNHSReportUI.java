@@ -2,7 +2,6 @@ package app.ui.gui.adminMenuUIs;
 
 import app.controller.App;
 import app.controller.GenerateNHSReportController;
-import app.domain.model.Data;
 import app.domain.shared.Constants;
 import app.domain.shared.exceptions.*;
 import app.ui.gui.Alerts;
@@ -18,8 +17,8 @@ import java.util.ResourceBundle;
 
 public class GenerateNHSReportUI implements Initializable {
 
-    private SceneController sceneController;
-    private GenerateNHSReportController ctrl;
+    private SceneController sceneController = SceneController.getInstance();
+    private GenerateNHSReportController ctrl = new GenerateNHSReportController();
 
     @FXML
     private Button myReturnButtonNHS;
@@ -27,8 +26,6 @@ public class GenerateNHSReportUI implements Initializable {
     private Label myLabelNHS;
     @FXML
     private TextField myTextFieldNHS;
-    @FXML
-    private TextField myTextFieldNHS2;
     @FXML
     private ChoiceBox<String> myChoiceBoxNHS;
     @FXML
@@ -39,17 +36,21 @@ public class GenerateNHSReportUI implements Initializable {
     private DatePicker myDatePicker2;
     @FXML
     private ChoiceBox<String> myChoiceBoxNHS2;
+    @FXML
+    private TextField myTextFieldNHSIC1;
+    @FXML
+    private TextField myTextFieldNHSIC2;
+    @FXML
+    private TextField myTextFieldNHSIC3;
 
     public GenerateNHSReportUI() {
-        this.sceneController = SceneController.getInstance();
-        this.ctrl = sceneController.getCtrl();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String[] choices = {Constants.SIMPLE_LINEAR_REGRESSION, Constants.MULTI_LINEAR_REGRESSION};
         myChoiceBoxNHS.getItems().addAll(choices);
-        String[] choicesForReport ={"Day","Week","Month"};
+        String[] choicesForReport = {"Day", "Week", "Month"};
         myChoiceBoxNHS2.getItems().addAll(choicesForReport);
     }
 
@@ -88,15 +89,13 @@ public class GenerateNHSReportUI implements Initializable {
 
     private void setInformation() throws DateEmptyException, DateInvalidException, HistoricalDaysInvalidException, HistoricalDaysEmptyException, ConfidenceLevelICEmptyException, ConfidenceLevelInvalidException {
 
-        System.out.println(myChoiceBoxNHS2.getValue());
-
-        this.ctrl.setInformation(myDatePicker1.getValue(),myDatePicker2.getValue(),myTextFieldNHS.getText(),myTextFieldNHS2.getText(),myChoiceBoxNHS2.getValue());
+        this.ctrl.setInformation(myDatePicker1.getValue(), myDatePicker2.getValue(), myTextFieldNHS.getText(), myTextFieldNHSIC1.getText(), myChoiceBoxNHS2.getValue(), myTextFieldNHSIC2.getText(), myTextFieldNHSIC3.getText());
 
     }
 
     private void changeScene(ActionEvent event) {
 
-        if (myChoiceBoxNHS.getValue() == Constants.SIMPLE_LINEAR_REGRESSION) {
+        if (myChoiceBoxNHS.getValue().equals(Constants.SIMPLE_LINEAR_REGRESSION)) {
             sceneController.switchMenu(event, Constants.SIMPLE_LINEAR_REGRESSION_UI);
         } else {
             sceneController.switchMenu(event, Constants.MULTI_LINEAR_REGRESSION_UI);

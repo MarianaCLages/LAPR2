@@ -8,11 +8,10 @@ import app.domain.stores.TestStore;
 
 import java.util.List;
 
-public class ViewResultsController  {
+public class ViewResultsController {
 
     private Company company;
     private TestStore store;
-    private Test test;
     private ClientStore cstore;
 
     public ViewResultsController(Company company) {
@@ -24,7 +23,7 @@ public class ViewResultsController  {
         this(App.getInstance().getCompany());
     }
 
-    public void sortedDateList(){
+    public void sortedDateList() {
         Client client = cstore.getClientByEmail(company.getUserID());
         store.sortDate(client.getTinNumber());
     }
@@ -36,7 +35,7 @@ public class ViewResultsController  {
         return t.getResults();
     }
 
-    public List<String> getTestSortedList(){
+    public List<String> getTestSortedList() {
         return store.getTestSortedListString();
     }
 }

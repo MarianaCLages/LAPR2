@@ -16,6 +16,7 @@ public class TestTypeListMapper implements Serializable {
 
     /**
      * creates a list of data transfer objects
+     *
      * @param testTypes
      * @return
      */

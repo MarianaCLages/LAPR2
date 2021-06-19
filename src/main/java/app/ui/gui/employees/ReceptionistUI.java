@@ -10,12 +10,12 @@ import javafx.scene.control.Button;
 public class ReceptionistUI {
 
     private SceneController sceneController = SceneController.getInstance();
+    private App app = sceneController.getApp();
 
     @FXML
     private Button myReturnButtonReceptionist;
 
     public void returnToMenu(ActionEvent event) {
-        App app = sceneController.getApp();
         app.doLogout();
         sceneController.switchMenu(event, Constants.MAIN_SCREEN_UI);
     }

@@ -10,11 +10,12 @@ public class RefValue implements Serializable {
     private final double maxValue;
     private final String metric;
 
-    /**m
+    /**
      * Constructor of the reference value class
+     *
      * @param minValue minimum value of the parameter
      * @param maxValue maximum value of the parameter
-     * @param metric metric of the parameter
+     * @param metric   metric of the parameter
      */
     public RefValue(double minValue, double maxValue, String metric) {
         this.minValue = minValue;
@@ -23,7 +24,6 @@ public class RefValue implements Serializable {
     }
 
     /**
-     *
      * @return minimum value of the parameter
      */
     public double getMinValue() {
@@ -31,7 +31,6 @@ public class RefValue implements Serializable {
     }
 
     /**
-     *
      * @return maximum value of the parameter
      */
     public double getMaxValue() {
@@ -39,7 +38,6 @@ public class RefValue implements Serializable {
     }
 
     /**
-     *
      * @return metric of the parameter
      */
     public String getMetric() {

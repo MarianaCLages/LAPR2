@@ -6,37 +6,42 @@ import org.apache.commons.lang3.StringUtils;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.temporal.ChronoUnit;
 
 public class Data implements Serializable {
 
     private String historicalDays;
-    private int date;
-    private double confidenceLevelIC;
+    private double confidenceLevelAnova;
+    private double confidenceLevelVariables;
+    private double confidenceLevelEstimated;
     private LocalDate intervalStartDate;
     private LocalDate intervalEndDate;
     private String selection;
-
-    public Data(String historicalDays, int date, int confidenceLevelIC, String significanceLevel) {
-
-        this.historicalDays = historicalDays;
-        this.date = date;
-        this.confidenceLevelIC = confidenceLevelIC;
-
-    }
+    private int date;
 
     public Data() {
 
         this.historicalDays = null;
         this.date = 0;
-        this.confidenceLevelIC = 0;
+        this.confidenceLevelAnova = 0;
         this.intervalStartDate = null;
         this.intervalEndDate = null;
         this.selection = null;
     }
 
-    public void setConfidenceLevelIC(int confidenceLevelIC) throws ConfidenceLevelInvalidException, ConfidenceLevelICEmptyException {
-        checkConfidenceLevelIC(confidenceLevelIC);
-        this.confidenceLevelIC = confidenceLevelIC;
+    public void setConfidenceLevelAnova(double confidenceLevelAnova) throws ConfidenceLevelInvalidException {
+        checkConfidenceLevelIC(confidenceLevelAnova);
+        this.confidenceLevelAnova = confidenceLevelAnova;
+    }
+
+    public void setConfidenceLevelEstimated(double confidenceLevelEstimated) throws ConfidenceLevelInvalidException {
+        checkConfidenceLevelIC(confidenceLevelEstimated);
+        this.confidenceLevelEstimated = confidenceLevelEstimated;
+    }
+
+    public void setConfidenceLevelVariables(double confidenceLevelVariables) throws ConfidenceLevelInvalidException {
+        checkConfidenceLevelIC(confidenceLevelVariables);
+        this.confidenceLevelVariables = confidenceLevelVariables;
     }
 
     public void setHistoricalDays(String historicalDays) throws HistoricalDaysEmptyException, HistoricalDaysInvalidException {
@@ -55,16 +60,14 @@ public class Data implements Serializable {
     }
 
     public void setSelection(String selection) {
-        System.out.println(selection);
         this.selection = selection;
     }
 
     public String getSelection() {
-        System.out.println(this.selection);
         return this.selection;
     }
 
-    private void checkConfidenceLevelIC(int confidenceLevelIC) throws ConfidenceLevelInvalidException {
+    private void checkConfidenceLevelIC(double confidenceLevelIC) throws ConfidenceLevelInvalidException {
 
         if (confidenceLevelIC > 100 || confidenceLevelIC < 0) {
             throw new ConfidenceLevelInvalidException();
@@ -102,8 +105,16 @@ public class Data implements Serializable {
         return Integer.parseInt(historicalDays);
     }
 
-    public double getConfidenceLevel() {
-        return (confidenceLevelIC / 100);
+    public double getConfidenceLevelAnova() {
+        return (confidenceLevelAnova / 100);
+    }
+
+    public double getConfidenceLevelEstimated() {
+        return (confidenceLevelEstimated / 100);
+    }
+
+    public double getConfidenceLevelVariables() {
+        return (confidenceLevelVariables / 100);
     }
 
     public String getHistoricalDays() {
@@ -120,7 +131,7 @@ public class Data implements Serializable {
 
     public int getDifferenceInDates() {
 
-        return Period.between(this.intervalStartDate, this.intervalEndDate).getDays();
+        return (int) ChronoUnit.DAYS.between(this.intervalStartDate, this.intervalEndDate);
 
     }
 

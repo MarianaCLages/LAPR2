@@ -40,7 +40,7 @@ public class RecordResultsController {
         }
     }
 
-    public boolean addTestResult(String parameterCode, double result) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public boolean addTestResult(String parameterCode, double result) {
         return t.addTestResult(parameterCode, result);
     }
 
@@ -49,7 +49,8 @@ public class RecordResultsController {
         return this.t.getResults();
 
     }
-    public void saveTest(){
+
+    public void saveTest() {
         t.changeState("SAMPLE_ANALYSED");
         company.saveCompany();
 

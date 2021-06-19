@@ -5,7 +5,6 @@ import app.domain.model.Company;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -53,7 +52,7 @@ public class ClientStore implements Serializable {
     }
 
     /**
-     * Checks if a instance of object Client is valid. An instance of a client is valid if it is not null, if dont already exists or if the email and phone number of the instance are not unique
+     * Checks if a instance of object Client is valid. An instance of a client is valid if it is not null, if don't already exists or if the email and phone number of the instance are not unique
      *
      * @param client instance of object Client
      * @return a boolean value that represents if the instance of object Client is valid
@@ -132,7 +131,12 @@ public class ClientStore implements Serializable {
         return null;
     }
 
-    public List<Client> orderClientListByTin() {
+    /**
+     * Sorts the client list by TIN number.
+     *
+     * @return the client list sorted by TIN number
+     */
+    public List<Client> sortClientListByTin() {
 
         List<Client> clientListOrder = new ArrayList<>(array);
 
@@ -149,8 +153,12 @@ public class ClientStore implements Serializable {
         return clientListOrder;
     }
 
-
-    public List<Client> orderClientListByName() {
+    /**
+     * Sorts the client list by name.
+     *
+     * @return the client list sorted by name
+     */
+    public List<Client> sortClientListByName() {
 
         List<Client> clientListOrder = new ArrayList<>(array);
 
@@ -167,7 +175,7 @@ public class ClientStore implements Serializable {
         return clientListOrder;
     }
 
-    public List<Client> returnClientList() {
+    public List<Client> getClientList() {
         return this.array;
     }
 

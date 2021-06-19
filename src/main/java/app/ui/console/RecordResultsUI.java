@@ -47,8 +47,8 @@ public class RecordResultsUI implements Runnable {
         System.out.println("Results recorded: \n");
         System.out.println(ctr.getResults());
 
-        boolean confirm =Utils.confirm("Do you want to proceed? (s/n)");
-        if (confirm){
+        boolean confirm = Utils.confirm("Do you want to proceed? (s/n)");
+        if (confirm) {
             ctr.saveTest();
         }
     }

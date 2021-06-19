@@ -54,7 +54,7 @@ public class LoginController {
 
         maxAttempts--;
         success = ctrl.doLogin(id, pwd);
-        if (!success && maxAttempts!=0) {
+        if (!success && maxAttempts != 0) {
             Alerts.informationAlert(maxAttempts);
         }
 
@@ -71,7 +71,7 @@ public class LoginController {
     private void switchM(ActionEvent actionEvent) {
         List<UserRoleDTO> roles = this.ctrl.getUserRoles();
         if ((roles == null) || (roles.isEmpty())) {
-            System.out.println("User has not any role assigned.");
+            Alerts.errorAlert("User has not any role assigned.");
         } else {
             UserRoleDTO role = selectsRole(roles);
             if (!Objects.isNull(role)) {
@@ -105,7 +105,7 @@ public class LoginController {
                 }
 
             } else {
-                System.out.println("User did not select a role.");
+                Alerts.errorAlert("User did not select a role.");
             }
         }
     }
