@@ -6,6 +6,7 @@ import app.domain.shared.MultiLinearRegression;
 import app.domain.shared.exceptions.*;
 import app.domain.stores.TestStore;
 import app.ui.gui.Alerts;
+import com.nhs.report.Report2NHS;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -59,36 +60,8 @@ public class GenerateNHSReportController {
         this.positiveCovidTestsPerDayInsideTheHistoricalInterval = this.testStore.getCovidTestsPerDayIntoArray(this.company.getData().getHistoricalDaysInt());
         this.positiveCovidTestsPerDayInsideTheDateInterval = this.testStore.getPositiveCovidTestsPerDayIntoArrayInsideInterval(this.company.getData().getDifferenceInDates() + 1, this.company.getData().getIntervalStartDate());
 
-
-        System.out.println("Testes positivos nos historical days");
-        int sum = 0;
-        for (double xi : positiveCovidTestsPerDayInsideTheHistoricalInterval) {
-            sum += xi;
-        }
-        System.out.println(sum);
-
-        System.out.println("Testes positivos no intervalo de datas");
-        int sum2 = 0;
-        for (double xi : positiveCovidTestsPerDayInsideTheHistoricalInterval) {
-            sum2 += xi;
-        }
-        System.out.println(sum2);
-
-        System.out.println("Testes nos historical days");
-        int sum3 = 0;
-        for (double xi : covidTestsPerDayInsideTheHistoricalDays) {
-            sum3 += xi;
-        }
-        System.out.println(sum3);
-
-        System.out.println("Testes nos historical days");
-        int sum4 = 0;
-        for (double xi : covidTestsPerDayInsideTheIntervalOfDates) {
-            sum4 += xi;
-        }
-        System.out.println(sum4);
-
     }
+
 
     public void linearRegressionWithMeanAge() {
         setData();
@@ -140,6 +113,7 @@ public class GenerateNHSReportController {
         }
 
         this.sb = this.stringBuilderReport.printCovidTestsPerInterval(company.getData().getSelection());
+        Report2NHS.writeUsingFileWriter(stringBuilderReport.getSb().toString());
 
     }
 
@@ -155,6 +129,7 @@ public class GenerateNHSReportController {
 
         this.sb = stringBuilderReport.stringConstructionLinearRegression();
         this.sb = this.stringBuilderReport.printCovidTestsPerInterval(company.getData().getSelection());
+        Report2NHS.writeUsingFileWriter(stringBuilderReport.getSb().toString());
 
     }
 

@@ -17,19 +17,14 @@ import java.util.ResourceBundle;
 
 public class GenerateNHSReportUI implements Initializable {
 
-    private SceneController sceneController = SceneController.getInstance();
-    private GenerateNHSReportController ctrl = new GenerateNHSReportController();
+    private final SceneController sceneController = SceneController.getInstance();
+    private final GenerateNHSReportController ctrl = new GenerateNHSReportController();
+    private final App app = sceneController.getApp();
 
-    @FXML
-    private Button myReturnButtonNHS;
-    @FXML
-    private Label myLabelNHS;
     @FXML
     private TextField myTextFieldNHS;
     @FXML
     private ChoiceBox<String> myChoiceBoxNHS;
-    @FXML
-    private Button myButton2NHS;
     @FXML
     private DatePicker myDatePicker1;
     @FXML
@@ -44,6 +39,7 @@ public class GenerateNHSReportUI implements Initializable {
     private TextField myTextFieldNHSIC3;
 
     public GenerateNHSReportUI() {
+        //Generate NHS Report UI
     }
 
     @Override
@@ -55,7 +51,6 @@ public class GenerateNHSReportUI implements Initializable {
     }
 
     public void returnToAdminMenu(ActionEvent event) {
-        App app = sceneController.getApp();
         app.doLogout();
         sceneController.switchMenu(event, Constants.ADMINISTRATOR_UI);
     }

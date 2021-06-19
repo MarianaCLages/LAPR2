@@ -1,6 +1,5 @@
 package app.ui.gui.clientUIs;
 
-import app.controller.App;
 import app.controller.ViewResultsController;
 import app.domain.shared.Constants;
 import app.controller.SceneController;
@@ -17,7 +16,7 @@ import java.util.ResourceBundle;
 
 public class ViewResultsUI implements Initializable {
 
-    ViewResultsController VRc = new ViewResultsController();
+    private final ViewResultsController VRc = new ViewResultsController();
 
     @FXML
     private ListView<String> ListView1;
@@ -25,8 +24,7 @@ public class ViewResultsUI implements Initializable {
     @FXML
     private TextArea TextArea1;
 
-    private SceneController sceneController = SceneController.getInstance();
-    private App app = sceneController.getApp();
+    private final SceneController sceneController = SceneController.getInstance();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

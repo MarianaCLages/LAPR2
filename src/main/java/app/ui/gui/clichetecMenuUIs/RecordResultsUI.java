@@ -5,20 +5,15 @@ import app.domain.shared.Constants;
 import app.controller.SceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class RecordResultsUI {
 
     @FXML
-    private Button btnReturn;
-    @FXML
-    private Button btnEnter;
-    @FXML
     public TextField sampleIDtxt;
 
-    private SceneController sceneController = SceneController.getInstance();
-    private App app = sceneController.getApp();
+    private final SceneController sceneController = SceneController.getInstance();
+    private final App app = sceneController.getApp();
 
     public void btnReturnAction(ActionEvent event) {
         app.doLogout();

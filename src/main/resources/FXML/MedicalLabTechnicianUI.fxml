@@ -4,14 +4,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.employees.MedicalLabTechinicianUI">
    <children>
-      <Label alignment="CENTER" layoutX="89.0" layoutY="35.0" prefHeight="17.0" prefWidth="384.0" text="Medical Lab Techinician" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutX="108.0" layoutY="36.0" prefHeight="17.0" prefWidth="384.0" text="Medical Lab Techinician" textAlignment="CENTER">
          <font>
             <Font size="28.0" />
          </font>
       </Label>
       <Button fx:id="myReturnButtonMlt" layoutX="14.0" layoutY="337.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="49.0" prefWidth="88.0" text="Return" />
+      <Button layoutX="193.0" layoutY="144.0" mnemonicParsing="false" onAction="#goToSampleUI" prefHeight="25.0" prefWidth="214.0" text="Generate Samples" />
    </children>
 </AnchorPane>

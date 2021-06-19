@@ -1,6 +1,5 @@
 package app.ui.gui.ImportTest;
 
-import app.controller.App;
 import app.controller.ImportTestsController;
 import app.domain.shared.Constants;
 import app.controller.SceneController;
@@ -11,24 +10,16 @@ import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ImportTestUI implements Initializable {
 
-    ImportTestsController imp = new ImportTestsController();
-
-    @FXML
-    private TextField textField;
-
-    @FXML
-    private Button confirm;
+    private final ImportTestsController imp = new ImportTestsController();
+    private final SceneController sceneController = SceneController.getInstance();
 
     @FXML
     private ListView<String> ListView;
-
-    private SceneController sceneController = SceneController.getInstance();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

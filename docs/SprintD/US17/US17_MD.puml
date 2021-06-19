@@ -1,0 +1,46 @@
+@startuml
+
+class Company{
+}
+
+class Client{
+Name
+Citizen Card Number
+National Healthcare Service Number
+Birth date
+Sex
+Tax Identification Number
+Phone
+E-mail
+}
+
+class ClinicalAnalysisLab{
+Name
+Address
+ID
+Tin
+Phone Number
+Test Types
+}
+
+class Test{
+Test code
+Nhs Number
+Client Tin
+Test Type
+Categories
+Parameters
+State
+Date
+Result
+}
+
+
+
+Company "1" -- "*" Test : has
+Company "1"--"*" Client : has
+Company "1"---"*" ClinicalAnalysisLab : has
+
+
+
+@enduml

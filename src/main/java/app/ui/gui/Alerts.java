@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 public class Alerts {
 
     private Alerts() {
-
+       //Alerts classes
     }
 
     public static void informationAlert(int maxAttempts) {

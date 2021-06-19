@@ -82,7 +82,7 @@ public class StringBuilderReport {
     }
 
     public StringBuilder stringConstructionMultiLinearRegression() throws InvalidLengthException {
-        sb.append("\n\n").append("-----------------------------Beginning of Report-------------------------------").append("\n\n");
+        sb.append("\n\n").append("------------------------------------------------------------Beginning of Report------------------------------------------------------------").append("\n\n");
 
         sb.append("The regression model fitted using data from the interval\n")
                 .append("^y = ").append(regressionMulti.toString())
@@ -123,7 +123,7 @@ public class StringBuilderReport {
         } else {
             sb.append(NO_REJECT_H0);
         }
-        sb.append("\n\n").append("-----------------------------Beginning of ANOVA-------------------------------").append("\n\n");
+        sb.append("\n\n").append("------------------------------------------------------------Beginning of ANOVA------------------------------------------------------------").append("\n\n");
 
         sb.append("\n")
                 .append(SIGNIFICANCE_MODEL_ANOVA)
@@ -145,11 +145,11 @@ public class StringBuilderReport {
                     .append(REGRESSION_MODEL + "\n");
         }
 
-        sb.append("\n\n").append("-----------------------------End of ANOVA-------------------------------").append("\n\n");
+        sb.append("\n\n").append("--------------------------------------------------------------------End of ANOVA--------------------------------------------------------------------").append("\n\n");
 
-        sb.append("\n\n").append("-----------------------------Beginning of Prediction-------------------------------").append("\n\n");
+        sb.append("\n\n").append("-------------------------------------------------------------------------------------Beginning of Prediction-------------------------------------------------------------------------------------").append("\n\n");
 
-        sb.append("Date\t\t\t\t\t\t    " + "Number of OBSERVED positive cases\t\t\t\t" + "Number of ESTIMATED positive cases\t\t\t\t\t\t").append(100 - (significanceLevelEstimated * 100)).append("% intervals\n");
+        sb.append("Date\t\t\t\t\t\t    " + "Number of OBSERVED positive cases\t\t\t\t\t\t" + "Number of ESTIMATED positive cases\t\t\t\t\t\t").append(100 - (significanceLevelEstimated * 100)).append("% intervals\n");
 
         for (int i = 0; i < this.yObs.length; i++) {
 
@@ -175,21 +175,17 @@ public class StringBuilderReport {
                         .append("\n");
 
             }
+
         }
 
-
-        sb.append("\n\n").append("-----------------------------End of Prediction-------------------------------").append("\n\n");
-
-
-        sb.append("\n\n").append("-----------------------------End of Report-------------------------------").append("\n\n");
-
+        sb.append("\n\n").append("-------------------------------------------------------------------------------------End of Prediction-------------------------------------------------------------------------------------").append("\n\n");
 
         return sb;
     }
 
 
     public StringBuilder stringConstructionLinearRegression() {
-        sb.append("\n\n").append("-----------------------------Beginning of Report-------------------------------").append("\n\n");
+        sb.append("\n\n").append("------------------------------------------------------------Beginning of Report------------------------------------------------------------").append("\n\n");
 
         sb.append("The regression model fitted using data from the interval\n")
                 .append("^y = ").append(regressionSimple.toString())
@@ -219,7 +215,7 @@ public class StringBuilderReport {
             sb.append(NO_REJECT_H0);
         }
 
-        sb.append("\n\n").append("-----------------------------Beginning of ANOVA-------------------------------").append("\n\n");
+        sb.append("\n\n").append("------------------------------------------------------------Beginning of ANOVA------------------------------------------------------------").append("\n\n");
 
         sb.append("\n")
                 .append(SIGNIFICANCE_MODEL_ANOVA)
@@ -241,9 +237,9 @@ public class StringBuilderReport {
                     .append(REGRESSION_MODEL + "\n");
         }
 
-        sb.append("\n\n").append("-----------------------------End of ANOVA-------------------------------").append("\n\n");
+        sb.append("\n\n").append("-----------------------------------------------------------------End of ANOVA-----------------------------------------------------------------").append("\n\n");
 
-        sb.append("\n\n").append("-----------------------------Beginning of Prediction-------------------------------").append("\n\n");
+        sb.append("\n\n").append("-------------------------------------------------------------------------------------Beginning of Prediction-------------------------------------------------------------------------------------").append("\n\n");
 
         sb.append("Date\t\t\t\t\t\t    " + "Number of OBSERVED positive cases\t\t\t\t\t\t" + "Number of ESTIMATED positive cases\t\t\t\t\t\t").append(100 - (significanceLevelEstimated * 100)).append("% intervals\n");
 
@@ -278,12 +274,7 @@ public class StringBuilderReport {
             }
         }
 
-
-        sb.append("\n\n").append("-----------------------------End of Prediction-------------------------------").append("\n\n");
-
-
-        sb.append("\n\n").append("-----------------------------End of Report-------------------------------").append("\n\n");
-
+        sb.append("\n\n").append("-------------------------------------------------------------------------------------End of Prediction-------------------------------------------------------------------------------------").append("\n\n");
 
         return sb;
     }
@@ -348,7 +339,7 @@ public class StringBuilderReport {
             sb.append(dayTests)
                     .append(" positive covid tests");
         }
-
+        sb.append("\n\n").append("------------------------------------------------------------End of Report------------------------------------------------------------").append("\n\n");
         return sb;
 
     }
@@ -386,7 +377,7 @@ public class StringBuilderReport {
 
             }
         }
-
+        sb.append("\n\n").append("------------------------------------------------------------End of Report------------------------------------------------------------").append("\n\n");
         return sb;
 
     }
@@ -431,6 +422,7 @@ public class StringBuilderReport {
 
             }
         }
+        sb.append("\n\n").append("------------------------------------------------------------End of Report------------------------------------------------------------").append("\n\n");
         return sb;
     }
 

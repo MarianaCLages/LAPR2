@@ -19,6 +19,7 @@ public class SceneController {
     private AuthController authController = new AuthController();
     private App app = App.getInstance();
     private Company company = app.getCompany();
+    private Runnable ui;
 
     public static SceneController getInstance() {
 
@@ -67,4 +68,7 @@ public class SceneController {
         return company;
     }
 
+    public Runnable getUi() {
+        return ui;
+    }
 }

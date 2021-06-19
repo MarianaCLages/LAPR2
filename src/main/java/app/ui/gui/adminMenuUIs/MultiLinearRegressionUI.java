@@ -7,7 +7,6 @@ import app.controller.SceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 
 import java.net.URL;
@@ -17,12 +16,10 @@ public class MultiLinearRegressionUI implements Initializable {
 
     @FXML
     private TextArea myTextAreaMulti;
-    @FXML
-    private Button myReturnButtonMulti;
 
-    private SceneController sceneController = SceneController.getInstance();
-    private App app = sceneController.getApp();
-    private GenerateNHSReportController ctrl = new GenerateNHSReportController();
+    private final SceneController sceneController = SceneController.getInstance();
+    private final App app = sceneController.getApp();
+    private final GenerateNHSReportController ctrl = new GenerateNHSReportController();
 
     public void returnToGenerateNHSReport(ActionEvent event) {
         app.doLogout();

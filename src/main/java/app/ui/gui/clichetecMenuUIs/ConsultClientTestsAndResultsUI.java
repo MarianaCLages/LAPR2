@@ -20,10 +20,6 @@ public class ConsultClientTestsAndResultsUI implements Initializable {
     @FXML
     private ChoiceBox<String> cbxListOrder;
     @FXML
-    private Button btnReturn;
-    @FXML
-    private Button btnShowTests;
-    @FXML
     private ListView<String> lvwClientList;
     @FXML
     private ListView<String> lvwTestList;
@@ -32,16 +28,15 @@ public class ConsultClientTestsAndResultsUI implements Initializable {
     @FXML
     private TextArea txtTestResults;
 
-    ConsultClientTestsAndResultsController ctrl = new ConsultClientTestsAndResultsController();
+    private final SceneController sceneController = SceneController.getInstance();
+    private final ConsultClientTestsAndResultsController ctrl = new ConsultClientTestsAndResultsController();
+    private final App app = sceneController.getApp();
 
     List<Client> clientList;
     List<Test> testList;
     Client client;
 
-    private final SceneController sceneController = SceneController.getInstance();
-
     public void returnToCCTMenu(ActionEvent event) {
-        App app = sceneController.getApp();
         app.doLogout();
         sceneController.switchMenu(event, Constants.CLINICAL_CHEMISTRY_TECHNOLOGIST_UI);
     }
