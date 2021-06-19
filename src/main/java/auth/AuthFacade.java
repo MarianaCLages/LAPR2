@@ -18,7 +18,7 @@ public class AuthFacade implements Serializable {
     private UserRoleStore roles;
     private UserStore users;
 
-    public AuthFacade()  {
+    public AuthFacade() {
 
         this.userSession = new UserSession();
         this.roles = new UserRoleStore();

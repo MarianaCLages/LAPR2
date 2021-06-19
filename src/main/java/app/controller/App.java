@@ -40,7 +40,7 @@ public class App {
             this.authFacade = this.company.getAuthFacade();
             bootstrap();
         }
-       // company.saveCompany();
+        // company.saveCompany();
 
         this.authFacade = this.company.getAuthFacade();
 
@@ -65,15 +65,15 @@ public class App {
         // Read configured values
         InputStream in = null;
         try {
-             in = new FileInputStream(Constants.PARAMS_FILENAME);
-             props.load(in);
+            in = new FileInputStream(Constants.PARAMS_FILENAME);
+            props.load(in);
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
 
         } finally {
-            try{
+            try {
                 in.close();
-            } catch (IOException err){
+            } catch (IOException err) {
 
             }
         }
@@ -312,6 +312,28 @@ public class App {
         tn1.addTestResult("HB000", 600);
         tn1.changeState(Constants.VALIDATED);
         testStore.addTest(tn1);
+        t4.setSampleCreatedDate(LocalDateTime.of(2021, Month.JUNE, 18, 22, 30));
+
+
+        Test tn2 = new Test("1234567890123465", "200000000010", "1234567882", bloodTest, testCategories, testParameters);
+        tn2.addTestParameter();
+        tn2.changeState("SAMPLE_COLLECTED");
+        testStore.addTest(tn2);
+        t4.setSampleCreatedDate(LocalDateTime.of(2021, Month.JUNE, 18, 22, 30));
+
+
+        Test tn3 = new Test("1234567890123466", "200000000011", "1234567881", bloodTest, testCategories, testParameters);
+        tn3.addTestParameter();
+        tn3.changeState("SAMPLE_COLLECTED");
+        tn3.addTestResult("MCH00", 60);
+        tn3.addTestResult("ESR00", 150);
+        tn3.addTestResult("HB000", 60);
+        tn3.changeState("SAMPLE_ANALYSED");
+        t4.setSampleCreatedDate(LocalDateTime.of(2021, Month.JUNE, 18, 22, 30));
+
+
+        testStore.addTest(tn3);
+
 
         final String pass = "123456";
         this.authFacade.addUserWithRole("Clinical Chemistry Technologist ", "clichetec@lei.sem2.pt", pass, Constants.ROLE_CLINICALCHEMISTRYTECHNOLOGIST);

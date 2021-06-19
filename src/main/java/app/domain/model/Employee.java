@@ -172,7 +172,7 @@ public class Employee implements Serializable {
         }
 
         if (success) {
-            System.out.println("Email:" + this.email+", password:" + password);
+            System.out.println("Email:" + this.email + ", password:" + password);
             Email.sendPasswordNotification(this.name, this.email, password);
 
         }
@@ -197,7 +197,6 @@ public class Employee implements Serializable {
     }
 
     /**
-     *
      * @return email of the Employee
      */
     public String getEmail() {
@@ -205,7 +204,6 @@ public class Employee implements Serializable {
     }
 
     /**
-     *
      * @return Phone number of the Employee
      */
     public String getPhonenumber() {

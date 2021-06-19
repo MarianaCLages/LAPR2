@@ -54,7 +54,7 @@ public class Company implements Serializable {
 
     }
 
-   public Company() {
+    public Company() {
         Company temp = (Company) readCompany();
 
 

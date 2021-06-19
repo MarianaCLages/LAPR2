@@ -107,8 +107,8 @@ public class ParameterStore implements Serializable {
         for (Parameter s : array) {
             listString.append(s.toString()).append(", ");
         }
-        listString.deleteCharAt(listString.length()-1);
-        listString.deleteCharAt(listString.length()-1);
+        listString.deleteCharAt(listString.length() - 1);
+        listString.deleteCharAt(listString.length() - 1);
         listString.append("]");
 
         return valueOf(listString);
@@ -129,7 +129,6 @@ public class ParameterStore implements Serializable {
     }
 
     /**
-     *
      * @return the list of all the parameters in the system
      */
     public List<Parameter> getList() {
@@ -138,6 +137,7 @@ public class ParameterStore implements Serializable {
 
     /**
      * returns a list of parameters associated with a category
+     *
      * @param categoryCode the code of a category
      * @return list of parameters
      */
@@ -174,6 +174,7 @@ public class ParameterStore implements Serializable {
         }
         return null;
     }
+
     public Parameter getParameterByCode(String code) {
         for (Parameter p1 : this.array) {
             if (p1.getCode().equals(code)) {

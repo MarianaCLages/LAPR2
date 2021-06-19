@@ -20,6 +20,7 @@ public class CreateReportController {
 
     /**
      * Constructor of the class, receives an instance of the company class
+     *
      * @param company instance of Company
      */
     public CreateReportController(Company company) {
@@ -35,6 +36,7 @@ public class CreateReportController {
 
     /**
      * This method aims to create a list filled with objects with characteristics from the objects meant to be presented
+     *
      * @return the test list
      */
     public List<TestDTO> tList() {

@@ -23,7 +23,7 @@ public class ImportTestsController {
         importt.readTestFromCSV(filepath);
     }
 
-    public List<String> saveFileTestList(){
+    public List<String> saveFileTestList() {
         return importt.getTestFileList();
 
     }

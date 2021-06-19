@@ -21,7 +21,7 @@ public class ParameterCategoryUI {
         sceneController.switchMenu(event, Constants.ADMINISTRATOR_UI);
     }
 
-    public void runUI(){
+    public void runUI() {
         ParameterCategoryUI ui = new ParameterCategoryUI();
 
     }

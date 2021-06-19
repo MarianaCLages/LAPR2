@@ -95,7 +95,6 @@ public class ConsultClientTestsAndResultsController {
      * @param test the selected test
      * @return the test results/details
      */
-
     public String toString(Test test) {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("TestCode = ").append(test.getTestCode()).append("\nClient TIN = ").append(test.getClientTin()).append("\nNHS number = ").append(test.getTestNhsNumber()).append("\nTest type = ").append(test.getTestType().getDescription()).append("\nDate of validation = ").append(test.getValidatedDate().getYear()).append("-").append(test.getValidatedDate().getMonthValue()).append("-").append(test.getValidatedDate().getDayOfMonth()).append(" ").append(test.getValidatedDate().getHour()).append(":").append(test.getValidatedDate().getMinute()).append(":").append(test.getValidatedDate().getSecond());

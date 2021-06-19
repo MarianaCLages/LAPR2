@@ -7,8 +7,8 @@ import java.io.Serializable;
 public class TestStoreDTO implements Serializable {
     private Test test;
 
-    public TestStoreDTO(Test test){
-        this.test=test;
+    public TestStoreDTO(Test test) {
+        this.test = test;
     }
 
     @Override
