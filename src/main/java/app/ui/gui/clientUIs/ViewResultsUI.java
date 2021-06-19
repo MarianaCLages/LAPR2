@@ -1,6 +1,5 @@
 package app.ui.gui.clientUIs;
 
-import app.controller.App;
 import app.controller.ViewResultsController;
 import app.domain.shared.Constants;
 import app.controller.SceneController;

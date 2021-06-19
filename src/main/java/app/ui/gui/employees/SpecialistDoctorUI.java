@@ -5,8 +5,6 @@ import app.domain.shared.Constants;
 import app.controller.SceneController;
 import app.ui.console.CreateReportUI;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 
 public class SpecialistDoctorUI {
 
