@@ -197,7 +197,7 @@ public class ImportTests {
 
         Test t = tstore.createTest(metadata[4], metadata[5], testtype, pcList, pList);
         tstore.saveTest();
-
+        t.createReport("Undefined");
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 

@@ -13,6 +13,6 @@
          </font>
       </Label>
       <Button fx:id="myReturnButtonClient" layoutX="14.0" layoutY="332.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="54.0" prefWidth="101.0" text="Return" />
-      <Button fx:id="ResultsButton" layoutX="253.0" layoutY="173.0" mnemonicParsing="false" onAction="#ViewResultsMenu" prefHeight="54.0" prefWidth="94.0" text="Results" />
+      <Button layoutX="274.0" layoutY="188.0" mnemonicParsing="false" onAction="#ViewResultsMenu" text="Results" />
    </children>
 </AnchorPane>
