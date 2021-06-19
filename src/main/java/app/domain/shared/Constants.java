@@ -94,11 +94,12 @@ public class Constants {
     public static final String CLIENT_LIST_NAME = "Name";
 
     public static final double VALID_COVID_PARAMETER_VALUE = 1.4;
-    public static final String VALID_COVID_PARAMETER = "IgGAN";
 
-    public static final String VALIDATED = "VALIDATED";
+    public static final String CREATED = "CREATED";
     public static final String SAMPLE_COLLECTED = "SAMPLE_COLLECTED";
+    public static final String VALIDATED = "VALIDATED";
 
     public static final String IG_GAN = "IgGAN";
+    public static final String COV19 = "COV19";
 
 }

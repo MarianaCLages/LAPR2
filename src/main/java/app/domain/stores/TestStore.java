@@ -237,7 +237,7 @@ public class TestStore implements Serializable {
         List<Test> validatedTest = new ArrayList<>();
 
         for (Test test : array) {
-            if (client.getTinNumber().equalsIgnoreCase(test.getClientTin()) && test.getState().equals("VALIDATED")) {
+            if (client.getTinNumber().equalsIgnoreCase(test.getClientTin()) && test.getState().equals(Constants.VALIDATED)) {
                 validatedTest.add(test);
             }
         }
@@ -249,7 +249,7 @@ public class TestStore implements Serializable {
         List<Test> testList = new ArrayList<>();
 
         for (Test test : array) {
-            if (test.getState().equals("VALIDATED") && test.getTestType().getTestID().equals("COV19")) {
+            if (test.getState().equals(Constants.VALIDATED) && test.getTestType().getTestID().equals(Constants.COV19)) {
                 testList.add(test);
             }
         }
@@ -263,7 +263,7 @@ public class TestStore implements Serializable {
         List<Test> testList = new ArrayList<>();
 
         for (Test test : array) {
-            if (test.getState().equals("VALIDATED")) {
+            if (test.getState().equals(Constants.VALIDATED)) {
                 testList.add(test);
             }
         }
@@ -278,7 +278,7 @@ public class TestStore implements Serializable {
         List<Test> testList = new ArrayList<>();
 
         for (Test test : array) {
-            if (test.getState().equals("CREATED") || test.getState().equals("SAMPLE_COLLECTED")) {
+            if (test.getState().equals(Constants.CREATED) || test.getState().equals(Constants.SAMPLE_COLLECTED)) {
                 testList.add(test);
             }
         }
@@ -345,7 +345,7 @@ public class TestStore implements Serializable {
         for (Test t : getValidatedTestsListCovid()) {
             for (TestParameter t1 : t.getTestParam()) {
                 if (t1 != null) {
-                    if (t1.getpCode().equals(Constants.VALID_COVID_PARAMETER) && t1.getTestParameterResult().getResult() > Constants.VALID_COVID_PARAMETER_VALUE) {
+                    if (t1.getpCode().equals(Constants.IG_GAN) && t1.getTestParameterResult().getResult() > Constants.VALID_COVID_PARAMETER_VALUE) {
                         covidTestList.add(t);
                     }
                 }
