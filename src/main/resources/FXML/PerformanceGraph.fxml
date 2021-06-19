@@ -4,15 +4,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="676.0" prefWidth="829.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.LabCord.PerformanceGraphUI">
    <children>
-      <LineChart prefHeight="607.0" prefWidth="829.0">
+      <LineChart fx:id="graph" prefHeight="607.0" prefWidth="829.0">
         <xAxis>
-          <CategoryAxis side="BOTTOM" />
+          <CategoryAxis fx:id="yaxis" side="BOTTOM" />
         </xAxis>
         <yAxis>
-          <NumberAxis side="LEFT" />
+          <NumberAxis side="LEFT" fx:id="xaxis" />
         </yAxis>
       </LineChart>
       <Button fx:id="myReturnButton" layoutX="14.0" layoutY="630.0" mnemonicParsing="false" onAction="#returnToPerformanceUI" prefHeight="32.0" prefWidth="77.0" text="Return" />

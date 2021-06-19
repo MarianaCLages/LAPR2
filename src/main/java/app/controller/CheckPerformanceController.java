@@ -8,8 +8,11 @@ import app.domain.stores.TestStore;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 
 import static app.domain.shared.Constants.BENCHMARK_ALGORITHM_PATH;
 import static app.domain.shared.Constants.BRUTEFORCE_ALGORITHM_PATH;
@@ -45,6 +48,7 @@ public class CheckPerformanceController {
         return adapter;
 
     }
+
 
     public int[] getSubArray(LocalDate beg, LocalDate end, String algorithm) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         MaxSumAdapter adapter = getAdapter(algorithm);
@@ -147,7 +151,53 @@ public class CheckPerformanceController {
         return begEnd;
     }
 
+    public int numberClients() {
+        return cStore.getClientList().size();
+    }
+
+    public int getAllTestsInAYear() {
+
+        LocalDate todayDate = LocalDate.now();
+        int testsInAYear=0;
+
+        for (int i = 0; i < 365; i++) {
+
+            int inter = 365 - i;
+
+            Calendar cal2 = Calendar.getInstance();
+            cal2.add(Calendar.DATE, -inter);
+            Date toDate2 = cal2.getTime();
+
+            LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
+            for (Test t : tStore.getTestListArray()) {
+
+                {
+                    if (t.getValidatedDate().toLocalDate().equals(currentDay) || t.getDate().equals(currentDay) || t.getDiagnosticDate().toLocalDate().equals(currentDay) || t.getSampleCreatedDate().toLocalDate().equals(currentDay) || t.getAnalysedDate().toLocalDate().equals(currentDay)) {
+                        testsInAYear+=1;
+                    }
+                }
+            }
+        }
+
+
+        return testsInAYear;
+    }
+
+
+
+    public int numberWaitingResults() {
+
+        return tStore.getWaitingResult().size();
+    }
+
+    public int numberWaitingDiagnosis() {
+
+        return tStore.getWaitingDiagnosis().size();
+    }
 }
+
+
 
 
 
