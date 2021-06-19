@@ -68,15 +68,9 @@ public class GenerateNHSReportController {
         System.out.println(sum);
 
         System.out.println("Testes positivos no intervalo de datas");
-<<<<<<< HEAD
-        int sum2=0;
-        for(double xi : positiveCovidTestsPerDayInsideTheDateInterval){
-            sum2+=xi;
-=======
         int sum2 = 0;
-        for (double xi : positiveCovidTestsPerDayInsideTheHistoricalInterval) {
+        for (double xi : positiveCovidTestsPerDayInsideTheDateInterval) {
             sum2 += xi;
->>>>>>> b48258a1bd8be8924c927e04440a9bee0ac2e8ec
         }
         System.out.println(sum2);
 
@@ -95,6 +89,7 @@ public class GenerateNHSReportController {
         System.out.println(sum4);
 
     }
+
 
     public void linearRegressionWithMeanAge() {
         setData();
