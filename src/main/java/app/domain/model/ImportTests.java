@@ -248,7 +248,7 @@ public class ImportTests {
 
 
         LocalDateTime date11 = LocalDateTime.parse(date1, formatter);
-        t.setSampleCreatedDate(date11);
+        t.setCreatedDate(date11);
         LocalDateTime date22 = LocalDateTime.parse(date2, formatter);
         t.setAnalysedData(date22);
         LocalDateTime date33 = LocalDateTime.parse(date3, formatter);

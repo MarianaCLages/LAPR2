@@ -29,5 +29,3 @@ m
 =src/main/java/app/controller/GenerateNHSReportController.java,3\b\3bab230b12c42ad13260f547c26d1ac821b6e53d
 [
 +src/main/java/app/domain/model/Company.java,e\6\e66f0f8e51b44df23f2004467961976fbec241aa
-g
-7src/main/java/app/domain/model/StringBuilderReport.java,1\d\1d1c6fd2d764530b609d4c92ce9c276f3e16c798
