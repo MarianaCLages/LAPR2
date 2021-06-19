@@ -115,12 +115,6 @@ public class CheckPerformanceController {
 
         int[] subarray = adapter.getMaxSum(differenceArray);
 
-
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 9136d5d47e4a27d62ce8916c3b2d299013a41d41
         return subarray;
     }
 
@@ -172,7 +166,7 @@ public class CheckPerformanceController {
     //nome do método para teres os testes getAllTestsInAInterval
 
 
-    public void setInformation(String selection){
+    public void setInformation(String selection) {
         System.out.println(selection);
         String option = selection;
     }
