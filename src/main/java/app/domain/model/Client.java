@@ -335,4 +335,12 @@ public class Client implements Serializable {
     public Date getBirthDate() {
         return birthDate;
     }
+
+    public String getNhs() {
+        return nhs;
+    }
+
+    public String getSex() {
+        return sex;
+    }
 }

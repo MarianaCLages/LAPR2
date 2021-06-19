@@ -427,5 +427,83 @@ public class ClientTest {
         Assert.assertEquals(expected, actual);
 
     }
+
+    @Test
+    public void setCc() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zé");
+        String cc = "0034567890123456";
+        client.setCc(cc);
+
+        Assert.assertEquals(cc, client.getCc());
+    }
+
+    @Test
+    public void setNhs() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zé");
+        String nhs = "0234567891";
+        client.setNhs(nhs);
+
+        Assert.assertEquals(nhs, client.getNhs());
+    }
+
+    @Test
+    public void setBirthDate() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zé");
+        String birthDateString = "25-06-2000";
+        Date birthDate = df.parse(birthDateString);
+        client.setBirthDate(birthDate);
+
+        Assert.assertEquals(birthDateString, df.format(client.getBirthDate()));
+    }
+
+    @Test
+    public void setSex() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zé");
+        String sex = "F";
+
+        client.setSex(sex);
+
+        Assert.assertEquals(sex, client.getSex());
+    }
+
+    @Test
+    public void setTinNumber() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zé");
+        String tin = "1234167891";
+
+        client.setTinNumber(tin);
+
+        Assert.assertEquals(tin, client.getTinNumber());
+    }
+
+
+
+    @Test
+    public void setPhoneNumber() {
+    }
+
+    @Test
+    public void setEmail() {
+    }
 }
 
