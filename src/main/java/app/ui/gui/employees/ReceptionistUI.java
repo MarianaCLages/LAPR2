@@ -3,11 +3,10 @@ package app.ui.gui.employees;
 import app.controller.App;
 import app.domain.shared.Constants;
 import app.controller.SceneController;
-import app.ui.console.ClientUI;
+import app.ui.console.CreateClientUI;
 import app.ui.console.RegisterTestUI;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
+
 
 public class ReceptionistUI {
 
@@ -21,7 +20,7 @@ public class ReceptionistUI {
     }
 
     public void goToRegisterClientUI() {
-        this.ui = new ClientUI();
+        this.ui = new CreateClientUI();
         ui.run();
     }
 

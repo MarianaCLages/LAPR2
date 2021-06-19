@@ -5,8 +5,6 @@ import app.domain.shared.Constants;
 import app.controller.SceneController;
 import app.ui.console.RecordResultsUI;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 
 public class ClinicalChemistryTechnologistUI {
 
@@ -19,7 +17,7 @@ public class ClinicalChemistryTechnologistUI {
         sceneController.switchMenu(event, "/FXML/MainScreen.fxml");
     }
 
-    public void goToRecordResultsUI(ActionEvent event) {
+    public void goToRecordResultsUI() {
        this.ui = new RecordResultsUI();
        ui.run();
     }

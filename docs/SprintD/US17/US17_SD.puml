@@ -1,0 +1,129 @@
+@startuml
+autonumber
+actor Client as C
+participant "ImportTestUI" as UI
+participant ":ImportTestController" as CTRL
+participant ":Company" as company
+participant ":ImportTests" as Imp
+participant "clastore:ClinicalAnalysisLabStore" as clastore
+participant "cstore:ClientStore" as cstore
+participant "tstore:TestStore" as tstore
+participant "pcstore:ParameterCategoryStore" as pcstore
+participant "pstore:ParameterStore" as pstore
+participant "cla:ClinicalAnalysisLab" as cla
+participant "ttstore:TestTypeStore" as ttstore
+participant "tt:TestType" as tt
+participant "c:Client" as c
+participant "t:Test" as t
+participant "p:Parameter" as p
+participant "pc:ParameterCategory" as pc
+participant ":AuthFacade" as Auth
+participant ":Email" as Email
+participant ":UserStore" as ustore
+participant "u:User" as u
+
+
+
+
+
+activate C
+C -> UI: wants to import clinical tests
+activate UI
+deactivate CTRL
+UI --> C: show the list of files
+deactivate UI
+
+C -> UI: choose the file
+activate UI
+activate CTRL
+UI --> CTRL :readTestFromCSV
+activate company
+Imp --> company:getClientList()
+deactivate company
+activate Imp
+CTRL --> Imp: createClientfromFile(metadata)
+
+
+Imp --> cstore: createClient()
+activate cstore
+cstore -> c** : c = Client(phoneNumber, cc, nhs, tinNumber, birthDate, email, name)
+cstore -> cstore: saveClient()
+
+Imp --> Auth: addUserWithRole()
+deactivate cstore
+activate Auth
+Auth -> ustore:create()
+deactivate Auth
+activate ustore
+ustore -> u**: u = User(id, password, name, role)
+deactivate ustore
+Imp --> Email: sendPasswordNotification()
+activate Email
+deactivate Email
+activate company
+Imp --> company:getClinicalAnalysisLabList()
+deactivate company
+Imp --> clastore: verifyClinicalLabID()
+activate clastore
+activate cla
+clastore -> cla: getId()
+deactivate clastore
+deactivate cla
+activate company
+Imp --> company: getTestTypeList();
+deactivate company
+Imp --> ttstore: getTestTypeExist()
+
+activate ttstore
+ttstore -> tt : getDescription()
+deactivate ttstore
+activate tt
+
+activate company
+Imp --> company:getParameterCategoryList()
+deactivate tt
+
+deactivate company
+activate pcstore
+Imp --> pcstore: getParameterCategoryExist()
+deactivate pcstore
+activate company
+Imp --> company:getParameterList()
+deactivate company
+activate pstore
+Imp --> pstore: getParameterExist()
+deactivate pstore
+activate company
+Imp --> company:getTestList()
+deactivate company
+Imp --> tstore: createTest()
+activate tstore
+tstore -> t**: t = Test(testNhsNumber, clientTin, testType, catList, paList)
+tstore -> tstore: saveTest()
+ref over Imp: addTestResult(parameterCode,result)
+
+
+Imp --> t:changeState()
+deactivate tstore
+activate t
+
+CTRL --> Imp: getTestFileList()
+deactivate t
+
+
+UI --> CTRL :saveFileTestList()
+
+
+deactivate CTRL
+
+
+UI --> C: shows the tests that were imported
+deactivate UI
+
+
+
+
+
+deactivate UI
+deactivate C
+@enduml

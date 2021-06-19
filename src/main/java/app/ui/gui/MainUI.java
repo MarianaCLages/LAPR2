@@ -11,11 +11,6 @@ import java.io.IOException;
 
 public class MainUI {
 
-    @FXML
-    private Button btnLogin;
-    @FXML
-    private Button btnCredits;
-
     private SceneController sceneController = SceneController.getInstance();
 
     public void login(ActionEvent e) {

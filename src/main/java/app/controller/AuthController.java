@@ -2,12 +2,13 @@ package app.controller;
 
 import auth.mappers.dto.UserRoleDTO;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * @author Paulo Maio <pam@isep.ipp.pt>
  */
-public class AuthController {
+public class AuthController implements Serializable {
 
     private App app;
 

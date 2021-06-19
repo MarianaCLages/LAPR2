@@ -2,15 +2,10 @@ package app.ui.gui.employees;
 
 
 import app.controller.App;
-import app.domain.model.Employee;
-import app.domain.model.Test;
 import app.domain.shared.Constants;
 import app.controller.SceneController;
 import app.ui.console.*;
-import app.ui.gui.adminMenuUIs.EmployeeUI;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 
 public class AdministratorUI {
 
@@ -23,27 +18,27 @@ public class AdministratorUI {
         sceneController.switchMenu(event, Constants.MAIN_SCREEN_UI);
     }
 
-    public void goToTestTypeUI(ActionEvent event) {
+    public void goToTestTypeUI() {
         this.ui = new TestTypeUI();
         ui.run();
     }
 
-    public void goToParameterCategoryUI(ActionEvent event) {
+    public void goToParameterCategoryUI() {
         this.ui = new ParameterCategoryUI();
         ui.run();
     }
 
-    public void goToParameterUI(ActionEvent event) {
+    public void goToParameterUI() {
         this.ui = new ParameterUI();
         ui.run();
     }
 
-    public void goToEmployeeUI(ActionEvent event) {
+    public void goToEmployeeUI() {
         this.ui = new RegisterEmployeeUI();
         ui.run();
     }
 
-    public void goToClinicalAnalysisLaboratoryUI(ActionEvent event) {
+    public void goToClinicalAnalysisLaboratoryUI() {
         this.ui = new ClinicalAnalysisLabUI();
         ui.run();
     }

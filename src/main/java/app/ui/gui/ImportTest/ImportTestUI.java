@@ -1,6 +1,5 @@
 package app.ui.gui.ImportTest;
 
-import app.controller.App;
 import app.controller.ImportTestsController;
 import app.domain.shared.Constants;
 import app.controller.SceneController;
@@ -11,7 +10,6 @@ import javafx.scene.control.*;
 import javafx.stage.FileChooser;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 

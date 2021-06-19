@@ -4,12 +4,6 @@ import app.controller.App;
 import app.domain.shared.Constants;
 import app.controller.SceneController;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class LaboratoryCoordinatorUI {
 

@@ -5,7 +5,6 @@ import app.domain.shared.Constants;
 import app.controller.SceneController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
 public class RecordResultsUI {
