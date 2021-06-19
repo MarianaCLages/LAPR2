@@ -35,8 +35,8 @@ public class CheckPerformanceUI implements Initializable {
         sceneController.switchMenu(actionEvent, Constants.LABORATORY_COORDINATOR_UI);
     }
 
-    public void confirm(ActionEvent actionEvent) {
-        ctrl.getSubArray(dtnBeg.getValue(), dtnEnd.getValue());
+    public void confirm(ActionEvent actionEvent) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+        ctrl.getSubArray(dtnBeg.getValue(), dtnEnd.getValue(),myChoiceBoxSimple.getValue());
 
     }
 
