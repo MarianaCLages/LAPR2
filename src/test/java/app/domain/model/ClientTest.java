@@ -497,13 +497,31 @@ public class ClientTest {
     }
 
 
-
     @Test
-    public void setPhoneNumber() {
+    public void setPhoneNumber() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zé");
+        String phoneNumber = "12345674110";
+
+        client.setPhoneNumber(phoneNumber);
+
+        Assert.assertEquals(phoneNumber, client.getPhoneNumber());
     }
 
     @Test
-    public void setEmail() {
+    public void setEmail() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zé");
+        String email = "kikal@email.com";
+
+        client.setEmail(email);
+
+        Assert.assertEquals(email, client.getEmail());
     }
 }
-
