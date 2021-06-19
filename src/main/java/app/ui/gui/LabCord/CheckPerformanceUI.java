@@ -5,6 +5,9 @@ import app.controller.CheckPerformanceController;
 import app.controller.SceneController;
 import app.domain.shared.Constants;
 
+import app.domain.shared.exceptions.ChoiceBoxEmptyException;
+import app.domain.shared.exceptions.InvalidIntervalOfDatesEndException;
+import app.ui.gui.Alerts;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,6 +15,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 
 import java.net.URL;
+import java.time.temporal.ChronoUnit;
 import java.util.ResourceBundle;
 
 public class CheckPerformanceUI implements Initializable {
@@ -48,12 +52,38 @@ public class CheckPerformanceUI implements Initializable {
 
 
     public void confirm() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-        ctrl.getSubArray(dtnBeg.getValue(), dtnEnd.getValue(), myChoiceBoxSimple.getValue()); //subArray
-        ctrl.getDates(ctrl.getSubArray(dtnBeg.getValue(), dtnEnd.getValue(), myChoiceBoxSimple.getValue()));// data de início e de fim do sub array
-        ctrl.numberWaitingResults();
-        ctrl.numberWaitingDiagnosis();
-        ctrl.numberClients();
+
+        try {
+            if (myChoiceBoxInformation.getValue().equals(null) || myChoiceBoxSimple.getValue().equals(null)) {
+                throw new ChoiceBoxEmptyException();
+            }
+
+            if ((int) ChronoUnit.DAYS.between(dtnBeg.getValue(), dtnEnd.getValue()) < 0) {
+                throw new InvalidIntervalOfDatesEndException();
+            }
+
+            ctrl.getSubArray(dtnBeg.getValue(), dtnEnd.getValue(), myChoiceBoxSimple.getValue()); //subArray
+            ctrl.getDates(ctrl.getSubArray(dtnBeg.getValue(), dtnEnd.getValue(), myChoiceBoxSimple.getValue()));// data de início e de fim do sub array
+            ctrl.numberWaitingResults();
+            ctrl.numberWaitingDiagnosis();
+            ctrl.numberClients();
+
+            if (myChoiceBoxInformation.getValue().equals(Constants.DAY)) {
+                ctrl.setInformation(myChoiceBoxInformation.getValue());
+            } else if (myChoiceBoxInformation.getValue().equals(Constants.WEEK)) {
+                ctrl.setInformation(Constants.WEEK);
+            } else if (myChoiceBoxInformation.getValue().equals(Constants.MONTH)) {
+                ctrl.setInformation(myChoiceBoxInformation.getValue());
+            } else if (myChoiceBoxInformation.getValue().equals(Constants.YEAR)) {
+                ctrl.setInformation(myChoiceBoxInformation.getValue());
+            }
+
+        } catch (ChoiceBoxEmptyException | InvalidIntervalOfDatesEndException err1) {
+            Alerts.errorAlert(err1.getMessage());
+        } catch (NullPointerException err2) {
+            Alerts.errorAlert(err2.getMessage());
+          //  Alerts.errorAlert("Please type all the information necessary! Don't leave blank spots!");
+        }
+
     }
-
-
 }

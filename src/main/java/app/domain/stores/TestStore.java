@@ -666,5 +666,38 @@ public class TestStore implements Serializable {
         return covidTestsInterval;
     }
 
+    public int getAllTestsInAInterval(int inter) {
+
+        int sum = 0;
+
+        for (int i = 0; i < inter; i++) {
+
+            inter -= 1;
+
+            Calendar calendar = getDayForTests(inter);
+            Date toDate2 = calendar.getTime();
+            LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
+            if ((calendar.get(Calendar.DAY_OF_WEEK) != 1)) {
+                for (Test t : getTestListArray()) {
+                    if (t.getValidatedDate().toLocalDate().equals(currentDay) || t.getDate().toLocalDate().equals(currentDay) || t.getDiagnosticDate().toLocalDate().equals(currentDay) || t.getSampleCreatedDate().toLocalDate().equals(currentDay) || t.getAnalysedDate().toLocalDate().equals(currentDay)) {
+                        sum += 1;
+                    }
+                }
+            }
+        }
+
+
+        return sum;
+
+    }
+
+    public Calendar getDayForTests(int inter) {
+
+        Calendar cal2 = Calendar.getInstance();
+        cal2.add(Calendar.DATE, -inter);
+
+        return cal2;
+    }
 
 }

@@ -61,7 +61,7 @@ public class SimpleLinearRegressionUI implements Initializable {
         } catch (ChoiceBoxEmptyException err2) {
             Alerts.errorAlert(err2.getMessage());
         } catch (RuntimeException err1) {
-            Alerts.errorAlert("Please enter valid information (Don't leave blank containers!)");
+            Alerts.errorAlert(err1.getMessage());
         }
 
     }

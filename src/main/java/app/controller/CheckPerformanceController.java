@@ -109,12 +109,11 @@ public class CheckPerformanceController {
         int[] subarray = adapter.getMaxSum(differenceArray);
 
 
-
         return subarray;
     }
 
-    public LocalDateTime[] getDates(int[] subarray){
-        int[] begEnd = getBeginEnd(differenceArray,subarray);
+    public LocalDateTime[] getDates(int[] subarray) {
+        int[] begEnd = getBeginEnd(differenceArray, subarray);
         LocalDateTime[] dates = new LocalDateTime[2];
 
         dates[0] = times[begEnd[0]];
@@ -155,36 +154,13 @@ public class CheckPerformanceController {
         return cStore.getClientList().size();
     }
 
-    public int getAllTestsInAYear() {
-
-        LocalDate todayDate = LocalDate.now();
-        int testsInAYear=0;
-
-        for (int i = 0; i < 365; i++) {
-
-            int inter = 365 - i;
-
-            Calendar cal2 = Calendar.getInstance();
-            cal2.add(Calendar.DATE, -inter);
-            Date toDate2 = cal2.getTime();
-
-            LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-
-            for (Test t : tStore.getTestListArray()) {
-
-                {
-                    if (t.getValidatedDate().toLocalDate().equals(currentDay) || t.getDate().equals(currentDay) || t.getDiagnosticDate().toLocalDate().equals(currentDay) || t.getSampleCreatedDate().toLocalDate().equals(currentDay) || t.getAnalysedDate().toLocalDate().equals(currentDay)) {
-                        testsInAYear+=1;
-                    }
-                }
-            }
-        }
+    //nome do método para teres os testes getAllTestsInAInterval
 
 
-        return testsInAYear;
+    public void setInformation(String selection){
+        System.out.println(selection);
+        String option = selection;
     }
-
-
 
     public int numberWaitingResults() {
 
