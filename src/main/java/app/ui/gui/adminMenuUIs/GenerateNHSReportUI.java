@@ -46,8 +46,8 @@ public class GenerateNHSReportUI implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         String[] choices = {Constants.SIMPLE_LINEAR_REGRESSION, Constants.MULTI_LINEAR_REGRESSION};
         myChoiceBoxNHS.getItems().addAll(choices);
-        String[] choicesForReport = {"Day", "Week", "Month"};
-        myChoiceBoxNHS2.getItems().addAll(choicesForReport);
+        String[] information = {Constants.DAY, Constants.WEEK, Constants.MONTH};
+        myChoiceBoxNHS2.getItems().addAll(information);
     }
 
     public void returnToAdminMenu(ActionEvent event) {

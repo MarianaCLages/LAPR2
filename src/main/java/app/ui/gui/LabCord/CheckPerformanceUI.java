@@ -22,24 +22,35 @@ public class CheckPerformanceUI implements Initializable {
     private DatePicker dtnBeg;
     @FXML
     private DatePicker dtnEnd;
+    @FXML
+    private ChoiceBox<String> myChoiceBoxInformation;
 
     private final SceneController sceneController = SceneController.getInstance();
     private final CheckPerformanceController ctrl = new CheckPerformanceController();
     private final App app = sceneController.getApp();
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        String[] choices = {Constants.BENCHMARK_ALGORITHM, Constants.BRUTEFORCE_ALGORITHM};
+        String[] information = {Constants.DAY, Constants.WEEK, Constants.MONTH, Constants.YEAR};
+        myChoiceBoxSimple.getItems().addAll(choices);
+        myChoiceBoxInformation.getItems().addAll(information);
+    }
 
     public void returnToMenu(ActionEvent actionEvent) {
         app.doLogout();
         sceneController.switchMenu(actionEvent, Constants.LABORATORY_COORDINATOR_UI);
     }
 
-    public void confirm(ActionEvent actionEvent) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-        ctrl.getSubArray(dtnBeg.getValue(), dtnEnd.getValue(),myChoiceBoxSimple.getValue());
-
+    public void goToGraph(ActionEvent event) {
+        sceneController.switchMenu(event, Constants.PERFORMANCE_GRAPH_UI);
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        String[] choices = {Constants.BENCHMARK_ALGORITHM, Constants.BRUTEFORCE_ALGORITHM};
-        myChoiceBoxSimple.getItems().addAll(choices);
+
+    public void confirm() throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+        ctrl.getSubArray(dtnBeg.getValue(), dtnEnd.getValue(), myChoiceBoxSimple.getValue()); //subArray
+        ctrl.getDates(ctrl.getSubArray(dtnBeg.getValue(), dtnEnd.getValue(), myChoiceBoxSimple.getValue()));// data de início e de fim do sub array
     }
+
+
 }

@@ -71,7 +71,7 @@ public class Constants {
     public static final String IMPORT_TEST_UI = "/FXML/ImportTest.fxml";
 
     public static final String COMPANY_PERFORMANCE_UI = "/FXML/CompanyPerformanceUI.fxml";
-
+    public static final String PERFORMANCE_GRAPH_UI = "/FXML/PerformanceGraph.fxml";
 
     public static final String SIMPLE_LINEAR_REGRESSION_UI = "/FXML/SimpleLinearRegression.fxml";
     public static final String MULTI_LINEAR_REGRESSION_UI = "/FXML/MultiLinearRegression.fxml";
@@ -101,5 +101,10 @@ public class Constants {
 
     public static final String IG_GAN = "IgGAN";
     public static final String COV19 = "COV19";
+
+    public static final String DAY = "Day";
+    public static final String WEEK = "Week";
+    public static final String MONTH = "Month";
+    public static final String YEAR = "Year";
 
 }
