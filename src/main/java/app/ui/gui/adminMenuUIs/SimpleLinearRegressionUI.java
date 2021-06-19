@@ -22,9 +22,9 @@ public class SimpleLinearRegressionUI implements Initializable {
     @FXML
     private TextArea myTextAreaSimple;
 
-    private SceneController sceneController = SceneController.getInstance();
-    private App app = sceneController.getApp();
-    private GenerateNHSReportController ctrl = new GenerateNHSReportController();
+    private final SceneController sceneController = SceneController.getInstance();
+    private final App app = sceneController.getApp();
+    private final GenerateNHSReportController ctrl = new GenerateNHSReportController();
 
     public void returnToGenerateNHSReport(ActionEvent event) {
         app.doLogout();

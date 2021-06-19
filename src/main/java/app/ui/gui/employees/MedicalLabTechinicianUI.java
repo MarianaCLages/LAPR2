@@ -9,11 +9,8 @@ import javafx.scene.control.Button;
 
 public class MedicalLabTechinicianUI {
 
-    private SceneController sceneController = SceneController.getInstance();
-    private App app = sceneController.getApp();
-
-    @FXML
-    private Button myReturnButtonMlt;
+    private final SceneController sceneController = SceneController.getInstance();
+    private final App app = sceneController.getApp();
 
     public void returnToMenu(ActionEvent event) {
         app.doLogout();

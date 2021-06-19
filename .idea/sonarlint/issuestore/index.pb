@@ -1,6 +1,4 @@
 
-}
-Msrc/main/java/app/ui/gui/clichetecMenuUIs/ConsultClientTestsAndResultsUI.java,7\1\7147b5694f147c53f140ea5472f6f543c3ac978e
 x
 Hsrc/main/java/app/controller/ConsultClientTestsAndResultsController.java,8\4\8475389b3dfeacabb1273b412ebbf48a5dbc9f8b
 N
@@ -13,8 +11,6 @@ M
 docs/SprintD/US01/US1_CD.puml,2\5\25018b23f73c70478654848e1d5721ad2baa3724
 O
 docs/SprintD/US17/US17_SSD.puml,e\9\e9e59134129d819cbcaed58f1b5cb2da38e89429
-h
-8src/main/java/app/ui/gui/LabCord/CheckPerformanceUI.java,6\9\690c37988cd68dae4ac0199b39e634f7fdb47271
 _
 /src/main/java/app/domain/shared/Regression.java,4\2\42027e5130f6faf2f214c34b20505483cf7464b1
 e

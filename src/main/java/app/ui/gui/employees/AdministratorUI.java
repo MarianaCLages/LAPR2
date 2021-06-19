@@ -10,22 +10,8 @@ import javafx.scene.control.Button;
 
 public class AdministratorUI {
 
-    @FXML
-    private Button myReturnButton;
-    @FXML
-    private Button myParameterCategoryButton;
-    @FXML
-    private Button myParameterButton;
-    @FXML
-    private Button myTestTypeButton;
-    @FXML
-    private Button myClinicalButton;
-    @FXML
-    private Button myEmployeeButton;
-
-
-    private SceneController sceneController = SceneController.getInstance();
-    private App app = sceneController.getApp();
+    private final SceneController sceneController = SceneController.getInstance();
+    private final App app = sceneController.getApp();
 
 
     public void returnToMenu(ActionEvent event) {

@@ -9,11 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 public class CreditsUI {
-    @FXML
-    private Label credits;
-    @FXML
-    private Button btnBack;
-
 
     private SceneController sceneController = SceneController.getInstance();
     private App app = sceneController.getApp();

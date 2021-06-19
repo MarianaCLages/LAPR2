@@ -9,16 +9,9 @@ import javafx.scene.control.Button;
 
 public class ClientUI {
 
-
-    private SceneController sceneController = SceneController.getInstance();
-    private App app = sceneController.getApp();
-
-    @FXML
-    private Button myReturnButtonClient;
-
-    @FXML
-    private Button ResultsButton;
-
+    private final SceneController sceneController = SceneController.getInstance();
+    private final App app = sceneController.getApp();
+    
     public void ViewResultsMenu(ActionEvent event) {
         sceneController.switchMenu(event, Constants.VIEW_RESULTS_UI);
     }

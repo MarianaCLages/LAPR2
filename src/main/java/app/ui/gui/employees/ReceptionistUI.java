@@ -9,11 +9,8 @@ import javafx.scene.control.Button;
 
 public class ReceptionistUI {
 
-    private SceneController sceneController = SceneController.getInstance();
-    private App app = sceneController.getApp();
-
-    @FXML
-    private Button myReturnButtonReceptionist;
+    private final SceneController sceneController = SceneController.getInstance();
+    private final App app = sceneController.getApp();
 
     public void returnToMenu(ActionEvent event) {
         app.doLogout();

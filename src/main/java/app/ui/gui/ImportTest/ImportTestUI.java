@@ -17,18 +17,11 @@ import java.util.ResourceBundle;
 
 public class ImportTestUI implements Initializable {
 
-    ImportTestsController imp = new ImportTestsController();
-
-    @FXML
-    private TextField textField;
-
-    @FXML
-    private Button confirm;
+    private final ImportTestsController imp = new ImportTestsController();
+    private final SceneController sceneController = SceneController.getInstance();
 
     @FXML
     private ListView<String> ListView;
-
-    private SceneController sceneController = SceneController.getInstance();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

@@ -17,18 +17,17 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class CheckPerformanceUI implements Initializable {
-    public TextArea myTextAreaSimple;
-    public ChoiceBox<String> myChoiceBoxSimple;
-    public DatePicker dtnBeg;
-    public DatePicker dtnEnd;
-    public Button choiceAlgo;
-    private SceneController sceneController = SceneController.getInstance();
-    private CheckPerformanceController ctrl = new CheckPerformanceController();
-    private App app = sceneController.getApp();
-
 
     @FXML
-    private Button btnReturn;
+    private ChoiceBox<String> myChoiceBoxSimple;
+    @FXML
+    private DatePicker dtnBeg;
+    @FXML
+    private DatePicker dtnEnd;
+
+    private final SceneController sceneController = SceneController.getInstance();
+    private final CheckPerformanceController ctrl = new CheckPerformanceController();
+    private final App app = sceneController.getApp();
 
     public void returnToMenu(ActionEvent actionEvent) {
         app.doLogout();

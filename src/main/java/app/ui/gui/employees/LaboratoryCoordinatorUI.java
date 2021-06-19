@@ -13,16 +13,9 @@ import java.util.ResourceBundle;
 
 public class LaboratoryCoordinatorUI {
 
-    public Button btnPerformance;
-    private SceneController sceneController = SceneController.getInstance();
+    private final SceneController sceneController = SceneController.getInstance();
 
-    @FXML
-    private Button myReturnButtonLaboratoryCoordinator;
-
-    @FXML
-    private Button ImportTestsButton;
-
-    private App app = sceneController.getApp();
+    private final App app = sceneController.getApp();
 
     public void ImportTestsMenu(ActionEvent event) {
         sceneController.switchMenu(event, Constants.IMPORT_TEST_UI);
