@@ -6,6 +6,7 @@ import app.domain.shared.MultiLinearRegression;
 import app.domain.shared.exceptions.*;
 import app.domain.stores.TestStore;
 import app.ui.gui.Alerts;
+import com.nhs.report.Report2NHS;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -112,6 +113,7 @@ public class GenerateNHSReportController {
         }
 
         this.sb = this.stringBuilderReport.printCovidTestsPerInterval(company.getData().getSelection());
+        Report2NHS.writeUsingFileWriter(stringBuilderReport.getSb().toString());
 
     }
 
@@ -127,6 +129,7 @@ public class GenerateNHSReportController {
 
         this.sb = stringBuilderReport.stringConstructionLinearRegression();
         this.sb = this.stringBuilderReport.printCovidTestsPerInterval(company.getData().getSelection());
+        Report2NHS.writeUsingFileWriter(stringBuilderReport.getSb().toString());
 
     }
 
