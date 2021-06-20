@@ -170,6 +170,8 @@ According to the taken rationale, the conceptual classes promoted to software cl
 * Company
 * StringBuilderReport
 * Data
+* Test
+* Client  
 * RegressionModel
 * SimpleLinearRegression
 * MultiLinearRegression
@@ -183,6 +185,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 * NhsReportMapper
 * DataDTO
 * DataMapper 
+* NHSApi
 
 ## 3.2. Sequence Diagram (SD)
 
