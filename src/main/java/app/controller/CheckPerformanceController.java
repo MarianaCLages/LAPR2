@@ -165,6 +165,9 @@ public class CheckPerformanceController {
 
     //nome do método para teres os testes getAllTestsInAInterval
 
+    public void getAllTestsInInterval(int inter){
+        this.tStore.getAllTestsInAInterval(inter);
+    }
 
     public void setInformation(String selection) {
         System.out.println(selection);
@@ -180,6 +183,48 @@ public class CheckPerformanceController {
 
         return tStore.getWaitingDiagnosis().size();
     }
+
+    public String constructPerformanceReport(){
+
+        StringBuilder sb = new StringBuilder();
+
+        Calendar calendar = Calendar.getInstance();
+        int maxDaysThisMonth = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+        int maxDaysThisYear = calendar.getActualMaximum(Calendar.DAY_OF_YEAR);
+
+        sb.append("Number of clients:")
+                .append(numberClients())
+                .append("\n")
+                .append("Number of tests available:")
+                .append(tStore.numberOfTests())
+                .append("\n")
+                .append("Number of tests waiting for results:")
+                .append(numberWaitingResults())
+                .append("\n")
+                .append("Number of tests waiting for diagnostic:")
+                .append(numberWaitingDiagnosis())
+                .append("\n")
+                .append("Tests done today:")
+                .append(tStore.getAllTestsInAInterval(1))
+                .append("\n")
+                .append("Tests done in this week:")
+                .append(tStore.getAllTestsInAInterval(8))
+                .append("\n")
+                .append("Tests done in this month:")
+                .append(tStore.getAllTestsInAInterval(maxDaysThisMonth))
+                .append("\n")
+                .append("Tests done in this year:")
+                .append(tStore.getAllTestsInAInterval(365))
+                .append("\n");
+
+
+        return sb.toString();
+
+    }
+
+
+
+
 }
 
 

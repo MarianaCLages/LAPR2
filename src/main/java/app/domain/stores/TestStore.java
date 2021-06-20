@@ -680,9 +680,11 @@ public class TestStore implements Serializable {
 
             if ((calendar.get(Calendar.DAY_OF_WEEK) != 1)) {
                 for (Test t : getTestListArray()) {
-                    if (t.getValidatedDate().toLocalDate().equals(currentDay) || t.getDate().toLocalDate().equals(currentDay) || t.getDiagnosticDate().toLocalDate().equals(currentDay) || t.getSampleCreatedDate().toLocalDate().equals(currentDay) || t.getAnalysedDate().toLocalDate().equals(currentDay)) {
-                        sum += 1;
-                    }
+            //        if (t.getAnalysedDate().toLocalDate() != null || t.getAnalysedDate() != null || t.getDiagnosticDate().toLocalDate() != null || t.getSampleCreatedDate().toLocalDate() != null || t.getAnalysedDate().toLocalDate() != null) {
+                        if (t.getDate().toLocalDate().equals(currentDay)) {
+                            sum += 1;
+                        }
+                   // }
                 }
             }
         }
@@ -698,6 +700,14 @@ public class TestStore implements Serializable {
         cal2.add(Calendar.DATE, -inter);
 
         return cal2;
+    }
+
+    public int numberOfTests() {
+        int sum = 0;
+        for (int i = 0; i < array.size(); i++) {
+            sum += 1;
+        }
+        return sum;
     }
 
 }
