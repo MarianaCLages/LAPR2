@@ -1,6 +1,7 @@
 package app.domain.model;
 
 import app.controller.App;
+import app.controller.SendReportTask;
 import app.domain.shared.Serialize;
 import app.domain.stores.*;
 import auth.AuthFacade;

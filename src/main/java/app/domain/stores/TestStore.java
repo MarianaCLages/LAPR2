@@ -306,80 +306,6 @@ public class TestStore implements Serializable {
     }
 
     /**
-     * Gets the tests that are still waiting for results.
-     *
-     * @return the list of tests that are still waiting for results
-     */
-    public List<Test> getWaitingResultsTestsList() {
-
-        List<Test> testList = new ArrayList<>();
-
-        for (Test test : array) {
-            if (test.getState().equals(Constants.CREATED) || test.getState().equals(Constants.SAMPLE_COLLECTED)) {
-                testList.add(test);
-            }
-        }
-        return testList;
-    }
-
-    /**
-     * Gets the amount of tests that are still waiting for results in a given time.
-     *
-     * @param timeBeg the beginning time
-     * @param timeEnd the ending time
-     * @return the amount of tests that are still waiting for results in a given time
-     */
-    public int getWaitingResultsTestsListTime(LocalDateTime timeBeg, LocalDateTime timeEnd) {
-
-        int count = 0;
-
-        for (Test test : array) {
-            if (timeBeg.isBefore(test.getCreatedDate()) && timeEnd.isAfter(test.getCreatedDate())) {
-                count++;
-            }
-        }
-        return count;
-    }
-
-    /**
-     * Gets the amount of tests that are still waiting for the diagnosis in a given time.
-     *
-     * @param timeBeg the beginning time
-     * @param timeEnd the ending time
-     * @return the amount of tests that are still waiting for the diagnosis in a given time
-     */
-    public int getWaitingDiagnosisTestsListTime(LocalDateTime timeBeg, LocalDateTime timeEnd) {
-
-        int count = 0;
-
-        for (Test test : array) {
-            if (timeBeg.isBefore(test.getSampleCreatedDate()) && timeEnd.isAfter(test.getSampleCreatedDate())) {
-                count++;
-            }
-        }
-        return count;
-    }
-
-    /**
-     * Gets the amount of tests that are validated in a given time.
-     *
-     * @param timeBeg the beginning time
-     * @param timeEnd the ending time
-     * @return the amount of tests that are validated in a given time
-     */
-    public int getValidatedTestsListTime(LocalDateTime timeBeg, LocalDateTime timeEnd) {
-
-        int count = 0;
-
-        for (Test test : array) {
-            if (timeBeg.isBefore(test.getValidatedDate()) && timeEnd.isAfter(test.getValidatedDate())) {
-                count++;
-            }
-        }
-        return count;
-    }
-
-    /**
      * Gets the test list.
      *
      * @return the test list
@@ -822,10 +748,19 @@ public class TestStore implements Serializable {
             LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
             if ((calendar.get(Calendar.DAY_OF_WEEK) != 1)) {
+<<<<<<< HEAD
                 for (Test t1 : getTestListArray()) {
                     if (t1.getDate().toLocalDate().equals(currentDay)) {
                         sum += 1;
                     }
+=======
+                for (Test t : array) {
+            //        if (t.getAnalysedDate().toLocalDate() != null || t.getAnalysedDate() != null || t.getDiagnosticDate().toLocalDate() != null || t.getSampleCreatedDate().toLocalDate() != null || t.getAnalysedDate().toLocalDate() != null) {
+                        if (t.getDate().toLocalDate().equals(currentDay)) {
+                            sum += 1;
+                        }
+                   // }
+>>>>>>> 5810db3b0e89c90fe040e1d782bfa47cf5991dd4
                 }
             }
         }

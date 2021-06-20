@@ -2,6 +2,8 @@ package app.domain.model;
 
 import app.controller.App;
 import app.domain.shared.Constants;
+import app.domain.shared.Email;
+import app.domain.shared.PasswordGenerator;
 import app.domain.stores.*;
 
 import java.io.BufferedReader;
@@ -98,7 +100,6 @@ public class ImportTests {
 
                     if (a) {
                         testFileList.add(Arrays.toString(metadata));
-                        /*System.out.println(Arrays.toString(metadata));*/
                     }
 
                 }
@@ -122,7 +123,6 @@ public class ImportTests {
         cstore.createClient(metadata[7], metadata[3], metadata[4], metadata[5], date, ' ', metadata[9], metadata[8]);
         cstore.saveClient();
         String pwd = PasswordGenerator.getPassword();
-        System.out.println(metadata[9] + " " + pwd);
         boolean success = true;
         try {
             App.getInstance().getCompany().getAuthFacade().addUserWithRole(metadata[8], metadata[9], pwd, Constants.ROLE_CLIENT);

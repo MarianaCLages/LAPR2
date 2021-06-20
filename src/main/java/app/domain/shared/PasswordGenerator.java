@@ -1,4 +1,4 @@
-package app.domain.model;
+package app.domain.shared;
 
 import app.domain.shared.Constants;
 import org.apache.commons.lang3.RandomStringUtils;
