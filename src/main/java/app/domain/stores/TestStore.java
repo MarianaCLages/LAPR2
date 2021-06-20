@@ -846,7 +846,12 @@ public class TestStore implements Serializable {
 
         return cal2;
     }
-<<<<<<< HEAD
+
+    /**
+     * Number of tests available in the array (test store)
+     *
+     * @return the number of tests available
+     */
 
     public int numberOfTests() {
         int sum = 0;
@@ -856,6 +861,5 @@ public class TestStore implements Serializable {
         return sum;
     }
 
-=======
->>>>>>> 45497c7876e818459fbf5379729eee120149724f
+
 }
