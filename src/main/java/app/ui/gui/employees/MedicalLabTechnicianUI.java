@@ -6,7 +6,7 @@ import app.controller.SceneController;
 import app.ui.console.RecordSampleUI;
 import javafx.event.ActionEvent;
 
-public class MedicalLabTechinicianUI {
+public class MedicalLabTechnicianUI {
 
     private final SceneController sceneController = SceneController.getInstance();
     private final App app = sceneController.getApp();
@@ -21,5 +21,4 @@ public class MedicalLabTechinicianUI {
         this.ui = new RecordSampleUI();
         ui.run();
     }
-
 }

@@ -20,9 +20,5 @@ public class ClientUI {
         app.doLogout();
         sceneController.switchMenu(event, Constants.MAIN_SCREEN_UI);
     }
-
-
-
-
 }
 

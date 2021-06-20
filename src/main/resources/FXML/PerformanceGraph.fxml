@@ -14,6 +14,6 @@
           <NumberAxis side="LEFT" fx:id="xaxis" />
         </yAxis>
       </LineChart>
-      <Button fx:id="myReturnButton" layoutX="14.0" layoutY="630.0" mnemonicParsing="false" onAction="#returnToPerformanceUI" prefHeight="32.0" prefWidth="77.0" text="Return" />
+      <Button fx:id="myReturnButton" layoutX="14.0" layoutY="627.0" mnemonicParsing="false" onAction="#returnToPerformanceUI" prefHeight="34.0" prefWidth="74.0" text="Return" />
    </children>
 </AnchorPane>

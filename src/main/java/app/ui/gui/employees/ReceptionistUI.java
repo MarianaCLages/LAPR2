@@ -28,5 +28,4 @@ public class ReceptionistUI {
         this.ui= new RegisterTestUI();
         ui.run();
     }
-
 }

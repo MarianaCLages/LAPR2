@@ -21,5 +21,4 @@ public class SpecialistDoctorUI {
         this.ui= new CreateReportUI();
         ui.run();
     }
-
 }

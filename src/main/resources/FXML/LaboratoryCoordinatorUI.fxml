@@ -6,13 +6,16 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.employees.LaboratoryCoordinatorUI">
    <children>
-      <Label alignment="CENTER" layoutX="103.0" layoutY="27.0" prefHeight="64.0" prefWidth="395.0" text="Laboratory Coordinator Menu">
+      <Label alignment="CENTER" layoutY="27.0" prefHeight="64.0" prefWidth="601.0" text="Laboratory Coordinator Menu" underline="true">
          <font>
-            <Font size="28.0" />
+            <Font name="Baskerville Old Face" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="myReturnButtonLaboratoryCoordinator" layoutX="14.0" layoutY="334.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="52.0" prefWidth="89.0" text="Return" />
-      <Button fx:id="ImportTestsButton" layoutX="247.0" layoutY="138.0" mnemonicParsing="false" onAction="#ImportTestsMenu" prefHeight="42.0" prefWidth="106.0" text="Import Tests" />
-      <Button fx:id="btnPerformance" layoutX="222.0" layoutY="228.0" mnemonicParsing="false" onAction="#performanceMenu" prefHeight="42.0" prefWidth="156.0" text="Company's tests overview" />
+      <Button fx:id="myReturnButtonLaboratoryCoordinator" layoutX="14.0" layoutY="351.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="34.0" prefWidth="74.0" text="Return" />
+      <Button fx:id="ImportTestsButton" layoutX="223.0" layoutY="157.0" mnemonicParsing="false" onAction="#ImportTestsMenu" prefHeight="42.0" prefWidth="156.0" text="Import Tests">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="btnPerformance" layoutX="223.0" layoutY="241.0" mnemonicParsing="false" onAction="#performanceMenu" prefHeight="42.0" prefWidth="156.0" text="Company's tests overview" />
    </children>
 </AnchorPane>

@@ -15,5 +15,4 @@ public class TestTypeUI {
         app.doLogout();
         sceneController.switchMenu(event, Constants.ADMINISTRATOR_UI);
     }
-
 }
