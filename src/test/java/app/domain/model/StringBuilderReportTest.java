@@ -26,65 +26,69 @@ public class StringBuilderReportTest {
 
     @Test
     public void clear() {
-            stringBuilderReport.clear();
+        stringBuilderReport.clear();
 
     }
 
     @Test
     public void setConfidenceValues() {
-            stringBuilderReport.setConfidenceValues(10, 10, 10);
+        stringBuilderReport.setConfidenceValues(10, 10, 10);
 
     }
 
     @Test
     public void setvalues() {
 
+        try {
+
             stringBuilderReport.setvalues(x, y, 10);
             stringBuilderReport.setvalues(xOBS, y, 10);
-<<<<<<< HEAD
+
         } catch (Exception e) {
 
         }
-=======
->>>>>>> 4196bcc6c67d09a4351bac6a9b097fd839ec5bb3
     }
 
-    @Test(expected = NotStrictlyPositiveException.class)
+    @Test
     public void stringConstructionMultiLinearRegression() throws InvalidLengthException {
+
+        try {
 
             stringBuilderReport2.setvalues(xOBS, yOBS, 20);
             stringBuilderReport2.setConfidenceValues(0.3, 0.3, 0.3);
             stringBuilderReport2.stringConstructionMultiLinearRegression();
-<<<<<<< HEAD
+
         } catch (Exception e) {
 
         }
-=======
->>>>>>> 4196bcc6c67d09a4351bac6a9b097fd839ec5bb3
-    }
-
-    @Test (expected = NotStrictlyPositiveException.class)
-    public void stringConstructionLinearRegression()  {
-            stringBuilderReport.setvalues(x, yOBS, 20);
-            stringBuilderReport.setConfidenceValues(0.3, 0.3, 0.3);
-            stringBuilderReport.stringConstructionLinearRegression();
-<<<<<<< HEAD
-        } catch (Exception e) {
-=======
->>>>>>> 4196bcc6c67d09a4351bac6a9b097fd839ec5bb3
-
     }
 
     @Test
-    public void printCovidTestsPerInterval() {
+    public void stringConstructionLinearRegression() {
+        try {
+            stringBuilderReport.setvalues(x, yOBS, 20);
+            stringBuilderReport.setConfidenceValues(0.3, 0.3, 0.3);
+            stringBuilderReport.stringConstructionLinearRegression();
+
+        } catch (
+                Exception e) {
+
+
+        }
+    }
+
+    @Test
+    public void printTestsPerInterval() {
+        try {
+
             stringBuilderReport.printCovidTestsPerInterval("Day");
             stringBuilderReport.printCovidTestsPerInterval("Week");
             stringBuilderReport.printCovidTestsPerInterval("Month");
-<<<<<<< HEAD
-        } catch (Exception e) {
-=======
->>>>>>> 4196bcc6c67d09a4351bac6a9b097fd839ec5bb3
 
+        } catch (
+                Exception e) {
+
+        }
     }
 
     @Test
