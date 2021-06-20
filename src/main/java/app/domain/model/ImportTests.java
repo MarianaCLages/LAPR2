@@ -20,6 +20,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Class that represents the Tests that are going to be Imported from the CSV file
@@ -34,7 +36,7 @@ public class ImportTests {
     ParameterStore pstore;
     TestStore tstore;
     List<String> testFileList = new ArrayList<>();
-
+    private static final Logger LOGGER = Logger.getLogger( ImportTests.class.getName() );
     /**
      * Constructor of ImportTests, it calls methods in order to validate the parameters
      */
@@ -103,15 +105,13 @@ public class ImportTests {
                         continue;
                     }
 
-                    if (a) {
-                        testFileList.add(Arrays.toString(metadata));
-                        /*System.out.println(Arrays.toString(metadata));*/
-                    }
+                    testFileList.add(Arrays.toString(metadata));
+
 
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.log( Level.SEVERE, e.toString(), e );
         }
     }
     /**
@@ -137,7 +137,6 @@ public class ImportTests {
         cstore.createClient(metadata[7], metadata[3], metadata[4], metadata[5], date, ' ', metadata[9], metadata[8]);
         cstore.saveClient();
         String pwd = PasswordGenerator.getPassword();
-        System.out.println(metadata[9] + " " + pwd);
         boolean success = true;
         try {
             App.getInstance().getCompany().getAuthFacade().addUserWithRole(metadata[8], metadata[9], pwd, Constants.ROLE_CLIENT);
@@ -287,5 +286,9 @@ public class ImportTests {
         t.changeState(Test.State.VALIDATED);
 
         return true;
+    }
+
+    public int getErrorcount() {
+        return errorcount;
     }
 }
