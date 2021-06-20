@@ -65,8 +65,8 @@ public class CheckPerformanceUI implements Initializable {
                 throw new InvalidIntervalOfDatesEndException();
             }
 
-            ctrl.getSubArray(dtnBeg.getValue(), dtnEnd.getValue(), myChoiceBoxSimple.getValue()); //subArray
-            ctrl.getDates(ctrl.getSubArray(dtnBeg.getValue(), dtnEnd.getValue(), myChoiceBoxSimple.getValue()));// data de início e de fim do sub array
+            ctrl.getSubArray(dtnBeg.getValue(), dtnEnd.getValue(), myChoiceBoxSimple.getValue());
+            ctrl.getDates(ctrl.getSubArray(dtnBeg.getValue(), dtnEnd.getValue(), myChoiceBoxSimple.getValue()));
             ctrl.numberWaitingResults();
             ctrl.numberWaitingDiagnosis();
             ctrl.numberClients();
@@ -86,9 +86,7 @@ public class CheckPerformanceUI implements Initializable {
         } catch (ChoiceBoxEmptyException | InvalidIntervalOfDatesEndException err1) {
             Alerts.errorAlert(err1.getMessage());
         } catch (NullPointerException err2) {
-            err2.printStackTrace();
-            Alerts.errorAlert(err2.getMessage());
-          //  Alerts.errorAlert("Please type all the information necessary! Don't leave blank spots!");
+           Alerts.errorAlert("Please type all the information necessary! Don't leave blank spots!");
         }
     }
 }
