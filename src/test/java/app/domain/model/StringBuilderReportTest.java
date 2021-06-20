@@ -53,6 +53,13 @@ public class StringBuilderReportTest {
 
     @Test
     public void stringConstructionMultiLinearRegression() {
+        try {
+            stringBuilderReport2.setvalues(xOBS, yOBS, 20);
+            stringBuilderReport2.setConfidenceValues(0.3, 0.3, 0.3);
+            stringBuilderReport2.stringConstructionLinearRegression();
+        }catch (Exception e){
+
+        }
     }
 
     @Test //Arranjarr isto
