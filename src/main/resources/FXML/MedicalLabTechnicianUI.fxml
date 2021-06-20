@@ -4,14 +4,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.employees.MedicalLabTechinicianUI">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.employees.MedicalLabTechnicianUI">
    <children>
-      <Label alignment="CENTER" layoutX="108.0" layoutY="36.0" prefHeight="17.0" prefWidth="384.0" text="Medical Lab Techinician" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutY="36.0" prefHeight="34.0" prefWidth="602.0" text="Medical Lab Techinician Menu" textAlignment="CENTER" underline="true">
          <font>
-            <Font size="28.0" />
+            <Font name="Baskerville Old Face" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="myReturnButtonMlt" layoutX="14.0" layoutY="337.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="49.0" prefWidth="88.0" text="Return" />
-      <Button layoutX="193.0" layoutY="144.0" mnemonicParsing="false" onAction="#goToSampleUI" prefHeight="25.0" prefWidth="214.0" text="Generate Samples" />
+      <Button fx:id="myReturnButtonMlt" layoutX="14.0" layoutY="351.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="34.0" prefWidth="74.0" text="Return" />
+      <Button layoutX="227.0" layoutY="183.0" mnemonicParsing="false" onAction="#goToSampleUI" prefHeight="33.0" prefWidth="148.0" text="Generate Samples">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
    </children>
 </AnchorPane>

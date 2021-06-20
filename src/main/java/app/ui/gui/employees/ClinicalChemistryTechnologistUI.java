@@ -25,5 +25,4 @@ public class ClinicalChemistryTechnologistUI {
     public void goToConsultClientTestsUI(ActionEvent event) {
         sceneController.switchMenu(event, Constants.CONSULT_CLIENT_TESTS_UI);
     }
-
 }

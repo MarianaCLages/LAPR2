@@ -6,23 +6,17 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.employees.AdministratorUI">
    <children>
-      <Label layoutX="120.0" layoutY="98.0" prefHeight="25.0" prefWidth="252.0" text="Create a new Parameter Category" />
-      <Button fx:id="myParameterCategoryButton" layoutX="370.0" layoutY="98.0" mnemonicParsing="false" onAction="#goToParameterCategoryUI" text="Here" />
-      <Label layoutX="120.0" layoutY="138.0" prefHeight="25.0" prefWidth="252.0" text="Create a new Parameter" />
-      <Button fx:id="myParameterButton" layoutX="370.0" layoutY="138.0" mnemonicParsing="false" onAction="#goToParameterUI" text="Here" />
-      <Label layoutX="120.0" layoutY="176.0" prefHeight="25.0" prefWidth="252.0" text="Create a new Test Type" />
-      <Button fx:id="myTestTypeButton" layoutX="370.0" layoutY="176.0" mnemonicParsing="false" onAction="#goToTestTypeUI" text="Here" />
-      <Label layoutX="120.0" layoutY="226.0" prefHeight="25.0" prefWidth="252.0" text="Create a new Clinical Analysis Laboratory" />
-      <Button fx:id="myClinicalButton" layoutX="370.0" layoutY="226.0" mnemonicParsing="false" onAction="#goToClinicalAnalysisLaboratoryUI" text="Here" />
-      <Label layoutX="120.0" layoutY="270.0" prefHeight="25.0" prefWidth="252.0" text="Register a new Employee" />
-      <Button fx:id="myEmployeeButton" layoutX="370.0" layoutY="270.0" mnemonicParsing="false" onAction="#goToEmployeeUI" text="Here" />
-      <Button fx:id="myReturnButton" layoutX="14.0" layoutY="346.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="40.0" prefWidth="106.0" text="Return" />
-      <Label alignment="CENTER" layoutX="29.0" layoutY="30.0" prefHeight="17.0" prefWidth="526.0" text="Administrator Menu" textAlignment="CENTER">
+      <Button fx:id="myParameterCategoryButton" layoutX="179.0" layoutY="97.0" mnemonicParsing="false" onAction="#goToParameterCategoryUI" prefHeight="34.0" prefWidth="240.0" text="Create a new Parameter Category" />
+      <Button fx:id="myParameterButton" layoutX="179.0" layoutY="141.0" mnemonicParsing="false" onAction="#goToParameterUI" prefHeight="34.0" prefWidth="240.0" text="Create a new Parameter" />
+      <Button fx:id="myTestTypeButton" layoutX="180.0" layoutY="186.0" mnemonicParsing="false" onAction="#goToTestTypeUI" prefHeight="34.0" prefWidth="240.0" text="Create a new Test Type" />
+      <Button fx:id="myClinicalButton" layoutX="180.0" layoutY="231.0" mnemonicParsing="false" onAction="#goToClinicalAnalysisLaboratoryUI" prefHeight="34.0" prefWidth="240.0" text="Create a new Clinical Analysis Laboratory" />
+      <Button fx:id="myEmployeeButton" layoutX="180.0" layoutY="276.0" mnemonicParsing="false" onAction="#goToEmployeeUI" prefHeight="34.0" prefWidth="240.0" text="Register a new Employee" />
+      <Button fx:id="myReturnButton" layoutX="14.0" layoutY="353.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="34.0" prefWidth="74.0" text="Return" />
+      <Label alignment="CENTER" layoutY="30.0" prefHeight="40.0" prefWidth="600.0" text="Administrator Menu" textAlignment="CENTER" underline="true">
          <font>
-            <Font size="28.0" />
+            <Font name="Baskerville Old Face" size="36.0" />
          </font>
       </Label>
-      <Label layoutX="120.0" layoutY="314.0" prefHeight="17.0" prefWidth="252.0" text="Generate the NHS Report" />
-      <Button layoutX="372.0" layoutY="310.0" mnemonicParsing="false" onAction="#goToGenerateNHSReportUI" prefHeight="25.0" prefWidth="42.0" text="Here" />
+      <Button layoutX="179.0" layoutY="321.0" mnemonicParsing="false" onAction="#goToGenerateNHSReportUI" prefHeight="34.0" prefWidth="240.0" text="Generate the NHS Report" />
    </children>
 </AnchorPane>

@@ -46,5 +46,4 @@ public class AdministratorUI {
     public void goToGenerateNHSReportUI(ActionEvent event) {
         sceneController.switchMenu(event, Constants.NHS_REPORT_UI);
     }
-
 }
