@@ -9,6 +9,7 @@ import java.io.BufferedReader;
 import java.nio.charset.CoderMalfunctionError;
 import java.nio.charset.CoderResult;
 import java.nio.charset.MalformedInputException;
+import java.text.ParseException;
 
 
 public class ImportTestsTest {
@@ -58,6 +59,21 @@ public class ImportTestsTest {
 
 
     }
+    @Test
+    public void ErrorCountTest() {
+        //Arrange + Act
+        ImportTests aa = new ImportTests();
+
+        String fileName = "csv/Tests.csv";
+        aa.readTestFromCSV(fileName);
+        int actual= aa.getErrorcount();
+        int expected = 1;
+        Assert.assertEquals(actual,expected);
+
+
+
+    }
+
 
 
 }

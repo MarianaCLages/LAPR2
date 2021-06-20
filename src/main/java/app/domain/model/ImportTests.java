@@ -286,4 +286,8 @@ public class ImportTests {
 
         return true;
     }
+
+    public int getErrorcount() {
+        return errorcount;
+    }
 }
