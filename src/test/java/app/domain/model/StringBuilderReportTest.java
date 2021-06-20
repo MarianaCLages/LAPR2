@@ -25,63 +25,45 @@ public class StringBuilderReportTest {
 
     @Test
     public void clear() {
-        try {
             stringBuilderReport.clear();
-        } catch (Exception e) {
 
-        }
     }
 
     @Test
     public void setConfidenceValues() {
-        try {
             stringBuilderReport.setConfidenceValues(10, 10, 10);
-        } catch (Exception e) {
 
-        }
     }
 
     @Test
     public void setvalues() {
-        try {
+
             stringBuilderReport.setvalues(x, y, 10);
             stringBuilderReport.setvalues(xOBS, y, 10);
-        }catch (Exception e){
-
-        }
     }
 
-    @Test
-    public void stringConstructionMultiLinearRegression() {
-        try {
+    @Test(expected = NotStrictlyPositiveException.class)
+    public void stringConstructionMultiLinearRegression() throws InvalidLengthException {
+
             stringBuilderReport2.setvalues(xOBS, yOBS, 20);
             stringBuilderReport2.setConfidenceValues(0.3, 0.3, 0.3);
-            stringBuilderReport2.stringConstructionLinearRegression();
-        }catch (Exception e){
-
-        }
+            stringBuilderReport2.stringConstructionMultiLinearRegression();
     }
 
-    @Test //Arranjarr isto
-    public void stringConstructionLinearRegression() throws InvalidLengthException {
-        try {
+    @Test (expected = NotStrictlyPositiveException.class)
+    public void stringConstructionLinearRegression()  {
             stringBuilderReport.setvalues(x, yOBS, 20);
             stringBuilderReport.setConfidenceValues(0.3, 0.3, 0.3);
             stringBuilderReport.stringConstructionLinearRegression();
-        }catch (Exception e){
 
-        }
     }
 
     @Test
     public void printCovidTestsPerInterval() {
-        try {
             stringBuilderReport.printCovidTestsPerInterval("Day");
             stringBuilderReport.printCovidTestsPerInterval("Week");
             stringBuilderReport.printCovidTestsPerInterval("Month");
-        }catch (Exception e){
 
-        }
     }
 
     @Test
