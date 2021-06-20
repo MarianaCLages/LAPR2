@@ -1,0 +1,56 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+hide methods
+
+class Company{
+Designation
+}
+
+class Covid19Report{
+Covid-19 tests performed;
+Positive Results to Covid-19 Tests
+Number of Covid-19 Cases Per Day
+Number of Covid-19 Cases Per Week
+Number of Covid-19 Cases Per Month
+Number of Covid-19 Cases Per Year
+}
+
+class TestType{
+code
+description
+collectingMethod
+}
+
+class Test{
+Client
+Test code
+NhsCode
+createdAt
+}
+
+class TestParameterResult{
+createdAt
+value
+metric
+}
+
+class TestParameter{
+}
+
+class Parameter{
+code
+shortName
+description
+}
+
+
+Company "1" - "1" Covid19Report : sends to NHS >
+Test "1" -- "*" Parameter : has >
+Test "*" - "1" TestType: is of >
+TestParameter "1" - "0..1" TestParameterResult: contains >
+(Test, Parameter) .. TestParameter
+Company "1" -- "*" Test: performs >
+(Company, Covid19Report) .. NHSApi: using
+
+
+@enduml
