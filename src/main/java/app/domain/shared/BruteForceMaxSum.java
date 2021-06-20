@@ -6,6 +6,11 @@ public class BruteForceMaxSum {
     private BruteForceMaxSum() {
     }
 
+    /**
+     * Gets the maximum sum sub-array
+     * @param array the array
+     * @return the maximum sum sub-array
+     */
     public static int[] max(int[] array) {
         int max = Integer.MIN_VALUE;
         int beggining = 0;

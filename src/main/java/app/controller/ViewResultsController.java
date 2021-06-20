@@ -17,6 +17,8 @@ public class ViewResultsController {
     public ViewResultsController(Company company) {
 
         this.company = company;
+        cstore = App.getInstance().getCompany().getClientList();
+        store = App.getInstance().getCompany().getTestList();
     }
 
     public ViewResultsController() {
@@ -24,18 +26,21 @@ public class ViewResultsController {
     }
 
     public void sortedDateList() {
-        Client client = cstore.getClientByEmail(company.getUserID());
+        Client client = cstore.getClientByEmail(App.getInstance().getCurrentUserSession().getUserId().toString());
         store.sortDate(client.getTinNumber());
     }
 
-    public String getResult(String test) {
-        String[] testSplitted = test.split(";");
-        String[] idTestSplitted = testSplitted[0].split("=");
+    public String getDiagnosis(String test) {
+        System.out.println(test);
+        String[] testSplitted = test.split(",");
+        String[] idTestSplitted = testSplitted[1].split("=");
         Test t = store.getTestByCode(idTestSplitted[1]);
-        return t.getResults();
+        System.out.println(idTestSplitted[1]);
+        return t.getDiagnosis();
     }
 
-    public List<String> getTestSortedList() {
+    public List<String> getTestSortedList(){
+
         return store.getTestSortedListString();
     }
 }

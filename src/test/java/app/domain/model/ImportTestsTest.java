@@ -16,14 +16,10 @@ public class ImportTestsTest {
         //Arrange + Act
         String fileName = "csv/tests_BloodMDISCCSV.csv";
 
-        try {
-            ImportTests aa = new ImportTests();
-            aa.readTestFromCSV(fileName);
-
-
-        } catch (Exception e) {
-
-        }
+        ImportTests aa = new ImportTests();
+        aa.readTestFromCSV(fileName);
+        System.out.println((aa.getTestFileList()));
 
     }
+
 }

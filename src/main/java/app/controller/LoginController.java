@@ -82,7 +82,7 @@ public class LoginController {
                     case "SPECIALISTDOCTOR":
                         sceneController.switchMenu(actionEvent, Constants.SPECIALIST_DOCTOR_UI);
                         break;
-                    case "ClIENT":
+                    case "CLIENT":
                         sceneController.switchMenu(actionEvent, Constants.CLIENT_UI);
                         break;
                     case "RECEPTIONIST":

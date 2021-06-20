@@ -340,4 +340,8 @@ public class Test implements Serializable {
         DIAGNOSTIC_MADE,
         VALIDATED
     }
+
+    public String getDiagnosis() {
+        return rep.getDiagnosis();
+    }
 }
