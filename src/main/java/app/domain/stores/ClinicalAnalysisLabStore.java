@@ -93,19 +93,6 @@ public class ClinicalAnalysisLabStore implements Serializable {
         return this.array.get(index);
     }
 
-    /**
-     * Go through all the objects in the ArrayList and appends the String of the method toString to a new String creating a new line for object
-     *
-     * @return String with all the objects in the ArrayList
-     */
-    public String toString() {
-        StringBuilder listString = new StringBuilder();
-
-        for (ClinicalAnalysisLab s : array) {
-            listString.append(s.toString()).append("\n");
-        }
-        return String.valueOf(listString);
-    }
 
     /**
      * @return Parameter Category object

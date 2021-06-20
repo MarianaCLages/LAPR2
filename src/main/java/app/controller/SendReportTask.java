@@ -1,7 +1,8 @@
-package app.domain.model;
+package app.controller;
 
 
-import app.controller.App;
+import app.domain.model.Client;
+import app.domain.model.StringBuilderReport;
 import app.domain.shared.LinearRegression;
 import app.domain.shared.MultiLinearRegression;
 import app.domain.shared.exceptions.InvalidLengthException;
@@ -27,7 +28,6 @@ public class SendReportTask extends TimerTask implements Serializable {
     private double confidenceLevelAnova;
     private double confidenceLevelVariables;
     private double confidenceLevelEstimated;
-    private String independentVariable;
     private String regression;
     private String scope;
 

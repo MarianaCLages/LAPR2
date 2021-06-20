@@ -482,7 +482,7 @@ public class TestStoreTest {
         t10.changeState("VALIDATED");
         store.addTest(t10);
 
-        store.numberOfTests();
+        Assert.assertEquals(store.numberOfTests(),2);
     }
 
     @Test
@@ -572,7 +572,7 @@ public class TestStoreTest {
         t10.changeState("VALIDATED");
         store.addTest(t10);
 
-        store.getWaitingDiagnosis();
+        Assert.assertNotNull(store.getWaitingDiagnosis());
     }
 
     @Test
@@ -661,7 +661,7 @@ public class TestStoreTest {
         LocalDate date1Client = LocalDate.now();
         Date date1 = Date.from(date1Client.atStartOfDay(defaultZoneId).toInstant());
 
-        t.toString();
+        Assert.assertNotNull(t.toString());
 
     }
 
@@ -801,7 +801,7 @@ public class TestStoreTest {
         t10.changeState("VALIDATED");
         store.addTest(t10);
 
-        store.getValidatedTestsListAll();
+        Assert.assertNotNull(store.getValidatedTestsListAll());
     }
 
     @Test
@@ -869,7 +869,7 @@ public class TestStoreTest {
         t10.changeState("VALIDATED");
         store.addTest(t10);
 
-        store.getValidatedTestList(client2);
+        Assert.assertNotNull(store.getValidatedTestList(client2));
     }
 
     @Test
@@ -937,7 +937,7 @@ public class TestStoreTest {
         t10.changeState("VALIDATED");
         store.addTest(t10);
 
-        store.getListOfTestsToValidate();
+       Assert.assertNotNull(store.getListOfTestsToValidate());
     }
 
 }
