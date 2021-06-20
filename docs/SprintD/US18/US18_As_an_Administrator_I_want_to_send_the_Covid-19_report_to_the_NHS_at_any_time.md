@@ -148,12 +148,13 @@ There is a dependency to :
 | 		                                  | ... knowing TestStore? | Company | **IE**: Company knows the TestStore to which it is delegating some tasks. |
 | 		                                  | ... checking all tests available in the system?	| TestStore | **IE**: The testStore knows all tests available in the system. |
 | 	                                      | ... verifying if the test is valid (or with a diagnostic, sample collected, sample analysed or only test created)? | Test | **IE**: The test knows its own state. |
+| 		                                  | ... knowing all clients available in the system? | Company | **IE**: Company knows all information available in the system. |
 | **Step/MSG 2**: asks the required data | n/a | | |
-| **Step/MSG 3**: type the requested data|	... creates the DataDTO? | DataMapper |**DTO**: In order to detach the domain layer from the UI layer, we use a data transfer object (DTO) to only extract data from the domain class (and not extract methods from the domain class) |
+| **Step/MSG 3**: types the requested data|	... creates the DataDTO? | DataMapper |**DTO**: In order to detach the domain layer from the UI layer, we use a data transfer object (DTO) to only extract data from the domain class (and not extract methods from the domain class) |
 | 		                                  | ... validating the data locally (e.g.: mandatory vs non-mandatory data)? | DataDTO | **IE**: An object knows its data |
 | **Step/MSG 4**: asks the desired regression model | n/a | | |
 | **Step/MSG 5**: chooses the model | | | |
-| **Step/MSG 7**: (IF the model chosen it's Simple linear Regression) asks which independent variable should be use in the simple linear regression model  | n/a |  | |
+| **Step/MSG 6**: (IF the model chosen it's Simple linear Regression) asks which independent variable should be use in the simple linear regression model  | n/a |  | |
 | **Step/MSG 7**: (IF the model chosen it's Simple linear Regression) types in the variable  | n/a |  | |
 | 		                                  | ... generates the regression model? | RegressionModel |**IE**: The Regression Model has all the information necessary to know which model should be created |
 | 		                                  | ... generates the NHS Report? | StringBuilderReport | **PureFabrication**: The StringBuilderReport class was assign this responsibility in order to generate the report itself (the information) |
@@ -189,7 +190,7 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 ## 3.3. Class Diagram (CD)
 
-*Packages were use in order to simplify the flow of the program*
+*Packages were use in order to simplify the flow of the system*
 
 ![US18_CD](US018_CD.svg)
 
