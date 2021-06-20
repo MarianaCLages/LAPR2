@@ -14,4 +14,14 @@ public class RoleTest {
         Assert.assertEquals(actual, expected);
     }
 
+    @Test
+    public void getRolenameRight() {
+        Role role = new Role("0", "Clinical Chemistry Technologist");
+        String expected = "Clinical Chemistry Technologist";
+        String actual = role.toString();
+
+        Assert.assertEquals(actual, expected);
+    }
+
+
 }
