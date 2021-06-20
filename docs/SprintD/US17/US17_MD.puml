@@ -34,12 +34,34 @@ State
 Date
 Result
 }
+class TestType{
+testID
+description
+collectingMethod
+Parameter Categories
+}
+class Parameter{
+name
+code
+description
+ParameterCategory
+}
+
+class ParameterCategory{
+code
+name
+}
+
 
 
 
 Company "1" -- "*" Test : has
 Company "1"--"*" Client : has
 Company "1"---"*" ClinicalAnalysisLab : has
+Test "1"---"*" TestType: has
+Test "1"---"*" Parameter: has a list of
+Test "1"---"*" ParameterCategory: has a list of
+Parameter "1"---"*" ParameterCategory: has
 
 
 

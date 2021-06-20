@@ -6,7 +6,7 @@ autonumber
 activate LabCord
 LabCord -> Sys: Asks to have an overview of the company's performance
 activate Sys
-Sys --> LabCord: Asks for the date interval to be evaluated
+Sys --> LabCord: Asks for the date interval to e evaluated
 deactivate Sys
 LabCord -> Sys: Inputs the date interval
 activate Sys

@@ -647,7 +647,7 @@ public class TestStoreTest {
         store.getWaitingResult();
     }
 
-    @Test
+    @Test //Arranjar este
     public void TesttoString() {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");

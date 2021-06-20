@@ -24,7 +24,6 @@ class SendReportTask{
 - report
 - log()
 + getProperties()
-+ run()
 }
 
 class TestStore{

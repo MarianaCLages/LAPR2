@@ -81,6 +81,17 @@ public class ClinicalAnalysisLabTest {
         //Arrange + Act
         ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45", "63349369906543", "16274835987", store);
     }
+    @Test(expected = IllegalArgumentException.class)
+    public void RegisterTinunder10Digits() {
+        ParameterCategory pc1 = new ParameterCategory("AE554", "Hemogram");
+        cat.add(pc1);
+        TestType t = new TestType("283h3", "descrição", "metodo 1", cat);
+        TestTypeStore store = new TestTypeStore();
+        store.add(t);
+        //Arrange + Act
+        ClinicalAnalysisLab lab = new ClinicalAnalysisLab("laboratorio dois", "porto", "2gs45", "63349369906543", "16274835987", store);
+
+    }
 
     @Test(expected = IllegalArgumentException.class)
     public void RegisterTinNotOnlyDigits() {
