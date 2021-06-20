@@ -93,6 +93,11 @@ public class StringBuilderReportTest {
 
     @Test
     public void printTheCovidTestsIntoTheNHSReportDay() {
+
+       Assert.assertNotNull(stringBuilderReport.printTheCovidTestsIntoTheNHSReportMonthly());
+        Assert.assertNotNull(stringBuilderReport.printTheCovidTestsIntoTheNHSReportWeek());
+        Assert.assertNotNull(stringBuilderReport.printTheCovidTestsIntoTheNHSReportDay());
+
     }
 
     @Test
