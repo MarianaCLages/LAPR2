@@ -43,6 +43,16 @@ public class SpecialistDoctor extends Employee implements Serializable {
 
 
     }
+    /**
+     * Checks if the string that is received is only numerical using the class NumberUtils
+     *
+     * @param i The String that is going to be checked
+     * @return boolean value that is positive if the parameter is only numerical
+     */
+    private boolean checkIfIsNumerical(String i) {
+        return !(i.matches("[0-9]+"));
+
+    }
 
     /**
      * Checks if the string that is received meets the requirements of the Doctor Index Number, if not throws Exceptions
@@ -53,13 +63,9 @@ public class SpecialistDoctor extends Employee implements Serializable {
         if (StringUtils.isBlank(DoctorIndexNumber))
             throw new IllegalArgumentException("Doctor Index Number cannot be blank.");
 
-        DoctorIndexNumber = DoctorIndexNumber.toLowerCase();
-        char[] charArray = DoctorIndexNumber.toCharArray();
-        for (int i = 0; i < charArray.length; i++) {
-            char c = charArray[i];
-            if (!(c >= '0' && c <= '9')) {
+        if(checkIfIsNumerical(DoctorIndexNumber)){
                 throw new IllegalArgumentException("Doctor Index Number only accepts numbers");
-            }
+
         }
     }
 
