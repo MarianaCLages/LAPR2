@@ -55,7 +55,16 @@ There is a dependency to:
 **Input Data:**
 
 * Typed data:
-  * Personal information
+  * Name
+  * Citizen Card number
+  * National Healthcare Service number
+  * Tax Identification Number
+  * Phone number
+  * E-mail
+  * Birthdate
+- Output Data
+  - All client's data
+  - (In)Success of the operation
   
 ### 1.6. System Sequence Diagram (SSD)
 
@@ -120,231 +129,250 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 # 4. Tests
 
-### TestParameterResult Tests
+### ClientStore Test
 
-**Test 1:** Get the test parameter result's parameterID.
+**Test 1:**
 
-    public void getParamID() {
+    public void getPhoneNumberTest() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
 
-        TestParameterResult tpr1 = new TestParameterResult("IgGAN", 15);
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zé");
 
-        String expected = "IgGAN";
-        String actual = tpr1.getParamID();
-
-        Assert.assertEquals(expected, actual);
-
-    }
-
-**Test 2:** Get the test parameter result's result.
-
-    public void getResult() {
-
-        TestParameterResult tpr1 = new TestParameterResult("IgGAN", 15.5);
-
-        Double expected = 15.5;
-        Double actual = tpr1.getResult();
+        String expected = "12345678910";
+        String actual = client.getPhoneNumber();
 
         Assert.assertEquals(expected, actual);
 
     }
 
-**Test 3:** Get the test parameter result's reference value.
+**Test 2:**
+  
+    public void getEmailTest() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
 
-    public void getRefValue() {
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zé");
 
-        TestParameterResult tpr1 = new TestParameterResult("IgGAN", 1.4);
+        String expected = "ze@email.com";
+        String actual = client.getEmail();
 
-        RefValue expected = new RefValue("mm/hr", 1.0, 10.0);
+        Assert.assertEquals(expected, actual);
 
-        tpr1.setRefValue(expected);
-        RefValue actual = tpr1.getRefValue();
+    }
+**Test 3:**
+  
+    public void getTinTest() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zé");
+
+        String expected = "1234567891";
+        String actual = client.getTinNumber();
 
         Assert.assertEquals(expected, actual);
 
     }
 
-**Test 4:** Set the test parameter result's reference value.
+**Test 4:**
 
-    public void setRefValue() {
+    public void getCc() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
 
-        TestParameterResult tpr1 = new TestParameterResult("IgGAN", 15.5);
-        RefValue rv1 = new RefValue("aaa", 10.0, 20.0);
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zé");
 
-        tpr1.setRefValue(rv1);
-        RefValue actual = tpr1.getRefValue();
-
-        Assert.assertEquals(rv1, actual);
-
-    }
-
-### RefValue Tests
-
-**Test 5:** Get the metric.
-
-    public void getMetric() {
-
-        RefValue rv1 = new RefValue("aaa", 10.0, 20.0);
-
-        String expected = "aaa";
-        String actual = rv1.getMetric();
+        String expected = "1234567890123456";
+        String actual = client.getCc();
 
         Assert.assertEquals(expected, actual);
 
     }
 
-**Test 6:** Get the minimum reference value.
+**Test 5:**
+    
+    public void setCc() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
 
-    public void getRefValueMin() {
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zé");
+        String cc = "0034567890123456";
+        client.setCc(cc);
 
-        RefValue rv1 = new RefValue("aaa", 10.0, 20.0);
+        Assert.assertEquals(cc, client.getCc());
+    }
 
-        Double expected = 10.0;
-        Double actual = rv1.getRefValueMin();
+**Test 6:**
 
-        Assert.assertEquals(expected, actual);
+    public void setNhs() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zé");
+        String nhs = "0234567891";
+        client.setNhs(nhs);
+
+        Assert.assertEquals(nhs, client.getNhs());
+    }
+
+**Test 7:**
+
+    public void setBirthDate() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zé");
+        String birthDateString = "25-06-2000";
+        Date birthDate = df.parse(birthDateString);
+        client.setBirthDate(birthDate);
+
+        Assert.assertEquals(birthDateString, df.format(client.getBirthDate()));
+    }
+
+**Test 8:**
+
+    public void setSex() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zé");
+        String sex = "F";
+
+        client.setSex(sex);
+
+        Assert.assertEquals(sex, client.getSex());
+    }
+
+**Test 9:**
+
+    public void setTinNumber() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zé");
+        String tin = "1234167891";
+
+        client.setTinNumber(tin);
+
+        Assert.assertEquals(tin, client.getTinNumber());
+    }
+
+
+**Test 10:**
+
+    public void setPhoneNumber() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zé");
+        String phoneNumber = "12345674110";
+
+        client.setPhoneNumber(phoneNumber);
+
+        Assert.assertEquals(phoneNumber, client.getPhoneNumber());
+    }
+
+**Test 11:**
+
+    public void setEmail() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, 'M', "ze@email.com", "Zé");
+        String email = "kikal@email.com";
+
+        client.setEmail(email);
+
+        Assert.assertEquals(email, client.getEmail());
+    }
+
+**Test 12:**
+
+    public void addUser() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, "email@gamil.com", "Zé");
+
+        client.addUser(App.getInstance().getCompany());
 
     }
 
-**Test 7:** Get the maximum reference value.
-
-    public void getRefValueMax() {
-
-        RefValue rv1 = new RefValue("aaa", 10.0, 20.0);
-
-        Double expected = 20.0;
-        Double actual = rv1.getRefValueMax();
-
-        Assert.assertEquals(expected, actual);
-
-    }
-
-**Test 8:** Get corresponding test using the sampleID.
-
-    private boolean getCorrespondingTest(String sampleID) {
-    String testID;
-
-        List<Sample> samples = sampleStore.getSampleList();
-
-        testID = "";
-
-        for (Sample sa : samples) {
-            if (sa.getBarcode().equals(sampleID)) {
-                testID = sa.getTr().getTestID();
-            }
-        }
-
-        List<Test> tests = testStore.getTestList();
-
-        for (Test test1 : tests) {
-            if (test1.getTestID().equals(testID)) {
-                this.test = test1;
-                return test1.compareTestState("SAMPLE_COLLECTED");
-            }
-        }
-        return false;
-    }
 	
 
 *It is also recommended organizing this content by subsections.* 
 
 # 5. Construction (Implementation)
 
-### Class RecordTestResultUI
+### Class ClientUpdateUI
 
-    public class RecordTestResultUI implements Runnable {
+    public class ClientUpdateUI {
 
-        RecordTestResultController ctrl;
 
-        public RecordTestResultUI() {
-            ctrl = new RecordTestResultController();
-        }
+    private UpdateClientDataController clientDataController = new UpdateClientDataController();
 
-        @Override
-        public void run() {
+    private final SceneController sceneController = SceneController.getInstance();
+    private final App app = sceneController.getApp();
 
-            boolean result = true;
-            boolean repeat = false;
-            double value;
 
-            String sampleID = Utils.readLineFromConsole("Please enter the sample barcode number of the test:");
+    @FXML
+    private TextArea informationArea;
 
-            List<TestParameter> parameters = ctrl.getParameters(sampleID);
+    @FXML
+    private TextField attributeField;
 
-            if (this.ctrl.getSampleListDto() == null || this.ctrl.getSampleListDto().isEmpty()) {
-                System.out.println("The list is of samples is empty!");
-            } else {
-                do {
-                    for (TestParameter param : parameters) {
-                        System.out.println();
-                        System.out.print("Parameters: " + param.getParam().getName());
+    @FXML
+    private TextField newField;
 
-                        value = Utils.readDoubleFromConsole("Please insert the result/value:");
 
-                        try {
-                            result = ctrl.addTestParameterResult(param.getParam().getCode(), value);
-                            result = true;
-                        } catch (Exception e) {
-                            System.out.println(e.getMessage());
-                            result = false;
-                        }
-
-                        if (result) {
-                            System.out.println("Test parameter result saved with success!");
-                        } else {
-                            System.out.println("Incorrect input of data (an error has occurred).");
-                            repeat = Utils.confirm("Try again? (s/n)");
-                        }
-                    }
-                } while (repeat);
-            }
-
-            if (result) {
-                ctrl.setState();
-                System.out.println("Success! All test parameters results have been recorded.");
-            } else {
-                System.out.println("Something went wrong... please, try again.");
-            }
-        }
+    @FXML
+    void showInfo(ActionEvent actionEvent) {
+        informationArea.setText(clientDataController.getClient());
     }
 
-
-### Class UpdateClientDataController
-
-    import app.domain.stores.ClientStore;
-
-    import java.util.Date;
-
-    public class UpdateClientDataController {
-
-    private Company company = App.getInstance().getCompany();
-    private final Client client;
-    private final ClientStore clientStore = company.getClientList();
-
-    public UpdateClientDataController(){
-        String email = App.getInstance().getCurrentUserSession().getUserId().toString();
-        this.client = company.getClientList().getClientByEmail(email);
+    @FXML
+    void updateInfo(ActionEvent actionEvent) {
+        int i = Integer.parseInt(attributeField.getText());
+        if (i > 0 && i <= 8) {
+            String info = newField.getText();
+            try {
+                clientDataController.changeData(i, info);
+                Alert updated = new Alert(Alert.AlertType.INFORMATION, "Your personal information was updated\n" +
+                        "For security reasons restart the login session");
+                updated.showAndWait();
+            } catch (IllegalArgumentException | ParseException e) {
+                Alert invalid = new Alert(Alert.AlertType.WARNING, "The information is invalid");
+                invalid.showAndWait();
+            }
+        } else {
+            Alert canceled = new Alert(Alert.AlertType.WARNING, "Invalid attribute number");
+            canceled.showAndWait();
+        }
+        showInfo(null);
     }
 
-    public void updateClientData(String cc, String nhs, Date birthDate, char sex, String tinNumber, String phoneNumber, String email, String name){
-        this.client.setCc(cc);
-        this.client.setNhs(nhs);
-        this.client.setBirthDate(birthDate);
-        this.client.setSex(String.valueOf(sex));
-        this.client.setTinNumber(tinNumber);
-        this.client.setPhoneNumber(phoneNumber);
-        this.client.setEmail(email);
-        this.client.setName(name);
-
-        clientStore.setClient(this.client);
-        clientStore.saveClient();
-        company.saveCompany();
+    @FXML
+    void exit(ActionEvent event) throws IOException {
+        app.doLogout();
+        sceneController.switchMenu(event, Constants.MAIN_SCREEN_UI);
     }
 }
 
 
-
-
-**UpdateClientDataController**
+### Class UpdateClientDataController
 
     /**
      * The company that knows the tests
