@@ -2,6 +2,8 @@ package app.domain.model;
 
 
 
+import app.controller.CreateTestController;
+import app.domain.stores.TestStore;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -105,6 +107,34 @@ public class ImportTestsTest {
 
 
     }
+    @Test
+    public void parameterCategorycheckTest() throws ParseException {
+        //Arrange + Act
+        ImportTests aa = new ImportTests();
+
+        String a = "000000000001;OUQ000003201;001LR;0000000000003201;6000003201;2100003201;05/12/1946;9120A003201;Piper GROVES;PiperGROVES2155@gmail.com;128 Street of England 14 Leicester LR 23 OP;Blood;NA;132,4;1;385,2;13,4;NA;323,8;NA;NA;17/05/2021 8:00;17/05/2021 10:07;18/05/2021 10:32;18/05/2021 11:47";
+        String[] b = a.split(";");
+
+
+        Assert.assertEquals(aa.parameterCategorycheck(b).toString(),"[]");
+    }
+    @Test
+    public void parametercheckTest() throws ParseException {
+        //Arrange + Act
+        ImportTests aa = new ImportTests();
+
+        String a = "000000000001;OUQ000003201;001LR;0000000000003201;6000003201;2100003201;05/12/1946;9120A003201;Piper GROVES;PiperGROVES2155@gmail.com;128 Street of England 14 Leicester LR 23 OP;NA;NA;NA;NA;NA;NA;NA;NA;NA;NA;17/05/2021 8:00;17/05/2021 10:07;18/05/2021 10:32;18/05/2021 11:47";
+        String[] b = a.split(";");
+
+
+        Assert.assertEquals(aa.parametercheck(b).toString(),"[]");
+
+
+
+    }
+
+
+
 
 
 
