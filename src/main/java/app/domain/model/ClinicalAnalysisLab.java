@@ -27,6 +27,7 @@ public class ClinicalAnalysisLab implements Serializable {
      * @param phoneNumber Phone Number Clinical Analysis Lab
      * @param tType       list of Test Types associated with the test
      */
+
     public ClinicalAnalysisLab(String name, String address, String id, String tin, String phoneNumber, TestTypeStore tType) {
         checkNameRules(name);
         checkAddressRules(address);
@@ -45,7 +46,16 @@ public class ClinicalAnalysisLab implements Serializable {
     public ClinicalAnalysisLab(TestTypeStore testType) {
         this.tType = testType;
     }
+    /**
+     * Checks if the string that is received is only numerical using the class NumberUtils
+     *
+     * @param i The String that is going to be checked
+     * @return boolean value that is positive if the parameter is only numerical
+     */
+    private boolean checkIfIsNumerical(String i) {
+        return !(i.matches("[0-9]+"));
 
+    }
     /**
      * This method checks if the list of Types of tests provided meets the requirements, if not it throws a exception making the execution to stop
      *
@@ -102,13 +112,8 @@ public class ClinicalAnalysisLab implements Serializable {
             throw new IllegalArgumentException("Phone number cannot be blank.");
         if (phoneNumber.length() != Constants.PHONE_NUMBER_DIGITS)
             throw new IllegalArgumentException("Phone number must have 11 chars.");
-        phoneNumber = phoneNumber.toLowerCase();
-        char[] charArray = phoneNumber.toCharArray();
-        for (int i = 0; i < charArray.length; i++) {
-            char c = charArray[i];
-            if (!(c >= '0' && c <= '9')) {
-                throw new IllegalArgumentException("Phone Number only accepts numbers.");
-            }
+        if(checkIfIsNumerical(phoneNumber)){
+            throw new IllegalArgumentException("Phone Number only accepts numbers.");
         }
     }
 
@@ -122,14 +127,10 @@ public class ClinicalAnalysisLab implements Serializable {
             throw new IllegalArgumentException("TIN cannot be blank.");
         if (tin.length() != Constants.TIN_LENGTH)
             throw new IllegalArgumentException("TIN must have 10 chars.");
-        tin = tin.toLowerCase();
-        char[] charArray = tin.toCharArray();
-        for (int i = 0; i < charArray.length; i++) {
-            char c = charArray[i];
-            if (!(c >= '0' && c <= '9')) {
-                throw new IllegalArgumentException("TIN only accepts numbers.");
-            }
+        if(checkIfIsNumerical(tin)){
+            throw new IllegalArgumentException("Phone Number only accepts numbers.");
         }
+
     }
 
     /**
