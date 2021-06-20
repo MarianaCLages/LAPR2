@@ -2,8 +2,7 @@ package app.domain.model;
 
 import app.controller.App;
 import app.domain.shared.Constants;
-import app.domain.shared.Email;
-import app.domain.shared.PasswordGenerator;
+import app.domain.shared.exceptions.FileInvalidClientException;
 import app.domain.stores.*;
 
 import java.io.BufferedReader;
@@ -22,7 +21,7 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Simple Java program to read CSV file in Java. In this program we will read * list of books stored in CSV file as comma separated values. * * @author WINDOWS 8 *
+ * Class that represents the Tests that are going to be Imported from the CSV file
  */
 public class ImportTests {
 
@@ -35,7 +34,9 @@ public class ImportTests {
     TestStore tstore;
     List<String> testFileList = new ArrayList<>();
 
-
+    /**
+     * Constructor of ImportTests, it calls methods in order to validate the parameters
+     */
     public ImportTests() {
         App app = App.getInstance();
         Company company = app.getCompany();
@@ -48,7 +49,10 @@ public class ImportTests {
 
     }
 
-
+    /**
+     * This method reads a test from the CSV file
+     * @param filepath path of the CSV file
+     */
     public void readTestFromCSV(String filepath) {
 
 
@@ -83,7 +87,7 @@ public class ImportTests {
                         continue;
                     }
                     try {
-                        verifyClinic(metadata);
+                        verifyClinicalAnalysisLab(metadata);
                     } catch (Exception e) {
                         a = false;
                         errorcount++;
@@ -100,6 +104,7 @@ public class ImportTests {
 
                     if (a) {
                         testFileList.add(Arrays.toString(metadata));
+                        /*System.out.println(Arrays.toString(metadata));*/
                     }
 
                 }
@@ -108,13 +113,21 @@ public class ImportTests {
             e.printStackTrace();
         }
     }
-
+    /**
+     * This method gets a list of the tests that the CSV file contains, counts and shows the errors found on it
+     * @return a list that has the tests plus the number of errors of it
+     */
     public List<String> getTestFileList() {
         String error = (errorcount - 1) + " errors found.";
         testFileList.add(error);
         return testFileList;
     }
-
+    /**
+     * This method creates the client with the information presented on the CSV file
+     * @param metadata array string that represents the saved lines from the CSV file
+     * @return a boolean value representing the success of the operation
+     * @throws ParseException signals that an error has been reached unexpectedly while parsing
+     */
     public boolean createClientfromFile(String[] metadata) throws ParseException {
 
 
@@ -123,6 +136,7 @@ public class ImportTests {
         cstore.createClient(metadata[7], metadata[3], metadata[4], metadata[5], date, ' ', metadata[9], metadata[8]);
         cstore.saveClient();
         String pwd = PasswordGenerator.getPassword();
+        System.out.println(metadata[9] + " " + pwd);
         boolean success = true;
         try {
             App.getInstance().getCompany().getAuthFacade().addUserWithRole(metadata[8], metadata[9], pwd, Constants.ROLE_CLIENT);
@@ -136,13 +150,22 @@ public class ImportTests {
 
         return success;
     }
-
-    public boolean verifyClinic(String[] metadata) {
+    /**
+     * This method verifies if the Clinical Lab ID already exists
+     * @param metadata array string that represents the saved lines from the CSV file
+     * @return a boolean value that if it's true then it means the clinical laboratory already exists
+     */
+    public boolean verifyClinicalAnalysisLab(String[] metadata) {
 
         return store.verifyClinicalLabID(metadata[2]);
     }
-
-    public boolean createTestfromFile(String[] metadata) throws ParseException {
+    /**
+     * This method creates a test from the CSV file
+     * @param metadata array string that represents the saved lines from the CSV file
+     * @return the test with all the necessary data and changes its state to validated
+     * @throws ParseException signals that an error has been reached unexpectedly while parsing
+     */
+    public boolean createTestfromFile(String[] metadata) {
         TestType testtype = ttstore.getTestTypeExist(metadata[11]);
 
 

@@ -215,18 +215,6 @@ public class TestStore implements Serializable {
         return testSortedListString;
     }
 
-    /**
-     * Transforms the test sorted list into a string.
-     *
-     * @param clientTin the client's TIN number
-     * @return the test sorted list into a string
-     */
-    public String toStringSortedList(String clientTin) {
-        for (Test test : sortDate(clientTin)) {
-            System.out.println(test);
-        }
-        return null;
-    }
 
     /**
      * Gets the test by the client's TIN number.

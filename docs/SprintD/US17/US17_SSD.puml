@@ -4,11 +4,11 @@ autonumber
 actor LaboratoryCoordinator as C
 participant ":System" as S
 activate C
-C -> S: wants to import clinical tests
+C -> S: wants to import file with tests
 activate S
-S --> C:show the list of files
+S --> C: shows the file chooser
 deactivate S
-C -> S:choose the file
+C -> S: chooses the file
 activate S
 S --> C: shows the tests that were imported
 deactivate S

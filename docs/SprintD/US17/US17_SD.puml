@@ -3,8 +3,8 @@ autonumber
 actor Client as C
 participant "ImportTestUI" as UI
 participant ":ImportTestController" as CTRL
-participant ":Company" as company
 participant ":ImportTests" as Imp
+participant ":Company" as company
 participant "clastore:ClinicalAnalysisLabStore" as clastore
 participant "cstore:ClientStore" as cstore
 participant "tstore:TestStore" as tstore
@@ -37,19 +37,23 @@ C -> UI: choose the file
 activate UI
 activate CTRL
 UI --> CTRL :readTestFromCSV
-activate company
-Imp --> company:getClientList()
-deactivate company
+
+
+
 activate Imp
 CTRL --> Imp: createClientfromFile(metadata)
 
-
-Imp --> cstore: createClient()
+activate company
+Imp --> company: createClient()
+company --> cstore: createClient()
+deactivate company
 activate cstore
 cstore -> c** : c = Client(phoneNumber, cc, nhs, tinNumber, birthDate, email, name)
 cstore -> cstore: saveClient()
-
-Imp --> Auth: addUserWithRole()
+activate company
+Imp --> company: addUserWithRole()
+company --> Auth: addUserWithRole()
+deactivate company
 deactivate cstore
 activate Auth
 Auth -> ustore:create()
@@ -60,43 +64,65 @@ deactivate ustore
 Imp --> Email: sendPasswordNotification()
 activate Email
 deactivate Email
+
+
+
+
+Imp --> company: verifyClinicalLabID()
 activate company
-Imp --> company:getClinicalAnalysisLabList()
+company --> clastore: verifyClinicalLabID()
 deactivate company
-Imp --> clastore: verifyClinicalLabID()
 activate clastore
 activate cla
 clastore -> cla: getId()
 deactivate clastore
 deactivate cla
-activate company
-Imp --> company: getTestTypeList();
-deactivate company
-Imp --> ttstore: getTestTypeExist()
 
+
+
+Imp --> company: getTestTypeExist()
+activate company
+company --> ttstore: getTestTypeExist()
+deactivate company
 activate ttstore
 ttstore -> tt : getDescription()
-deactivate ttstore
 activate tt
-
-activate company
-Imp --> company:getParameterCategoryList()
+deactivate ttstore
 deactivate tt
 
-deactivate company
+
+
+
+
+
+
 activate pcstore
-Imp --> pcstore: getParameterCategoryExist()
+
+activate company
+
+Imp --> company: getParameterCategoryExist()
+company --> pcstore: getParameterCategoryExist()
+deactivate company
+
 deactivate pcstore
-activate company
-Imp --> company:getParameterList()
 deactivate company
+
+
+
+Imp --> company: getParameterExist()
+activate company
+company --> pstore: getParameterExist()
+
 activate pstore
-Imp --> pstore: getParameterExist()
-deactivate pstore
-activate company
-Imp --> company:getTestList()
+
 deactivate company
-Imp --> tstore: createTest()
+deactivate pstore
+
+Imp --> company: createTest()
+
+activate company
+company --> tstore: createTest()
+deactivate company
 activate tstore
 tstore -> t**: t = Test(testNhsNumber, clientTin, testType, catList, paList)
 tstore -> tstore: saveTest()

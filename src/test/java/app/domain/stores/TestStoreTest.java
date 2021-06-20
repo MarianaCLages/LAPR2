@@ -168,8 +168,12 @@ public class TestStoreTest {
 
         List<app.domain.model.Test> list = store.sortDate("1234567890123456");
 
-        store.toStringSortedList("1234567890123456");
-        System.out.println(store.getTestSortedListString());
+
+
+        List<app.domain.model.Test> expected = new ArrayList<>();
+        expected.add(t2);
+        expected.add(t1);
+        Assert.assertEquals(list,expected);
     }
 
     @Test
