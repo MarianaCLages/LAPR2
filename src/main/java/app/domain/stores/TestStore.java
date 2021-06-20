@@ -854,11 +854,7 @@ public class TestStore implements Serializable {
      */
 
     public int numberOfTests() {
-        int sum = 0;
-        for (int i = 0; i < array.size(); i++) {
-            sum += 1;
-        }
-        return sum;
+        return array.size();
     }
 
 

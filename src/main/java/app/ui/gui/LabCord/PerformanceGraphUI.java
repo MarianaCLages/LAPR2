@@ -36,7 +36,9 @@ public class PerformanceGraphUI implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         XYChart.Series series = new XYChart.Series();
         int[] difference = ctrl.getDifferenceArray();
+        System.out.println(Arrays.toString(difference));
         LocalDateTime[] times = ctrl.getTimes();
+        System.out.println(Arrays.toString(times));
 
         try {
 

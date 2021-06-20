@@ -22,7 +22,8 @@ public class CheckPerformanceController {
     private final TestStore tStore;
     private final ClientStore cStore;
     private LocalDateTime[] times;
-    int[] differenceArray;
+    private int[] differenceArray;
+    private int[] subarray;
 
 
     public CheckPerformanceController() {
@@ -113,7 +114,7 @@ public class CheckPerformanceController {
         }
 
 
-        int[] subarray = adapter.getMaxSum(differenceArray);
+        subarray = adapter.getMaxSum(differenceArray);
 
         return subarray;
     }
@@ -123,7 +124,7 @@ public class CheckPerformanceController {
         LocalDateTime[] dates = new LocalDateTime[2];
 
         dates[0] = times[begEnd[0]];
-        dates[1] = times[begEnd[1]];
+        dates[1] = times[begEnd[begEnd.length-1]];
 
         return dates;
     }
@@ -155,6 +156,7 @@ public class CheckPerformanceController {
         int[] begEnd = new int[2];
         begEnd[0] = indexes[0];
         begEnd[1] = indexes[indexes.length - 1];
+        System.out.println(Arrays.toString(begEnd));
 
         return begEnd;
     }
@@ -215,8 +217,18 @@ public class CheckPerformanceController {
                 .append("\n")
                 .append("Tests done in this year:")
                 .append(tStore.getAllTestsInAInterval(365))
-                .append("\n");
+                .append("\n")
+                .append("Max Sum SubArray: ");
+        if (subarray.length == 0) {
+            sb.append("There is no tests in te selected interval");
+        }else {
 
+            sb.append(Arrays.toString(subarray))
+                    .append("\n")
+                    .append("subArray Interval: ")
+                    .append("]").append(getDates(subarray)[0]).append(",").append(getDates(subarray)[1]).append("[")
+                    .append("\n");
+        }
 
         return sb.toString();
 

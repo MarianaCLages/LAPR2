@@ -66,7 +66,7 @@ public class CheckPerformanceUI implements Initializable {
             }
 
             ctrl.getSubArray(dtnBeg.getValue(), dtnEnd.getValue(), myChoiceBoxSimple.getValue()); //subArray
-         //   ctrl.getDates(ctrl.getSubArray(dtnBeg.getValue(), dtnEnd.getValue(), myChoiceBoxSimple.getValue()));// data de início e de fim do sub array
+            ctrl.getDates(ctrl.getSubArray(dtnBeg.getValue(), dtnEnd.getValue(), myChoiceBoxSimple.getValue()));// data de início e de fim do sub array
             ctrl.numberWaitingResults();
             ctrl.numberWaitingDiagnosis();
             ctrl.numberClients();

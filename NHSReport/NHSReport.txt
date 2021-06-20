@@ -90,7 +90,8 @@ Date						    Number of OBSERVED positive cases						Number of ESTIMATED positiv
 2021-06-15								0												NaN										  ]NaN,NaN[
 2021-06-16								0												NaN										  ]NaN,NaN[
 2021-06-17								0												NaN										  ]NaN,NaN[
-2021-06-18								7												NaN										  ]NaN,NaN[
+2021-06-18								0												NaN										  ]NaN,NaN[
+2021-06-19								7												NaN										  ]NaN,NaN[
 
 
 -------------------------------------------------------------------------------------End of Prediction-------------------------------------------------------------------------------------
