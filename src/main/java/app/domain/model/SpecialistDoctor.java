@@ -13,14 +13,14 @@ import java.io.Serializable;
  */
 public class SpecialistDoctor extends Employee implements Serializable {
 
-    private String DoctorIndexNumber;
-    private Role role;
+    final String doctorIndexNumber;
+     Role role;
     private String name;
-    private String address;
-    private String phonenumber;
+    String address;
+    String phonenumber;
+    String SOC;
     private String email;
-    private String SOC;
-    private String employeeID;
+     String employeeID;
 
     /**
      * Constructor of the Employee which is an subclass of Employee , it calls methods in order to validate the parameters
@@ -39,7 +39,7 @@ public class SpecialistDoctor extends Employee implements Serializable {
 
         checkDoctorIndexNumberRules(DoctorIndexNumber);
 
-        this.DoctorIndexNumber = DoctorIndexNumber;
+        this.doctorIndexNumber = DoctorIndexNumber;
 
 
     }
@@ -87,6 +87,6 @@ public class SpecialistDoctor extends Employee implements Serializable {
      */
     @Override
     public String toString() {
-        return super.toString() + ", DoctorIndexNumber=" + DoctorIndexNumber;
+        return super.toString() + ", DoctorIndexNumber=" + doctorIndexNumber;
     }
 }
