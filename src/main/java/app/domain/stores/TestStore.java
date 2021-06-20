@@ -748,19 +748,11 @@ public class TestStore implements Serializable {
             LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
             if ((calendar.get(Calendar.DAY_OF_WEEK) != 1)) {
-<<<<<<< HEAD
-                for (Test t1 : getTestListArray()) {
-                    if (t1.getDate().toLocalDate().equals(currentDay)) {
+
+                for (Test t : array) {
+                    if (t.getDate().toLocalDate().equals(currentDay)) {
                         sum += 1;
                     }
-=======
-                for (Test t : array) {
-            //        if (t.getAnalysedDate().toLocalDate() != null || t.getAnalysedDate() != null || t.getDiagnosticDate().toLocalDate() != null || t.getSampleCreatedDate().toLocalDate() != null || t.getAnalysedDate().toLocalDate() != null) {
-                        if (t.getDate().toLocalDate().equals(currentDay)) {
-                            sum += 1;
-                        }
-                   // }
->>>>>>> 5810db3b0e89c90fe040e1d782bfa47cf5991dd4
                 }
             }
         }

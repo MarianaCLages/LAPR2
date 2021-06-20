@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="409.0" prefWidth="657.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.LabCord.CheckPerformanceUI">
    <children>
-      <Button fx:id="btnReturn" layoutX="14.0" layoutY="366.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="32.0" prefWidth="76.0" text="Return">
+      <Button fx:id="btnReturn" layoutX="14.0" layoutY="366.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="32.0" prefWidth="82.0" text="Return">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -28,8 +28,8 @@
          </font>
       </Label>
       <TextArea fx:id="trackpad" editable="false" layoutX="14.0" layoutY="126.0" prefHeight="232.0" prefWidth="629.0" />
-      <Button fx:id="myViewGraphsButton" layoutX="560.0" layoutY="366.0" mnemonicParsing="false" onAction="#goToGraph" prefHeight="32.0" prefWidth="82.0" text="View Graphs" />
-      <Button fx:id="choiceAlgo" layoutX="550.0" layoutY="83.0" mnemonicParsing="false" onAction="#confirm" prefHeight="32.0" prefWidth="82.0" text="Confirm" />
+      <Button fx:id="myViewGraphsButton" layoutX="544.0" layoutY="366.0" mnemonicParsing="false" onAction="#goToGraph" prefHeight="32.0" prefWidth="98.0" text="View Graphs" />
+      <Button fx:id="choiceAlgo" layoutX="533.0" layoutY="89.0" mnemonicParsing="false" onAction="#confirm" prefHeight="32.0" prefWidth="82.0" text="Confirm" />
       <ChoiceBox fx:id="myChoiceBoxInformation" layoutX="525.0" layoutY="46.0" prefHeight="25.0" prefWidth="98.0" />
       <Label alignment="CENTER" layoutX="529.0" layoutY="20.0" prefHeight="17.0" prefWidth="90.0" text="Select the time:">
          <font>
