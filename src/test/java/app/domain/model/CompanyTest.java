@@ -21,6 +21,10 @@ public class CompanyTest {
         Assert.assertNotNull(auth);
     }
 
+    @Test
+    public void taskCreated(){
+        Assert.assertTrue(company.isCreatedTask());
+    }
 
     @Test
     public void getDesignationTest() {
@@ -76,5 +80,7 @@ public class CompanyTest {
     public void getSampleStore(){
         Assert.assertNotNull(company.getSampleStore());
     }
+
+
 
 }

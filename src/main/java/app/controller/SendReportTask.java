@@ -31,6 +31,7 @@ public class SendReportTask extends TimerTask implements Serializable {
     private String scope;
 
     StringBuilderReport report;
+    private boolean runed= false;
 
     public SendReportTask() {
         //Send report constructor
@@ -41,6 +42,7 @@ public class SendReportTask extends TimerTask implements Serializable {
      */
     @Override
     public void run() {
+        runed = true;
         LinearRegression linearRegressionChosen = null;
         TestStore testStore = App.getInstance().getCompany().getTestList();
         ClientStore clientStore = App.getInstance().getCompany().getClientList();
@@ -157,5 +159,9 @@ public class SendReportTask extends TimerTask implements Serializable {
         } catch (SecurityException | IOException e) {
             Alerts.errorAlert(e.getMessage());
         }
+    }
+
+    public boolean isRuned() {
+        return runed;
     }
 }
