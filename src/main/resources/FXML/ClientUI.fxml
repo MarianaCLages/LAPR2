@@ -4,18 +4,21 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.client.ClientUI">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.client.ClientUI">
    <children>
-      <Label alignment="CENTER" layoutY="36.0" prefHeight="40.0" prefWidth="600.0" text="Client Menu" textAlignment="CENTER" underline="true">
+      <Label alignment="CENTER" layoutX="74.0" layoutY="40.0" prefHeight="17.0" prefWidth="452.0" text="Client Menu" textAlignment="CENTER">
          <font>
-            <Font name="Baskerville Old Face" size="36.0" />
+            <Font size="28.0" />
          </font>
       </Label>
       <Button fx:id="myReturnButtonClient" layoutX="14.0" layoutY="332.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="54.0" prefWidth="101.0" text="Return" />
-      <Button layoutX="249.0" layoutY="182.0" mnemonicParsing="false" onAction="#ViewResultsMenu" prefHeight="36.0" prefWidth="102.0" text="View results">
+
+       <Button layoutX="249.0" layoutY="182.0" mnemonicParsing="false" onAction="#ViewResultsMenu" prefHeight="36.0" prefWidth="102.0" text="View results">
          <font>
             <Font size="14.0" />
          </font></Button>
       <Button fx:id="updateClientButton" layoutX="400.0" layoutY="332.0" mnemonicParsing="false" onAction="#showClientUpdateUI" prefHeight="54.0" prefWidth="101.0" text="Update Client" />
+       
+
    </children>
 </AnchorPane>
