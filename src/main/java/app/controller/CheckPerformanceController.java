@@ -9,11 +9,9 @@ import app.domain.stores.TestStore;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Date;
 
 import static app.domain.shared.Constants.BENCHMARK_ALGORITHM_PATH;
 import static app.domain.shared.Constants.BRUTEFORCE_ALGORITHM_PATH;
@@ -164,8 +162,6 @@ public class CheckPerformanceController {
     public int numberClients() {
         return cStore.getClientList().size();
     }
-
-    //nome do método para teres os testes getAllTestsInAInterval
 
     public void getAllTestsInInterval(int inter) {
         this.tStore.getAllTestsInAInterval(inter);
