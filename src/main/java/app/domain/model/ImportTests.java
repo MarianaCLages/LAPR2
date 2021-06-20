@@ -103,9 +103,8 @@ public class ImportTests {
                         continue;
                     }
 
-                    if (a) {
-                        testFileList.add(Arrays.toString(metadata));
-                    }
+                    testFileList.add(Arrays.toString(metadata));
+
 
                 }
             }

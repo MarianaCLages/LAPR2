@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.BufferedReader;
+import java.nio.charset.CharacterCodingException;
 import java.nio.charset.CoderMalfunctionError;
 import java.nio.charset.CoderResult;
 import java.nio.charset.MalformedInputException;
@@ -79,6 +80,17 @@ public class ImportTestsTest {
         aa.readTestFromCSV(fileName);
 
     }
+    @Test
+    public void readTestFromCSVDataTest2() {
+        //Arrange + Act
+        String fileName = "csv/Tests.csv";
+
+        ImportTests aa = new ImportTests();
+        aa.readTestFromCSV(fileName);
+        Assert.assertNotNull(aa.getTestFileList());
+
+    }
+
 
 
 
