@@ -518,4 +518,127 @@ public class TestTest {
 
     }
 
+    @Test
+    public void getCreatedDate() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
+        test.addTestParameter();
+
+        List<TestParameter> actual = test.getTestParam();
+
+        List<TestParameter> expected = new ArrayList<>();
+        TestParameter tp = new TestParameter("AH000");
+        expected.add(tp);
+
+        Assert.assertNotNull(test.getCreatedDate());
+    }
+
+    @Test
+    public void getSampleCreatedDate() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
+        test.addTestParameter();
+
+        List<TestParameter> actual = test.getTestParam();
+
+        List<TestParameter> expected = new ArrayList<>();
+        TestParameter tp = new TestParameter("AH000");
+        expected.add(tp);
+
+        Assert.assertNull(test.getSampleCreatedDate());
+    }
+
+    @Test
+    public void getDiagnosticDate() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
+        test.addTestParameter();
+
+        List<TestParameter> actual = test.getTestParam();
+
+        List<TestParameter> expected = new ArrayList<>();
+        TestParameter tp = new TestParameter("AH000");
+        expected.add(tp);
+
+        Assert.assertNull(test.getDiagnosticDate());
+    }
+
+    @Test
+    public void getAnalysedDate() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
+        test.addTestParameter();
+
+        List<TestParameter> actual = test.getTestParam();
+
+        List<TestParameter> expected = new ArrayList<>();
+        TestParameter tp = new TestParameter("AH000");
+        expected.add(tp);
+
+        Assert.assertNull(test.getAnalysedDate());
+    }
+
+    @Test
+    public void getDiagnosis() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
+        test.addTestParameter();
+
+        List<TestParameter> actual = test.getTestParam();
+
+        List<TestParameter> expected = new ArrayList<>();
+        TestParameter tp = new TestParameter("AH000");
+        expected.add(tp);
+        try {
+            Assert.assertNull(test.getDiagnosis());
+        } catch (Exception e) {
+
+        }
+
+    }
 }

@@ -4,6 +4,7 @@ import app.domain.shared.LinearRegression;
 import app.domain.shared.MultiLinearRegression;
 import app.domain.shared.exceptions.InvalidLengthException;
 import org.apache.commons.math3.exception.NotStrictlyPositiveException;
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -46,7 +47,7 @@ public class StringBuilderReportTest {
         try {
             stringBuilderReport.setvalues(x, y, 10);
             stringBuilderReport.setvalues(xOBS, y, 10);
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
     }
@@ -56,8 +57,8 @@ public class StringBuilderReportTest {
         try {
             stringBuilderReport2.setvalues(xOBS, yOBS, 20);
             stringBuilderReport2.setConfidenceValues(0.3, 0.3, 0.3);
-            stringBuilderReport2.stringConstructionLinearRegression();
-        }catch (Exception e){
+            stringBuilderReport2.stringConstructionMultiLinearRegression();
+        } catch (Exception e) {
 
         }
     }
@@ -68,7 +69,7 @@ public class StringBuilderReportTest {
             stringBuilderReport.setvalues(x, yOBS, 20);
             stringBuilderReport.setConfidenceValues(0.3, 0.3, 0.3);
             stringBuilderReport.stringConstructionLinearRegression();
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
     }
@@ -79,7 +80,7 @@ public class StringBuilderReportTest {
             stringBuilderReport.printCovidTestsPerInterval("Day");
             stringBuilderReport.printCovidTestsPerInterval("Week");
             stringBuilderReport.printCovidTestsPerInterval("Month");
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
     }
@@ -98,5 +99,6 @@ public class StringBuilderReportTest {
 
     @Test
     public void getSb() {
+        Assert.assertNotNull(stringBuilderReport.getSb());
     }
 }
