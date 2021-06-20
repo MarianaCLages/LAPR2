@@ -100,7 +100,7 @@ According to the taken rationale, the conceptual classes promoted to software cl
  * Client
 
 Other software classes (i.e. Pure Fabrication) identified: 
- * UpdateClientDataUI  
+ * ClientUpdateUI  
  * UpdateClientDataController
  * ClientStore
 
@@ -343,92 +343,107 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 
 
+
+**UpdateClientDataController**
+
+    /**
+     * The company that knows the tests
+     */
+    private final Company company = App.getInstance().getCompany();
+
+    /**
+     * Client who do the test
+     */
+    private final Client client;
+
+    /**
+     * The client store to get the client
+     */
+    private final ClientStore clientStore = company.getClientList();
+
+    public UpdateClientDataController() {
+        String email = App.getInstance().getCurrentUserSession().getUserId().toString();
+        this.client = company.getClientList().getClient();
+    }
+
+    public String getClient(){
+        return client.toString();
+    }
+
+
+    /**
+     * Changes an attribute
+     *
+     * @param i The attribute to be changed
+     * @param data The new attribute
+     */
+    public void changeData(int i, String data) throws ParseException {
+        switch (i) {
+            case 1:
+                this.client.setPhoneNumber(data);
+                break;
+
+            case 2:
+                this.client.setCc(data);
+                break;
+
+            case 3:
+                this.client.setNhs(data);
+                break;
+
+            case 4:
+                this.client.setTinNumber(data);
+                break;
+
+            case 5:
+                Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(data);
+                this.client.setBirthDate(date1);
+                break;
+
+            case 6:
+                this.client.setSex(data);
+                break;
+
+
+            case 7:
+                this.client.setEmail(data);
+                break;
+
+            case 8:
+                this.client.setName(data);
+                break;
+
+            default:
+                break;
+        }
+
+    }
+
+    public void updateClientData(String cc, String nhs, Date birthDate, char sex, String tinNumber, String phoneNumber, String email, String name) {
+        this.client.setCc(cc);
+        this.client.setNhs(nhs);
+        this.client.setBirthDate(birthDate);
+        this.client.setSex(String.valueOf(sex));
+        this.client.setTinNumber(tinNumber);
+        this.client.setPhoneNumber(phoneNumber);
+        this.client.setEmail(email);
+        this.client.setName(name);
+
+        clientStore.setClient(this.client);
+        clientStore.saveClient();
+        company.saveCompany();
+    }
+
+
+
+
+
 # 6. Integration and Demo
 
-### Integration in the Company class
-
-    ClientStore clientStore = new ClientStore();
-
-    public ClientStore getClientStore() {
-        return clientStore;
-    }
-
-
-### Integration in the Test class
-
-    public void createTestParameter(String testID, List<Parameter> parameters) {
-        TestParameter tp;
-        for (Parameter param : parameters) {
-            tp = new TestParameter(testID, param);
-            this.tpList.add(tp);
-        }
-    }
-
-    public List<TestParameter> getTpList() {
-        return tpList;
-    }
-
-    public boolean addTestParameterResult(String parameterCode, double result) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
-
-        TestParameter tp1 = null;
-
-        for (TestParameter tp : tpList) {
-            if (tp.getParam().getCode().equals(parameterCode)) {
-                tp1 = tp;
-            }
-        }
-
-        if (tp1 == null) {
-            return false;
-        }
-
-        String em = tt.getExternalModule();
-        Class<?> daclass = Class.forName(em);
-        RefValueAdapter adp = (RefValueAdapter) daclass.newInstance();
-
-        String paramCode = tp1.getParam().getCode();
-
-        TestParameterResult tpr = new TestParameterResult(parameterCode, result);
-        tpr.setRefValue(adp.getRefValue(paramCode));
-
-        tp1.setTpr(tpr);
-        return true;
-    }
-
-    public boolean compareTestState(String state) {
-
-        if (state.equals("SAMPLE_ANALYSED") || state.equals("DIAGNOSTIC_MADE") || state.equals("VALIDATED")) {
-            return false;
-        }
-        return true;
-    }
-
-
-### Integration in the TestType class
-
-    public String getExternalModule() {
-        return externalModule;
-    }
-
-    public String setExternalModule(String testCode) {
-
-        if(testCode.equals("BL000")) {
-            return Constants.EM_REFERENCE_API;
-        }
-
-        if(testCode.equals("COV19")) {
-            return Constants.COVID_REFERENCE_API;
-        }
-        return null;
-    }
-
-
-### Constants class
-
-    public static final int ACCESS_KEY = 12345;
-    public static final String COVID_REFERENCE_API = "app.domain.model.RefValueAdapter1";
-    public static final String EM_REFERENCE_API = "app.domain.model.RefValueAdapter2";
-    public static final String BC_REFERENCE_API = "app.domain.model.BarcodeAdapter1";
+* Added ClientInformationUI
+* Added ClientInformationController
+* Added coverage and mutation tests
+* A new option on the Client menu options was added: Change my personal information
 
 
 # 7. Observations
