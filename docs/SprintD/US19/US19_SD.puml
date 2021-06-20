@@ -9,7 +9,6 @@ participant ":Company" as comp
 participant "timer:Timer" as timer
 participant "task:SendReportTask" as task
 
-loop every day at 6:00AM
 activate tm
 
     activate ap
@@ -31,6 +30,8 @@ activate tm
     activate task
     deactivate
     note over timer: after the interval specified in the config file
+    loop every day at 6:00AM
+
     tm -> timer: create and send the report
     timer -> task:run()
     ref over task: SD_runTask().svg

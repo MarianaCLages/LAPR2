@@ -1,36 +1,102 @@
 @startuml
 autonumber
 participant "task:SendReportTask" as task
-participant "linReg:LinearRegression" as linReg
-participant "mlinReg:LinearRegression" as linReg
-participant "mlinReg:LinearRegression" as mlinReg
+participant ":Company" as Comp
 participant "tStore:TestStore" as tStore
+participant "clientsWithTests:List<Client>"
+participant "ageLinReg:LinearRegression" as linReg
+participant "testsLinReg:LinearRegression" as tLinReg
+participant "mlinReg:MulinearRegression" as mlinReg
+participant "actualLinReg:LinearRegression"
 participant "api:NHSApi" as api
+participant "report:NHSReport" as report
 
-activate task
 [o-> task: run()
+activate task
+
 task -> task: getProperties(propsFileLocation)
 activate task
 deactivate task
-task -> tStore:algo()
+
+task -> Comp: tStore = getTestStore()
+activate Comp
+deactivate
+
+
+task -> Comp: clientList = getClientList()
+activate Comp
+deactivate Comp
+
+
+task -> tStore: positiveTestListInterval = getPositiveCovidTestsPerDayIntoArrayInsideInterval(interval)
 activate tStore
 deactivate tStore
-alt linear Regression
-    alt variable equal number of tests
-    task --> linReg** : creates(validTestList,positiveTestList)
 
-    else variable equal age average
+task -> tStore:validTestListInterval = getCovidTestsPerDayIntoArray(interval)
+activate tStore
+deactivate tStore
+
+task -> tStore:positiveTestListHistoricalDays = getCovidTestsPerDayIntoArrayInsideInterval(historicalDays)
+activate tStore
+deactivate tStore
+
+task -> tStore:validTestListHistoricalDays = getCovidTestsPerDayIntoArray(historicalDays)
+activate tStore
+deactivate tStore
+
+task -> tStore: clientsWithTests = getClientsWithTest(clientList)
+activate tStore
+deactivate tStore
+
+task -> tStore:clientsMeanAgeInsideInterval = getClientMeanAge(clientsWithTests,interval)
+activate tStore
+deactivate tStore
+
+task -> tStore:clientsMeanAgeInsideHistoricalDays = getClientMeanAge(clientsWithTests,historicalDays)
+activate tStore
+deactivate tStore
+
+
+
+alt linear Regression
+
+    task --> tLinReg** : creates(validTestListInterval,positiveTestListInterval)
+
+    task -> tLinReg: tR2 = getR2()
+    activate tLinReg
+    deactivate
+
     task --> linReg** : creates(meanAgeList,positiveTestList)
+    task -> linReg: aR2 = getR2()
+    activate linReg
+    deactivate
+    alt tR2 > aR2
+       task -> task:actualLinReg = testsLinReg
+       activate task
+       deactivate
+
+       task -> report**: creates(actualLinReg,positiveTestListHistoricalDays,validTestListHistoricalDays)
+
+    else aR2 > tR2
+        task -> task:actualLinReg = ageLinReg
+        activate task
+        deactivate
+
+        task -> report**: creates(actualLinReg,positiveTestListHistoricalDays,clientsMeanAgeInsideHistoricalDays)
 
     end
 
+
 else multilinear Regression
     task --> mlinReg**:creates(meanAgeList,validTestList,positiveTestList)
+    task -> report**: creates(mlinReg,positiveTestListHistoricalDays,clientsMeanAgeInsideHistoricalDays,validTestListHistoricalDays)
+
 end
 activate task
-task -> task: generatesReport()
-activate task
-deactivate
-task -> api: sendsReport(NhsReport)
+
+task -> api: sendReport(NhsReport)
+activate api
+deactivate api
 deactivate task
+[<- task : log()
 @enduml

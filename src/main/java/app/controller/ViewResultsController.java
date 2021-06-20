@@ -48,13 +48,11 @@ public class ViewResultsController {
      * @param test string of test selected on UI
      * @return string with the diagnosis
      */
-    public String getDiagnosis(String test) {
-        System.out.println(test);
+    public String getResults(String test) {
         String[] testSplitted = test.split(",");
         String[] idTestSplitted = testSplitted[1].split("=");
         Test t = store.getTestByCode(idTestSplitted[1]);
-        System.out.println(idTestSplitted[1]);
-        return t.getDiagnosis();
+        return t.getResults();
     }
 
     /**

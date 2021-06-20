@@ -20,6 +20,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Class that represents the Tests that are going to be Imported from the CSV file
@@ -34,7 +36,7 @@ public class ImportTests {
     ParameterStore pstore;
     TestStore tstore;
     List<String> testFileList = new ArrayList<>();
-
+    private static final Logger LOGGER = Logger.getLogger( ImportTests.class.getName() );
     /**
      * Constructor of ImportTests, it calls methods in order to validate the parameters
      */
@@ -103,14 +105,13 @@ public class ImportTests {
                         continue;
                     }
 
-                    if (a) {
-                        testFileList.add(Arrays.toString(metadata));
-                    }
+                    testFileList.add(Arrays.toString(metadata));
+
 
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.log( Level.SEVERE, e.toString(), e );
         }
     }
     /**
@@ -165,59 +166,10 @@ public class ImportTests {
      * @throws ParseException signals that an error has been reached unexpectedly while parsing
      */
     public boolean createTestfromFile(String[] metadata) {
-        TestType testtype = ttstore.getTestTypeExist(metadata[11]);
 
 
-        List<ParameterCategory> pcList = new ArrayList<>();
 
-        if (!metadata[12].equalsIgnoreCase("NA")) {
-
-            ParameterCategory pc1 = pcstore.getParameterCategoryExist(metadata[12]);
-            if (pc1 == null) {
-                pc1 = pcstore.createParameterCategory("12345", metadata[12]);
-            }
-            pcList.add(pc1);
-        }
-        if (!metadata[17].equalsIgnoreCase("NA")) {
-            ParameterCategory pc2 = pcstore.getParameterCategoryExist(metadata[17]);
-            if (pc2 == null) {
-                pc2 = pcstore.createParameterCategory("12346", metadata[12]);
-            }
-            pcList.add(pc2);
-        }
-        if (!metadata[19].equalsIgnoreCase("NA")) {
-            ParameterCategory pc3 = pcstore.getParameterCategoryExist(metadata[19]);
-            if (pc3 == null) {
-                pc3 = pcstore.createParameterCategory("12347", metadata[12]);
-            }
-            pcList.add(pc3);
-        }
-
-        List<Parameter> pList = new ArrayList<>();
-
-        if (!(metadata[13].equalsIgnoreCase("NA"))) {
-            Parameter p1 = pstore.getParameterExist("HB");
-            pList.add(p1);
-        }
-        if (!(metadata[14].equalsIgnoreCase("NA"))) {
-            Parameter p2 = pstore.getParameterExist("WBC");
-            pList.add(p2);
-        }
-        if (!(metadata[15].equalsIgnoreCase("NA"))) {
-            Parameter p3 = pstore.getParameterExist("PLT");
-            pList.add(p3);
-        }
-        if (!(metadata[16].equalsIgnoreCase("NA"))) {
-            Parameter p4 = pstore.getParameterExist("RBC");
-            pList.add(p4);
-        }
-        if (!(metadata[20].equalsIgnoreCase("NA"))) {
-            Parameter p5 = pstore.getParameterExist("COVID");
-            pList.add(p5);
-        }
-
-
-        Test t = tstore.createTest(metadata[4], metadata[5], testtype, pcList, pList);
+        Test t = tstore.createTest(metadata[4], metadata[5], testTypeCheck(metadata), parameterCategorycheck(metadata), parametercheck(metadata));
         tstore.saveTest();
         t.createReport("Undefined");
 
@@ -226,26 +178,7 @@ public class ImportTests {
         t.changeState(Test.State.SAMPLE_COLLECTED);
 
 
-        if (!(metadata[13].equalsIgnoreCase("NA"))) {
-            t.addTestResult("HB000", Double.parseDouble(metadata[13].replace(",", ".")));
-
-        }
-        if (!(metadata[14].equalsIgnoreCase("NA"))) {
-            t.addTestResult("WBC00", Double.parseDouble(metadata[14].replace(",", ".")));
-
-        }
-        if (!(metadata[15].equalsIgnoreCase("NA"))) {
-            t.addTestResult("PLT00", Double.parseDouble(metadata[15].replace(",", ".")));
-
-        }
-        if (!(metadata[16].equalsIgnoreCase("NA"))) {
-            t.addTestResult("RBC00", Double.parseDouble(metadata[16].replace(",", ".")));
-
-        }
-        if (!(metadata[20].equalsIgnoreCase("NA"))) {
-            t.addTestResult("IgGAN", Double.parseDouble(metadata[20].replace(",", ".")));
-
-        }
+        addTestResult(metadata,t);
 
         String date1 = metadata[21];
         String date2 = metadata[22];
@@ -285,5 +218,88 @@ public class ImportTests {
         t.changeState(Test.State.VALIDATED);
 
         return true;
+    }
+
+    public int getErrorcount() {
+        return errorcount;
+    }
+    public TestType testTypeCheck(String[] metadata){
+        return  ttstore.getTestTypeExist(metadata[11]);
+    }
+    public List<ParameterCategory> parameterCategorycheck(String[] metadata){
+        List<ParameterCategory> pcList = new ArrayList<>();
+
+        if (!metadata[12].equalsIgnoreCase("NA")) {
+
+            ParameterCategory pc1 = pcstore.getParameterCategoryExist(metadata[12]);
+            if (pc1 == null) {
+                pc1 = pcstore.createParameterCategory("12345", metadata[12]);
+            }
+            pcList.add(pc1);
+        }
+        if (!metadata[17].equalsIgnoreCase("NA")) {
+            ParameterCategory pc2 = pcstore.getParameterCategoryExist(metadata[17]);
+            if (pc2 == null) {
+                pc2 = pcstore.createParameterCategory("12346", metadata[12]);
+            }
+            pcList.add(pc2);
+        }
+        if (!metadata[19].equalsIgnoreCase("NA")) {
+            ParameterCategory pc3 = pcstore.getParameterCategoryExist(metadata[19]);
+            if (pc3 == null) {
+                pc3 = pcstore.createParameterCategory("12347", metadata[12]);
+            }
+            pcList.add(pc3);
+        }
+        return pcList;
+    }
+    public List<Parameter> parametercheck(String[] metadata){
+        List<Parameter> pList = new ArrayList<>();
+
+        if (!(metadata[13].equalsIgnoreCase("NA"))) {
+            Parameter p1 = pstore.getParameterExist("HB");
+            pList.add(p1);
+        }
+        if (!(metadata[14].equalsIgnoreCase("NA"))) {
+            Parameter p2 = pstore.getParameterExist("WBC");
+            pList.add(p2);
+        }
+        if (!(metadata[15].equalsIgnoreCase("NA"))) {
+            Parameter p3 = pstore.getParameterExist("PLT");
+            pList.add(p3);
+        }
+        if (!(metadata[16].equalsIgnoreCase("NA"))) {
+            Parameter p4 = pstore.getParameterExist("RBC");
+            pList.add(p4);
+        }
+        if (!(metadata[20].equalsIgnoreCase("NA"))) {
+            Parameter p5 = pstore.getParameterExist("COVID");
+            pList.add(p5);
+        }
+        return pList;
+
+    }
+
+    public void addTestResult(String[] metadata,Test t){
+        if (!(metadata[13].equalsIgnoreCase("NA"))) {
+            t.addTestResult("HB000", Double.parseDouble(metadata[13].replace(",", ".")));
+
+        }
+        if (!(metadata[14].equalsIgnoreCase("NA"))) {
+            t.addTestResult("WBC00", Double.parseDouble(metadata[14].replace(",", ".")));
+
+        }
+        if (!(metadata[15].equalsIgnoreCase("NA"))) {
+            t.addTestResult("PLT00", Double.parseDouble(metadata[15].replace(",", ".")));
+
+        }
+        if (!(metadata[16].equalsIgnoreCase("NA"))) {
+            t.addTestResult("RBC00", Double.parseDouble(metadata[16].replace(",", ".")));
+
+        }
+        if (!(metadata[20].equalsIgnoreCase("NA"))) {
+            t.addTestResult("IgGAN", Double.parseDouble(metadata[20].replace(",", ".")));
+
+        }
     }
 }
