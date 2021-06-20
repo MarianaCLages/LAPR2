@@ -36,5 +36,4 @@ public class Alerts {
             stage.close();
         }
     }
-
 }

@@ -90,6 +90,5 @@ public class CheckPerformanceUI implements Initializable {
             Alerts.errorAlert(err2.getMessage());
           //  Alerts.errorAlert("Please type all the information necessary! Don't leave blank spots!");
         }
-
     }
 }

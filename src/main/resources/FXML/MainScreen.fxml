@@ -7,24 +7,24 @@
 
 <AnchorPane prefHeight="492.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.MainUI">
    <children>
-      <Button fx:id="btnCredits" layoutX="228.0" layoutY="282.0" mnemonicParsing="false" onAction="#credits" text="Know the team">
+      <Button fx:id="btnCredits" layoutX="228.0" layoutY="273.0" mnemonicParsing="false" onAction="#credits" text="Know the team">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btnLogin" layoutX="248.0" layoutY="196.0" mnemonicParsing="false" onAction="#login" prefHeight="38.0" prefWidth="104.0" text="Do Login">
+      <Button fx:id="btnLogin" layoutX="228.0" layoutY="190.0" mnemonicParsing="false" onAction="#login" prefHeight="39.0" prefWidth="144.0" text="Do Login">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Label prefHeight="121.0" prefWidth="600.0" text=" Many Labs App" textAlignment="CENTER">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutY="35.0" prefHeight="76.0" prefWidth="600.0" text=" Many Labs App" textAlignment="CENTER" underline="true">
          <font>
-            <Font size="81.0" />
+            <Font name="Baskerville Old Face" size="64.0" />
          </font>
       </Label>
-      <ImageView fx:id="imageID" fitHeight="137.0" fitWidth="178.0" layoutX="211.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imageID" fitHeight="93.0" fitWidth="157.0" layoutX="232.0" layoutY="384.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../java/app/ui/gui/Logo1.jpg"/>
+            <Image url="@../../java/app/ui/gui/Logo1.jpg" />
          </image></ImageView>
    </children>
 </AnchorPane>

@@ -14,5 +14,4 @@ public class ParameterUI {
         app.doLogout();
         sceneController.switchMenu(event, Constants.ADMINISTRATOR_UI);
     }
-
 }
