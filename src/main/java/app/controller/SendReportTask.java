@@ -29,7 +29,6 @@ public class SendReportTask extends TimerTask implements Serializable {
     private double confidenceLevelEstimated;
     private String regression;
     private String scope;
-
     StringBuilderReport report;
     private boolean runed= false;
 

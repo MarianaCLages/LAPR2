@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="648px" preserveAspectRatio="none" style="width:1268px;height:648px;background:#FFFFFF;" version="1.1" viewBox="0 0 1268 648" width="1268px" zoomAndPan="magnify"><defs><filter height="300%" id="f12qef9pvnzjwy" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><!--MD5=[335f4d9be48430461c68bf6d6fdba145]
+class App--><rect codeLine="3" fill="#FEFECE" filter="url(#f12qef9pvnzjwy)" height="48" id="App" style="stroke:#A80036;stroke-width:1.5;" width="53" x="139.5" y="192"/><ellipse cx="154.5" cy="208" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M156.5,204.5 Q156.7031,204 156.9375,203.75 Q157.1719,203.5 157.4375,203.5 Q157.9063,203.5 158.2031,203.7813 Q158.5,204.0625 158.5,204.7188 L158.5,206.2813 Q158.5,206.9375 158.2188,207.2188 Q157.9375,207.5 157.5,207.5 Q157.1094,207.5 156.8594,207.3281 Q156.6094,207.1563 156.5,206.7031 Q156.4531,206.3906 156.2813,206.2188 Q155.9688,205.8906 155.4063,205.7031 Q154.8438,205.5 154.2813,205.5 Q153.5781,205.5 152.9844,205.7813 Q152.4063,206.0625 151.9531,206.6875 Q151.5,207.3125 151.5,208.1719 L151.5,209.0938 Q151.5,210.125 152.3438,210.8125 Q153.1875,211.5 154.6875,211.5 Q155.5781,211.5 156.2031,211.2969 Q156.5625,211.1875 156.9688,210.8281 Q157.2344,210.625 157.375,210.5625 Q157.5156,210.5 157.6875,210.5 Q158.0156,210.5 158.25,210.7656 Q158.5,211.0156 158.5,211.375 Q158.5,211.7188 158.1563,212.125 Q157.6563,212.7188 156.8594,213.0469 Q155.8125,213.5 154.5313,213.5 Q153.0313,213.5 151.8281,212.9063 Q150.8594,212.4375 150.1719,211.4219 Q149.5,210.4063 149.5,209.2031 L149.5,208.1094 Q149.5,206.8594 150.0938,205.7656 Q150.7031,204.6719 151.75,204.0938 Q152.8125,203.5 154,203.5 Q154.7188,203.5 155.3438,203.75 Q155.9688,204 156.5,204.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="21" x="168.5" y="212.9102">App</text><line style="stroke:#A80036;stroke-width:1.5;" x1="140.5" x2="191.5" y1="224" y2="224"/><line style="stroke:#A80036;stroke-width:1.5;" x1="140.5" x2="191.5" y1="232" y2="232"/><!--MD5=[02e4b9b7573f1156f41e60aa5b4e25a4]
+class Company--><rect codeLine="5" fill="#FEFECE" filter="url(#f12qef9pvnzjwy)" height="61.8359" id="Company" style="stroke:#A80036;stroke-width:1.5;" width="96" x="118" y="384"/><ellipse cx="137.95" cy="400" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M139.95,396.5 Q140.1531,396 140.3875,395.75 Q140.6219,395.5 140.8875,395.5 Q141.3563,395.5 141.6531,395.7813 Q141.95,396.0625 141.95,396.7188 L141.95,398.2813 Q141.95,398.9375 141.6688,399.2188 Q141.3875,399.5 140.95,399.5 Q140.5594,399.5 140.3094,399.3281 Q140.0594,399.1563 139.95,398.7031 Q139.9031,398.3906 139.7313,398.2188 Q139.4188,397.8906 138.8563,397.7031 Q138.2938,397.5 137.7313,397.5 Q137.0281,397.5 136.4344,397.7813 Q135.8563,398.0625 135.4031,398.6875 Q134.95,399.3125 134.95,400.1719 L134.95,401.0938 Q134.95,402.125 135.7938,402.8125 Q136.6375,403.5 138.1375,403.5 Q139.0281,403.5 139.6531,403.2969 Q140.0125,403.1875 140.4188,402.8281 Q140.6844,402.625 140.825,402.5625 Q140.9656,402.5 141.1375,402.5 Q141.4656,402.5 141.7,402.7656 Q141.95,403.0156 141.95,403.375 Q141.95,403.7188 141.6063,404.125 Q141.1063,404.7188 140.3094,405.0469 Q139.2625,405.5 137.9813,405.5 Q136.4813,405.5 135.2781,404.9063 Q134.3094,404.4375 133.6219,403.4219 Q132.95,402.4063 132.95,401.2031 L132.95,400.1094 Q132.95,398.8594 133.5438,397.7656 Q134.1531,396.6719 135.2,396.0938 Q136.2625,395.5 137.45,395.5 Q138.1688,395.5 138.7938,395.75 Q139.4188,396 139.95,396.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53" x="153.05" y="404.9102">Company</text><line style="stroke:#A80036;stroke-width:1.5;" x1="119" x2="213" y1="416" y2="416"/><line style="stroke:#A80036;stroke-width:1.5;" x1="119" x2="213" y1="424" y2="424"/><ellipse cx="129" cy="435" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="70" x="138" y="439.4189">getTestStore()</text><!--MD5=[f9bf174dd5fcee0192f6251129b9c376]
+class RegressionModel--><rect codeLine="9" fill="#FEFECE" filter="url(#f12qef9pvnzjwy)" height="48" id="RegressionModel" style="stroke:#A80036;stroke-width:1.5;" width="128" x="823" y="558.5"/><ellipse cx="838" cy="574.5" fill="#B4A7E5" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M839,571.5 L839,577.5 L841,577.5 L841.4844,577.5 L842,578.125 L842,578.5 L842,578.875 L841.4844,579.5 L841,579.5 L835,579.5 L834.5156,579.5 L834,578.875 L834,578.5 L834,578.125 L834.5156,577.5 L835,577.5 L837,577.5 L837,571.5 L835,571.5 L834.5156,571.5 L834,570.875 L834,570.5 L834,570.125 L834.5156,569.5 L835,569.5 L841,569.5 L841.4844,569.5 L842,570.125 L842,570.5 L842,570.875 L841.4844,571.5 L841,571.5 L839,571.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="96" x="852" y="579.4102">RegressionModel</text><line style="stroke:#A80036;stroke-width:1.5;" x1="824" x2="950" y1="590.5" y2="590.5"/><line style="stroke:#A80036;stroke-width:1.5;" x1="824" x2="950" y1="598.5" y2="598.5"/><!--MD5=[1b844c90688aafb95cd8c95626c3b83a]
+class Timer--><rect codeLine="12" fill="#FEFECE" filter="url(#f12qef9pvnzjwy)" height="48" id="Timer" style="stroke:#A80036;stroke-width:1.5;" width="64" x="320" y="391"/><ellipse cx="335" cy="407" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M337,403.5 Q337.2031,403 337.4375,402.75 Q337.6719,402.5 337.9375,402.5 Q338.4063,402.5 338.7031,402.7813 Q339,403.0625 339,403.7188 L339,405.2813 Q339,405.9375 338.7188,406.2188 Q338.4375,406.5 338,406.5 Q337.6094,406.5 337.3594,406.3281 Q337.1094,406.1563 337,405.7031 Q336.9531,405.3906 336.7813,405.2188 Q336.4688,404.8906 335.9063,404.7031 Q335.3438,404.5 334.7813,404.5 Q334.0781,404.5 333.4844,404.7813 Q332.9063,405.0625 332.4531,405.6875 Q332,406.3125 332,407.1719 L332,408.0938 Q332,409.125 332.8438,409.8125 Q333.6875,410.5 335.1875,410.5 Q336.0781,410.5 336.7031,410.2969 Q337.0625,410.1875 337.4688,409.8281 Q337.7344,409.625 337.875,409.5625 Q338.0156,409.5 338.1875,409.5 Q338.5156,409.5 338.75,409.7656 Q339,410.0156 339,410.375 Q339,410.7188 338.6563,411.125 Q338.1563,411.7188 337.3594,412.0469 Q336.3125,412.5 335.0313,412.5 Q333.5313,412.5 332.3281,411.9063 Q331.3594,411.4375 330.6719,410.4219 Q330,409.4063 330,408.2031 L330,407.1094 Q330,405.8594 330.5938,404.7656 Q331.2031,403.6719 332.25,403.0938 Q333.3125,402.5 334.5,402.5 Q335.2188,402.5 335.8438,402.75 Q336.4688,403 337,403.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="32" x="349" y="411.9102">Timer</text><line style="stroke:#A80036;stroke-width:1.5;" x1="321" x2="383" y1="423" y2="423"/><line style="stroke:#A80036;stroke-width:1.5;" x1="321" x2="383" y1="431" y2="431"/><!--MD5=[b6b6ef9a47911170a2444878808f7e2d]
+class SendReportTask--><rect codeLine="14" fill="#FEFECE" filter="url(#f12qef9pvnzjwy)" height="200.1953" id="SendReportTask" style="stroke:#A80036;stroke-width:1.5;" width="152" x="303" y="116"/><ellipse cx="330.15" cy="132" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M332.15,128.5 Q332.3531,128 332.5875,127.75 Q332.8219,127.5 333.0875,127.5 Q333.5563,127.5 333.8531,127.7813 Q334.15,128.0625 334.15,128.7188 L334.15,130.2813 Q334.15,130.9375 333.8688,131.2188 Q333.5875,131.5 333.15,131.5 Q332.7594,131.5 332.5094,131.3281 Q332.2594,131.1563 332.15,130.7031 Q332.1031,130.3906 331.9313,130.2188 Q331.6188,129.8906 331.0563,129.7031 Q330.4938,129.5 329.9313,129.5 Q329.2281,129.5 328.6344,129.7813 Q328.0563,130.0625 327.6031,130.6875 Q327.15,131.3125 327.15,132.1719 L327.15,133.0938 Q327.15,134.125 327.9938,134.8125 Q328.8375,135.5 330.3375,135.5 Q331.2281,135.5 331.8531,135.2969 Q332.2125,135.1875 332.6188,134.8281 Q332.8844,134.625 333.025,134.5625 Q333.1656,134.5 333.3375,134.5 Q333.6656,134.5 333.9,134.7656 Q334.15,135.0156 334.15,135.375 Q334.15,135.7188 333.8063,136.125 Q333.3063,136.7188 332.5094,137.0469 Q331.4625,137.5 330.1813,137.5 Q328.6813,137.5 327.4781,136.9063 Q326.5094,136.4375 325.8219,135.4219 Q325.15,134.4063 325.15,133.2031 L325.15,132.1094 Q325.15,130.8594 325.7438,129.7656 Q326.3531,128.6719 327.4,128.0938 Q328.4625,127.5 329.65,127.5 Q330.3688,127.5 330.9938,127.75 Q331.6188,128 332.15,128.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="93" x="346.85" y="136.9102">SendReportTask</text><line style="stroke:#A80036;stroke-width:1.5;" x1="304" x2="454" y1="148" y2="148"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="311" y="156"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="48" x="323" y="163.4189">finishDate</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="311" y="169.8359"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="68" x="323" y="177.2549">historicalDays</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="311" y="183.6719"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="68" x="323" y="191.0908">beginningDate</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="311" y="197.5078"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="112" x="323" y="204.9268">confidenceLevelAnova</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="311" y="211.3438"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="126" x="323" y="218.7627">confidenceLevelVariables</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="311" y="225.1797"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="126" x="323" y="232.5986">confidenceLevelEstimated</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="311" y="239.0156"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="52" x="323" y="246.4346">regression</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="311" y="252.8516"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="30" x="323" y="260.2705">scope</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="311" y="266.6875"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="29" x="323" y="274.1064">report</text><line style="stroke:#A80036;stroke-width:1.5;" x1="304" x2="454" y1="280.5234" y2="280.5234"/><rect fill="#F24D5C" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="311" y="288.5234"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="22" x="323" y="295.9424">log()</text><ellipse cx="314" cy="305.3594" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="72" x="323" y="309.7783">getProperties()</text><!--MD5=[0f6f7964b844a64b0496af0dda7914bd]
+class TestStore--><rect codeLine="28" fill="#FEFECE" filter="url(#f12qef9pvnzjwy)" height="103.3438" id="TestStore" style="stroke:#A80036;stroke-width:1.5;" width="318" x="7" y="531"/><ellipse cx="135.25" cy="547" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M137.25,543.5 Q137.4531,543 137.6875,542.75 Q137.9219,542.5 138.1875,542.5 Q138.6563,542.5 138.9531,542.7813 Q139.25,543.0625 139.25,543.7188 L139.25,545.2813 Q139.25,545.9375 138.9688,546.2188 Q138.6875,546.5 138.25,546.5 Q137.8594,546.5 137.6094,546.3281 Q137.3594,546.1563 137.25,545.7031 Q137.2031,545.3906 137.0313,545.2188 Q136.7188,544.8906 136.1563,544.7031 Q135.5938,544.5 135.0313,544.5 Q134.3281,544.5 133.7344,544.7813 Q133.1563,545.0625 132.7031,545.6875 Q132.25,546.3125 132.25,547.1719 L132.25,548.0938 Q132.25,549.125 133.0938,549.8125 Q133.9375,550.5 135.4375,550.5 Q136.3281,550.5 136.9531,550.2969 Q137.3125,550.1875 137.7188,549.8281 Q137.9844,549.625 138.125,549.5625 Q138.2656,549.5 138.4375,549.5 Q138.7656,549.5 139,549.7656 Q139.25,550.0156 139.25,550.375 Q139.25,550.7188 138.9063,551.125 Q138.4063,551.7188 137.6094,552.0469 Q136.5625,552.5 135.2813,552.5 Q133.7813,552.5 132.5781,551.9063 Q131.6094,551.4375 130.9219,550.4219 Q130.25,549.4063 130.25,548.2031 L130.25,547.1094 Q130.25,545.8594 130.8438,544.7656 Q131.4531,543.6719 132.5,543.0938 Q133.5625,542.5 134.75,542.5 Q135.4688,542.5 136.0938,542.75 Q136.7188,543 137.25,543.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="53" x="155.75" y="551.9102">TestStore</text><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="324" y1="563" y2="563"/><line style="stroke:#A80036;stroke-width:1.5;" x1="8" x2="324" y1="571" y2="571"/><ellipse cx="18" cy="582" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="292" x="27" y="586.4189">getPositiveCovidTestsPerDayIntoArrayInsideInterval(interval)</text><ellipse cx="18" cy="595.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="192" x="27" y="600.2549">getCovidTestsPerDayIntoArray(interval)</text><ellipse cx="18" cy="609.6719" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="186" x="27" y="614.0908">getClientsWithTest(getClientsWithTest)</text><ellipse cx="18" cy="623.5078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="175" x="27" y="627.9268">getClientMeanAge(clientList,interval)</text><!--MD5=[ef340af6512c03d5eeac92509be9c66b]
+class LinearRegression--><rect codeLine="35" fill="#FEFECE" filter="url(#f12qef9pvnzjwy)" height="75.6719" id="LinearRegression" style="stroke:#A80036;stroke-width:1.5;" width="296" x="958" y="377"/><ellipse cx="1051.75" cy="393" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M1053.75,389.5 Q1053.9531,389 1054.1875,388.75 Q1054.4219,388.5 1054.6875,388.5 Q1055.1563,388.5 1055.4531,388.7813 Q1055.75,389.0625 1055.75,389.7188 L1055.75,391.2813 Q1055.75,391.9375 1055.4688,392.2188 Q1055.1875,392.5 1054.75,392.5 Q1054.3594,392.5 1054.1094,392.3281 Q1053.8594,392.1563 1053.75,391.7031 Q1053.7031,391.3906 1053.5313,391.2188 Q1053.2188,390.8906 1052.6563,390.7031 Q1052.0938,390.5 1051.5313,390.5 Q1050.8281,390.5 1050.2344,390.7813 Q1049.6563,391.0625 1049.2031,391.6875 Q1048.75,392.3125 1048.75,393.1719 L1048.75,394.0938 Q1048.75,395.125 1049.5938,395.8125 Q1050.4375,396.5 1051.9375,396.5 Q1052.8281,396.5 1053.4531,396.2969 Q1053.8125,396.1875 1054.2188,395.8281 Q1054.4844,395.625 1054.625,395.5625 Q1054.7656,395.5 1054.9375,395.5 Q1055.2656,395.5 1055.5,395.7656 Q1055.75,396.0156 1055.75,396.375 Q1055.75,396.7188 1055.4063,397.125 Q1054.9063,397.7188 1054.1094,398.0469 Q1053.0625,398.5 1051.7813,398.5 Q1050.2813,398.5 1049.0781,397.9063 Q1048.1094,397.4375 1047.4219,396.4219 Q1046.75,395.4063 1046.75,394.2031 L1046.75,393.1094 Q1046.75,391.8594 1047.3438,390.7656 Q1047.9531,389.6719 1049,389.0938 Q1050.0625,388.5 1051.25,388.5 Q1051.9688,388.5 1052.5938,388.75 Q1053.2188,389 1053.75,389.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="100" x="1072.25" y="397.9102">LinearRegression</text><line style="stroke:#A80036;stroke-width:1.5;" x1="959" x2="1253" y1="409" y2="409"/><line style="stroke:#A80036;stroke-width:1.5;" x1="959" x2="1253" y1="417" y2="417"/><ellipse cx="969" cy="428" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="270" x="978" y="432.4189">LinearRegression(independentVariable,positiveTestList)</text><ellipse cx="969" cy="441.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="36" x="978" y="446.2549">getR2()</text><!--MD5=[133134e70937b51d56df628266c9bb8b]
+class MulinearRegression--><rect codeLine="39" fill="#FEFECE" filter="url(#f12qef9pvnzjwy)" height="61.8359" id="MulinearRegression" style="stroke:#A80036;stroke-width:1.5;" width="302" x="621" y="384"/><ellipse cx="711.75" cy="400" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M713.75,396.5 Q713.9531,396 714.1875,395.75 Q714.4219,395.5 714.6875,395.5 Q715.1563,395.5 715.4531,395.7813 Q715.75,396.0625 715.75,396.7188 L715.75,398.2813 Q715.75,398.9375 715.4688,399.2188 Q715.1875,399.5 714.75,399.5 Q714.3594,399.5 714.1094,399.3281 Q713.8594,399.1563 713.75,398.7031 Q713.7031,398.3906 713.5313,398.2188 Q713.2188,397.8906 712.6563,397.7031 Q712.0938,397.5 711.5313,397.5 Q710.8281,397.5 710.2344,397.7813 Q709.6563,398.0625 709.2031,398.6875 Q708.75,399.3125 708.75,400.1719 L708.75,401.0938 Q708.75,402.125 709.5938,402.8125 Q710.4375,403.5 711.9375,403.5 Q712.8281,403.5 713.4531,403.2969 Q713.8125,403.1875 714.2188,402.8281 Q714.4844,402.625 714.625,402.5625 Q714.7656,402.5 714.9375,402.5 Q715.2656,402.5 715.5,402.7656 Q715.75,403.0156 715.75,403.375 Q715.75,403.7188 715.4063,404.125 Q714.9063,404.7188 714.1094,405.0469 Q713.0625,405.5 711.7813,405.5 Q710.2813,405.5 709.0781,404.9063 Q708.1094,404.4375 707.4219,403.4219 Q706.75,402.4063 706.75,401.2031 L706.75,400.1094 Q706.75,398.8594 707.3438,397.7656 Q707.9531,396.6719 709,396.0938 Q710.0625,395.5 711.25,395.5 Q711.9688,395.5 712.5938,395.75 Q713.2188,396 713.75,396.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="112" x="732.25" y="404.9102">MulinearRegression</text><line style="stroke:#A80036;stroke-width:1.5;" x1="622" x2="922" y1="416" y2="416"/><line style="stroke:#A80036;stroke-width:1.5;" x1="622" x2="922" y1="424" y2="424"/><ellipse cx="632" cy="435" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="276" x="641" y="439.4189">LinearRegression(independentVariables,positiveTestList)</text><!--MD5=[77bde0d4aa57303320a82472b6fbf293]
+class NHSApi--><rect codeLine="43" fill="#FEFECE" filter="url(#f12qef9pvnzjwy)" height="61.8359" id="NHSApi" style="stroke:#A80036;stroke-width:1.5;" width="127" x="458.5" y="384"/><ellipse cx="496.9" cy="400" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M498.9,396.5 Q499.1031,396 499.3375,395.75 Q499.5719,395.5 499.8375,395.5 Q500.3063,395.5 500.6031,395.7813 Q500.9,396.0625 500.9,396.7188 L500.9,398.2813 Q500.9,398.9375 500.6188,399.2188 Q500.3375,399.5 499.9,399.5 Q499.5094,399.5 499.2594,399.3281 Q499.0094,399.1563 498.9,398.7031 Q498.8531,398.3906 498.6813,398.2188 Q498.3688,397.8906 497.8063,397.7031 Q497.2438,397.5 496.6813,397.5 Q495.9781,397.5 495.3844,397.7813 Q494.8063,398.0625 494.3531,398.6875 Q493.9,399.3125 493.9,400.1719 L493.9,401.0938 Q493.9,402.125 494.7438,402.8125 Q495.5875,403.5 497.0875,403.5 Q497.9781,403.5 498.6031,403.2969 Q498.9625,403.1875 499.3688,402.8281 Q499.6344,402.625 499.775,402.5625 Q499.9156,402.5 500.0875,402.5 Q500.4156,402.5 500.65,402.7656 Q500.9,403.0156 500.9,403.375 Q500.9,403.7188 500.5563,404.125 Q500.0563,404.7188 499.2594,405.0469 Q498.2125,405.5 496.9313,405.5 Q495.4313,405.5 494.2281,404.9063 Q493.2594,404.4375 492.5719,403.4219 Q491.9,402.4063 491.9,401.2031 L491.9,400.1094 Q491.9,398.8594 492.4938,397.7656 Q493.1031,396.6719 494.15,396.0938 Q495.2125,395.5 496.4,395.5 Q497.1188,395.5 497.7438,395.75 Q498.3688,396 498.9,396.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="43" x="516.1" y="404.9102">NHSApi</text><line style="stroke:#A80036;stroke-width:1.5;" x1="459.5" x2="584.5" y1="416" y2="416"/><line style="stroke:#A80036;stroke-width:1.5;" x1="459.5" x2="584.5" y1="424" y2="424"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="115" x="464.5" y="439.4189">sendReport(NhsReport)</text><!--MD5=[74783ec010d186752c4ffd5c6de5633a]
+class NHSReport--><rect codeLine="47" fill="#FEFECE" filter="url(#f12qef9pvnzjwy)" height="61.8359" id="NHSReport" style="stroke:#A80036;stroke-width:1.5;" width="428" x="360" y="551.5"/><ellipse cx="538.25" cy="567.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M540.25,564 Q540.4531,563.5 540.6875,563.25 Q540.9219,563 541.1875,563 Q541.6563,563 541.9531,563.2813 Q542.25,563.5625 542.25,564.2188 L542.25,565.7813 Q542.25,566.4375 541.9688,566.7188 Q541.6875,567 541.25,567 Q540.8594,567 540.6094,566.8281 Q540.3594,566.6563 540.25,566.2031 Q540.2031,565.8906 540.0313,565.7188 Q539.7188,565.3906 539.1563,565.2031 Q538.5938,565 538.0313,565 Q537.3281,565 536.7344,565.2813 Q536.1563,565.5625 535.7031,566.1875 Q535.25,566.8125 535.25,567.6719 L535.25,568.5938 Q535.25,569.625 536.0938,570.3125 Q536.9375,571 538.4375,571 Q539.3281,571 539.9531,570.7969 Q540.3125,570.6875 540.7188,570.3281 Q540.9844,570.125 541.125,570.0625 Q541.2656,570 541.4375,570 Q541.7656,570 542,570.2656 Q542.25,570.5156 542.25,570.875 Q542.25,571.2188 541.9063,571.625 Q541.4063,572.2188 540.6094,572.5469 Q539.5625,573 538.2813,573 Q536.7813,573 535.5781,572.4063 Q534.6094,571.9375 533.9219,570.9219 Q533.25,569.9063 533.25,568.7031 L533.25,567.6094 Q533.25,566.3594 533.8438,565.2656 Q534.4531,564.1719 535.5,563.5938 Q536.5625,563 537.75,563 Q538.4688,563 539.0938,563.25 Q539.7188,563.5 540.25,564 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacing" textLength="63" x="558.75" y="572.4102">NHSReport</text><line style="stroke:#A80036;stroke-width:1.5;" x1="361" x2="787" y1="583.5" y2="583.5"/><line style="stroke:#A80036;stroke-width:1.5;" x1="361" x2="787" y1="591.5" y2="591.5"/><ellipse cx="371" cy="602.5" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacing" textLength="402" x="380" y="606.9189">NHSReport(RegressionModel,positiveTestListHistoricalDays,independentVariables )</text><!--MD5=[74054751ba3b9eca75fda5044dcc84d9]
+class TimerTask--><rect codeLine="52" fill="#FEFECE" filter="url(#f12qef9pvnzjwy)" height="48" id="TimerTask" style="stroke:#A80036;stroke-width:1.5;" width="91" x="333.5" y="7"/><ellipse cx="348.5" cy="23" fill="#A9DCDF" rx="11" ry="11" style="stroke:#A80036;stroke-width:1.0;"/><path d="M350.25,24.5 L346.9531,24.5 L346.5156,25.5 L346.5156,25.5 L346.9844,25.5 L347.5,26.125 L347.5,26.5 L347.5,26.875 L346.9844,27.5 L346.5156,27.5 L344.625,27.5 L344.0156,27.5 L343.5,26.875 L343.5,26.5 L343.5,26.125 L344.0156,25.5 L344.625,25.5 L346.9375,19.5 L346.0625,19.5 L345.0156,19.5 L344.5,18.875 L344.5,18.5 L344.5,18.125 L345.0156,17.5 L346.0625,17.5 L349.7344,17.5 L352.4219,25.5 L352.9844,25.5 L352.9844,25.5 L353.5,26.125 L353.5,26.5 L353.5,26.875 L352.9844,27.5 L352.4219,27.5 L350.5313,27.5 L350.0156,27.5 L349.5,26.875 L349.5,26.5 L349.5,26.125 L350.0156,25.5 L350.5313,25.5 L350.5313,25.5 L350.25,24.5 Z M349.7031,22.5 L348.5,18.9219 L347.4688,22.5 L349.7031,22.5 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="12" font-style="italic" lengthAdjust="spacing" textLength="59" x="362.5" y="27.9102">TimerTask</text><line style="stroke:#A80036;stroke-width:1.5;" x1="334.5" x2="423.5" y1="39" y2="39"/><line style="stroke:#A80036;stroke-width:1.5;" x1="334.5" x2="423.5" y1="47" y2="47"/><ellipse cx="421" cy="415" fill="#000000" rx="2" ry="2" style="stroke:none;stroke-width:1.0;"/><!--MD5=[8e8312f52647c2d97436dffe152b5300]
+link LinearRegression to RegressionModel--><path codeLine="55" d="M1056.85,453.14 C1020.05,480.95 970.03,518.75 933.81,546.12 " fill="none" id="LinearRegression-to-RegressionModel" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="937.92,551.79,917.75,558.26,929.48,540.62,937.92,551.79" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[812423ec9828cfa078e4e74ca8600c17]
+link MulinearRegression to RegressionModel--><path codeLine="56" d="M793.09,446.36 C811.67,473.09 838.87,512.23 859.22,541.51 " fill="none" id="MulinearRegression-to-RegressionModel" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="865.2,537.86,870.86,558.28,853.7,545.85,865.2,537.86" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[c84cdf4c3997a33e06aa6690e7b9c673]
+reverse link TimerTask to SendReportTask--><path codeLine="58" d="M379,75.28 C379,87.59 379,101.53 379,115.73 " fill="none" id="TimerTask-backto-SendReportTask" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="none" points="372,75.18,379,55.18,386,75.18,372,75.18" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[5b0f1873c15ced29becf7ded48d12cb7]
+link App to Company--><path codeLine="59" d="M166,240.37 C166,274.61 166,338.66 166,378.67 " fill="none" id="App-to-Company" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="166,383.9,170,374.9,166,378.9,162,374.9,166,383.9" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[acadf8eea706e5e9efc9ae0d92de1c08]
+reverse link SendReportTask to Company--><path codeLine="60" d="M298.91,291.07 C264.04,323.32 225.14,359.3 198.48,383.96 " fill="none" id="SendReportTask-backto-Company" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="302.7,287.57,293.385,290.7685,299.0381,290.9744,298.8321,296.6276,302.7,287.57" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[b258a9d66bdc15f0909412f30262116b]
+reverse link SendReportTask to Timer--><path codeLine="61" d="M364.7,321.32 C361.11,347.51 357.6,373.15 355.18,390.8 " fill="none" id="SendReportTask-backto-Timer" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="365.42,316.08,360.2245,324.447,364.7349,321.0328,368.1491,325.5432,365.42,316.08" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[01558f40b86ad3407c4a50a817100da8]
+link Company to Timer--><path codeLine="62" d="M214.32,415 C247.76,415 281.19,415 314.63,415 " fill="none" id="Company-to-Timer" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="320,415,311,411,315,415,311,419,320,415" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[7f6cf7f175eae0af66201860de5de971]
+link Company to TestStore--><path codeLine="63" d="M166,446.36 C166,468.49 166,499.12 166,525.62 " fill="none" id="Company-to-TestStore" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="166,530.86,170,521.86,166,525.86,162,521.86,166,530.86" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="28" x="167" y="497.4951">uses</text><!--MD5=[7fa15f826a34f976b424166f168abc4e]
+link SendReportTask to LinearRegression--><path codeLine="64" d="M455.09,237.62 C575.49,270.24 811.86,334.29 964.19,375.57 " fill="none" id="SendReportTask-to-LinearRegression" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="969.12,376.91,961.4694,370.7078,964.2919,375.6101,959.3896,378.4327,969.12,376.91" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[f6cf72fdc69ecde3d851dc484fa3306b]
+link SendReportTask to MulinearRegression--><path codeLine="65" d="M455.24,255.22 C528.63,292.01 638.38,347.02 707.54,381.69 " fill="none" id="SendReportTask-to-MulinearRegression" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="712.03,383.94,705.7787,376.3294,707.5607,381.6982,702.1919,383.4802,712.03,383.94" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[cc5194ee4ff833ef11ead3e0349115f8]
+link SendReportTask to apoint27772--><path d="M400.12,316.08 C409.6,360.53 419.05,404.84 420.73,412.75 " fill="none" id="SendReportTask-apoint27772" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><!--MD5=[4a7fa3369859b8b284da084a056ef74b]
+link apoint27772 to NHSReport--><path d="M421.4,416.98 C423.22,421.41 431.11,439.97 441,453 C468.01,488.59 504.95,523.46 533.05,547.87 " fill="none" id="apoint27772-to-NHSReport" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="537.13,551.4,532.9357,542.4889,533.3468,548.1308,527.705,548.5419,537.13,551.4" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[4b9307edd198cc45db4c02efabd7a5a7]
+link apoint27772 to NHSApi--><path d="M423.37,415 C435.05,415 446.74,415 458.43,415 " fill="none" id="apoint27772-NHSApi" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><!--MD5=[1e1bea86187fd5c0a36de60e63fbe61a]
+link NHSReport to RegressionModel--><path codeLine="69" d="M788.27,582.5 C798.12,582.5 807.98,582.5 817.83,582.5 " fill="none" id="NHSReport-to-RegressionModel" style="stroke:#A80036;stroke-width:1.0;"/><polygon fill="#A80036" points="822.98,582.5,813.98,578.5,817.98,582.5,813.98,586.5,822.98,582.5" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[7897a33713805cf114ff726477ebd414]
+link SendReportTask to TestStore--><path codeLine="70" d="M321.08,316.12 C281.6,383.68 230.78,470.64 198.29,526.25 " fill="none" id="SendReportTask-to-TestStore" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#A80036" points="195.59,530.86,203.5835,525.1064,198.112,526.5427,196.6757,521.0712,195.59,530.86" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[7be052ee838d1f77b737d8b183646a3c]
+@startuml
+'https://plantuml.com/class-diagram
+
+class App{
+}
+class Company{
++getTestStore()
+
+}
+interface RegressionModel{
+}
+
+class Timer{
+}
+class SendReportTask{
+- finishDate
+- historicalDays
+- beginningDate
+- confidenceLevelAnova
+- confidenceLevelVariables
+- confidenceLevelEstimated
+- regression
+- scope
+- report
+- log()
++ getProperties()
+}
+
+class TestStore{
++ getPositiveCovidTestsPerDayIntoArrayInsideInterval(interval)
++ getCovidTestsPerDayIntoArray(interval)
++ getClientsWithTest(getClientsWithTest)
++ getClientMeanAge(clientList,interval)
+}
+
+class LinearRegression{
++LinearRegression(independentVariable,positiveTestList)
++getR2()
+}
+class MulinearRegression{
++LinearRegression(independentVariables,positiveTestList)
+
+}
+class NHSApi{
+sendReport(NhsReport)
+}
+
+class NHSReport{
++ NHSReport(RegressionModel,positiveTestListHistoricalDays,independentVariables )
+}
+
+
+abstract TimerTask{
+}
+
+LinearRegression - -|> RegressionModel
+MulinearRegression - -|> RegressionModel
+
+TimerTask <|- - SendReportTask
+App ..> Company
+SendReportTask <.. Company
+SendReportTask <.. Timer
+Company .> Timer
+Company - -> TestStore: uses
+SendReportTask ..> LinearRegression
+SendReportTask ..> MulinearRegression
+
+SendReportTask ..> NHSReport
+(SendReportTask, NHSReport) .. NHSApi
+NHSReport -> RegressionModel
+SendReportTask ..> TestStore
+
+@enduml
+
+@startuml
+
+class App{
+}
+class Company{
++getTestStore()
+
+}
+interface RegressionModel{
+}
+
+class Timer{
+}
+class SendReportTask{
+- finishDate
+- historicalDays
+- beginningDate
+- confidenceLevelAnova
+- confidenceLevelVariables
+- confidenceLevelEstimated
+- regression
+- scope
+- report
+- log()
++ getProperties()
+}
+
+class TestStore{
++ getPositiveCovidTestsPerDayIntoArrayInsideInterval(interval)
++ getCovidTestsPerDayIntoArray(interval)
++ getClientsWithTest(getClientsWithTest)
++ getClientMeanAge(clientList,interval)
+}
+
+class LinearRegression{
++LinearRegression(independentVariable,positiveTestList)
++getR2()
+}
+class MulinearRegression{
++LinearRegression(independentVariables,positiveTestList)
+
+}
+class NHSApi{
+sendReport(NhsReport)
+}
+
+class NHSReport{
++ NHSReport(RegressionModel,positiveTestListHistoricalDays,independentVariables )
+}
+
+
+abstract TimerTask{
+}
+
+LinearRegression - -|> RegressionModel
+MulinearRegression - -|> RegressionModel
+
+TimerTask <|- - SendReportTask
+App ..> Company
+SendReportTask <.. Company
+SendReportTask <.. Timer
+Company .> Timer
+Company - -> TestStore: uses
+SendReportTask ..> LinearRegression
+SendReportTask ..> MulinearRegression
+
+SendReportTask ..> NHSReport
+(SendReportTask, NHSReport) .. NHSApi
+NHSReport -> RegressionModel
+SendReportTask ..> TestStore
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 13:40:07 BST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: Dynamic Code Evolution 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>
