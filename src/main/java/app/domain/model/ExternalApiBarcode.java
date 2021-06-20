@@ -9,12 +9,14 @@ import net.sourceforge.barbecue.output.OutputException;
 import java.io.File;
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class ExternalApiBarcode implements BarcodeAdapter, Serializable {
 
     Barcode barcode;
-
+    private static final Logger LOGGER = Logger.getLogger( ExternalApiBarcode.class.getName() );
     public ExternalApiBarcode() {
         // constructor
     }
@@ -35,7 +37,7 @@ public class ExternalApiBarcode implements BarcodeAdapter, Serializable {
         try {
             BarcodeImageHandler.saveJPEG(barcode, outputFile);
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.log( Level.SEVERE, e.toString(), e );
         }
     }
 
