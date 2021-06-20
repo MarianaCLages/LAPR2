@@ -107,4 +107,42 @@ public class StringBuilderReportTest {
     public void getSb() {
         Assert.assertNotNull(stringBuilderReport.getSb());
     }
+
+    @Test
+    public void tests() {
+
+        StringBuilder actual = stringBuilderReport.printCovidTestsPerInterval("");
+        String expected = "\n" +
+                "Month report:\n" +
+                "2021-05-22 : 0 positive covid tests\n" +
+                "2021-05-24 : 0 positive covid tests\n" +
+                "2021-05-25 : 0 positive covid tests\n" +
+                "2021-05-26 : 0 positive covid tests\n" +
+                "2021-05-27 : 0 positive covid tests\n" +
+                "2021-05-28 : 0 positive covid tests\n" +
+                "2021-05-29 : 0 positive covid tests\n" +
+                "2021-05-31 : 0 positive covid tests\n" +
+                "2021-06-01 : 0 positive covid tests\n" +
+                "2021-06-02 : 0 positive covid tests\n" +
+                "2021-06-03 : 0 positive covid tests\n" +
+                "2021-06-04 : 0 positive covid tests\n" +
+                "2021-06-05 : 0 positive covid tests\n" +
+                "2021-06-07 : 0 positive covid tests\n" +
+                "2021-06-08 : 0 positive covid tests\n" +
+                "2021-06-09 : 0 positive covid tests\n" +
+                "2021-06-10 : 0 positive covid tests\n" +
+                "2021-06-11 : 0 positive covid tests\n" +
+                "2021-06-12 : 0 positive covid tests\n" +
+                "2021-06-14 : 0 positive covid tests\n" +
+                "2021-06-15 : 0 positive covid tests\n" +
+                "2021-06-16 : 0 positive covid tests\n" +
+                "2021-06-17 : 0 positive covid tests\n" +
+                "2021-06-18 : 0 positive covid tests\n" +
+                "2021-06-19 : 0 positive covid tests\n" +
+                "\n" +
+                "\n" +
+                "------------------------------------------------------------End of Report------------------------------------------------------------\n" +
+                "\n";
+        Assert.assertEquals(actual.toString(),expected);
+    }
 }
