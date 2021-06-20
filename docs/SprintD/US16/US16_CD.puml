@@ -56,12 +56,12 @@ CheckPerformanceUI ..> CheckPerformanceController
 CheckPerformanceController ..> Company
 
 Company -> ClientStore: uses >
-TestStore <- Company : uses >
+TestStore <- Company : uses <
 
 CheckPerformanceController ..> ClientStore
 CheckPerformanceController ..> TestStore
 
-CheckPerformanceController ..> MaxSumAdapter
+MaxSumAdapter <. CheckPerformanceController
 
 CheckPerformanceController .> InformationMapper
 InformationMapper --> InformationDTO
