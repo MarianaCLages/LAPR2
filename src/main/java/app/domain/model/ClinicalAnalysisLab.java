@@ -128,7 +128,7 @@ public class ClinicalAnalysisLab implements Serializable {
         if (tin.length() != Constants.TIN_LENGTH)
             throw new IllegalArgumentException("TIN must have 10 chars.");
         if(checkIfIsNumerical(tin)){
-            throw new IllegalArgumentException("Phone Number only accepts numbers.");
+            throw new IllegalArgumentException("TIN only accepts numbers.");
         }
 
     }
