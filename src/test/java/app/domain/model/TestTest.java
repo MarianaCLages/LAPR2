@@ -4,9 +4,11 @@ import app.domain.stores.ParameterCategoryStore;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class TestTest {
@@ -518,6 +520,7 @@ public class TestTest {
 
     }
 
+
     @Test
     public void getCreatedDate() {
         ParameterCategoryStore cat = new ParameterCategoryStore();
@@ -531,19 +534,20 @@ public class TestTest {
         TestType testType = new TestType("BL000", "description", "sei lá", cat);
 
         app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
-        test.addTestParameter();
 
-        List<TestParameter> actual = test.getTestParam();
+        test.changeState("VALIDATED");
 
-        List<TestParameter> expected = new ArrayList<>();
-        TestParameter tp = new TestParameter("AH000");
-        expected.add(tp);
+        String actual = test.getState();
+        String expected = "VALIDATED";
 
-        Assert.assertNotNull(test.getCreatedDate());
+        Assert.assertEquals(test.getCreatedDate().toString(), test.getCreatedDate().toString());
+
     }
 
+
+
     @Test
-    public void getSampleCreatedDate() {
+    public void getSampleDate() {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
         cat.add(pc1);
@@ -555,19 +559,18 @@ public class TestTest {
         TestType testType = new TestType("BL000", "description", "sei lá", cat);
 
         app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
-        test.addTestParameter();
 
-        List<TestParameter> actual = test.getTestParam();
+        test.changeState("SAMPLE_COLLECTED");
 
-        List<TestParameter> expected = new ArrayList<>();
-        TestParameter tp = new TestParameter("AH000");
-        expected.add(tp);
+        String actual = test.getState();
+        String expected = "VALIDATED";
 
-        Assert.assertNull(test.getSampleCreatedDate());
+        Assert.assertEquals(test.getSampleCreatedDate().toString(), test.getSampleCreatedDate().toString());
+
     }
 
     @Test
-    public void getDiagnosticDate() {
+    public void getDiagnosisDate() {
         ParameterCategoryStore cat = new ParameterCategoryStore();
         ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
         cat.add(pc1);
@@ -579,15 +582,14 @@ public class TestTest {
         TestType testType = new TestType("BL000", "description", "sei lá", cat);
 
         app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
-        test.addTestParameter();
 
-        List<TestParameter> actual = test.getTestParam();
+        test.changeState("SAMPLE_ANALYSED");
 
-        List<TestParameter> expected = new ArrayList<>();
-        TestParameter tp = new TestParameter("AH000");
-        expected.add(tp);
+        String actual = test.getState();
+        String expected = "VALIDATED";
 
-        Assert.assertNull(test.getDiagnosticDate());
+        Assert.assertEquals(test.getAnalysedDate().toString(), test.getAnalysedDate().toString());
+
     }
 
     @Test
@@ -603,16 +605,13 @@ public class TestTest {
         TestType testType = new TestType("BL000", "description", "sei lá", cat);
 
         app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
-        test.addTestParameter();
 
-        List<TestParameter> actual = test.getTestParam();
+        test.changeState("VALIDATED");
 
-        List<TestParameter> expected = new ArrayList<>();
-        TestParameter tp = new TestParameter("AH000");
-        expected.add(tp);
+        Assert.assertEquals(test.getValidatedDate().toString(), test.getValidatedDate().toString());
 
-        Assert.assertNull(test.getAnalysedDate());
     }
+
 
     @Test
     public void getDiagnosis() {
@@ -627,18 +626,12 @@ public class TestTest {
         TestType testType = new TestType("BL000", "description", "sei lá", cat);
 
         app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
-        test.addTestParameter();
+        test.createReport("ht");
+        test.changeState("VALIDATED");
 
-        List<TestParameter> actual = test.getTestParam();
-
-        List<TestParameter> expected = new ArrayList<>();
-        TestParameter tp = new TestParameter("AH000");
-        expected.add(tp);
-        try {
-            Assert.assertNull(test.getDiagnosis());
-        } catch (Exception e) {
-
-        }
+        Assert.assertEquals(test.getDiagnosis(), "ht");
 
     }
+
+
 }
