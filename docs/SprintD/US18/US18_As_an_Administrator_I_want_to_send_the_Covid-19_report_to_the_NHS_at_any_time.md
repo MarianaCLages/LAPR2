@@ -143,47 +143,45 @@ There is a dependency to :
 
 | Interaction ID | Question: Which class is responsible for... | Answer  | Justification (with patterns)  |
 |:-------------  |:--------------------- |:------------|:---------------------------- |
-| **Step/Msg 1:** asks to record the results of a given test | ... interacting with the actor? | TestResultUI | **Pure
-Fabrication:** there is no reason to assign this responsibility to any existing class in the Domain Model |
-|                                                        | ... coordinating the US? | TestResultController | Controller |
-| **Step/Msg 2:** request sample barcode number | n/a | | |
-| **Step/Msg 3:** types the sample barcode number | ... knowing TestStore? | Company | **
-IE:** TestStore is initialized in Company |
-|                                             | ... knowing all the existent test? | TestStore | **
-IE:** knows its own tests |
-|                                             | ... transferring the data typed in the UI to the domain? | TestParameterDTO | **
-DTO:** When there is so much data to transfer, it is better to opt by using a DTO in order to reduce coupling between UI and domain |
-| **Step/Msg 4:** shows one parameter at a time and requests each value/result | n/a | | |
-| **Step/Msg 5:** types the value/result | ... knowing and getting the reference values? | ExternalModule | **Protected
-Variation:** It is necessary to know which adapter to use in order to get the reference values for the correct API |
-|                                    | ... getting the ExternalModule? | TestType | **
-IE:** knows what API to get depending on the type of test |
-|                                    | ... creating the TestParameterResult object? | TestParameter | **
-Creator:** TestParameterResult is an attribute of TestParameter |
-|                                    | ... validating and saving the typed data? | ReferenceValue | **
-IE:** knows its own data |
-|                                    | ... changing the test state? | Test | **
-IE:** After the tests being recorded, Test must change its state |
-| **Step/Msg 6:** informs operation success | ... informing operation success? | RecordTestResultUI | **
-IE:** responsible for user interaction |
+| **Step/MSG 1**: asks to generate the NHS Report |	... interacting with the actor? | GenerateNHSReportUI | **PureFabrication**: There is no reason to assign this responsibility to any existing class in the Domain model |
+| 		                                  | ... coordinating the US? | GenerateNHSReportController | **Controller** |
+| 		                                  | ... knowing TestStore? | Company | **IE**: Company knows the TestStore to which it is delegating some tasks. |
+| 		                                  | ... checking all tests available in the system?	| TestStore | **IE**: The testStore knows all tests available in the system. |
+| 	                                      | ... verifying if the test is valid (or with a diagnostic, sample collected, sample analysed or only test created)? | Test | **IE**: The test knows its own state. |
+| **Step/MSG 2**: asks the required data | n/a | | |
+| **Step/MSG 3**: type the requested data|	... creates the DataDTO? | DataMapper |**DTO**: In order to detach the domain layer from the UI layer, we use a data transfer object (DTO) to only extract data from the domain class (and not extract methods from the domain class) |
+| 		                                  | ... validating the data locally (e.g.: mandatory vs non-mandatory data)? | DataDTO | **IE**: An object knows its data |
+| **Step/MSG 4**: asks the desired regression model | n/a | | |
+| **Step/MSG 5**: chooses the model | | | |
+| **Step/MSG 7**: (IF the model chosen it's Simple linear Regression) asks which independent variable should be use in the simple linear regression model  | n/a |  | |
+| **Step/MSG 7**: (IF the model chosen it's Simple linear Regression) types in the variable  | n/a |  | |
+| 		                                  | ... generates the regression model? | RegressionModel |**IE**: The Regression Model has all the information necessary to know which model should be created |
+| 		                                  | ... generates the NHS Report? | StringBuilderReport | **PureFabrication**: The StringBuilderReport class was assign this responsibility in order to generate the report itself (the information) |
+| 		                                  | ... getting the NHS Report to expose to the user?? | NhsReportMapper | **DTO**: In order to detach the domain layer from the UI layer, we use a data transfer object (DTO) to only extract data from the domain class (and not extract methods from the domain class) |
+| **Step/MSG 8**: shows the report and requests confirmation | n/a | | |   
+| **Step/MSG 9**: confirms the report generated | ... exports the NHSReport? | NHSApi | **IE**: Responsible for exporting the report to the NHS|              
+| **Step/MSG 10**: informs operation success | ... informing operation success? | GenerateNHSReportUI | **IE**: Responsible for user interaction |
 
 ### Systematization ##
 
 According to the taken rationale, the conceptual classes promoted to software classes are:
 
 * Company
-* TestParameter
-* TestParameterResult
+* StringBuilderReport
+* Data
+* RegressionModel
+* SimpleLinearRegression
+* MultiLinearRegression
+* NhsReport
 
 Other software classes (i.e. Pure Fabrication) identified:
 
-* RecordTestResultUI
-* RecordTestResultController
-* ExternalModule
-* RefValue
-* RefValueAdapter (1 for each API)
-* TestParameterDTO
-* TestParameterMapper
+* GenerateNHSReportUI
+* GenerateNHSReportController
+* NhsReportDTO
+* NhsReportMapper
+* DataDTO
+* DataMapper 
 
 ## 3.2. Sequence Diagram (SD)
 
@@ -197,76 +195,276 @@ Other software classes (i.e. Pure Fabrication) identified:
 
 # 4. Tests
 
-### TestParameterResult Tests
+### TestStore Tests
 
-**Test 1:** Get the test parameter result's parameterID.
+**Test 1:** Get the validated test list
 
-    public void getParamID() {
+     public void getValidatedTestList() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+        TestStore store = new TestStore();
+        app.domain.model.Test t = store.createTest("123456789187", "1234567890123456", testType, cat1, pa);
 
-        TestParameterResult tpr1 = new TestParameterResult("IgGAN", 15);
+        ZoneId defaultZoneId = ZoneId.systemDefault();
+        LocalDate date1Client = LocalDate.now();
+        Date date1 = Date.from(date1Client.atStartOfDay(defaultZoneId).toInstant());
 
-        String expected = "IgGAN";
-        String actual = tpr1.getParamID();
 
-        Assert.assertEquals(expected, actual);
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date1, "email@gamil.com", "Zé");
+
+        List<Client> clientList = new ArrayList<>();
+        clientList.add(client);
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE, -10);
+        Date toDate = calendar.getTime();
+
+        Client client2 = new Client("12345678911", "1234567890123457", "1234567892", "1234567891", toDate, "email@gamil.com", "Zé");
+        clientList.add(client2);
+
+        app.domain.model.Test teste = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
+        store.saveTest();
+
+        LocalDate beginDate = toDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
+        ParameterCategoryStore parameterCategoryStore = App.getInstance().getCompany().getParameterCategoryList();
+        ParameterCategory pc10 = parameterCategoryStore.createParameterCategory("12345", "Hemogram");
+        parameterCategoryStore.saveParameterCategory();
+        ParameterCategory pc2 = parameterCategoryStore.createParameterCategory("12346", "Cholesterol");
+        parameterCategoryStore.saveParameterCategory();
+        ParameterCategory pc3 = parameterCategoryStore.createParameterCategory("12347", "Covid");
+        parameterCategoryStore.saveParameterCategory();
+
+        TestType covidTest = new TestType("COV19", "Covid", "Swab", parameterCategoryStore);
+
+        List<ParameterCategory> testCategories = new ArrayList<>();
+        testCategories.add(pc1);
+
+        ParameterStore parameterStore = new ParameterStore();
+
+        Parameter p4 = new Parameter(Constants.IG_GAN, "COVID", "000", pc3);
+        parameterStore.add(p4);
+
+        List<Parameter> testParameters1 = new ArrayList<>();
+        testParameters1.add(p4);
+
+        app.domain.model.Test t10 = new app.domain.model.Test("1234557890123456", "100000000100", "1234567890", covidTest, testCategories, testParameters1);
+        t10.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 10, 11, 30));
+        t10.addTestParameter();
+        t10.changeState(Constants.SAMPLE_COLLECTED);
+        t10.addTestResult(Constants.IG_GAN, 1.5);
+        t10.changeState("VALIDATED");
+        store.addTest(t10);
+
+        Assert.assertNotNull(store.getValidatedTestList(client2));
+    }
+
+**Test 2:** Get the Interval of dates 
+
+     public void getIntervalDates() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+        TestStore store = new TestStore();
+        app.domain.model.Test t = store.createTest("123456789187", "1234567890123456", testType, cat1, pa);
+
+        ZoneId defaultZoneId = ZoneId.systemDefault();
+        LocalDate date1Client = LocalDate.now();
+        Date date1 = Date.from(date1Client.atStartOfDay(defaultZoneId).toInstant());
+
+        store.getIntervalDate(LocalDate.now(), LocalDate.now());
 
     }
 
-**Test 2:** Get the test parameter result's result.
+**Test 3:** Get the Number of tests
 
-    public void getResult() {
+     @Test
+        public void getNumberOfTests() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+        TestStore store = new TestStore();
+        app.domain.model.Test t = store.createTest("123456789187", "1234567890123456", testType, cat1, pa);
 
-        TestParameterResult tpr1 = new TestParameterResult("IgGAN", 15.5);
+        ZoneId defaultZoneId = ZoneId.systemDefault();
+        LocalDate date1Client = LocalDate.now();
+        Date date1 = Date.from(date1Client.atStartOfDay(defaultZoneId).toInstant());
 
-        Double expected = 15.5;
-        Double actual = tpr1.getResult();
 
-        Assert.assertEquals(expected, actual);
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date1, "email@gamil.com", "Zé");
 
+        List<Client> clientList = new ArrayList<>();
+        clientList.add(client);
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE, -10);
+        Date toDate = calendar.getTime();
+
+        Client client2 = new Client("12345678911", "1234567890123457", "1234567892", "1234567891", toDate, "email@gamil.com", "Zé");
+        clientList.add(client2);
+
+        app.domain.model.Test teste = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
+        store.saveTest();
+
+        LocalDate beginDate = toDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
+        ParameterCategoryStore parameterCategoryStore = App.getInstance().getCompany().getParameterCategoryList();
+        ParameterCategory pc10 = parameterCategoryStore.createParameterCategory("12345", "Hemogram");
+        parameterCategoryStore.saveParameterCategory();
+        ParameterCategory pc2 = parameterCategoryStore.createParameterCategory("12346", "Cholesterol");
+        parameterCategoryStore.saveParameterCategory();
+        ParameterCategory pc3 = parameterCategoryStore.createParameterCategory("12347", "Covid");
+        parameterCategoryStore.saveParameterCategory();
+
+        TestType covidTest = new TestType("COV19", "Covid", "Swab", parameterCategoryStore);
+
+        List<ParameterCategory> testCategories = new ArrayList<>();
+        testCategories.add(pc1);
+
+        ParameterStore parameterStore = new ParameterStore();
+
+        Parameter p4 = new Parameter(Constants.IG_GAN, "COVID", "000", pc3);
+        parameterStore.add(p4);
+
+        List<Parameter> testParameters1 = new ArrayList<>();
+        testParameters1.add(p4);
+
+        app.domain.model.Test t10 = new app.domain.model.Test("1234557890123456", "100000000100", "1234567890", covidTest, testCategories, testParameters1);
+        t10.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 10, 11, 30));
+        t10.addTestParameter();
+        t10.changeState(Constants.SAMPLE_COLLECTED);
+        t10.addTestResult(Constants.IG_GAN, 1.5);
+        t10.changeState("VALIDATED");
+        store.addTest(t10);
+
+        Assert.assertEquals(store.numberOfTests(),2);
     }
 
-**Test 3:** Get the test parameter result's reference value.
+**Test 4:** Get the list of tests inside a date interval.
 
-    public void getRefValue() {
+    public void getListTestsInsideDateInterval() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+        TestStore store = new TestStore();
+        app.domain.model.Test t = store.createTest("123456789187", "1234567890123456", testType, cat1, pa);
 
-        TestParameterResult tpr1 = new TestParameterResult("IgGAN", 1.4);
+        ZoneId defaultZoneId = ZoneId.systemDefault();
+        LocalDate date1Client = LocalDate.now();
+        Date date1 = Date.from(date1Client.atStartOfDay(defaultZoneId).toInstant());
 
-        RefValue expected = new RefValue("mm/hr", 1.0, 10.0);
 
-        tpr1.setRefValue(expected);
-        RefValue actual = tpr1.getRefValue();
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date1, "email@gamil.com", "Zé");
 
-        Assert.assertEquals(expected, actual);
+        List<Client> clientList = new ArrayList<>();
+        clientList.add(client);
 
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE, -10);
+        Date toDate = calendar.getTime();
+
+        Client client2 = new Client("12345678911", "1234567890123457", "1234567892", "1234567891", toDate, "email@gamil.com", "Zé");
+        clientList.add(client2);
+
+        app.domain.model.Test teste = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
+        store.saveTest();
+
+        LocalDate beginDate = toDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
+        ParameterCategoryStore parameterCategoryStore = App.getInstance().getCompany().getParameterCategoryList();
+        ParameterCategory pc10 = parameterCategoryStore.createParameterCategory("12345", "Hemogram");
+        parameterCategoryStore.saveParameterCategory();
+        ParameterCategory pc2 = parameterCategoryStore.createParameterCategory("12346", "Cholesterol");
+        parameterCategoryStore.saveParameterCategory();
+        ParameterCategory pc3 = parameterCategoryStore.createParameterCategory("12347", "Covid");
+        parameterCategoryStore.saveParameterCategory();
+
+        TestType covidTest = new TestType("COV19", "Covid", "Swab", parameterCategoryStore);
+
+        List<ParameterCategory> testCategories = new ArrayList<>();
+        testCategories.add(pc1);
+
+        ParameterStore parameterStore = new ParameterStore();
+
+        Parameter p4 = new Parameter(Constants.IG_GAN, "COVID", "000", pc3);
+        parameterStore.add(p4);
+
+        List<Parameter> testParameters1 = new ArrayList<>();
+        testParameters1.add(p4);
+
+        app.domain.model.Test t10 = new app.domain.model.Test("1234557890123456", "100000000100", "1234567890", covidTest, testCategories, testParameters1);
+        t10.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 10, 11, 30));
+        t10.addTestParameter();
+        t10.changeState(Constants.SAMPLE_COLLECTED);
+        t10.addTestResult(Constants.IG_GAN, 1.5);
+        t10.changeState("VALIDATED");
+        store.addTest(t10);
+
+        store.getListTestsInsideDateInterval(beginDate, LocalDate.now());
     }
 
-**Test 4:** Set the test parameter result's reference value.
 
-    public void setRefValue() {
 
-        TestParameterResult tpr1 = new TestParameterResult("IgGAN", 15.5);
-        RefValue rv1 = new RefValue("aaa", 10.0, 20.0);
+**Test 5:** Get client ages inside a array 
 
-        tpr1.setRefValue(rv1);
-        RefValue actual = tpr1.getRefValue();
+    @Test
+    public void getClientAgeInsideTheInterval() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+        TestStore store = new TestStore();
+        app.domain.model.Test t = store.createTest("123456789187", "1234567890123456", testType, cat1, pa);
 
-        Assert.assertEquals(rv1, actual);
+        ZoneId defaultZoneId = ZoneId.systemDefault();
+        LocalDate date1Client = LocalDate.now();
+        Date date1 = Date.from(date1Client.atStartOfDay(defaultZoneId).toInstant());
 
-    }
 
-### RefValue Tests
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date1, "email@gamil.com", "Zé");
 
-**Test 5:** Get the metric.
+        List<Client> clientList = new ArrayList<>();
+        clientList.add(client);
 
-    public void getMetric() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE, -10);
+        Date toDate = calendar.getTime();
 
-        RefValue rv1 = new RefValue("aaa", 10.0, 20.0);
+        Client client2 = new Client("12345678911", "1234567890123457", "1234567892", "1234567891", toDate, "email@gamil.com", "Zé");
+        clientList.add(client2);
 
-        String expected = "aaa";
-        String actual = rv1.getMetric();
-
-        Assert.assertEquals(expected, actual);
-
+        LocalDate beginDate = toDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        store.getClientAgeInsideTheInterval(clientList, 10, LocalDate.now());
     }
 
 **Test 6:** Get the minimum reference value.
@@ -282,43 +480,35 @@ Other software classes (i.e. Pure Fabrication) identified:
 
     }
 
-**Test 7:** Get the maximum reference value.
+**Test 7:** Sort Date test.
 
-    public void getRefValueMax() {
+    public void sortDateTest() {
+     ParameterCategoryStore cat = new ParameterCategoryStore();
+     ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+     cat.add(pc1);
+     List<ParameterCategory> cat1 = new ArrayList<>();
+     cat1.add(pc1);
+     List<Parameter> pa = new ArrayList<>();
+     Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+     pa.add(p1);
+     TestType testType = new TestType("BL000", "description", "sei lá", cat);
+     TestStore store = new TestStore();
+     app.domain.model.Test t1 = store.createTest("123456789187", "1234567890123456", testType, cat1, pa);
+     app.domain.model.Test t2 = store.createTest("123456789185", "1234567890123456", testType, cat1, pa);
+     app.domain.model.Test t3 = store.createTest("123456782187", "1234567890123455", testType, cat1, pa);
 
-        RefValue rv1 = new RefValue("aaa", 10.0, 20.0);
+        store.addTest(t3);
+        store.addTest(t2);
+        store.addTest(t1);
 
-        Double expected = 20.0;
-        Double actual = rv1.getRefValueMax();
+        List<app.domain.model.Test> list = store.sortDate("1234567890123456");
 
-        Assert.assertEquals(expected, actual);
 
-    }
 
-**Test 8:** Get corresponding test using the sampleID.
-
-    private boolean getCorrespondingTest(String sampleID) {
-    String testID;
-
-        List<Sample> samples = sampleStore.getSampleList();
-
-        testID = "";
-
-        for (Sample sa : samples) {
-            if (sa.getBarcode().equals(sampleID)) {
-                testID = sa.getTr().getTestID();
-            }
-        }
-
-        List<Test> tests = testStore.getTestList();
-
-        for (Test test1 : tests) {
-            if (test1.getTestID().equals(testID)) {
-                this.test = test1;
-                return test1.compareTestState("SAMPLE_COLLECTED");
-            }
-        }
-        return false;
+        List<app.domain.model.Test> expected = new ArrayList<>();
+        expected.add(t2);
+        expected.add(t1);
+        Assert.assertEquals(list,expected);
     }
 
 # 5. Construction (Implementation)
