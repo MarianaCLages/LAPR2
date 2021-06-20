@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.clientUIs.ViewResultsUI">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.client.ViewResultsUI">
    <children>
-      <ListView fx:id="ListView1" layoutX="59.0" layoutY="110.0" prefHeight="181.0" prefWidth="301.0" />
-      <TextArea fx:id="TextArea1" editable="false" layoutX="374.0" layoutY="110.0" prefHeight="181.0" prefWidth="200.0" />
-      <Button layoutX="59.0" layoutY="341.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="74.0" text="Return" />
-      <Label layoutX="59.0" layoutY="61.0" prefHeight="35.0" prefWidth="513.0" text="Please select a Test to see your results">
-         <font>
-            <Font name="Arial" size="23.0" />
-         </font>
-      </Label>
+      <Button layoutX="51.0" layoutY="348.0" mnemonicParsing="false" onAction="#returnToMenu" text="Return" />
+      <Label fx:id="label1" layoutX="57.0" layoutY="227.0" prefHeight="118.0" prefWidth="488.0" />
+      <ListView fx:id="ListView1" layoutX="49.0" layoutY="78.0" prefHeight="142.0" prefWidth="503.0" />
+      <Button fx:id="button1" layoutX="56.0" layoutY="42.0" mnemonicParsing="false" onAction="#confirm" text="Tests" />
    </children>
 </AnchorPane>

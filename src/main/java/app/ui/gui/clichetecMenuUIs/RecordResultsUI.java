@@ -9,9 +9,6 @@ import javafx.scene.control.TextField;
 
 public class RecordResultsUI {
 
-    @FXML
-    public TextField sampleIDtxt;
-
     private final SceneController sceneController = SceneController.getInstance();
     private final App app = sceneController.getApp();
 

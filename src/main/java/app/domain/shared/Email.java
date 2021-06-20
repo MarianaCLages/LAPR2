@@ -1,6 +1,4 @@
-package app.domain.model;
-
-import app.domain.shared.Constants;
+package app.domain.shared;
 
 import java.io.File;
 import java.io.FileWriter;

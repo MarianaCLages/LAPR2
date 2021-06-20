@@ -119,6 +119,11 @@ public class LinearRegression implements Regression {
         return r2;
     }
 
+    /**
+     * Gets the r by making the square root of R^2.
+     *
+     * @return the R
+     */
     public double R() {
         return Math.sqrt(r2);
     }
@@ -135,17 +140,36 @@ public class LinearRegression implements Regression {
         return slope * x + intercept;
     }
 
+    /**
+     * Gets the critic value (t-Student).
+     *
+     * @param alpha the alpha
+     * @return the critic value (t-Student)
+     */
     public double getCriticValueStudent(double alpha) {
         TDistribution td = new TDistribution(this.n);
 
         return td.inverseCumulativeProbability(1 - alpha);
     }
 
+    /**
+     * Gets the critic value (f-Snedecor).
+     *
+     * @param alphaf the alpha
+     * @return the critic value (f-Snedecor)
+     */
     public double getCriticValueFisher(double alphaf) {
         FDistribution fDistribution = new FDistribution(1, this.n - 2);
         return fDistribution.inverseCumulativeProbability(1 - alphaf);
     }
 
+    /**
+     * Calculates the lower limit answer.
+     *
+     * @param x     the x
+     * @param alpha the alpha
+     * @return the lower limit answer
+     */
     public double lowerLimitAnswer(double x, double alpha) {
         double y = predict(x);
         double criticalValue = getCriticValueStudent(alpha);
@@ -153,6 +177,13 @@ public class LinearRegression implements Regression {
         return y - criticalValue * s * Math.sqrt(1 + 1 / n + (Math.pow((x - this.xbar), 2) / this.sxx));
     }
 
+    /**
+     * Calculates the upper limit answer.
+     *
+     * @param x     the x
+     * @param alpha the alpha
+     * @return the upper limit answer
+     */
     public double upperLimitAnswer(double x, double alpha) {
         double y = predict(x);
         double s = Math.sqrt(this.se / (this.n - 2));
@@ -160,70 +191,149 @@ public class LinearRegression implements Regression {
         return y + criticalValue * s * Math.sqrt(1 + 1 / n + (Math.pow((x - this.xbar), 2) / this.sxx));
     }
 
+    /**
+     * Calculates the upper limit for the param a.
+     *
+     * @param alpha the alpha
+     * @return the upper limit for the param a
+     */
     public double upperLimitParama(double alpha) {
         double s = Math.sqrt(this.se / (this.n - 2));
         double criticalValue = getCriticValueStudent(alpha);
         return this.intercept + criticalValue * s * Math.sqrt(1 / n + (Math.pow(this.xbar, 2) / this.sxx));
     }
 
+    /**
+     * Calculates the lower limit for the param a.
+     *
+     * @param alpha the alpha
+     * @return the lower limit for the param a
+     */
     public double lowerLimitParama(double alpha) {
         double s = Math.sqrt(this.se / (this.n - 2));
         double criticalValue = getCriticValueStudent(alpha);
         return this.intercept - criticalValue * s * Math.sqrt(1 / n + (Math.pow(this.xbar, 2) / this.sxx));
     }
 
+    /**
+     * Calculates the upper limit for the param b.
+     *
+     * @param alpha the alpha
+     * @return the upper limit for the param b
+     */
     public double upperLimitParamb(double alpha) {
         double s = Math.sqrt(this.se / (this.n - 2));
         double criticalValue = getCriticValueStudent(alpha);
         return this.slope + criticalValue * s * Math.sqrt(1 / this.sxx);
     }
 
+    /**
+     * Calculates the lower limit for the param b.
+     *
+     * @param alpha the alpha
+     * @return the lower limit for the param b
+     */
     public double lowerLimitParamb(double alpha) {
         double s = Math.sqrt(this.se / (this.n - 2));
         double criticalValue = getCriticValueStudent(alpha);
         return this.slope - criticalValue * s * Math.sqrt(1 / this.sxx);
     }
 
+    /**
+     * Gets the test statistics for the param b
+     *
+     * @return the test statistics for the param b
+     */
     public double getTestStatisticb() {
         return (this.slope) / (Math.sqrt(this.se / (this.n - 2)) / Math.sqrt(this.sxx));
     }
 
+    /**
+     * Gets the test statistics for the param a
+     *
+     * @return the test statistics for the param a
+     */
     public double getTestStatistica() {
         return (this.intercept) / (Math.sqrt(this.se / (this.n - 2)) / Math.sqrt((1 / n) + Math.pow(this.xbar, 2) / this.sxx));
     }
 
+    /**
+     * Gets the R^2.
+     *
+     * @return the R^2
+     */
     public double getR2() {
         return r2;
     }
 
+    /**
+     * Gets the ST.
+     *
+     * @return the ST
+     */
     public double getSt() {
         return st;
     }
 
+    /**
+     * Gets the MSE.
+     *
+     * @return the MSE
+     */
     public double getMse() {
         return mse;
     }
 
+    /**
+     * Gets the MSR.
+     *
+     * @return the MSR
+     */
     public double getMsr() {
         return msr;
     }
 
+    /**
+     * Gets the f0.
+     *
+     * @return the f0
+     */
     public double getF0() {
         return f0;
     }
 
+    /**
+     * Gets the SR.
+     *
+     * @return the SR
+     */
     public double getSr() {
         return sr;
     }
 
+    /**
+     * Gets the SE.
+     *
+     * @return the SE
+     */
     public double getSe() {
         return se;
     }
 
+    /**
+     * Gets the R by making the square root of R^2.
+     *
+     * @return the R
+     */
     public double getR() {
         return Math.sqrt(this.r2);
     }
 
+    /**
+     * Gets the n.
+     *
+     * @return the n
+     */
     public int getN() {
         return n;
     }
@@ -241,7 +351,6 @@ public class LinearRegression implements Regression {
 
         return s.toString();
     }
-
 }
 
 

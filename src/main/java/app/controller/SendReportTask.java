@@ -1,7 +1,7 @@
-package app.domain.model;
+package app.controller;
 
-
-import app.controller.App;
+import app.domain.model.Client;
+import app.domain.model.StringBuilderReport;
 import app.domain.shared.LinearRegression;
 import app.domain.shared.MultiLinearRegression;
 import app.domain.shared.exceptions.InvalidLengthException;
@@ -27,11 +27,11 @@ public class SendReportTask extends TimerTask implements Serializable {
     private double confidenceLevelAnova;
     private double confidenceLevelVariables;
     private double confidenceLevelEstimated;
-    private String independentVariable;
     private String regression;
     private String scope;
 
     StringBuilderReport report;
+    private boolean runed= false;
 
     public SendReportTask() {
         //Send report constructor
@@ -42,6 +42,7 @@ public class SendReportTask extends TimerTask implements Serializable {
      */
     @Override
     public void run() {
+        runed = true;
         LinearRegression linearRegressionChosen = null;
         TestStore testStore = App.getInstance().getCompany().getTestList();
         ClientStore clientStore = App.getInstance().getCompany().getClientList();
@@ -119,13 +120,12 @@ public class SendReportTask extends TimerTask implements Serializable {
             }
             Report2NHS.writeUsingFileWriter(report.getSb().toString());
             log();
-
-
         }
-
-
     }
 
+    /**
+     * Gets the properties.
+     */
     private void getProps() {
         Properties prop = App.getProperties();
         this.beginningDate = LocalDate.parse(prop.getProperty("fit.date.beginning"));
@@ -139,14 +139,16 @@ public class SendReportTask extends TimerTask implements Serializable {
 
     }
 
-
+    /**
+     * Logs a message to the NHS.
+     */
     private void log() {
         Logger logger = Logger.getLogger("Logger");
         FileHandler fh;
 
         try {
 
-            fh = new FileHandler("log.log", true);
+            fh = new FileHandler("Logs//log.log", true);
             logger.addHandler(fh);
             SimpleFormatter formatter;
             formatter = new SimpleFormatter();
@@ -157,11 +159,9 @@ public class SendReportTask extends TimerTask implements Serializable {
         } catch (SecurityException | IOException e) {
             Alerts.errorAlert(e.getMessage());
         }
-
-
     }
 
+    public boolean isRuned() {
+        return runed;
+    }
 }
-
-
-

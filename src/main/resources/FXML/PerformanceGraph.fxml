@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="676.0" prefWidth="829.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.LabCord.PerformanceGraphUI">
+   <children>
+      <LineChart fx:id="graph" prefHeight="607.0" prefWidth="829.0">
+        <xAxis>
+          <CategoryAxis fx:id="yaxis" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" fx:id="xaxis" />
+        </yAxis>
+      </LineChart>
+      <Button fx:id="myReturnButton" layoutX="14.0" layoutY="627.0" mnemonicParsing="false" onAction="#returnToPerformanceUI" prefHeight="34.0" prefWidth="74.0" text="Return" />
+   </children>
+</AnchorPane>

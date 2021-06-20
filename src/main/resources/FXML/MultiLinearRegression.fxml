@@ -6,11 +6,11 @@
 
 <AnchorPane prefHeight="563.0" prefWidth="791.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.adminMenuUIs.MultiLinearRegressionUI">
     <children>
-        <Button fx:id="myReturnButtonMulti" layoutX="705.0" layoutY="28.0" mnemonicParsing="false" onAction="#returnToGenerateNHSReport" prefHeight="25.0" prefWidth="72.0" text="Return" />
+        <Button fx:id="myReturnButtonMulti" layoutX="702.0" layoutY="20.0" mnemonicParsing="false" onAction="#returnToGenerateNHSReport" prefHeight="34.0" prefWidth="74.0" text="Return" />
         <TextArea fx:id="myTextAreaMulti" editable="false" layoutX="1.0" layoutY="74.0" prefHeight="489.0" prefWidth="790.0" />
-        <Label alignment="CENTER" layoutX="14.0" layoutY="31.0" prefHeight="32.0" prefWidth="424.0" text="Multi Linear Regression">
+        <Label alignment="CENTER" layoutX="14.0" layoutY="19.0" prefHeight="36.0" prefWidth="399.0" text="Multi Linear Regression" underline="true">
             <font>
-                <Font size="22.0" />
+                <Font name="Baskerville Old Face" size="30.0" />
             </font>
         </Label>
     </children>

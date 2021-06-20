@@ -42,7 +42,12 @@ public class StringBuilderReport {
     private static final String SPACE_3 = "\t\t\t\t\t\t\t\t";
     private static final String SPACE_4 = "\t\t\t";
     private static final String REGRESSION_MODEL = "The regression model is significant.";
+    private static final String END_REPORT = "------------------------------------------------------------End of Report------------------------------------------------------------";
 
+    /**
+     * Constructor.
+     * @param regression the regression
+     */
 
     public StringBuilderReport(Regression regression) {
         if (regression instanceof LinearRegression) {
@@ -58,29 +63,58 @@ public class StringBuilderReport {
         this.sb = new StringBuilder();
     }
 
+    /**
+     * Clears the string builder.
+     */
     public void clear() {
         StringBuilder sbAux = new StringBuilder();
         this.sb = sbAux;
     }
 
+    /**
+     * Sets the confidence values.
+     *
+     * @param significanceLevelAnova       the ANOVA's significance level
+     * @param significanceLevelCoefficient the significance level coefficient
+     * @param significanceLevelEstimated   the estimated significance level
+     */
     public void setConfidenceValues(double significanceLevelAnova, double significanceLevelCoefficient, double significanceLevelEstimated) {
         this.significanceLevelAnova = significanceLevelAnova;
         this.significanceLevelCoefficient = significanceLevelCoefficient;
         this.significanceLevelEstimated = significanceLevelEstimated;
     }
 
+    /**
+     * Sets the simple linear regression values.
+     *
+     * @param x              the x (array)
+     * @param yObs           the observed y (array)
+     * @param historicalDays the number of historical days
+     */
     public void setvalues(double[] x, double[] yObs, int historicalDays) {
         this.xLinear = x;
         this.yObs = yObs;
         this.historicalDays = historicalDays;
     }
 
+    /**
+     * Sets the multi linear regression values.
+     *
+     * @param x              the x (matrix)
+     * @param yObs           the observed y (array)
+     * @param historicalDays the number of historical days
+     */
     public void setvalues(double[][] x, double[] yObs, int historicalDays) {
         this.xMulti = x;
         this.yObs = yObs;
         this.historicalDays = historicalDays;
     }
 
+    /**
+     * Writes the multi linear regression report.
+     *
+     * @return the multi linear regression report
+     */
     public StringBuilder stringConstructionMultiLinearRegression() throws InvalidLengthException {
         sb.append("\n\n").append("------------------------------------------------------------Beginning of Report------------------------------------------------------------").append("\n\n");
 
@@ -89,7 +123,7 @@ public class StringBuilderReport {
                 .append("\n\nOther statistics\n")
                 .append("R = ").append(String.format("%.4f", regressionMulti.getR())).append("\n\n")
                 .append("R^2 = " + String.format("%.4f", regressionMulti.getR2()) + "\n")
-                .append("R^2 Adjusted = " + String.format("%.4f", regressionMulti.getR2Ajusted()) + "\n\n")
+                .append("R^2 Adjusted = " + String.format("%.4f", regressionMulti.getR2Adjusted()) + "\n\n")
                 .append("Hypothesis tests for regression coefficient\n\n ")
                 .append("Hypothesis test for coefficient a\n H0: betta0=0   H1: betta0!=0 \n")
                 .append(T_OBS)
@@ -183,7 +217,11 @@ public class StringBuilderReport {
         return sb;
     }
 
-
+    /**
+     * Writes the simple linear regression report.
+     *
+     * @return the simple linear regression report
+     */
     public StringBuilder stringConstructionLinearRegression() {
         sb.append("\n\n").append("------------------------------------------------------------Beginning of Report------------------------------------------------------------").append("\n\n");
 
@@ -279,6 +317,11 @@ public class StringBuilderReport {
         return sb;
     }
 
+    /**
+     * Gets the current day inside an interval of a week.
+     *
+     * @return the current day inside an interval of a week
+     */
     private LocalDate getCurrentDayInsideAWeekInterval() {
 
         Calendar cal2 = Calendar.getInstance();
@@ -289,6 +332,11 @@ public class StringBuilderReport {
 
     }
 
+    /**
+     * Gets the current day inside an interval of a month.
+     *
+     * @return the current day inside an interval of a month
+     */
     private LocalDate getCurrentDayInsideAMonthInterval() {
         Calendar c = Calendar.getInstance();
         int monthMaxDays = c.getActualMaximum(Calendar.DAY_OF_MONTH);
@@ -301,6 +349,12 @@ public class StringBuilderReport {
 
     }
 
+    /**
+     * Prints the COVID-19 tests per interval.
+     *
+     * @param selection the selection for the report generation time
+     * @return the COVID-19 tests per interval
+     */
     public StringBuilder printCovidTestsPerInterval(String selection) {
 
         if (selection.equals("Day")) {
@@ -314,6 +368,11 @@ public class StringBuilderReport {
 
     }
 
+    /**
+     * Prints the COVID-19 tests into the daily NHS report.
+     *
+     * @return the daily report with the printed COVID-19 tests
+     */
     public StringBuilder printTheCovidTestsIntoTheNHSReportDay() {
 
         int dayTests = 0;
@@ -339,12 +398,16 @@ public class StringBuilderReport {
             sb.append(dayTests)
                     .append(" positive covid tests");
         }
-        sb.append("\n\n").append("------------------------------------------------------------End of Report------------------------------------------------------------").append("\n\n");
+        sb.append("\n\n").append(END_REPORT).append("\n\n");
         return sb;
 
     }
 
-
+    /**
+     * Prints the COVID-19 tests into the weekly NHS report.
+     *
+     * @return the weekly report with the printed COVID-19 tests
+     */
     public StringBuilder printTheCovidTestsIntoTheNHSReportWeek() {
 
         int interval = Period.between(getCurrentDayInsideAWeekInterval(), todayDateForCovidReport).getDays();
@@ -377,12 +440,15 @@ public class StringBuilderReport {
 
             }
         }
-        sb.append("\n\n").append("------------------------------------------------------------End of Report------------------------------------------------------------").append("\n\n");
+        sb.append("\n\n").append(END_REPORT).append("\n\n");
         return sb;
-
     }
 
-
+    /**
+     * Prints the COVID-19 tests into the monthly NHS report.
+     *
+     * @return the monthly report with the printed COVID-19 tests
+     */
     public StringBuilder printTheCovidTestsIntoTheNHSReportMonthly() {
 
         int interval = Period.between(getCurrentDayInsideAMonthInterval(), todayDateForCovidReport).getDays();
@@ -422,12 +488,16 @@ public class StringBuilderReport {
 
             }
         }
-        sb.append("\n\n").append("------------------------------------------------------------End of Report------------------------------------------------------------").append("\n\n");
+        sb.append("\n\n").append(END_REPORT).append("\n\n");
         return sb;
     }
 
+    /**
+     * Gets the string builder.
+     *
+     * @return the string builder
+     */
     public StringBuilder getSb() {
         return sb;
     }
-
 }

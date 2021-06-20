@@ -3,9 +3,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.adminMenuUIs.ClinicalAnalysisLaboratoryUI">
    <children>
-      <Button fx:id="myReturnButtonLab" layoutX="14.0" layoutY="343.0" mnemonicParsing="false" onAction="#returnToAdminMenu" prefHeight="43.0" prefWidth="104.0" text="Return" />
+      <Button fx:id="myReturnButtonLab" layoutX="14.0" layoutY="351.0" mnemonicParsing="false" onAction="#returnToAdminMenu" prefHeight="34.0" prefWidth="74.0" text="Return" />
    </children>
 </AnchorPane>

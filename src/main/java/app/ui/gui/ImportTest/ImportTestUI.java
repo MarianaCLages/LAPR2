@@ -24,14 +24,12 @@ public class ImportTestUI implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ListView.setVisible(false);
-
     }
 
     public void confirm() {
         FileChooser chooser = new FileChooser();
         chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("CSV files", "*.csv"));
         File f = chooser.showOpenDialog(null);
-
 
         imp.readTestsfromFile(f.getAbsolutePath());
         ListView.setVisible(true);

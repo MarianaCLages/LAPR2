@@ -1,9 +1,10 @@
 package app.domain.model;
 
 import app.domain.shared.Constants;
+import app.domain.shared.Email;
+import app.domain.shared.PasswordGenerator;
 import auth.AuthFacade;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.math.NumberUtils;
 
 import java.io.Serializable;
 import java.text.DateFormat;

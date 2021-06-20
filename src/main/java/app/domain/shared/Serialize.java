@@ -11,6 +11,13 @@ public class Serialize {
     private Serialize() {
     }
 
+    /**
+     * Reads objects from a file.
+     *
+     * @param stringFile the file
+     * @return the file's content
+     * @throws IOException
+     */
     public static Object readFile(String stringFile) throws IOException {
         Object read = null;
 
@@ -20,10 +27,15 @@ public class Serialize {
         } catch (IOException | ClassNotFoundException ex) {
             throw new IOException("File doesn't exist!");
         }
-
-
     }
 
+    /**
+     * Writes in a file.
+     *
+     * @param stringFile  the file
+     * @param savedObject the saved object
+     * @return true if it writes, false if it doesn't
+     */
     public static boolean writeObject(String stringFile, Company savedObject) {
         try {
             Properties props = App.getProperties();

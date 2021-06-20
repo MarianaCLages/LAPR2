@@ -2,7 +2,7 @@ package app.domain.model;
 
 import org.junit.Test;
 
-import static app.domain.model.Email.sendPasswordNotification;
+import static app.domain.shared.Email.sendPasswordNotification;
 
 public class EmailTest {
 

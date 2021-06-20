@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import app.controller.App;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -102,6 +103,63 @@ public class EmployeeTest {
         String expected = "Employee: ID=B00001, name=Bino, address=AtuaTerra, phonenumber=91234567811, email=something@isep.com, soc=111111111111111111, Role=" + role.toString();
         String actual = employee.toString();
         Assert.assertEquals(expected, actual);
+    }
+
+//    @Test(expected = AssertionError.class)
+//    public void addUserWithRole(){
+//        Employee employee = new Employee("B00001", "Bino", "AtuaTerra", "91234567811", "something@isep.com", "111111111111111111", role);
+//        Assert.assertTrue(employee.addUserWithRole(App.getInstance().getCompany()));
+//
+//    }
+//    @Test
+//    public void addUserWithRole2(){
+//        Role role = new Role("3", "LaboratoryCoordinator");
+//        Employee employee = new Employee("B00001", "Bino", "AtuaTerra", "91234567811", "something@isep.com", "111111111111111111", role);
+//        Assert.assertTrue(employee.addUserWithRole(App.getInstance().getCompany()));
+//
+//    }
+//    @Test(expected = AssertionError.class)
+//    public void addUserWithRole3(){
+//        Role role = new Role("2", "Clinical Chemistry Technologist");
+//        Employee employee = new Employee("B00001", "Bino", "AtuaTerra", "91234567811", "something@isep.com", "111111111111111111", role);
+//        Assert.assertTrue(employee.addUserWithRole(App.getInstance().getCompany()));
+//
+//    }
+//    @Test(expected = AssertionError.class)
+//    public void addUserWithRol4(){
+//        Role role = new Role("3", "Receptionist");
+//        Employee employee = new Employee("B00001", "Bino", "AtuaTerra", "91234567811", "something@isep.com", "111111111111111111", role);
+//        Assert.assertTrue(employee.addUserWithRole(App.getInstance().getCompany()));
+//
+//    }
+
+//    @Test(expected = IllegalArgumentException.class)
+//    public void addUserWithRol5(){
+//        Role role = new Role("4", "SpecialistDoctor");
+//        SpecialistDoctor specialistDoctor = new SpecialistDoctor("B00001", "Bino", "AtuaTerra", "91234567811", "123445g@isep.com", "111111111111111111","1234567" ,role);
+//        Assert.assertTrue(specialistDoctor.addUserWithRole(App.getInstance().getCompany()));
+//
+//    }
+
+    @Test
+    public void getEmail(){
+        Role role = new Role("3", "Receptionist");
+        Employee employee = new Employee("B00001", "Bino", "AtuaTerra", "91234567811", "something@isep.com", "111111111111111111", role);
+        Assert.assertNotNull(employee.getEmail());
+    }
+
+    @Test
+    public void getPhoneNumber(){
+        Role role = new Role("3", "Receptionist");
+        Employee employee = new Employee("B00001", "Bino", "AtuaTerra", "91234567811", "something@isep.com", "111111111111111111", role);
+        Assert.assertNotNull(employee.getPhonenumber());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void invalidPhoneNumber(){
+        Role role = new Role("3", "Receptionist");
+        Employee employee = new Employee("B00001", "Bino", "AtuaTerra", "aaaaaaaaaaa", "something@isep.com", "111111111111111111", role);
+
     }
 
 }

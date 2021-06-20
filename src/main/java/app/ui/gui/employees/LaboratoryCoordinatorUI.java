@@ -8,7 +8,6 @@ import javafx.event.ActionEvent;
 public class LaboratoryCoordinatorUI {
 
     private final SceneController sceneController = SceneController.getInstance();
-
     private final App app = sceneController.getApp();
 
     public void ImportTestsMenu(ActionEvent event) {
@@ -25,5 +24,4 @@ public class LaboratoryCoordinatorUI {
         app.doLogout();
         sceneController.switchMenu(actionEvent, Constants.COMPANY_PERFORMANCE_UI);
     }
-
 }

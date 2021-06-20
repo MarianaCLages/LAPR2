@@ -2,46 +2,49 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
-<AnchorPane prefHeight="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="app.controller.LoginController">
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.LoginController">
     <children>
-        <GridPane layoutY="137.0" prefHeight="127.0" prefWidth="600.0" AnchorPane.bottomAnchor="136.0"
-                  AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <GridPane layoutX="-1.0" layoutY="165.0" prefHeight="106.0" prefWidth="604.0" AnchorPane.bottomAnchor="128.60000000000002" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0">
             <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="131.0"/>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="214.0" minWidth="10.0" prefWidth="214.0"/>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="181.0" minWidth="10.0" prefWidth="131.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="214.0" minWidth="10.0" prefWidth="214.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints maxHeight="140.0" minHeight="10.0" prefHeight="128.0" vgrow="SOMETIMES"/>
-                <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="131.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="140.0" minHeight="10.0" prefHeight="51.4" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="54.6" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
                 <Label text="Email:" GridPane.columnIndex="1">
                     <font>
-                        <Font size="27.0"/>
+                        <Font size="24.0" />
                     </font>
                 </Label>
-                <TextField fx:id="emailfield" promptText="mail" GridPane.columnIndex="2"/>
+                <TextField fx:id="emailfield" prefWidth="214.0" promptText="Email" GridPane.columnIndex="2" />
                 <Label text="Password:" GridPane.columnIndex="1" GridPane.rowIndex="1">
                     <font>
-                        <Font size="27.0"/>
+                        <Font size="24.0" />
                     </font>
                 </Label>
-                <PasswordField fx:id="passfield" promptText="pass" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                <PasswordField fx:id="passfield" promptText="Password" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             </children>
         </GridPane>
-        <Label layoutX="199.0" layoutY="14.0" prefHeight="88.0" prefWidth="203.0" text="Login">
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-2.0" layoutY="14.0" prefHeight="88.0" prefWidth="606.0" text="Login" underline="true">
             <font>
-                <Font size="76.0"/>
+                <Font name="Baskerville Old Face" size="64.0" />
             </font>
         </Label>
-        <HBox layoutX="182.0" layoutY="272.0"/>
-        <Button fx:id="btnLogin" layoutX="402.0" layoutY="301.0" mnemonicParsing="false" onAction="#login"
-                prefHeight="40.0" prefWidth="120.0" text="Login"/>
-        <Button fx:id="btnCancel" layoutX="87.0" layoutY="301.0" mnemonicParsing="false" onAction="#cancel"
-                prefHeight="40.0" prefWidth="120.0" text="Cancel"/>
+        <HBox layoutX="182.0" layoutY="272.0" />
+        <Button fx:id="btnLogin" defaultButton="true" layoutX="494.0" layoutY="351.0" mnemonicParsing="false" onAction="#login" prefHeight="35.0" prefWidth="96.0" text="Enter">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+        <Button fx:id="btnCancel" layoutX="14.0" layoutY="351.0" mnemonicParsing="false" onAction="#cancel" prefHeight="35.0" prefWidth="96.0" text="Cancel">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
     </children>
 </AnchorPane>

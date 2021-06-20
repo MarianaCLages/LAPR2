@@ -4,9 +4,11 @@ import app.domain.stores.ParameterCategoryStore;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class TestTest {
@@ -517,5 +519,119 @@ public class TestTest {
         Assert.assertEquals(actual.toString(), expected.toString());
 
     }
+
+
+    @Test
+    public void getCreatedDate() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
+
+        test.changeState("VALIDATED");
+
+        String actual = test.getState();
+        String expected = "VALIDATED";
+
+        Assert.assertEquals(test.getCreatedDate().toString(), test.getCreatedDate().toString());
+
+    }
+
+
+
+    @Test
+    public void getSampleDate() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
+
+        test.changeState("SAMPLE_COLLECTED");
+
+        String actual = test.getState();
+        String expected = "VALIDATED";
+
+        Assert.assertEquals(test.getSampleCreatedDate().toString(), test.getSampleCreatedDate().toString());
+
+    }
+
+    @Test
+    public void getDiagnosisDate() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
+
+        test.changeState("SAMPLE_ANALYSED");
+
+        String actual = test.getState();
+        String expected = "VALIDATED";
+
+        Assert.assertEquals(test.getAnalysedDate().toString(), test.getAnalysedDate().toString());
+
+    }
+
+    @Test
+    public void getAnalysedDate() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
+
+        test.changeState("VALIDATED");
+
+        Assert.assertEquals(test.getValidatedDate().toString(), test.getValidatedDate().toString());
+
+    }
+
+
+    @Test
+    public void getDiagnosis() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+
+        app.domain.model.Test test = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
+        test.createReport("ht");
+        test.changeState("VALIDATED");
+
+        Assert.assertEquals(test.getDiagnosis(), "ht");
+
+    }
+
 
 }
