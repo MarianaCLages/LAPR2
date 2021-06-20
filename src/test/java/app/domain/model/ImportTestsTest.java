@@ -69,8 +69,14 @@ public class ImportTestsTest {
         int actual= aa.getErrorcount();
         int expected = 1;
         Assert.assertEquals(actual,expected);
+    }
+    @Test(expected = NullPointerException.class)
+    public void BlankFileTest() {
+        //Arrange + Act
+        ImportTests aa = new ImportTests();
 
-
+        String fileName = "csv/Tests3.csv";
+        aa.readTestFromCSV(fileName);
 
     }
 
