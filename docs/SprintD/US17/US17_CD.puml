@@ -69,7 +69,19 @@ class ClinicalAnalysisLab{
 -String phoneNumber
 +getId()
 }
-
+class AuthFacade{
+UserSession userSession
+UserStore users
+}
+class UserStore{
+users
+}
+class User{
+id
+password
+name
+role
+}
 
 class ClientStore{
 -List<Client> array
@@ -123,7 +135,7 @@ class ParameterCategory{
 ImportTestUI ..> ImportTestController
 ImportTestController ..> ImportTests
 ImportTestController ..> Company
-Company ..> ImportTests
+ImportTests ..> Company
 Company --> ClinicalAnalysisLabStore
 Company --> ClientStore
 Company -->TestStore
@@ -145,6 +157,9 @@ ImportTests ..> ParameterStore
 ImportTests ..> ClinicalAnalysisLabStore
 ImportTests ..> TestStore
 ImportTests ..> ClientStore
+Company ..> AuthFacade
+AuthFacade ..> UserStore
+UserStore ..> User
 
 
 @enduml
