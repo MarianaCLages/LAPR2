@@ -1,0 +1,73 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class App{
+}
+class Company{
++getTestStore()
+
+}
+interface RegressionModel{
+}
+
+class Timer{
+}
+class SendReportTask{
+- finishDate
+- historicalDays
+- beginningDate
+- confidenceLevelAnova
+- confidenceLevelVariables
+- confidenceLevelEstimated
+- regression
+- scope
+- report
+- log()
++ getProperties()
+}
+
+class TestStore{
++ getPositiveCovidTestsPerDayIntoArrayInsideInterval(interval)
++ getCovidTestsPerDayIntoArray(interval)
++ getClientsWithTest(getClientsWithTest)
++ getClientMeanAge(clientList,interval)
+}
+
+class LinearRegression{
++LinearRegression(independentVariable,positiveTestList)
++getR2()
+}
+class MulinearRegression{
++LinearRegression(independentVariables,positiveTestList)
+
+}
+class NHSApi{
+sendReport(NhsReport)
+}
+
+class NHSReport{
++ NHSReport(RegressionModel,positiveTestListHistoricalDays,independentVariables )
+}
+
+
+abstract TimerTask{
+}
+
+LinearRegression --|> RegressionModel
+MulinearRegression --|> RegressionModel
+
+TimerTask <|-- SendReportTask
+App ..> Company
+SendReportTask <.. Company
+SendReportTask <.. Timer
+Company .> Timer
+Company --> TestStore: uses
+SendReportTask ..> LinearRegression
+SendReportTask ..> MulinearRegression
+
+SendReportTask ..> NHSReport
+(SendReportTask, NHSReport) .. NHSApi
+NHSReport -> RegressionModel
+SendReportTask ..> TestStore
+
+@enduml

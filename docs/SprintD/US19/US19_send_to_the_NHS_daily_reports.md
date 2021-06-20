@@ -108,58 +108,139 @@ As an organization employee, I want to create a new task in order to be further 
 
 **SSD - Alternative 1 is adopted.**
 
-| Interaction ID | Question: Which class is responsible for... | Answer        | Justification (with patterns) |
-| :------------- | :---------------------                      | :------------ | :---------------------------- |
-| Step 1         |                                             |               |                               |
-| Step 2         |                                             |               |                               |
+| Interaction ID | Question: Which class is responsible for...                  | Answer          | Justification (with patterns)                                                                                               |
+| :------------- | :---------------------                                       | :------------   | :----------------------------                                                                                               |
+| Step 1         | ...schedule the sent of the report?                          | Company         | IE: Since the scope of the report is the company the Company class knows all the information required to create the report. |
+|                | ...knowing all the tests?                                    | TestStore       | IE: TestStore stores all testes                                                                                             |
+|                | ...knowing the positive COVID tests?                         | TestStore       | IE: TestStore stores all testes                                                                                             |
+|                | ...knowing all valid COVID tests?                            | TestStore       | IE: TestStore stores all testes                                                                                             |
+|                | ...knowing the the age of clients associated with the test ? | ClientStore     | IE: knows all clients                                                                                                       |
+|                | ...creating the NHS report                                   | SendReportTask  | Pure Fabrication: there is no class on the domain to give this responsibility                                               |
+|                | ...send the NHS report to NHS ?                              | NHSAPI          | API                                                                                                                         |
+|                | ...create the regression model                               | RegressionModel | Pure Fabrication: there is no class on the domain to give this responsibility                                               |
+|                |                                                              |                 |                                                                                                                             |
+| Step 2         | ...write the success of the operation into a log file        | SendReportTask  | IE: has all the necessary data                                                                                              |
 
 ### Systematization ##
 
 According to the taken rationale, the conceptual classes promoted to software classes are:
-
-
+* NHSReport
 
 Other software classes (i.e. Pure Fabrication) identified:
-
-* CreateTaskUI
-* CreateTaskController
+* SendReportTask
+* RegressionModel
 
 ## 3.2. Sequence Diagram (SD)
 
 **Alternative 1**
 
-![US006_SD](US006_SD.svg)
+![US19_SD](US19_SD.svg)
 
-**Alternative 2**
-
-![US006_SD](US006_SD_v2.svg)
+**RunTank()**
+![SD_runTask()](SD_runTask().svg)
 
 ## 3.3. Class Diagram (CD)
 
-**From alternative 1**
 
-![US006_CD](US006_CD.svg)
+![US006_CD](US19_CD.svg)
 
 # 4. Tests
 
-**Test 1:** Check that it is not possible to create an instance of the Task class with null values.
+**Test 1:** Check that it is not possible to create a mode of regression with arrays of different length.
 
-	@Test(expected = IllegalArgumentException.class)
-		public void ensureNullIsNotAllowed() {
-		Task instance = new Task(null, null, null, null, null, null, null);
-	}
+    @Test(expected = IllegalArgumentException.class)
+    public void differentLengthsTest() {
+        double[][] matrix1 = {
+                {120, 19},
+                {200, 8},
+                {150, 12},
+                {180, 15},
+                {240, 16},
+                {250, 13}
+        };
+        double[] matrixb = {23.8, 24.2, 22.0, 26.2, 33.5, 35, 5};
 
-**Test 2:** Check that it is not possible to create an instance of the Task class with a reference containing less than
-five chars - AC2.
+        MultiLinearRegression s = new MultiLinearRegression(matrix1, matrixb);
 
-	@Test(expected = IllegalArgumentException.class)
-		public void ensureReferenceMeetsAC2() {
-		Category cat = new Category(10, "Category 10");
-		
-		Task instance = new Task("Ab1", "Task Description", "Informal Data", "Technical Data", 3, 3780, cat);
-	}
+    }
 
-*It is also recommended to organize this content by subsections.*
+**Test 2:** Check if the task is successful created
+
+    @Test
+    public void taskCreated(){
+        Assert.assertTrue(company.isCreatedTask());
+    }
+
+**Test 3:** Check if it is possible to obtain the list of validated CovidTests
+
+    @Test
+    public void getValidatedTestsListAll() {
+        ParameterCategoryStore cat = new ParameterCategoryStore();
+        ParameterCategory pc1 = new ParameterCategory("AH000", "Hemogram");
+        cat.add(pc1);
+        List<ParameterCategory> cat1 = new ArrayList<>();
+        cat1.add(pc1);
+        List<Parameter> pa = new ArrayList<>();
+        Parameter p1 = new Parameter("AH000", "Nome", "description", pc1);
+        pa.add(p1);
+        TestType testType = new TestType("BL000", "description", "sei lá", cat);
+        TestStore store = new TestStore();
+        app.domain.model.Test t = store.createTest("123456789187", "1234567890123456", testType, cat1, pa);
+
+        ZoneId defaultZoneId = ZoneId.systemDefault();
+        LocalDate date1Client = LocalDate.now();
+        Date date1 = Date.from(date1Client.atStartOfDay(defaultZoneId).toInstant());
+
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date1, "email@gamil.com", "Zé");
+
+        List<Client> clientList = new ArrayList<>();
+        clientList.add(client);
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE, -10);
+        Date toDate = calendar.getTime();
+
+        Client client2 = new Client("12345678911", "1234567890123457", "1234567892", "1234567891", toDate, "email@gamil.com", "Zé");
+        clientList.add(client2);
+
+        app.domain.model.Test teste = new app.domain.model.Test("1234s", "123456789012", "1234567890123456", testType, cat1, pa);
+        store.saveTest();
+
+        LocalDate beginDate = toDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
+        ParameterCategoryStore parameterCategoryStore = App.getInstance().getCompany().getParameterCategoryList();
+        ParameterCategory pc10 = parameterCategoryStore.createParameterCategory("12345", "Hemogram");
+        parameterCategoryStore.saveParameterCategory();
+        ParameterCategory pc2 = parameterCategoryStore.createParameterCategory("12346", "Cholesterol");
+        parameterCategoryStore.saveParameterCategory();
+        ParameterCategory pc3 = parameterCategoryStore.createParameterCategory("12347", "Covid");
+        parameterCategoryStore.saveParameterCategory();
+
+        TestType covidTest = new TestType("COV19", "Covid", "Swab", parameterCategoryStore);
+
+        List<ParameterCategory> testCategories = new ArrayList<>();
+        testCategories.add(pc1);
+
+        ParameterStore parameterStore = new ParameterStore();
+
+        Parameter p4 = new Parameter(Constants.IG_GAN, "COVID", "000", pc3);
+        parameterStore.add(p4);
+
+        List<Parameter> testParameters1 = new ArrayList<>();
+        testParameters1.add(p4);
+
+        app.domain.model.Test t10 = new app.domain.model.Test("1234557890123456", "100000000100", "1234567890", covidTest, testCategories, testParameters1);
+        t10.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 10, 11, 30));
+        t10.addTestParameter();
+        t10.changeState(Constants.SAMPLE_COLLECTED);
+        t10.addTestResult(Constants.IG_GAN, 1.5);
+        t10.changeState("VALIDATED");
+        store.addTest(t10);
+
+        Assert.assertNotNull(store.getValidatedTestsListAll());
+    }
+
 
 # 5. Construction (Implementation)
 
