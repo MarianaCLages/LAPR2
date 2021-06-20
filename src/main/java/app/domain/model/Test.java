@@ -4,7 +4,6 @@ import app.domain.shared.Constants;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -254,7 +253,6 @@ public class Test implements Serializable {
             pa.addResult(result, em.getRefValue(pa.getpCode()));
             return true;
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             return false;
         }
     }

@@ -68,13 +68,12 @@ public class App  {
             in = new FileInputStream(Constants.PARAMS_FILENAME);
             props.load(in);
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-
+            // Exception
         } finally {
             try {
                 in.close();
             } catch (IOException err) {
-
+                //Exception
             }
         }
 
@@ -116,26 +115,26 @@ public class App  {
         parameterCategoryStore.saveParameterCategory();
 
         TestTypeStore ttStore = company.getTestTypeList();
-        TestType bloodTest = new TestType("BL000", "Blood", "Needle", parameterCategoryStore);
+        TestType bloodTest = new TestType(Constants.BL000, "Blood", "Needle", parameterCategoryStore);
         TestType covidTest = new TestType("COV19", "Covid", "Swab", parameterCategoryStore);
 
         ttStore.add(bloodTest);
         ttStore.add(covidTest);
 
         ParameterStore parameterStore = company.getParameterList();
-        Parameter p1 = new Parameter("MCH00", "MCH", "Mean Haemoglobin", pc1);
+        Parameter p1 = new Parameter(Constants.MCH00, "MCH", "Mean Haemoglobin", pc1);
         parameterStore.add(p1);
-        Parameter p2 = new Parameter("ESR00", "ESR", "Erythrocyte Rate", pc2);
+        Parameter p2 = new Parameter(Constants.ESR00, "ESR", "Erythrocyte Rate", pc2);
         parameterStore.add(p2);
-        Parameter p3 = new Parameter("HB000", "HB", "Haemoglobin", pc1);
+        Parameter p3 = new Parameter(Constants.HB000, "HB", "Haemoglobin", pc1);
         parameterStore.add(p3);
         Parameter p4 = new Parameter(Constants.IG_GAN, "COVID", "000", pc3);
         parameterStore.add(p4);
-        Parameter p5 = new Parameter("WBC00", "WBC", "White blood cells", pc1);
+        Parameter p5 = new Parameter(Constants.WBC00, "WBC", "White blood cells", pc1);
         parameterStore.add(p5);
-        Parameter p6 = new Parameter("PLT00", "PLT", "Platelets", pc1);
+        Parameter p6 = new Parameter(Constants.PLT00, "PLT", "Platelets", pc1);
         parameterStore.add(p6);
-        Parameter p7 = new Parameter("RBC00", "RBC", "Red blood cells", pc1);
+        Parameter p7 = new Parameter(Constants.RBC00, "RBC", "Red blood cells", pc1);
         parameterStore.add(p7);
 
 
@@ -191,22 +190,22 @@ public class App  {
         testParameters1.add(p4);
 
 
-        store.createClient("12345678901", "1234567890123456", "1234567890", "1234567890", date1, 'M', "ze@ze.com", "Zé");
+        store.createClient("12345678901", "1234567890123456", "9234567890", "6934567890", date1, 'M', "ze@ze.com", "Zé");
         store.saveClient();
         store.createClient("12345678902", "1234565891123456", "1234567893", "2234567890", date2, 'F', "maria@maria.com", "Maria");
         store.saveClient();
-        store.createClient("12345678903", "1234567891123456", "1234567891", "1234567891", date3, 'M', "alberto@alberto.com", "Alberto");
+        store.createClient("12345678903", "1234567891123456", "1234563891", "1233567891", date3, 'M', "alberto@alberto.com", "Alberto");
         store.saveClient();
-        store.createClient("12345698904", "1234567891123456", "1234566891", "1234567896", date4, 'F', "joana@alberto.com", "Joana");
+        store.createClient("12345698904", "1234567891123456", "1234566891", Constants.NUMBER, date4, 'F', "joana@alberto.com", "Joana");
         store.saveClient();
-        store.createClient("12345698905", "1234567891183456", "1234766891", "1234567881", date5, 'M', "manuel@alberto.com", "Manuel");
+        store.createClient("12345698905", "1234567891183456", "1234766891", "1234537881", date5, 'M', "manuel@alberto.com", "Manuel");
         store.saveClient();
 
 
         TestStore testStore = company.getTestList();
         //covid
 
-        Test t = new Test("1234557890123456", "100000000100", "1234567890", covidTest, testCategories, testParameters1);
+        Test t = new Test("1234557890123456", "100000000100", "9294567890", covidTest, testCategories, testParameters1);
         t.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 10, 11, 30));
         t.addTestParameter();
         t.changeState(Constants.SAMPLE_COLLECTED);
@@ -230,7 +229,7 @@ public class App  {
         t2.changeState(Constants.VALIDATED);
         testStore.addTest(t2);
 
-        Test t3 = new Test("1234567890123459", "100000000003", "1234567896", covidTest, testCategories, testParameters1);
+        Test t3 = new Test("1234567890123459", "100000000003", Constants.NUMBER, covidTest, testCategories, testParameters1);
         t3.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 11, 15, 0));
         t3.addTestParameter();
         t3.changeState(Constants.SAMPLE_COLLECTED);
@@ -246,7 +245,7 @@ public class App  {
         t4.changeState(Constants.VALIDATED);
         testStore.addTest(t4);
 
-        Test t5 = new Test("1234567890123461", "100000000006", "1234567881", covidTest, testCategories, testParameters1);
+        Test t5 = new Test("1234567890123461", "100000000006", Constants.NUMBER_2, covidTest, testCategories, testParameters1);
         t5.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 10, 14, 0));
         t5.addTestParameter();
         t5.changeState(Constants.SAMPLE_COLLECTED);
@@ -254,7 +253,7 @@ public class App  {
         t5.changeState(Constants.VALIDATED);
         testStore.addTest(t5);
 
-        Test t6 = new Test("1234567890123462", "100000000007", "1234567896", covidTest, testCategories, testParameters1);
+        Test t6 = new Test("1234567890123462", "100000000007", Constants.NUMBER, covidTest, testCategories, testParameters1);
         t6.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 12, 14, 0));
         t6.addTestParameter();
         t6.changeState(Constants.SAMPLE_COLLECTED);
@@ -262,7 +261,7 @@ public class App  {
         t6.changeState(Constants.VALIDATED);
         testStore.addTest(t6);
 
-        Test t7 = new Test("1234567890123465", "100000000008", "1234567896", covidTest, testCategories, testParameters1);
+        Test t7 = new Test("1234567890123465", "100000000008", Constants.NUMBER, covidTest, testCategories, testParameters1);
         t7.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 12, 18, 0));
         t7.addTestParameter();
         t7.changeState(Constants.SAMPLE_COLLECTED);
@@ -270,14 +269,14 @@ public class App  {
         t7.changeState(Constants.VALIDATED);
         testStore.addTest(t7);
 
-        Test t8 = new Test("1234567890123466", "100000000009", "1234567896", covidTest, testCategories, testParameters1);
+        Test t8 = new Test("1234567890123466", "100000000009", Constants.NUMBER, covidTest, testCategories, testParameters1);
         t8.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 12, 18, 20));
         t8.addTestParameter();
         t8.changeState(Constants.SAMPLE_COLLECTED);
         t8.addTestResult(Constants.IG_GAN, 1.9);
         t8.changeState(Constants.VALIDATED);
 
-        Test t9 = new Test("1234567890123467", "100000000010", "1234567896", covidTest, testCategories, testParameters1);
+        Test t9 = new Test("1234567890123467", "100000000010", Constants.NUMBER, covidTest, testCategories, testParameters1);
         t9.setCreatedDate(LocalDateTime.of(2021, Month.JUNE, 12, 16, 50));
         t9.addTestParameter();
         t9.changeState(Constants.SAMPLE_COLLECTED);
@@ -285,7 +284,7 @@ public class App  {
         t9.changeState(Constants.VALIDATED);
         testStore.addTest(t9);
 
-        Test t10 = new Test("1234567890123416", "100000000011", "1234567896", covidTest, testCategories, testParameters1);
+        Test t10 = new Test("1234567890123416", "100000000011", Constants.NUMBER, covidTest, testCategories, testParameters1);
         t10.setCreatedDate(LocalDateTime.of(2021, Month.MAY, 12, 16, 50));
         t10.addTestParameter();
         t10.changeState(Constants.SAMPLE_COLLECTED);
@@ -295,21 +294,21 @@ public class App  {
 
         //blood
 
-        Test tn = new Test("1234567890123463", "200000000010", "1234567896", bloodTest, testCategories, testParameters);
+        Test tn = new Test("1234567890123463", "200000000010", Constants.NUMBER, bloodTest, testCategories, testParameters);
         tn.addTestParameter();
         tn.changeState(Constants.SAMPLE_COLLECTED);
-        tn.addTestResult("MCH00", 15);
-        tn.addTestResult("ESR00", 150);
-        tn.addTestResult("HB000", 50);
+        tn.addTestResult(Constants.MCH00, 15);
+        tn.addTestResult(Constants.ESR00, 150);
+        tn.addTestResult(Constants.HB000, 50);
         tn.changeState(Constants.VALIDATED);
         testStore.addTest(tn);
 
         Test tn1 = new Test("1234567890123464", "200000000009", "1234567881", bloodTest, testCategories, testParameters);
         tn1.addTestParameter();
         tn1.changeState(Constants.SAMPLE_COLLECTED);
-        tn1.addTestResult("MCH00", 85);
-        tn1.addTestResult("ESR00", 170);
-        tn1.addTestResult("HB000", 600);
+        tn1.addTestResult(Constants.MCH00, 85);
+        tn1.addTestResult(Constants.ESR00, 170);
+        tn1.addTestResult(Constants.HB000, 600);
         tn1.changeState(Constants.VALIDATED);
         testStore.addTest(tn1);
         t4.setSampleCreatedDate(LocalDateTime.of(2021, Month.JUNE, 18, 22, 30));

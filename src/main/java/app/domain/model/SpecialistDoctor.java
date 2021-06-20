@@ -13,14 +13,10 @@ import java.io.Serializable;
  */
 public class SpecialistDoctor extends Employee implements Serializable {
 
-    final String doctorIndexNumber;
-     Role role;
+    private final String doctorIndexNumber;
     private String name;
-    String address;
-    String phonenumber;
-    String SOC;
     private String email;
-     String employeeID;
+
 
     /**
      * Constructor of the Employee which is an subclass of Employee , it calls methods in order to validate the parameters
@@ -30,16 +26,16 @@ public class SpecialistDoctor extends Employee implements Serializable {
      * @param address           address of the Specialist Doctor
      * @param phonenumber       Phone number of the Specialist Doctor
      * @param email             email of the Employee
-     * @param SOC               standard occupation code of the Specialist Doctor
-     * @param DoctorIndexNumber Doctor Index Number of the Specialist Doctor
+     * @param sOC               standard occupation code of the Specialist Doctor
+     * @param doctorIndexNumber Doctor Index Number of the Specialist Doctor
      * @param role              role of the Specialist Doctor
      */
-    public SpecialistDoctor(String employeeID, String name, String address, String phonenumber, String email, String SOC, String DoctorIndexNumber, Role role) {
-        super(employeeID, name, address, phonenumber, email, SOC, role);
+    public SpecialistDoctor(String employeeID, String name, String address, String phonenumber, String email, String sOC, String doctorIndexNumber, Role role) {
+        super(employeeID, name, address, phonenumber, email, sOC, role);
 
-        checkDoctorIndexNumberRules(DoctorIndexNumber);
+        checkDoctorIndexNumberRules(doctorIndexNumber);
 
-        this.doctorIndexNumber = DoctorIndexNumber;
+        this.doctorIndexNumber = doctorIndexNumber;
 
 
     }
@@ -49,7 +45,7 @@ public class SpecialistDoctor extends Employee implements Serializable {
      * @param i The String that is going to be checked
      * @return boolean value that is positive if the parameter is only numerical
      */
-    private boolean checkIfIsNumerical(String i) {
+    private boolean checkIfIsNumerical2(String i) {
         return !(i.matches("[0-9]+"));
 
     }
@@ -57,13 +53,13 @@ public class SpecialistDoctor extends Employee implements Serializable {
     /**
      * Checks if the string that is received meets the requirements of the Doctor Index Number, if not throws Exceptions
      *
-     * @param DoctorIndexNumber Doctor Index Number of the client
+     * @param doctorIndexNumber Doctor Index Number of the client
      */
-    private void checkDoctorIndexNumberRules(String DoctorIndexNumber) {
-        if (StringUtils.isBlank(DoctorIndexNumber))
+    private void checkDoctorIndexNumberRules(String doctorIndexNumber) {
+        if (StringUtils.isBlank(doctorIndexNumber))
             throw new IllegalArgumentException("Doctor Index Number cannot be blank.");
 
-        if(checkIfIsNumerical(DoctorIndexNumber)){
+        if(checkIfIsNumerical2(doctorIndexNumber)){
                 throw new IllegalArgumentException("Doctor Index Number only accepts numbers");
 
         }

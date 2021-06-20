@@ -108,4 +108,15 @@ public class Constants {
     public static final String MONTH = "Month";
     public static final String YEAR = "Year";
 
+    public static final String MCH00 ="MCH00";
+    public static final String ESR00 = "ESR00";
+    public static final String WBC00 = "WBC00";
+    public static final String PLT00 = "PLT00";
+    public static final String RBC00 = "RBC00";
+    public static final String HB000 = "HB000";
+
+    public static final String BL000 ="BL000";
+    public static final String NUMBER ="1234567896";
+    public static final String NUMBER_2="1234567881";
+
 }
