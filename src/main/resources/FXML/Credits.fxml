@@ -21,7 +21,7 @@
          <center>
             <Label fx:id="credits" alignment="CENTER" prefHeight="258.0" prefWidth="353.0" text="Eduardo Sousa - 1200920&#10;Eduardo Novo - 1200737&#10;Joana Lima - 1201600&#10;Miguel Jordão - 1201487&#10;Mariana Lages - 1200902&#10;Marcin Basinski - 1200300 &#10;" BorderPane.alignment="CENTER">
                <font>
-                  <Font size="24.0" />
+                  <Font name="Baskerville Old Face" size="26.0" />
                </font></Label>
          </center>
          <bottom>
