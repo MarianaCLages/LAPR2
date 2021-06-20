@@ -42,11 +42,13 @@ public class StringBuilderReport {
     private static final String SPACE_3 = "\t\t\t\t\t\t\t\t";
     private static final String SPACE_4 = "\t\t\t";
     private static final String REGRESSION_MODEL = "The regression model is significant.";
+    private static final String END_REPORT = "------------------------------------------------------------End of Report------------------------------------------------------------";
 
     /**
      * Constructor.
      * @param regression the regression
      */
+
     public StringBuilderReport(Regression regression) {
         if (regression instanceof LinearRegression) {
             this.regressionSimple = (LinearRegression) regression;
@@ -396,7 +398,7 @@ public class StringBuilderReport {
             sb.append(dayTests)
                     .append(" positive covid tests");
         }
-        sb.append("\n\n").append("------------------------------------------------------------End of Report------------------------------------------------------------").append("\n\n");
+        sb.append("\n\n").append(END_REPORT).append("\n\n");
         return sb;
 
     }
@@ -438,7 +440,7 @@ public class StringBuilderReport {
 
             }
         }
-        sb.append("\n\n").append("------------------------------------------------------------End of Report------------------------------------------------------------").append("\n\n");
+        sb.append("\n\n").append(END_REPORT).append("\n\n");
         return sb;
     }
 
@@ -486,7 +488,7 @@ public class StringBuilderReport {
 
             }
         }
-        sb.append("\n\n").append("------------------------------------------------------------End of Report------------------------------------------------------------").append("\n\n");
+        sb.append("\n\n").append(END_REPORT).append("\n\n");
         return sb;
     }
 

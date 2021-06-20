@@ -408,9 +408,9 @@ public class TestStore implements Serializable {
      */
     public List<Test> getWaitingResult() {
         List<Test> testList = new ArrayList<>();
-        for (Test t : array) {
-            if (t.getState().equals(Constants.SAMPLE_COLLECTED) || t.getState().equals(Constants.CREATED)) {
-                testList.add(t);
+        for (Test t1 : array) {
+            if (t1.getState().equals(Constants.SAMPLE_COLLECTED) || t1.getState().equals(Constants.CREATED)) {
+                testList.add(t1);
             }
 
         }
@@ -424,9 +424,9 @@ public class TestStore implements Serializable {
      */
     public List<Test> getWaitingDiagnosis() {
         List<Test> testList = new ArrayList<>();
-        for (Test t : array) {
-            if (t.getState().equals(Constants.SAMPLE_COLLECTED) || t.getState().equals("CREATED") || t.getState().equals("SAMPLE_ANALYSED")) {
-                testList.add(t);
+        for (Test t1 : array) {
+            if (t1.getState().equals(Constants.SAMPLE_COLLECTED) || t1.getState().equals("CREATED") || t1.getState().equals("SAMPLE_ANALYSED")) {
+                testList.add(t1);
             }
 
         }
@@ -442,11 +442,11 @@ public class TestStore implements Serializable {
 
         List<Test> covidTestList = new ArrayList<>();
 
-        for (Test t : getValidatedTestsListCovid()) {
-            for (TestParameter t1 : t.getTestParam()) {
+        for (Test t2 : getValidatedTestsListCovid()) {
+            for (TestParameter t1 : t2.getTestParam()) {
                 if (t1 != null) {
                     if (t1.getpCode().equals(Constants.IG_GAN) && t1.getTestParameterResult().getResult() > Constants.VALID_COVID_PARAMETER_VALUE) {
-                        covidTestList.add(t);
+                        covidTestList.add(t2);
                     }
                 }
             }
@@ -492,8 +492,8 @@ public class TestStore implements Serializable {
         List<Client> clientList1 = new ArrayList<>();
 
         for (Client c : clientList) {
-            for (Test t : validTestList) {
-                if (c.getTinNumber().equals(t.getClientTin())) {
+            for (Test t1 : validTestList) {
+                if (c.getTinNumber().equals(t1.getClientTin())) {
                     if (!clientList1.contains(c)) {
                         clientList1.add(c);
                     }
@@ -516,10 +516,10 @@ public class TestStore implements Serializable {
         List<Test> testList = new ArrayList<>();
 
         for (Client c : clientList) {
-            for (Test t : validTestList) {
-                if (c.getTinNumber().equals(t.getClientTin())) {
-                    if (!testList.contains(t))
-                        testList.add(t);
+            for (Test t1 : validTestList) {
+                if (c.getTinNumber().equals(t1.getClientTin())) {
+                    if (!testList.contains(t1))
+                        testList.add(t1);
                 }
             }
         }
@@ -675,11 +675,11 @@ public class TestStore implements Serializable {
 
         List<Test> tests = new ArrayList<>();
 
-        for (Test t : array) {
-            LocalDate testDate = t.getDate().toLocalDate();
+        for (Test t1 : array) {
+            LocalDate testDate = t1.getDate().toLocalDate();
 
             if (Period.between(startDateInterval, testDate).getDays() >= 0 && Period.between(testDate, endDateInterval).getDays() >= 0) {
-                tests.add(t);
+                tests.add(t1);
             }
         }
         return tests.toArray();
@@ -696,11 +696,11 @@ public class TestStore implements Serializable {
 
         List<Test> validTests = new ArrayList<>();
 
-        for (Test t : getValidatedTestsListCovid()) {
-            LocalDate testDate = t.getValidatedDate().toLocalDate();
+        for (Test t1 : getValidatedTestsListCovid()) {
+            LocalDate testDate = t1.getValidatedDate().toLocalDate();
 
             if (Period.between(startDateInterval, testDate).getDays() >= 0 && Period.between(testDate, endDateInterval).getDays() >= 0) {
-                validTests.add(t);
+                validTests.add(t1);
             }
         }
         return validTests;
@@ -721,8 +721,8 @@ public class TestStore implements Serializable {
 
             LocalDate currentDay = getCurrentDayInsideInterval(i, startDateInterval);
 
-            for (Test t : getListTestsInsideTheHistoricalDays()) {
-                LocalDate testDate = t.getValidatedDate().toLocalDate();
+            for (Test t1 : getListTestsInsideTheHistoricalDays()) {
+                LocalDate testDate = t1.getValidatedDate().toLocalDate();
                 if (testDate.equals(currentDay)) {
                     positiveCovidTestsPerDay[i] += 1;
                 }
@@ -747,8 +747,8 @@ public class TestStore implements Serializable {
 
             LocalDate currentDay = getCurrentDayInsideInterval(i, startDateInterval);
 
-            for (Test t : getPositiveCovidTest()) {
-                LocalDate testDate = t.getValidatedDate().toLocalDate();
+            for (Test t1 : getPositiveCovidTest()) {
+                LocalDate testDate = t1.getValidatedDate().toLocalDate();
                 if (testDate.equals(currentDay)) {
                     positiveCovidTestsPerDay[i] += 1;
                 }
@@ -771,8 +771,8 @@ public class TestStore implements Serializable {
 
             LocalDate currentDay = getCurrentDay(i, historicalDaysInt);
 
-            for (Test t : getPositiveCovidTest()) {
-                LocalDate testDate = t.getValidatedDate().toLocalDate();
+            for (Test t1 : getPositiveCovidTest()) {
+                LocalDate testDate = t1.getValidatedDate().toLocalDate();
                 if (testDate.equals(currentDay)) {
                     positiveCovidTestsPerDay[i] += 1;
                 }
@@ -811,8 +811,9 @@ public class TestStore implements Serializable {
     public int getAllTestsInAInterval(int inter) {
 
         int sum = 0;
+        int count = inter;
 
-        for (int i = 0; i < inter; i++) {
+        for (int i = 0; i < count; i++) {
 
             inter -= 1;
 
@@ -821,12 +822,10 @@ public class TestStore implements Serializable {
             LocalDate currentDay = toDate2.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
             if ((calendar.get(Calendar.DAY_OF_WEEK) != 1)) {
-                for (Test t : getTestListArray()) {
-            //        if (t.getAnalysedDate().toLocalDate() != null || t.getAnalysedDate() != null || t.getDiagnosticDate().toLocalDate() != null || t.getSampleCreatedDate().toLocalDate() != null || t.getAnalysedDate().toLocalDate() != null) {
-                        if (t.getDate().toLocalDate().equals(currentDay)) {
-                            sum += 1;
-                        }
-                   // }
+                for (Test t1 : getTestListArray()) {
+                    if (t1.getDate().toLocalDate().equals(currentDay)) {
+                        sum += 1;
+                    }
                 }
             }
         }
