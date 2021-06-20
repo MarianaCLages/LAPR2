@@ -17,23 +17,23 @@ activate C
 C -> UI: wants to view the results of a test
 
 activate UI
-UI -> CTRL :sortedList()
+UI --> CTRL :sortedList()
 activate CTRL
 
 activate company
 
 
 
-CTRL -> company: getUserID()
+CTRL --> company: getUserID()
 deactivate c
-company -> US: getUserId()
+company --> US: getUserId()
 activate US
-US -> U: getId()
+US --> U: getId()
 activate U
 deactivate U
 deactivate US
 deactivate company
-CTRL -> cc: getClientByEmail()
+CTRL --> cc: getClientByEmail()
 
 activate cc
 cc -> c: getTinNumber()
@@ -41,7 +41,7 @@ deactivate cc
 
 activate c
 
-CTRL -> tt: sortedDateList(clientTin)
+CTRL --> tt: sortedDateList(clientTin)
 deactivate c
 
 activate tt
@@ -49,7 +49,7 @@ activate tt
 
 
 deactivate CTRL
-UI -> C: show the test list associated with the client
+UI --> C: show the test list associated with the client
 deactivate tt
 
 
@@ -57,14 +57,14 @@ deactivate UI
 
 C -> UI: select a test from the list
 activate UI
-UI -> CTRL: getResults(test)
+UI --> CTRL: getResults(test)
 activate CTRL
-CTRL -> t: getResults()
+CTRL --> t: getResults()
 deactivate CTRL
 activate t
 deactivate t
 
-UI -> C: show the results
+UI --> C: show the results
 deactivate UI
 
 
