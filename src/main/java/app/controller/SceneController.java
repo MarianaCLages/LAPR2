@@ -16,9 +16,9 @@ import java.io.IOException;
 public class SceneController {
 
     private static SceneController singleton = null;
-    private AuthController authController = new AuthController();
-    private App app = App.getInstance();
-    private Company company = app.getCompany();
+    private final AuthController authController = new AuthController();
+    private final App app = App.getInstance();
+    private final Company company = app.getCompany();
 
     private final CheckPerformanceController ctrl = new CheckPerformanceController();
     private Runnable ui;

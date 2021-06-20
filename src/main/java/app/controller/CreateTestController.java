@@ -16,8 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CreateTestController {
-    private Company company;
-    private TestStore store;
+    private final Company company;
+    private final TestStore store;
     private TestTypeStore ttList;
     private TestType testType;
     private ParameterCategoryStore categoriesList;
