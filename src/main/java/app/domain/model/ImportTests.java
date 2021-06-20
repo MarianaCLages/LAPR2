@@ -2,6 +2,8 @@ package app.domain.model;
 
 import app.controller.App;
 import app.domain.shared.Constants;
+import app.domain.shared.Email;
+import app.domain.shared.PasswordGenerator;
 import app.domain.stores.*;
 
 import java.io.BufferedReader;
