@@ -15,9 +15,9 @@ import java.util.Date;
 
 public class StringBuilderReport {
 
-    private Company company;
-    private TestStore testStore;
-    private LocalDate todayDateForCovidReport = LocalDate.now();
+    private final Company company;
+    private final TestStore testStore;
+    private final LocalDate todayDateForCovidReport = LocalDate.now();
     private StringBuilder sb;
     private LinearRegression regressionSimple;
     private MultiLinearRegression regressionMulti;
