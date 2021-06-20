@@ -4,8 +4,8 @@ class ImportTestUI{
 }
 
 class ImportTestController{
-readTestsfromFile()
-saveFileTestList()
++readTestsfromFile()
++saveFileTestList()
 
 
 }
@@ -70,17 +70,19 @@ class ClinicalAnalysisLab{
 +getId()
 }
 class AuthFacade{
-UserSession userSession
-UserStore users
+-UserSession userSession
+-UserStore users
++addUserWithRole()
 }
 class UserStore{
-users
+-Set<User> users
++create()
 }
 class User{
-id
-password
-name
-role
+-Email id
+-Password password
+-String name
+-Set<UserRole> role
 }
 
 class ClientStore{
@@ -115,10 +117,10 @@ class TestTypeStore{
 +getTestTypeExist()
 }
 class TestType{
-String testID
-String description
-String collectingMethod
-ParameterCategoryStore catStore
+-String testID
+-String description
+-String collectingMethod
+-List<ParameterCategory> array
 }
 
 class ParameterCategoryStore{
@@ -136,21 +138,21 @@ ImportTestUI ..> ImportTestController
 ImportTestController ..> ImportTests
 ImportTestController ..> Company
 ImportTests ..> Company
-Company --> ClinicalAnalysisLabStore
-Company --> ClientStore
-Company -->TestStore
-Company --> ParameterStore
-Company --> ParameterCategoryStore
-Company --> TestTypeStore
-TestTypeStore --> TestType
-Test --> TestType
-ParameterStore --> Parameter
-ParameterCategoryStore --> ParameterCategory
-ClientStore --> Client
-TestStore --> Test
-Test --> Parameter
-Test --> ParameterCategory
-ClinicalAnalysisLabStore --> ClinicalAnalysisLab
+Company "1"-->"*" ClinicalAnalysisLabStore
+Company "1"-->"*" ClientStore
+Company "1"-->"*"TestStore
+Company "1"-->"*" ParameterStore
+Company "1"-->"*" ParameterCategoryStore
+Company "1"-->"*" TestTypeStore
+TestTypeStore "1"-->"*" TestType
+Test "1"-->"*" TestType
+ParameterStore "1"-->"*" Parameter
+ParameterCategoryStore "1"-->"*" ParameterCategory
+ClientStore "1"-->"*" Client
+TestStore "1"-->"*" Test
+Test "1"-->"*" Parameter
+Test "1"-->"*" ParameterCategory
+ClinicalAnalysisLabStore "1"-->"*" ClinicalAnalysisLab
 ImportTests ..> TestTypeStore
 ImportTests ..> ParameterCategoryStore
 ImportTests ..> ParameterStore
@@ -160,6 +162,7 @@ ImportTests ..> ClientStore
 Company ..> AuthFacade
 AuthFacade ..> UserStore
 UserStore ..> User
+Parameter "1"-->"*" ParameterCategory
 
 
 @enduml
