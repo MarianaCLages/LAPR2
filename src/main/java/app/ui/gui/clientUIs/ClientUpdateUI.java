@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.fxml.FXML;
 
 import java.io.IOException;
+import java.text.ParseException;
 
 
 public class ClientUpdateUI {
@@ -49,7 +50,7 @@ public class ClientUpdateUI {
                 Alert updated = new Alert(Alert.AlertType.INFORMATION, "Your personal information was updated\n" +
                         "For security reasons restart the login session");
                 updated.showAndWait();
-            } catch (IllegalArgumentException e) {
+            } catch (IllegalArgumentException | ParseException e) {
                 Alert invalid = new Alert(Alert.AlertType.WARNING, "The information is invalid");
                 invalid.showAndWait();
             }

@@ -13,14 +13,14 @@ import java.io.Serializable;
  */
 public class SpecialistDoctor extends Employee implements Serializable {
 
-    private String DoctorIndexNumber;
-    private Role role;
+    final String doctorIndexNumber;
+     Role role;
     private String name;
-    private String address;
-    private String phonenumber;
+    String address;
+    String phonenumber;
+    String SOC;
     private String email;
-    private String SOC;
-    private String employeeID;
+     String employeeID;
 
     /**
      * Constructor of the Employee which is an subclass of Employee , it calls methods in order to validate the parameters
@@ -39,8 +39,18 @@ public class SpecialistDoctor extends Employee implements Serializable {
 
         checkDoctorIndexNumberRules(DoctorIndexNumber);
 
-        this.DoctorIndexNumber = DoctorIndexNumber;
+        this.doctorIndexNumber = DoctorIndexNumber;
 
+
+    }
+    /**
+     * Checks if the string that is received is only numerical using the class NumberUtils
+     *
+     * @param i The String that is going to be checked
+     * @return boolean value that is positive if the parameter is only numerical
+     */
+    private boolean checkIfIsNumerical(String i) {
+        return !(i.matches("[0-9]+"));
 
     }
 
@@ -53,13 +63,9 @@ public class SpecialistDoctor extends Employee implements Serializable {
         if (StringUtils.isBlank(DoctorIndexNumber))
             throw new IllegalArgumentException("Doctor Index Number cannot be blank.");
 
-        DoctorIndexNumber = DoctorIndexNumber.toLowerCase();
-        char[] charArray = DoctorIndexNumber.toCharArray();
-        for (int i = 0; i < charArray.length; i++) {
-            char c = charArray[i];
-            if (!(c >= '0' && c <= '9')) {
+        if(checkIfIsNumerical(DoctorIndexNumber)){
                 throw new IllegalArgumentException("Doctor Index Number only accepts numbers");
-            }
+
         }
     }
 
@@ -87,6 +93,6 @@ public class SpecialistDoctor extends Employee implements Serializable {
      */
     @Override
     public String toString() {
-        return super.toString() + ", DoctorIndexNumber=" + DoctorIndexNumber;
+        return super.toString() + ", DoctorIndexNumber=" + doctorIndexNumber;
     }
 }

@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class ViewResultsController {
 
-    private Company company;
+    private final Company company;
     private TestStore store;
     private ClientStore cstore;
 

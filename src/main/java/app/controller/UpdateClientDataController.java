@@ -3,14 +3,13 @@ package app.controller;
 import app.domain.model.Client;
 import app.domain.model.Company;
 import app.domain.stores.ClientStore;
-
-import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class UpdateClientDataController {
 
-    private Company company = App.getInstance().getCompany();
+    private final Company company = App.getInstance().getCompany();
     private final Client client;
     private final ClientStore clientStore = company.getClientList();
 
@@ -24,7 +23,7 @@ public class UpdateClientDataController {
         return client.toString();
     }
 
-    public void changeData(int i, String data) {
+    public void changeData(int i, String data) throws ParseException {
         switch (i) {
             case 1:
                 this.client.setCc(data);
@@ -36,9 +35,8 @@ public class UpdateClientDataController {
                 break;
 
             case 3:
-                //DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-
-                //this.client.setBirthDate(date);
+                Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(data);
+                this.client.setBirthDate(date1);
                 break;
 
             case 4:

@@ -13,6 +13,8 @@
       </Label>
       <Button fx:id="myReturnButtonClient" layoutX="14.0" layoutY="332.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="54.0" prefWidth="101.0" text="Return" />
       <Button layoutX="249.0" layoutY="182.0" mnemonicParsing="false" onAction="#ViewResultsMenu" prefHeight="36.0" prefWidth="102.0" text="View results">
+      <Button fx:id="clientUpdateButton" layoutX="100.0" layoutY="332.0" mnemonicParsing="false" onAction="#showClientUpdateUI" prefHeight="54.0" prefWidth="101.0" text="Return" />
+      <Button layoutX="249.0" layoutY="182.0" mnemonicParsing="false" onAction="#ViewResultsMenu" prefHeight="36.0" prefWidth="102.0" text="View results">
          <font>
             <Font size="14.0" />
          </font></Button>

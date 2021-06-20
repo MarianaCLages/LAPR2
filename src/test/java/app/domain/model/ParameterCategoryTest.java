@@ -28,7 +28,7 @@ public class ParameterCategoryTest {
     @Test
     public void CreateName10CharCategoryTest() {
         //Arrange + Act
-        ParameterCategory cat = new ParameterCategory("AFO4I", "Hemogramat");
+        ParameterCategory cat = new ParameterCategory("AFO4I", "Hemogramataaaaa");
     }
 
 
@@ -97,6 +97,4 @@ public class ParameterCategoryTest {
         Assert.assertEquals(expected, actual);
 
     }
-
-
 }
