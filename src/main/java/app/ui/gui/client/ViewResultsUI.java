@@ -55,7 +55,7 @@ public class ViewResultsUI implements Initializable{
         ListView1.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String test) {
-                label1.setText(vrc.getDiagnosis(test));
+                label1.setText(vrc.getResults(test));
             }
         });
     }

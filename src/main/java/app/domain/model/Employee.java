@@ -48,7 +48,16 @@ public class Employee implements Serializable {
         this.employeeID = employeeID;
 
     }
+    /**
+     * Checks if the string that is received is only numerical using the class NumberUtils
+     *
+     * @param i The String that is going to be checked
+     * @return boolean value that is positive if the parameter is only numerical
+     */
+    private boolean checkIfIsNumerical(String i) {
+        return !(i.matches("[0-9]+"));
 
+    }
 
     /**
      * Checks if the string that is received meets the requirements of the name, if not throws Exceptions. Replace all the capital letters to lower letters, cut off all the special characters and spaces and checks if all the remain characters are letters
@@ -95,12 +104,9 @@ public class Employee implements Serializable {
         if (phoneNumber.length() != Constants.PHONE_NUMBER_DIGITS)
             throw new IllegalArgumentException("Phonenumber must have 11 chars.");
 
-        char[] charArray = phoneNumber.toCharArray();
-        for (int i = 0; i < charArray.length; i++) {
-            char c = charArray[i];
-            if (!(c >= '0' && c <= '9')) {
+        if(checkIfIsNumerical(phoneNumber)){
                 throw new IllegalArgumentException("Phonenumber only accepts numbers");
-            }
+
         }
     }
 

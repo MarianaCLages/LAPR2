@@ -49,6 +49,7 @@ public class Constants {
     public static final String ADMINISTRATOR_UI = "/FXML/AdministratorUI.fxml";
     public static final String SPECIALIST_DOCTOR_UI = "/FXML/SpecialistDoctorUI.fxml";
     public static final String CLIENT_UI = "/FXML/ClientUI.fxml";
+    public static final String CLIENT_UPDATE_UI = "/FXML/ClientUpdateUI.fxml";
     public static final String RECEPTIONIST_UI = "/FXML/ReceptionistUI.fxml";
     public static final String LABORATORY_COORDINATOR_UI = "/FXML/LaboratoryCoordinatorUI.fxml";
     public static final String MEDICAL_LAB_TECHINICIAN_UI = "/FXML/MedicalLabTechnicianUI.fxml";
