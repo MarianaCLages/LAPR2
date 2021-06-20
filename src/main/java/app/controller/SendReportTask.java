@@ -1,6 +1,5 @@
 package app.controller;
 
-
 import app.domain.model.Client;
 import app.domain.model.StringBuilderReport;
 import app.domain.shared.LinearRegression;
@@ -147,7 +146,7 @@ public class SendReportTask extends TimerTask implements Serializable {
 
         try {
 
-            fh = new FileHandler("log.log", true);
+            fh = new FileHandler("Logs//log.log", true);
             logger.addHandler(fh);
             SimpleFormatter formatter;
             formatter = new SimpleFormatter();
