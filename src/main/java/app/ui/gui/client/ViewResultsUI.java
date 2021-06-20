@@ -28,10 +28,8 @@ public class ViewResultsUI implements Initializable{
 
     @FXML
     private ListView<String> ListView1;
-
     @FXML
     private Label label1;
-
     @FXML
     private Button button1;
 
@@ -40,22 +38,19 @@ public class ViewResultsUI implements Initializable{
         sceneController.switchMenu(event, Constants.CLIENT_UI);
     }
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         label1.setText(null);
-
-
-
     }
+
     public void confirm() {
         button1.setDisable(true);
         vrc.sortedDateList();
         ListView1.getItems().addAll(vrc.getTestSortedList());
         selectedList();
         vrc.getTestSortedList().removeAll(vrc.getTestSortedList());
-
     }
+
     private void selectedList() {
         ListView1.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
@@ -64,6 +59,5 @@ public class ViewResultsUI implements Initializable{
             }
         });
     }
-
 }
 

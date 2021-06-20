@@ -1,7 +1,7 @@
-package app.domain.model;
+package app.controller;
 
-
-import app.controller.App;
+import app.domain.model.Client;
+import app.domain.model.StringBuilderReport;
 import app.domain.shared.LinearRegression;
 import app.domain.shared.MultiLinearRegression;
 import app.domain.shared.exceptions.InvalidLengthException;
@@ -27,11 +27,11 @@ public class SendReportTask extends TimerTask implements Serializable {
     private double confidenceLevelAnova;
     private double confidenceLevelVariables;
     private double confidenceLevelEstimated;
-    private String independentVariable;
     private String regression;
     private String scope;
 
     StringBuilderReport report;
+    private boolean runed= false;
 
     public SendReportTask() {
         //Send report constructor
@@ -42,6 +42,7 @@ public class SendReportTask extends TimerTask implements Serializable {
      */
     @Override
     public void run() {
+        runed = true;
         LinearRegression linearRegressionChosen = null;
         TestStore testStore = App.getInstance().getCompany().getTestList();
         ClientStore clientStore = App.getInstance().getCompany().getClientList();
@@ -147,7 +148,7 @@ public class SendReportTask extends TimerTask implements Serializable {
 
         try {
 
-            fh = new FileHandler("log.log", true);
+            fh = new FileHandler("Logs//log.log", true);
             logger.addHandler(fh);
             SimpleFormatter formatter;
             formatter = new SimpleFormatter();
@@ -158,5 +159,9 @@ public class SendReportTask extends TimerTask implements Serializable {
         } catch (SecurityException | IOException e) {
             Alerts.errorAlert(e.getMessage());
         }
+    }
+
+    public boolean isRuned() {
+        return runed;
     }
 }

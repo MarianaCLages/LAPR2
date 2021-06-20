@@ -63,6 +63,5 @@ public class SimpleLinearRegressionUI implements Initializable {
         } catch (RuntimeException err1) {
             Alerts.errorAlert(err1.getMessage());
         }
-
     }
 }

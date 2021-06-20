@@ -3,6 +3,7 @@ package app.controller;
 import app.domain.model.Company;
 import app.domain.model.MaxSumAdapter;
 import app.domain.model.Test;
+import app.domain.shared.Constants;
 import app.domain.stores.ClientStore;
 import app.domain.stores.TestStore;
 
@@ -22,7 +23,9 @@ public class CheckPerformanceController {
     private final TestStore tStore;
     private final ClientStore cStore;
     private LocalDateTime[] times;
-    int[] differenceArray;
+    private int[] differenceArray;
+    private int[] subarray;
+    private String option;
 
 
     public CheckPerformanceController() {
@@ -113,7 +116,7 @@ public class CheckPerformanceController {
         }
 
 
-        int[] subarray = adapter.getMaxSum(differenceArray);
+        subarray = adapter.getMaxSum(differenceArray);
 
         return subarray;
     }
@@ -123,7 +126,7 @@ public class CheckPerformanceController {
         LocalDateTime[] dates = new LocalDateTime[2];
 
         dates[0] = times[begEnd[0]];
-        dates[1] = times[begEnd[1]];
+        dates[1] = times[begEnd[begEnd.length - 1]];
 
         return dates;
     }
@@ -155,7 +158,6 @@ public class CheckPerformanceController {
         int[] begEnd = new int[2];
         begEnd[0] = indexes[0];
         begEnd[1] = indexes[indexes.length - 1];
-
         return begEnd;
     }
 
@@ -165,10 +167,13 @@ public class CheckPerformanceController {
 
     //nome do método para teres os testes getAllTestsInAInterval
 
+    public void getAllTestsInInterval(int inter) {
+        this.tStore.getAllTestsInAInterval(inter);
+    }
 
     public void setInformation(String selection) {
-        System.out.println(selection);
-        String option = selection;
+        option = selection;
+        constructPerformanceReport();
     }
 
     public int numberWaitingResults() {
@@ -180,6 +185,62 @@ public class CheckPerformanceController {
 
         return tStore.getWaitingDiagnosis().size();
     }
+
+    public String constructPerformanceReport() {
+
+        StringBuilder sb = new StringBuilder();
+
+        Calendar calendar = Calendar.getInstance();
+        int maxDaysThisMonth = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+
+        sb.append("Number of clients: ")
+                .append(numberClients())
+                .append("\n")
+                .append("Number of tests available: ")
+                .append(tStore.numberOfTests())
+                .append("\n")
+                .append("Number of tests waiting for results: ")
+                .append(numberWaitingResults())
+                .append("\n")
+                .append("Number of tests waiting for diagnostic: ")
+                .append(numberWaitingDiagnosis())
+                .append("\n");
+
+        if (option.equals(Constants.DAY)) {
+            sb.append("Tests done today: ")
+                    .append(tStore.getAllTestsInAInterval(1))
+                    .append("\n");
+        } else if (option.equals(Constants.WEEK)) {
+            sb.append("Tests done in this week: ")
+                    .append(tStore.getAllTestsInAInterval(8))
+                    .append("\n");
+        } else if (option.equals(Constants.MONTH)) {
+            sb.append("Tests done in this month: ")
+                    .append(tStore.getAllTestsInAInterval(maxDaysThisMonth))
+                    .append("\n");
+        } else if (option.equals(Constants.YEAR)) {
+            sb.append("Tests done in this year: ")
+                    .append(tStore.getAllTestsInAInterval(365))
+                    .append("\n");
+        }
+
+        sb.append("Max Sum SubArray: ");
+        if (subarray.length == 0) {
+            sb.append("There is no tests in te selected interval");
+        } else {
+
+            sb.append(Arrays.toString(subarray))
+                    .append("\n")
+                    .append("subArray Interval: ")
+                    .append("]").append(getDates(subarray)[0]).append(",").append(getDates(subarray)[1]).append("[")
+                    .append("\n");
+        }
+
+        return sb.toString();
+
+    }
+
+
 }
 
 

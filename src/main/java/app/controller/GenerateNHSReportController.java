@@ -123,6 +123,7 @@ public class GenerateNHSReportController {
      * @param yObs the observed y
      * @param xObs the observed x
      */
+
     private void multiRegressionPrintValues(double[][] x, double[] y, double[] yObs, double[][] xObs) {
 
         MultiLinearRegression s = new MultiLinearRegression(x, y);

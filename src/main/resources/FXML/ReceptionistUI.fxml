@@ -6,13 +6,13 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.employees.ReceptionistUI">
    <children>
-      <Label alignment="CENTER" layoutX="114.0" layoutY="25.0" prefHeight="17.0" prefWidth="396.0" text="Receptionist Menu" textAlignment="CENTER">
+      <Label alignment="CENTER" layoutY="25.0" prefHeight="40.0" prefWidth="600.0" text="Receptionist Menu" textAlignment="CENTER" underline="true">
          <font>
-            <Font size="28.0" />
+            <Font name="Baskerville Old Face" size="36.0" />
          </font>
       </Label>
-      <Button fx:id="myReturnButtonReceptionist" layoutX="14.0" layoutY="334.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="52.0" prefWidth="105.0" text="Return" />
-      <Button layoutX="211.0" layoutY="127.0" mnemonicParsing="false" onAction="#goToRegisterTestUI" prefHeight="25.0" prefWidth="206.0" text="Register a new Test" />
-      <Button layoutX="209.0" layoutY="200.0" mnemonicParsing="false" onAction="#goToRegisterClientUI" prefHeight="25.0" prefWidth="206.0" text="Register a new Client" />
+      <Button fx:id="myReturnButtonReceptionist" layoutX="14.0" layoutY="351.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="34.0" prefWidth="74.0" text="Return" />
+      <Button layoutX="209.0" layoutY="237.0" mnemonicParsing="false" onAction="#goToRegisterTestUI" prefHeight="34.0" prefWidth="206.0" text="Register a new Test" />
+      <Button layoutX="209.0" layoutY="153.0" mnemonicParsing="false" onAction="#goToRegisterClientUI" prefHeight="33.0" prefWidth="206.0" text="Register a new Client" />
    </children>
 </AnchorPane>

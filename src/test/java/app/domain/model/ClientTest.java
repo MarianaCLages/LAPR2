@@ -1,5 +1,6 @@
 package app.domain.model;
 
+import app.controller.App;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -524,4 +525,17 @@ public class ClientTest {
 
         Assert.assertEquals(email, client.getEmail());
     }
+
+    @Test
+    public void addUser() throws ParseException {
+        String strDate = "25-06-1950";
+        SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        Date date = df.parse(strDate);
+
+        Client client = new Client("12345678910", "1234567890123456", "1234567891", "1234567891", date, "email@gamil.com", "Zé");
+
+        client.addUser(App.getInstance().getCompany());
+
+    }
+
 }

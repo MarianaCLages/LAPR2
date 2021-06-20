@@ -1,6 +1,7 @@
 package app.domain.model;
 
 import app.controller.App;
+import app.controller.SendReportTask;
 import app.domain.shared.Serialize;
 import app.domain.stores.*;
 import auth.AuthFacade;
@@ -14,20 +15,21 @@ import java.util.concurrent.TimeUnit;
 
 public class Company implements Serializable {
 
-    private String designation;
-    private AuthFacade authFacade;
+    private final String designation;
+    private final AuthFacade authFacade;
 
-    private ParameterCategoryStore parameterCategoryList;
-    private ClinicalAnalysisLabStore clinicalAnalysisLabList;
-    private EmployeeStore employeeList;
-    private ClientStore clientList;
-    private TestStore testList;
-    private SampleStore sampleStore;
-    private ParameterStore parameterList;
-    private TestTypeStore testTypeList;
-    private RoleStore roleList;
+    private final ParameterCategoryStore parameterCategoryList;
+    private final ClinicalAnalysisLabStore clinicalAnalysisLabList;
+    private final EmployeeStore employeeList;
+    private final ClientStore clientList;
+    private final TestStore testList;
+    private final SampleStore sampleStore;
+    private final ParameterStore parameterList;
+    private final TestTypeStore testTypeList;
+    private final RoleStore roleList;
     private UserSession user;
-    private Data data;
+    private final Data data;
+    private boolean createdTask = false;
 
     /**
      * Constructor of the Company Class, instances a new object of AuthFacade and new empty stores
@@ -50,7 +52,7 @@ public class Company implements Serializable {
         this.testList = new TestStore();
         this.sampleStore = new SampleStore();
         this.data = new Data();
-        scheduleReport(Integer.parseInt(hour), Integer.parseInt(min), Integer.parseInt(sec));
+        createdTask = scheduleReport(Integer.parseInt(hour), Integer.parseInt(min), Integer.parseInt(sec));
 
     }
 
@@ -73,7 +75,7 @@ public class Company implements Serializable {
 
     }
 
-    private void scheduleReport(int hour, int min, int sec) {
+    private boolean scheduleReport(int hour, int min, int sec) {
         Calendar today = Calendar.getInstance();
         today.set(Calendar.HOUR_OF_DAY, hour);
         today.set(Calendar.MINUTE, min);
@@ -81,7 +83,7 @@ public class Company implements Serializable {
 
         Timer timer = new Timer();
         timer.schedule(new SendReportTask(), today.getTime(), TimeUnit.MILLISECONDS.convert(1, TimeUnit.DAYS));
-
+        return true;
     }
 
     /**
@@ -191,4 +193,10 @@ public class Company implements Serializable {
     public Data getData() {
         return data;
     }
+
+    public boolean isCreatedTask() {
+        return createdTask;
+    }
+
+
 }

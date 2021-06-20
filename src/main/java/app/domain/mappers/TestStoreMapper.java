@@ -15,7 +15,7 @@ public class TestStoreMapper implements Serializable {
     }
 
     public List<TestStoreDTO> toDTO(TestStore store) {
-        List<Test> testList = store.getListOfTestsToValidate();
+        List<Test> testList = store.getTestListArray();
         List<TestStoreDTO> tListDto = new ArrayList<>();
         for (Test test : testList) {
             tListDto.add(this.toDTO(test));

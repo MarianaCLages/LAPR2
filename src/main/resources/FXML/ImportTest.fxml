@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="Layout" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.ImportTest.ImportTestUI">
+<AnchorPane fx:id="Layout" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.ImportTest.ImportTestUI">
    <children>
-      <ListView fx:id="ListView" layoutX="39.0" layoutY="115.0" prefHeight="200.0" prefWidth="519.0" />
-      <Button fx:id="confirm" layoutX="39.0" layoutY="79.0" mnemonicParsing="false" onAction="#confirm" prefHeight="25.0" prefWidth="76.0" text="Select" />
-      <Button layoutX="39.0" layoutY="348.0" mnemonicParsing="false" onAction="#returnToMenu" text="Return" />
-      <Label layoutX="39.0" layoutY="38.0" prefHeight="17.0" prefWidth="312.0" text="Please insert the file">
+      <ListView fx:id="ListView" layoutX="39.0" layoutY="104.0" prefHeight="234.0" prefWidth="524.0" />
+      <Button fx:id="confirm" layoutX="39.0" layoutY="62.0" mnemonicParsing="false" onAction="#confirm" prefHeight="25.0" prefWidth="76.0" text="Browse" />
+      <Button layoutX="14.0" layoutY="351.0" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="34.0" prefWidth="74.0" text="Return" />
+      <Label layoutX="39.0" layoutY="31.0" prefHeight="22.0" prefWidth="146.0" text="Select the file:">
          <font>
-            <Font name="Arial" size="22.0" />
+            <Font name="Calibri" size="20.0" />
          </font>
       </Label>
    </children>

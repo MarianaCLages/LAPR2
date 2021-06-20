@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextArea;
 
 import java.net.URL;
 import java.time.temporal.ChronoUnit;
@@ -28,6 +29,8 @@ public class CheckPerformanceUI implements Initializable {
     private DatePicker dtnEnd;
     @FXML
     private ChoiceBox<String> myChoiceBoxInformation;
+    @FXML
+    private TextArea trackpad;
 
     private final SceneController sceneController = SceneController.getInstance();
     private final CheckPerformanceController ctrl = sceneController.getCtrl();
@@ -78,12 +81,14 @@ public class CheckPerformanceUI implements Initializable {
                 ctrl.setInformation(myChoiceBoxInformation.getValue());
             }
 
+            trackpad.setText(ctrl.constructPerformanceReport());
+
         } catch (ChoiceBoxEmptyException | InvalidIntervalOfDatesEndException err1) {
             Alerts.errorAlert(err1.getMessage());
         } catch (NullPointerException err2) {
+            err2.printStackTrace();
             Alerts.errorAlert(err2.getMessage());
           //  Alerts.errorAlert("Please type all the information necessary! Don't leave blank spots!");
         }
-
     }
 }
