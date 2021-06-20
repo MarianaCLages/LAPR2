@@ -45,6 +45,19 @@ public class ImportTestsTest {
         Assert.assertNotNull(aa.getTestFileList());
 
     }
+    @Test
+    public void verifyClinicalAnalysisLabTest() {
+        //Arrange + Act
+        ImportTests aa = new ImportTests();
+
+        String fileName = "csv/Tests.csv";
+        aa.readTestFromCSV(fileName);
+        String[] test = {"a", "b", "c"};
+        Assert.assertFalse(aa.verifyClinicalAnalysisLab(test));
+
+
+
+    }
 
 
 }
