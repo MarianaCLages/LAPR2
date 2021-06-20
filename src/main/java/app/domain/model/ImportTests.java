@@ -20,6 +20,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Class that represents the Tests that are going to be Imported from the CSV file
@@ -34,7 +36,7 @@ public class ImportTests {
     ParameterStore pstore;
     TestStore tstore;
     List<String> testFileList = new ArrayList<>();
-
+    private static final Logger LOGGER = Logger.getLogger( ImportTests.class.getName() );
     /**
      * Constructor of ImportTests, it calls methods in order to validate the parameters
      */
@@ -109,7 +111,7 @@ public class ImportTests {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.log( Level.SEVERE, e.toString(), e );
         }
     }
     /**
