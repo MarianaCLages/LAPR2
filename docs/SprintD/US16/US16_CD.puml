@@ -1,0 +1,75 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class CheckPerformanceUI{
+}
+
+class CheckPerformanceController{
++getInterval(beginningDate, endDate)
++selectAlgorithm(algorithm)
++selectScope(scope)
+}
+
+class Company{
++getTestStore()
++getClientStore()
+}
+
+class ClientStore{
++getNumberOfClients()
+}
+
+class TestStore{
++getNumberOfTests(scope)
++getNumberOfTestsWaitingForResults(scope)
++getNumberOfTestsWaitingForDiagnostic(scope)
+}
+
+interface MaxSumAdapter{
++getMaxSum(differenceArray)
+}
+
+class InformationMapper{
++toDTO(numberOfTests, numberOfWaitingForResults,numberOfWaitingForDiagnostic,masSumArray)
+}
+
+class InformationDTO{
+-numberOfTests
+-numberOfWaitingForResults
+-numberOfWaitingForDiagnostic
+-masSumArray
++InformationDTO(numberOfTests, numberOfWaitingForResults,numberOfWaitingForDiagnostic,masSumArray)
+}
+
+class BruteForceAdapter{
+}
+
+class BenchmarkAdapter{
+}
+class BruteForceAlgorithm{
+}
+
+class BenchmarkAlgorithm{
+}
+
+CheckPerformanceUI ..> CheckPerformanceController
+CheckPerformanceController ..> Company
+
+Company -> ClientStore: uses >
+TestStore <- Company : uses <
+
+CheckPerformanceController ..> ClientStore
+CheckPerformanceController ..> TestStore
+
+MaxSumAdapter <. CheckPerformanceController
+
+CheckPerformanceController .> InformationMapper
+InformationMapper --> InformationDTO
+BenchmarkAlgorithm <-- BenchmarkAdapter
+BruteForceAlgorithm <-- BruteForceAdapter
+
+BenchmarkAdapter --|> MaxSumAdapter
+BruteForceAdapter --|> MaxSumAdapter
+
+
+@enduml
